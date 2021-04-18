@@ -1,0 +1,22 @@
+.CenterContent {
+    color: #3b3735;
+    padding: 8rem 10rem;
+    font-family: Montserrat, sans-serif;
+    font-size: 1.2em;
+}
+
+.whitebutton{
+    background-color: white;
+    color: black;
+    border: 1px #00bfa5 solid;
+    margin: 5px;
+}
+
+.whitebutton:hover {
+    background-color: #00bfa5;;
+}
+
+.EmoFrameText{
+    margin-top: 20px;
+}
+
