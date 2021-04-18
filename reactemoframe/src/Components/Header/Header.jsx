@@ -1,6 +1,4 @@
 import React from 'react';
-import './Header.css'
-//import Logo from `${process.env.PUBLIC_URL}/emoframe.png`;
 
 export default function Header() {
     return (
@@ -15,7 +13,6 @@ export default function Header() {
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
                         <ul class="nav ms-auto">
-
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle btn" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"><span class="fas fa-universal-access fa-lg"></span> Acessibilidade</a>
                                 <ul class="dropdown-menu">
