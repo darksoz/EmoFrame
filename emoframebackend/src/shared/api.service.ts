@@ -13,7 +13,11 @@ export class ApiService {
     async getById(id: string){
         return await this.apiModel.findById(id).exec();
     }
-
+    
+    async getByEmail(email: string){
+        return await this.apiModel.findOne({email}).exec();
+    }
+    
     async create(task: Api ){
         const createdData = new this.apiModel(task);
         return await createdData.save();

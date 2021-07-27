@@ -10,5 +10,6 @@ import { UserController } from './user.controller';
     ],
     controllers: [UserController],
     providers: [ApiService],
+    exports: [ApiService],
 })
 export class UserModule { }
