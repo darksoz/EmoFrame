@@ -1,35 +1,32 @@
-import { Body, Delete, Get, Param, Post, Put } from '@nestjs/common';
-import { Controller } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common';
+import { Api } from '../shared/api';
 import { ApiService } from '../shared/api.service';
-import {Api} from '../shared/api'
-
+"localhost:3000/api/user"
 @Controller('api')
-export class ApiController {
-
+export class UserController { 
     constructor(private apiService: ApiService){ }
 
-    @Get()
+    @Get('all')
     async getAll() : Promise<Api[]>{
         return this.apiService.getAll();
     }
 
-    @Get(':id')
-    async getById(@Param('id') id: string) : Promise<Api>{
+    @Get('user')
+    async getById(@Body() id: string) : Promise<Api>{
         return this.apiService.getById(id);
     }
 
-    @Post()
+    @Post('register')
     async create(@Body() task: Api) : Promise<Api>{
         return this.apiService.create(task);
     }
 
-    @Put(':id')
-    async update(@Param('id') id:string, @Body() task: Api){
+    @Put('update')
+    async update(@Body() id : string, @Body() task: Api){
         return this.apiService.update(id, task);
     }
-    @Delete(':id')
-    async delete(@Param('id') id: string){
+    @Delete('delete')
+    async delete(@Body() id: string){
         this.apiService.delete(id);
     }
-
 }
