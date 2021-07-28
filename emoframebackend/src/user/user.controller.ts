@@ -2,17 +2,19 @@ import { Body, Controller, Delete, Get, Param, Post, Put, UseGuards } from '@nes
 import { Api } from '../shared/api';
 import { ApiService } from '../shared/api.service';
 import { JwtAuthGuard } from '../auth/shared/jwt-auth.guard';
-"localhost:3000/api/user"
+import { UserGuard } from 'src/guard/user.guard';
+
 @Controller('api')
 export class UserController { 
     constructor(private apiService: ApiService){ }
 
-    @UseGuards(JwtAuthGuard)
+    @UseGuards(JwtAuthGuard, UserGuard)
     @Get('all')
     async getAll() : Promise<Api[]>{
         return this.apiService.getAll();
     }
 
+    @UseGuards(JwtAuthGuard)
     @Get('user')
     async getById(@Body() id: string) : Promise<Api>{
         return this.apiService.getById(id);
