@@ -14,13 +14,13 @@ export class UserController {
         return this.apiService.getAll();
     }
 
-    @UseGuards(JwtAuthGuard)
+    @UseGuards(JwtAuthGuard, UserGuard)
     @Get('user')
     async getById(@Body() id: string) : Promise<Api>{
         return this.apiService.getById(id);
     }
 
-    @UseGuards(JwtAuthGuard)
+    @UseGuards(JwtAuthGuard, UserGuard)
     @Post('register')
     async create(@Body() task: Api) : Promise<Api>{
         return this.apiService.create(task);
@@ -31,7 +31,7 @@ export class UserController {
     async update(@Body() id : string, @Body() task: Api){
         return this.apiService.update(id, task);
     }
-    @UseGuards(JwtAuthGuard)
+    @UseGuards(JwtAuthGuard, UserGuard)
     @Delete('delete')
     async delete(@Body() id: string){
         this.apiService.delete(id);

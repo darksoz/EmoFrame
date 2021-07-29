@@ -12,6 +12,6 @@ export class UserGuard implements CanActivate {
       return true;
     }
 
-    throw new UnauthorizedException(`${user.usertype}`);
+    throw new UnauthorizedException(`Unauthorized user`);
   }
 }
