@@ -1,6 +1,7 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, Req, Res} from '@nestjs/common';
 import { ApiService } from 'src/shared/api.service';
 import { JwtService } from '@nestjs/jwt';
+import { Request, Response } from 'express';
 
 @Injectable()
 export class AuthService {
@@ -18,13 +19,23 @@ export class AuthService {
         return null;
       }
 
-      async login(user: any) {
+      async login(user: any, @Res({passthrough: true}) response: Response) {
         const payload = { email: user.email, username: user.username , usertype: user.usertype};
+        const jwtAccessKey = this.jwtService.sign(payload);
+        response.cookie("jwtAccessKey", jwtAccessKey);
         return {
-          access_token: this.jwtService.sign(payload),
+          access_token: jwtAccessKey,
           email: user.email,
-          username: user.username,
+          username: user.username,  
           usertype: user.usertype,
+        };
+      }
+
+      async logout(@Res({passthrough: true}) response: Response, @Req() request: Request) {
+        response.clearCookie("jwtAccessKey");
+        console.log(request.cookies["jwtAccessKey"]);
+        return {
+          "logout": true
         };
       }
 }
