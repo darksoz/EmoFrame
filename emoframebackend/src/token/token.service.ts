@@ -2,7 +2,7 @@
 https://docs.nestjs.com/providers#services
 */
 
-import { Injectable } from '@nestjs/common';
+import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { Token } from './token';
@@ -19,6 +19,17 @@ export class TokenService {
         }
         else{
             return await data.save();
+        }
+        
+    }
+
+    async refreshToken(data: any){
+        const user = await this.tokenModel.findOne({hash: data.oldToken});
+        if(user){
+            console.log("encontrou o token no db");
+        }
+        else{
+            return new HttpException({errorMessage: 'Invalid Token'}, HttpStatus.UNAUTHORIZED);
         }
         
     }
