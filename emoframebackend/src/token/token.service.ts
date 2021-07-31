@@ -1,15 +1,16 @@
-/*
-https://docs.nestjs.com/providers#services
-*/
-
-import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
-import { InjectModel } from '@nestjs/mongoose';
+import { forwardRef, HttpException, HttpStatus, Inject, Injectable } from '@nestjs/common';
+import { InjectConnection, InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
+import { AppService } from 'src/app.service';
+import { Api } from 'src/shared/api';
+import { ApiService } from 'src/shared/api.service';
 import { Token } from './token';
 
 @Injectable()
 export class TokenService {
-    constructor(@InjectModel('Tokens') private readonly tokenModel: Model<Token>){}
+    constructor(@InjectModel('Tokens') private readonly tokenModel: Model<Token>,
+    @InjectModel('Users') private readonly apiModel: Model<Api>
+    ){}
 
     async save(task: any){
         const user = await this.tokenModel.findOne({email: task.email});
@@ -24,8 +25,10 @@ export class TokenService {
     }
 
     async refreshToken(data: any){
-        const user = await this.tokenModel.findOne({hash: data.oldToken});
-        if(user){
+        const token = await this.tokenModel.findOne({hash: data.oldToken});
+        if(token){
+            let user = await this.apiModel.findOne({email: token.email});
+            console.log(user);
             console.log("encontrou o token no db");
         }
         else{
