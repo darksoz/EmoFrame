@@ -1,3 +1,4 @@
+import { TokenModule } from './token/token.module';
 import { AuthModule } from './auth/auth.module';
 import { UserModule } from './user/user.module';
 import { Module } from '@nestjs/common';
@@ -8,11 +9,12 @@ import { MongooseModule } from '@nestjs/mongoose';
 
 @Module({
   imports: [
+    TokenModule,
     AuthModule,
     UserModule,
     MongooseModule.forRoot('mongodb://localhost:/emoframestg'),
     ApiModule,
-    UserModule],
+    ],
   controllers: [
     AppController],
   providers: [AppService],

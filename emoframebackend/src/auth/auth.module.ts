@@ -7,6 +7,7 @@ import { JwtStrategy } from './shared/jwt.strategy';
 import { JwtModule } from '@nestjs/jwt';
 import { PassportModule } from '@nestjs/passport';
 import { jwtConstants } from './shared/constants';
+import { TokenModule } from 'src/token/token.module';
 
 @Module({
     imports: [
@@ -15,7 +16,8 @@ import { jwtConstants } from './shared/constants';
             secret: jwtConstants.secret,
             signOptions: { expiresIn: '60s' },
           }),
-        PassportModule
+        PassportModule,
+        TokenModule,
     ],
     controllers: [
         AuthController,

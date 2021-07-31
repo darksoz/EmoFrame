@@ -2,12 +2,14 @@ import { Injectable, Req, Res} from '@nestjs/common';
 import { ApiService } from 'src/shared/api.service';
 import { JwtService } from '@nestjs/jwt';
 import { Request, Response } from 'express';
+import { TokenService } from 'src/token/token.service';
 
 @Injectable()
 export class AuthService {
     constructor(
       private apiService: ApiService,
-      private jwtService: JwtService) {}
+      private jwtService: JwtService,
+      private tokenService: TokenService) {}
 
     async validateUser(userEmail: string, userPass: string): Promise<any> {
         const user = await this.apiService.getByEmail(userEmail);
@@ -22,6 +24,8 @@ export class AuthService {
       async login(user: any, @Res({passthrough: true}) response: Response) {
         const payload = { email: user.email, username: user.username , usertype: user.usertype};
         const jwtAccessKey = this.jwtService.sign(payload);
+        let tokenSave = {hash: jwtAccessKey, email: user.email};
+        await this.tokenService.save(tokenSave);
         response.cookie("jwtAccessKey", jwtAccessKey);
         return {
           access_token: jwtAccessKey,
