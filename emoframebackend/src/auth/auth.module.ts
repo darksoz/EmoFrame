@@ -1,5 +1,5 @@
 import { AuthService } from './shared/auth.service';
-import { Module } from '@nestjs/common';
+import { forwardRef, Module } from '@nestjs/common';
 import { UserModule } from 'src/user/user.module';
 import { JwtModule } from '@nestjs/jwt';
 import { jwtConstants } from './shared/constants';
@@ -17,7 +17,7 @@ import { TokenModule } from 'src/token/token.module';
             signOptions: { expiresIn: '60s' },
           }),
         PassportModule,
-        TokenModule
+        forwardRef(()=>TokenModule)
     ],
     controllers: [AuthController],
     providers: [
