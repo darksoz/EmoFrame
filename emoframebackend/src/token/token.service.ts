@@ -12,7 +12,14 @@ export class TokenService {
     constructor(@InjectModel('Tokens') private readonly tokenModel: Model<Token>){}
 
     async save(task: any){
-        let createdData = new this.tokenModel(task);
-        return await createdData.save();
+        const user = await this.tokenModel.findOne({email: task.email});
+        let data = new this.tokenModel(task);
+        if(user){
+            await this.tokenModel.updateOne({_id: user.id}, task).exec();
+        }
+        else{
+            return await data.save();
+        }
+        
     }
 }
