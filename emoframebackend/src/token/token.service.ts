@@ -32,8 +32,6 @@ export class TokenService {
         if(token){
             let user = await this.userService.getByEmail(token.email);
             return this.authService.login(user, response);
-            console.log(user);
-            console.log("encontrou o token no db");
         }
         else{
             return new HttpException({errorMessage: 'Invalid Token'}, HttpStatus.UNAUTHORIZED);

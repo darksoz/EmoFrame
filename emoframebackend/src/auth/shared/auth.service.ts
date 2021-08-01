@@ -39,7 +39,6 @@ export class AuthService {
 
     async logout(@Res({passthrough: true}) response: Response, @Req() request: Request) {
       response.clearCookie("jwtAccessKey");
-      console.log(request.cookies["jwtAccessKey"]);
       return {
         "logout": true
       };
