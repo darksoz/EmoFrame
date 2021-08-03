@@ -29,6 +29,7 @@ export class AuthService {
         let tokenSave = {hash: jwtAccessKey, email: user.email};
         await this.tokenService.save(tokenSave);
         response.cookie("jwtAccessKey", jwtAccessKey);
+        console.log("Logou porra");
         return {
           access_token: jwtAccessKey,
           email: user.email,
