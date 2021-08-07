@@ -2,7 +2,7 @@ import axios from "axios";
 
 const baseURL = 'http://localhost:5000/api/';
 
-export const LoginAccount = (json) => {
+export const LoginAccount = async (json) => {
   var config = {
     method: 'post',
     url: `${baseURL}auth/login`,
@@ -11,9 +11,12 @@ export const LoginAccount = (json) => {
     },
     data: json
   };
-
-  axios(config)
+  return new Promise((resolve, reject) => {
+    axios(config)
     .then(function (response) {
-      console.log(JSON.stringify(response.data));
-    }).catch((error)=> {console.log("bad request")});
+      resolve(response);
+    }).catch(function (error) {
+      reject(error);
+    });
+  });
 }

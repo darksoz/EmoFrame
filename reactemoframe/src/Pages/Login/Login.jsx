@@ -1,8 +1,11 @@
 import './Login.css';
-import { useState } from "react";
-import {LoginAccount} from '../../services/api.js'
+import { useState, useEffect} from "react";
+import { useHistory, Redirect } from 'react-router-dom';
+import {LoginAccount} from '../../services/api.js';
+import {login, isAuthenticated} from '../../services/auth.js';
 
 function Login() {
+    const history = useHistory();
     let [email, setEmail] = useState("");
     let [password, setPassword] = useState("");
 
@@ -19,16 +22,18 @@ function Login() {
             "password": `${password}`
         });
 
-        try{
-            let login = await LoginAccount(json);
-            console.log("Login deu certo ==> ", login);
+        let response = await LoginAccount(json);
+        if(response.status === 201){
+            console.log("Data aqui ==> ", response.data);
+            login(response.data);
+            history.push("/dashboard");
         }
-        catch(err){
-            console.log("Erro aqui no catch", err);
+        else{
+            console.log("Bad request", response.status);
         }
     }
-
-    return (
+    return  isAuthenticated() ? <Redirect to='/dashboard'/> :
+     (
         <div class="flex-fill">
             <div class="wrapper fadeInDown">
                 <div id="formContent" >
