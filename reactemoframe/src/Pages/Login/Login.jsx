@@ -1,6 +1,6 @@
 import './Login.css';
-import { useState, useEffect} from "react";
-import { useHistory, Redirect } from 'react-router-dom';
+import {useState} from "react";
+import {useHistory, Redirect} from 'react-router-dom';
 import {LoginAccount} from '../../services/api.js';
 import {login, isAuthenticated} from '../../services/auth.js';
 

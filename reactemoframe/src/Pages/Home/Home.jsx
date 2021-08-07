@@ -1,5 +1,7 @@
 import React from 'react';
+import {Redirect} from 'react-router-dom';
 import { useHistory } from 'react-router-dom';
+import {isAuthenticated} from '../../services/auth';
 import './Home.css';
 
 function Home() {
@@ -9,7 +11,7 @@ function Home() {
     function goToLogin(path){
         history.push(path);
     }
-    return (
+    return isAuthenticated() ? <Redirect to='/dashboard'/> : (
         <div>
             <div class="container" >
                 <div class="CenterContent">
