@@ -1,54 +1,43 @@
-import { useHistory } from "react-router";
 import './Login.css';
-import { useState } from 'react';
-import axios from "axios";
+import { useState } from "react";
+import {LoginAccount} from '../../services/api.js'
 
+function Login() {
+    let [email, setEmail] = useState("");
+    let [password, setPassword] = useState("");
 
-function Login(){
-    let history = useHistory();
-
-    let [nada1, setEmail] = useState('');
-    let [nada2, setPassword] = useState('');
-
-    function emailChange(value){
-        setEmail(value);
-        console.log("email:  ", value);
+    function onEmailChange(value){
+        setEmail(value)
     }
-    
-    async function login(){
-        
-    }
-
-    function passwordChange(value){
+    function onPasswordChange(value){
         setPassword(value)
-        console.log("password:  ", value);
-        
     }
 
-    function sleep(ms) {
-        return new Promise((resolve) => {
-          setTimeout(resolve, ms);
+    async function handleSubmit() {
+        var json = JSON.stringify({
+            "email": `${email}`,
+            "password": `${password}`
         });
-      } 
 
-    async function tryLogin(){
-        const article = { email: `${nada1}`, password: `${nada2}` };
-        const response = await axios.post('http://localhost:5000/api/auth/login', article);
-        alert(response);
+        try{
+            let login = await LoginAccount(json);
+            console.log("Login deu certo ==> ", login);
+        }
+        catch(err){
+            console.log("Erro aqui no catch", err);
+        }
     }
 
-    return(
+    return (
         <div class="flex-fill">
             <div class="wrapper fadeInDown">
-                <div id="formContent" >  
+                <div id="formContent" >
                     <div class="fadeIn first m-4">
-                        <span class="far fa-user fa-2x"/>
+                        <span class="far fa-user fa-2x" />
                     </div>
-                    <form onSubmit={()=>tryLogin()}>
-                        <input type="text" id="email" class="fadeIn second" name="email" placeholder="E-mail" required onChange={e => emailChange(e.target.value)}/>
-                        <input type="password" id="password" class="fadeIn third" name="password" placeholder="Senha" required onChange={e=>passwordChange(e.target.value)}/>
-                        <input type="submit" class="fadeIn fourth" value="Entrar"/>
-                    </form>
+                    <input type="text" id="email" class="fadeIn second" name="login" placeholder="E-mail" required onChange={e => onEmailChange(e.target.value)}/>
+                    <input type="password" id="password" class="fadeIn third" name="login" placeholder="Senha" required onChange={e => onPasswordChange(e.target.value)}/>
+                    <input type="submit" class="fadeIn fourth" value="Entrar" onClick={async () => await handleSubmit()} />
                 </div>
             </div>
 
