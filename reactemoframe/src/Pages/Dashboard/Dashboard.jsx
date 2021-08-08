@@ -4,10 +4,9 @@ function Dashboard() {
     return (
         <div>
             <div class="row m-3">
-                <Card Text="Erick" image={`${process.env.PUBLIC_URL}/emoframe.png`} />
+                <Card/>
             </div>
         </div>
     )
 }
-
 export default Dashboard;

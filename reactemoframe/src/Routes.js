@@ -5,6 +5,7 @@ import Home from './Pages/Home/Home';
 import Register from './Pages/Register/Register';
 import Login from './Pages/Login/Login';
 import Dashboard from './Pages/Dashboard/Dashboard';
+import Sam from './Pages/Sam/Sam';
 import { isAuthenticated } from './services/auth';
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
@@ -28,6 +29,7 @@ function Routes() {
                 <Route path='/register' exact component={Register}/>
                 <Route path='/login' exact component={Login}/>
                 <PrivateRoute path='/dashboard' exact component={Dashboard}/>
+                <PrivateRoute path='/sam' exact component={Sam}/>
             </Switch>
         </BrowserRouter>
     )
