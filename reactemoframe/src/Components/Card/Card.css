@@ -12,3 +12,7 @@
     margin-top: 1rem;
     margin-bottom: 1rem;
 }
+
+.description{
+    max-height: 200px;
+}

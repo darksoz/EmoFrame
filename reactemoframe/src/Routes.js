@@ -6,13 +6,28 @@ import Register from './Pages/Register/Register';
 import Login from './Pages/Login/Login';
 import Dashboard from './Pages/Dashboard/Dashboard';
 import Sam from './Pages/Sam/Sam';
-import { isAuthenticated } from './services/auth';
+import { isAuthenticated, getUsertype } from './services/auth';
+import UserRegister from './Pages/UserRegister/UserRegister';
+
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route
     {...rest}
     render={props =>
       isAuthenticated() ? (
+        <Component {...props} />
+      ) : (
+        <Redirect to={{ pathname: "/", state: { from: props.location } }} />
+      )
+    }
+  />
+);
+
+const LimitedAccessRoute = ({ component: Component, ...rest }) => (
+  <Route
+    {...rest}
+    render={props =>
+      (isAuthenticated() && getUsertype() === "Specialist") ? (
         <Component {...props} />
       ) : (
         <Redirect to={{ pathname: "/", state: { from: props.location } }} />
@@ -30,6 +45,7 @@ function Routes() {
                 <Route path='/login' exact component={Login}/>
                 <PrivateRoute path='/dashboard' exact component={Dashboard}/>
                 <PrivateRoute path='/sam' exact component={Sam}/>
+                <LimitedAccessRoute path='/userregister' exact component={UserRegister}/>
             </Switch>
         </BrowserRouter>
     )
