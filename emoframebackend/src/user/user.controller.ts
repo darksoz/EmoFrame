@@ -36,4 +36,10 @@ export class UserController {
     async delete(@Body() id: string){
         this.userService.delete(id);
     }
+
+    @UseGuards(JwtAuthGuard)
+    @Get('check')
+    async verifyAuthentication(){
+        return "Authenticated";
+    }
 }
