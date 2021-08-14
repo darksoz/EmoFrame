@@ -26,8 +26,8 @@ function Tabs(props) {
                     <li class="nav-item">
                         {
                             props.active === "results" ? 
-                            <a class="nav-link active" href="resultados.html">Resultados</a> :
-                            <a class="nav-link" href="resultados.html">Resultados</a>
+                            <a class="nav-link active" href="/results">Resultados</a> :
+                            <a class="nav-link" href="/results">Resultados</a>
                         }
                     </li>
                     </ul>
