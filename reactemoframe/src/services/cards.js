@@ -9,8 +9,8 @@ export const cards =
 
         {
             "image": "POMS2",
-            "description": "O Perfil dos Estados de Humor (POMS) é uma escala de avaliação psicológica usada para avaliar estados de humor distintos e transitórios. As vantagens de usar essa avaliação incluem a simplicidade de administração e a facilidade.",
-            "page": "sam"
+            "description": "LEAP",
+            "page": "leap"
         },
 
         {

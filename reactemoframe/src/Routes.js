@@ -8,6 +8,7 @@ import Sam from './Pages/Sam/Sam';
 import { isAuthenticated, getUsertype } from './services/auth';
 import UserRegister from './Pages/UserRegister/UserRegister';
 import Results from './Pages/Results/Results';
+import Leap from './Pages/Leap/Leap';
 
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
@@ -47,6 +48,7 @@ function Routes() {
                 <PrivateRoute path='/sam' exact component={Sam}/>
                 <LimitedAccessRoute path='/userregister' exact component={UserRegister}/>
                 <LimitedAccessRoute path='/results' exact component={Results}/>
+                <PrivateRoute path='/leap' exact component={Leap}/>
             </Switch>
         </BrowserRouter>
     )
