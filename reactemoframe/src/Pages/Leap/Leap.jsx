@@ -1,14 +1,12 @@
-import React, {useState} from 'react';
-import {Link} from 'react-scroll'
+import React, { useState } from 'react';
+import { Link } from 'react-scroll';
+import { MultiStepForm, Step } from 'react-multi-form';
 import './Leap.css';
 
 function Leap() {
 
-    const [page, setPage] = useState(1)
+    const [active, setActive] = React.useState(1);
 
-    const Pagination = (increment) => {
-        setPage(page + increment);
-    }
     return (
         <>
             <div class="container">
@@ -120,15 +118,14 @@ function Leap() {
                             <hr></hr>
                             <blockquote class="lead ml-5 p-3">  Marque o quanto você sente <span class="negrito sublinhado">NESTE MOMENTO</span> de cada um destes sentimentos,
                                 sendo 1 (um) uma intensidade muito fraca e 5 (cinco) uma intensidade muito forte. </blockquote>
-
                             <div>
-                                <div class="form">
-                                    {page === 1 &&
-                                        <div id="Leap-Page1">
+                                <MultiStepForm activeStep={active} >
+                                    <Step label="Passo 1">
+                                    <div id="Leap-Page1" class="form">
                                             <label class="statement-leap text-start">Estou aceitando alguma coisa.</label>
                                             <ul class="likert-leap">
                                                 <li>
-                                                    <input class="form-check-input" type="radio" name="likert-leap1" value="1" />
+                                                    <input class="form-check-input" type="radio" name="likert-leap1" value="1" required />
                                                     <p>1 <br></br>(Muito Fraco)</p>
                                                 </li>
                                                 <li>
@@ -153,7 +150,7 @@ function Leap() {
                                             <label class="statement-leap text-start">Sinto uma admiração por alguém.</label>
                                             <ul class="likert-leap">
                                                 <li>
-                                                    <input class="form-check-input" type="radio" name="likert-leap2" value="1" />
+                                                    <input class="form-check-input" type="radio" name="likert-leap2" value="1" required />
                                                     <p>1 <br></br>(Muito Fraco)</p>
                                                 </li>
                                                 <li>
@@ -178,7 +175,7 @@ function Leap() {
                                             <label class="statement-leap text-start">Estou alegre.</label>
                                             <ul class="likert-leap">
                                                 <li>
-                                                    <input class="form-check-input" type="radio" name="likert-leap3" value="1" />
+                                                    <input class="form-check-input" type="radio" name="likert-leap3" value="1" required />
                                                     <p>1 <br></br>(Muito Fraco)</p>
                                                 </li>
                                                 <li>
@@ -203,7 +200,7 @@ function Leap() {
                                             <label class="statement-leap text-start">Estou aliviado(a).</label>
                                             <ul class="likert-leap">
                                                 <li>
-                                                    <input class="form-check-input" type="radio" name="likert-leap4" value="1" />
+                                                    <input class="form-check-input" type="radio" name="likert-leap4" value="1" required />
                                                     <p>1 <br></br>(Muito Fraco)</p>
                                                 </li>
                                                 <li>
@@ -228,7 +225,7 @@ function Leap() {
                                             <label class="statement-leap text-start">Sinto atração sexual por alguém.</label>
                                             <ul class="likert-leap">
                                                 <li>
-                                                    <input class="form-check-input" type="radio" name="likert-leap5" value="1" />
+                                                    <input class="form-check-input" type="radio" name="likert-leap5" value="1" required />
                                                     <p>1 <br></br>(Muito Fraco)</p>
                                                 </li>
                                                 <li>
@@ -253,7 +250,7 @@ function Leap() {
                                             <label class="statement-leap text-start">Sinto-me calmo(a).</label>
                                             <ul class="likert-leap">
                                                 <li>
-                                                    <input class="form-check-input" type="radio" name="likert-leap6" value="1" />
+                                                    <input class="form-check-input" type="radio" name="likert-leap6" value="1" required />
                                                     <p>1 <br></br>(Muito Fraco)</p>
                                                 </li>
                                                 <li>
@@ -278,7 +275,7 @@ function Leap() {
                                             <label class="statement-leap text-start">Estou com calor.</label>
                                             <ul class="likert-leap">
                                                 <li>
-                                                    <input class="form-check-input" type="radio" name="likert-leap7" value="1" />
+                                                    <input class="form-check-input" type="radio" name="likert-leap7" value="1" required />
                                                     <p>1 <br></br>(Muito Fraco)</p>
                                                 </li>
                                                 <li>
@@ -303,7 +300,7 @@ function Leap() {
                                             <label class="statement-leap text-start">Estou cansado(a).</label>
                                             <ul class="likert-leap">
                                                 <li>
-                                                    <input class="form-check-input" type="radio" name="likert-leap8" value="1" />
+                                                    <input class="form-check-input" type="radio" name="likert-leap8" value="1" required />
                                                     <p>1 <br></br>(Muito Fraco)</p>
                                                 </li>
                                                 <li>
@@ -328,7 +325,7 @@ function Leap() {
                                             <label class="statement-leap text-start">Estou cheio(a).</label>
                                             <ul class="likert-leap">
                                                 <li>
-                                                    <input class="form-check-input" type="radio" name="likert-leap9" value="1" />
+                                                    <input class="form-check-input" type="radio" name="likert-leap9" value="1" required />
                                                     <p>1 <br></br>(Muito Fraco)</p>
                                                 </li>
                                                 <li>
@@ -353,7 +350,7 @@ function Leap() {
                                             <label class="statement-leap text-start">Sinto ciúme de alguém.</label>
                                             <ul class="likert-leap">
                                                 <li>
-                                                    <input class="form-check-input" type="radio" name="likert-leap10" value="1" />
+                                                    <input class="form-check-input" type="radio" name="likert-leap10" value="1" required />
                                                     <p>1 <br></br>(Muito Fraco)</p>
                                                 </li>
                                                 <li>
@@ -375,14 +372,13 @@ function Leap() {
 
                                             </ul>
                                         </div>
-                                    }
-
-                                    {page === 2 &&
-                                        <div id="Leap-Page2">
+                                    </Step>
+                                    <Step label="Passo 2">
+                                    <div id="Leap-Page2" class="form">
                                             <label class="statement-leap text-start">Estou conformado(a).</label>
                                             <ul class="likert-leap">
                                                 <li>
-                                                    <input class="form-check-input" type="radio" name="likert-leap11" value="1" />
+                                                    <input class="form-check-input" type="radio" name="likert-leap11" value="1" required />
                                                     <p>1 <br></br>(Muito Fraco)</p>
                                                 </li>
                                                 <li>
@@ -407,7 +403,7 @@ function Leap() {
                                             <label class="statement-leap text-start">Estou tomando cuidado.</label>
                                             <ul class="likert-leap">
                                                 <li>
-                                                    <input class="form-check-input" type="radio" name="likert-leap12" value="1" />
+                                                    <input class="form-check-input" type="radio" name="likert-leap12" value="1" required />
                                                     <p>1 <br></br>(Muito Fraco)</p>
                                                 </li>
                                                 <li>
@@ -432,7 +428,7 @@ function Leap() {
                                             <label class="statement-leap text-start">Sinto-me culpado(a).</label>
                                             <ul class="likert-leap">
                                                 <li>
-                                                    <input class="form-check-input" type="radio" name="likert-leap13" value="1" />
+                                                    <input class="form-check-input" type="radio" name="likert-leap13" value="1" required />
                                                     <p>1 <br></br>(Muito Fraco)</p>
                                                 </li>
                                                 <li>
@@ -457,7 +453,7 @@ function Leap() {
                                             <label class="statement-leap text-start">Sinto um desejo.</label>
                                             <ul class="likert-leap">
                                                 <li>
-                                                    <input class="form-check-input" type="radio" name="likert-leap14" value="1" />
+                                                    <input class="form-check-input" type="radio" name="likert-leap14" value="1" required />
                                                     <p>1 <br></br>(Muito Fraco)</p>
                                                 </li>
                                                 <li>
@@ -482,7 +478,7 @@ function Leap() {
                                             <label class="statement-leap text-start">Estou com esperança.</label>
                                             <ul class="likert-leap">
                                                 <li>
-                                                    <input class="form-check-input" type="radio" name="likert-leap15" value="1" />
+                                                    <input class="form-check-input" type="radio" name="likert-leap15" value="1" required />
                                                     <p>1 <br></br>(Muito Fraco)</p>
                                                 </li>
                                                 <li>
@@ -507,7 +503,7 @@ function Leap() {
                                             <label class="statement-leap text-start">Acho algo estranho.</label>
                                             <ul class="likert-leap">
                                                 <li>
-                                                    <input class="form-check-input" type="radio" name="likert-leap16" value="1" />
+                                                    <input class="form-check-input" type="radio" name="likert-leap16" value="1" required />
                                                     <p>1 <br></br>(Muito Fraco)</p>
                                                 </li>
                                                 <li>
@@ -532,7 +528,7 @@ function Leap() {
                                             <label class="statement-leap text-start">Estou com fome.</label>
                                             <ul class="likert-leap">
                                                 <li>
-                                                    <input class="form-check-input" type="radio" name="likert-leap17" value="1" />
+                                                    <input class="form-check-input" type="radio" name="likert-leap17" value="1" required />
                                                     <p>1 <br></br>(Muito Fraco)</p>
                                                 </li>
                                                 <li>
@@ -557,7 +553,7 @@ function Leap() {
                                             <label class="statement-leap text-start">Estou com frio.</label>
                                             <ul class="likert-leap">
                                                 <li>
-                                                    <input class="form-check-input" type="radio" name="likert-leap18" value="1" />
+                                                    <input class="form-check-input" type="radio" name="likert-leap18" value="1" required />
                                                     <p>1 <br></br>(Muito Fraco)</p>
                                                 </li>
                                                 <li>
@@ -582,7 +578,7 @@ function Leap() {
                                             <label class="statement-leap text-start">Estou gostando de alguém.</label>
                                             <ul class="likert-leap">
                                                 <li>
-                                                    <input class="form-check-input" type="radio" name="likert-leap19" value="1" />
+                                                    <input class="form-check-input" type="radio" name="likert-leap19" value="1" required />
                                                     <p>1 <br></br>(Muito Fraco)</p>
                                                 </li>
                                                 <li>
@@ -607,7 +603,7 @@ function Leap() {
                                             <label class="statement-leap text-start">Acho algo engraçado.</label>
                                             <ul class="likert-leap">
                                                 <li>
-                                                    <input class="form-check-input" type="radio" name="likert-leap20" value="1" />
+                                                    <input class="form-check-input" type="radio" name="likert-leap20" value="1" required />
                                                     <p>1 <br></br>(Muito Fraco)</p>
                                                 </li>
                                                 <li>
@@ -629,10 +625,9 @@ function Leap() {
 
                                             </ul>
                                         </div>
-                                    }
-
-                                    {page === 3 &&
-                                        <div id="Leap-Page3">
+                                    </Step>
+                                    <Step label="Passo 3">
+                                    <div id="Leap-Page3" class="form">
                                             <label class="statement-leap text-start">Sinto-me humilhado(a).</label>
                                             <ul class="likert-leap">
                                                 <li>
@@ -883,10 +878,9 @@ function Leap() {
 
                                             </ul>
                                         </div>
-                                    }
-
-                                    {page === 4 &&
-                                        <div id="Leap-Page4">
+                                    </Step>
+                                    <Step label="Passo 4">
+                                    <div id="Leap-Page4" class="form">
                                             <label class="statement-leap text-start">Sinto raiva.</label>
                                             <ul class="likert-leap">
                                                 <li>
@@ -1137,34 +1131,29 @@ function Leap() {
 
                                             </ul>
                                         </div>
-                                    }
-
-                                    {(page === 1 && <Link to="sample"><button onClick={()=>Pagination(1)}>Próximo</button></Link>)}
-                                    {(page > 1 && page !== 4 && 
-                                            <div>
-                                                <Link to="sample">
-                                                    <button onClick={()=>Pagination(-1)} >Anterior</button>
-                                                </Link>
-                                                <Link to="sample">
-                                                    <button onClick={()=>Pagination(1)}>Próximo</button>
-                                                </Link>
-                                            </div>)
-                                    }
-                                    {(page === 4) && 
+                                    </Step>                            
+                                </MultiStepForm>
+                                {(active === 1 && <Link to="sample"><button class="btn whitebutton btn-lg" onClick={() => setActive(active + 1)}>Próximo</button></Link>)}
+                                    {(active > 1 && active !== 4 &&
                                         <div>
                                             <Link to="sample">
-                                                <button onClick={()=>Pagination(-1)}>Anterior</button>
+                                                <button class="btn whitebutton btn-lg" onClick={() => setActive(active - 1)} >Anterior</button>
                                             </Link>
-                                            <button>Salvar</button>
+                                            <Link to="sample">
+                                                <button class="btn whitebutton btn-lg" onClick={() => setActive(active + 1)}>Próximo</button>
+                                            </Link>
+                                        </div>)
+                                    }
+                                    {(active === 4) &&
+                                        <div>
+                                            <Link to="sample">
+                                                <button class="btn whitebutton btn-lg" onClick={() => setActive(active - 1)}>Anterior</button>
+                                            </Link>
+                                            <button class="btn whitebutton btn-lg" >Salvar</button>
                                         </div>
                                     }
-
-                                </div>
                             </div>
-
                         </div>
-
-
                     </div>
                 </div>
             </div>
