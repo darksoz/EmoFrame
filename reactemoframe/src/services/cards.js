@@ -15,8 +15,8 @@ export const cards =
 
         {
             "image": "SUS2",
-            "description": "ZANON",
-            "page": "zanon"
+            "description": "A escala de usabilidade do sistema (SUS), oferece uma maneira rápida e eficaz de avaliar a usabilidade de seus produtos e designs. O SUS é uma ferramenta prática e confiável para medir a facilidade de uso percebida pelos usuários.",
+            "page": "sam"
         },
         {
             "image": "SAM2",
