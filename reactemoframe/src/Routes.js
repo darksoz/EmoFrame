@@ -9,6 +9,7 @@ import { isAuthenticated, getUsertype } from './services/auth';
 import UserRegister from './Pages/UserRegister/UserRegister';
 import Results from './Pages/Results/Results';
 import Leap from './Pages/Leap/Leap';
+import Zanon from './Pages/Zanon/Zanon';
 
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
@@ -49,6 +50,7 @@ function Routes() {
                 <LimitedAccessRoute path='/userregister' exact component={UserRegister}/>
                 <LimitedAccessRoute path='/results' exact component={Results}/>
                 <PrivateRoute path='/leap' exact component={Leap}/>
+                <PrivateRoute path='/zanon' exact component={Zanon}/>
             </Switch>
         </BrowserRouter>
     )
