@@ -19,9 +19,9 @@ export const cards =
             "page": "zanon"
         },
         {
-            "image": "SAM2",
-            "description": "O Self-Assessment Manikin (SAM) é uma técnica de avaliação pictórica não verbal que mede diretamente o prazer, a excitação e a dominância associados à reação afetiva de uma pessoa a uma ampla variedade de estímulos.",
-            "page": "sam"
+            "image": "SUS2",
+            "description": "Sus Test",
+            "page": "sus"
         },
 
         {
