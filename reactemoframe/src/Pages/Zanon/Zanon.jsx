@@ -11,7 +11,7 @@ function Zanon() {
                             <h1 class="likert-leap-header mt-2">Escala de Afetos de Zanon</h1>
                             <p class="lead ml-5 p-3"> Nesta página você encontrará uma lista com frases que descrevem sentimentos e emoções
                                 passadas e presentes. Sua tarefa é indicar o quanto cada uma delas tem ou não a ver com
-                                você em uma escala de 1 a 5, sendo a <span class="sublinhado negrito">1 (um) quando tiver NADA a ver com você e a 5
+                                você em uma escala de 1 a 5, sendo a <span class="negrito">1 (um) quando tiver NADA a ver com você e a 5
                                 (cinco) quando tiver TUDO a ver com você.</span> Não existe resposta certa ou errada. <span class="negrito"> Sua primeira reação ao ler a frase é a melhor.</span> Clique no botão abaixo para ver exemplos de preenchimento:
                             </p>
                             <div class="d-flex flex-column-reverse">
