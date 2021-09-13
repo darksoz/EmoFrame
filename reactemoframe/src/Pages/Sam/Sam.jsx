@@ -1,7 +1,34 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Sam.css';
 
 function Sam() {
+
+    let [firstQuestion, setFirstQuestion] = useState(null);
+    let [secondQuestion, setSecondQuestion] = useState(null);
+    let [thirdQuestion, setThirdQuestion] = useState(null);
+
+    const onFirstQuestionChange = (value) => {
+        setFirstQuestion(value)
+    };
+
+    const onSecondQuestionChange = (value) => {
+        setSecondQuestion(value)
+    };
+
+    const onThirdQuestionChange = (value) => {
+        setThirdQuestion(value)
+    };
+
+    const handleSubmit = async () => {
+         let json = JSON.stringify({
+             "satisfaction": `${firstQuestion}`,
+             "motivation": `${secondQuestion}`,
+             "control": `${thirdQuestion}`
+         });
+
+         console.log("Dados aqui ===> ", json);
+    }
+
     return (
         <>
             <div class="container">
@@ -169,166 +196,159 @@ function Sam() {
                                                 </li>
                                             </ul>
                                         </form>
-
-
                                     </div>
                                 </div>
-
-
-
-
                             </div>
-
-
-
                         </div>
-
-
                     </div>
-
-
                 </div>
+
+
                 <form>
                     <blockquote>
-                    <h3 class="mt-3 pt-2"> Satisfação</h3>
+                        <h3 class="mt-3 pt-2"> Satisfação</h3>
                     </blockquote>
 
                     <ul class="likert">
-                        
-                        <li>
-                            <input class="form-check-input" type="radio" name="likertsam1"
-                                id="inlineRadio2" value="9" />
-                            <img src={`${process.env.PUBLIC_URL}/Like.png`} width="80px" alt="" />
-                        </li>
-                        <li>
-                            <input class="form-check-input" type="radio" name="likertsam1"
-                                id="inlineRadio2" value="8" aria-label="..." />
-                        </li>
-                        <li>
-                            <input class="form-check-input" type="radio" name="likertsam1"
-                                id="inlineRadio2" value="7" />
-                            <img src={`${process.env.PUBLIC_URL}/Sorriso.png`} width="80px" alt="" />
-                        </li>
-                        <li>
-                            <input class="form-check-input" type="radio" name="likertsam1"
-                                id="inlineRadio2" value="6" aria-label="..." />
-                        </li>
-                        <li>
-                            <input class="form-check-input" type="radio" name="likertsam1"
-                                id="inlineRadio2" value="5" />
-                            <img src={`${process.env.PUBLIC_URL}/Neutro.png`} width="80px" alt="" />
-                        </li>
-                        <li>
-                            <input class="form-check-input" type="radio" name="likertsam1"
-                                id="inlineRadio2" value="4" aria-label="..." />
-                        </li>
-                        <li>
-                            <input class="form-check-input" type="radio" name="likertsam1"
-                                id="inlineRadio2" value="3" />
-                            <img src={`${process.env.PUBLIC_URL}/Triste.png`} width="80px" alt="" />
-                        </li>
-                        <li>
-                            <input class="form-check-input" type="radio" name="likertsam1"
-                                id="inlineRadio2" value="2" aria-label="..." />
-                        </li>
-                        <li>
-                            <input class="form-check-input" type="radio" name="likertsam1"
-                                id="inlineRadio2" value="1" />
-                            <img src={`${process.env.PUBLIC_URL}/Deslike.png`} width="80px" alt="" />
-                        </li>
+                        <div onChange={e => onFirstQuestionChange(e.target.value)}>
+                            <li>
+                                <input class="form-check-input" type="radio" name="likertsam1"
+                                    id="inlineRadio2" value="9" required />
+                                <img src={`${process.env.PUBLIC_URL}/Like.png`} width="80px" alt="" />
+                            </li>
+                            <li>
+                                <input class="form-check-input" type="radio" name="likertsam1"
+                                    id="inlineRadio2" value="8" aria-label="..." />
+                            </li>
+                            <li>
+                                <input class="form-check-input" type="radio" name="likertsam1"
+                                    id="inlineRadio2" value="7" />
+                                <img src={`${process.env.PUBLIC_URL}/Sorriso.png`} width="80px" alt="" />
+                            </li>
+                            <li>
+                                <input class="form-check-input" type="radio" name="likertsam1"
+                                    id="inlineRadio2" value="6" aria-label="..." />
+                            </li>
+                            <li>
+                                <input class="form-check-input" type="radio" name="likertsam1"
+                                    id="inlineRadio2" value="5" />
+                                <img src={`${process.env.PUBLIC_URL}/Neutro.png`} width="80px" alt="" />
+                            </li>
+                            <li>
+                                <input class="form-check-input" type="radio" name="likertsam1"
+                                    id="inlineRadio2" value="4" aria-label="..." />
+                            </li>
+                            <li>
+                                <input class="form-check-input" type="radio" name="likertsam1"
+                                    id="inlineRadio2" value="3" />
+                                <img src={`${process.env.PUBLIC_URL}/Triste.png`} width="80px" alt="" />
+                            </li>
+                            <li>
+                                <input class="form-check-input" type="radio" name="likertsam1"
+                                    id="inlineRadio2" value="2" aria-label="..." />
+                            </li>
+                            <li>
+                                <input class="form-check-input" type="radio" name="likertsam1"
+                                    id="inlineRadio2" value="1" />
+                                <img src={`${process.env.PUBLIC_URL}/Deslike.png`} width="80px" alt="" />
+                            </li>
+                        </div>
 
                     </ul>
 
                     <blockquote>
-                    <h3> Motivação</h3>
+                        <h3> Motivação</h3>
                     </blockquote>
 
                     <ul class="likert">
-
-                        <li>
-                            <input class="form-check-input" type="radio" name="likertsam2" value="9" />
-                            <img src={`${process.env.PUBLIC_URL}/Criativo.png`} width="80px" alt="" />
-                        </li>
-                        <li>
-                            <input class="form-check-input" type="radio" name="likertsam2" value="8"
-                                aria-label="..." />
-                        </li>
-                        <li>
-                            <input class="form-check-input" type="radio" name="likertsam2" value="7" />
-                            <img src={`${process.env.PUBLIC_URL}/Radiante.png`} width="80px" alt="" />
-                        </li>
-                        <li>
-                            <input class="form-check-input" type="radio" name="likertsam2" value="6"
-                                aria-label="..." />
-                        </li>
-                        <li>
-                            <input class="form-check-input" type="radio" name="likertsam2" value="5" />
-                            <img src={`${process.env.PUBLIC_URL}/Neutro.png`} width="80px" alt="" />
-                        </li>
-                        <li>
-                            <input class="form-check-input" type="radio" name="likertsam2" value="4"
-                                aria-label="..." />
-                        </li>
-                        <li>
-                            <input class="form-check-input" type="radio" name="likertsam2" value="3" />
-                            <img src={`${process.env.PUBLIC_URL}/Entediado.png`} width="80px" alt="" />
-                        </li>
-                        <li>
-                            <input class="form-check-input" type="radio" name="likertsam2" value="2"
-                                aria-label="..." />
-                        </li>
-                        <li>
-                            <input class="form-check-input" type="radio" name="likertsam2" value="1" />
-                            <img src={`${process.env.PUBLIC_URL}/Sono.png`} width="80px" alt="" />
-                        </li>
+                        <div onChange={e => onSecondQuestionChange(e.target.value)}>
+                            <li>
+                                <input class="form-check-input" type="radio" name="likertsam2" value="9" required />
+                                <img src={`${process.env.PUBLIC_URL}/Criativo.png`} width="80px" alt="" />
+                            </li>
+                            <li>
+                                <input class="form-check-input" type="radio" name="likertsam2" value="8"
+                                    aria-label="..." />
+                            </li>
+                            <li>
+                                <input class="form-check-input" type="radio" name="likertsam2" value="7" />
+                                <img src={`${process.env.PUBLIC_URL}/Radiante.png`} width="80px" alt="" />
+                            </li>
+                            <li>
+                                <input class="form-check-input" type="radio" name="likertsam2" value="6"
+                                    aria-label="..." />
+                            </li>
+                            <li>
+                                <input class="form-check-input" type="radio" name="likertsam2" value="5" />
+                                <img src={`${process.env.PUBLIC_URL}/Neutro.png`} width="80px" alt="" />
+                            </li>
+                            <li>
+                                <input class="form-check-input" type="radio" name="likertsam2" value="4"
+                                    aria-label="..." />
+                            </li>
+                            <li>
+                                <input class="form-check-input" type="radio" name="likertsam2" value="3" />
+                                <img src={`${process.env.PUBLIC_URL}/Entediado.png`} width="80px" alt="" />
+                            </li>
+                            <li>
+                                <input class="form-check-input" type="radio" name="likertsam2" value="2"
+                                    aria-label="..." />
+                            </li>
+                            <li>
+                                <input class="form-check-input" type="radio" name="likertsam2" value="1" />
+                                <img src={`${process.env.PUBLIC_URL}/Sono.png`} width="80px" alt="" />
+                            </li>
+                        </div>
                     </ul>
 
                     <blockquote>
-                    <h3 > Sentimento de Controle</h3>
+                        <h3 > Sentimento de Controle</h3>
                     </blockquote>
 
                     <ul class='likert'>
-                        <li>
-                            <input class="form-check-input" type="radio" name="likertsam3" value="1" />
-                            <img src={`${process.env.PUBLIC_URL}/Frustrado.png`} width="80px" alt="" />
-                        </li>
-                        <li>
-                            <input class="form-check-input" type="radio" name="likertsam3" value="2"
-                                aria-label="..." />
-                        </li>
-                        <li>
-                            <input class="form-check-input" type="radio" name="likertsam3" value="3" />
-                            <img src={`${process.env.PUBLIC_URL}/Confuso.png`} width="80px" alt="" />
-                        </li>
-                        <li>
-                            <input class="form-check-input" type="radio" name="likertsam3" value="4"
-                                aria-label="..." />
-                        </li>
-                        <li>
-                            <input class="form-check-input" type="radio" name="likertsam3" value="5" />
-                            <img src={`${process.env.PUBLIC_URL}/Neutro.png`} width="80px" alt="" />
-                        </li>
-                        <li>
-                            <input class="form-check-input" type="radio" name="likertsam3" value="6"
-                                aria-label="..." />
-                        </li>
-                        <li>
-                            <input class="form-check-input" type="radio" name="likertsam3" value="7" />
-                            <img src={`${process.env.PUBLIC_URL}/Sorriso.png`} width="80px" alt="" />
-                        </li>
-                        <li>
-                            <input class="form-check-input" type="radio" name="likertsam3" value="8"
-                                aria-label="..." />
-                        </li>
-                        <li>
-                            <input class="form-check-input" type="radio" name="likertsam3" value="9" />
-                            <img src={`${process.env.PUBLIC_URL}/Inteligente.png`} width="80px" alt="" />
-                        </li>
+                        <div onChange={e => onThirdQuestionChange(e.target.value)}>
+                            <li>
+                                <input class="form-check-input" type="radio" name="likertsam3" value="1" required />
+                                <img src={`${process.env.PUBLIC_URL}/Frustrado.png`} width="80px" alt="" />
+                            </li>
+                            <li>
+                                <input class="form-check-input" type="radio" name="likertsam3" value="2"
+                                    aria-label="..." />
+                            </li>
+                            <li>
+                                <input class="form-check-input" type="radio" name="likertsam3" value="3" />
+                                <img src={`${process.env.PUBLIC_URL}/Confuso.png`} width="80px" alt="" />
+                            </li>
+                            <li>
+                                <input class="form-check-input" type="radio" name="likertsam3" value="4"
+                                    aria-label="..." />
+                            </li>
+                            <li>
+                                <input class="form-check-input" type="radio" name="likertsam3" value="5" />
+                                <img src={`${process.env.PUBLIC_URL}/Neutro.png`} width="80px" alt="" />
+                            </li>
+                            <li>
+                                <input class="form-check-input" type="radio" name="likertsam3" value="6"
+                                    aria-label="..." />
+                            </li>
+                            <li>
+                                <input class="form-check-input" type="radio" name="likertsam3" value="7" />
+                                <img src={`${process.env.PUBLIC_URL}/Sorriso.png`} width="80px" alt="" />
+                            </li>
+                            <li>
+                                <input class="form-check-input" type="radio" name="likertsam3" value="8"
+                                    aria-label="..." />
+                            </li>
+                            <li>
+                                <input class="form-check-input" type="radio" name="likertsam3" value="9" />
+                                <img src={`${process.env.PUBLIC_URL}/Inteligente.png`} width="80px" alt="" />
+                            </li>
+                        </div>
                     </ul>
 
-                    <button class="btn btn-lg whitebutton">Salvar</button>
+                    <button class="btn btn-lg whitebutton" onSubmit={async ()=>await handleSubmit()}>Salvar</button>
                 </form>
-                
+
             </div>
         </>
     )
