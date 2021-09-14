@@ -204,11 +204,11 @@ function Sam() {
                 </div>
 
 
-                <form>
+                <div>
                     <blockquote>
                         <h3 class="mt-3 pt-2"> Satisfação</h3>
                     </blockquote>
-
+                <div class="form">
                     <ul class="likert">
                         <div onChange={e => onFirstQuestionChange(e.target.value)}>
                             <li>
@@ -255,11 +255,11 @@ function Sam() {
                         </div>
 
                     </ul>
-
+                    </div>
                     <blockquote>
                         <h3> Motivação</h3>
                     </blockquote>
-
+                    <div class="form">
                     <ul class="likert">
                         <div onChange={e => onSecondQuestionChange(e.target.value)}>
                             <li>
@@ -300,11 +300,11 @@ function Sam() {
                             </li>
                         </div>
                     </ul>
-
+                    </div>
                     <blockquote>
                         <h3 > Sentimento de Controle</h3>
                     </blockquote>
-
+                    <div class="form">
                     <ul class='likert'>
                         <div onChange={e => onThirdQuestionChange(e.target.value)}>
                             <li>
@@ -345,9 +345,9 @@ function Sam() {
                             </li>
                         </div>
                     </ul>
-
-                    <button class="btn btn-lg whitebutton" onSubmit={async ()=>await handleSubmit()}>Salvar</button>
-                </form>
+                    </div>
+                    <button class="btn btn-lg whitebutton" onClick={async ()=>await handleSubmit()}>Salvar</button>
+                </div>
 
             </div>
         </>
