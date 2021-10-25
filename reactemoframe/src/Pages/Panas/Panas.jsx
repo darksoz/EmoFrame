@@ -7,7 +7,7 @@ function Panas() {
                 <div class="row">
                     <div class="col md-2">
                         <div class="wrap">
-                            <h1 class="likert-leap-header mt-2">PANAS</h1>
+                            <h1 class="likert-panas-header mt-2">PANAS</h1>
                             <p class="lead ml-5 p-3">
                                 Esta escala consiste num conjunto de palavras que descrevem diferentes sentimentos e emoções. Leia cada palavra e marque a resposta adequada a palavra. Veja a escala e exemplos de preenchimento abaixo:
                             </p>
@@ -38,8 +38,8 @@ function Panas() {
 
                 <div>
                     <form>
-                    <label class="statement-leap text-start">Estou me sentindo INTERESSADO.</label>
-                                    <ul class="likert-leap">
+                    <label class="statement-panas text-start">Estou me sentindo INTERESSADO.</label>
+                                    <ul class="likert-panas">
                                         <li>
                                             <input class="form-check-input" type="radio" name="likert-panas1" value="1" />
                                              <p>1 <br></br>(Nada ou muito ligeiramente)</p>
@@ -60,13 +60,17 @@ function Panas() {
                                             <input class="form-check-input" type="radio" name="likert-panas1" value="5" />
                                              <p>5 <br></br>(Extremamente)</p>
                                         </li>
+                                        <li>
+                                            <input class="form-check-input" type="radio" name="likert-panas1" value="99" />
+                                             <p>Não quero<br></br>responder</p>
+                                        </li>
 
                                     </ul>
 
                                   
 
-                                    <label class="statement-leap text-start">Estou me sentindo PERTURBADO.</label>
-                                    <ul class="likert-leap">
+                                    <label class="statement-panas text-start">Estou me sentindo PERTURBADO.</label>
+                                    <ul class="likert-panas">
                                         <li>
                                             <input class="form-check-input" type="radio" name="likert-panas2" value="1" />
                                              <p>1 <br></br>(Nada ou muito ligeiramente)</p>
@@ -87,11 +91,15 @@ function Panas() {
                                             <input class="form-check-input" type="radio" name="likert-panas2" value="5" />
                                              <p>5 <br></br>(Extremamente)</p>
                                         </li>
+                                        <li>
+                                            <input class="form-check-input" type="radio" name="likert-panas2" value="99" />
+                                             <p>Não quero<br></br>responder</p>
+                                        </li>
 
                                     </ul>
 
-                                    <label class="statement-leap text-start">Estou me sentindo EXCITADO.</label>
-                                    <ul class="likert-leap">
+                                    <label class="statement-panas text-start">Estou me sentindo EXCITADO.</label>
+                                    <ul class="likert-panas">
                                         <li>
                                             <input class="form-check-input" type="radio" name="likert-panas3" value="1" />
                                              <p>1 <br></br>(Nada ou muito ligeiramente)</p>
@@ -112,11 +120,15 @@ function Panas() {
                                             <input class="form-check-input" type="radio" name="likert-panas3" value="5" />
                                              <p>5 <br></br>(Extremamente)</p>
                                         </li>
+                                        <li>
+                                            <input class="form-check-input" type="radio" name="likert-panas3" value="99" />
+                                             <p>Não quero<br></br>responder</p>
+                                        </li>
 
                                     </ul>
 
-                                    <label class="statement-leap text-start">Estou me sentindo ATORMENTADO.</label>
-                                    <ul class="likert-leap">
+                                    <label class="statement-panas text-start">Estou me sentindo ATORMENTADO.</label>
+                                    <ul class="likert-panas">
                                         <li>
                                             <input class="form-check-input" type="radio" name="likert-panas4" value="1" />
                                              <p>1 <br></br>(Nada ou muito ligeiramente)</p>
@@ -137,11 +149,15 @@ function Panas() {
                                             <input class="form-check-input" type="radio" name="likert-panas4" value="5" />
                                              <p>5 <br></br>(Extremamente)</p>
                                         </li>
+                                        <li>
+                                            <input class="form-check-input" type="radio" name="likert-panas4" value="99" />
+                                             <p>Não quero<br></br>responder</p>
+                                        </li>
 
                                     </ul>
 
-                                    <label class="statement-leap text-start">Estou me sentindo AGRADAVELMENTE.</label>
-                                    <ul class="likert-leap">
+                                    <label class="statement-panas text-start">Estou me sentindo AGRADAVELMENTE.</label>
+                                    <ul class="likert-panas">
                                         <li>
                                             <input class="form-check-input" type="radio" name="likert-panas5" value="1" />
                                              <p>1 <br></br>(Nada ou muito ligeiramente)</p>
@@ -162,11 +178,15 @@ function Panas() {
                                             <input class="form-check-input" type="radio" name="likert-panas5" value="5" />
                                              <p>5 <br></br>(Extremamente)</p>
                                         </li>
+                                        <li>
+                                            <input class="form-check-input" type="radio" name="likert-panas5" value="99" />
+                                             <p>Não quero<br></br>responder</p>
+                                        </li>
 
                                     </ul>
 
-                                    <label class="statement-leap text-start">Estou me sentindo CULPADO.</label>
-                                    <ul class="likert-leap">
+                                    <label class="statement-panas text-start">Estou me sentindo CULPADO.</label>
+                                    <ul class="likert-panas">
                                         <li>
                                             <input class="form-check-input" type="radio" name="likert-panas6" value="1" />
                                              <p>1 <br></br>(Nada ou muito ligeiramente)</p>
@@ -187,11 +207,15 @@ function Panas() {
                                             <input class="form-check-input" type="radio" name="likert-panas6" value="5" />
                                              <p>5 <br></br>(Extremamente)</p>
                                         </li>
+                                        <li>
+                                            <input class="form-check-input" type="radio" name="likert-panas6" value="99" />
+                                             <p>Não quero<br></br>responder</p>
+                                        </li>
 
                                     </ul>
 
-                                    <label class="statement-leap text-start">Estou me sentindo ASSUSTADO.</label>
-                                    <ul class="likert-leap">
+                                    <label class="statement-panas text-start">Estou me sentindo ASSUSTADO.</label>
+                                    <ul class="likert-panas">
                                         <li>
                                             <input class="form-check-input" type="radio" name="likert-panas7" value="1" />
                                              <p>1 <br></br>(Nada ou muito ligeiramente)</p>
@@ -211,6 +235,10 @@ function Panas() {
                                         <li>
                                             <input class="form-check-input" type="radio" name="likert-panas7" value="5" />
                                              <p>5 <br></br>(Extremamente)</p>
+                                        </li>
+                                        <li>
+                                            <input class="form-check-input" type="radio" name="likert-panas7" value="99" />
+                                             <p>Não quero<br></br>responder</p>
                                         </li>
 
                                     </ul>
