@@ -22,6 +22,101 @@ function Panas() {
                                     <div class="card card-body">
                                         <form>
 
+                                        <label class="statement-leap text-start">Exemplo 1. Estou me sentindo CONFIANTE.</label>
+                                            <ul class="likert-panas">
+                                                <li>
+                                                    <input class="form-check-input" type="radio" name="likert-leapex1" value="1" checked />
+                                                    <p>1 <br></br>(Nada ou muito ligeiramente)</p>
+                                                </li>
+                                                <li>
+                                                    <input class="form-check-input" type="radio" name="likert-leapex1" value="2" />
+                                                   <p>2 <br></br>(Um pouco)</p>
+                                                </li>
+                                                <li>
+                                                    <input class="form-check-input" type="radio" name="likert-leapex1" value="3" />
+                                                    <p>3<br></br>(Moderadamente)</p>
+                                                </li>
+                                                <li>
+                                                    <input class="form-check-input" type="radio" name="likert-leapex1" value="4" />
+                                                    <p>4 <br></br>(Bastante)</p>
+                                                </li>
+                                                <li>
+                                                    <input class="form-check-input" type="radio" name="likert-leapex1" value="5" />
+                                                    <p>5 <br></br>(Extremamente)</p>
+                                                </li>
+
+                                                <li>
+                                                    <input class="form-check-input" type="radio" name="likert-leapex1" value="99" />
+                                                    <p>Não quero responder</p>
+                                                </li>
+
+                                                <blockquote class="lead">Nesse caso, a pessoa considerou que a intensidade de confiança que sentiu durante o preenchimento da lista foi muito fraca, pois marcou a opção <strong>"Nada ou muito ligeiramente"</strong> em relaçao a frase "Estou me sentindo CONFIANTE."</blockquote>
+                                            </ul>
+
+
+                                            <label class="statement-leap text-start">Exemplo 2. Estou me sentindo CONFIANTE.</label>
+                                            <ul class="likert-panas">
+                                                <li>
+                                                    <input class="form-check-input" type="radio" name="likert-leapex2" value="1" />
+                                                    <p>1 <br></br>(Nada ou muito ligeiramente)</p>
+                                                </li>
+                                                <li>
+                                                    <input class="form-check-input" type="radio" name="likert-leapex2" value="2" />
+                                                   <p>2 <br></br>(Um pouco)</p>
+                                                </li>
+                                                <li>
+                                                    <input class="form-check-input" type="radio" name="likert-leapex2" value="3" checked />
+                                                    <p>3<br></br>(Moderadamente)</p>
+                                                </li>
+                                                <li>
+                                                    <input class="form-check-input" type="radio" name="likert-leapex2" value="4" />
+                                                    <p>4 <br></br>(Bastante)</p>
+                                                </li>
+                                                <li>
+                                                    <input class="form-check-input" type="radio" name="likert-leapex2" value="5" />
+                                                    <p>5 <br></br>(Extremamente)</p>
+                                                </li>
+                                                <li>
+                                                    <input class="form-check-input" type="radio" name="likert-leapex2" value="99" />
+                                                    <p>Não quero responder</p>
+                                                </li>
+
+                                                <blockquote class="lead">Neste segundo exemplo, a pessoa apresentou uma resposta neutra <strong>"Moderadamente"</strong> sobre a intensidade de confiança que sentiu dutante o período estipulado, pois selecionou uma opção igualmente distante de “Nada ou muito ligeiramente” ou “Extremamente”.</blockquote>
+
+                                            </ul>
+
+
+
+                                            <label class="statement-leap text-start">Exemplo 3. Estou me sentindo CONFIANTE.</label>
+                                            <ul class="likert-panas">
+                                                <li>
+                                                    <input class="form-check-input" type="radio" name="likert-leapex3" value="1" />
+                                                    <p>1 <br></br>(Nada ou muito ligeiramente)</p>
+                                                </li>
+                                                <li>
+                                                    <input class="form-check-input" type="radio" name="likert-leapex3" value="2" />
+                                                   <p>2 <br></br>(Um pouco)</p>
+                                                </li>
+                                                <li>
+                                                    <input class="form-check-input" type="radio" name="likert-leapex3" value="3" />
+                                                    <p>3<br></br>(Moderadamente)</p>
+                                                </li>
+                                                <li>
+                                                    <input class="form-check-input" type="radio" name="likert-leapex3" value="4" />
+                                                    <p>4 <br></br>(Bastante)</p>
+                                                </li>
+                                                <li>
+                                                    <input class="form-check-input" type="radio" name="likert-leapex3" value="5" checked />
+                                                    <p>5 <br></br>(Extremamente)</p>
+                                                </li>
+                                                <li>
+                                                    <input class="form-check-input" type="radio" name="likert-leapex3" value="99" />
+                                                    <p>Não quero responder</p>
+                                                </li>
+
+                                                <blockquote class="lead">Já nesse caso, a pessoa considerou que a intensidade de confiança que sentiu durante o preenchimento da lista foi muito forte, uma vez que marcou a opção <strong>"Extremamente"</strong> em relação ao item "Estou me sentindo CONFIANTE."</blockquote>
+                                            </ul>
+
                                         </form>
                                     </div>
                                 </div>
