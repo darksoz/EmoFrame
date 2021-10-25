@@ -46,8 +46,8 @@ function Sam() {
                                 </button>
 
                                 <div class="collapse" id="collapseExample">
-                                    <div class="card card-body">
-                                        <form>
+                                    <div class="card card-body form">
+                                        
                                             <blockquote>
                                                 <h3> Satisfação:</h3>
 
@@ -103,7 +103,7 @@ function Sam() {
                                                 <blockquote class="lead">Nesse caso, na escala de satisfação a pessoa avaliou a emoção sentida como positiva.</blockquote>
 
                                             </ul>
-                                        </form>
+                                        
                                         <form>
                                             <blockquote>
                                                 <h3> Motivação:</h3>
