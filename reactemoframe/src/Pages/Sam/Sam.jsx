@@ -33,7 +33,7 @@ function Sam() {
                                             <ul class='likert'>
                                                 <li>
                                                     <input class="form-check-input" type="radio" name="likertex1"
-                                                        id="inlineRadio2" value="zero" />
+                                                        id="inlineRadio2" value="zero" checked/>
                                                     <img src={`${process.env.PUBLIC_URL}/Like.png`} width="80px" alt="" />
                                                 </li>
                                                 <li>
@@ -72,6 +72,9 @@ function Sam() {
                                                         id="inlineRadio2" value="eight" />
                                                     <img src={`${process.env.PUBLIC_URL}/Deslike.png`} width="80px" alt="" />
                                                 </li>
+
+                                                <blockquote class="lead">Nesse caso, na escala de satisfação a pessoa avaliou a emoção sentida como positiva.</blockquote>
+
                                             </ul>
                                         </form>
                                         <form>
@@ -100,8 +103,8 @@ function Sam() {
                                                         aria-label="..." />
                                                 </li>
                                                 <li>
-                                                    <input class="form-check-input" type="radio" name="likertsex2" value="five" />
-                                                    <img src={`${process.env.PUBLIC_URL}/Neutro.png`} width="80px" alt="" />
+                                                    <input class="form-check-input" type="radio" name="likertsex2" value="five" checked/>
+                                                    <img src={`${process.env.PUBLIC_URL}/Neutro.png`} width="80px" alt=""/>
                                                 </li>
                                                 <li>
                                                     <input class="form-check-input" type="radio" name="likertex2" value="six"
@@ -119,6 +122,7 @@ function Sam() {
                                                     <input class="form-check-input" type="radio" name="likertex2" value="nine" />
                                                     <img src={`${process.env.PUBLIC_URL}/Sono.png`} width="80px" alt="" />
                                                 </li>
+                                                <blockquote class="lead">Nesse caso, na escala de motivação a pessoa avaliou a emoção sentida como "Neutra", ou seja, nem motivado e nem desmotivado.</blockquote>
                                             </ul>
                                         </form>
 
@@ -164,9 +168,11 @@ function Sam() {
                                                         aria-label="..." />
                                                 </li>
                                                 <li>
-                                                    <input class="form-check-input" type="radio" name="likertex3" value="nine" />
+                                                    <input class="form-check-input" type="radio" name="likertex3" value="nine" checked/>
                                                     <img src={`${process.env.PUBLIC_URL}/Inteligente.png`} width="80px" alt="" />
                                                 </li>
+
+                                                <blockquote class="lead">Nesse caso, na escala de sentimento de controle a pessoa avaliou a emoção sentida como "totalmente no controle".</blockquote>
                                             </ul>
                                         </form>
 
