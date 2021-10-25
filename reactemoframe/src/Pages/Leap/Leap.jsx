@@ -116,7 +116,7 @@ function Leap() {
                             </div>
 
                             <hr></hr>
-                            <blockquote class="lead ml-5 p-3">  Marque o quanto você sente <span class="negrito sublinhado">NESTE MOMENTO</span> de cada um destes sentimentos,
+                            <blockquote class="lead ml-5 p-3">  Marque o quanto você sente <span class="negrito">NESTE MOMENTO</span> de cada um destes sentimentos,
                                 sendo 1 (um) uma intensidade muito fraca e 5 (cinco) uma intensidade muito forte. </blockquote>
                             <div>
                                 <MultiStepForm activeStep={active} >
@@ -144,6 +144,10 @@ function Leap() {
                                                     <input class="form-check-input" type="radio" name="likert-leap1" value="5" />
                                                     <p>5 <br></br>(Muito Forte)</p>
                                                 </li>
+                                                <li>
+                                                    <input class="form-check-input" type="radio" name="likert-leap1" value="99" />
+                                                    <p>Não quero <br/> responder</p>
+                                                </li>
 
                                             </ul>
 
@@ -168,6 +172,10 @@ function Leap() {
                                                 <li>
                                                     <input class="form-check-input" type="radio" name="likert-leap2" value="5" />
                                                     <p>5 <br></br>(Muito Forte)</p>
+                                                </li>
+                                                <li>
+                                                    <input class="form-check-input" type="radio" name="likert-leap2" value="99" />
+                                                    <p>Não quero <br/> responder</p>
                                                 </li>
 
                                             </ul>
@@ -194,6 +202,10 @@ function Leap() {
                                                     <input class="form-check-input" type="radio" name="likert-leap3" value="5" />
                                                     <p>5 <br></br>(Muito Forte)</p>
                                                 </li>
+                                                <li>
+                                                    <input class="form-check-input" type="radio" name="likert-leap3" value="99" />
+                                                    <p>Não quero <br/> responder</p>
+                                                </li>
 
                                             </ul>
 
@@ -218,6 +230,10 @@ function Leap() {
                                                 <li>
                                                     <input class="form-check-input" type="radio" name="likert-leap4" value="5" />
                                                     <p>5 <br></br>(Muito Forte)</p>
+                                                </li>
+                                                <li>
+                                                    <input class="form-check-input" type="radio" name="likert-leap4" value="99" />
+                                                    <p>Não quero <br/> responder</p>
                                                 </li>
 
                                             </ul>
@@ -244,6 +260,10 @@ function Leap() {
                                                     <input class="form-check-input" type="radio" name="likert-leap5" value="5" />
                                                     <p>5 <br></br>(Muito Forte)</p>
                                                 </li>
+                                                <li>
+                                                    <input class="form-check-input" type="radio" name="likert-leap5" value="99" />
+                                                    <p>Não quero <br/> responder</p>
+                                                </li>
 
                                             </ul>
 
@@ -268,6 +288,10 @@ function Leap() {
                                                 <li>
                                                     <input class="form-check-input" type="radio" name="likert-leap6" value="5" />
                                                     <p>5 <br></br>(Muito Forte)</p>
+                                                </li>
+                                                <li>
+                                                    <input class="form-check-input" type="radio" name="likert-leap6" value="99" />
+                                                    <p>Não quero <br/> responder</p>
                                                 </li>
 
                                             </ul>
@@ -294,6 +318,10 @@ function Leap() {
                                                     <input class="form-check-input" type="radio" name="likert-leap7" value="5" />
                                                     <p>5 <br></br>(Muito Forte)</p>
                                                 </li>
+                                                <li>
+                                                    <input class="form-check-input" type="radio" name="likert-leap7" value="99" />
+                                                    <p>Não quero <br/> responder</p>
+                                                </li>
 
                                             </ul>
 
@@ -318,6 +346,10 @@ function Leap() {
                                                 <li>
                                                     <input class="form-check-input" type="radio" name="likert-leap8" value="5" />
                                                     <p>5 <br></br>(Muito Forte)</p>
+                                                </li>
+                                                <li>
+                                                    <input class="form-check-input" type="radio" name="likert-leap8" value="99" />
+                                                    <p>Não quero <br/> responder</p>
                                                 </li>
 
                                             </ul>
@@ -344,6 +376,10 @@ function Leap() {
                                                     <input class="form-check-input" type="radio" name="likert-leap9" value="5" />
                                                     <p>5 <br></br>(Muito Forte)</p>
                                                 </li>
+                                                <li>
+                                                    <input class="form-check-input" type="radio" name="likert-leap9" value="99" />
+                                                    <p>Não quero <br/> responder</p>
+                                                </li>
 
                                             </ul>
 
@@ -368,6 +404,10 @@ function Leap() {
                                                 <li>
                                                     <input class="form-check-input" type="radio" name="likert-leap10" value="5" />
                                                     <p>5 <br></br>(Muito Forte)</p>
+                                                </li>
+                                                <li>
+                                                    <input class="form-check-input" type="radio" name="likert-leap10" value="99" />
+                                                    <p>Não quero <br/> responder</p>
                                                 </li>
 
                                             </ul>
@@ -397,6 +437,10 @@ function Leap() {
                                                     <input class="form-check-input" type="radio" name="likert-leap11" value="5" />
                                                     <p>5 <br></br>(Muito Forte)</p>
                                                 </li>
+                                                <li>
+                                                    <input class="form-check-input" type="radio" name="likert-leap11" value="99" />
+                                                    <p>Não quero <br/> responder</p>
+                                                </li>
 
                                             </ul>
 
@@ -421,6 +465,10 @@ function Leap() {
                                                 <li>
                                                     <input class="form-check-input" type="radio" name="likert-leap12" value="5" />
                                                     <p>5 <br></br>(Muito Forte)</p>
+                                                </li>
+                                                <li>
+                                                    <input class="form-check-input" type="radio" name="likert-leap12" value="99" />
+                                                    <p>Não quero <br/> responder</p>
                                                 </li>
 
                                             </ul>
@@ -448,6 +496,11 @@ function Leap() {
                                                     <p>5 <br></br>(Muito Forte)</p>
                                                 </li>
 
+                                                <li>
+                                                    <input class="form-check-input" type="radio" name="likert-leap13" value="99" />
+                                                    <p>Não quero <br/> responder</p>
+                                                </li>
+
                                             </ul>
 
                                             <label class="statement-leap text-start">Sinto um desejo.</label>
@@ -471,6 +524,10 @@ function Leap() {
                                                 <li>
                                                     <input class="form-check-input" type="radio" name="likert-leap14" value="5" />
                                                     <p>5 <br></br>(Muito Forte)</p>
+                                                </li>
+                                                <li>
+                                                    <input class="form-check-input" type="radio" name="likert-leap14" value="99" />
+                                                    <p>Não quero <br/> responder</p>
                                                 </li>
 
                                             </ul>
@@ -497,6 +554,10 @@ function Leap() {
                                                     <input class="form-check-input" type="radio" name="likert-leap15" value="5" />
                                                     <p>5 <br></br>(Muito Forte)</p>
                                                 </li>
+                                                <li>
+                                                    <input class="form-check-input" type="radio" name="likert-leap15" value="99" />
+                                                    <p>Não quero <br/> responder</p>
+                                                </li>
 
                                             </ul>
 
@@ -521,6 +582,10 @@ function Leap() {
                                                 <li>
                                                     <input class="form-check-input" type="radio" name="likert-leap16" value="5" />
                                                     <p>5 <br></br>(Muito Forte)</p>
+                                                </li>
+                                                <li>
+                                                    <input class="form-check-input" type="radio" name="likert-leap16" value="99" />
+                                                    <p>Não quero <br/> responder</p>
                                                 </li>
 
                                             </ul>
@@ -547,6 +612,10 @@ function Leap() {
                                                     <input class="form-check-input" type="radio" name="likert-leap17" value="5" />
                                                     <p>5 <br></br>(Muito Forte)</p>
                                                 </li>
+                                                <li>
+                                                    <input class="form-check-input" type="radio" name="likert-leap17" value="99" />
+                                                    <p>Não quero <br/> responder</p>
+                                                </li>
 
                                             </ul>
 
@@ -571,6 +640,10 @@ function Leap() {
                                                 <li>
                                                     <input class="form-check-input" type="radio" name="likert-leap18" value="5" />
                                                     <p>5 <br></br>(Muito Forte)</p>
+                                                </li>
+                                                <li>
+                                                    <input class="form-check-input" type="radio" name="likert-leap18" value="99" />
+                                                    <p>Não quero <br/> responder</p>
                                                 </li>
 
                                             </ul>
@@ -597,6 +670,10 @@ function Leap() {
                                                     <input class="form-check-input" type="radio" name="likert-leap19" value="5" />
                                                     <p>5 <br></br>(Muito Forte)</p>
                                                 </li>
+                                                <li>
+                                                    <input class="form-check-input" type="radio" name="likert-leap19" value="99" />
+                                                    <p>Não quero <br/> responder</p>
+                                                </li>
 
                                             </ul>
 
@@ -621,6 +698,11 @@ function Leap() {
                                                 <li>
                                                     <input class="form-check-input" type="radio" name="likert-leap20" value="5" />
                                                     <p>5 <br></br>(Muito Forte)</p>
+                                                </li>
+
+                                                <li>
+                                                    <input class="form-check-input" type="radio" name="likert-leap20" value="99" />
+                                                    <p>Não quero <br/> responder</p>
                                                 </li>
 
                                             </ul>
@@ -650,6 +732,10 @@ function Leap() {
                                                     <input class="form-check-input" type="radio" name="likert-leap21" value="5" />
                                                     <p>5 <br></br>(Muito Forte)</p>
                                                 </li>
+                                                <li>
+                                                    <input class="form-check-input" type="radio" name="likert-leap21" value="99" />
+                                                    <p>Não quero <br/> responder</p>
+                                                </li>
 
                                             </ul>
 
@@ -674,6 +760,10 @@ function Leap() {
                                                 <li>
                                                     <input class="form-check-input" type="radio" name="likert-leap22" value="5" />
                                                     <p>5 <br></br>(Muito Forte)</p>
+                                                </li>
+                                                <li>
+                                                    <input class="form-check-input" type="radio" name="likert-leap22" value="99" />
+                                                    <p>Não quero <br/> responder</p>
                                                 </li>
 
                                             </ul>
@@ -700,6 +790,10 @@ function Leap() {
                                                     <input class="form-check-input" type="radio" name="likert-leap23" value="5" />
                                                     <p>5 <br></br>(Muito Forte)</p>
                                                 </li>
+                                                <li>
+                                                    <input class="form-check-input" type="radio" name="likert-leap23" value="99" />
+                                                    <p>Não quero <br/> responder</p>
+                                                </li>
 
                                             </ul>
 
@@ -724,6 +818,10 @@ function Leap() {
                                                 <li>
                                                     <input class="form-check-input" type="radio" name="likert-leap24" value="5" />
                                                     <p>5 <br></br>(Muito Forte)</p>
+                                                </li>
+                                                <li>
+                                                    <input class="form-check-input" type="radio" name="likert-leap25" value="99" />
+                                                    <p>Não quero <br/> responder</p>
                                                 </li>
 
                                             </ul>
@@ -750,6 +848,10 @@ function Leap() {
                                                     <input class="form-check-input" type="radio" name="likert-leap25" value="5" />
                                                     <p>5 <br></br>(Muito Forte)</p>
                                                 </li>
+                                                <li>
+                                                    <input class="form-check-input" type="radio" name="likert-leap25" value="99" />
+                                                    <p>Não quero <br/> responder</p>
+                                                </li>
 
                                             </ul>
 
@@ -774,6 +876,10 @@ function Leap() {
                                                 <li>
                                                     <input class="form-check-input" type="radio" name="likert-leap26" value="5" />
                                                     <p>5 <br></br>(Muito Forte)</p>
+                                                </li>
+                                                <li>
+                                                    <input class="form-check-input" type="radio" name="likert-leap26" value="99" />
+                                                    <p>Não quero <br/> responder</p>
                                                 </li>
 
                                             </ul>
@@ -800,6 +906,10 @@ function Leap() {
                                                     <input class="form-check-input" type="radio" name="likert-leap27" value="5" />
                                                     <p>5 <br></br>(Muito Forte)</p>
                                                 </li>
+                                                <li>
+                                                    <input class="form-check-input" type="radio" name="likert-leap27" value="99" />
+                                                    <p>Não quero <br/> responder</p>
+                                                </li>
 
                                             </ul>
 
@@ -824,6 +934,10 @@ function Leap() {
                                                 <li>
                                                     <input class="form-check-input" type="radio" name="likert-leap28" value="5" />
                                                     <p>5 <br></br>(Muito Forte)</p>
+                                                </li>
+                                                <li>
+                                                    <input class="form-check-input" type="radio" name="likert-leap28" value="99" />
+                                                    <p>Não quero <br/> responder</p>
                                                 </li>
 
                                             </ul>
@@ -850,6 +964,10 @@ function Leap() {
                                                     <input class="form-check-input" type="radio" name="likert-leap29" value="5" />
                                                     <p>5 <br></br>(Muito Forte)</p>
                                                 </li>
+                                                <li>
+                                                    <input class="form-check-input" type="radio" name="likert-leap29" value="99" />
+                                                    <p>Não quero <br/> responder</p>
+                                                </li>
 
                                             </ul>
 
@@ -874,6 +992,10 @@ function Leap() {
                                                 <li>
                                                     <input class="form-check-input" type="radio" name="likert-leap30" value="5" />
                                                     <p>5 <br></br>(Muito Forte)</p>
+                                                </li>
+                                                <li>
+                                                    <input class="form-check-input" type="radio" name="likert-leap30" value="99" />
+                                                    <p>Não quero <br/> responder</p>
                                                 </li>
 
                                             </ul>
@@ -903,6 +1025,10 @@ function Leap() {
                                                     <input class="form-check-input" type="radio" name="likert-leap31" value="5" />
                                                     <p>5 <br></br>(Muito Forte)</p>
                                                 </li>
+                                                <li>
+                                                    <input class="form-check-input" type="radio" name="likert-leap31" value="99" />
+                                                    <p>Não quero <br/> responder</p>
+                                                </li>
 
                                             </ul>
 
@@ -927,6 +1053,10 @@ function Leap() {
                                                 <li>
                                                     <input class="form-check-input" type="radio" name="likert-leap32" value="5" />
                                                     <p>5 <br></br>(Muito Forte)</p>
+                                                </li>
+                                                <li>
+                                                    <input class="form-check-input" type="radio" name="likert-leap32" value="99" />
+                                                    <p>Não quero <br/> responder</p>
                                                 </li>
 
                                             </ul>
@@ -953,6 +1083,10 @@ function Leap() {
                                                     <input class="form-check-input" type="radio" name="likert-leap33" value="5" />
                                                     <p>5 <br></br>(Muito Forte)</p>
                                                 </li>
+                                                <li>
+                                                    <input class="form-check-input" type="radio" name="likert-leap33" value="99" />
+                                                    <p>Não quero <br/> responder</p>
+                                                </li>
 
                                             </ul>
 
@@ -977,6 +1111,10 @@ function Leap() {
                                                 <li>
                                                     <input class="form-check-input" type="radio" name="likert-leap34" value="5" />
                                                     <p>5 <br></br>(Muito Forte)</p>
+                                                </li>
+                                                <li>
+                                                    <input class="form-check-input" type="radio" name="likert-leap34" value="99" />
+                                                    <p>Não quero <br/> responder</p>
                                                 </li>
 
                                             </ul>
@@ -1003,6 +1141,10 @@ function Leap() {
                                                     <input class="form-check-input" type="radio" name="likert-leap35" value="5" />
                                                     <p>5 <br></br>(Muito Forte)</p>
                                                 </li>
+                                                <li>
+                                                    <input class="form-check-input" type="radio" name="likert-leap35" value="99" />
+                                                    <p>Não quero <br/> responder</p>
+                                                </li>
 
                                             </ul>
 
@@ -1027,6 +1169,10 @@ function Leap() {
                                                 <li>
                                                     <input class="form-check-input" type="radio" name="likert-leap36" value="5" />
                                                     <p>5 <br></br>(Muito Forte)</p>
+                                                </li>
+                                                <li>
+                                                    <input class="form-check-input" type="radio" name="likert-leap36" value="99" />
+                                                    <p>Não quero <br/> responder</p>
                                                 </li>
 
                                             </ul>
@@ -1053,6 +1199,10 @@ function Leap() {
                                                     <input class="form-check-input" type="radio" name="likert-leap37" value="5" />
                                                     <p>5 <br></br>(Muito Forte)</p>
                                                 </li>
+                                                <li>
+                                                    <input class="form-check-input" type="radio" name="likert-leap37" value="99" />
+                                                    <p>Não quero <br/> responder</p>
+                                                </li>
 
                                             </ul>
 
@@ -1077,6 +1227,10 @@ function Leap() {
                                                 <li>
                                                     <input class="form-check-input" type="radio" name="likert-leap38" value="5" />
                                                     <p>5 <br></br>(Muito Forte)</p>
+                                                </li>
+                                                <li>
+                                                    <input class="form-check-input" type="radio" name="likert-leap38" value="99" />
+                                                    <p>Não quero <br/> responder</p>
                                                 </li>
 
                                             </ul>
@@ -1103,6 +1257,10 @@ function Leap() {
                                                     <input class="form-check-input" type="radio" name="likert-leap39" value="5" />
                                                     <p>5 <br></br>(Muito Forte)</p>
                                                 </li>
+                                                <li>
+                                                    <input class="form-check-input" type="radio" name="likert-leap39" value="99" />
+                                                    <p>Não quero <br/> responder</p>
+                                                </li>
 
                                             </ul>
 
@@ -1127,6 +1285,10 @@ function Leap() {
                                                 <li>
                                                     <input class="form-check-input" type="radio" name="likert-leap40" value="5" />
                                                     <p>5 <br></br>(Muito Forte)</p>
+                                                </li>
+                                                <li>
+                                                    <input class="form-check-input" type="radio" name="likert-leap40" value="99" />
+                                                    <p>Não quero <br/> responder</p>
                                                 </li>
 
                                             </ul>
