@@ -49,3 +49,22 @@ export const LoginAccount = async (json) => {
     });
   });
 }
+
+export const SaveSamtest = async (json) => {
+  var config = {
+    method: 'post',
+    url: `${baseURL}/auth/login`,
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    data: json
+  };
+  return new Promise((resolve, reject) => {
+    axios(config)
+    .then(function (response) {
+      resolve(response);
+    }).catch(function (error) {
+      reject(error);
+    });
+  });
+}
