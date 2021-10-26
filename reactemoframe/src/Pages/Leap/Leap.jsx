@@ -27,8 +27,8 @@ function Leap() {
                                 </button>
 
                                 <div class="collapse" id="collapseExample">
-                                    <div class="card card-body">
-                                        <form>
+                                    <div class="card card-body form">
+                                        
                                             <label class="statement-leap text-start">Exemplo 1. Estou Confiante.</label>
                                             <ul class="likert-leap">
                                                 <li>
@@ -110,7 +110,7 @@ function Leap() {
 
                                                 <blockquote class="lead">Já nesse caso, a pessoa considerou que a intensidade de confiança que sentiu durante o preenchimento da lista foi muito forte, uma vez que marcou a opção "5" em relação ao item "Estou confiante".</blockquote>
                                             </ul>
-                                        </form>
+                            
                                     </div>
                                 </div>
                             </div>

@@ -52,7 +52,6 @@ function Routes() {
                 <LimitedAccessRoute path='/results' exact component={Results}/>
                 <PrivateRoute path='/leap' exact component={Leap}/>
                 <PrivateRoute path='/zanon' exact component={Zanon}/>
-
                 <PrivateRoute path='/panas' exact component={Panas}/>
             </Switch>
         </BrowserRouter>
