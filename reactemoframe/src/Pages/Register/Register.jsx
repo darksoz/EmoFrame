@@ -1,4 +1,5 @@
 import React from 'react';
+import './Register.css';
 import Tabs from '../../Components/Tabs/Tabs';
 
 function Register() {
