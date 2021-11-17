@@ -4,16 +4,24 @@ import {
     FormControlLabel,
     FormLabel
 } from "@mui/material";
+import './LeapForm.css';
+import React from 'react';
+
+import { Container, Row, Col } from 'react-grid-system';
 
 function LeapForm(props) {
     return (
         <>
-            <FormLabel component="legend"
+
+        <Container>
+            <Row>
+        <FormLabel component="legend" className="statement"
             >{props.Title}</FormLabel>
             <RadioGroup
                 className="radio"
                 row
                 aria-label="gender"
+                
                 name={props.Name}
             >
                 <FormControlLabel
@@ -90,6 +98,9 @@ function LeapForm(props) {
                     labelPlacement="bottom"
                 />
             </RadioGroup>
+                    </Row>
+        </Container>
+            
         </>
     );
 }

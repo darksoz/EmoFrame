@@ -3,6 +3,7 @@
 function LeapExample() {
     return (
         <>
+       
             <h1 class="likert-leap-header mt-2">LEAP</h1>
             <p class="lead ml-5 p-3"> Nesta página você encontrará uma lista com frases sobre você e sobre o
                 que está sentindo ou pensando neste momento. Sua tarefa é indicar a intensidade de

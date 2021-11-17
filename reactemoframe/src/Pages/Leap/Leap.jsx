@@ -4,6 +4,7 @@ import {FormControl} from "@mui/material";
 import LeapForm from '../../Components/LeapForm/LeapForm';
 import arrayShuffle from 'array-shuffle';
 import { Questions } from "../../services/Questions/Leap/Leap.js";
+import { Container, Row, Col } from 'react-grid-system';
 
 
 
@@ -15,10 +16,10 @@ function Leap() {
     }
     return (
         <>
-            <div class="container">
-                <div class="row">
-                    <div class="col md-2">
-                        <div class="wrap">
+            <Container>
+                <Row>
+                    <Col>
+                        
                             <LeapExample />
                             <hr></hr>
                             <blockquote class="lead ml-5 p-3">  Marque o quanto você sente <span class="bold">NESTE MOMENTO</span> de cada um destes sentimentos,
@@ -40,10 +41,10 @@ function Leap() {
                                     }
                                 </FormControl>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                        
+                    </Col>
+                </Row>
+            </Container>
         </>
 
     )
