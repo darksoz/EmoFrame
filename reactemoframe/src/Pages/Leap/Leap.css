@@ -26,10 +26,11 @@
     background-color:grey;
     height:4px;
       
+    width:80%;
   }
   .form .likert-leap li {
     display:inline-block;
-    width:19%;
+    width:16%;
     text-align:center;
     vertical-align: top;
     font-size: 1.2em;
