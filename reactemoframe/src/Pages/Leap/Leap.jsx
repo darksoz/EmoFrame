@@ -4,14 +4,35 @@ import {FormControl} from "@mui/material";
 import LeapForm from '../../Components/LeapForm/LeapForm';
 import arrayShuffle from 'array-shuffle';
 import { Questions } from "../../services/Questions/Leap/Leap.js";
+import sortArray from 'sort-array';
 
-
+let nada = [];
+let firstquestions = arrayShuffle(Questions);
 
 function Leap() {
 
     const [active, setActive] = React.useState(1);
+    const [answers, setAnswers] = React.useState([]);
+    
     function handleChange(event) {
-        console.log("Size: ", Questions.length);
+        const id = event.target.name;
+        const data = { id, answer: event.target.value };
+
+        
+
+        if (answers.some(a => a.id === id)) {
+            setAnswers([...answers.filter(b => b.id !== id), data]);
+        }
+        else{
+            setAnswers([...answers, data]);
+        }
+        Json(sortArray(answers, { by: 'id',}));
+
+    }
+
+    function Json(data){
+        let json = {"Solution": "Leap", "Datetime": "15h", "Username": "Fulano", "Questions": data}
+        console.log("Json", json)
     }
     return (
         <>
@@ -26,7 +47,7 @@ function Leap() {
                             <div>
                                 <FormControl component="fieldset" onChange={handleChange}>
                                     {
-                                        arrayShuffle(Questions).map((content, index) => (
+                                        firstquestions.map((content, index) => (
                                             <>
                                                 <div style={{
                                                                 marginBottom: "20px",

@@ -19,6 +19,7 @@
     "react-scroll": "^1.8.3",
     "react-tooltip": "^4.2.21",
     "request": "^2.88.2",
+    "sort-array": "^4.1.4",
     "web-vitals": "^1.1.1"
   },
   "scripts": {

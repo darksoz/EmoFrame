@@ -17,7 +17,7 @@ function LeapForm(props) {
                 name={props.Name}
             >
                 <FormControlLabel
-                    value="female"
+                    value="1"
                     id="just-line-break"
                     labelPlacement="bottom"
                     control={<Radio />}
@@ -32,7 +32,7 @@ function LeapForm(props) {
                 />
                 <FormControlLabel
                     labelPlacement="bottom"
-                    value="male"
+                    value="2"
                     control={<Radio />}
                     label={
                         <div style={{
@@ -45,7 +45,7 @@ function LeapForm(props) {
                 />
                 <FormControlLabel
                     labelPlacement="bottom"
-                    value="otherq"
+                    value="3"
                     control={<Radio />}
                     label={
                         <div style={{
@@ -58,13 +58,12 @@ function LeapForm(props) {
                 />
                 <FormControlLabel
                     labelPlacement="bottom"
-                    value="otherw"
+                    value="4"
                     control={<Radio />}
                     label="Forte"
                 />
                 <FormControlLabel
-                    value="othersdfs"
-                    d
+                    value="5"
                     control={<Radio />}
                     label={
                         <div style={{
