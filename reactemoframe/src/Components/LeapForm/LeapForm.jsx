@@ -4,12 +4,15 @@ import {
     FormControlLabel,
     FormLabel
 } from "@mui/material";
+import './LeapForm.css';
 
 function LeapForm(props) {
     return (
         <>
-            <FormLabel component="legend"
-            >{props.Title}</FormLabel>
+            <FormLabel style={{ fontSize:"1.4em", 
+                                fontWeight:"bolder",
+                                textAlign:"start"}} 
+                       component="legend">{props.Title}</FormLabel>
             <RadioGroup
                 className="radio"
                 row
