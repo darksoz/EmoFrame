@@ -16,6 +16,7 @@ let firstQuestions = arrayShuffle(Questions1);
 let secondQuestions = arrayShuffle(Questions2);
 let thirdQuestions = arrayShuffle(Questions3);
 let fourthQuestions = arrayShuffle(Questions4);
+let amoundOfQuestions = (firstQuestions.length + secondQuestions.length + thirdQuestions.length + fourthQuestions.length);
 
 function Leap() {
 
@@ -34,7 +35,6 @@ function Leap() {
         else{
             setAnswers([...answers, data]);
         }
-
     }
 
     const handleFormData = () => {
@@ -53,11 +53,10 @@ function Leap() {
                             <blockquote class="lead ml-5 p-3">  Marque o quanto você sente <span class="bold">NESTE MOMENTO</span> de cada um destes sentimentos,
                                 sendo 1 (um) uma intensidade muito fraca e 5 (cinco) uma intensidade muito forte. </blockquote>
                             <div>
-                                <FormControl component="fieldset" style={{ width: '100%'}} onChange={handleChange}>
+                                <div style={{  width: '100%', margin:"200", alignContent:"center"}} onChange={handleChange}>
                                     <MultiStepForm activeStep={active} >
                                         <Step label="Passo 1">
                                             {
-                                                
                                                 firstQuestions.map((content, index) => (
                                                     <>
                                                         <div style={{
@@ -131,7 +130,7 @@ function Leap() {
                                             </Link>
                                         </div>)
                                     }
-                                    {(active === 4) &&
+                                    {(active === 4 && answers.length === amoundOfQuestions) &&
                                         <div>
                                             <Link to="sample">
                                                 <button class="btn whitebutton btn-lg" onClick={() => setActive(active - 1)}>Anterior</button>
@@ -139,7 +138,14 @@ function Leap() {
                                             <button class="btn whitebutton btn-lg" onClick={() => handleFormData()}>Salvar</button>
                                         </div>
                                     }
-                                </FormControl>
+                                    {(active === 4  && answers.length !== amoundOfQuestions) &&
+                                        <div>
+                                            <Link to="sample">
+                                                <button class="btn whitebutton btn-lg" onClick={() => setActive(active - 1)}>Anterior</button>
+                                            </Link>
+                                        </div>
+                                    }
+                                </div>
                             </div>
                         </div>
                     </div>

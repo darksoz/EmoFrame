@@ -1,98 +1,37 @@
-import {
-    Radio,
-    RadioGroup,
-    FormControlLabel,
-    FormLabel
-} from "@mui/material";
-import './LeapForm.css';
 
+import './LeapForm.css';
+import '../../Pages/Leap/Leap.css';
 function LeapForm(props) {
     return (
-        <>
-            <FormLabel style={{ fontSize:"1.4em", 
-                                fontWeight:"bolder",
-                                textAlign:"start"}} 
-                       component="legend">{props.Title}</FormLabel>
-            <RadioGroup
-                className="radio"
-                row
-                aria-label="gender"
-                name={props.Name}
-            >
-                <FormControlLabel
-                    value="1"
-                    id="just-line-break"
-                    labelPlacement="bottom"
-                    control={<Radio />}
-                    label={
-                        <div style={{
-                            "text-align": "center",
-                            "whiteSpace": "pre-wrap"
-                        }}>
-                            {"Muito\nfraco"}
-                        </div>
-                    }
-                />
-                <FormControlLabel
-                    labelPlacement="bottom"
-                    value="2"
-                    control={<Radio />}
-                    label={
-                        <div style={{
-                            "text-align": "center",
-                            "whiteSpace": "pre-wrap"
-                        }}>
-                            {"Fraco\n"}
-                        </div>
-                    }
-                />
-                <FormControlLabel
-                    labelPlacement="bottom"
-                    value="3"
-                    control={<Radio />}
-                    label={
-                        <div style={{
-                            "text-align": "center",
-                            "whiteSpace": "pre-wrap"
-                        }}>
-                            {"Mais ou\nmenos"}
-                        </div>
-                    }
-                />
-                <FormControlLabel
-                    labelPlacement="bottom"
-                    value="4"
-                    control={<Radio />}
-                    label="Forte"
-                />
-                <FormControlLabel
-                    value="5"
-                    control={<Radio />}
-                    label={
-                        <div style={{
-                            "text-align": "center",
-                            "whiteSpace": "pre-wrap"
-                        }}>
-                            {"Muito\nforte"}
-                        </div>
-                    }
-                    labelPlacement="bottom"
-                />
-                <FormControlLabel
-                    value="99"
-                    control={<Radio />}
-                    label={
-                        <div style={{
-                            "text-align": "center",
-                            "whiteSpace": "pre-wrap"
-                        }}>
-                            {"Não quero\nresponder"}
-                        </div>
-                    }
-                    labelPlacement="bottom"
-                />
-            </RadioGroup>
-        </>
+        <div class="form">
+            <label class="statement-leap text-start">{props.Title}</label>
+            <ul class="likert-leap">
+                <li>
+                    <input class="form-check-input" type="radio" name={props.Name}value="1" required />
+                    <p>1 <br></br>Muito Fraco</p>
+                </li>
+                <li>
+                    <input class="form-check-input" type="radio" name={props.Name}value="2" />
+                    <p>2 <br></br>Fraco</p>
+                </li>
+                <li>
+                    <input class="form-check-input" type="radio" name={props.Name} value="3" />
+                    <p>3 <br></br>Mais ou Menos</p>
+                </li>
+                <li>
+                    <input class="form-check-input" type="radio" name={props.Name} value="4" />
+                    <p>4 <br></br>Forte</p>
+                </li>
+                <li>
+                    <input class="form-check-input" type="radio" name={props.Name} value="5" />
+                    <p>5 <br></br>Muito Forte</p>
+                </li>
+                <li>
+                    <input class="form-check-input" type="radio" name={props.Name} value="99" />
+                    <p>6 <br></br>Não quero responder</p>
+                </li>
+            </ul>
+        </div>
     );
 }
 
