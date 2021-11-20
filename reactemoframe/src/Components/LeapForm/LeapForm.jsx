@@ -1,5 +1,3 @@
-
-import './LeapForm.css';
 import '../../Pages/Leap/Leap.css';
 function LeapForm(props) {
     return (
