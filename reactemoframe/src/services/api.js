@@ -53,8 +53,9 @@ export const LoginAccount = async (json) => {
 export const SaveSamtest = async (json) => {
   var config = {
     method: 'post',
-    url: `${baseURL}/auth/login`,
+    url: `${baseURL}/sam/create`,
     headers: {
+      'Authorization': `Bearer ${getToken()}`, 
       'Content-Type': 'application/json'
     },
     data: json
