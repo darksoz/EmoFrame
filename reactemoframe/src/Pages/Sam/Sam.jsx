@@ -1,10 +1,16 @@
 import React, { useState } from 'react';
 import sortArray from 'sort-array';
+import ModalTest from '../../Components/Modal/ModalTest';
+import { SaveSamtest } from '../../services/api';
 import { getUsername } from '../../services/auth';
 import './Sam.css';
 
 function Sam() {
     const [answers, setAnswers] = React.useState([]);
+    const [title, setTitle] = React.useState("");
+    const [body, setBody] = React.useState("");
+    const [show, setShow] = React.useState(false);
+    const [success, setSuccess] = React.useState(false);
 
     const handleChange = (event) => {
         const data = { id: event.target.name, answer: event.target.value };
@@ -18,11 +24,27 @@ function Sam() {
 
     const handleFormData = async () => {
         let json = {"Datetime": Date.now(), "Username": getUsername(), "Questions": sortArray(answers, { by: 'id',})}
-        console.log("Json", json)
+        json = JSON.stringify(json);
+
+        let response = await SaveSamtest(json);
+        if(response.status === 201){
+            console.log("Dados salvos aqui ==> ", response.data);
+            setTitle("Teste concluído");
+            setBody("Atividade realizada com sucesso");
+            setSuccess(true);
+            setShow(true);
+        }
+        else{
+            setTitle("Erro na conclusão");
+            setBody("Atividade não foi concluída");
+            setSuccess(false);
+        }
+        
     }
 
     return (
-        <>
+        <div>
+            <ModalTest Success={success} Title={title} Body={body} Reveal={show} Finish={"/dashboard"} Retry={true}/>
             <div class="container">
                 <div class="row">
                     <div class="col md-2">
@@ -350,7 +372,7 @@ function Sam() {
 
 
             </div>
-        </>
+        </div>
     )
 }
 export default Sam;
