@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import sortArray from 'sort-array';
 import ModalTest from '../../Components/Modal/ModalTest';
-import { SaveSamtest } from '../../services/api';
+import { SaveSamTest } from '../../services/api';
 import { getUsername } from '../../services/auth';
 import './Sam.css';
 
@@ -26,7 +26,7 @@ function Sam() {
         let json = {"Datetime": Date.now(), "Username": getUsername(), "Questions": sortArray(answers, { by: 'id',})}
         json = JSON.stringify(json);
 
-        let response = await SaveSamtest(json);
+        let response = await SaveSamTest(json);
         if(response.status === 201){
             console.log("Dados salvos aqui ==> ", response.data);
             setTitle("Teste concluído");
@@ -39,7 +39,6 @@ function Sam() {
             setBody("Atividade não foi concluída");
             setSuccess(false);
         }
-        
     }
 
     return (
