@@ -2,6 +2,7 @@ import axios from "axios";
 
 export const TOKEN_KEY = "@Emoframe-Token";
 export const EMAIL = "@Emoframe-Email";
+export const USERNAME = "@Emoframe-Username";
 export const USERTYPE = "@Emoframe-Usertype";
 
 export const isAuthenticated = () => {
@@ -28,21 +29,25 @@ export const isAuthenticated = () => {
 
 export const getToken = () => localStorage.getItem(TOKEN_KEY);
 export const getEmail = () => localStorage.getItem(EMAIL);
+export const getUsername = () => localStorage.getItem(USERNAME);
 export const getUsertype = () => localStorage.getItem(USERTYPE);
 
 
 export const setToken = (token) => localStorage.setItem(TOKEN_KEY, token);
 export const setEmail = (email) => localStorage.setItem(EMAIL, email);
+export const setUsername = (username) => localStorage.setItem(USERNAME, username)
 export const setUsertype = (usertype) => localStorage.setItem(USERTYPE, usertype);
 
 export const login = (data) => {
   setToken(data.access_token);
   setEmail(data.email);
+  setUsername(data.username);
   setUsertype(data.usertype);
 };
 
 export const logout = () => {
   localStorage.removeItem(TOKEN_KEY);
   localStorage.removeItem(EMAIL);
+  localStorage.removeItem(USERNAME);
   localStorage.removeItem(USERTYPE);
 };

@@ -1,16 +1,4 @@
-.negrito {
-
-    font-weight: bold;
-
-}
-
-.sublinhado {
-
-    text-decoration: underline;
-
-}
-
-form .statement-leap {
+.form .statement-leap {
     display:block;
     font-size: 1.4em;
     font-weight: bold;
@@ -18,7 +6,7 @@ form .statement-leap {
     margin-bottom:10px;
   }
 
-form .likert-leap {
+.form .likert-leap {
     list-style:none;
     width:100%;
     margin:0;
@@ -28,8 +16,8 @@ form .likert-leap {
     margin-top: 3rem;
     margin-bottom: 3rem;
   }
-  form .likert-leap:last-of-type {border-bottom:0;}
-  form .likert-leap:before {
+  .form .likert-leap:last-of-type {border-bottom:0;}
+  .form .likert-leap:before {
     content: '';
     position:relative;
     top:11px;
@@ -37,16 +25,17 @@ form .likert-leap {
     display:block;
     background-color:grey;
     height:4px;
-    width:78%;
+      
+    width:80%;
   }
-  form .likert-leap li {
+  .form .likert-leap li {
     display:inline-block;
-    width:19%;
+    width:16%;
     text-align:center;
     vertical-align: top;
     font-size: 1.2em;
   }
-  form .likert-leap li input[type=radio] {
+  .form .likert-leap li input[type=radio] {
     display:block;
     position:relative;
     top:-4px;
@@ -54,4 +43,33 @@ form .likert-leap {
     margin-left:-6px;
     
   }
-  form .likert-leap li label {width:100%;}
+  .form .likert-leap li label {width:100%;}
+
+
+  #just-line-break {
+    white-space: pre-line;
+  }
+  
+  #line-break-and-tab {
+    white-space: pre-wrap;
+  }
+
+
+  .radio{
+    position: relative;
+  }
+
+  .radio-form{
+    position: relative;
+  }
+
+  .radio-form:after{
+    display: block;
+    content: "";
+    position: absolute;
+    top: 42%;
+    left: 9%;
+    background: #000;
+    height: 2px;
+    width: 78.5%;
+  }
