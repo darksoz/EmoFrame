@@ -50,11 +50,32 @@ export const LoginAccount = async (json) => {
   });
 }
 
-export const SaveSamtest = async (json) => {
+export const SaveSamTest = async (json) => {
   var config = {
     method: 'post',
-    url: `${baseURL}/auth/login`,
+    url: `${baseURL}/sam/create`,
     headers: {
+      'Authorization': `Bearer ${getToken()}`, 
+      'Content-Type': 'application/json'
+    },
+    data: json
+  };
+  return new Promise((resolve, reject) => {
+    axios(config)
+    .then(function (response) {
+      resolve(response);
+    }).catch(function (error) {
+      reject(error);
+    });
+  });
+}
+
+export const SaveLeapTest = async (json) => {
+  var config = {
+    method: 'post',
+    url: `${baseURL}/leap/create`,
+    headers: {
+      'Authorization': `Bearer ${getToken()}`, 
       'Content-Type': 'application/json'
     },
     data: json
