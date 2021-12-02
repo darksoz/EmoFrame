@@ -89,3 +89,23 @@ export const SaveLeapTest = async (json) => {
     });
   });
 }
+
+export const SaveSusTest = async (json) => {
+  var config = {
+    method: 'post',
+    url: `${baseURL}/sus/create`,
+    headers: {
+      'Authorization': `Bearer ${getToken()}`, 
+      'Content-Type': 'application/json'
+    },
+    data: json
+  };
+  return new Promise((resolve, reject) => {
+    axios(config)
+    .then(function (response) {
+      resolve(response);
+    }).catch(function (error) {
+      reject(error);
+    });
+  });
+}
