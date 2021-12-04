@@ -11,6 +11,7 @@ import Results from './Pages/Results/Results';
 import Leap from './Pages/Leap/Leap';
 import Zanon from './Pages/Zanon/Zanon';
 import Sus from './Pages/Sus/Sus';
+import SusResult from './Pages/SusResult/SusResult';
 
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
@@ -53,6 +54,7 @@ function Routes() {
                 <PrivateRoute path='/leap' exact component={Leap}/>
                 <PrivateRoute path='/zanon' exact component={Zanon}/>
                 <PrivateRoute path='/sus' exact component={Sus}/>
+                <LimitedAccessRoute Path='/susResult' exact component={SusResult}/>
             </Switch>
         </BrowserRouter>
     )
