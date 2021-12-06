@@ -23,7 +23,7 @@ function Sam() {
     }
 
     const handleFormData = async () => {
-        let json = {"Datetime": Date.now(), "Username": getUsername(), "Questions": sortArray(answers, { by: 'id',})}
+        let json = {"Datetime": Date.now(), "Username": getUsername(), "Instrument": "sam", "Questions": sortArray(answers, { by: 'id',})}
         json = JSON.stringify(json);
 
         let response = await SaveSamTest(json);
