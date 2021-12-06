@@ -42,6 +42,11 @@ function LeapExample() {
                                     <input class="form-check-input" type="radio" name="likert-leapex1" value="5" />
                                     <p>5 <br></br>(Muito Forte)</p>
                                 </li>
+                                <li>
+                                    <input class="form-check-input" type="radio" name="likert-leapex1" value="99" />
+                                    <p>Não Quero Responder</p>
+                                </li>
+                                
 
                                 <blockquote class="lead">Nesse caso, a pessoa considerou que a intensidade de confiança que sentiu durante o preenchimento da lista foi muito fraca, pois marcou a opção "1" em relaçao a frase "Estou confiante".</blockquote>
                             </ul>
@@ -68,6 +73,10 @@ function LeapExample() {
                                 <li>
                                     <input class="form-check-input" type="radio" name="likert-leapex2" value="5" />
                                     <p>5 <br></br>(Muito Forte)</p>
+                                </li>
+                                <li>
+                                    <input class="form-check-input" type="radio" name="likert-leapex2" value="99" />
+                                    <p>Não Quero Responder</p>
                                 </li>
 
                                 <blockquote class="lead">Neste segundo exemplo, a pessoa apresentou uma resposta neutra (mais ou menos) sobre a intensidade de confiança que sentiu dutante o período estipulado, pois selecionou uma opção igualmente distante de “Muito fraco” ou “Muito forte”.</blockquote>
@@ -98,8 +107,42 @@ function LeapExample() {
                                     <input class="form-check-input" type="radio" name="likert-leapex3" value="5" checked />
                                     <p>5 <br></br>(Muito Forte)</p>
                                 </li>
+                                <li>
+                                    <input class="form-check-input" type="radio" name="likert-leapex3" value="99" />
+                                    <p>Não Quero Responder</p>
+                                </li>
 
                                 <blockquote class="lead">Já nesse caso, a pessoa considerou que a intensidade de confiança que sentiu durante o preenchimento da lista foi muito forte, uma vez que marcou a opção "5" em relação ao item "Estou confiante".</blockquote>
+                            </ul>
+
+                            <label class="statement-leap text-start">Exemplo 4. Estou Confiante.</label>
+                            <ul class="likert-leap">
+                                <li>
+                                    <input class="form-check-input" type="radio" name="likert-leapex3" value="1" />
+                                    <p>1 <br></br>(Muito Fraco)</p>
+                                </li>
+                                <li>
+                                    <input class="form-check-input" type="radio" name="likert-leapex4" value="2" />
+                                    <p>2 <br></br>(Fraco)</p>
+                                </li>
+                                <li>
+                                    <input class="form-check-input" type="radio" name="likert-leapex4" value="3" />
+                                    <p>3 <br></br>(Mais ou Menos)</p>
+                                </li>
+                                <li>
+                                    <input class="form-check-input" type="radio" name="likert-leapex4" value="4" />
+                                    <p>4 <br></br>(Forte)</p>
+                                </li>
+                                <li>
+                                    <input class="form-check-input" type="radio" name="likert-leapex4" value="5"  />
+                                    <p>5 <br></br>(Muito Forte)</p>
+                                </li>
+                                <li>
+                                    <input class="form-check-input" type="radio" name="likert-leapex4" value="99" checked/>
+                                    <p> Não Quero Responder</p>
+                                </li>
+
+                            <blockquote class="lead">No último caso, a pessoa optou por não responder já que escolheu a opção "Não Quero Responder".</blockquote>
                             </ul>
                         </form>
                     </div>
