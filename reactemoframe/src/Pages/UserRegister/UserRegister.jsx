@@ -3,6 +3,7 @@ import Tabs from "../../Components/Tabs/Tabs";
 import "./UserRegister.css";
 
 function UserRegister() {
+  
     let [relVisibility, setRelVisibility] = useState(false);
 
     const Religion = () => {
@@ -29,9 +30,9 @@ function UserRegister() {
                     <h3>Cadastrar Usuário</h3>
 
                     <div className="form-group">
-                        <select class="form-select col-sm-10 control-label" aria-label="Default select example">
+                        <select class="form-select col-sm-10 control-label" aria-label="Default select example" required>
 
-                            <option selected>Quem está respondendo esse cadastro? </option>
+                            <option>Quem está respondendo esse cadastro? </option>
                             <option value="1">Usuário</option>
                             <option value="2">Responsável</option>
                         </select>
@@ -39,12 +40,12 @@ function UserRegister() {
 
                     <div className="form-group">
                         <label class="col-sm-10 control-label text-start">Nome</label>
-                        <input type="text" className="form-control" placeholder="Nome" />
+                        <input type="text" className="form-control" placeholder="Nome" required/>
                     </div>
 
                     <div className="form-group">
                         <label class="col-sm-10 control-label text-start">Sobrenome</label>
-                        <input type="text" className="form-control" placeholder="Sobrenome" />
+                        <input type="text" className="form-control" placeholder="Sobrenome" required/>
                     </div>
 
                     <div className="form-group">
@@ -54,7 +55,7 @@ function UserRegister() {
 
                     <div className="form-group">
                         <label class="col-sm-10 text-start control-label">Data de Nascimento</label>
-                        <input type="date" className="form-control" placeholder="Data de nascimento" />
+                        <input type="date" className="form-control" placeholder="Data de nascimento" required/>
                     </div>
 
                     <div className="form-group">
@@ -274,12 +275,12 @@ function UserRegister() {
 
                     <div className="form-group">
                         <label class="col-sm-10 text-start control-label">Endereço</label>
-                        <input type="email" className="form-control" placeholder="Endereço" />
+                        <input type="text" className="form-control" placeholder="Endereço" required/>
                     </div>
 
                     <div className="form-group">
                         <label class="col-sm-10 text-start control-label">Telefone</label>
-                        <input type="email" className="form-control" placeholder="Número do telefone" />
+                        <input type="text" className="form-control" placeholder="Número do telefone" required/>
                     </div>
 
                     <div className="form-group">
@@ -295,7 +296,7 @@ function UserRegister() {
 
                     <div className="form-group">
                         <label class="col-sm-10 text-start control-label">Com quem você mora?</label>
-                        <input type="email" className="form-control" placeholder="Com quem você mora?" />
+                        <input type="text" className="form-control" placeholder="Com quem você mora?" required/>
                     </div>
 
                     <div className="form-group">
@@ -347,7 +348,7 @@ function UserRegister() {
 
                     <div className="form-group">
                     <label class="col-sm-10 control-label text-start">De acordo com sua escolaridade, você estudou, formalmente, durante quantos anos?</label>
-                    <input type="email" className="form-control" placeholder="Anos de estudo" />
+                    <input type="text" className="form-control" placeholder="Anos de estudo" required/>
                     </div>
 
                     <div className="form-group" >
@@ -368,7 +369,7 @@ function UserRegister() {
 
                     <div className="form-group" >
                         <label class="col-sm-10 text-start control-label">Renda Familiar Mensal</label>
-                        <select class="form-select" aria-label="Default select example">
+                        <select class="form-select" aria-label="Default select example" required>
                                 <option selected>Selecione a renda familiar mensal</option>
                                 <option value="1">BPC</option>
                                 <option value="2">Até um salário mínimo</option>
@@ -385,12 +386,12 @@ function UserRegister() {
 
                     <div className="form-group">
                         <label class="col-sm-10 text-start control-label">E-mail</label>
-                        <input type="email" className="form-control" placeholder="E-mail" />
+                        <input type="email" className="form-control" placeholder="E-mail" required/>
                     </div>
 
                     <div className="form-group">
                         <label class="col-sm-10 text-start control-label">Senha</label>
-                        <input type="password" className="form-control" placeholder="Senha" />
+                        <input type="password" className="form-control" placeholder="Senha" required/>
                     </div>
 
                     <div className="form-group">
