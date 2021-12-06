@@ -4,6 +4,7 @@ export const TOKEN_KEY = "@Emoframe-Token";
 export const EMAIL = "@Emoframe-Email";
 export const USERNAME = "@Emoframe-Username";
 export const USERTYPE = "@Emoframe-Usertype";
+export const IDTESTDATA = "@Emoframe-IdTestData";
 
 export const isAuthenticated = () => {
   if (localStorage.getItem(TOKEN_KEY) === null) {
@@ -31,17 +32,19 @@ export const getToken = () => localStorage.getItem(TOKEN_KEY);
 export const getEmail = () => localStorage.getItem(EMAIL);
 export const getUsername = () => localStorage.getItem(USERNAME);
 export const getUsertype = () => localStorage.getItem(USERTYPE);
+export const getIdTestData = () => localStorage.getItem(IDTESTDATA);
 
 
 export const setToken = (token) => localStorage.setItem(TOKEN_KEY, token);
 export const setEmail = (email) => localStorage.setItem(EMAIL, email);
-export const setUsername = (username) => localStorage.setItem(USERNAME, username)
+export const setUsername = (name) => localStorage.setItem(USERNAME, name)
 export const setUsertype = (usertype) => localStorage.setItem(USERTYPE, usertype);
+export const setIdTestData = (id) => localStorage.setItem(IDTESTDATA, id);
 
 export const login = (data) => {
   setToken(data.access_token);
   setEmail(data.email);
-  setUsername(data.username);
+  setUsername(data.name);
   setUsertype(data.usertype);
 };
 

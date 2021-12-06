@@ -5,12 +5,6 @@ function SusScoreReference() {
             <div class="col-md-12">
                 <h4>Como interpretar o Score do SUS</h4>
                 <Table striped bordered hover>
-                    <thead>
-                        <tr>
-                            <th>Score</th>
-                            <th>Status</th>
-                        </tr>
-                    </thead>
                     <tbody>
                     <tr>
                         <td> Menor que 60</td>
