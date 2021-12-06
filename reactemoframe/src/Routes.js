@@ -53,10 +53,9 @@ function Routes() {
                 <LimitedAccessRoute path='/userregister' exact component={UserRegister}/>
                 <LimitedAccessRoute path='/results' exact component={Results}/>
                 <PrivateRoute path='/leap' exact component={Leap}/>
-                <LimitedAccessRoute Path='samResult' exact component={SamResult}/>
+                <LimitedAccessRoute path='samResult' exact component={SamResult}/>
                 <PrivateRoute path='/zanon' exact component={Zanon}/>
                 <PrivateRoute path='/sus' exact component={Sus}/>
-                <LimitedAccessRoute Path='/susResult' exact component={SusResult}/>
             </Switch>
         </BrowserRouter>
     )
