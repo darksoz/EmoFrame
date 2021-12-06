@@ -1,8 +1,9 @@
 import {Document} from 'mongoose';
 
-export class Sam extends Document{
+export class Sus extends Document{
     Datetime: Number;
-    Questions: Array<Object>;
     Instrument: String;
+    Solution: String;
+    Questions: Array<Object>;
     Username: String;
 }

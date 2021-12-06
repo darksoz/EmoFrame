@@ -16,15 +16,15 @@ export class AuthService {
     async validateUser(userEmail: string, userPass: string): Promise<any> {
         const user = await this.userService.getByEmail(userEmail);
         if (user && user.password === userPass) {
-          const { _id, username, email, usertype } = user;
-          let result = { id: _id, username, email, usertype }
+          const { _id, name, email, usertype } = user;
+          let result = { id: _id, name, email, usertype }
           return result;
         }
         return null;
     }
 
     async login(user: any, @Res({passthrough: true}) response: Response) {
-        const payload = { email: user.email, username: user.username , usertype: user.usertype};
+        const payload = { email: user.email, name: user.name , usertype: user.usertype};
         const jwtAccessKey = this.jwtService.sign(payload);
         let tokenSave = {hash: jwtAccessKey, email: user.email};
         await this.tokenService.save(tokenSave);
@@ -32,7 +32,7 @@ export class AuthService {
         return {
           access_token: jwtAccessKey,
           email: user.email,
-          username: user.username,  
+          name: user.name,  
           usertype: user.usertype,
         };
     }

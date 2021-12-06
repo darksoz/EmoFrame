@@ -51,6 +51,7 @@ export const LoginAccount = async (json) => {
 }
 
 export const SaveSamTest = async (json) => {
+  
   var config = {
     method: 'post',
     url: `${baseURL}/sam/create`,
@@ -79,6 +80,66 @@ export const SaveLeapTest = async (json) => {
       'Content-Type': 'application/json'
     },
     data: json
+  };
+  return new Promise((resolve, reject) => {
+    axios(config)
+    .then(function (response) {
+      resolve(response);
+    }).catch(function (error) {
+      reject(error);
+    });
+  });
+}
+
+export const SaveSusTest = async (json) => {
+  var config = {
+    method: 'post',
+    url: `${baseURL}/sus/create`,
+    headers: {
+      'Authorization': `Bearer ${getToken()}`, 
+      'Content-Type': 'application/json'
+    },
+    data: json
+  };
+  return new Promise((resolve, reject) => {
+    axios(config)
+    .then(function (response) {
+      resolve(response);
+    }).catch(function (error) {
+      reject(error);
+    });
+  });
+}
+
+export const GetTestsData = async (json, instrument) => {
+  var config = {
+    method: 'post',
+    url: `${baseURL}/${instrument}`,
+    headers: {
+      'Authorization': `Bearer ${getToken()}`, 
+      'Content-Type': 'application/json'
+    },
+    data: json,
+  };
+  return new Promise((resolve, reject) => {
+    axios(config)
+    .then(function (response) {
+      resolve(response);
+    }).catch(function (error) {
+      reject(error);
+    });
+  });
+}
+
+export const GetTestResult = async (instrument, json) => {
+  var config = {
+    method: 'post',
+    url: `${baseURL}/${instrument}/id`,
+    headers: {
+      'Authorization': `Bearer ${getToken()}`,
+      'Content-Type': 'application/json'
+    },
+    data: json,
   };
   return new Promise((resolve, reject) => {
     axios(config)
