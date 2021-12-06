@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Breadcrumb } from "react-bootstrap";
 import './Sam.css';
 
 function Sam() {
@@ -32,6 +33,10 @@ function Sam() {
     return (
         <>
             <div class="container">
+            <Breadcrumb>
+                <Breadcrumb.Item href='./dashboard'>Página Inicial</Breadcrumb.Item>
+                <Breadcrumb.Item active>Sam</Breadcrumb.Item>
+            </Breadcrumb>
                 <div class="row">
                     <div class="col md-2">
                         <div class="wrap">
