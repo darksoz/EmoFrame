@@ -8,7 +8,7 @@ function SusExample() {
                 </button>
 
                 <div class="collapse" id="collapseExample">
-                    <div class="card card-body">
+                    <div class="card card-body form">
                         <form>
                             <label class="statement-sus text-start">Exemplo 1. Eu me senti confiante usando este aplicativo.</label>
                             <ul class="likert-sus">
@@ -32,10 +32,7 @@ function SusExample() {
                                     <input class="form-check-input" type="radio" name="likert-susex1" value="5" />
                                     <p>Discordo Fortemente</p>
                                 </li>
-                                <li>
-                                    <input class="form-check-input" type="radio" name="likert-susex1" value="99" />
-                                    <p>Não Quero Responder</p>
-                                </li>
+                                
 
                                 <blockquote class="lead">Nesse caso, a pessoa se sentiu muito confiante usando o aplicativo, pois marcou a opção <strong>"Concordo Fortemente"</strong> em relaçao a frase "Eu me senti confiante usando este aplicativo".</blockquote>
 
@@ -65,10 +62,7 @@ function SusExample() {
                                     <input class="form-check-input" type="radio" name="likert-susex2" value="5" />
                                     <p>Discordo Fortemente</p>
                                 </li>
-                                <li>
-                                    <input class="form-check-input" type="radio" name="likert-susex2" value="99" />
-                                    <p>Não Quero Responder</p>
-                                </li>
+                                
 
                                 <blockquote class="lead">Neste segundo exemplo, a pessoa escolheu a opção <strong>"Neutro"</strong>, ou seja, não concordou e nem discordou da afirmação "Eu me senti confiante usando este aplicativo." </blockquote>
 
@@ -98,12 +92,9 @@ function SusExample() {
                                     <input class="form-check-input" type="radio" name="likert-susex3" value="5" checked />
                                     <p>Discordo Fortemente</p>
                                 </li>
-                                <li>
-                                    <input class="form-check-input" type="radio" name="likert-susex3" value="99" />
-                                    <p>Não Quero Responder</p>
-                                </li>
+                                
 
-                                <blockquote class="lead">Já nesse caso, a pessoa não se sentiu confiante usando o aplicativo, pois marcou a opção <strong>"Discordo Fortemente"</strong> em relaçao a frase "Eu me senti confiante usando este aplicativo". Além das opções dos exemplos, a escala possui a opção <strong>"Não Quero Responder"</strong> para situações em que o usuário não concorde com nenhuma das opções anteriores ou simplesmente prefira não responder.</blockquote>
+                                <blockquote class="lead">Já nesse caso, a pessoa não se sentiu confiante usando o aplicativo, pois marcou a opção <strong>"Discordo Fortemente"</strong> em relaçao a frase "Eu me senti confiante usando este aplicativo".</blockquote>
                             </ul>
                         </form>
                     </div>
