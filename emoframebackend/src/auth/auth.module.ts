@@ -14,7 +14,7 @@ import { TokenModule } from 'src/token/token.module';
         UserModule,
         JwtModule.register({
             secret: jwtConstants.secret,
-            signOptions: { expiresIn: '60s' },
+            signOptions: { expiresIn: '2h' },
           }),
         PassportModule,
         forwardRef(()=>TokenModule)
