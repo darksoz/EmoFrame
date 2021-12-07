@@ -12,6 +12,8 @@ import { getUsername } from '../../services/auth';
 import ModalTest from '../../Components/Modal/ModalTest';
 import sortArray from 'sort-array';
 import { SaveSusTest } from '../../services/api';
+import { Breadcrumb } from "react-bootstrap";
+
 
 let firstQuestions = arrayShuffle(Questions1);
 let secondQuestions = arrayShuffle(Questions2);
@@ -68,6 +70,10 @@ function Sus() {
 
     return (
         <>
+            <Breadcrumb>
+                <Breadcrumb.Item href='./dashboard'>Página Inicial</Breadcrumb.Item>
+                <Breadcrumb.Item active>Sus</Breadcrumb.Item>
+            </Breadcrumb>
             <ModalTest Success={success} Title={title} Body={body} Reveal={show} Finish={"/dashboard"} Retry={true} />
 
             <div class="container">

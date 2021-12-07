@@ -29,7 +29,7 @@ export default function Header() {
         <>
             <Navbar style={{ backgroundColor: "#00bfa5" }}>
                 <Container>
-                    <Navbar.Brand href="">
+                    <Navbar.Brand href="/dashboard">
                         <img
                             src={`${process.env.PUBLIC_URL}/emoframe.png`}
                             width="60"

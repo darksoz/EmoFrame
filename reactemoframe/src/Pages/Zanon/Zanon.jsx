@@ -1,10 +1,16 @@
 import React from 'react';
 import ReactTooltip from 'react-tooltip';
+import { Breadcrumb } from "react-bootstrap";
 import './Zanon.css';
 function Zanon() {
     return (
-        <>
+        <>  
+            <Breadcrumb>
+                <Breadcrumb.Item href='./dashboard'>Página Inicial</Breadcrumb.Item>
+                <Breadcrumb.Item active>Escala de Afetos de Zanon</Breadcrumb.Item>
+            </Breadcrumb>
             <div class="container">
+            
                 <div class="row">
                     <div class="col md-2">
                         <div class="wrap">

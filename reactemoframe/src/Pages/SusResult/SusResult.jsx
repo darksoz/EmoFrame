@@ -6,6 +6,8 @@ import SusScoreReference from "../../Components/SusScoreReference/SusScoreRefere
 import SusVariationPlot from "../../Components/SusVariationPlot/SusVariationPlot";
 import { GetTestResult } from '../../services/api';
 import { getIdTestData } from '../../services/auth';
+import { Breadcrumb } from "react-bootstrap";
+
 let data = {
     "Username": "suzane",
     "Datetime": 343434343434,
@@ -68,6 +70,10 @@ function SusResult(){
       });
     return(
         <>
+            <Breadcrumb>
+                <Breadcrumb.Item href='./dashboard'>Página Inicial</Breadcrumb.Item>
+                <Breadcrumb.Item active>Resultado Sus</Breadcrumb.Item>
+            </Breadcrumb>
             <Container>
                 <Button style={{backgroundColor:"#00bfa5",
                                 borderColor: "#00bfa5",
