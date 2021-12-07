@@ -24,8 +24,8 @@ function FilterTable(props) {
                                 <td>{content.Username}<br/>
                                 <a href={`/${content.Instrument}Result`} onClick={handleResult(content._id)}>Ver resultados</a>
                                 </td>
-                                <td>{content.Solution}</td>
-                                <td>{getDateimeFromTicks(content.Datetime)}</td>
+                                <td>{content.Instrument}</td>
+                                <td>{content.Datetime}</td>
                              </tr>
                            </>
                        )))
