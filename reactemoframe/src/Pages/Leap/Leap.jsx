@@ -1,4 +1,5 @@
 import React from 'react';
+import { Breadcrumb } from "react-bootstrap";
 import LeapExample from '../../Components/LeapExample/LeapExample';
 import { MultiStepForm, Step } from 'react-multi-form';
 import { Link } from 'react-scroll';
@@ -65,6 +66,10 @@ function Leap() {
 
     return (
         <>
+            <Breadcrumb>
+                <Breadcrumb.Item href='./dashboard'>Página Inicial</Breadcrumb.Item>
+                <Breadcrumb.Item active>Leap</Breadcrumb.Item>
+            </Breadcrumb>
             <ModalTest Success={success} Title={title} Body={body} Reveal={show} Finish={"/dashboard"} Retry={true} />
             <Container>
                 <Row>

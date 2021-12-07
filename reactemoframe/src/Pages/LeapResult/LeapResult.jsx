@@ -1,6 +1,8 @@
 import Container from 'react-bootstrap/Container'
 import LeapReferenceTable from '../../Components/LeapReferenceTable/LeapReferenceTable';
 import LeapResultTable from '../../Components/LeapResultTable/LeapResultTable';
+import { Breadcrumb } from "react-bootstrap";
+
 
 let pf1_l = [3, 10, 12, 13, 21, 23, 24, 25, 26, 29, 31, 35, 39, 40];
 let pf1_w = [-0.32, 0.32, 0.28, 0.66, 0.67, 0.43, 0.53, 0.31, 0.37, 0.27, 0.51, 0.52, 0.59, 0.47];
@@ -30,6 +32,10 @@ let pf12_w = [0.26, 0.59, 0.72, -0.34];
 function LeapResult () {
     return (
         <>
+        <Breadcrumb>
+                <Breadcrumb.Item href='./dashboard'>Página Inicial</Breadcrumb.Item>
+                <Breadcrumb.Item active>Resultado Leap</Breadcrumb.Item>
+            </Breadcrumb>
         <Container>
         <h1>Resultado LEAP</h1>
 
