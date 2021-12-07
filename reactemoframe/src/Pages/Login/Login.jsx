@@ -1,11 +1,11 @@
 import './Login.css';
 import {useState} from "react";
-import {useHistory, Redirect} from 'react-router-dom';
+import {Redirect} from 'react-router-dom';
 import {LoginAccount} from '../../services/api.js';
 import {login, isAuthenticated} from '../../services/auth.js';
+import { RediretToPage } from '../../services/utils';
 
 function Login() {
-    const history = useHistory();
     let [email, setEmail] = useState("");
     let [password, setPassword] = useState("");
 
@@ -26,7 +26,7 @@ function Login() {
         if(response.status === 201){
             console.log("Data aqui ==> ", response.data);
             login(response.data);
-            history.push("/dashboard");
+            RediretToPage("/dashboard");
         }
         else{
             console.log("Bad request", response.status);
