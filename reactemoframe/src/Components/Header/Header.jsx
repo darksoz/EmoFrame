@@ -1,8 +1,29 @@
-import React from 'react';
-import { Navbar,Nav,NavDropdown } from 'react-bootstrap';
+import React, { useEffect } from 'react';
+import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
+import { LogouAccount } from '../../services/api';
+import {RediretToPage} from '../../services/utils';
+import { getToken, getUsername, logout } from '../../services/auth';
 
 export default function Header() {
+
+    const LoginUserName = () =>{
+        let username = getUsername().split(' ');
+        let firstName = username[0];
+        let lastName  = username[username.length-1];
+        return `${firstName} ${lastName}`;
+    }
+
+    const handleLogout = async () =>{
+        let response = await LogouAccount();
+        if(response.status === 201){
+            logout();
+            RediretToPage('/');
+        }
+        else{
+            console.log("Erro")
+        }
+    }
     return (
 
         <>
@@ -17,20 +38,24 @@ export default function Header() {
                         />
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="navbar-dark-example" />
-                    <Navbar.Collapse className="justify-content-end"><span class="far fa-user-circle fa-lg"></span>
-                        <Nav>
-                            <NavDropdown 
-                                id="nav-dropdown-dark-example"
-                                title="Nome do Usuário"
-                                menuVariant="light"
-                            > 
-                                
-                                <NavDropdown.Item href="#action/3.1">Sair</NavDropdown.Item>
-                               
-                            </NavDropdown>
-                        </Nav>
-                    </Navbar.Collapse>
-                    
+                    {
+                        (getToken() != null) &&
+                        <div>
+                            <Navbar.Collapse className="justify-content-end"><span class="far fa-user-circle fa-lg"></span>
+                                <Nav>
+                                    <NavDropdown
+                                        id="nav-dropdown-dark-example"
+                                        title={LoginUserName()}
+                                        menuVariant="light"
+                                    >
+                                        <NavDropdown.Item onClick={handleLogout}>Sair</NavDropdown.Item>
+                                    </NavDropdown>
+                                </Nav>
+                            </Navbar.Collapse>
+                        </div>
+                    }
+
+
                 </Container>
             </Navbar>
 
