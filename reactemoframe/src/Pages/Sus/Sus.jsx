@@ -46,7 +46,8 @@ function Sus() {
     }
 
     const handleFormData = async () => {
-        let json = {"Datetime": Date.now(), "Instrument": "sus", "Username": getUsername(), "Solution": solution, "Questions": sortArray(answers, { by: 'id',})}
+        
+        let json = {"Datetime": new Date(Date.now()), "Instrument": "sus", "Username": getUsername(), "Solution": solution, "Questions": sortArray(answers, { by: 'id',})}
         json = JSON.stringify(json);
 
         let response = await SaveSusTest(json);

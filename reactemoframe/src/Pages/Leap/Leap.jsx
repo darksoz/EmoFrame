@@ -44,7 +44,7 @@ function Leap() {
     }
 
     const handleFormData = async () => {
-        let json = { "Datetime": Date.now(), "Username": getUsername(), "Questions": sortArray(answers, { by: 'id', }) }
+        let json = { "Datetime": new Date(Date.now()), "Instrument": "leap", "Username": getUsername(), "Questions": sortArray(answers, { by: 'id', }) }
         console.log("Json", json)
         json = JSON.stringify(json);
 
