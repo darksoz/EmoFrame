@@ -1,0 +1,9 @@
+.statement {
+    font-size:large;
+    font-weight: bolder;
+    text-align: start;
+}
+
+#root {
+    width: 100%;
+}
