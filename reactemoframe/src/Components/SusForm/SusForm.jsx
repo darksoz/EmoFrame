@@ -4,7 +4,7 @@ function SusForm(props) {
     
     <div class="form">
     <label class="statement-leap text-start">{props.Title}</label>
-    <ul class="likert-leap">
+    <ul class="likert-sus">
         <li>
             <input class="form-check-input" type="radio" name={props.Name}value="1" required />
             <p>Concordo Fortemente</p>
@@ -24,10 +24,6 @@ function SusForm(props) {
         <li>
             <input class="form-check-input" type="radio" name={props.Name} value="5" />
             <p>Discordo Fortemente</p>
-        </li>
-        <li>
-            <input class="form-check-input" type="radio" name={props.Name} value="99" />
-            <p>Não quero responder</p>
         </li>
     </ul>
 </div>);

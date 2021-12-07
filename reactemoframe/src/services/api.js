@@ -50,6 +50,25 @@ export const LoginAccount = async (json) => {
   });
 }
 
+export const LogouAccount = async () => {
+  var config = {
+    method: 'post',
+    url: `${baseURL}/auth/logout`,
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    data: ''
+  };
+  return new Promise((resolve, reject) => {
+    axios(config)
+    .then(function (response) {
+      resolve(response);
+    }).catch(function (error) {
+      reject(error);
+    });
+  });
+}
+
 export const SaveSamTest = async (json) => {
   
   var config = {
