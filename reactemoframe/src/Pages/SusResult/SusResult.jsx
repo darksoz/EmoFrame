@@ -31,6 +31,10 @@ let data = {
 }
 function SusResult(){
     const [questions, setQuestions] = useState([]);
+    const [name, setName] = useState('');
+    const [datetime, setDatetime] = useState('');
+
+
     const GetSusScore = () =>{
         let sum = 0;
         questions.forEach(item => {
@@ -58,6 +62,9 @@ function SusResult(){
             if(response.status === 201){    
                 let data = response.data;
                 setQuestions(data.Questions);
+                setName(data.Username);
+                setDatetime(data.Datetime);
+
                 console.log("Dados salvos aqui ==> ", response.data);
             }
             else{
@@ -69,6 +76,7 @@ function SusResult(){
     return(
         <>
             <Container>
+                <h1>{name}/{datetime}</h1>
                 <Button style={{backgroundColor:"#00bfa5",
                                 borderColor: "#00bfa5",
                                 margin:"20px",
