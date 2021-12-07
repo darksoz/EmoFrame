@@ -1,7 +1,7 @@
 import * as mongoose  from 'mongoose';
 
 export const SusSchema = new mongoose.Schema({
-    Datetime: Number,
+    Datetime: String,
     Instrument: String,
     Questions: Array<Object>({id: String, answer: Number}),
     Solution: String,
