@@ -1,6 +1,8 @@
 import Table from 'react-bootstrap/Table';
 import Container from 'react-bootstrap/Container';
-function LeapResultTable() {
+function LeapResultTable(props) {
+
+    console.log("Suzane => ", props.Factors)
     return (
         <>
             <Container>
