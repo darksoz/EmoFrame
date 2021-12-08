@@ -1,5 +1,4 @@
 import { Container } from 'react-bootstrap';
-import Table from 'react-bootstrap/Table';
 import SamTable from '../../Components/SamTable/SamTable';
 
 function SamResult() {

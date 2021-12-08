@@ -20,6 +20,7 @@ export class SusController {
         return this.SusService.getData(json);
     }
 
+    @UseGuards(JwtAuthGuard, UserGuard)
     @Post('id')
     async getById(@Body() id: Object) : Promise<Sus>{
         return this.SusService.getById(id);
