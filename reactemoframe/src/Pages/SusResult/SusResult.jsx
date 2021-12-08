@@ -181,6 +181,7 @@ function SusResult(){
         <>
             <Breadcrumb>
                 <Breadcrumb.Item href='./dashboard'>Página Inicial</Breadcrumb.Item>
+                <Breadcrumb.Item href='./results'>Resultados</Breadcrumb.Item>
                 <Breadcrumb.Item active>Resultado Sus</Breadcrumb.Item>
             </Breadcrumb>
             <Container>

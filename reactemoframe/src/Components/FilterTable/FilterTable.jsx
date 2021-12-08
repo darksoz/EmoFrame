@@ -2,9 +2,11 @@ import { Table } from "react-bootstrap";
 import { setIdTestData } from "../../services/auth";
 
 function FilterTable(props) {
+
     const handleResult = (id) =>{
         setIdTestData(id);
     }
+
     return (
         <>
             <Table hover>

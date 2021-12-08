@@ -34,6 +34,7 @@ export class SusService {
     async getById(json: Object){
         let id = json["id"];
         try{
+            console.log("dados ", await this.susModel.findById(id).exec());
             return await this.susModel.findById(id).exec();
         }
         catch(exc){

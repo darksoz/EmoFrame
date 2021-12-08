@@ -50,7 +50,6 @@ function LeapResult() {
           setQuestions(data.Questions);
           setName(data.Username);
           setDatetime(data.Datetime);
-          console.log("Dados salvos aqui ==> ", response.data);
         }
         else {
           console.log("Error data response");
@@ -60,7 +59,7 @@ function LeapResult() {
         setQuestions(mockData);
       }
     }
-    const getFactors = () => {
+    const getFactors =  () => {
       if (questions && factors.length === 0) {
         setFactors(oldArray => [...oldArray, factorCalculation(pf1_l, pf1_w)]);
         setFactors(oldArray => [...oldArray, factorCalculation(pf2_l, pf2_w)]);
@@ -109,6 +108,7 @@ function LeapResult() {
       </Breadcrumb>
       <Container>
         <h1>Resultado LEAP</h1>
+        <h3>{`Nome: ${name} / Data: ${datetime}`}</h3>
 
         <LeapReferenceTable />
 
