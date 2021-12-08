@@ -1,17 +1,12 @@
-import { Link } from "@mui/material";
 import { Table } from "react-bootstrap";
 import { setIdTestData } from "../../services/auth";
-const ticksToDate = require('ticks-to-date');
 
 function FilterTable(props) {
 
-    const getDateimeFromTicks = (ticks) =>{
-        const date = ticksToDate(ticks);
-        return `${date.getUTCDay()}/${date.getUTCMonth()}/${date.getUTCFullYear()}`
-    }
     const handleResult = (id) =>{
         setIdTestData(id);
     }
+
     return (
         <>
             <Table hover>

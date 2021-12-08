@@ -7,11 +7,11 @@ import { getUsername } from '../../services/auth';
 import './Sam.css';
 
 function Sam() {
-    const [answers, setAnswers] = React.useState([]);
-    const [title, setTitle] = React.useState("");
-    const [body, setBody] = React.useState("");
-    const [show, setShow] = React.useState(false);
-    const [success, setSuccess] = React.useState(false);
+    const [answers, setAnswers] = useState([]);
+    const [title, setTitle] = useState("");
+    const [body, setBody] = useState("");
+    const [show, setShow] = useState(false);
+    const [success, setSuccess] = useState(false);
 
     const handleChange = (event) => {
         const data = { id: event.target.name, answer: event.target.value };

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Button, Modal } from 'react-bootstrap';
-import {useHistory, Redirect} from 'react-router-dom';
+import {useHistory} from 'react-router-dom';
 
 function ModalTest(props) {
     const history = useHistory();

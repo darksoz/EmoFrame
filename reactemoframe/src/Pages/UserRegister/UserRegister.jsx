@@ -9,7 +9,7 @@ function UserRegister() {
     const Religion = () => {
         var e = document.getElementById("Religião");
         var strUser = e.value;
-        if (parseInt(strUser) == 1) {
+        if (parseInt(strUser) === 1) {
             setRelVisibility(true);
             console.log("Religião sim");
         }

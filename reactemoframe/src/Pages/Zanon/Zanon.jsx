@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactTooltip from 'react-tooltip';
 import { Breadcrumb } from "react-bootstrap";
 import './Zanon.css';
 function Zanon() {
