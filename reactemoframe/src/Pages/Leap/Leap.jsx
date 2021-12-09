@@ -174,12 +174,12 @@ function Leap() {
                                     }
                                 </div>
                             </div>
-                                    </div>
-                        </Col>
-                    </Row>
-                </Container>
-            </>
+                        </div>
+                    </Col>
+                </Row>
+            </Container>
+        </>
 
-            )
+    )
 }
-            export default Leap;
+export default Leap;
