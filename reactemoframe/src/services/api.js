@@ -45,7 +45,7 @@ export const LoginAccount = async (json) => {
     .then(function (response) {
       resolve(response);
     }).catch(function (error) {
-      reject(error);
+      resolve(error.response);
     });
   });
 }
