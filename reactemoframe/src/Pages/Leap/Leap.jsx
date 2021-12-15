@@ -17,11 +17,13 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
+
 let firstQuestions = arrayShuffle(Questions1);
 let secondQuestions = arrayShuffle(Questions2);
 let thirdQuestions = arrayShuffle(Questions3);
 let fourthQuestions = arrayShuffle(Questions4);
 let amoundOfQuestions = (firstQuestions.length + secondQuestions.length + thirdQuestions.length + fourthQuestions.length);
+
 
 function Leap() {
 
@@ -180,6 +182,6 @@ function Leap() {
                 </Container>
             </>
 
-            )
+            );
 }
             export default Leap;
