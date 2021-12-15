@@ -15,6 +15,7 @@ import Sus from './Pages/Sus/Sus';
 import Panas from './Pages/Panas/Panas';
 import SusResult from './Pages/SusResult/SusResult';
 import LeapResult from './Pages/LeapResult/LeapResult';
+import PanasResult from './Pages/PanasResult/PanasResult';
 
 
 function PrivateRoute({ component: Component, ...rest }) {
@@ -59,6 +60,7 @@ function Routes() {
                 <PrivateRoute path='/sus' exact component={Sus}/>
                 <PrivateRoute path='/panas' exact component={Panas}/>
                 <LimitedAccessRoute path='/leapResult' exact component={LeapResult}/>
+                <LimitedAccessRoute path='/panasResult' exact component={PanasResult}/>
                 <LimitedAccessRoute path='/susResult' exact component={SusResult}/>
                 
             </Switch>
