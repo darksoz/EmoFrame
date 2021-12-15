@@ -12,9 +12,6 @@ import { Link } from 'react-scroll';
 import sortArray from 'sort-array';
 import { getUsername } from '../../services/auth';
 
-
-
-
 let firstQuestions = arrayShuffle(Questions1);
 let secondQuestions = arrayShuffle(Questions2);
 let amountOfQuestions = (firstQuestions.length + secondQuestions.length);
@@ -45,9 +42,7 @@ function Panas() {
         let json = { "Datetime": new Date(Date.now()), "Instrument": "leap", "Username": getUsername(), "Questions": sortArray(answers, { by: 'id', }) }
         console.log("Json", json)
         json = JSON.stringify(json);
-
     }
-
 
     return (
         <>
