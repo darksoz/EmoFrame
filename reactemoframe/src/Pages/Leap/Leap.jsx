@@ -180,6 +180,6 @@ function Leap() {
                 </Container>
             </>
 
-            )
+            );
 }
             export default Leap;
