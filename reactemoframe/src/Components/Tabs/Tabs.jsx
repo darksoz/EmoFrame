@@ -4,7 +4,7 @@ function Tabs(props) {
     
     return (
         <>
-            <div class="container-fluid ">
+            <div class="mt-3">
                 {
                     getUsertype() === 'Specialist'  ?
                     <ul class="nav nav-tabs">

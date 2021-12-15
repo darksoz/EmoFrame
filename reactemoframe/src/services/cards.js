@@ -22,6 +22,7 @@ export const cards =
             "image": "card",
             "title": "PANAS",
             "page": "panas"
+        },
         {
             "image": "card",
             "title": "SUS",
