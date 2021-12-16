@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import Checkbox from '@mui/material/Checkbox';
-
 import Tabs from '../../Components/Tabs/Tabs';
+import { Breadcrumb } from "react-bootstrap";
 import { GetTestsData } from '../../services/api';
 import FilterTable from '../../Components/FilterTable/FilterTable';
 
@@ -57,7 +57,12 @@ function Results() {
 
     return (
         <div>
-            <Tabs active="results" />
+            <Breadcrumb>
+                <Breadcrumb.Item href='./dashboard'>Página Inicial</Breadcrumb.Item>
+                <Breadcrumb.Item active>Resultados</Breadcrumb.Item>
+            </Breadcrumb>
+            <Tabs active="results"/>
+           
             <Container>
                 <Row>
                     <Col>
