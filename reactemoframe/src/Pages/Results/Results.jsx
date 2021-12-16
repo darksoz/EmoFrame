@@ -9,7 +9,8 @@ import FilterTable from '../../Components/FilterTable/FilterTable';
 function Results() {
     let [filters, setFilters] = useState({
         "sam": false,
-        "sus": false
+        "sus": false,
+        "leap": false
     })
     const [searchText, setSearchText] = useState('');
     const [testsData, setTestsData] = useState([]);
@@ -38,15 +39,18 @@ function Results() {
     const handleSearch = async () => {
         let isFiltered = Object.values(filters).includes(true);
         let keys = isFiltered ? getKeysByValue(filters) : Object.keys(filters);
+        console.log("filters", keys);
+        let array = []
         setTestsData([]);
         keys.forEach(async (key) =>{
             let json = {"name": searchText}
             json = JSON.stringify(json);
-            if(key === "sus"){
+            if(key === "sus" || key === "leap"){
                 let response = await GetTestsData(json, key);
                 if(response.status === 201){    
-                    setTestsData(response.data);
-                    console.log("Dados salvos aqui ==> ", response.data);
+                    setTestsData([...array, ...response.data]);
+                    array = [...array, ...response.data]
+                    console.log("Dados salvos aqui ==> ", array);
                 }
                 else{
                     console.log("Error data response");
@@ -73,6 +77,9 @@ function Results() {
                             </Row>
                             <Row style={{ marginLeft: "-4px" }}    >
                                 <label><Checkbox name="sus" value="sus" /> {"Sus"}</label>
+                            </Row>
+                            <Row style={{ marginLeft: "4px" }}    >
+                                <label><Checkbox name="leap" value="leap" /> {"Leap"}</label>
                             </Row>
                         </div>
                     </Col>

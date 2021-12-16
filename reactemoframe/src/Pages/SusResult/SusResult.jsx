@@ -1,4 +1,3 @@
-import { margin } from '@mui/system';
 import Button from '@restart/ui/esm/Button';
 import { useEffect, useState } from 'react';
 import {Container} from 'react-bootstrap'
@@ -182,6 +181,7 @@ function SusResult(){
         <>
             <Breadcrumb>
                 <Breadcrumb.Item href='./dashboard'>Página Inicial</Breadcrumb.Item>
+                <Breadcrumb.Item href='./results'>Resultados</Breadcrumb.Item>
                 <Breadcrumb.Item active>Resultado Sus</Breadcrumb.Item>
             </Breadcrumb>
             <Container>

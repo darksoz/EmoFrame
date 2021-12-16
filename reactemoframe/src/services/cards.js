@@ -6,13 +6,11 @@ export const cards =
             "title": "SAM",
             "page": "sam"
         },
-
         {
             "image": "card",
             "title": "LEAP",
             "page": "leap"
         },
-
         {
             "image": "card",
             "title": "ZANON",
