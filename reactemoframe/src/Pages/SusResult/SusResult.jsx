@@ -40,7 +40,7 @@ function SusResult(){
         questions.forEach(item => {
             sum += item.answer % 2 !== 0 ? Math.abs(item.answer - 1) :  Math.abs(item.answer - 5);
         });
-        let result =  sum * 2.5;
+        let result =  sum * 7;
         console.log("sus score result here ==> ", result);
         return result;
     }
