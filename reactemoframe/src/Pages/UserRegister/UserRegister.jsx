@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Breadcrumb } from "react-bootstrap";
 import Tabs from "../../Components/Tabs/Tabs";
 import "./UserRegister.css";
 
@@ -9,7 +10,7 @@ function UserRegister() {
     const Religion = () => {
         var e = document.getElementById("Religião");
         var strUser = e.value;
-        if (parseInt(strUser) == 1) {
+        if (parseInt(strUser) === 1) {
             setRelVisibility(true);
             console.log("Religião sim");
         }
@@ -22,6 +23,10 @@ function UserRegister() {
 
     return (
         <>
+            <Breadcrumb>
+                <Breadcrumb.Item href='./dashboard'>Página Inicial</Breadcrumb.Item>
+                <Breadcrumb.Item active>Cadastrar Usuário</Breadcrumb.Item>
+            </Breadcrumb>
             <Tabs active="register" />
 
             <div class="container card mt-3">

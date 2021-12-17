@@ -1,7 +1,8 @@
 import * as mongoose  from 'mongoose';
 
 export const SamSchema = new mongoose.Schema({
-    Datetime: Number,
+    Datetime: String,
+    Instrument: String,
     Questions: Array<Object>({id: String, answer: Number}),
     Username: String,
 })

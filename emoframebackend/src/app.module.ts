@@ -1,3 +1,4 @@
+import { SusModule } from './instruments/sus/sus.module';
 import { LeapModule } from './instruments/leap/leap.module';
 import { SamModule } from './instruments/sam/sam.module';
 import { TokenModule } from './token/token.module';
@@ -11,6 +12,7 @@ import { MongooseModule } from '@nestjs/mongoose';
 
 @Module({
   imports: [
+    SusModule,
     LeapModule,
     SamModule,
     TokenModule,

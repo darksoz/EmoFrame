@@ -1,30 +1,66 @@
 import React from 'react';
+import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
+import Container from 'react-bootstrap/Container';
+import { LogouAccount } from '../../services/api';
+import {RediretToPage} from '../../services/utils';
+import { getToken, getUsername, logout } from '../../services/auth';
 
 export default function Header() {
+
+    const LoginUserName = () =>{
+        let username = getUsername().split(' ');
+        let firstName = username[0];
+        let lastName  = username[username.length-1];
+        return `${firstName} ${lastName}`;
+    }
+
+    const handleLogout = async () =>{
+        let response = await LogouAccount();
+        if(response.status === 201){
+            logout();
+            RediretToPage('/');
+        }
+        else{
+            console.log("Erro")
+        }
+    }
     return (
-        <div>
-            <nav class="navbar navbar-expand-lg navbar-dark" style={{backgroundColor : "#00bfa5"}}>
-                <div class="container">
-                    <a class="navbar-brand" href="/">
-                    <img src={`${process.env.PUBLIC_URL}/emoframe.png`} width="50" alt="Logo"/>
-                    </a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
-                        <ul class="nav ms-auto">
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle btn" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"><span class="fas fa-universal-access fa-lg"></span> Acessibilidade</a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item">Aumentar fonte <span class="fas fa-plus-circle fa-lg"></span></a></li>
-                                    <li><a class="dropdown-item">Diminuir fonte <span class="fas fa-minus-circle fa-lg"></span></a></li>
-                                    <li><a class="dropdown-item">Contraste <span class="fas fa-adjust fa-lg"></span></a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        </div>
+
+        <>
+            <Navbar style={{ backgroundColor: "#00bfa5" }}>
+                <Container>
+                    <Navbar.Brand href="/dashboard">
+                        <img
+                            src={`${process.env.PUBLIC_URL}/emoframe.png`}
+                            width="60"
+                            className="d-inline-block align-top"
+                            alt=""
+                        />
+                    </Navbar.Brand>
+                    <Navbar.Toggle aria-controls="navbar-dark-example" />
+                    {
+                        (getToken() != null) &&
+                        <div>
+                            <Navbar.Collapse className="justify-content-end"><span class="far fa-user-circle fa-lg"></span>
+                                <Nav>
+                                    <NavDropdown
+                                        id="nav-dropdown-dark-example"
+                                        title={LoginUserName()}
+                                        menuVariant="light"
+                                    >
+                                        <NavDropdown.Item onClick={handleLogout}>Sair</NavDropdown.Item>
+                                    </NavDropdown>
+                                </Nav>
+                            </Navbar.Collapse>
+                        </div>
+                    }
+
+
+                </Container>
+            </Navbar>
+
+
+        </>
+
     )
 }

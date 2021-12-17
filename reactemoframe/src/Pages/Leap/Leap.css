@@ -57,10 +57,12 @@
 
   .radio{
     position: relative;
+  
   }
 
   .radio-form{
     position: relative;
+    width: max-content;
   }
 
   .radio-form:after{
@@ -73,3 +75,7 @@
     height: 2px;
     width: 78.5%;
   }
+
+  #root {
+    width: 100%;
+}
