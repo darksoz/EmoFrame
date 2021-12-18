@@ -6,11 +6,11 @@ function SusForm(props) {
     <label class="statement-leap text-start">{props.Title}</label>
     <ul class="likert-sus">
         <li>
-            <input class="form-check-input" type="radio" name={props.Name}value="1" required />
+            <input class="form-check-input" type="radio" name={props.Name}value="5" required />
             <p>Concordo Fortemente</p>
         </li>
         <li>
-            <input class="form-check-input" type="radio" name={props.Name}value="2" />
+            <input class="form-check-input" type="radio" name={props.Name}value="4" />
             <p>Concordo Parcialmente</p>
         </li>
         <li>
@@ -18,11 +18,11 @@ function SusForm(props) {
             <p>Neutro</p>
         </li>
         <li>
-            <input class="form-check-input" type="radio" name={props.Name} value="4" />
+            <input class="form-check-input" type="radio" name={props.Name} value="2" />
             <p>Discordo Parcialmente</p>
         </li>
         <li>
-            <input class="form-check-input" type="radio" name={props.Name} value="5" />
+            <input class="form-check-input" type="radio" name={props.Name} value="1" />
             <p>Discordo Fortemente</p>
         </li>
     </ul>
