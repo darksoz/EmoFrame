@@ -127,20 +127,28 @@ let mockData = {
     ],
     "Solution": "Testes dos carros"
 }
+
+const negativeQuestions = [18, 19, 22, 24, 27];
+//x =  [negativeQuestions] - 1
+
 function SusResult(){
     const [questions, setQuestions] = useState([]);
     const [name, setName] = useState('');
     const [datetime, setDatetime] = useState('');
 
 
+    const NormalizeScore = (val, max, min) => 
+    { 
+        return ((val - min) / (max - min)) * 100; 
+    }
     const GetSusScore = () =>{
         let sum = 0;
-        questions.forEach(item => {
-            sum += item.answer % 2 !== 0 ? Math.abs(item.answer - 1) :  Math.abs(item.answer - 5);
+        questions.forEach((item, index) => {
+            sum += negativeQuestions.includes(index + 1) ? (5 - item.answer) :  (item.answer - 1);
         });
-        let result =  sum * 7;
+        let result =  sum;
         console.log("sus score result here ==> ", result);
-        return result;
+        return NormalizeScore(result,112,0).toFixed(2);
     }
 
     const GetVariationAnswer = () => {
@@ -163,7 +171,6 @@ function SusResult(){
                     setQuestions(data.Questions);
                     setName(data.Username);
                     setDatetime(data.Datetime);
-                    console.log("Dados salvos aqui ==> ", response.data);
                 }
                 else{
                     console.log("Error data response");
@@ -173,6 +180,7 @@ function SusResult(){
                 setQuestions(mockData.Questions);
                 setName(mockData.Username);
                 setDatetime(mockData.Datetime);
+                console.log("Mock data");
             }
         }
         getResult();
