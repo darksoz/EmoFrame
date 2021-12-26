@@ -39,7 +39,7 @@ export default function Header() {
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="navbar-dark-example" />
                     {
-                        (getToken() != null) &&
+                        (getToken() !== null) &&
                         <div>
                             <Navbar.Collapse className="justify-content-end"><span class="far fa-user-circle fa-lg"></span>
                                 <Nav>
