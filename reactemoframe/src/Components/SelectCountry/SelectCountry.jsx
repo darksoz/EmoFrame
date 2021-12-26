@@ -3,8 +3,8 @@ function SelectCountry () {
         <>
         <div className="form-group">
                         <label class="col-sm-10 text-start control-label"> Nacionalidade </label>
-                        <select class="form-select" aria-label="Default select example">
-                            <option selected>Selecione a nacionalidade</option>
+                        <select class="form-select" name="Nacionality" aria-label="Default select example">
+                            <option value="Nothing"  selected>Selecione a nacionalidade</option>
                             <option value="África do Sul">África do Sul</option>
                             <option value="Albânia">Albânia</option>
                             <option value="Alemanha">Alemanha</option>
@@ -183,8 +183,8 @@ function SelectCountry () {
                     </div>
                     <div className="form-group">
                         <label class="col-sm-10 text-start control-label"> Naturalidade </label>
-                        <select class="form-select" aria-label="Default select example">
-                            <option selected>Selecione a naturalidade</option>
+                        <select class="form-select" name="Birthplace" aria-label="Default select example">
+                            <option value="Nothing" selected>Selecione a naturalidade</option>
                             <option value="AC">Acre</option>
                             <option value="AL">Alagoas</option>
                             <option value="AP">Amapá</option>
