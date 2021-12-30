@@ -7,6 +7,7 @@ function Register() {
     
     return (
         <div>
+            
             <Tabs active="register"/>
             <div className="container card mt-3">
                 <h3>Cadastre-se</h3>
