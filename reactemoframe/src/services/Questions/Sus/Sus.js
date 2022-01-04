@@ -79,7 +79,7 @@ export const Questions2 = [
       },
     {
         "Name": "20",
-        "Title": "20. Os símbolos e ícones são claros e intuitivos."
+        "Title": "Os símbolos e ícones são claros e intuitivos."
       }
 ];
 export const Questions3 = [
