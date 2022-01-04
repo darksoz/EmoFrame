@@ -36,9 +36,17 @@ function UserRegister() {
     }
 
     const handleSubmit = () => {
+        if(registerData.Religion === undefined){
+            setRegisterData(prevState => ({
+                ...prevState,
+                Religion: "N/A"
+            }));
+        }
+        setRegisterData(prevState => ({
+            ...prevState,
+            FullName: `${registerData.Name} ${registerData.Surname}`
+        }));
         console.log(registerData);
-        alert(registerData);
-        localStorage.setItem("Cadastro", registerData);
     }
 
     return (
@@ -197,7 +205,7 @@ function UserRegister() {
 
                         <div className="form-group">
                             <label class="col-sm-10 text-start control-label">E-mail</label>
-                            <input type="email" className="form-control" placeholder="E-mail" name="Email" required />
+                            <input type="email" className="form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="E-mail" name="Email" required />
                         </div>
 
                         <div className="form-group" >

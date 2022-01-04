@@ -1,3 +1,5 @@
+import { PatientModule } from './patient/patient.module';
+import { SpecialistModule } from './specialist/specialist.module';
 import { SusModule } from './instruments/sus/sus.module';
 import { LeapModule } from './instruments/leap/leap.module';
 import { SamModule } from './instruments/sam/sam.module';
@@ -12,6 +14,8 @@ import { MongooseModule } from '@nestjs/mongoose';
 
 @Module({
   imports: [
+    PatientModule,
+    SpecialistModule,
     SusModule,
     LeapModule,
     SamModule,
