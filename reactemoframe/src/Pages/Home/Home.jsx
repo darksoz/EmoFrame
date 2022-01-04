@@ -17,8 +17,9 @@ function Home() {
                 <div class="CenterContent">
                     <img src={`${process.env.PUBLIC_URL}/emoframe.png`} style={{width: "250px"}} alt="Responsive"/>
                     <p className="EmoFrameText">Framework de Instrumentos de Avaliação de Respostas Emocionais</p> 
-                    <button class="btn whitebutton  btn-lg" onClick={()=>goToPage('login')}>Entrar</button>
-                    <button class="btn whitebutton btn-lg" onClick={()=>goToPage('register')}>Cadastrar</button>
+                    
+                    <button class="btn whitebutton btn-lg btn-block" onClick={()=>goToPage('login')}>Entrar</button>
+                    
                 </div> 
             </div>
         </div>
