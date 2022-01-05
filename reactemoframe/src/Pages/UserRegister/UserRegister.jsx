@@ -20,7 +20,7 @@ function UserRegister() {
                 <Breadcrumb.Item active>Cadastrar Usuário</Breadcrumb.Item>
             </Breadcrumb>
             <Tabs active="register" />
-            <div className="form-group" onChange={handleChange}>
+            <div className="form-group mt-3" onChange={handleChange}>
                 <h3>Cadastro</h3>
                 <select class="form-select col-sm-10 control-label" name="Usertype" aria-label="Default select example" required>
                     <option disabled selected>Quem você gostaria de cadastrar? </option>
