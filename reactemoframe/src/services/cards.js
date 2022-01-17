@@ -25,7 +25,13 @@ export const cards =
             "image": "card",
             "title": "SUS",
             "page": "sus"
+        },
+        {
+            "image": "card",
+            "title": "PAGE",
+            "page": "page"
         }
+
     ]
 }
 `
