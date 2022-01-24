@@ -118,8 +118,6 @@ function Zanon() {
                     </div>
                 }
             </Container>
-
-
         </>
     )
 }
