@@ -2,31 +2,29 @@
 https://docs.nestjs.com/providers#services
 */
 
-import { forwardRef, HttpException, Inject, Injectable } from '@nestjs/common';
+import { HttpException, Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
-import { Model } from 'mongoose';
 import { User } from 'src/user/user';
-import { UserService } from 'src/user/user.service';
-import { Patient } from './patient';
+import { Specialist } from './specialist';
 import * as bcrypt from 'bcrypt';
+import { Model } from 'mongoose';
 
 @Injectable()
-export class PatientService {
-    constructor(@InjectModel('Patient') 
-                private readonly patientModel: Model<Patient>,
+export class SpecialistService {
+    constructor(@InjectModel('Specialist') 
+                private readonly specialistModel: Model<Specialist>,
                 @InjectModel('User')
                 private readonly userModel: Model<User>){}
 
-    async create(task: Patient){
+    async create(task: Specialist){
         task.Password = await bcrypt.hashSync(task.Password, 10);
         const userTask = {
             name: task.FullName,
             email: task.Email,
             password: task.Password,
-            usertype: task.Usertype,
+            usertype: task.Usertype,    
         }
-        
-        const patientData = new this.patientModel(task);
+        const patientData = new this.specialistModel(task);
         const userData = new this.userModel(userTask);
         try{
             await patientData.save();

@@ -5,7 +5,12 @@ export const PatientSchema = new mongoose.Schema({
     Address: String,
     Birthdate: String,
     Birthplace: String,
-    Email: String,
+    Email:{ 
+        type: String,
+        required: true,
+        match: /.+\@.+\..+/,
+        unique: true
+      },
     FamilyIncome: String,
     FullName: String,
     Gender: String,
@@ -19,6 +24,7 @@ export const PatientSchema = new mongoose.Schema({
     Religion: String,
     Schooling: String,
     SocialName: String,
+    Surname: String,
     Usertype: String,
     YearsOfStudy: Number
 })

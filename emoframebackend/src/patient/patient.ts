@@ -19,6 +19,7 @@ export class Patient extends Document{
     Religion: String;
     Schooling: String;
     SocialName: String;
+    Surname: String;
     Usertype: String;
     YearsOfStudy: Number
 }

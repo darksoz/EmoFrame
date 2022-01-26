@@ -31,6 +31,25 @@ export const defineInterceptor = () =>{
   })
 }
 
+export const Register = async (json, userType) => {
+  var config = {
+    method: 'post',
+    url: `${baseURL}/${userType}/register`,
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    data: json
+  };
+  return new Promise((resolve, reject) => {
+    axios(config)
+    .then(function (response) {
+      resolve(response);
+    }).catch(function (error) {
+      resolve(error.response);
+    });
+  });
+}
+
 export const LoginAccount = async (json) => {
   var config = {
     method: 'post',

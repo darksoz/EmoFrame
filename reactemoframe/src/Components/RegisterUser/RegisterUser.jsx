@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { Container } from "react-bootstrap";
 import SelectCountry from "../../Components/SelectCountry/SelectCountry";
+import { Register } from "../../services/api";
 import "./RegisterUser.css";
 
-function RegisterUser() {
+function RegisterUser(props) {
 
     const [relVisibility, setRelVisibility] = useState(false);
     const [registerData, setRegisterData] = useState({});
@@ -19,7 +20,6 @@ function RegisterUser() {
             setRelVisibility(false);
             console.log("Religião não");
         }
-
     }
 
     const handleChange = (e) => {
@@ -33,7 +33,7 @@ function RegisterUser() {
         }
     }
 
-    const handleSubmit = () => {
+    const handleSubmit = async() => {
         if(registerData.Religion === undefined){
             setRegisterData(prevState => ({
                 ...prevState,
@@ -42,14 +42,24 @@ function RegisterUser() {
         }
         setRegisterData(prevState => ({
             ...prevState,
-            FullName: `${registerData.Name} ${registerData.Surname}`
+            FullName: `${registerData.Name} ${registerData.Surname}`,
+            Usertype: `${props.Usertype}`
         }));
+        let json = JSON.stringify(registerData);
+        
+        let response = await Register(json, 'patient');
+        if (response.status === 201) {
+            console.log("Dados salvos aqui ==> ", response.data);
+        }
+        else {
+            //
+            console.log("Erro ==> ", response.data);
+        }
         console.log(registerData);
     }
     return (
         <>
             <Container >
-
                 <h3>Cadastrar Usuário</h3>
                 <div onChange={handleChange}>
                     <div className="form-group">

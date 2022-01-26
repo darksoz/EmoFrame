@@ -3,7 +3,6 @@ https://docs.nestjs.com/controllers#controllers
 */
 
 import { Body, Controller, Post } from '@nestjs/common';
-import { User } from 'src/user/user';
 import { Patient } from './patient';
 import { PatientService } from './patient.service';
 
