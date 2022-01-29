@@ -10,48 +10,42 @@ function RegisterSpecialist(props) {
     const [body, setBody] = useState("");
     const [show, setShow] = useState(false);
     const [success, setSuccess] = useState(false);
-    
-    const handleChange = (e) => {
-        if(e.target.name !== "ReligionOption"){
-            console.log(`Name: ${e.target.name}, Value: ${e.target.value}`);
-            const { name, value } = e.target;
-            setRegisterData(prevState => ({
-                ...prevState,
-                [name]: value
-            }));
-        }
-    }
 
-    const handleSubmit = async () => {
+    const handleChange = (e) => {
+        const { name, value } = e.target;
         setRegisterData(prevState => ({
             ...prevState,
+            [name]: value,
             FullName: `${registerData.Name} ${registerData.Surname}`,
             Usertype: `${props.Usertype}`
         }));
+    }
+
+    const handleSubmit = async () => {
+        console.log("Register data aqui => ", registerData);
         let json = JSON.stringify(registerData);
-        
-        let response = await    (json, 'specialist');
+
+        let response = await Register(json, 'specialist');
         if (response.status === 201) {
-            console.log("Dados salvos aqui ==> ", response.data);   
+            console.log("Dados salvos aqui ==> ", response.data);
             setTitle("cadastro concluído");
             setBody("Especialista cadastrado(a) com sucesso");
             setSuccess(true);
             setShow(true);
         }
         else {
-            console.log("Erro ==> ", response.status);   
+            console.log("Erro ==> ", response.status);
             setTitle("Erro ao realizar cadastro");
             setBody("Email já cadastrado");
             setSuccess(false);
             setShow(true);
         }
-        
-    }   
+    }
 
     return (
         <>
             <Container >
-            <ModalTest Success={success} Title={title} Body={body} Reveal={show} Finish={"/dashboard"} Retry={true} />
+                <ModalTest Success={success} Title={title} Body={body} Reveal={show} Finish={"/dashboard"} Retry={true} />
                 <h3>Cadastrar Especialista</h3>
                 <div onChange={handleChange}>
 

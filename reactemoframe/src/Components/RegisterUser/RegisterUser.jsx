@@ -2,12 +2,17 @@ import { useState } from "react";
 import { Container } from "react-bootstrap";
 import SelectCountry from "../../Components/SelectCountry/SelectCountry";
 import { Register } from "../../services/api";
+import ModalTest from "../Modal/ModalTest";
 import "./RegisterUser.css";
 
 function RegisterUser(props) {
 
     const [relVisibility, setRelVisibility] = useState(false);
     const [registerData, setRegisterData] = useState({});
+    const [title, setTitle] = useState("");
+    const [body, setBody] = useState("");
+    const [show, setShow] = useState(false);
+    const [success, setSuccess] = useState(false);
 
     const Religion = () => {
         var e = document.getElementById("Religião");
@@ -28,7 +33,9 @@ function RegisterUser(props) {
             const { name, value } = e.target;
             setRegisterData(prevState => ({
                 ...prevState,
-                [name]: value
+                [name]: value,
+                FullName: `${registerData.Name} ${registerData.Surname}`,
+                Usertype: `${props.Usertype}`
             }));
         }
     }
@@ -46,20 +53,27 @@ function RegisterUser(props) {
             Usertype: `${props.Usertype}`
         }));
         let json = JSON.stringify(registerData);
-        
-        let response = await Register(json, 'patient');
+
+        let response = await Register(json, 'specialist');
         if (response.status === 201) {
             console.log("Dados salvos aqui ==> ", response.data);
+            setTitle("cadastro concluído");
+            setBody("Usuário cadastrado(a) com sucesso");
+            setSuccess(true);
+            setShow(true);
         }
         else {
-            //
-            console.log("Erro ==> ", response.data);
+            console.log("Erro ==> ", response.status);
+            setTitle("Erro ao realizar cadastro");
+            setBody("Email já cadastrado");
+            setSuccess(false);
+            setShow(true);
         }
-        console.log(registerData);
     }
     return (
         <>
             <Container >
+                <ModalTest Success={success} Title={title} Body={body} Reveal={show} Finish={"/dashboard"} Retry={true} />
                 <h3>Cadastrar Usuário</h3>
                 <div onChange={handleChange}>
                     <div className="form-group">

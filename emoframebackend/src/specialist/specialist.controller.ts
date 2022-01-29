@@ -12,7 +12,7 @@ import { SpecialistService } from './specialist.service';
 export class SpecialistController { 
     constructor(private specialistService: SpecialistService){ }
     
-    @UseGuards(JwtAuthGuard, UserGuard)
+    //@UseGuards(JwtAuthGuard, UserGuard)
     @Post('specialist/register')
     async create(@Body() task: Specialist) : Promise<any>{
         return this.specialistService.create(task);
