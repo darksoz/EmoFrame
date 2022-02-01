@@ -1,8 +1,7 @@
 import axios from 'axios';
 import {getToken, setToken} from './auth';
 
-const baseURL = 'http://localhost:5000/api';
-
+const baseURL = process.env.NODE_ENV === 'development' ? 'http://localhost:5000/api' : 'http://emoframeapi.herokuapp.com/api';
 
 export const defineInterceptor = () =>{
   axios.interceptors.response.use(response => {
