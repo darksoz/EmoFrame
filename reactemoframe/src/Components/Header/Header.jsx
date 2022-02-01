@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import { LogouAccount } from '../../services/api';
@@ -29,7 +29,7 @@ export default function Header() {
         <>
             <Navbar style={{ backgroundColor: "#00bfa5" }}>
                 <Container>
-                    <Navbar.Brand href="">
+                    <Navbar.Brand href="/dashboard">
                         <img
                             src={`${process.env.PUBLIC_URL}/emoframe.png`}
                             width="60"

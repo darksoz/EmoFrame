@@ -1,7 +1,7 @@
 import {Document} from 'mongoose';
 
 export class Sam extends Document{
-    Datetime: Number;
+    Datetime: String;
     Questions: Array<Object>;
     Instrument: String;
     Username: String;
