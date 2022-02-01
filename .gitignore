@@ -1,2 +1,3 @@
 emoframebackend/src/shared/api.service.ts
 emoframebackend/src/auth/shared/constants.ts
+.env
