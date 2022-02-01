@@ -24,10 +24,6 @@ function LeapForm(props) {
                     <input class="form-check-input" type="radio" name={props.Name} value="5" />
                     <p>5 <br></br>(Muito Forte)</p>
                 </li>
-                <li>
-                    <input class="form-check-input" type="radio" name={props.Name} value="99" />
-                    <p>Não quero responder</p>
-                </li>
             </ul>
         </div>
     );
