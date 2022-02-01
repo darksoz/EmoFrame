@@ -70,14 +70,14 @@ export const LoginAccount = async (json) => {
   });
 }
 
-export const LogouAccount = async () => {
+export const LogoutAccount = async () => {
   var config = {
     method: 'post',
     url: `${baseURL}/auth/logout`,
     headers: {
+      'Authorization': `Bearer ${getToken()}`,
       'Content-Type': 'application/json'
-    },
-    data: ''
+    }
   };
   return new Promise((resolve, reject) => {
     axios(config)
