@@ -1,2 +1,5 @@
 emoframebackend/src/shared/api.service.ts
 emoframebackend/src/auth/shared/constants.ts
+node_modules
+.env
+yarn.lock
