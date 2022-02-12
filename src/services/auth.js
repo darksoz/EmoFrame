@@ -28,14 +28,26 @@ export const isAuthenticated = () => {
   return true;
 }
 
-export const getToken = () => localStorage.getItem(TOKEN_KEY);
+export const getToken = () => {
+  const token = localStorage.getItem(TOKEN_KEY);
+  if(token === undefined){
+    return null;
+  }
+  return token;
+}
+
 export const getEmail = () => localStorage.getItem(EMAIL);
 export const getUsername = () => localStorage.getItem(USERNAME);
 export const getUsertype = () => localStorage.getItem(USERTYPE);
 export const getIdTestData = () => localStorage.getItem(IDTESTDATA);
 
 
-export const setToken = (token) => localStorage.setItem(TOKEN_KEY, token);
+export const setToken = (token) => {
+  if(token !== undefined){
+    localStorage.setItem(TOKEN_KEY, token);
+  }
+}
+
 export const setEmail = (email) => localStorage.setItem(EMAIL, email);
 export const setUsername = (name) => localStorage.setItem(USERNAME, name)
 export const setUsertype = (usertype) => localStorage.setItem(USERTYPE, usertype);

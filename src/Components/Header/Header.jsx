@@ -1,7 +1,7 @@
 import React from 'react';
 import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
-import { LogouAccount } from '../../services/api';
+import { LogoutAccount } from '../../services/api';
 import {RediretToPage} from '../../services/utils';
 import { getToken, getUsername, logout } from '../../services/auth';
 
@@ -15,14 +15,9 @@ export default function Header() {
     }
 
     const handleLogout = async () =>{
-        let response = await LogouAccount();
-        if(response.status === 201){
-            logout();
-            RediretToPage('/');
-        }
-        else{
-            console.log("Erro")
-        }
+        await LogoutAccount();
+        logout();
+        RediretToPage('/');
     }
     return (
 
@@ -39,7 +34,7 @@ export default function Header() {
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="navbar-dark-example" />
                     {
-                        (getToken() != null) &&
+                        (getToken() !== null) &&
                         <div>
                             <Navbar.Collapse className="justify-content-end"><span class="far fa-user-circle fa-lg"></span>
                                 <Nav>
