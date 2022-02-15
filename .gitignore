@@ -3,3 +3,4 @@ emoframebackend/src/auth/shared/constants.ts
 node_modules
 .env
 yarn.lock
+package-lock.json
