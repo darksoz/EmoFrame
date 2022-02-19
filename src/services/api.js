@@ -150,6 +150,27 @@ export const SaveSusTest = async (json) => {
   });
 }
 
+export const SaveTest = async (json, test) => {
+  
+  var config = {
+    method: 'post',
+    url: `${baseURL}/${test}/create`,
+    headers: {
+      'Authorization': `Bearer ${getToken()}`, 
+      'Content-Type': 'application/json'
+    },
+    data: json
+  };
+  return new Promise((resolve, reject) => {
+    axios(config)
+    .then(function (response) {
+      resolve(response);
+    }).catch(function (error) {
+      reject(error);
+    });
+  });
+}
+
 export const GetTestsData = async (json, instrument) => {
   var config = {
     method: 'post',
