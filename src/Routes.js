@@ -63,8 +63,7 @@ function Routes() {
                 <LimitedAccessRoute path='/leapResult' exact component={LeapResult}/>
                 <LimitedAccessRoute path='/panasResult' exact component={PanasResult}/>
                 <LimitedAccessRoute path='/susResult' exact component={SusResult}/>
-                <PrivateRoute path='/page' exact component={Page}/>
-                
+                <PrivateRoute path='/page' exact component={Page}/>                
             </Switch>
         </BrowserRouter>
     )

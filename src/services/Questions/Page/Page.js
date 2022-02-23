@@ -1,4 +1,4 @@
-export const questions = [
+export const Questions = [
     {
         title:"O(A) senhor(a) considera que sua memória é tão boa quanto antes?",
 
@@ -50,7 +50,10 @@ export const questions = [
     }
 ]
 
-export const questions2 = [
+export const Questions2 = [
+    {aspectos:'DÉFICIT SENSORIAL',
+    pontucao:'Pontuação (máxima=5): Necessita de invetigação',
+    perguntas:[
     {
         title:"O(A) senhor(a) tem problemas de visão?"
     },
@@ -65,7 +68,10 @@ export const questions2 = [
     },
     {
         title:" O(A) senhor(a) considera que o funcionamento dos seus sentidos afeta sua capacidade de interagir com outras pessoas?"
-    },
+    }]},
+    {aspectos:'INCAPACIDADE FUNCIONAL',
+    pontucao:'Pontuação (máxima=6): Necessita de invetigação',
+    perguntas:[
     {
         title:"O(A) senhor(a) necessita de ajuda para Fazer compras?"
     },
@@ -83,7 +89,10 @@ export const questions2 = [
     },
     {
         title:"O(A) senhor(a) necessita de ajuda para tomar banho?"
-    },
+    }]},
+    {aspectos:'DESNUTRIÇÃO',
+    pontucao:'Pontuação (máxima=7): Necessita de invetigação',
+    perguntas:[
     {
         title:"O(A) senhor(a) acha ou considera que está desnutrido?"
     },
@@ -104,7 +113,10 @@ export const questions2 = [
     },
     {
         title:"Índice de Massa Corporal (peso____[kg]/ estatura____[m2]) =_____kg/m2) igual ou menor que 22 kg/m2"
-    },
+    }]},
+    {aspectos:'DOENÇAS CARDIOVASCULARES (DCV)',
+    pontucao:'Pontuação (máxima=9): Necessita de invetigação',
+    perguntas:[
     {
         title:"O(A) senhor(a) tem histórico familiar (1º grau) de DCV (infarto, derrama e/ou angina)?"
     },
@@ -131,7 +143,10 @@ export const questions2 = [
     },
     {
         title:"IMC para obesidade: 27 Kg/m2"
-    },
+    }]},
+    {aspectos:'USO INADEQUADO DE MEDICAMENTOS',
+    pontucao:'Pontuação (máxima=9): Necessita de invetigação',
+    perguntas:[
     {
         title:"Nos últimos 5 anos, algum médico ou outro profissional de saúde já disse que o(a) senhor(a) tem:",
         questions:[
@@ -191,10 +206,13 @@ export const questions2 = [
     },
     {
         title:"Cálculo do risco para reações adversas."
-    }
+    }]}
 ]
 
 export const Questions3 = [
+    {aspectos:'BAIXO SUPORTE SOCIAL',
+    pontucao:'Pontuação (máxima=8): Necessita de invetigação',
+    perguntas:[
     {
         title:"O(A) senhor(a) tem: cônjuge___________, pais_____________, irmãos (nº)_________, filhos (nº)__________ e netos (nº)___________ [Fazer registro dos familiares vivos]"
     },
@@ -221,7 +239,10 @@ export const Questions3 = [
     },
     {
         title:"O(A) senhor(a) é acompanhado regularmente por serviços de saúde?"
-    },
+    }]},
+    {aspectos:'PROBLEMAS AMBIENTAIS',
+    pontucao:'Pontuação (máxima=16): Necessita de invetigação',
+    perguntas:[
     {
         title:"Na casa do(a) senhor(a), Os móveis são estáveis"
     },
@@ -269,7 +290,10 @@ export const Questions3 = [
     },
     {
         title:"O(A) senhor(a) está satisfeito com a segurança quanto à ameaça da criminalidade no seu bairro?"
-    },
+    }]},
+    {aspectos:'VIOLÊNCIA',
+    pontucao:'Pontuação (máxima=8): Necessita de invetigação',
+    perguntas:[
     {
         title:"O(A) senhor(a) tem medo de alguém próximo/do seu convívio?"
     },
@@ -293,10 +317,13 @@ export const Questions3 = [
     },
     {
         title:"O(A) senhor(a) está deixando de cuidar da sua própria saúde e/ou segurança?"
-    }
+    }]},
 ]
 
 export const Questions4 = [
+    {aspectos:'QUEDAS',
+    pontucao:'Pontuação (máxima=16): Necessita de invetigação',
+    perguntas:[
     {
         title:"O(A) senhor(a) sofreu alguma queda nos últimos 12 meses? Se sim, quantas?"
     },
@@ -344,5 +371,67 @@ export const Questions4 = [
     },
     {
         title:"Apresenta alguma das doenças a seguir: hipertensão, tontura/ vertigem, Parkinson, amputação de membros inferiores, convulsões, artrite, osteoporose, incontinência, diabetes, neuropatia, hipotensão postural"
-    }
+    }]}
 ]
+
+export const QuestionsFormat = [
+    {aspectos:'DÉFICIT COGNITIVO',
+    pontucao:'Pontuação (máxima=6): Necessita de invetigação',
+    perguntas:[
+    {
+        title:"O(A) senhor(a) considera que sua memória é tão boa quanto antes?",
+
+    },
+    {
+        title: " Memória: Eu vou lhe dar um nome e um endereço e eu gostaria que você os repetisse depois de mim. Nós vamos fazer isso três vezes, assim você terá a possibilidade de aprendê-los. Eu vou lhe perguntar mais tarde. Pontuar apenas a terceira tentativa.",
+        question: [
+            "Renato Moreira","Rua Bela Vista, 73", "Santarém","Pará"
+        ]
+    },
+    {
+        title: "Linguagem, função executiva e atenção: “O(a) senhor(a) deve falar todos os nomes de animais de que se lembrar, o mais rápido possível. Quantos mais falar, melhor. Pode começar”. Anote os nomes de animais falados pelo(a) idoso(a) a cada 15 segundos."
+    },
+    {
+        title:"Habilidade visuoespacial: Peça ao indivíduo para contar os pontos sem apontá-los"
+    },
+    {
+        title: "Praxia: (Esteja com uma folha em mãos) “Pegue este papel com a mão direita. Dobre-o ao meio e coloque-o sobre a mesa” (Falar todos os comandos de uma só vez)"
+    },
+    {
+        title: "Memória: Agora você vai me dizer o que você se lembra daquele nome e endereço que nós repetimos no começo",
+        question: [
+            "Renato Moreira","Rua Bela Vista, 73", "Santarém","Pará"
+        ] 
+    }]
+    },
+    {aspectos: 'ATIVIDADE NEGATIVA EM RELAÇÃO AO ENVELHECIMENTO',
+    pontucao:'Pontuação (máxima=2): Necessita de invetigação',
+        perguntas:[
+        {
+            title:"Que idade o(a) senhor(a) sente ter_______? Por quê?"
+        },
+        {
+            title:"Existem pontos positivos e negativos presentes na velhice? Quais?"
+        }]},
+    {aspectos: 'DEPRESÃO',
+    pontucao:'Pontuação (máxima=6): Necessita de invetigação',
+        perguntas:[
+        {
+            title:"De modo geral o(a) senhor(a) está satisfeito com a vida?"
+        },
+        {
+            title:"O(A) senhor(a) se sente triste com frequência?"
+        },
+        {
+            title:"O(A) senhor(a) abandonou muitas das coisas que fazia ou gostava de fazer?"
+        },
+        {
+            title: "O(A) senhor(a) tem medo que algum mal vá lhe acontecer?"
+        },
+        {
+            title:"O(A) senhor(a) se sente impaciente e agitado(a) com frequência?"
+        },
+        {
+            title:"O(A) senhor(a) tem dificuldade em se concentrar?"
+        }]},
+    ]
