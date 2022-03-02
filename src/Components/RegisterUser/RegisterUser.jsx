@@ -54,7 +54,7 @@ function RegisterUser(props) {
         }));
         let json = JSON.stringify(registerData);
 
-        let response = await Register(json, 'specialist');
+        let response = await Register(json, 'patient');
         if (response.status === 201) {
             console.log("Dados salvos aqui ==> ", response.data);
             setTitle("cadastro concluído");
