@@ -15,9 +15,6 @@ import { SaveTest } from '../../services/api';
 import ModalTest from '../../Components/Modal/ModalTest';
 
 
-const positiveScale = [1, 3, 5, 8, 10, 11, 13, 15, 17, 19];
-const negativeScale = [2, 4, 6, 7, 9, 12, 14, 16, 18, 20];
-
 let firstQuestions = arrayShuffle(Questions1);
 let secondQuestions = arrayShuffle(Questions2);
 let amountOfQuestions = (firstQuestions.length + secondQuestions.length);

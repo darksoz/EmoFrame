@@ -1,7 +1,7 @@
 import ReactApexChart from "react-apexcharts";
 
-function PanasBarChart() {
-
+function PanasBarChart(props) {
+    const [positive, negative] = props.Data
     let dados = {
 
         series: [{
@@ -9,7 +9,7 @@ function PanasBarChart() {
             data: [10, 10]
         }, {
             name: 'Valor Obtido',
-            data: [25, 38]
+            data: [positive, negative]
         }, {
             name: 'Valor Máximo',
             data: [50, 50]
