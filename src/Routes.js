@@ -17,6 +17,8 @@ import SusResult from './Pages/SusResult/SusResult';
 import LeapResult from './Pages/LeapResult/LeapResult';
 import PanasResult from './Pages/PanasResult/PanasResult';
 import SearchResult from './Pages/SearchResult/SearchResult';
+import ZanonResult from './Pages/ZanonResult/ZanonResult';
+import Page from './Pages/Page/Page';
 
 
 function PrivateRoute({ component: Component, ...rest }) {
@@ -61,9 +63,12 @@ function Routes() {
                 <PrivateRoute path='/zanon' exact component={Zanon}/>
                 <PrivateRoute path='/sus' exact component={Sus}/>
                 <PrivateRoute path='/panas' exact component={Panas}/>
+                <PrivateRoute path='/page' exact component={Page}/>
                 <LimitedAccessRoute path='/leapResult' exact component={LeapResult}/>
                 <LimitedAccessRoute path='/panasResult' exact component={PanasResult}/>
                 <LimitedAccessRoute path='/susResult' exact component={SusResult}/>
+                <LimitedAccessRoute path='/zanonResult' exact component={ZanonResult}/> 
+                
                 
             </Switch>
         </BrowserRouter>

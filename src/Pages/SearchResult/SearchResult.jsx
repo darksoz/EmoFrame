@@ -47,7 +47,8 @@ function SearchResult() {
         let isFiltered = Object.values(filters).includes(true);
         let keys = isFiltered ? getKeysByValue(filters) : Object.keys(filters);
         console.log("filters", keys);
-        let array = []
+        console.log("text", searchText);
+        /*let array = []
         setTestsData([]);
         keys.forEach(async (key) => {
             let json = { "name": searchText }
@@ -63,7 +64,7 @@ function SearchResult() {
                     console.log("Error data response");
                 }
             }
-        });
+        });*/
     }
 
     return (
@@ -81,7 +82,7 @@ function SearchResult() {
                             </h3>
                             <hr />
                             <h5>Por Instrumento:</h5>
-                            <div>
+                            <div onChange={handleFilterChange}> 
                                 <Row style={{ marginLeft: "0px" }}>
                                     <label><Checkbox name="sam" value="sam" /> {"Sam"}</label>
                                 </Row>
@@ -93,11 +94,6 @@ function SearchResult() {
                                 </Row>
                             </div>
 
-                            <hr />
-                            <h5>Por Data:</h5>
-                            <p> De: </p>
-
-                            <p> Até: </p>
                         </Col>
 
                         <Col md={8} className='border'>
