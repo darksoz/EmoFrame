@@ -11,44 +11,15 @@ import TableRow from "@material-ui/core/TableRow";
 import TablePagination from "@material-ui/core/TablePagination";
 import Paper from "@material-ui/core/Paper";
 import React, { useState } from 'react';
-
-
+var dateFormatting = require("date-formatting");
 
 const useStyles = makeStyles({
     table: {
-      minWidth: 0
+      minWidth: 650
     }
   });
-  
-  function createData(name, calories, fat, carbs, protein) {
-    return { name, calories, fat, carbs, protein };
-  }
 
-  const rows = [
-    createData("Frozen yoghurt", 159, 6.0, 24, 4.0),
-    createData("Ice cream sandwich", 237, 9.0, 37, 4.3),
-    createData("Eclair", 262, 16.0, 24, 6.0),
-    createData("Cupcake", 305, 3.7, 67, 4.3),
-    createData("Gingerbread", 356, 16.0, 49, 3.9),
-    createData("Gingerbread2", 356, 16.0, 49, 3.9),
-    createData("Gingerbread3", 356, 16.0, 49, 3.9),
-    createData("Gingerbread4", 356, 16.0, 49, 3.9),
-    createData("Gingerbread5", 356, 16.0, 49, 3.9),
-    createData("Gingerbread6", 356, 16.0, 49, 3.9),
-    createData("Gingerbread7", 356, 16.0, 49, 3.9),
-    createData("Gingerbread8", 356, 16.0, 49, 3.9),
-    createData("Gingerbread9", 356, 16.0, 49, 3.9),
-    createData("Gingerbread10", 356, 16.0, 49, 3.9),
-    createData("Gingerbread11", 356, 16.0, 49, 3.9),
-    createData("Gingerbread12", 356, 16.0, 49, 3.9),
-    createData("Gingerbread13", 356, 16.0, 49, 3.9)
-  ];
-
-function FilterTable(props) {
-
-    const handleResult = (id) =>{
-        setIdTestData(id);
-    }
+function FilterTable(props) {   
 
     const classes = useStyles();
     const [page, setPage] = useState(0);
@@ -58,17 +29,19 @@ function FilterTable(props) {
     };
 
   const handleChangeRowsPerPage = event => {
-    setRowsPerPage(parseInt(event.target.value, 10));
+    setRowsPerPage(parseInt(event.target.value));
     setPage(0);
   };
+
+  const formateDateTime = (date) => {
+    return dateFormatting(new Date(`${date}`), 'dd-MM-yyyy H:mm');
+  };
   
-  const emptyRows = rowsPerPage - Math.min(rowsPerPage, rows.length - page * rowsPerPage);
+  const emptyRows = rowsPerPage - Math.min(rowsPerPage, props.Data.length - page * rowsPerPage);
 
   if(props.Data.length === 0){
     return (
-        <>
-            <h1>Procure por um usuário</h1>
-        </>
+        <></>
     )
   }
   else{
@@ -80,7 +53,7 @@ function FilterTable(props) {
                 <TableCell>Nome</TableCell>
                 <TableCell align="right">&nbsp;</TableCell>
                 <TableCell align="right">Instrumento</TableCell>
-                <TableCell align="right">Data</TableCell>
+                <TableCell align="right">Data e Hora</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
@@ -93,7 +66,7 @@ function FilterTable(props) {
                     </TableCell>
                     <TableCell align="right"><a href="/">{"Ver resultado"}</a></TableCell>
                     <TableCell align="right">{row.Instrument}</TableCell>
-                    <TableCell align="right">{row.Datetime}</TableCell>
+                    <TableCell align="right">{formateDateTime(row.Datetime)}</TableCell>
                   </TableRow>
                 ))}
               {emptyRows > 0 && (
