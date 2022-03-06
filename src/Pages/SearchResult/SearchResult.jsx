@@ -9,6 +9,7 @@ import { faFile } from '@fortawesome/free-solid-svg-icons'
 import React, { useState } from 'react';
 import { GetResultsByName } from '../../services/api';
 import FilterTable from '../../Components/FilterTable/FilterTable';
+import { Button, Modal } from 'react-bootstrap';
 
 
 
@@ -21,8 +22,11 @@ function SearchResult() {
         "zanon": false,
         "panas": false
     })
-    const [searchText, setSearchText] = useState('');
+    const [searchText, setSearchText] = useState("");
     const [testsData, setTestsData] = useState([]);
+    const [show, setShow] = useState(false);
+    const [title, setTitle] = useState("");
+    const [body, setBody] = useState("");
 
     const handleSearchTextChange = (event) => {
         setSearchText(event.target.value.toLowerCase());
@@ -45,35 +49,63 @@ function SearchResult() {
         }))
     }
 
+    const isEmptyString = text => {
+        return (text === undefined || text == null || text.trim().length <= 0) ? true : false;
+    }
+
+    const handleClose = () => {
+        setShow(false);
+    }
+
     const handleSearch = async () => {
         let isFiltered = Object.values(filters).includes(true);
         let keys = isFiltered ? getKeysByValue(filters) : Object.keys(filters);
-        console.log("filters", keys);
-        console.log("text", searchText);
         let array = []
         setTestsData([]);
-        keys.forEach(async (key, index) => {
-            let response = await GetResultsByName(key, searchText);
-            if (response.status === 200) {
-                array = [...array, ...response.data]
-                if(index === keys.length -1 && array.length === 0){
-                    console.log("Nenhum resultado foi encontrado");
+        if(isEmptyString(searchText)){
+            setTitle("Não foi possível realizar a busca");
+            setBody("Busca inválida");
+            setShow(true);
+        }
+        else{
+            keys.forEach(async (key, index) => {
+                let response = await GetResultsByName(key, searchText);
+                if (response.status === 200) {
+                    array = [...array, ...response.data]
+                    if(index === keys.length -1 && array.length === 0){
+                        setTitle("Busca");
+                        setBody("Nenhum usuário encontrado");
+                        setShow(true);
+                    }
+                    else if(index === keys.length -1 && array.length > 0){
+                        array = array.sort(function(a,b){
+                            return new Date(b.Datetime) - new Date(a.Datetime);
+                          });
+                        setTestsData([...array]);
+                    }
                 }
-                else if(index === keys.length -1 && array.length > 0){
-                    array = array.sort(function(a,b){
-                        return new Date(b.Datetime) - new Date(a.Datetime);
-                      });
-                    setTestsData([...array]);
+                else {
+                        setTitle("Não foi possível realizar a busca");
+                        setBody("Erro ao realizar busca no banco de dados");
+                        setShow(true);
                 }
-            }
-            else {
-                console.log("Error data response");
-            }
-        });
+            });
+        }
     }
 
     return (
         <>
+            <Modal show={show} onHide={handleClose}>
+                <Modal.Header closeButton>
+                    <Modal.Title>{title}</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>{body}</Modal.Body>
+                <Modal.Footer>
+                    <Button variant="primary" onClick={handleClose}>
+                        Fechar
+                    </Button>
+                </Modal.Footer>
+            </Modal>
             <Container>
                 <Card className='mt-3'>
                     <Row>
