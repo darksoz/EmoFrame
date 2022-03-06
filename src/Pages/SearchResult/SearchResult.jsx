@@ -9,6 +9,8 @@ import { faFile } from '@fortawesome/free-solid-svg-icons'
 import React, { useState } from 'react';
 import { GetResultsByName } from '../../services/api';
 import FilterTable from '../../Components/FilterTable/FilterTable';
+import Tabs from '../../Components/Tabs/Tabs';
+import { Breadcrumb } from "react-bootstrap";
 
 
 
@@ -56,13 +58,13 @@ function SearchResult() {
             let response = await GetResultsByName(key, searchText);
             if (response.status === 200) {
                 array = [...array, ...response.data]
-                if(index === keys.length -1 && array.length === 0){
+                if (index === keys.length - 1 && array.length === 0) {
                     console.log("Nenhum resultado foi encontrado");
                 }
-                else if(index === keys.length -1 && array.length > 0){
-                    array = array.sort(function(a,b){
+                else if (index === keys.length - 1 && array.length > 0) {
+                    array = array.sort(function (a, b) {
                         return new Date(b.Datetime) - new Date(a.Datetime);
-                      });
+                    });
                     setTestsData([...array]);
                 }
             }
@@ -74,6 +76,12 @@ function SearchResult() {
 
     return (
         <>
+
+            <Breadcrumb>
+                <Breadcrumb.Item href='./dashboard'>Página Inicial</Breadcrumb.Item>
+                <Breadcrumb.Item active>Resultados</Breadcrumb.Item>
+            </Breadcrumb>
+            <Tabs active="results" />
             <Container>
                 <Card className='mt-3'>
                     <Row>
