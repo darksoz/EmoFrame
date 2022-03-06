@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFilter } from '@fortawesome/free-solid-svg-icons'
 import { faFile } from '@fortawesome/free-solid-svg-icons'
 import React, { useState } from 'react';
-import { GetTestsData } from '../../services/api';
+import { GetResultsByName } from '../../services/api';
 import FilterTable from '../../Components/FilterTable/FilterTable';
 
 
@@ -17,7 +17,9 @@ function SearchResult() {
     let [filters, setFilters] = useState({
         "sam": false,
         "sus": false,
-        "leap": false
+        "leap": false,
+        "zanon": false,
+        "panas": false
     })
     const [searchText, setSearchText] = useState('');
     const [testsData, setTestsData] = useState([]);
@@ -48,23 +50,26 @@ function SearchResult() {
         let keys = isFiltered ? getKeysByValue(filters) : Object.keys(filters);
         console.log("filters", keys);
         console.log("text", searchText);
-        /*let array = []
+        let array = []
         setTestsData([]);
-        keys.forEach(async (key) => {
-            let json = { "name": searchText }
-            json = JSON.stringify(json);
-            if (key === "sus" || key === "leap") {
-                let response = await GetTestsData(json, key);
-                if (response.status === 201) {
-                    setTestsData([...array, ...response.data]);
-                    array = [...array, ...response.data]
-                    console.log("Dados salvos aqui ==> ", array);
+        keys.forEach(async (key, index) => {
+            let response = await GetResultsByName(key, searchText);
+            if (response.status === 200) {
+                array = [...array, ...response.data]
+                if(index === keys.length -1 && array.length === 0){
+                    console.log("Nenhum resultado foi encontrado");
                 }
-                else {
-                    console.log("Error data response");
+                else if(index === keys.length -1 && array.length > 0){
+                    array = array.sort(function(a,b){
+                        return new Date(b.Datetime) - new Date(a.Datetime);
+                      });
+                    setTestsData([...array]);
                 }
             }
-        });*/
+            else {
+                console.log("Error data response");
+            }
+        });
     }
 
     return (
@@ -72,28 +77,29 @@ function SearchResult() {
             <Container>
                 <Card className='mt-3'>
                     <Row>
-
-
-
                         <Col md={3} className='border'>
-
                             <h3>
                                 <FontAwesomeIcon icon={faFilter} /> Filtro
                             </h3>
                             <hr />
                             <h5>Por Instrumento:</h5>
-                            <div onChange={handleFilterChange}> 
-                                <Row style={{ marginLeft: "0px" }}>
+                            <div onChange={handleFilterChange}>
+                                <Row style={{ marginLeft: "0px", marginBottom: "10px" }}>
                                     <label><Checkbox name="sam" value="sam" /> {"Sam"}</label>
                                 </Row>
-                                <Row style={{ marginLeft: "-4px" }}    >
+                                <Row style={{ marginLeft: "-4px", marginBottom: "10px" }}    >
                                     <label><Checkbox name="sus" value="sus" /> {"Sus"}</label>
                                 </Row>
-                                <Row style={{ marginLeft: "4px" }}    >
+                                <Row style={{ marginLeft: "4px", marginBottom: "10px" }}    >
                                     <label><Checkbox name="leap" value="leap" /> {"Leap"}</label>
                                 </Row>
+                                <Row style={{ marginLeft: "13px", marginBottom: "10px" }}    >
+                                    <label><Checkbox name="zanon" value="zanon" /> {"Zanon"}</label>
+                                </Row>
+                                <Row style={{ marginLeft: "13px", marginBottom: "10px" }}    >
+                                    <label><Checkbox name="panas" value="panas" /> {"Panas"}</label>
+                                </Row>
                             </div>
-
                         </Col>
 
                         <Col md={8} className='border'>
@@ -107,15 +113,13 @@ function SearchResult() {
                                     <input class="form-control me-2" type="search" placeholder="Digite o nome do usuário" aria-label="Search" onChange={handleSearchTextChange} />
                                 </Col>
                                 <Col style={{ marginLeft: "-40px", marginTop: "-5px" }}>
-                                    <button class="btn whitebutton" type="submit" onClick={() => handleSearch()}><span class="fa fa-search"></span></button>
+                                    <button class="btn whitebutton" type="submit" onClick={() => handleSearch()}><span class="fa fa-search"></span> Buscar</button>
                                 </Col>
                             </Row>
                             <Row>
                                 <FilterTable Data={testsData} />
                             </Row>
                         </Col>
-
-
                     </Row>
                 </Card>
             </Container>
