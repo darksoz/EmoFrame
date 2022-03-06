@@ -9,9 +9,7 @@ import TablePagination from "@material-ui/core/TablePagination";
 import Paper from "@material-ui/core/Paper";
 import React, { useState } from 'react';
 import { useHistory } from "react-router-dom";
-import { Link } from "@mui/material";
-
-var dateFormatting = require("date-formatting");
+import { formateDateTime } from "../../services/utils";
 
 const useStyles = makeStyles({
     table: {
@@ -32,10 +30,6 @@ function FilterTable(props) {
   const handleChangeRowsPerPage = event => {
     setRowsPerPage(parseInt(event.target.value));
     setPage(0);
-  };
-
-  const formateDateTime = (date) => {
-    return dateFormatting(new Date(`${date}`), 'dd-MM-yyyy H:mm');
   };
   
   const emptyRows = rowsPerPage - Math.min(rowsPerPage, props.Data.length - page * rowsPerPage);
