@@ -10,7 +10,8 @@ import React, { useState } from 'react';
 import { GetResultsByName } from '../../services/api';
 import FilterTable from '../../Components/FilterTable/FilterTable';
 import { Button, Modal } from 'react-bootstrap';
-
+import Tabs from '../../Components/Tabs/Tabs';
+import { Breadcrumb } from "react-bootstrap";
 
 
 
@@ -106,6 +107,14 @@ function SearchResult() {
                     </Button>
                 </Modal.Footer>
             </Modal>
+
+
+            <Breadcrumb>
+                <Breadcrumb.Item href='./dashboard'>Página Inicial</Breadcrumb.Item>
+                <Breadcrumb.Item active>Resultados</Breadcrumb.Item>
+            </Breadcrumb>
+            <Tabs active="results"/>
+           
             <Container>
                 <Card className='mt-3'>
                     <Row>

@@ -147,7 +147,7 @@ function SusResult(){
         questions.forEach((item, index) => {
             sum += negativeQuestions.includes(index + 1) ? (5 - item.answer) :  (item.answer - 1);
         });
-        return NormalizeScore(result,112,0).toFixed(2);
+        return NormalizeScore(sum,112,0).toFixed(2);
     }
 
     const GetVariationAnswer = () => {
