@@ -1,6 +1,3 @@
-//import { Table } from "react-bootstrap";
-import { setIdTestData } from "../../services/auth";
-
 import { makeStyles } from "@material-ui/core/styles";
 import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
@@ -11,6 +8,9 @@ import TableRow from "@material-ui/core/TableRow";
 import TablePagination from "@material-ui/core/TablePagination";
 import Paper from "@material-ui/core/Paper";
 import React, { useState } from 'react';
+import { useHistory } from "react-router-dom";
+import { Link } from "@mui/material";
+
 var dateFormatting = require("date-formatting");
 
 const useStyles = makeStyles({
@@ -27,6 +27,7 @@ function FilterTable(props) {
     const handleChangePage = (event, newPage) => {
         setPage(newPage);
     };
+    let history = useHistory();
 
   const handleChangeRowsPerPage = event => {
     setRowsPerPage(parseInt(event.target.value));
@@ -64,7 +65,7 @@ function FilterTable(props) {
                     <TableCell component="th" scope="row">
                       {row.Username}
                     </TableCell>
-                    <TableCell align="right"><a href="/">{"Ver resultado"}</a></TableCell>
+                    <TableCell align="right"><a href={`/${row.Instrument}Result/${row._id}`}>Ver Resultados</a></TableCell>
                     <TableCell align="right">{row.Instrument}</TableCell>
                     <TableCell align="right">{formateDateTime(row.Datetime)}</TableCell>
                   </TableRow>
