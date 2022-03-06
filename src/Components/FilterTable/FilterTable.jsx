@@ -92,7 +92,6 @@ function FilterTable(props) {
         </TableContainer>
       );
   }
-  
 }
 
 export default FilterTable;

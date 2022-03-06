@@ -223,7 +223,7 @@ export const GetResultsByName = async (instrument, name)=> {
     .then(function (response) {
       resolve(response);
     }).catch(function (error) {
-      reject(error);
+      resolve(error);
     });
   });
 }
