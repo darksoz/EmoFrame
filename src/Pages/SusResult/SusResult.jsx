@@ -6,6 +6,7 @@ import SusVariationPlot from "../../Components/SusVariationPlot/SusVariationPlot
 import { GetTestResult } from '../../services/api';
 import { getIdTestData } from '../../services/auth';
 import { Breadcrumb } from "react-bootstrap";
+import {useParams} from 'react-router-dom';
 
 let mockData = {
     "Username": "Suzane Santos dos Santos",
@@ -129,13 +130,13 @@ let mockData = {
 }
 
 const negativeQuestions = [18, 19, 22, 24, 27];
-//x =  [negativeQuestions] - 1
 
 function SusResult(){
     const [questions, setQuestions] = useState([]);
     const [name, setName] = useState('');
     const [datetime, setDatetime] = useState('');
 
+    const {id} = useParams();
 
     const NormalizeScore = (val, max, min) => 
     { 
@@ -146,9 +147,7 @@ function SusResult(){
         questions.forEach((item, index) => {
             sum += negativeQuestions.includes(index + 1) ? (5 - item.answer) :  (item.answer - 1);
         });
-        let result =  sum;
-        console.log("sus score result here ==> ", result);
-        return NormalizeScore(result,112,0).toFixed(2);
+        return NormalizeScore(sum,112,0).toFixed(2);
     }
 
     const GetVariationAnswer = () => {
@@ -162,7 +161,7 @@ function SusResult(){
     }
     useEffect(() => {
         const getResult = async () => {
-            if(getIdTestData() != null){
+            if(getIdTestData() != null && false){
                 let json = {"id": getIdTestData()}
                 json = JSON.stringify(json);
                 let response = await GetTestResult('sus', json);
@@ -182,9 +181,11 @@ function SusResult(){
                 setDatetime(mockData.Datetime);
                 console.log("Mock data");
             }
+
+            console.log("Params => ", id);
         }
         getResult();
-      });
+      }, []);
     return(
         <>
             <Breadcrumb>
