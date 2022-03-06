@@ -228,6 +228,24 @@ export const GetResultsByName = async (instrument, name)=> {
   });
 }
 
+export const GetResultTestById = async (instrument, id)=> {
+  var config = {
+    method: 'get',
+    url: `${baseURL}/${instrument}/id/${id}`,
+    headers: {
+      'Authorization': `Bearer ${getToken()}`
+    },
+  };
+  return new Promise((resolve, reject) => {
+    axios(config)
+    .then(function (response) {
+      resolve(response);
+    }).catch(function (error) {
+      resolve(error);
+    });
+  });
+}
+
 export const GetTestResult = async (instrument, json) => {
   var config = {
     method: 'post',

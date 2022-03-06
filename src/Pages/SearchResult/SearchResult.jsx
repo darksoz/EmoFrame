@@ -12,6 +12,7 @@ import FilterTable from '../../Components/FilterTable/FilterTable';
 import { Button, Modal } from 'react-bootstrap';
 import Tabs from '../../Components/Tabs/Tabs';
 import { Breadcrumb } from "react-bootstrap";
+import { isEmptyString } from '../../services/utils';
 
 
 
@@ -48,10 +49,6 @@ function SearchResult() {
             ...prevState,
             [key]: value
         }))
-    }
-
-    const isEmptyString = text => {
-        return (text === undefined || text == null || text.trim().length <= 0) ? true : false;
     }
 
     const handleClose = () => {
