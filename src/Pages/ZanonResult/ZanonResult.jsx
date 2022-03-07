@@ -10,8 +10,8 @@ function ZanonResult () {
     return (
         <>
                 <Breadcrumb>
-                <Breadcrumb.Item href='./dashboard'>Página Inicial</Breadcrumb.Item>
-                <Breadcrumb.Item href='./results'>Resultados</Breadcrumb.Item>
+                <Breadcrumb.Item href='/dashboard'>Página Inicial</Breadcrumb.Item>
+                <Breadcrumb.Item href='/searchResults'>Resultados</Breadcrumb.Item>
                 <Breadcrumb.Item active>Resultado ZANON</Breadcrumb.Item>
             </Breadcrumb>
             <Container>
