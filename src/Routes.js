@@ -64,6 +64,7 @@ function Routes() {
                 <PrivateRoute path='/panas' exact component={Panas}/>
                 <PrivateRoute path='/page' exact component={Page}/>
                 <LimitedAccessRoute path='/samResult' exact component={SamResult}/>
+                <LimitedAccessRoute path='/samResult/:id' exact component={SamResult}/>
                 <LimitedAccessRoute path='/leapResult' exact component={LeapResult}/>
                 <LimitedAccessRoute path='/panasResult' exact component={PanasResult}/>
                 <LimitedAccessRoute path='/susResult/:id' exact component={SusResult}/>
