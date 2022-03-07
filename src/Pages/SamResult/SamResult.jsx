@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
 import {useParams, useHistory} from 'react-router-dom';
-import { Button, Container, Modal } from 'react-bootstrap';
+import { Breadcrumb, Button, Container, Modal } from 'react-bootstrap';
 import SamTable from '../../Components/SamTable/SamTable';
 import { GetResultTestById } from '../../services/api';
+import { formateDateTime } from '../../services/utils';
 
 function SamResult() {
     const [questions, setQuestions] = useState([]);
@@ -10,6 +11,9 @@ function SamResult() {
     const [show, setShow] = useState(false);
     const [title, setTitle] = useState("");
     const [body, setBody] = useState("");
+
+    const [name, setName] = useState('');
+    const [datetime, setDatetime] = useState('');
 
 
     const {id} = useParams();
@@ -27,6 +31,8 @@ function SamResult() {
                         setShow(true);
                     }else{
                         setQuestions([...data.Questions]);
+                        setName(data.Username);
+                        setDatetime(data.Datetime);
                     }
                 }
                 else{
@@ -51,7 +57,6 @@ function SamResult() {
 
     return (
         <>
-            <h1>Resultado SAM</h1>
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
                     <Modal.Title>{title}</Modal.Title>
@@ -66,7 +71,14 @@ function SamResult() {
                     </Button>
                 </Modal.Footer>
             </Modal>
+            <Breadcrumb>
+                <Breadcrumb.Item href='/dashboard'>Página Inicial</Breadcrumb.Item>
+                <Breadcrumb.Item href='/searchResults'>Resultados</Breadcrumb.Item>
+                <Breadcrumb.Item active>Resultado SAM</Breadcrumb.Item>
+            </Breadcrumb>   
             <Container>
+                <   h1>Nome: {name}</h1>
+                    <h1>Data e Hora: {formateDateTime(datetime)}</h1>
                     <SamTable Data={questions}/>
             </Container>
         </>
