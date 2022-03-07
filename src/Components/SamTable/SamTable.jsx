@@ -1,8 +1,16 @@
-
 import { Container } from 'react-bootstrap';
 import Table from 'react-bootstrap/Table';
 
-function SamTable() {
+function SamTable(props) {
+
+    const GetReult = (ref, value) =>{
+        if((ref - value) != 0){
+            return 0;
+        }
+        else{
+            return 1;
+        }
+    }
     return (
         <>
             <Container>
@@ -26,16 +34,15 @@ function SamTable() {
                         </tr>
 
                         <tr>
-
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>1</td>
+                            <td>{GetReult(1, props.Data.Questions[2].answer)}</td>
+                            <td>{GetReult(2, props.Data.Questions[2].answer)}</td>
+                            <td>{GetReult(3, props.Data.Questions[2].answer)}</td>
+                            <td>{GetReult(4, props.Data.Questions[2].answer)}</td>
+                            <td>{GetReult(5, props.Data.Questions[2].answer)}</td>
+                            <td>{GetReult(6, props.Data.Questions[2].answer)}</td>
+                            <td>{GetReult(7, props.Data.Questions[2].answer)}</td>
+                            <td>{GetReult(8, props.Data.Questions[2].answer)}</td>
+                            <td>{GetReult(9, props.Data.Questions[2].answer)}</td>
                         </tr>
                     </tbody>
                     <thead>
@@ -56,15 +63,15 @@ function SamTable() {
                             <td className='bg-success'>P9(+)</td>
                         </tr>
                         <tr>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>1</td>
+                            <td>{GetReult(1, props.Data.Questions[1].answer)}</td>
+                            <td>{GetReult(2, props.Data.Questions[1].answer)}</td>
+                            <td>{GetReult(3, props.Data.Questions[1].answer)}</td>
+                            <td>{GetReult(4, props.Data.Questions[1].answer)}</td>
+                            <td>{GetReult(5, props.Data.Questions[1].answer)}</td>
+                            <td>{GetReult(6, props.Data.Questions[1].answer)}</td>
+                            <td>{GetReult(7, props.Data.Questions[1].answer)}</td>
+                            <td>{GetReult(8, props.Data.Questions[1].answer)}</td>
+                            <td>{GetReult(9, props.Data.Questions[1].answer)}</td>
                         </tr>
                     </tbody>
                     <thead>
@@ -85,15 +92,15 @@ function SamTable() {
                             <td className='bg-success'>P9(+)</td>
                         </tr>
                         <tr>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>1</td>
+                            <td>{GetReult(1, props.Data.Questions[0].answer)}</td>
+                            <td>{GetReult(2, props.Data.Questions[0].answer)}</td>
+                            <td>{GetReult(3, props.Data.Questions[0].answer)}</td>
+                            <td>{GetReult(4, props.Data.Questions[0].answer)}</td>
+                            <td>{GetReult(5, props.Data.Questions[0].answer)}</td>
+                            <td>{GetReult(6, props.Data.Questions[0].answer)}</td>
+                            <td>{GetReult(7, props.Data.Questions[0].answer)}</td>
+                            <td>{GetReult(8, props.Data.Questions[0].answer)}</td>
+                            <td>{GetReult(9, props.Data.Questions[0].answer)}</td>
                         </tr>
                     </tbody>
                 </Table>
