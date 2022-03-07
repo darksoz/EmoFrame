@@ -1,13 +1,11 @@
-import { useEffect, useState } from 'react';
 import { Container } from 'react-bootstrap';
 import Table from 'react-bootstrap/Table';
 
 function SamTable(props) {
-    const [questions, setQuestion] = useState([])
+
     const GetReult = (ref, value) =>{
-        if(props.Data){
-            let data = Object(props.Data)
-            if((ref -  1/*props.Data[value].answer*/) != 0){
+        if(props.Data.length > 0){
+            if((ref - props.Data[value].answer) != 0){
                 return 0;
             }
             else{

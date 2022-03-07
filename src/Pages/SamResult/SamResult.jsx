@@ -15,7 +15,7 @@ function SamResult() {
     const {id} = useParams();
     let history = useHistory();
 
-    useEffect(() => {
+    useEffect(async () => {
         const getResult = async () => {
             if(id !== undefined){
                 let response = await GetResultTestById('sam', id);
@@ -41,14 +41,14 @@ function SamResult() {
                 setShow(true);
             }
         }
-        getResult();
+        await getResult();
       }, []);
 
       const handleClose = path => {
         setShow(false);
         history.push(path);
     }
-    
+
     return (
         <>
             <h1>Resultado SAM</h1>
@@ -67,7 +67,7 @@ function SamResult() {
                 </Modal.Footer>
             </Modal>
             <Container>
-               <SamTable Data={questions}/>
+                    <SamTable Data={questions}/>
             </Container>
         </>
     );
