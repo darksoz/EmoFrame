@@ -11,10 +11,9 @@ import { MultiStepForm, Step } from 'react-multi-form';
 import { Link } from 'react-scroll';
 import sortArray from 'sort-array';
 import { getUsername } from '../../services/auth';
+import { SaveTest } from '../../services/api';
+import ModalTest from '../../Components/Modal/ModalTest';
 
-
-const positiveScale = [1, 3, 5, 8, 10, 11, 13, 15, 17, 19];
-const negativeScale = [2, 4, 6, 7, 9, 12, 14, 16, 18, 20];
 
 let firstQuestions = arrayShuffle(Questions1);
 let secondQuestions = arrayShuffle(Questions2);
@@ -43,9 +42,21 @@ function Panas() {
     }
 
     const handleFormData = async () => {
-        let json = { "Datetime": new Date(Date.now()), "Instrument": "leap", "Username": getUsername(), "Questions": sortArray(answers, { by: 'id', }) }
-        console.log("Json", json)
+        let json = { "Datetime": new Date(Date.now()), "Instrument": "panas", "Username": getUsername(), "Questions": sortArray(answers, { by: 'id', }) }
         json = JSON.stringify(json);
+        let response = await SaveTest(json, 'panas');
+        if (response.status === 201) {
+            console.log("Dados salvos aqui ==> ", response.data);
+            setTitle("Teste concluído");
+            setBody("Atividade realizada com sucesso");
+            setSuccess(true);
+            setShow(true);
+        }
+        else {
+            setTitle("Erro na conclusão");
+            setBody("Atividade não foi concluída");
+            setSuccess(false);
+        }
     }
 
     return (
@@ -55,46 +66,49 @@ function Panas() {
                 <Breadcrumb.Item active>Panas</Breadcrumb.Item>
             </Breadcrumb>
             <Container>
-
+                <ModalTest Success={success} Title={title} Body={body} Reveal={show} Finish={"/dashboard"} Retry={true} />
                 <PanasExample />
 
-                <MultiStepForm activeStep={active}>
+                <div id="sample" onChange={handleChange}>
+                    <MultiStepForm activeStep={active}>
 
-                    <Step label="Passo 1">
-                        {
-                            firstQuestions.map((content, index) => (
-                                <>
-                                    <div style={{
-                                        marginBottom: "20px",
-                                    }}>
-                                        <PanasForm Title={content.Title}
-                                            Name={content.Name} />
-                                        <hr></hr>
-                                    </div>
-                                </>
-                            ))
-                        }
-                    </Step>
+                        <Step label="Passo 1">
+                            {
+                                firstQuestions.map((content, index) => (
+                                    <>
+                                        <div style={{
+                                            marginBottom: "20px",
+                                        }}>
+                                            <PanasForm Title={content.Title}
+                                                Name={content.Name} />
+                                            <hr></hr>
+                                        </div>
+                                    </>
+                                ))
+                            }
+                        </Step>
 
-                    <Step label="Passo 2">
-                        {
+                        <Step label="Passo 2">
+                            {
 
-                            secondQuestions.map((content, index) => (
-                                <>
-                                    <div style={{
-                                        marginBottom: "20px",
-                                    }}>
-                                        <PanasForm Title={content.Title}
-                                            Name={content.Name} />
-                                        <hr></hr>
-                                    </div>
-                                </>
-                            ))
-                        }
+                                secondQuestions.map((content, index) => (
+                                    <>
+                                        <div style={{
+                                            marginBottom: "20px",
+                                        }}>
+                                            <PanasForm Title={content.Title}
+                                                Name={content.Name} />
+                                            <hr></hr>
+                                        </div>
+                                    </>
+                                ))
+                            }
 
-                    </Step>
+                        </Step>
 
-                </MultiStepForm>
+                    </MultiStepForm>
+                </div>
+
                 {(active === 1 && <Link to="sample"><button class="btn whitebutton btn-lg" onClick={() => setActive(active + 1)}>Próximo</button></Link>)}
                 {(active > 1 && active !== 2 &&
                     <div>
@@ -122,7 +136,6 @@ function Panas() {
                     </div>
                 }
             </Container>
-
         </>
     );
 }

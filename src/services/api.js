@@ -150,6 +150,46 @@ export const SaveSusTest = async (json) => {
   });
 }
 
+export const SaveTest = async (json, test) => {
+  
+  var config = {
+    method: 'post',
+    url: `${baseURL}/${test}/create`,
+    headers: {
+      'Authorization': `Bearer ${getToken()}`, 
+      'Content-Type': 'application/json'
+    },
+    data: json
+  };
+  return new Promise((resolve, reject) => {
+    axios(config)
+    .then(function (response) {
+      resolve(response);
+    }).catch(function (error) {
+      reject(error);
+    });
+  });
+}
+
+export const GetTestData = async (instrument, id) => {
+  
+  var config = {
+    method: 'get',
+    url: `${baseURL}/${instrument}/${id}`,
+    headers: {
+      'Authorization': `Bearer ${getToken()}`
+    }
+  };
+  return new Promise((resolve, reject) => {
+    axios(config)
+    .then(function (response) {
+      resolve(response);
+    }).catch(function (error) {
+      reject(error);
+    });
+  });
+}
+
 export const GetTestsData = async (json, instrument) => {
   var config = {
     method: 'post',
@@ -166,6 +206,42 @@ export const GetTestsData = async (json, instrument) => {
       resolve(response);
     }).catch(function (error) {
       reject(error);
+    });
+  });
+}
+
+export const GetResultsByName = async (instrument, name)=> {
+  var config = {
+    method: 'get',
+    url: `${baseURL}/${instrument}/${name}`,
+    headers: {
+      'Authorization': `Bearer ${getToken()}`
+    },
+  };
+  return new Promise((resolve, reject) => {
+    axios(config)
+    .then(function (response) {
+      resolve(response);
+    }).catch(function (error) {
+      resolve(error);
+    });
+  });
+}
+
+export const GetResultTestById = async (instrument, id)=> {
+  var config = {
+    method: 'get',
+    url: `${baseURL}/${instrument}/id/${id}`,
+    headers: {
+      'Authorization': `Bearer ${getToken()}`
+    },
+  };
+  return new Promise((resolve, reject) => {
+    axios(config)
+    .then(function (response) {
+      resolve(response);
+    }).catch(function (error) {
+      resolve(error);
     });
   });
 }
