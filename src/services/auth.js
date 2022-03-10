@@ -6,6 +6,8 @@ export const USERNAME = "@Emoframe-Username";
 export const USERTYPE = "@Emoframe-Usertype";
 export const IDTESTDATA = "@Emoframe-IdTestData";
 
+const baseURL = process.env.NODE_ENV === 'development' ? 'http://localhost:5000/api' : 'https://emoframeapi.herokuapp.com/api';
+
 export const isAuthenticated = () => {
   if (localStorage.getItem(TOKEN_KEY) === null) {
     return false;
@@ -13,7 +15,7 @@ export const isAuthenticated = () => {
   else {
     var config = {
       method: 'get',
-      url: `http://localhost:5000/api/check`,
+      url: `${baseURL}/check`,
       headers: {
         'Authorization': `Bearer ${getToken()}`
       }
