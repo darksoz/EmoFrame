@@ -1,5 +1,5 @@
 import ReactApexChart from "react-apexcharts";
-function ZanonBarChart () {
+function ZanonBarChart (props) {
     
     let dados = {
 
@@ -8,7 +8,7 @@ function ZanonBarChart () {
             data: [10, 10]
         }, {
             name: 'Valor Obtido',
-            data: [25, 38]
+            data: [12, 12]
         }, {
             name: 'Valor Máximo',
             data: [50, 50]
@@ -49,12 +49,24 @@ function ZanonBarChart () {
 
 
     };
+
+    if(props.Data.length > 0){
+        dados.series[1].data = [props.Data[0],props.Data[1]]
+        console.log("Barchart => ", props.Data.length);
+    }
+
+
     return (
         <>
-        <ReactApexChart options={dados.options}
-                series={dados.series}
-                type="bar"
-                height={350} />
+            {
+                props.Data.length > 0 && 
+                <>
+                    <ReactApexChart options={dados.options}
+                        series={dados.series}
+                        type="bar"
+                        height={350} />
+                </>
+            }
         </>
     )
 }

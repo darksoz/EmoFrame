@@ -29,12 +29,12 @@ function PanasResult () {
                 console.log("response => ", response);
                 if(response.status === 200){    
                     let data = response.data;
-                    console.log("data => ", data);
                     if(data === ""){
                         setTitle("Resultado não encontrado");
                         setBody("Não há nenhum registro encontrado no banco de dados com o identificador repassado");
                         setShow(true);
-                    }else{
+                    }
+                    else{
                         setresult(prev=> [...prev, getSumResult(positiveScale, data.Questions), getSumResult(negativeScale, data.Questions)]);
                         setName(data.Username);
                         setDatetime(data.Datetime);
@@ -58,7 +58,6 @@ function PanasResult () {
                 answers.forEach(element => {
                     sum += Questions[element-1].answer;
                 });
-                console.log("Sum => ", sum);
                 return sum;
             }
         }

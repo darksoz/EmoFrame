@@ -71,6 +71,7 @@ function Routes() {
                 <LimitedAccessRoute path='/susResult/:id' exact component={SusResult}/>
                 <LimitedAccessRoute path='/susResult' exact component={SusResult}/>
                 <LimitedAccessRoute path='/zanonResult' exact component={ZanonResult}/> 
+                <LimitedAccessRoute path='/zanonResult/:id' exact component={ZanonResult}/>
             </Switch>
         </BrowserRouter>
     )

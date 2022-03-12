@@ -40,7 +40,7 @@ function Zanon() {
     }
 
     const handleFormData = async () => {
-        let json = { "Datetime": new Date(Date.now()), "Instrument": "zanon ", "Username": getUsername(), "Questions": sortArray(answers, { by: 'id', }) }
+        let json = { "Datetime": new Date(Date.now()), "Instrument": "zanon", "Username": getUsername(), "Questions": sortArray(answers, { by: 'id', }) }
         json = JSON.stringify(json);
         let response = await SaveTest(json, 'zanon');
         if (response.status === 201) {
