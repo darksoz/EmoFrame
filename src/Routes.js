@@ -67,11 +67,10 @@ function Routes() {
                 <LimitedAccessRoute path='/samResult/:id' exact component={SamResult}/>
                 <LimitedAccessRoute path='/leapResult' exact component={LeapResult}/>
                 <LimitedAccessRoute path='/panasResult' exact component={PanasResult}/>
+                <LimitedAccessRoute path='/panasResult/:id' exact component={PanasResult}/>
                 <LimitedAccessRoute path='/susResult/:id' exact component={SusResult}/>
                 <LimitedAccessRoute path='/susResult' exact component={SusResult}/>
                 <LimitedAccessRoute path='/zanonResult' exact component={ZanonResult}/> 
-                
-                
             </Switch>
         </BrowserRouter>
     )

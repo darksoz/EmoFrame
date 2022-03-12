@@ -77,9 +77,14 @@ function SamResult() {
                 <Breadcrumb.Item active>Resultado SAM</Breadcrumb.Item>
             </Breadcrumb>   
             <Container>
-                <   h1>Nome: {name}</h1>
-                    <h1>Data e Hora: {formateDateTime(datetime)}</h1>
-                    <SamTable Data={questions}/>
+                {
+                    name && datetime && questions &&
+                    <>
+                        <h1>Nome: {name}</h1>
+                        <h1>Data e Hora: {formateDateTime(datetime)}</h1>
+                        <SamTable Data={questions}/>
+                    </>
+                }
             </Container>
         </>
     );
