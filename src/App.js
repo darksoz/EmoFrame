@@ -3,7 +3,6 @@ import Header from './Components/Header/Header';
 import Routes from './Routes'
 import {defineInterceptor} from './services/api';
 
-
 function App() {
   defineInterceptor();
   return (
