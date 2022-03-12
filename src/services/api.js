@@ -40,7 +40,6 @@ export const Register = async (json, userType) => {
     data: json
   };
 
-  console.log("Dados passados para a API => ", json);
   return new Promise((resolve, reject) => {
     axios(config)
     .then(function (response) {
