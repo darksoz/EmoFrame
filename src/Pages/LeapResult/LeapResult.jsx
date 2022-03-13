@@ -94,22 +94,8 @@ function LeapResult() {
       factorCalculation(pf10_l, pf10_w),
       factorCalculation(pf11_l, pf11_w),
       factorCalculation(pf12_l, pf12_w)];
-      /*setFactors(oldArray => [...oldArray, factorCalculation(pf1_l, pf1_w)]);
-      setFactors(oldArray => [...oldArray, factorCalculation(pf2_l, pf2_w)]);
-      setFactors(oldArray => [...oldArray, factorCalculation(pf3_l, pf3_w)]);
-      setFactors(oldArray => [...oldArray, factorCalculation(pf4_l, pf4_w)]);
-      setFactors(oldArray => [...oldArray, factorCalculation(pf5_l, pf5_w)]);
-      setFactors(oldArray => [...oldArray, factorCalculation(pf6_l, pf6_w)]);
-      setFactors(oldArray => [...oldArray, factorCalculation(pf7_l, pf7_w)]);
-      setFactors(oldArray => [...oldArray, factorCalculation(pf8_l, pf8_w)]);
-      setFactors(oldArray => [...oldArray, factorCalculation(pf9_l, pf9_w)]);
-      setFactors(oldArray => [...oldArray, factorCalculation(pf10_l, pf10_w)]);
-      setFactors(oldArray => [...oldArray, factorCalculation(pf11_l, pf11_w)]);
-      setFactors(oldArray => [...oldArray, factorCalculation(pf12_l, pf12_w)]);
-      */
       return data;
     }
-
   }
 
   const factorCalculation = (locution, weight) => {
