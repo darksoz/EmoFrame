@@ -34,12 +34,10 @@ function Login() {
 
             let response = await LoginAccount(json);
             if (response.status === 201) {
-                console.log("Data aqui ==> ", response.data);
                 login(response.data);
                 RediretToPage("/dashboard");
             }
             else if (response.status === 401) {
-                console.log("senha ou email errados");
                 setTitle("Não foi possível conectar em sua conta");
                 setBody("Senha e/ou email errados");
                 setShow(true);

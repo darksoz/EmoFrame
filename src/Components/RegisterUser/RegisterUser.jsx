@@ -19,17 +19,14 @@ function RegisterUser(props) {
         var strUser = e.value;
         if (strUser === "Sim") {
             setRelVisibility(true);
-            console.log("Religião sim");
         }
         else {
             setRelVisibility(false);
-            console.log("Religião não");
         }
     }
 
     const handleChange = (e) => {
         if(e.target.name !== "ReligionOption"){
-            console.log(`Name: ${e.target.name}, Value: ${e.target.value}`);
             const { name, value } = e.target;
             setRegisterData(prevState => ({
                 ...prevState,
@@ -56,14 +53,12 @@ function RegisterUser(props) {
 
         let response = await Register(json, 'patient');
         if (response.status === 201) {
-            console.log("Dados salvos aqui ==> ", response.data);
             setTitle("cadastro concluído");
             setBody("Usuário cadastrado(a) com sucesso");
             setSuccess(true);
             setShow(true);
         }
         else {
-            console.log("Erro ==> ", response.status);
             setTitle("Erro ao realizar cadastro");
             setBody("Email já cadastrado");
             setSuccess(false);

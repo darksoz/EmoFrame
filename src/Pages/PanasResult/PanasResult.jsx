@@ -24,9 +24,8 @@ function PanasResult () {
 
     useEffect(() => {
         const getResult = async () => {
-            if(id != undefined){
+            if(id !== undefined){
                 let response = await GetResultTestById('panas', id);
-                console.log("response => ", response);
                 if(response.status === 200){    
                     let data = response.data;
                     if(data === ""){
@@ -62,7 +61,7 @@ function PanasResult () {
             }
         }
         getResult();
-      }, []);
+      }, [id]);
 
     const handleClose = path => {
         setShow(false);

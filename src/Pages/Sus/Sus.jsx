@@ -15,9 +15,6 @@ import { SaveSusTest } from '../../services/api';
 import { Breadcrumb } from "react-bootstrap";
 
 
-const negativeQuestions = [18, 19, 22, 24, 27];
-const positiveQuestions = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 20, 21, 23, 25, 26, 28];
-
 let firstQuestions = arrayShuffle(Questions1);
 let secondQuestions = arrayShuffle(Questions2);
 let thirdQuestions = arrayShuffle(Questions3);
@@ -35,7 +32,6 @@ function Sus() {
 
     const handleSolutionName = (event) => {
         setSolution(event.target.value);
-        console.log(event.target.value);
     }
 
     const handleChange = (event) => {
@@ -58,7 +54,6 @@ function Sus() {
         let response = await SaveSusTest(json);
 
         if(response.status === 201 ){
-            console.log("Dados salvos aqui ==> ", response.data);
             setTitle("Teste concluído");
             setBody("Atividade realizada com sucesso");
             setSuccess(true);

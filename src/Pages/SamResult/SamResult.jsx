@@ -19,7 +19,7 @@ function SamResult() {
     const {id} = useParams();
     let history = useHistory();
 
-    useEffect(async () => {
+    useEffect(() => {
         const getResult = async () => {
             if(id !== undefined){
                 let response = await GetResultTestById('sam', id);
@@ -47,8 +47,8 @@ function SamResult() {
                 setShow(true);
             }
         }
-        await getResult();
-      }, []);
+        getResult();
+      }, [id]);
 
       const handleClose = path => {
         setShow(false);

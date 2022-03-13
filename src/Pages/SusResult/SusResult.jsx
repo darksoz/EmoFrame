@@ -51,11 +51,11 @@ function SusResult(){
 
     useEffect(() => {
         const getResult = async () => {
-            if(id != undefined){
+            if(id !== undefined){
                 let response = await GetResultTestById('sus', id);
                 if(response.status === 200){    
                     let data = response.data;
-                    if(data == ""){
+                    if(data === ""){
                         setTitle("Resultado não encontrado");
                         setBody("Não há nenhum registro encontrado no banco de dados com o identificador repassado");
                         setShow(true);
@@ -79,7 +79,7 @@ function SusResult(){
             }
         }
         getResult();
-      }, []);
+      }, [id]);
     return(
         <>
             <Modal show={show} onHide={handleClose}>
