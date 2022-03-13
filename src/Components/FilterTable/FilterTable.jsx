@@ -59,7 +59,7 @@ function FilterTable(props) {
                     <TableCell component="th" scope="row">
                       {row.Username}
                     </TableCell>
-                    <TableCell align="right"><a href={`/${row.Instrument.trim()}Result/${row._id}`}>Ver Resultados</a></TableCell>
+                    <TableCell align="right"><a href={`/${row.Instrument}Result/${row._id}`}>Ver Resultados</a></TableCell>
                     <TableCell align="right">{row.Instrument}</TableCell>
                     <TableCell align="right">{formateDateTime(row.Datetime)}</TableCell>
                   </TableRow>
