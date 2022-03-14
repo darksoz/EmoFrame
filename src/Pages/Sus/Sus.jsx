@@ -86,12 +86,12 @@ function Sus() {
                 </blockquote>
                 <div class="row">
                     <div class="col md-2">
-                        <div class="wrap" id="sample">
+                        <div class="wrap">
                             
                             <SusExample />
                             <hr></hr>
                         </div>
-                        <blockquote>
+                        <blockquote id="topscreen">
                             <p class="lead ml-5 p-3">
                                 Nós temos cinco pontos de uma escala que varia de "Concordo Fortemente" a "Discordo Fortemente", eu gostaria que você me dissesse a resposta que melhor descreve a sua reação para cada uma das afirmações abaixo.
                             </p>
@@ -144,28 +144,28 @@ function Sus() {
                                     }
                                 </Step>
                             </MultiStepForm>
-                            {(active === 1 && <Link to="sample"><button class="btn whitebutton btn-lg" onClick={() => setActive(active + 1)}>Próximo</button></Link>)}
-                            {(active > 1 && active !== 3 &&
+                            {(active === 1 && <Link to="topscreen"><button class="btn whitebutton btn-lg" onClick={() => setActive(active + 1)}>Próximo</button></Link>)}
+                            {(active > 1 && active !== 3) && (
                                 <div>
-                                    <Link to="sample">
+                                    <Link to="topscreen">
                                         <button class="btn whitebutton btn-lg" onClick={() => setActive(active - 1)} >Anterior</button>
                                     </Link>
-                                    <Link to="sample">
+                                    <Link to="topscreen">
                                         <button class="btn whitebutton btn-lg" onClick={() => setActive(active + 1)}>Próximo</button>
                                     </Link>
                                 </div>)
                             }
                             {(active === 3 && answers.length === amountOfQuestions && solution.trim() !== "") &&
                                 <div>
-                                    <Link to="sample">
+                                    <Link to="topscreen">
                                         <button class="btn whitebutton btn-lg" onClick={() => setActive(active - 1)}>Anterior</button>
                                     </Link>
                                     <button class="btn whitebutton btn-lg" onClick={() => handleFormData()}>Salvar</button>
                                 </div>
                             }
-                            {(active === 3  && (answers.length !== amountOfQuestions || answers.length === amountOfQuestions)&& solution.trim() === "") &&
+                            {(active === 3  &&  answers.length !== amountOfQuestions && solution.trim() === "") &&
                                 <div>
-                                    <Link to="sample">
+                                    <Link to="topscreen">
                                         <button class="btn whitebutton btn-lg" onClick={() => setActive(active - 1)}>Anterior</button>
                                     </Link>
                                 </div>
