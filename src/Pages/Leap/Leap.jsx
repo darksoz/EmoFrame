@@ -16,6 +16,7 @@ import { SaveLeapTest } from '../../services/api';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Footer from '../../Components/Footer/Footer';
 
 
 let firstQuestions = arrayShuffle(Questions1);
@@ -179,7 +180,14 @@ function Leap() {
                         </div>
                     </Col>
                 </Row>
+                <div className='mt-5'>
+
+                    <Footer/>
+
+                </div>
+              
             </Container>
+            
         </>
 
             );

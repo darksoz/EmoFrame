@@ -5,6 +5,7 @@ import { LoginAccount } from '../../services/api.js';
 import { login, isAuthenticated } from '../../services/auth.js';
 import { RediretToPage } from '../../services/utils';
 import { Button, Modal } from 'react-bootstrap';
+import Footer from '../../Components/Footer/Footer';
 
 function Login() {
     let [email, setEmail] = useState("");
@@ -75,6 +76,7 @@ function Login() {
                             <input type="password" id="password" class="fadeIn third" name="login" placeholder="Senha" required onChange={e => onPasswordChange(e.target.value)} />
                             <input type="submit" class="fadeIn fourth" value="Entrar" onClick={async () => await handleSubmit()} />
                         </div>
+                        <Footer/>
                     </div>
                 </div>
             </>

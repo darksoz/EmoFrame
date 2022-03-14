@@ -13,6 +13,7 @@ import sortArray from 'sort-array';
 import { getUsername } from '../../services/auth';
 import { SaveTest } from '../../services/api';
 import ModalTest from '../../Components/Modal/ModalTest';
+import Footer from '../../Components/Footer/Footer';
 
 
 let firstQuestions = arrayShuffle(Questions1);
@@ -136,6 +137,11 @@ function Panas() {
                     </div>
                 }
             </Container>
+            <div className='mt-5'>
+
+                <Footer/>
+
+            </div>
         </>
     );
 }

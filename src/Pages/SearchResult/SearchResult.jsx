@@ -13,6 +13,7 @@ import { Button, Modal } from 'react-bootstrap';
 import Tabs from '../../Components/Tabs/Tabs';
 import { Breadcrumb } from "react-bootstrap";
 import { isEmptyString } from '../../services/utils';
+import Footer from '../../Components/Footer/Footer';
 
 
 
@@ -162,6 +163,7 @@ function SearchResult() {
                     </Row>
                 </Card>
             </Container>
+            <Footer/>
         </>
     );
 }

@@ -6,6 +6,7 @@ import { Redirect } from 'react-router-dom';
 import Card from '../../Components/Card/Card';
 import Tabs from '../../Components/Tabs/Tabs';
 import { isAuthenticated } from '../../services/auth';
+import Footer from '../../Components/Footer/Footer';
 
 function Dashboard() {
     return isAuthenticated() === false ? <Redirect to='/' /> : (
@@ -17,6 +18,7 @@ function Dashboard() {
             <div class="row m-3">
                 <Card />
             </div>
+            <Footer/>
         </Container>
     )
 }
