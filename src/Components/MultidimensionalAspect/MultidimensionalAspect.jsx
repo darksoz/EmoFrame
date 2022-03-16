@@ -3,7 +3,6 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import '../../Pages/Page/Page.css';
 import { Questions4 } from '../../services/Questions/Page/Page';
-import { TextareaAutosize } from "@mui/material";
 
 
 function MultidimensionalAspect() {

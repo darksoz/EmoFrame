@@ -2,7 +2,6 @@ import { Container } from "react-bootstrap";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { Questions3 } from '../../services/Questions/Page/Page'
-import { TextareaAutosize } from "@mui/material";
 
 function SocialAspect() {
     return (
