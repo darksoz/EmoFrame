@@ -2,7 +2,7 @@ import { Container } from "react-bootstrap";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { Questions3 } from '../../services/Questions/Page/Page'
-
+import { TextareaAutosize } from "@mui/material";
 
 function SocialAspect() {
     return (
@@ -26,19 +26,19 @@ function SocialAspect() {
                                             <Row>
                                                 <Col className="border">
                                                     <p className="h5">
-                                                        {pergunta.title}
+                                                        {pergunta.question} - {pergunta.title}
                                                         </p>
                                                 </Col>
                                                 <Col className='border'>
                                                     <p className="h5">
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                                                        <div class="form-check" style={{ minHeight: '2.0em' }}>
+                                                            <input class="form-check-input" type="radio" value={pergunta.yes} name={pergunta.question} />
                                                             <label class="form-check-label" for="flexCheckDefault">
                                                             SIM
                                                             </label>
                                                         </div>
                                                         <div class="form-check">
-                                                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
+                                                            <input class="form-check-input" type="radio" value={pergunta.no} name={pergunta.question}  />
                                                             <label class="form-check-label" for="flexCheckChecked">
                                                             NÃO
                                                             </label>
@@ -60,14 +60,14 @@ function SocialAspect() {
                         </p>
 
                         <p className="h5">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                            <div class="form-check" style={{ minHeight: '1.5em' }}>
+                                <input class="form-check-input" type="radio" value="1" name={question.aspectos}  />
                                 <label class="form-check-label" for="flexCheckDefault">
                                     SIM
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
+                                <input class="form-check-input" type="radio" value="0" name={question.aspectos} />
                                 <label class="form-check-label" for="flexCheckChecked">
                                     NÃO
                                 </label>
@@ -81,6 +81,12 @@ function SocialAspect() {
                         </>
                     ))
                 }
+                <Row>
+                    <div class="form-group justify-content-center">
+                        <textarea style={{ border: '1px solid black' }} name='anotacao_aspectos_sociais'class="form-control" placeholder='Anotações:' id="exampleFormControlTextarea1" rows="3">
+                        </textarea>
+                    </div>
+                </Row>
         </>
     );
 }

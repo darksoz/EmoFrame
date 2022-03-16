@@ -2,6 +2,8 @@ import { Container } from "react-bootstrap";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { Questions1 } from '../../services/Questions/Page/Page'
+import { TextareaAutosize, Radio , TextField} from "@mui/material";
+import  ImagesAspect  from '../BiologicalAspect/ImagesAspect'
 
 
 function PsychologicalAspect() {
@@ -28,19 +30,31 @@ function PsychologicalAspect() {
                                             <Row>
                                                 <Col className="border">
                                                     <p className="h5">
-                                                        {pergunta.title}
-                                                        </p>
+                                                        {pergunta.question} - {pergunta.title}
+                                                    </p>
+                                                    <p className='h6'>
+                                                         <strong> 
+                                                         { pergunta.text}
+                                                         </strong>
+                                                    </p>
+                                                    <div style={{ display:"grid" }}>                                                    
+                                                    {
+                                                        pergunta.images?.length > 0 ? pergunta.images.map((image, index) => (<ImagesAspect images={image} question={pergunta.question} name={index} ></ImagesAspect> ) ): ''
+                                        
+                                                    }  
+                                                    </div>
+
                                                 </Col>
                                                 <Col className='border'>
-                                                    <p className="h5">
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                                                    <p className="h5" >
+                                                        <div class="form-check" style={{ minHeight: '2.0em' }}>
+                                                            <input class="form-check-input" type="radio" value={pergunta.yes} name={pergunta.question} />
                                                             <label class="form-check-label" for="flexCheckDefault">
                                                             SIM
                                                             </label>
                                                         </div>
                                                         <div class="form-check">
-                                                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
+                                                            <input class="form-check-input" type="radio" value={pergunta.no} name={pergunta.question} />
                                                             <label class="form-check-label" for="flexCheckChecked">
                                                             NÃO
                                                             </label>
@@ -62,14 +76,14 @@ function PsychologicalAspect() {
                         </p>
 
                         <p className="h5">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                            <div class="form-check"style={{ minHeight: '1.5em' }}>
+                                <input class="form-check-input" type="radio" value="SIM" name={question.aspectos} />
                                 <label class="form-check-label" for="flexCheckDefault">
                                     SIM
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
+                                <input class="form-check-input" type="radio" value="NÂO" name={question.aspectos} />
                                 <label class="form-check-label" for="flexCheckChecked">
                                     NÃO
                                 </label>
@@ -77,12 +91,20 @@ function PsychologicalAspect() {
                         </p>
 
                     </Col>
+                        
                             </Row>
-
+                            
                         </Container>
                         </>
                     ))
                 }
+                <Row>
+                    <div class="form-group justify-content-center">
+                        <textarea style={{ border: '1px solid black' }} name='anotacao_aspectos_psicologicos'class="form-control" placeholder='Anotações:' id="exampleFormControlTextarea1" rows="3">
+                        </textarea>
+                    </div>
+
+                </Row>
         </>
     );
 }

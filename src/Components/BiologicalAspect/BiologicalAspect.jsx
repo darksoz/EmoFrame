@@ -2,6 +2,8 @@ import { Container } from "react-bootstrap";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { Questions2} from '../../services/Questions/Page/Page'
+import { TextareaAutosize } from "@mui/material";
+
 
 function BiologicalAspect() {
     return (
@@ -25,20 +27,34 @@ function BiologicalAspect() {
                                             <Row>
                                                 <Col className="border">
                                                     <p className="h5">
-                                                        {pergunta.title}
+                                                        {pergunta.question} - {pergunta.title}
                                                         </p>
+                                                        <p className='h6'>
+                                                         <strong> 
+                                                         { pergunta.questions?.map((a, index) => (
+                                                            <>
+                                                            <label> {a}</label>
+                                                            <input 
+                                                            type='checkbox'
+                                                            ></input>
+                                                            <br></br>
+                                                            </>
+                                                         ))
+                                                        }
+                                                         </strong>
+                                                    </p>
                                                 </Col>
                                                 <Col className='border'>
                                                     <p className="h5">
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                                                            <label class="form-check-label" for="flexCheckDefault">
+                                                        <div class="form-check" style={{ minHeight: '2.0em' }}>
+                                                            <input class="form-check-input" type="radio" value={pergunta.yes} name={pergunta.question}  />
+                                                            <label class="form-check-label" >
                                                             SIM
                                                             </label>
                                                         </div>
                                                         <div class="form-check">
-                                                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                                                            <label class="form-check-label" for="flexCheckChecked">
+                                                            <input class="form-check-input" type="radio" value={pergunta.no} name={pergunta.question}/>
+                                                            <label class="form-check-label" >
                                                             NÃO
                                                             </label>
                                                         </div>
@@ -55,19 +71,15 @@ function BiologicalAspect() {
                         </p>
 
                         <p className="h5">
-
-                        </p>
-
-                        <p className="h5">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                                <label class="form-check-label" for="flexCheckDefault">
+                        <div class="form-check" style={{ minHeight: '1.5em'}}>
+                                <input class="form-check-input" type="radio" value="1" name={question.aspectos}/>
+                                <label class="form-check-label">
                                     SIM
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                                <label class="form-check-label" for="flexCheckChecked">
+                                <input class="form-check-input" type="radio" value="0" name={question.aspectos}/>
+                                <label class="form-check-label" >
                                     NÃO
                                 </label>
                             </div>
@@ -80,6 +92,13 @@ function BiologicalAspect() {
                         </>
                     ))
                 }
+                <Row>
+                <div class="form-group justify-content-center">
+                    <textarea style={{ border: '1px solid black' }} name='anotacao_aspectos_biologicos'class="form-control" placeholder='Anotações:' id="exampleFormControlTextarea1" rows="3">
+                    </textarea>
+                </div>
+
+                </Row>
         </>
     );
 }
