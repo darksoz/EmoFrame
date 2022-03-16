@@ -45,7 +45,6 @@ function Zanon() {
         json = JSON.stringify(json);
         let response = await SaveTest(json, 'zanon');
         if (response.status === 201) {
-            console.log("Dados salvos aqui ==> ", response.data);
             setTitle("Teste concluído");
             setBody("Atividade realizada com sucesso");
             setSuccess(true);

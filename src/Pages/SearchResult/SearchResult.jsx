@@ -81,7 +81,6 @@ function SearchResult() {
                             return new Date(b.Datetime) - new Date(a.Datetime);
                           });
                         setTestsData([...array]);
-                        console.log("Array =>", array);
                     }
                 }
                 else {

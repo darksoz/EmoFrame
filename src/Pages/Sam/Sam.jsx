@@ -30,7 +30,6 @@ function Sam() {
 
         let response = await SaveSamTest(json);
         if (response.status === 201) {
-            console.log("Dados salvos aqui ==> ", response.data);
             setTitle("Teste concluído");
             setBody("Atividade realizada com sucesso");
             setSuccess(true);

@@ -4,6 +4,7 @@ import { Breadcrumb, Button, Container, Modal } from 'react-bootstrap';
 import SamTable from '../../Components/SamTable/SamTable';
 import { GetResultTestById } from '../../services/api';
 import { formateDateTime } from '../../services/utils';
+import Footer from '../../Components/Footer/Footer';
 
 function SamResult() {
     const [questions, setQuestions] = useState([]);
@@ -19,7 +20,7 @@ function SamResult() {
     const {id} = useParams();
     let history = useHistory();
 
-    useEffect(async () => {
+    useEffect(() => {
         const getResult = async () => {
             if(id !== undefined){
                 let response = await GetResultTestById('sam', id);
@@ -47,8 +48,8 @@ function SamResult() {
                 setShow(true);
             }
         }
-        await getResult();
-      }, []);
+        getResult();
+      }, [id]);
 
       const handleClose = path => {
         setShow(false);
@@ -86,6 +87,7 @@ function SamResult() {
                     </>
                 }
             </Container>
+            <Footer/>
         </>
     );
 }

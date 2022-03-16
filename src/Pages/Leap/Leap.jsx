@@ -49,12 +49,10 @@ function Leap() {
 
     const handleFormData = async () => {
         let json = { "Datetime": new Date(Date.now()), "Instrument": "leap", "Username": getUsername(), "Questions": sortArray(answers, { by: 'id', }) }
-        console.log("Json", json)
         json = JSON.stringify(json);
 
         let response = await SaveLeapTest(json);
         if (response.status === 201) {
-            console.log("Dados salvos aqui ==> ", response.data);
             setTitle("Teste concluído");
             setBody("Atividade realizada com sucesso");
             setSuccess(true);

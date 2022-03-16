@@ -8,7 +8,6 @@ import TableRow from "@material-ui/core/TableRow";
 import TablePagination from "@material-ui/core/TablePagination";
 import Paper from "@material-ui/core/Paper";
 import React, { useState } from 'react';
-import { useHistory } from "react-router-dom";
 import { formateDateTime } from "../../services/utils";
 
 const useStyles = makeStyles({
@@ -25,7 +24,6 @@ function FilterTable(props) {
     const handleChangePage = (event, newPage) => {
         setPage(newPage);
     };
-    let history = useHistory();
 
   const handleChangeRowsPerPage = event => {
     setRowsPerPage(parseInt(event.target.value));

@@ -12,18 +12,15 @@ export const defineInterceptor = () =>{
       if (err.response.status === 401 && err.config && !err.config._retry){
         originalReq._retry = true;
         let token = getToken();
-        console.log("Trying to refresh token");
         let res = axios.put(`${baseURL}/token/refresh`, {oldToken: token})
         .then((res) => {
           setToken(res.data.access_token)
           originalReq.headers["Authorization"] = `Bearer ${res.data.access_token}`;
-          console.log("Updating token");
           return axios(originalReq);
         });
         resolve(res);
       }
       else{
-        console.log("Rejected demais");
         reject(err)
       }
     })

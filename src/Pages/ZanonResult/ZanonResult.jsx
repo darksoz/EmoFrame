@@ -25,12 +25,10 @@ function ZanonResult (  ) {
 
     useEffect(() => {
         const getResult = async () => {
-            if(id != undefined){
+            if(id !== undefined){
                 let response = await GetResultTestById('zanon', id);
-                console.log("response => ", response);
                 if(response.status === 200){    
                     let data = response.data;
-                    console.log("data => ", data);
                     if(data === ""){
                         setTitle("Resultado não encontrado");
                         setBody("Não há nenhum registro encontrado no banco de dados com o identificador repassado");
@@ -64,7 +62,7 @@ function ZanonResult (  ) {
             }
         }
         getResult();
-      }, []);
+      }, [id]);
 
     const handleClose = path => {
         setShow(false);

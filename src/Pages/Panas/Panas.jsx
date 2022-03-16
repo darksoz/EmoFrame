@@ -47,7 +47,6 @@ function Panas() {
         json = JSON.stringify(json);
         let response = await SaveTest(json, 'panas');
         if (response.status === 201) {
-            console.log("Dados salvos aqui ==> ", response.data);
             setTitle("Teste concluído");
             setBody("Atividade realizada com sucesso");
             setSuccess(true);
