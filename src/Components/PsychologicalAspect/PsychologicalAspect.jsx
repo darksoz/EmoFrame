@@ -8,6 +8,8 @@ import  ImagesAspect  from '../BiologicalAspect/ImagesAspect'
 function PsychologicalAspect() {
     return (
         <>
+        <h1>AVALIAÇÃO DE RISCO DE VULNERABILIDADE BIOPSICOSSOACIAL EM IDOSOS</h1>
+
             <div className='border border-dark bg-primary text-white'>
                 <h3>Relacionados a Aspectos Psicológicos</h3>
             </div>
