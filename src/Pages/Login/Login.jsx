@@ -76,9 +76,10 @@ function Login() {
                             <input type="password" id="password" class="fadeIn third" name="login" placeholder="Senha" required onChange={e => onPasswordChange(e.target.value)} />
                             <input type="submit" class="fadeIn fourth" value="Entrar" onClick={async () => await handleSubmit()} />
                         </div>
-                        <Footer/>
+                        
                     </div>
                 </div>
+                <Footer/>
             </>
         )
 }
