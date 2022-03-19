@@ -12,9 +12,6 @@ import Footer from '../../Components/Footer/Footer';
 function Dashboard() {
     return isAuthenticated() === false ? <Redirect to='/' /> : (
         <Container fluid>
-           <Breadcrumb>
-            <Breadcrumb.Item active>Página Inicial</Breadcrumb.Item>
-            </Breadcrumb>
             <Tabs active="tools"/> 
             <Row>
             <Card/>

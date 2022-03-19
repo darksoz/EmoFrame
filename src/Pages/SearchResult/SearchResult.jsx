@@ -108,10 +108,7 @@ function SearchResult() {
             </Modal>
 
 
-            <Breadcrumb>
-                <Breadcrumb.Item href='./dashboard'>Página Inicial</Breadcrumb.Item>
-                <Breadcrumb.Item active>Resultados</Breadcrumb.Item>
-            </Breadcrumb>
+           
             <Tabs active="results"/>
            
             <Container>
