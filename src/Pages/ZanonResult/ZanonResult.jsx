@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import {Button, Container, Modal} from 'react-bootstrap'
 import { Breadcrumb } from "react-bootstrap";
 import { useHistory, useParams } from 'react-router-dom';
+import Footer from '../../Components/Footer/Footer';
 import ZanonBarChart from '../../Components/ZanonBarChart/ZanonBarChart';
 import { GetResultTestById } from '../../services/api';
 import { formateDateTime } from '../../services/utils';
@@ -99,6 +100,7 @@ function ZanonResult (  ) {
                     </>
                 }
                 <ZanonBarChart Data={result}/>
+                <Footer/>
             </Container>
        
         </>
