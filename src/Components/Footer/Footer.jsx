@@ -15,8 +15,6 @@ function Footer() {
                 <Row>
                     <Col lg={9}>
                     <div>
-
-
                         <img
                             src={`${process.env.PUBLIC_URL}/emoframe.png`}
                             width="30"
@@ -24,8 +22,6 @@ function Footer() {
                             alt=""
                         />
                         © 2022 Suzane Santos dos Santos
-
-
                     </div>
                 </Col>
                 <Col lg={3} className='text-end'>
