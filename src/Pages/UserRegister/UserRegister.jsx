@@ -14,10 +14,7 @@ function UserRegister() {
     }
     return (
         <>
-            <Breadcrumb>
-                <Breadcrumb.Item href='./dashboard'>Página Inicial</Breadcrumb.Item>
-                <Breadcrumb.Item active>Cadastrar Usuário</Breadcrumb.Item>
-            </Breadcrumb>
+            
             <Tabs active="register" />
             <div className="form-group mt-3" onChange={handleChange}>
                 <h3>Cadastro</h3>

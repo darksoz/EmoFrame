@@ -9,11 +9,11 @@ import Col from 'react-bootstrap/Col';
 
 function Footer() {
     return (
-        <div>
-            <footer class="coremo text-center text-lg-start fixed-bottom p-1" >
+        <div className='margin_top'>
+            <footer class="coremo text-center text-lg-start fixed-bottom">
 
                 <Row>
-                    <Col lg={10}>
+                    <Col lg={9}>
                     <div>
 
 
@@ -28,9 +28,9 @@ function Footer() {
 
                     </div>
                 </Col>
-                <Col lg={2} className='text-end'>
+                <Col lg={3} className='text-end'>
                <span>
-               <a href="#" class="link-dark">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Contato &nbsp;</a> 
+               <a href="#" class="link-dark">Contato &nbsp;</a> 
                </span>
                <span>
                <a href="#" class="link-dark"> &nbsp;Sobre Nós</a>

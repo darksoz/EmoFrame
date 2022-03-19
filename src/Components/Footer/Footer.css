@@ -5,3 +5,7 @@
 .navbar ul li{
     display:inline-block;
  }
+
+ .margin_top {
+    margin-top: 60px; 
+ }
