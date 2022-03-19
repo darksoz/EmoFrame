@@ -1,6 +1,5 @@
 import Table from 'react-bootstrap/Table';
 import Container from 'react-bootstrap/Container';
-import { Button, Modal } from 'react-bootstrap';
 function LeapResultTable(props) {
 
     const GetPresenceValue = index => {

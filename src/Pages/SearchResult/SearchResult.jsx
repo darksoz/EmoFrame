@@ -13,6 +13,7 @@ import { Button, Modal } from 'react-bootstrap';
 import Tabs from '../../Components/Tabs/Tabs';
 import { Breadcrumb } from "react-bootstrap";
 import { isEmptyString } from '../../services/utils';
+import Footer from '../../Components/Footer/Footer';
 
 
 
@@ -80,7 +81,6 @@ function SearchResult() {
                             return new Date(b.Datetime) - new Date(a.Datetime);
                           });
                         setTestsData([...array]);
-                        console.log("Array =>", array);
                     }
                 }
                 else {
@@ -107,10 +107,7 @@ function SearchResult() {
             </Modal>
 
 
-            <Breadcrumb>
-                <Breadcrumb.Item href='./dashboard'>Página Inicial</Breadcrumb.Item>
-                <Breadcrumb.Item active>Resultados</Breadcrumb.Item>
-            </Breadcrumb>
+           
             <Tabs active="results"/>
            
             <Container>
@@ -162,6 +159,7 @@ function SearchResult() {
                     </Row>
                 </Card>
             </Container>
+            <Footer/>
         </>
     );
 }

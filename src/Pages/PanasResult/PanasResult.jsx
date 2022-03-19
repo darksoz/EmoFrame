@@ -5,6 +5,7 @@ import { Breadcrumb } from "react-bootstrap";
 import PanasBarChart from '../../Components/PanasBarChart/PanasBarChart';
 import { GetResultTestById } from '../../services/api';
 import { formateDateTime } from '../../services/utils';
+import Footer from '../../Components/Footer/Footer';
 
 const positiveScale = [1, 3, 5, 8, 10, 11, 13, 15, 17, 19];
 const negativeScale = [2, 4, 6, 7, 9, 12, 14, 16, 18, 20];
@@ -24,9 +25,8 @@ function PanasResult () {
 
     useEffect(() => {
         const getResult = async () => {
-            if(id != undefined){
+            if(id !== undefined){
                 let response = await GetResultTestById('panas', id);
-                console.log("response => ", response);
                 if(response.status === 200){    
                     let data = response.data;
                     if(data === ""){
@@ -62,7 +62,7 @@ function PanasResult () {
             }
         }
         getResult();
-      }, []);
+      }, [id]);
 
     const handleClose = path => {
         setShow(false);
@@ -100,6 +100,7 @@ function PanasResult () {
                 }
                 <PanasBarChart Data={result}/>
             </Container>
+            <Footer/>
         </>
     );
 }

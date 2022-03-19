@@ -13,10 +13,8 @@ import ModalTest from '../../Components/Modal/ModalTest';
 import sortArray from 'sort-array';
 import { SaveSusTest } from '../../services/api';
 import { Breadcrumb } from "react-bootstrap";
+import Footer from '../../Components/Footer/Footer';
 
-
-const negativeQuestions = [18, 19, 22, 24, 27];
-const positiveQuestions = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 20, 21, 23, 25, 26, 28];
 
 let firstQuestions = arrayShuffle(Questions1);
 let secondQuestions = arrayShuffle(Questions2);
@@ -31,11 +29,10 @@ function Sus() {
     const [show, setShow] = React.useState(false);
     const [success, setSuccess] = React.useState(false);
     const [solution, setSolution] = React.useState("");
-    
+
 
     const handleSolutionName = (event) => {
         setSolution(event.target.value);
-        console.log(event.target.value);
     }
 
     const handleChange = (event) => {
@@ -51,20 +48,19 @@ function Sus() {
     }
 
     const handleFormData = async () => {
-        
-        let json = {"Datetime": new Date(Date.now()), "Instrument": "sus", "Username": getUsername(), "Solution": solution, "Questions": sortArray(answers, { by: 'id',})}
+
+        let json = { "Datetime": new Date(Date.now()), "Instrument": "sus", "Username": getUsername(), "Solution": solution, "Questions": sortArray(answers, { by: 'id', }) }
         json = JSON.stringify(json);
 
         let response = await SaveSusTest(json);
 
         if(response.status === 201 ){
-            console.log("Dados salvos aqui ==> ", response.data);
             setTitle("Teste concluído");
             setBody("Atividade realizada com sucesso");
             setSuccess(true);
             setShow(true);
         }
-        else{
+        else {
             setTitle("Erro na conclusão");
             setBody("Atividade não foi concluída");
             setSuccess(false);
@@ -82,21 +78,21 @@ function Sus() {
             <div class="container">
                 <h1>SUS</h1>
                 <blockquote class="blockquote">
-                    <p class="lead ml-5 p-3 text-start"> Para cada uma das seguintes afirmações, selecione a opção que melhor descreve suas reações ao <input id="name" type="text" onChange={handleSolutionName} placeholder="Nome da solução" name="sol" required/> hoje.
-                    <br></br>
-                    
+                    <p class="lead ml-5 p-3 text-start"> Para cada uma das seguintes afirmações, selecione a opção que melhor descreve suas reações ao <input id="name" type="text" onChange={handleSolutionName} placeholder="Nome da solução" name="sol" required /> hoje.
+                        <br></br>
+
                     </p>
                     <p>Clique no botão abaixo para ver exemplos de preenchimento:</p>
 
                 </blockquote>
                 <div class="row">
                     <div class="col md-2">
-                        <div class="wrap" id="sample">
+                        <div class="wrap">
                             
                             <SusExample />
                             <hr></hr>
                         </div>
-                        <blockquote>
+                        <blockquote id="topscreen">
                             <p class="lead ml-5 p-3">
                                 Nós temos cinco pontos de uma escala que varia de "Concordo Fortemente" a "Discordo Fortemente", eu gostaria que você me dissesse a resposta que melhor descreve a sua reação para cada uma das afirmações abaixo.
                             </p>
@@ -149,34 +145,39 @@ function Sus() {
                                     }
                                 </Step>
                             </MultiStepForm>
-                            {(active === 1 && <Link to="sample"><button class="btn whitebutton btn-lg" onClick={() => setActive(active + 1)}>Próximo</button></Link>)}
-                            {(active > 1 && active !== 3 &&
+                            {(active === 1 && <Link to="topscreen"><button class="btn whitebutton btn-lg" onClick={() => setActive(active + 1)}>Próximo</button></Link>)}
+                            {(active > 1 && active !== 3) && (
                                 <div>
-                                    <Link to="sample">
+                                    <Link to="topscreen">
                                         <button class="btn whitebutton btn-lg" onClick={() => setActive(active - 1)} >Anterior</button>
                                     </Link>
-                                    <Link to="sample">
+                                    <Link to="topscreen">
                                         <button class="btn whitebutton btn-lg" onClick={() => setActive(active + 1)}>Próximo</button>
                                     </Link>
                                 </div>)
                             }
                             {(active === 3 && answers.length === amountOfQuestions && solution.trim() !== "") &&
                                 <div>
-                                    <Link to="sample">
+                                    <Link to="topscreen">
                                         <button class="btn whitebutton btn-lg" onClick={() => setActive(active - 1)}>Anterior</button>
                                     </Link>
                                     <button class="btn whitebutton btn-lg" onClick={() => handleFormData()}>Salvar</button>
                                 </div>
                             }
-                            {(active === 3  && (answers.length !== amountOfQuestions || answers.length === amountOfQuestions)&& solution.trim() === "") &&
+                            {(active === 3  &&  answers.length !== amountOfQuestions && solution.trim() === "") &&
                                 <div>
-                                    <Link to="sample">
+                                    <Link to="topscreen">
                                         <button class="btn whitebutton btn-lg" onClick={() => setActive(active - 1)}>Anterior</button>
                                     </Link>
                                 </div>
                             }
                         </div>
                     </div>
+                </div>
+                <div className='mt-5'>
+
+                    <Footer/>
+
                 </div>
             </div>
         </>

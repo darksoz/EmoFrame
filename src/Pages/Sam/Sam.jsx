@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Breadcrumb } from "react-bootstrap";
 import sortArray from 'sort-array';
+import Footer from '../../Components/Footer/Footer';
 import ModalTest from '../../Components/Modal/ModalTest';
 import { SaveSamTest } from '../../services/api';
 import { getUsername } from '../../services/auth';
@@ -29,7 +30,6 @@ function Sam() {
 
         let response = await SaveSamTest(json);
         if (response.status === 201) {
-            console.log("Dados salvos aqui ==> ", response.data);
             setTitle("Teste concluído");
             setBody("Atividade realizada com sucesso");
             setSuccess(true);
@@ -373,8 +373,14 @@ function Sam() {
                         }
 
                     </div>
+
                 </div>
 
+
+            </div>
+            <div className='mt-5'>
+
+                <Footer />
 
             </div>
         </div>
