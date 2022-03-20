@@ -19,8 +19,8 @@ function Tabs(props) {
                     <li class="nav-item">
                         {
                             props.active === "register" ? 
-                            <a class="nav-link active" href="/userregister">Cadastrar Usuários</a> :
-                            <a class="nav-link" href="/userregister">Cadastrar Usuários</a>
+                            <a class="nav-link active" href="/register">Cadastrar Usuários</a> :
+                            <a class="nav-link" href="/register">Cadastrar Usuários</a>
                         }
                     </li>
                     <li class="nav-item">
