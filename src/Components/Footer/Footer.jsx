@@ -26,10 +26,10 @@ function Footer() {
                 </Col>
                 <Col lg={3} className='text-end'>
                <span>
-               <a href="#" class="link-dark">Contato &nbsp;</a> 
+               <a href="/contactus" class="link-dark">Contato &nbsp;</a> 
                </span>
                <span>
-               <a href="#" class="link-dark"> &nbsp;Sobre Nós</a>
+               <a href="/contactus" class="link-dark"> &nbsp;Sobre Nós</a>
                </span>
              
                 </Col>
