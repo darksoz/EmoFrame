@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import {Button, Container, Modal} from 'react-bootstrap'
 import { Breadcrumb } from "react-bootstrap";
 import { useHistory, useParams } from 'react-router-dom';
+import Footer from '../../Components/Footer/Footer';
 import ZanonBarChart from '../../Components/ZanonBarChart/ZanonBarChart';
 import { GetResultTestById } from '../../services/api';
 import { formateDateTime } from '../../services/utils';
@@ -25,12 +26,10 @@ function ZanonResult (  ) {
 
     useEffect(() => {
         const getResult = async () => {
-            if(id != undefined){
+            if(id !== undefined){
                 let response = await GetResultTestById('zanon', id);
-                console.log("response => ", response);
                 if(response.status === 200){    
                     let data = response.data;
-                    console.log("data => ", data);
                     if(data === ""){
                         setTitle("Resultado não encontrado");
                         setBody("Não há nenhum registro encontrado no banco de dados com o identificador repassado");
@@ -64,7 +63,7 @@ function ZanonResult (  ) {
             }
         }
         getResult();
-      }, []);
+      }, [id]);
 
     const handleClose = path => {
         setShow(false);
@@ -101,6 +100,7 @@ function ZanonResult (  ) {
                     </>
                 }
                 <ZanonBarChart Data={result}/>
+                <Footer/>
             </Container>
        
         </>

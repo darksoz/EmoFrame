@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Container, Modal } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import { Register } from "../../services/api";
 import ModalTest from "../Modal/ModalTest";
 
@@ -22,19 +22,16 @@ function RegisterSpecialist(props) {
     }
 
     const handleSubmit = async () => {
-        console.log("Register data aqui => ", registerData);
         let json = JSON.stringify(registerData);
 
         let response = await Register(json, 'specialist');
         if (response.status === 201) {
-            console.log("Dados salvos aqui ==> ", response.data);
             setTitle("cadastro concluído");
             setBody("Especialista cadastrado(a) com sucesso");
             setSuccess(true);
             setShow(true);
         }
         else {
-            console.log("Erro ==> ", response.status);
             setTitle("Erro ao realizar cadastro");
             setBody("Email já cadastrado");
             setSuccess(false);

@@ -22,11 +22,11 @@
     content: '';
     position:relative;
     top:11px;
-    left:16%;
+    left:17%;
     display:block;
     background-color:grey;
     height:4px;
-    width:68%;
+    width:66%;
   }
   .form .likert-panas li {
     display:inline-block;

@@ -1,13 +1,11 @@
 import React from 'react';
 import {BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import Home from './Pages/Home/Home';
-import Register from './Pages/Register/Register';
 import Login from './Pages/Login/Login';
 import Dashboard from './Pages/Dashboard/Dashboard';
 import Sam from './Pages/Sam/Sam';
 import { isAuthenticated, getUsertype } from './services/auth';
 import UserRegister from './Pages/UserRegister/UserRegister';
-import Results from './Pages/Results/Results';
 import Leap from './Pages/Leap/Leap';
 import SamResult from './Pages/SamResult/SamResult'; 
 import Zanon from './Pages/Zanon/Zanon';
@@ -52,12 +50,10 @@ function Routes() {
         <BrowserRouter>
             <Switch>
                 <Route path='/' exact component={Home}/>
-                <Route path='/register' exact component={Register}/>
                 <Route path='/login' exact component={Login}/>
                 <PrivateRoute path='/dashboard' exact component={Dashboard}/>
                 <PrivateRoute path='/sam' exact component={Sam}/>
-                <LimitedAccessRoute path='/userregister' exact component={UserRegister}/>
-                <LimitedAccessRoute path='/results' exact component={Results}/>
+                <LimitedAccessRoute path='/register' exact component={UserRegister}/>
                 <LimitedAccessRoute path='/searchresults' exact component={SearchResult}/>
                 <PrivateRoute path='/leap' exact component={Leap}/>
                 <PrivateRoute path='/zanon' exact component={Zanon}/>

@@ -1,6 +1,7 @@
 import React from 'react';
 import {Redirect} from 'react-router-dom';
 import { useHistory } from 'react-router-dom';
+import Footer from '../../Components/Footer/Footer';
 import {isAuthenticated} from '../../services/auth';
 import './Home.css';
 
@@ -21,8 +22,10 @@ function Home() {
                     <button class="btn whitebutton btn-lg btn-block" onClick={()=>goToPage('login')}>Entrar</button>
                     
                 </div> 
+                <Footer/>
             </div>
         </div>
+        
     )
 }
 
