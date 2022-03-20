@@ -3,6 +3,7 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Card from 'react-bootstrap/Card';
 import Form from 'react-bootstrap/Form';
+import Footer from '../../Components/Footer/Footer';
 
 
 function ContactUs() {
@@ -59,10 +60,6 @@ function ContactUs() {
                             <p>Av. Trab. São Carlense, 400 - Parque Arnold Schimidt, São Carlos - SP, 13566-590</p>
                         </li>
 
-                        <li><i class="fas fa-phone mt-4 fa-2x"></i>
-                            <p>+ 55 (91) 9 8087-2989</p>
-                        </li>
-
                         <li><i class="fas fa-envelope mt-4 fa-2x"></i>
                             <p>emoframe@gmail.com</p>
                         </li>
@@ -70,6 +67,7 @@ function ContactUs() {
                         </Col>
                     </Row>
                 </Card>
+                <Footer/>
             </Container>
 
            
