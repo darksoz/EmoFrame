@@ -29,7 +29,7 @@ function PageDemands () {
     return (
         <>
         <Container>
-            <h3>Mapa de Demandas</h3>
+            <h3>Demandas Prioritárias</h3>
             <ReactApexChart 
             options={dados.options} 
             series={dados.series} 

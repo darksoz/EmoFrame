@@ -7,13 +7,12 @@ function PageResultTable() {
     return (
         <>
             <Container>
-                <h3>Tabela de Referência PAGe</h3>
                 <Table bordered>
                     <tbody>
                         <tr className='bg-lgrey'>
-                            <td colSpan={3}>Escores</td>
+                            <td colSpan={3} className='border border-dark text-white h3'>Escores</td>
                         </tr>
-                        <tr className='bg-lblue'>
+                        <tr >
                             <td colSpan={2}>
                                 PONTUAÇÃO POR DIMENSÃO
                             </td>
@@ -38,7 +37,7 @@ function PageResultTable() {
                         <tr className='bg-lgrey'>
                             <td colSpan={3}>PONTUAÇÃO TOTAL (MÁXIMA = 98 PONTOS): T</td>
                         </tr>
-                        <tr className='bg-lblue'>
+                        <tr>
                             <td colSpan={3}>CLASSIFICAÇÃO DE RISCO DE VULNERABILIDADE BIOPSICOSSOCIAL</td>
                         </tr>
                         <tr className='bg-lgrey'>
