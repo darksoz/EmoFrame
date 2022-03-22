@@ -290,6 +290,7 @@ export const Questions1 = [
         {
           question: 32,
           point: 0,
+          input:true,
           title:
             "Índice de Massa Corporal (peso _ [kg]/ estatura _ [m2]) = _ kg/m2) igual ou menor que 22 kg/m2",
           yes: 0,
@@ -358,6 +359,7 @@ export const Questions1 = [
           question: 40,
           yes:0,
           no:1,
+          input:true,
           point: 0,
           title:
             "Na última semana, o(a) senhor(a) ingeriu bebidas alcoólicas? Se sim, tipo: _ quantidade: _",
@@ -496,6 +498,7 @@ export const Questions1 = [
         },
         {
           question: 55,
+          input:true,
           yes:1,
           no:0,
           point: 1,
