@@ -20,7 +20,7 @@ function Home() {
                     <p className="EmoFrameText">Framework de Instrumentos de Avaliação de Respostas Emocionais</p> 
                     
                     <button class="btn whitebutton btn-lg btn-block" onClick={()=>goToPage('login')}>Entrar</button>
-                    
+                    <button class="btn whitebutton btn-lg btn-block" onClick={()=>goToPage('recommendation')}>Recomendação</button>
                 </div> 
                 <Footer/>
             </div>

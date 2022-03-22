@@ -6,6 +6,8 @@ import { login, isAuthenticated } from '../../services/auth.js';
 import { RediretToPage } from '../../services/utils';
 import { Button, Modal } from 'react-bootstrap';
 import Footer from '../../Components/Footer/Footer';
+import { Breadcrumb } from "react-bootstrap";
+
 
 function Login() {
     let [email, setEmail] = useState("");
@@ -64,6 +66,10 @@ function Login() {
                         </Button>
                     </Modal.Footer>
                 </Modal>
+                <Breadcrumb>
+                <Breadcrumb.Item href='/'>Ínicio</Breadcrumb.Item>
+                <Breadcrumb.Item active>Recomendação de Instrumento</Breadcrumb.Item>
+               </Breadcrumb>
                 <div class="flex-fill">
                     <div class="wrapper fadeInDown">
                         <div id="formContent" >
