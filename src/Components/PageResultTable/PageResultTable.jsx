@@ -6,7 +6,6 @@ import { Form } from 'react-bootstrap';
 function PageResultTable() {
     return (
         <>
-            <Container>
                 <Table bordered>
                     <tbody>
                         <tr className='bg-lgrey'>
@@ -87,7 +86,6 @@ function PageResultTable() {
                     </tbody>
                 </Table>
 
-            </Container>
         </>
     );
 }
