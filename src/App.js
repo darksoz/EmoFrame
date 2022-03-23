@@ -7,7 +7,7 @@ function App() {
   defineInterceptor();
   return (
     <div className="App">
-      
+      <Header/>
         <Routes/>
         
     </div>
