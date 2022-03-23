@@ -3,6 +3,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { Questions2 } from "../../services/Questions/Page/Page";
 import InputText from "../InputText/InputText";
+import TableDiagnostico from "./TableDiagnostico";
 
 function BiologicalAspect() {
   return (
@@ -22,9 +23,16 @@ function BiologicalAspect() {
                   <>
                     <Row>
                       <Col className="border">
-                        <p className="h5">
-                           {pergunta.question} - {pergunta.title}
-                        </p>
+                        {pergunta.input ? (
+                          <InputText
+                            text={pergunta.title}
+                            question={pergunta.question}
+                          />
+                        ) : (
+                          <p className="h5">
+                            {pergunta.question} - {pergunta.title}
+                          </p>
+                        )}
                         <p className="h6">
                           <strong>
                             {pergunta.questions?.map((a, index) => (
@@ -90,11 +98,21 @@ function BiologicalAspect() {
                   </div>
                 </p>
               </Col>
+              <Col xs={2} className='m-auto'></Col>
+              <Col xs={8} clasName='m-auto' >
+                {question.aspectos === "USO INADEQUADO DE MEDICAMENTOS"
+                 ?<TableDiagnostico>
+                 </TableDiagnostico>
+                 :null} 
+              
+              </Col>
+              <Col xs={2} className='m-auto'></Col>
             </Row>
-            <InputText text="Que idade o(a) senhor(a) sente ter _ ? Por quê?"></InputText>
+           
           </Container>
         </>
       ))}
+      
       <Row>
         <div class="form-group justify-content-center">
           <textarea

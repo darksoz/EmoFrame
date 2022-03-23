@@ -9,6 +9,7 @@ export const Questions1 = [
             "O(A) senhor(a) considera que sua memória é tão boa quanto antes?",
           point: 1,
           question: 1,
+          input:false,
           yes:1,
           no:0,
         },
@@ -18,6 +19,7 @@ export const Questions1 = [
           point: 1,
           yes:1,
           no:0,
+          input:false,
           question: 2,
           text: `"Renato Moreira"
               "Rua Bela Vista, 73"
@@ -30,6 +32,7 @@ export const Questions1 = [
             "Linguagem, função executiva e atenção: “O(a) senhor(a) deve falar todos os nomes de animais de que se lembrar, o mais rápido possível. Quantos mais falar, melhor. Pode começar”. Anote os nomes de animais falados pelo(a) idoso(a) a cada 15 segundos.",
           point: 1,
           question: 3,
+          input:false,
           yes:1,
           no:0,
           images: ["time1.png", "time2.png", "time3.png", "time4.png"],
@@ -38,6 +41,7 @@ export const Questions1 = [
           title:
             "Habilidade visuoespacial: Peça ao indivíduo para contar os pontos sem apontá-los",
           question: 4,
+          input:false,
           yes:1,
           no:0,
           images: ["bolas1.png", "bolas2.png", "bolas3.png", "bolas4.png"],
@@ -47,6 +51,7 @@ export const Questions1 = [
           title:
             "Praxia: (Esteja com uma folha em mãos) “Pegue este papel com a mão direita. Dobre-o ao meio e coloque-o sobre a mesa” (Falar todos os comandos de uma só vez)",
           point: 1,
+          input:false,
           question: 5,
           yes:1,
           no:0,
@@ -56,6 +61,7 @@ export const Questions1 = [
             "Memória: Agora você vai me dizer o que você se lembra daquele nome e endereço que nós repetimos no começo",
           question: 6,
           yes:1,
+          input:false,
           no:0,
           point: 1,
           subtitle: ["Renato Moreira", "Rua Bela Vista, 73", "Santarém", "Pará"],
@@ -83,7 +89,7 @@ export const Questions1 = [
             "[Registrar ao lado se é perceptível uma visão mais negativa da velhice].",
           point: 0,
           title:
-            "Existem pontos positivos e negativos presentes na velhice? Quais?",
+            "Existem pontos positivos e negativos presentes na velhice? Quais? _",
         },
       ],
     },
@@ -95,6 +101,7 @@ export const Questions1 = [
           question: 9,
           yes:1,
           no:0,
+          input:false,
           point: 1,
           title: "De modo geral o(a) senhor(a) está satisfeito com a vida?",
         },
@@ -102,12 +109,14 @@ export const Questions1 = [
           question: 10,
           yes:0,
           no:1,
+          input:false,
           point: 0,
           title: "O(A) senhor(a) se sente triste com frequência?",
         },
         {
           question: 11,
           yes:0,
+          input:false,
           no:1,
           point: 0,
           title:
@@ -117,6 +126,7 @@ export const Questions1 = [
           question: 12,
           yes:0,
           no:1,
+          input:false,
           point: 0,
           title: "O(A) senhor(a) tem medo que algum mal vá lhe acontecer?",
         },
@@ -124,6 +134,7 @@ export const Questions1 = [
           question: 13,
           point: 0,
           yes:0,
+          input:false,
           no:1,
           title:
             "O(A) senhor(a) se sente impaciente e agitado(a) com frequência?",
@@ -131,6 +142,7 @@ export const Questions1 = [
         {
           question: 14,
           yes:0,
+          input:false,
           no:1,
           point: 0,
           title: "O(A) senhor(a) tem dificuldade em se concentrar?",
@@ -149,6 +161,7 @@ export const Questions1 = [
           question: 15,
           yes:0,
           no:1,
+          input:false,
           point: 0,
           title: "O(A) senhor(a) tem problemas de visão?",
         },
@@ -156,6 +169,7 @@ export const Questions1 = [
           question: 16,
           yes:0,
           no:1,
+          input:false,
           point: 0,
           title:
             "O(A) senhor(a) tem dificuldade de ouvir o que as pessoas falam?",
@@ -164,6 +178,7 @@ export const Questions1 = [
           question: 17,
           yes:0,
           no:1,
+          input:false,
           point: 0,
           title:
             "O(A) senhor(a) tem dificuldade para sentir o sabor dos alimentos?",
@@ -172,6 +187,7 @@ export const Questions1 = [
           question: 18,
           yes:0,
           no:1,
+          input:false,
           point: 0,
           title:
             "O(A) senhor(a) considera ruim o funcionamento dos seus sentidos?",
@@ -180,6 +196,7 @@ export const Questions1 = [
           question: 19,
           yes:0,
           no:1,
+          input:false,
           point: 0,
           title:
             " O(A) senhor(a) considera que o funcionamento dos seus sentidos afeta sua capacidade de interagir com outras pessoas?",
@@ -193,6 +210,7 @@ export const Questions1 = [
         {
           question: 20,
           yes:0,
+          input:false,
           no:1,
           point: 0,
           title: "O(A) senhor(a) necessita de ajuda para Fazer compras?",
@@ -201,6 +219,7 @@ export const Questions1 = [
           question: 21,
           yes:0,
           no:1,
+          input:false,
           point: 0,
           title:
             "O(A) senhor(a) necessita de ajuda para usar meios de transporte?",
@@ -209,6 +228,7 @@ export const Questions1 = [
           question: 22,
           yes:0,
           no:1,
+          input:false,
           point: 0,
           title:
             "O(A) senhor(a) necessita de ajuda para preparar a própria comida?",
@@ -217,6 +237,7 @@ export const Questions1 = [
           question: 23,
           yes:0,
           no:1,
+          input:false,
           point: 0,
           title: "O(A) senhor(a) necessita de ajuda para usar telefone?",
         },
@@ -224,6 +245,7 @@ export const Questions1 = [
           question: 24,
           yes:0,
           no:1,
+          input:false,
           point: 0,
           title: "O(A) senhor(a) necessita de ajuda para vestir-se?",
         },
@@ -231,6 +253,7 @@ export const Questions1 = [
           question: 25,
           yes:0,
           no:1,
+          input:false,
           point: 0,
           title: "O(A) senhor(a) necessita de ajuda para tomar banho?",
         },
@@ -244,6 +267,7 @@ export const Questions1 = [
           question: 26,
           yes:0,
           no:1,
+          input:false,
           point: 0,
           title: "O(A) senhor(a) acha ou considera que está desnutrido?",
         },
@@ -251,6 +275,7 @@ export const Questions1 = [
           question: 27,
           yes:0,
           no:1,
+          input:false,
           point: 0,
           title:
             "O(A) senhor(a) tem lesões na região bucal ou algum outro problema que provoque dificuldades de mastigação?",
@@ -259,6 +284,7 @@ export const Questions1 = [
           question: 28,
           yes:0,
           no:1,
+          input:false,
           point: 0,
           title: "O(A) senhor(a) faz menos de três refeições por dia?",
         },
@@ -266,6 +292,7 @@ export const Questions1 = [
           question: 29,
           yes:0,
           no:1,
+          input:false,
           point: 0,
           title:
             "Nos ultimos 3 meses,O(A) senhor(a), Diminuiu sua ingesta alimentar sem motivo?",
@@ -283,6 +310,7 @@ export const Questions1 = [
           question: 31,
           yes:0,
           no:1,
+          input:false,
           point: 0,
           title:
             "Nos ultimos 3 meses,O(A) senhor(a), Passou por algum estresse psicologico, doenca aguda ou internações",
@@ -306,6 +334,7 @@ export const Questions1 = [
           question: 33,
           yes:0,
           no:1,
+          input:false,
           point: 0,
           title:
             "O(A) senhor(a) tem histórico familiar (1º grau) de DCV (infarto, derrama e/ou angina)?",
@@ -314,6 +343,7 @@ export const Questions1 = [
           question: 34,
           yes:1,
           no:0,
+          input:false,
           point: 1,
           title: "O(a) senhor(a) tem hipertensão arterial descontrolada?",
         },
@@ -321,6 +351,7 @@ export const Questions1 = [
           question: 35,
           yes:1,
           no:0,
+          input:false,
           point: 1,
           title: "O(A) senhor(a) tem diabetes? Se sim, está descontrolada?",
         },
@@ -328,6 +359,7 @@ export const Questions1 = [
           question: 36,
           yes:1,
           no:0,
+          input:false,
           tooltip:
             "[Pontuar como sim quando CT e HDL forem verificados em último exame como superior a 200 mg/dL e 60mg/dL, respectivamente, ou caso o(a) idoso(a) não saiba informar]",
           point: 1,
@@ -337,6 +369,7 @@ export const Questions1 = [
           question: 37,
           yes:0,
           no:1,
+          input:false,
           point: 0,
           title: "O(A) senhor(a) fuma ou é ex-fumante?",
         },
@@ -344,6 +377,7 @@ export const Questions1 = [
           question: 38,
           yes:1,
           no:0,
+          input:false,
           point: 1,
           title:
             "O(A) senhor(a) pratica mais de 150 minutos de exercícios físicos por semana?",
@@ -352,6 +386,7 @@ export const Questions1 = [
           question: 39,
           yes:1,
           no:0,
+          input:false,
           point: 1,
           title: "O(A) senhor(a) considera que sua alimentação é saudável?",
         },
@@ -368,6 +403,7 @@ export const Questions1 = [
           question: 41,
           yes:0,
           no:1,
+          input:false,
           point: 0,
           title: "IMC para obesidade: 27 Kg/m2",
         },
@@ -379,6 +415,7 @@ export const Questions1 = [
       perguntas: [
         {
           question: 42,
+          input:false,
           title:
             "Nos últimos 5 anos, algum médico ou outro profissional de saúde já disse que o(a) senhor(a) tem:",
           questions: [
@@ -398,6 +435,7 @@ export const Questions1 = [
         },
         {
           title: " O(A) senhor(a) tem algum dos seguintes problemas de saúde:",
+          input:false,
           question: 43,
           questions: [
             "Dor de cabeça?",
@@ -425,6 +463,7 @@ export const Questions1 = [
           question: 46,
           yes:0,
           no:1,
+          input:false,
           point: 0,
           title:
             "Nos últimos 6 meses, a quantidade de medicamentos que o(a) senhor(a) toma aumentou muito?",
@@ -433,6 +472,7 @@ export const Questions1 = [
           question: 47,
           yes:0,
           no:1,
+          input:false,
           point: 0,
           title: "O(A) senhor(a) sabe para que serve todos os seus medicamentos?",
         },
@@ -440,6 +480,7 @@ export const Questions1 = [
           question: 48,
           yes:0,
           no:1,
+          input:false,
           point: 0,
           title:
             "Os medicamentos que o(a) senhor(a) faz uso foram prescritos por médicos diferentes?",
@@ -448,6 +489,7 @@ export const Questions1 = [
           question: 49,
           yes:1,
           no:0,
+          input:false,
           point: 1,
           title:
             "O(A) senhor(a) toma os medicamentos de acordo com as orientações médicas?",
@@ -456,6 +498,7 @@ export const Questions1 = [
           question: 50,
           yes:0,
           no:1,
+          input:false,
           point: 0,
           title: "O(A) senhor(a) alguma vez já deixou de tomar os medicamentos?",
         },
@@ -463,6 +506,7 @@ export const Questions1 = [
           question: 51,
           yes:0,
           no:1,
+          input:false,
           point: 0,
           title:
             "O(A) senhor(a) tem o costume de tomar remédios por conta própria? (Quais?)",
@@ -471,6 +515,7 @@ export const Questions1 = [
           question: 52,
           yes:0,
           no:1,
+          input:false,
           point: 0,
           title:
             "Verificar na lista de medicamentos potencialmente inapropriados para idosos brasileiros (anexada ao PAGe) se o(a) idoso(a) toma algum dos medicamentos citados na mesma.",
@@ -479,6 +524,7 @@ export const Questions1 = [
           question: 53,
           yes:0,
           no:1,
+          input:false,
           point: 0,
           title: "Cálculo do risco para reações adversas.",
         },
@@ -493,12 +539,12 @@ export const Questions1 = [
       perguntas: [
         {
           question: 54,
+          input:true,
           title:
-            "O(A) senhor(a) tem: cônjuge _ , pais _, irmãos (nº) _ , filhos (nº) _ e netos (nº) _ [Fazer registro dos familiares vivos]",
+            "O(A) senhor(a) tem: cônjuge _ , pais _ , irmãos (nº) _ , filhos (nº) _ e netos (nº) _ [Fazer registro dos familiares vivos]",
         },
         {
           question: 55,
-          input:true,
           yes:1,
           no:0,
           point: 1,
@@ -508,6 +554,7 @@ export const Questions1 = [
           question: 56,
           yes:1,
           no:0,
+          input:false,
           point: 1,
           title:
             " O(A) senhor(a) participa de decisões importantes da sua família?",
@@ -516,6 +563,7 @@ export const Questions1 = [
           question: 57,
           yes:1,
           no:0,
+          input:false,
           point: 1,
           title:
             "O(A) senhor(a) se sente satisfeito(a) com o relacionamento afetivo que tem com os seus familiares?",
@@ -524,6 +572,7 @@ export const Questions1 = [
           question: 58,
           yes:1,
           no:0,
+          input:false,
           point: 1,
           title: "O(A) senhor(a) tem ajuda de alguém se precisar de dinheiro?",
         },
@@ -531,6 +580,7 @@ export const Questions1 = [
           question: 59,
           yes:1,
           no:0,
+          input:false,
           point: 1,
           title:
             "O(A) senhor(a) pode contar com alguém para ajuda-lo(a) a resolver problemas?",
@@ -539,6 +589,7 @@ export const Questions1 = [
           question: 60,
           yes:1,
           no:0,
+          input:false,
           point: 1,
           title:
             "O(A) senhor(a) tem pessoas com quem possa se divertir e relaxar?",
@@ -547,6 +598,7 @@ export const Questions1 = [
           question: 61,
           yes:1,
           no:0,
+          input:false,
           point: 1,
           title:
             "O(A) senhor(a) participa de eventos sócio-culturais, tais como: peças de teatro, cinema, universidade aberta a terceira idade, centro de convivência, festas, ligados à religião, etc).",
@@ -555,6 +607,7 @@ export const Questions1 = [
           question: 62,
           yes:1,
           no:0,
+          input:false,
           point: 1,
           title:
             "O(A) senhor(a) é acompanhado regularmente por serviços de saúde?",
@@ -569,6 +622,7 @@ export const Questions1 = [
           question: 63,
           yes:1,
           no:0,
+          input:false,
           point: 1,
           title: "Na casa do(a) senhor(a), Os móveis são estáveis",
         },
@@ -576,6 +630,7 @@ export const Questions1 = [
           question: 64,
           yes:0,
           no:1,
+          input:false,
           point: 0,
           title:
             "Na casa do(a) senhor(a), Há objetos e/ou tapetes soltos nas áreas de circulação?",
@@ -584,6 +639,7 @@ export const Questions1 = [
           question: 65,
           yes:0,
           no:1,
+          input:false,
           point: 0,
           title:
             "Na casa do(a) senhor(a), O piso é escorregadio (ex. encerado, molhado)?",
@@ -592,6 +648,7 @@ export const Questions1 = [
           question: 66,
           yes:1,
           no:0,
+          input:false,
           point: 1,
           title:
             "Na casa do(a) senhor(a), Há escadas? As escadas possuem corrimão em ambos os lados?",
@@ -600,6 +657,7 @@ export const Questions1 = [
           question: 67,
           yes:1,
           no:0,
+          input:false,
           point: 1,
           title:
             "Na casa do(a) senhor(a), As escadas/ degraus são iluminados adequadamente",
@@ -608,6 +666,7 @@ export const Questions1 = [
           question: 68,
           yes:1,
           no:0,
+          input:false,
           point: 1,
           title:
             "Na casa do(a) senhor(a), Os degraus são adequados (tamanho, rebordos, largura e padronagem, etc)? ",
@@ -616,6 +675,7 @@ export const Questions1 = [
           question: 69,
           yes:1,
           no:0,
+          input:false,
           point: 1,
           title:
             "Na casa do(a) senhor(a),Há tapetes antiderrapantes (fora e dentro box)?",
@@ -624,6 +684,7 @@ export const Questions1 = [
           question: 70,
           yes:0,
           no:1,
+          input:false,
           point: 0,
           title:
             "O(A) senhor(a) costuma, Subir em banquetas ou cadeiras para alcançar objetos altos?",
@@ -632,6 +693,7 @@ export const Questions1 = [
           question: 71,
           yes:0,
           no:1,
+          input:false,
           point: 0,
           title:
             "O(A) senhor(a) costuma, Deixa as luzes apagadas quando se levanta à noite?",
@@ -640,6 +702,7 @@ export const Questions1 = [
           question: 72,
           yes:1,
           no:0,
+          input:false,
           point: 1,
           title:
             "O(A) senhor(a) costuma, Utiliza calçados seguros e adequados (solado antiderrapante, bem ajustados e firmes no pé, sem saltos, etc)?",
@@ -648,6 +711,7 @@ export const Questions1 = [
           question: 73,
           yes:1,
           no:0,
+          input:false,
           point: 1,
           title:
             "O(A) senhor(a) está satisfeito com as calçadas do seu bairro são bem cuidadas (pavimentadas, lisas e sem buracos)?",
@@ -656,6 +720,7 @@ export const Questions1 = [
           question: 74,
           yes:1,
           no:0,
+          input:false,
           point: 1,
           title:
             "O(A) senhor(a) está satisfeito com o acesso ao transporte publico no seu bairro?",
@@ -664,6 +729,7 @@ export const Questions1 = [
           question: 75,
           yes:1,
           no:0,
+          input:false,
           point: 1,
           title:
             "O(A) senhor(a) está satisfeito com o acesso ao comercio no seu bairro?",
@@ -672,6 +738,7 @@ export const Questions1 = [
           question: 76,
           yes:1,
           no:0,
+          input:false,
           point: 1,
           title:
             "O(A) senhor(a) está satisfeito com a facilidade e prazer em andar (a pé com cadeira de rodas/bengala/andador) no seu bairro?",
@@ -680,6 +747,7 @@ export const Questions1 = [
           question: 77,
           yes:1,
           no:0,
+          input:false,
           point: 1,
           title:
             "O(A) senhor(a) está satisfeito com o acesso à diversão no seu bairro (restaurantes, cinema, clubes,etc.)?",
@@ -688,6 +756,7 @@ export const Questions1 = [
           question: 78,
           yes:1,
           no:0,
+          input:false,
           point: 1,
           title:
             "O(A) senhor(a) está satisfeito com a segurança quanto à ameaça da criminalidade no seu bairro?",
@@ -702,6 +771,7 @@ export const Questions1 = [
           question: 79,
           yes:0,
           no:1,
+          input:false,
           point: 0,
           title: "O(A) senhor(a) tem medo de alguém próximo/do seu convívio?",
         },
@@ -709,6 +779,7 @@ export const Questions1 = [
           question: 80,
           yes:0,
           no:1,
+          input:false,
           point: 0,
           title: "O(A) senhor(a) se sente só ou abandonado?",
         },
@@ -716,6 +787,7 @@ export const Questions1 = [
           question: 81,
           yes:0,
           no:1,
+          input:false,
           point: 0,
           title:
             "Alguém tem falado com o(a) senhor(a) de forma que se sinta constrangido(a) ou desrespeitado(a)?",
@@ -724,6 +796,7 @@ export const Questions1 = [
           question: 82,
           yes:0,
           no:1,
+          input:false,
           point: 0,
           title: "Alguém tem agredido o(a) senhor(a) fisicamente?",
         },
@@ -731,6 +804,7 @@ export const Questions1 = [
           question: 83,
           yes:0,
           no:1,
+          input:false,
           point: 0,
           title:
             "O(A) senhor(a) tem passado necessidade de roupas, alimentação, medicamentos ou outras?",
@@ -739,6 +813,7 @@ export const Questions1 = [
           question: 84,
           yes:0,
           no:1,
+          input:false,
           point: 0,
           title:
             "Alguém tem usado o dinheiro do(a) senhor(a) sem a sua autorização?",
@@ -747,6 +822,7 @@ export const Questions1 = [
           question: 85,
           yes:0,
           no:1,
+          input:false,
           point: 0,
           title:
             "Alguém do seu convívio já tocou o corpo do(a) senhor(a) sem o seu consentimento?",
@@ -755,6 +831,7 @@ export const Questions1 = [
           question: 86,
           yes:0,
           no:1,
+          input:false,
           point: 0,
           title:
             "O(A) senhor(a) está deixando de cuidar da sua própria saúde e/ou segurança?",
@@ -772,6 +849,7 @@ export const Questions1 = [
           question: 87,
           yes:0,
           no:1,
+          input:false,
           point: 0,
           tooltip:
             "[Se não, pontue também a resposta “não” na próxima questão e vá para a questão 90] [Se não, pule as próximas duas questões]",
@@ -782,6 +860,7 @@ export const Questions1 = [
           question: 88,
           yes:0,
           no:1,
+          input:false,
           point: 0,
           title:
             "O(A) senhor(a) sofreu alguma fratura decorrente destas quedas? Se sim, quais?",
@@ -799,6 +878,7 @@ export const Questions1 = [
           question: 90,
           yes:1,
           no:0,
+          input:false,
           point: 1,
           title:
             "[Avaliação de força de MMII] – Peça ao(a) idoso(a) para levantar-se de uma cadeira sem ajuda. Assinale ao lado se o(a) idoso(a) conseguiu realizar a tarefa.",
@@ -807,6 +887,7 @@ export const Questions1 = [
           question: 91,
           yes:1,
           no:0,
+          input:false,
           point: 1,
           title:
             "[Avaliação de equilíbrio] Peça ao(a) idoso(a) para permanecer em pé em uma única perna, sem apoio dos membros superiores, durante 5 segundos. Assinale ao lado se o(a) idoso(a) consegue realizar a tarefa",
@@ -815,6 +896,7 @@ export const Questions1 = [
           question: 92,
           yes:0,
           no:1,
+          input:false,
           tooltip: "[ver em dados de indetificação]",
           point: 0,
           title: "Idade >75 anos",
@@ -823,6 +905,7 @@ export const Questions1 = [
           question: 93,
           yes:0,
           no:1,
+          input:false,
           tooltip: "[ver em dados de indetificação]",
           point: 0,
           title: "Gênero feminino",
@@ -831,6 +914,7 @@ export const Questions1 = [
           question: 94,
           yes:0,
           no:1,
+          input:false,
           tooltip:
             " [Pontuação negativa em Fluência Verbal em Funções Cognitivas]",
           point: 0,
@@ -840,6 +924,7 @@ export const Questions1 = [
           question: 95,
           yes:0,
           no:1,
+          input:false,
           tooltip: "[Pontuação > 4 em Capacidade Funcional]",
           point: 0,
           title: "Comprometimento AVDs",
@@ -848,6 +933,7 @@ export const Questions1 = [
           question: 96,
           yes:0,
           no:1,
+          input:false,
           tooltip: "[ver questão 15]",
           point: 0,
           title: "Déficit Visual",
@@ -856,6 +942,7 @@ export const Questions1 = [
           question: 97,
           yes:0,
           no:1,
+          input:false,
           tooltip: "[ver questões 63 a 69]",
           point: 0,
           title: "Riscos domésticos",
@@ -864,6 +951,7 @@ export const Questions1 = [
           question: 98,
           yes:0,
           no:1,
+          input:false,
           tooltip: "[ver questões 70 a 72]",
           point: 0,
           title: "Riscos comportamentais",
@@ -872,6 +960,7 @@ export const Questions1 = [
           question: 99,
           yes:0,
           no:1,
+          input:false,
           tooltip: "[ver questão 38]",
           point: 0,
           title: "Inatividade",
@@ -880,6 +969,7 @@ export const Questions1 = [
           question: 100,
           yes:0,
           no:1,
+          input:false,
           tooltip: "[ver questão 42]",
           point: 0,
           title: "Acidente Vascular Encefálico prévio",
@@ -888,6 +978,7 @@ export const Questions1 = [
           question: 101,
           yes:0,
           no:1,
+          input:false,
           tooltip: "[ver questão 45]",
           point: 0,
           title:
@@ -897,6 +988,7 @@ export const Questions1 = [
           question: 102,
           yes:0,
           no:1,
+          input:false,
           point: 0,
           tooltip: "[ver questões 42 e 43]",
           title:

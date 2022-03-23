@@ -3,7 +3,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { Questions1 } from "../../services/Questions/Page/Page";
 import ImagesAspect from "../BiologicalAspect/ImagesAspect";
-import { InputText } from "../InputText/InputText";
+import InputText from "../InputText/InputText";
 
 function PsychologicalAspect() {
   return (
@@ -24,9 +24,16 @@ function PsychologicalAspect() {
                   <>
                     <Row>
                       <Col className="border">
-                        <p className="h5">
-                          {pergunta.question} - {pergunta.title}
-                        </p>
+                        {pergunta.input ? (
+                          <InputText
+                            text={pergunta.title}
+                            question={pergunta.question}
+                          />
+                        ) : (
+                          <p className="h5">
+                            {pergunta.question} - {pergunta.title}
+                          </p>
+                        )}
                         <p className="h6">
                           <strong>{pergunta.text}</strong>
                         </p>
