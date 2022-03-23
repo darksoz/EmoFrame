@@ -18,6 +18,7 @@ import SearchResult from './Pages/SearchResult/SearchResult';
 import ZanonResult from './Pages/ZanonResult/ZanonResult';
 import Page from './Pages/Page/Page';
 import ContactUs from './Pages/ContactUs/ContactUs';
+import LandingPage from './Pages/LandingPage/LandingPage';
 
 
 function PrivateRoute({ component: Component, ...rest }) {
@@ -61,6 +62,7 @@ function Routes() {
                 <PrivateRoute path='/panas' exact component={Panas}/>
                 <PrivateRoute path='/page' exact component={Page}/>
                 <Route path='/contactus' exact component={ContactUs}/>
+                <Route path='/landing' exact component={LandingPage}/>
                 <LimitedAccessRoute path='/samResult' exact component={SamResult}/>
                 <LimitedAccessRoute path='/samResult/:id' exact component={SamResult}/>
                 <LimitedAccessRoute path='/leapResult' exact component={LeapResult}/>
