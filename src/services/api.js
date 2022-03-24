@@ -89,6 +89,30 @@ export const LogoutAccount = async () => {
   });
 }
 
+export const SavePageTest = async (json) => {
+  var config = {
+    method: "post",
+    url: `${baseURL}/page/create`,
+    headers: {
+      Authorization: `Bearer ${getToken()}`,
+      "Content-Type": "application/json",
+    },
+    data: json,
+  };
+  return new Promise((resolve, reject) => {
+    axios(config)
+      .then(function (response) {
+        resolve(response);
+      })
+      .catch(function (error) {
+        reject(error);
+      });
+  });
+};
+
+
+
+
 export const SaveSamTest = async (json) => {
   
   var config = {

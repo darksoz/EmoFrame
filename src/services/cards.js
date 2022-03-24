@@ -31,6 +31,7 @@ export const cards =
             "title": "PAGE",
             "page": "page"
         }
+
     ]
 }
 `
