@@ -12,6 +12,7 @@ import { getUsername } from '../../services/auth';
 import sortArray from 'sort-array';
 import { TextareaAutosize } from '@mui/material';
 import { SavePageTest } from '../../services/api';
+import RegisterPage from '../../Components/RegisterPage/RegisterPage';
 
 
 function Page() {
@@ -62,9 +63,11 @@ function Page() {
                 <Breadcrumb.Item active>PAGE</Breadcrumb.Item>
             </Breadcrumb>
             <Container>
-                <h1>AVALIAÇÃO DE RISCO DE VULNERABILIDADE BIOPSICOSSOACIAL EM IDOSOS</h1>
                 <div onChange={handleChange}>
                 <MultiStepForm activeStep={active}>
+                    <Step label="Dados de Identificação">
+                        <RegisterPage/>
+                    </Step>
                     <Step label="Passo 1">
                         <PsychologicalAspect />
                     </Step>
@@ -89,7 +92,7 @@ function Page() {
                 </MultiStepForm>
                 </div>
                 {(active === 1 && <Link to="sample"><button class="btn whitebutton btn-lg" onClick={() => setActive(active + 1)}>Próximo</button></Link>)}
-                                    {(active > 1 && active !== 4 &&
+                                    {(active > 1 && active !== 5 &&
                                         <div>
                                             <Link to="sample">
                                                 <button class="btn whitebutton btn-lg" onClick={() => setActive(active - 1)} >Anterior</button>
@@ -99,7 +102,7 @@ function Page() {
                                             </Link>
                                         </div>)
                                     }
-                                   {( active === 4 &&
+                                   {( active === 5 &&
                                         <div>
                                             <Link to="sample">
                                                 <button class="btn whitebutton btn-lg" onClick={() => setActive(active - 1)} >Anterior</button>
