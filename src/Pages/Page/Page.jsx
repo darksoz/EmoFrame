@@ -2,6 +2,7 @@ import React from 'react';
 import { Breadcrumb } from "react-bootstrap";
 import Container from 'react-bootstrap/Container';
 import PsychologicalAspect from '../../Components/PsychologicalAspect/PsychologicalAspect';
+import Row from 'react-bootstrap/Row';
 import BiologicalAspect from '../../Components/BiologicalAspect/BiologicalAspect';
 import SocialAspect from '../../Components/SocialAspect/SocialAspect';
 import MultidimensionalAspect from '../../Components/MultidimensionalAspect/MultidimensionalAspect';
