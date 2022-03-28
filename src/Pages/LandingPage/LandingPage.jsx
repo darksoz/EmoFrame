@@ -63,7 +63,7 @@ function LandingPage() {
                         </Col>
                         <Col>
                             <Card className='bgC'>
-                                <p className='lead'> Viabilizar que profissionais da Computação, também possa usar instrumentos de outros domínios de modo a obter resultados sobre a efetividade no uso da sua solução. </p>
+                                <p className='lead'> Viabilizar que profissionais da Computação, também possam usar instrumentos de outros domínios de modo a obter resultados sobre a efetividade no uso da sua solução. </p>
                             </Card>
 
                         </Col>
