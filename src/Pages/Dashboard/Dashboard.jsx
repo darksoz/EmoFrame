@@ -7,10 +7,13 @@ import Card from '../../Components/Card/Card';
 import Tabs from '../../Components/Tabs/Tabs';
 import { isAuthenticated } from '../../services/auth';
 import Footer from '../../Components/Footer/Footer';
+import Header from '../../Components/Header/Header';
 
 function Dashboard() {
     return isAuthenticated() === false ? <Redirect to='/' /> : (
+        
         <Container fluid>
+          
             <Tabs active="tools"/> 
             <Row>
             <Card/>
