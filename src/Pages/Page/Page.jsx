@@ -23,6 +23,7 @@ function Page() {
     const [body, setBody] = React.useState("");
     const [show, setShow] = React.useState(false);
     const [success, setSuccess] = React.useState(false);
+    const [userFormData, setUserFormData] = React.useState([]);
 
     const handleChange = (event) => {
         const id = event.target.name;
@@ -36,8 +37,19 @@ function Page() {
         }
     }
 
+    const handleChangeForm = (event) => {
+        const id = event.target.name;
+        const data = { id, answer: event.target.value };
+        console.log("data", data)
+        if (userFormData.some(a => a.id === id)) {
+            setUserFormData([...userFormData.filter(b => b.id !== id), data]);
+        }
+        else {
+            setUserFormData([...userFormData, data]);
+        }
+    }
     const handleFormData = async () => {
-        let json = { "Datetime": new Date(Date.now()), "Instrument": "page", "Username": getUsername(), "Questions": sortArray(answers, { by: 'id', }) }
+        let json = { "Datetime": new Date(Date.now()), "Instrument": "page", "Username": getUsername(), "Questions": sortArray(answers, { by: 'id', }),"Evaluation": [], "UserFormData": sortArray(userFormData, { userFormData, by: 'id', }) };
         console.log("Json", json)
         json = JSON.stringify(json);
         let response = await SavePageTest(json);
@@ -63,34 +75,33 @@ function Page() {
                 <Breadcrumb.Item active>PAGE</Breadcrumb.Item>
             </Breadcrumb>
             <Container>
-                <div onChange={handleChange}>
+                
                 <MultiStepForm activeStep={active}>
-                    <Step label="Dados de Identificação">
+                    <Step label="Dados de Identificação" onChange={handleChangeForm} >
                         <RegisterPage/>
                     </Step>
-                    <Step label="Passo 1">
+                    <Step label="Passo 1" onChange={handleChange}>
                         <PsychologicalAspect />
                     </Step>
 
-                    <Step label="Passo 2">
+                    <Step label="Passo 2" onChange={handleChange}>
 
                         <BiologicalAspect />
                    
 
                     </Step>
 
-                    <Step label="Passo 3">
+                    <Step label="Passo 3" onChange={handleChange}>
                         <SocialAspect />
 
                     </Step>
 
-                    <Step label="Passo 4">
+                    <Step label="Passo 4" onChange={handleChange}>
                         <MultidimensionalAspect />
 
                     </Step>
-            
                 </MultiStepForm>
-                </div>
+                
                 {(active === 1 && <Link to="sample"><button class="btn whitebutton btn-lg" onClick={() => setActive(active + 1)}>Próximo</button></Link>)}
                                     {(active > 1 && active !== 5 &&
                                         <div>
