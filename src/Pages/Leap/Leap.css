@@ -21,12 +21,12 @@
     content: '';
     position:relative;
     top:11px;
-    left:17%;
+    left:18%;
     display:block;
     background-color:grey;
     height:4px;
       
-    width:66%;
+    width:65%;
   }
   .form .likert-leap li {
     display:inline-block;

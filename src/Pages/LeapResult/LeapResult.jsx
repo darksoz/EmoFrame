@@ -1,12 +1,13 @@
 import Container from 'react-bootstrap/Container'
 import LeapReferenceTable from '../../Components/LeapReferenceTable/LeapReferenceTable';
 import LeapResultTable from '../../Components/LeapResultTable/LeapResultTable';
-import { Breadcrumb } from "react-bootstrap";
-import { getIdTestData } from '../../services/auth';
-import { GetTestResult } from '../../services/api';
-import {useState } from 'react';
-import {useAsyncEffect} from 'use-async-effect';
-import {mockData} from '../../MockData/Leap/LeapMock';
+import { Breadcrumb, Button, Modal } from "react-bootstrap";
+import { GetResultTestById } from '../../services/api';
+import { useEffect, useState } from 'react';
+import { useParams, useHistory } from 'react-router-dom';
+import { formateDateTime } from '../../services/utils';
+import Footer from '../../Components/Footer/Footer';
+
 
 let pf1_l = [3, 10, 12, 13, 21, 23, 24, 25, 26, 29, 31, 35, 39, 40];
 let pf1_w = [-0.32, 0.32, 0.28, 0.66, 0.67, 0.43, 0.53, 0.31, 0.37, 0.27, 0.51, 0.52, 0.59, 0.47];
@@ -37,47 +38,65 @@ function LeapResult() {
   const [questions, setQuestions] = useState([]);
   const [name, setName] = useState('');
   const [datetime, setDatetime] = useState('');
-  const [factors, setFactors] = useState([]);
 
-  useAsyncEffect(async () => {
+  const [show, setShow] = useState(false);
+  const [title, setTitle] = useState("");
+  const [body, setBody] = useState("");
+
+  const { id } = useParams();
+  let history = useHistory();
+
+  useEffect(() => {
     const getResult = async () => {
-      if (getIdTestData() != null) {
-        let json = { "id": getIdTestData() }
-        json = JSON.stringify(json);
-        let response = await GetTestResult('leap', json);
-        if (response.status === 201) {
+      if (id !== undefined) {
+        let response = await GetResultTestById('leap', id);
+        if (response.status === 200) {
           let data = response.data;
-          setQuestions(data.Questions);
-          setName(data.Username);
-          setDatetime(data.Datetime);
+          if (data === "") {
+            setTitle("Resultado não encontrado");
+            setBody("Não há nenhum registro encontrado no banco de dados com o identificador repassado");
+            setShow(true);
+          }
+          else {
+            setQuestions(data.Questions);
+            setName(data.Username);
+            setDatetime(data.Datetime);
+          }
         }
         else {
-          console.log("Error data response");
+          setTitle("Erro ao carregar a resposta");
+          setBody("Não foi possível carregar a resposta do banco de dados");
+          setShow(true);
         }
       }
       else {
-        setQuestions(mockData);
+        setTitle("Erro ao carregar a resposta");
+        setBody("É necessário realizar uma busca com um identificador válido");
+        setShow(true);
       }
     }
-    const getFactors =  () => {
-      if (questions && factors.length === 0) {
-        setFactors(oldArray => [...oldArray, factorCalculation(pf1_l, pf1_w)]);
-        setFactors(oldArray => [...oldArray, factorCalculation(pf2_l, pf2_w)]);
-        setFactors(oldArray => [...oldArray, factorCalculation(pf3_l, pf3_w)]);
-        setFactors(oldArray => [...oldArray, factorCalculation(pf4_l, pf4_w)]);
-        setFactors(oldArray => [...oldArray, factorCalculation(pf5_l, pf5_w)]);
-        setFactors(oldArray => [...oldArray, factorCalculation(pf6_l, pf6_w)]);
-        setFactors(oldArray => [...oldArray, factorCalculation(pf7_l, pf7_w)]);
-        setFactors(oldArray => [...oldArray, factorCalculation(pf8_l, pf8_w)]);
-        setFactors(oldArray => [...oldArray, factorCalculation(pf9_l, pf9_w)]);
-        setFactors(oldArray => [...oldArray, factorCalculation(pf10_l, pf10_w)]);
-        setFactors(oldArray => [...oldArray, factorCalculation(pf11_l, pf11_w)]);
-        setFactors(oldArray => [...oldArray, factorCalculation(pf12_l, pf12_w)]);
-      }
+    getResult();
+  }, [id]);
+
+  const getFactors = () => {
+    let data = [];
+    if (questions) {
+      data = [...data,
+      factorCalculation(pf1_l, pf1_w),
+      factorCalculation(pf2_l, pf2_w),
+      factorCalculation(pf3_l, pf3_w),
+      factorCalculation(pf4_l, pf4_w),
+      factorCalculation(pf5_l, pf5_w),
+      factorCalculation(pf6_l, pf6_w),
+      factorCalculation(pf7_l, pf7_w),
+      factorCalculation(pf8_l, pf8_w),
+      factorCalculation(pf9_l, pf9_w),
+      factorCalculation(pf10_l, pf10_w),
+      factorCalculation(pf11_l, pf11_w),
+      factorCalculation(pf12_l, pf12_w)];
+      return data;
     }
-    await getResult();
-    getFactors();
-  });
+  }
 
   const factorCalculation = (locution, weight) => {
     if (questions && questions.length > 0) {
@@ -100,21 +119,50 @@ function LeapResult() {
     }
   }
 
+  const handleClose = path => {
+    setShow(false);
+    history.push(path);
+  }
+
   return (
     <>
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>{title}</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>{body}</Modal.Body>
+        <Modal.Footer>
+          <Button variant="primary" onClick={() => handleClose("/searchResults")}>
+            Buscar resultado
+          </Button>
+          <Button variant="secondary" onClick={() => handleClose("/")}>
+            Página Inicial
+          </Button>
+        </Modal.Footer>
+      </Modal>
       <Breadcrumb>
-        <Breadcrumb.Item href='./dashboard'>Página Inicial</Breadcrumb.Item>
-        <Breadcrumb.Item active>Resultado Leap</Breadcrumb.Item>
+        <Breadcrumb.Item href='/dashboard'>Página Inicial</Breadcrumb.Item>
+        <Breadcrumb.Item href='/searchResults'>Resultados</Breadcrumb.Item>
+        <Breadcrumb.Item active>Resultado SAM</Breadcrumb.Item>
       </Breadcrumb>
       <Container>
-        <h1>Resultado LEAP</h1>
-        <h3>{`Nome: ${name} / Data: ${datetime}`}</h3>
+        {
+          questions &&
+          <>
+            <h1>Nome: {name}</h1>
+            <h1>Data e Hora: {formateDateTime(datetime)}</h1>
+            <LeapReferenceTable />
+            <LeapResultTable Factors={getFactors()} />
+          </>
+        }
 
-        <LeapReferenceTable />
+<div className='mt-5'>
 
-        <LeapResultTable Factors={factors} />
+<Footer/>
+
+</div>
       </Container>
-
+     
     </>
   );
 }

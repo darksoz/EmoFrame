@@ -1,7 +1,7 @@
 import axios from 'axios';
 import {getToken, setToken} from './auth';
 
-const baseURL = process.env.NODE_ENV === 'development' ? 'http://localhost:5000/api' : 'http://emoframeapi.herokuapp.com/api';
+const baseURL = process.env.NODE_ENV === 'development' ? 'http://localhost:5000/api' : 'https://emoframeapi.herokuapp.com/api';
 
 export const defineInterceptor = () =>{
   axios.interceptors.response.use(response => {
@@ -12,18 +12,15 @@ export const defineInterceptor = () =>{
       if (err.response.status === 401 && err.config && !err.config._retry){
         originalReq._retry = true;
         let token = getToken();
-        console.log("Trying to refresh token");
         let res = axios.put(`${baseURL}/token/refresh`, {oldToken: token})
         .then((res) => {
           setToken(res.data.access_token)
           originalReq.headers["Authorization"] = `Bearer ${res.data.access_token}`;
-          console.log("Updating token");
           return axios(originalReq);
         });
         resolve(res);
       }
       else{
-        console.log("Rejected demais");
         reject(err)
       }
     })
@@ -40,7 +37,6 @@ export const Register = async (json, userType) => {
     data: json
   };
 
-  console.log("Dados passados para a API => ", json);
   return new Promise((resolve, reject) => {
     axios(config)
     .then(function (response) {
@@ -174,6 +170,46 @@ export const SaveSusTest = async (json) => {
   });
 }
 
+export const SaveTest = async (json, test) => {
+  
+  var config = {
+    method: 'post',
+    url: `${baseURL}/${test}/create`,
+    headers: {
+      'Authorization': `Bearer ${getToken()}`, 
+      'Content-Type': 'application/json'
+    },
+    data: json
+  };
+  return new Promise((resolve, reject) => {
+    axios(config)
+    .then(function (response) {
+      resolve(response);
+    }).catch(function (error) {
+      reject(error);
+    });
+  });
+}
+
+export const GetTestData = async (instrument, id) => {
+  
+  var config = {
+    method: 'get',
+    url: `${baseURL}/${instrument}/${id}`,
+    headers: {
+      'Authorization': `Bearer ${getToken()}`
+    }
+  };
+  return new Promise((resolve, reject) => {
+    axios(config)
+    .then(function (response) {
+      resolve(response);
+    }).catch(function (error) {
+      reject(error);
+    });
+  });
+}
+
 export const GetTestsData = async (json, instrument) => {
   var config = {
     method: 'post',
@@ -190,6 +226,42 @@ export const GetTestsData = async (json, instrument) => {
       resolve(response);
     }).catch(function (error) {
       reject(error);
+    });
+  });
+}
+
+export const GetResultsByName = async (instrument, name)=> {
+  var config = {
+    method: 'get',
+    url: `${baseURL}/${instrument}/${name}`,
+    headers: {
+      'Authorization': `Bearer ${getToken()}`
+    },
+  };
+  return new Promise((resolve, reject) => {
+    axios(config)
+    .then(function (response) {
+      resolve(response);
+    }).catch(function (error) {
+      resolve(error);
+    });
+  });
+}
+
+export const GetResultTestById = async (instrument, id)=> {
+  var config = {
+    method: 'get',
+    url: `${baseURL}/${instrument}/id/${id}`,
+    headers: {
+      'Authorization': `Bearer ${getToken()}`
+    },
+  };
+  return new Promise((resolve, reject) => {
+    axios(config)
+    .then(function (response) {
+      resolve(response);
+    }).catch(function (error) {
+      resolve(error);
     });
   });
 }

@@ -4,7 +4,7 @@ function Tabs(props) {
     
     return (
         <>
-            <div class="mt-3">
+            <div>
                 {
                     getUsertype() === 'Specialist'  ?
                     <ul class="nav nav-tabs">
@@ -19,15 +19,15 @@ function Tabs(props) {
                     <li class="nav-item">
                         {
                             props.active === "register" ? 
-                            <a class="nav-link active" href="/userregister">Cadastrar Usuários</a> :
-                            <a class="nav-link" href="/userregister">Cadastrar Usuários</a>
+                            <a class="nav-link active" href="/register">Cadastrar Usuários</a> :
+                            <a class="nav-link" href="/register">Cadastrar Usuários</a>
                         }
                     </li>
                     <li class="nav-item">
                         {
                             props.active === "results" ? 
-                            <a class="nav-link active" href="/results">Resultados</a> :
-                            <a class="nav-link" href="/results">Resultados</a>
+                            <a class="nav-link active" href="/searchResults">Resultados</a> :
+                            <a class="nav-link" href="/searchResults">Resultados</a>
                         }
                     </li>
                     </ul>
