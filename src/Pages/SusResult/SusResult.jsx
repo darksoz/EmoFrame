@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import {Button, Container, Modal} from 'react-bootstrap'
+import {Button, Card, Container, Modal} from 'react-bootstrap'
 import SusScoreReference from "../../Components/SusScoreReference/SusScoreReference";
 import SusVariationPlot from "../../Components/SusVariationPlot/SusVariationPlot";
 import { GetResultTestById} from '../../services/api';
@@ -7,6 +7,7 @@ import { Breadcrumb } from "react-bootstrap";
 import {useParams, useHistory} from 'react-router-dom';
 import { formateDateTime } from '../../services/utils';
 import Footer from '../../Components/Footer/Footer';
+import SusTableQuestion from '../../Components/SusTableQuestion/SusTableQuestion';
 
 const negativeQuestions = [18, 19, 22, 24, 27];
 
@@ -39,7 +40,7 @@ function SusResult(){
         let variation = [];
         let result;
         questions.forEach(item => {
-            result = 3 - item.answer;
+            result = item.answer;
             variation.push(result);
         });
         return variation
@@ -106,14 +107,17 @@ function SusResult(){
                 <h1>Nome: {name}</h1>
                 <h1>Solução Avaliada: {solution}</h1>
                 <h1>Data e Hora: {formateDateTime(datetime)}</h1>
-                <Button style={{backgroundColor:"#00bfa5",
+                <Card className='m-auto' style={{backgroundColor:"#00bfa5",
                                 borderColor: "#00bfa5",
+                                width:"30em",
                                 margin:"20px",
                                 padding:"10px"}}>
                         <h1>Sus Score = {GetSusScore()}</h1>
-                </Button>
+                </Card>
                 <SusScoreReference/>
                 <SusVariationPlot Variation={GetVariationAnswer()}/>
+
+                <SusTableQuestion/>
             </Container>
 
             <div className='mt-5'>
