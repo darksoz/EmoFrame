@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Footer from "../../Components/Footer/Footer";
+import Header from "../../Components/Header/Header";
 import RegisterSpecialist from "../../Components/RegisterSpecialist/RegisterSpecialist";
 import RegisterUser from "../../Components/RegisterUser/RegisterUser";
 import Tabs from "../../Components/Tabs/Tabs";
@@ -13,6 +14,7 @@ function UserRegister() {
     }
     return (
         <>
+        <Header/>
             
             <Tabs active="register" />
             <div className="form-group mt-3" onChange={handleChange}>

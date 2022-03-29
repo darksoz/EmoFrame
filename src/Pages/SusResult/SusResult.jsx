@@ -7,6 +7,7 @@ import { Breadcrumb } from "react-bootstrap";
 import {useParams, useHistory} from 'react-router-dom';
 import { formateDateTime } from '../../services/utils';
 import Footer from '../../Components/Footer/Footer';
+import Header from '../../Components/Header/Header';
 
 const negativeQuestions = [18, 19, 22, 24, 27];
 
@@ -83,6 +84,7 @@ function SusResult(){
       }, [id]);
     return(
         <>
+        <Header/>
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
                     <Modal.Title>{title}</Modal.Title>

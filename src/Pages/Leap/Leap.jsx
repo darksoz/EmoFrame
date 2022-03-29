@@ -17,6 +17,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Footer from '../../Components/Footer/Footer';
+import Header from '../../Components/Header/Header';
 
 
 let firstQuestions = arrayShuffle(Questions1);
@@ -67,6 +68,7 @@ function Leap() {
 
     return (
         <>
+        <Header/>
             <Breadcrumb>
                 <Breadcrumb.Item href='./dashboard'>Página Inicial</Breadcrumb.Item>
                 <Breadcrumb.Item active>Leap</Breadcrumb.Item>

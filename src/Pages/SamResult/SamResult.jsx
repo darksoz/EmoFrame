@@ -5,6 +5,7 @@ import SamTable from '../../Components/SamTable/SamTable';
 import { GetResultTestById } from '../../services/api';
 import { formateDateTime } from '../../services/utils';
 import Footer from '../../Components/Footer/Footer';
+import Header from '../../Components/Header/Header';
 
 function SamResult() {
     const [questions, setQuestions] = useState([]);
@@ -58,6 +59,7 @@ function SamResult() {
 
     return (
         <>
+        <Header/>
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
                     <Modal.Title>{title}</Modal.Title>

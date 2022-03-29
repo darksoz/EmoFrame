@@ -14,6 +14,7 @@ import { getUsername } from '../../services/auth';
 import { SaveTest } from '../../services/api';
 import ModalTest from '../../Components/Modal/ModalTest';
 import Footer from '../../Components/Footer/Footer';
+import Header from '../../Components/Header/Header';
 
 
 let firstQuestions = arrayShuffle(Questions1);
@@ -61,6 +62,7 @@ function Panas() {
 
     return (
         <>
+        <Header/>
             <Breadcrumb>
                 <Breadcrumb.Item href='./dashboard'>Página Inicial</Breadcrumb.Item>
                 <Breadcrumb.Item active>Panas</Breadcrumb.Item>

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Breadcrumb } from "react-bootstrap";
 import sortArray from 'sort-array';
 import Footer from '../../Components/Footer/Footer';
+import Header from '../../Components/Header/Header';
 import ModalTest from '../../Components/Modal/ModalTest';
 import { SaveSamTest } from '../../services/api';
 import { getUsername } from '../../services/auth';
@@ -43,6 +44,8 @@ function Sam() {
     }
 
     return (
+        <>
+        <Header/>
         <div>
             <Breadcrumb>
                 <Breadcrumb.Item href='./dashboard'>Página Inicial</Breadcrumb.Item>
@@ -384,6 +387,7 @@ function Sam() {
 
             </div>
         </div>
+        </>
     )
 }
 export default Sam;

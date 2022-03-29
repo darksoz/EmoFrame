@@ -7,6 +7,7 @@ import SocialAspect from '../../Components/SocialAspect/SocialAspect';
 import MultidimensionalAspect from '../../Components/MultidimensionalAspect/MultidimensionalAspect';
 import { MultiStepForm, Step } from 'react-multi-form';
 import { Link } from 'react-scroll';
+import Header from '../../Components/Header/Header';
 
 
 function Page() {
@@ -30,6 +31,7 @@ function Page() {
     
     return (
         <>
+        <Header/>
             <Breadcrumb>
                 <Breadcrumb.Item href='./dashboard'>Página Inicial</Breadcrumb.Item>
                 <Breadcrumb.Item active>PAGE</Breadcrumb.Item>

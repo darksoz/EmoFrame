@@ -1,11 +1,13 @@
 import { Container, Row, Col, Form } from "react-bootstrap";
 import Footer from "../../Components/Footer/Footer";
 import { Breadcrumb } from "react-bootstrap";
+import Header from "../../Components/Header/Header";
 
 
 function RecSys() {
     return (
         <>
+        <Header/>
             <Breadcrumb>
                 <Breadcrumb.Item href='/'>Ínicio</Breadcrumb.Item>
                 <Breadcrumb.Item active>Recomendação de Instrumento</Breadcrumb.Item>
