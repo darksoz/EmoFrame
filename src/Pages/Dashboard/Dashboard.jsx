@@ -10,7 +10,9 @@ import Footer from '../../Components/Footer/Footer';
 
 function Dashboard() {
     return isAuthenticated() === false ? <Redirect to='/' /> : (
+        
         <Container fluid>
+          
             <Tabs active="tools"/> 
             <Row>
             <Card/>

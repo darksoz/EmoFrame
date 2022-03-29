@@ -1,6 +1,5 @@
 import React from 'react';
 import {BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
-import Home from './Pages/Home/Home';
 import Login from './Pages/Login/Login';
 import Dashboard from './Pages/Dashboard/Dashboard';
 import Sam from './Pages/Sam/Sam';
@@ -18,6 +17,8 @@ import SearchResult from './Pages/SearchResult/SearchResult';
 import ZanonResult from './Pages/ZanonResult/ZanonResult';
 import Page from './Pages/Page/Page';
 import ContactUs from './Pages/ContactUs/ContactUs';
+import LandingPage from './Pages/LandingPage/LandingPage';
+import RecSys from './Pages/RecSys/RecSys';
 
 
 function PrivateRoute({ component: Component, ...rest }) {
@@ -49,7 +50,7 @@ function Routes() {
     return (
         <BrowserRouter>
             <Switch>
-                <Route path='/' exact component={Home}/>
+                <Route path='/' exact component={LandingPage}/>
                 <Route path='/login' exact component={Login}/>
                 <PrivateRoute path='/dashboard' exact component={Dashboard}/>
                 <PrivateRoute path='/sam' exact component={Sam}/>
@@ -61,6 +62,7 @@ function Routes() {
                 <PrivateRoute path='/panas' exact component={Panas}/>
                 <PrivateRoute path='/page' exact component={Page}/>
                 <Route path='/contactus' exact component={ContactUs}/>
+                <Route path='/recommendation' exact component={RecSys}/>
                 <LimitedAccessRoute path='/samResult' exact component={SamResult}/>
                 <LimitedAccessRoute path='/samResult/:id' exact component={SamResult}/>
                 <LimitedAccessRoute path='/leapResult' exact component={LeapResult}/>
