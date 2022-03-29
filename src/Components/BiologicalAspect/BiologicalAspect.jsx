@@ -38,7 +38,11 @@ function BiologicalAspect() {
                             {pergunta.questions?.map((a, index) => (
                               <>
                                 <label> {a}</label>
-                                <input type="checkbox"></input>
+                                <input
+                                  type="checkbox"
+                                  value={a}
+                                  name={pergunta.question+"."+index } 
+                                ></input>
                                 <br></br>
                               </>
                             ))}
@@ -98,21 +102,18 @@ function BiologicalAspect() {
                   </div>
                 </p>
               </Col>
-              <Col xs={2} className='m-auto'></Col>
-              <Col xs={8} clasName='m-auto' >
-                {question.aspectos === "USO INADEQUADO DE MEDICAMENTOS"
-                 ?<TableDiagnostico>
-                 </TableDiagnostico>
-                 :null} 
-              
+              <Col xs={2} className="m-auto"></Col>
+              <Col xs={8} clasName="m-auto">
+                {question.aspectos === "USO INADEQUADO DE MEDICAMENTOS" ? (
+                  <TableDiagnostico></TableDiagnostico>
+                ) : null}
               </Col>
-              <Col xs={2} className='m-auto'></Col>
+              <Col xs={2} className="m-auto"></Col>
             </Row>
-           
           </Container>
         </>
       ))}
-      
+
       <Row>
         <div class="form-group justify-content-center">
           <textarea

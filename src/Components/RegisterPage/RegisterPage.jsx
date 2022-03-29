@@ -69,7 +69,7 @@ function RegisterPage() {
                                 </Col>
                                 <Col md={6}>
                                     <Form.Label>Entrevistado</Form.Label>
-                                    <Form.Select aria-label="Default select example">
+                                    <Form.Select aria-label="Default select example" name='entrevistado'>
                                         <option>Quem está sendo entrevistado</option>
                                         <option value="Idoso">Idoso</option>
                                         <option value="Outro">Outro</option>
@@ -117,7 +117,7 @@ function RegisterPage() {
                             </Form.Group>
                         </Col>
                         <Col md={6}>
-                            <Form.Select aria-label="Default select example">
+                            <Form.Select aria-label="Default select example" name='estadoCivil'>
                                 <option>Estado Cívil</option>
                                 <option value="Solteiro">Solteiro(a)</option>
                                 <option value="Casado">Casado(a)/União Estável</option>
@@ -141,7 +141,7 @@ function RegisterPage() {
                                 <>
                                     <Form.Group className="mb-3 mt-2" controlId="">
                                         <Form.Label>Qual a profissão que exerceu por mais tempo?</Form.Label>
-                                        <Form.Control type="text" placeholder="Profissão exercida por mais tempo" />
+                                        <Form.Control type="text" placeholder="Profissão exercida por mais tempo" name="profissao"/>
                                     </Form.Group>
                                 </>
                             }
@@ -150,7 +150,7 @@ function RegisterPage() {
                                 <>
                                     <Form.Group className="mb-3 mt-2" controlId="">
                                         <Form.Label>Qual é a sua profissão atual?</Form.Label>
-                                        <Form.Control type="text" placeholder="Profissão atual" />
+                                        <Form.Control type="text" placeholder="Profissão atual" mane="profissaoAtual" />
                                     </Form.Group>
                                 </>
                             }
@@ -187,7 +187,7 @@ function RegisterPage() {
                     <Form.Group className="mb-3 mt-2" controlId="exampleForm.ControlTextarea1">
                         <Form.Label>Relatar como foi(foram) as últimas consultas médicas
                         </Form.Label>
-                        <Form.Control as="textarea" rows={3} />
+                        <Form.Control as="textarea" rows={3} name="relatoSaude"/>
                     </Form.Group>
                 </Form>
             </Container>
