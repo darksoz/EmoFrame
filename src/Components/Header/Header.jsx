@@ -24,7 +24,7 @@ export default function Header() {
 
         <>
             {
-                (window.location.pathname !== "/" && window.location.pathname !== "/contactus" && window.location.pathname !== "/login") &&
+                (window.location.pathname !== "/" && window.location.pathname !== "/contactus" && window.location.pathname !== "/login" && window.location.pathname !== "/recommendation") &&
                 <>
                     <Navbar style={{ backgroundColor: "#00bfa5" }}>
                         <Container>
@@ -57,10 +57,11 @@ export default function Header() {
                     </Navbar>
                 </>
             }
-               {
-                (window.location.pathname === "/contactus" || window.location.pathname === "/login") && 
+
+{
+                (window.location.pathname === "/recommendation" || window.location.pathname === "/contactus" || window.location.pathname === "/login") &&
                 <>
-                  <Navbar style={{ backgroundColor: "#00bfa5" }}>
+                    <Navbar style={{ backgroundColor: "#00bfa5" }}>
                         <Container>
                             <Navbar.Brand href="/">
                                 <img
@@ -91,8 +92,9 @@ export default function Header() {
                     </Navbar>
                 </>
             }
+              
             {
-                window.location.pathname === "/" && <>
+                (window.location.pathname === "/") && <>
                 </>
             }
         </>
