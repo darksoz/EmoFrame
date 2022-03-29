@@ -24,7 +24,7 @@ export default function Header() {
 
         <>
             {
-                window.location.pathname !== "/landing" &&
+                window.location.pathname !== "/" &&
                 <>
                     <Navbar style={{ backgroundColor: "#00bfa5" }}>
                         <Container>
@@ -58,7 +58,7 @@ export default function Header() {
                 </>
             }
             {
-                window.location.pathname === "/landing" && <></>
+                window.location.pathname === "/" && <></>
             }
         </>
 

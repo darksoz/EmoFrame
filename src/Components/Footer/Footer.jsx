@@ -12,7 +12,7 @@ function Footer() {
     return (
         <>
             {
-                (window.location.pathname !== "/landing" && window.location.pathname !== "/dashboard")  &&
+                (window.location.pathname !== "/" && window.location.pathname !== "/dashboard")  &&
                 <>
 
                     <Container fluid>
@@ -52,7 +52,7 @@ function Footer() {
                 </>
             }
             {
-                (window.location.pathname === "/landing" || window.location.pathname === "/dashboard") &&
+                (window.location.pathname === "/" || window.location.pathname === "/dashboard") &&
                 <>
 
                     <Container fluid>

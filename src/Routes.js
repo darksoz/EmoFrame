@@ -50,7 +50,7 @@ function Routes() {
     return (
         <BrowserRouter>
             <Switch>
-                <Route path='/' exact component={Home}/>
+                <Route path='/' exact component={LandingPage}/>
                 <Route path='/login' exact component={Login}/>
                 <PrivateRoute path='/dashboard' exact component={Dashboard}/>
                 <PrivateRoute path='/sam' exact component={Sam}/>
@@ -62,7 +62,6 @@ function Routes() {
                 <PrivateRoute path='/panas' exact component={Panas}/>
                 <PrivateRoute path='/page' exact component={Page}/>
                 <Route path='/contactus' exact component={ContactUs}/>
-                <Route path='/landing' exact component={LandingPage}/>
                 <LimitedAccessRoute path='/samResult' exact component={SamResult}/>
                 <LimitedAccessRoute path='/samResult/:id' exact component={SamResult}/>
                 <LimitedAccessRoute path='/leapResult' exact component={LeapResult}/>
