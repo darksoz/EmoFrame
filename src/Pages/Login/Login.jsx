@@ -4,8 +4,10 @@ import { Redirect } from 'react-router-dom';
 import { LoginAccount } from '../../services/api.js';
 import { login, isAuthenticated } from '../../services/auth.js';
 import { RediretToPage } from '../../services/utils';
-import { Button, Modal } from 'react-bootstrap';
+import { Button, Container, Modal } from 'react-bootstrap';
 import Footer from '../../Components/Footer/Footer';
+import { Breadcrumb } from "react-bootstrap";
+
 
 function Login() {
     let [email, setEmail] = useState("");
@@ -49,23 +51,29 @@ function Login() {
     const handleClose = () => {
         setShow(false);
     }
-    
+
     return isAuthenticated() ? <Redirect to='/dashboard' /> :
         (
             <>
-                <Modal show={show} onHide={handleClose}>
-                    <Modal.Header closeButton>
-                        <Modal.Title>{title}</Modal.Title>
-                    </Modal.Header>
-                    <Modal.Body>{body}</Modal.Body>
-                    <Modal.Footer>
-                        <Button variant="primary" onClick={handleClose}>
-                            Fechar
-                        </Button>
-                    </Modal.Footer>
-                </Modal>
-                <div class="flex-fill">
-                    <div class="wrapper fadeInDown">
+                <Breadcrumb>
+                    <Breadcrumb.Item href='/'>Ínicio</Breadcrumb.Item>
+                    <Breadcrumb.Item active>Login</Breadcrumb.Item>
+                </Breadcrumb>
+                <Container>
+
+                    <Modal show={show} onHide={handleClose}>
+                        <Modal.Header closeButton>
+                            <Modal.Title>{title}</Modal.Title>
+                        </Modal.Header>
+                        <Modal.Body>{body}</Modal.Body>
+                        <Modal.Footer>
+                            <Button variant="primary" onClick={handleClose}>
+                                Fechar
+                            </Button>
+                        </Modal.Footer>
+                    </Modal>
+               
+                    <div class="d-flex justify-content-center mt-5 pt-5 fadeInDown">
                         <div id="formContent" >
                             <div class="fadeIn first m-4">
                                 <span class="far fa-user fa-2x" />
@@ -74,9 +82,10 @@ function Login() {
                             <input type="password" id="password" class="fadeIn third" name="login" placeholder="Senha" required onChange={e => onPasswordChange(e.target.value)} />
                             <input type="submit" class="fadeIn fourth" value="Entrar" onClick={async () => await handleSubmit()} />
                         </div>
-                        
+
                     </div>
-                </div>
+
+                </Container>
                 <Footer/>
             </>
         )

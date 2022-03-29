@@ -4,11 +4,15 @@ import Row from 'react-bootstrap/Row';
 import Card from 'react-bootstrap/Card';
 import Form from 'react-bootstrap/Form';
 import Footer from '../../Components/Footer/Footer';
+import { Breadcrumb } from 'react-bootstrap';
 
 
 function ContactUs() {
     return (
-        <>
+        <>  <Breadcrumb>
+            <Breadcrumb.Item href='/'>Ínicio</Breadcrumb.Item>
+            <Breadcrumb.Item active>Recomendação de Instrumento</Breadcrumb.Item>
+        </Breadcrumb>
             <Container>
                 <Card className='mt-4'>
                     <h1>Contato</h1>
@@ -55,22 +59,22 @@ function ContactUs() {
                         </Col>
 
                         <Col md={3}>
-                        <ul class="list-unstyled mb-0">
-                        <li><i class="fas fa-map-marker-alt fa-2x"></i>
-                            <p>Av. Trab. São Carlense, 400 - Parque Arnold Schimidt, São Carlos - SP, 13566-590</p>
-                        </li>
+                            <ul class="list-unstyled mb-0">
+                                <li><i class="fas fa-map-marker-alt fa-2x"></i>
+                                    <p>Av. Trab. São Carlense, 400 - Parque Arnold Schimidt, São Carlos - SP, 13566-590</p>
+                                </li>
 
-                        <li><i class="fas fa-envelope mt-4 fa-2x"></i>
-                            <p>emoframe@gmail.com</p>
-                        </li>
-                        </ul>
+                                <li><i class="fas fa-envelope mt-4 fa-2x"></i>
+                                    <p>emoframe@gmail.com</p>
+                                </li>
+                            </ul>
                         </Col>
                     </Row>
                 </Card>
-                <Footer/>
+                <Footer />
             </Container>
 
-           
+
         </>
     );
 }
