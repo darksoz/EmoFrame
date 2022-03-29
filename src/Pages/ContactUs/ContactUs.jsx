@@ -71,8 +71,9 @@ function ContactUs() {
                         </Col>
                     </Row>
                 </Card>
-                <Footer />
+                
             </Container>
+            <Footer />
 
 
         </>

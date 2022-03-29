@@ -4,7 +4,6 @@ import Container from 'react-bootstrap/Container';
 import { LogoutAccount } from '../../services/api';
 import { RediretToPage } from '../../services/utils';
 import { getToken, getUsername, logout } from '../../services/auth';
-import { useLocation } from 'react-router-dom';
 
 export default function Header() {
     console.log("route => ", window.location.pathname)

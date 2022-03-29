@@ -1,18 +1,14 @@
 import { Card, Col, Container, Row } from 'react-bootstrap';
 import './LandingPage.css';
 import React from 'react';
-import { useHistory } from 'react-router-dom';
 
 import Footer from '../../Components/Footer/Footer';
 import { RediretToPage } from '../../services/utils';
 import Link from 'react-scroll/modules/components/Link';
 
 function LandingPage() {
-    const history = useHistory();
 
-    function goToPage(path) {
-        history.push(path);
-    }
+  
     return (
         <>
             <section class="masthead d-flex align-items-center" id="page-top">
