@@ -13,8 +13,8 @@ function InputText(props) {
             {lastItem !== index ? (
               <input
                 type="text"
-                style={{ width: "30%" , height:'10px' }}
-                name={props.question + "." + index}
+                style={{ width: "30%", height: "10px" }}
+                name={props.question + "." + (index + 1)}
               />
             ) : (
               ""

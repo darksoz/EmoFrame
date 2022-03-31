@@ -22,7 +22,8 @@ function SearchResult() {
         "sus": false,
         "leap": false,
         "zanon": false,
-        "panas": false
+        "panas": false,
+        "page": false
     })
     const [searchText, setSearchText] = useState("");
     const [testsData, setTestsData] = useState([]);
@@ -133,6 +134,9 @@ function SearchResult() {
                                 </Row>
                                 <Row style={{ marginLeft: "13px", marginBottom: "10px" }}    >
                                     <label><Checkbox name="panas" value="panas" /> {"Panas"}</label>
+                                </Row>
+                                <Row style={{ marginLeft: "13px", marginBottom: "10px" }}    >
+                                    <label><Checkbox name="page" value="page" /> {"Page"}</label>
                                 </Row>
                             </div>
                         </Col>

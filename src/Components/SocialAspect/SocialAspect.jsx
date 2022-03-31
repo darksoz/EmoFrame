@@ -82,7 +82,7 @@ function SocialAspect() {
                     <input
                       class="form-check-input"
                       type="radio"
-                      value="1"
+                      value="SIM"
                       name={question.aspectos}
                     />
                     <label class="form-check-label" for="flexCheckDefault">
@@ -93,7 +93,7 @@ function SocialAspect() {
                     <input
                       class="form-check-input"
                       type="radio"
-                      value="0"
+                      value="NÃO"
                       name={question.aspectos}
                     />
                     <label class="form-check-label" for="flexCheckChecked">

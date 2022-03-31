@@ -41,7 +41,7 @@ function BiologicalAspect() {
                                 <input
                                   type="checkbox"
                                   value={a}
-                                  name={pergunta.question+"."+index } 
+                                  name={pergunta.question + "." + (index + 1)}
                                 ></input>
                                 <br></br>
                               </>
@@ -86,19 +86,19 @@ function BiologicalAspect() {
                     <input
                       class="form-check-input"
                       type="radio"
-                      value="1"
+                      value="SIM"
                       name={question.aspectos}
                     />
-                    <label class="form-check-label">SIM</label>
+                    <label class="form-check-label" for="flexCheckDefault" name='SIM' >SIM</label>
                   </div>
                   <div class="form-check">
                     <input
                       class="form-check-input"
                       type="radio"
-                      value="0"
+                      value="NÃO"
                       name={question.aspectos}
                     />
-                    <label class="form-check-label">NÃO</label>
+                    <label class="form-check-label" for="flexCheckDefault" name='NÃO'>NÃO</label>
                   </div>
                 </p>
               </Col>

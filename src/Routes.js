@@ -11,6 +11,7 @@ import SamResult from './Pages/SamResult/SamResult';
 import Zanon from './Pages/Zanon/Zanon';
 import Sus from './Pages/Sus/Sus';
 import Panas from './Pages/Panas/Panas';
+import PageResult from './Pages/PageResult/PageResult';
 import SusResult from './Pages/SusResult/SusResult';
 import LeapResult from './Pages/LeapResult/LeapResult';
 import PanasResult from './Pages/PanasResult/PanasResult';
@@ -65,6 +66,8 @@ function Routes() {
                 <LimitedAccessRoute path='/samResult/:id' exact component={SamResult}/>
                 <LimitedAccessRoute path='/leapResult' exact component={LeapResult}/>
                 <LimitedAccessRoute path='/leapResult/:id' exact component={LeapResult}/>
+                <LimitedAccessRoute path='/pageResult' exact component={PageResult}/>
+                <LimitedAccessRoute path='/pageResult/:id' exact component={PageResult}/>
                 <LimitedAccessRoute path='/panasResult' exact component={PanasResult}/>
                 <LimitedAccessRoute path='/panasResult/:id' exact component={PanasResult}/>
                 <LimitedAccessRoute path='/susResult/:id' exact component={SusResult}/>

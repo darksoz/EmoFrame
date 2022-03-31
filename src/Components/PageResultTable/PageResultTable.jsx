@@ -3,7 +3,15 @@ import Container from 'react-bootstrap/Container';
 import '../../Pages/Page/Page.css';
 import { Form } from 'react-bootstrap';
 
-function PageResultTable() {
+function PageResultTable(props) {
+   let aspectos = props.aspectos
+    const sumValue = (a) =>{
+        let sum = 0;
+        a.forEach(element => {
+            sum += parseInt(element.answer)
+        });
+        return sum
+    }
     return (
         <>
                 <Table bordered>
@@ -17,24 +25,24 @@ function PageResultTable() {
                             </td>
                             <td className='custom'>
                                 <div>
-                                    ASPECTOS PSICOLÓGICOS (MÁXIMA = 14 PONTOS): X
+                                    ASPECTOS PSICOLÓGICOS (MÁXIMA = 14 PONTOS): {sumValue(aspectos['Aspectos Psicologicos'])}
                                 </div>
                                 <div>
-                                    ASPECTOS BIOLÓGICOS (MÁXIMA = 36 PONTOS): Y
-                                </div>
-
-                                <div>
-                                    ASPECTOS SOCIAIS (MÁXIMA = 32 PONTOS): Z
+                                    ASPECTOS BIOLÓGICOS (MÁXIMA = 36 PONTOS): {sumValue(aspectos['Aspectos Biologicos'])}
                                 </div>
 
                                 <div>
-                                    QUEDAS (MÁXIMA = 16 PONTOS): W
+                                    ASPECTOS SOCIAIS (MÁXIMA = 32 PONTOS): {sumValue(aspectos['Aspectos Sociais'])}
+                                </div>
+
+                                <div>
+                                    QUEDAS (MÁXIMA = 16 PONTOS): {sumValue(aspectos['Aspectos Multidimensionais'])}
                                 </div>
 
                             </td>
                         </tr>
                         <tr className='bg-lgrey'>
-                            <td colSpan={3}>PONTUAÇÃO TOTAL (MÁXIMA = 98 PONTOS): T</td>
+                            <td colSpan={3}>PONTUAÇÃO TOTAL (MÁXIMA = 98 PONTOS): {sumValue(props.questions)}</td>
                         </tr>
                         <tr>
                             <td colSpan={3}>CLASSIFICAÇÃO DE RISCO DE VULNERABILIDADE BIOPSICOSSOCIAL</td>

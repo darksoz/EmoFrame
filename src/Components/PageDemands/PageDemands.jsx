@@ -1,13 +1,16 @@
 import Container from 'react-bootstrap/Container';
 import ReactApexChart from "react-apexcharts";
 
-function PageDemands () {
-
+function PageDemands (props) {
+    console.log('PageDemands', props.subAspectos);
+    const categories = props.subAspectos.map(subAspecto => subAspecto.subAspectos);
+    const data = props.subAspectos.map(a=>a.total)
+    
     let dados = {
           
         series: [{
           name: 'Series 1',
-          data: [80, 50, 30, 40, 100, 20, 70, 60, 120, 10, 90, 110],
+          data: data,
         }],
         options: {
           chart: {
@@ -18,7 +21,7 @@ function PageDemands () {
             text: ''
           },
           xaxis: {
-            categories: ['Déficit Sensorial', 'Incapacidade Funcional', 'Desnutrição', 'Doenças Cardiovasculares', 'Uso Inadequado de Medicamentos', 'Atitudes Negativas', 'Depressão', 'Déficit Cognitivo', 'Baixo Suporte Social', 'Problemas Ambientais', 'Violência', 'Quedas']
+            categories: categories,
           }
         },
       

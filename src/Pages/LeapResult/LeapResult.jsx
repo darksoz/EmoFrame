@@ -1,16 +1,18 @@
-import Container from 'react-bootstrap/Container'
-import LeapReferenceTable from '../../Components/LeapReferenceTable/LeapReferenceTable';
-import LeapResultTable from '../../Components/LeapResultTable/LeapResultTable';
+import Container from "react-bootstrap/Container";
+import LeapReferenceTable from "../../Components/LeapReferenceTable/LeapReferenceTable";
+import LeapResultTable from "../../Components/LeapResultTable/LeapResultTable";
 import { Breadcrumb, Button, Modal } from "react-bootstrap";
-import { GetResultTestById } from '../../services/api';
-import { useEffect, useState } from 'react';
-import { useParams, useHistory } from 'react-router-dom';
-import { formateDateTime } from '../../services/utils';
-import Footer from '../../Components/Footer/Footer';
-
+import { GetResultTestById } from "../../services/api";
+import { useEffect, useState } from "react";
+import { useParams, useHistory } from "react-router-dom";
+import { formateDateTime } from "../../services/utils";
+import Footer from "../../Components/Footer/Footer";
 
 let pf1_l = [3, 10, 12, 13, 21, 23, 24, 25, 26, 29, 31, 35, 39, 40];
-let pf1_w = [-0.32, 0.32, 0.28, 0.66, 0.67, 0.43, 0.53, 0.31, 0.37, 0.27, 0.51, 0.52, 0.59, 0.47];
+let pf1_w = [
+  -0.32, 0.32, 0.28, 0.66, 0.67, 0.43, 0.53, 0.31, 0.37, 0.27, 0.51, 0.52, 0.59,
+  0.47,
+];
 let pf2_l = [3, 8, 9, 14, 17, 27, 36, 39];
 let pf2_w = [0.29, 0.73, 0.63, 0.26, 0.26, 0.34, 0.69, 0.33];
 let pf3_l = [2, 12, 14, 15, 19, 27, 29, 33];
@@ -36,8 +38,8 @@ let pf12_w = [0.26, 0.59, 0.72, -0.34];
 
 function LeapResult() {
   const [questions, setQuestions] = useState([]);
-  const [name, setName] = useState('');
-  const [datetime, setDatetime] = useState('');
+  const [name, setName] = useState("");
+  const [datetime, setDatetime] = useState("");
 
   const [show, setShow] = useState(false);
   const [title, setTitle] = useState("");
@@ -49,54 +51,55 @@ function LeapResult() {
   useEffect(() => {
     const getResult = async () => {
       if (id !== undefined) {
-        let response = await GetResultTestById('leap', id);
+        let response = await GetResultTestById("leap", id);
         if (response.status === 200) {
           let data = response.data;
           if (data === "") {
             setTitle("Resultado não encontrado");
-            setBody("Não há nenhum registro encontrado no banco de dados com o identificador repassado");
+            setBody(
+              "Não há nenhum registro encontrado no banco de dados com o identificador repassado"
+            );
             setShow(true);
-          }
-          else {
+          } else {
             setQuestions(data.Questions);
             setName(data.Username);
             setDatetime(data.Datetime);
           }
-        }
-        else {
+        } else {
           setTitle("Erro ao carregar a resposta");
           setBody("Não foi possível carregar a resposta do banco de dados");
           setShow(true);
         }
-      }
-      else {
+      } else {
         setTitle("Erro ao carregar a resposta");
         setBody("É necessário realizar uma busca com um identificador válido");
         setShow(true);
       }
-    }
+    };
     getResult();
   }, [id]);
 
   const getFactors = () => {
     let data = [];
     if (questions) {
-      data = [...data,
-      factorCalculation(pf1_l, pf1_w),
-      factorCalculation(pf2_l, pf2_w),
-      factorCalculation(pf3_l, pf3_w),
-      factorCalculation(pf4_l, pf4_w),
-      factorCalculation(pf5_l, pf5_w),
-      factorCalculation(pf6_l, pf6_w),
-      factorCalculation(pf7_l, pf7_w),
-      factorCalculation(pf8_l, pf8_w),
-      factorCalculation(pf9_l, pf9_w),
-      factorCalculation(pf10_l, pf10_w),
-      factorCalculation(pf11_l, pf11_w),
-      factorCalculation(pf12_l, pf12_w)];
+      data = [
+        ...data,
+        factorCalculation(pf1_l, pf1_w),
+        factorCalculation(pf2_l, pf2_w),
+        factorCalculation(pf3_l, pf3_w),
+        factorCalculation(pf4_l, pf4_w),
+        factorCalculation(pf5_l, pf5_w),
+        factorCalculation(pf6_l, pf6_w),
+        factorCalculation(pf7_l, pf7_w),
+        factorCalculation(pf8_l, pf8_w),
+        factorCalculation(pf9_l, pf9_w),
+        factorCalculation(pf10_l, pf10_w),
+        factorCalculation(pf11_l, pf11_w),
+        factorCalculation(pf12_l, pf12_w),
+      ];
       return data;
     }
-  }
+  };
 
   const factorCalculation = (locution, weight) => {
     if (questions && questions.length > 0) {
@@ -111,18 +114,18 @@ function LeapResult() {
         sumPresence += questions[element - 1].answer * weight[index];
         sumMax += weight[index] < 0 ? weight[index] * 1 : weight[index] * 5;
         sumMin += weight[index] < 0 ? weight[index] * 5 : weight[index] * 1;
-      })
+      });
       presence = sumPresence / locution.length;
       max = sumMax / locution.length;
       min = sumMin / locution.length;
       return (presence - min) / (max - min);
     }
-  }
+  };
 
-  const handleClose = path => {
+  const handleClose = (path) => {
     setShow(false);
     history.push(path);
-  }
+  };
 
   return (
     <>
@@ -132,7 +135,10 @@ function LeapResult() {
         </Modal.Header>
         <Modal.Body>{body}</Modal.Body>
         <Modal.Footer>
-          <Button variant="primary" onClick={() => handleClose("/searchResults")}>
+          <Button
+            variant="primary"
+            onClick={() => handleClose("/searchResults")}
+          >
             Buscar resultado
           </Button>
           <Button variant="secondary" onClick={() => handleClose("/")}>
@@ -141,28 +147,24 @@ function LeapResult() {
         </Modal.Footer>
       </Modal>
       <Breadcrumb>
-        <Breadcrumb.Item href='/dashboard'>Página Inicial</Breadcrumb.Item>
-        <Breadcrumb.Item href='/searchResults'>Resultados</Breadcrumb.Item>
+        <Breadcrumb.Item href="/dashboard">Página Inicial</Breadcrumb.Item>
+        <Breadcrumb.Item href="/searchResults">Resultados</Breadcrumb.Item>
         <Breadcrumb.Item active>Resultado SAM</Breadcrumb.Item>
       </Breadcrumb>
       <Container>
-        {
-          questions &&
+        {questions && (
           <>
             <h1>Nome: {name}</h1>
             <h1>Data e Hora: {formateDateTime(datetime)}</h1>
             <LeapReferenceTable />
             <LeapResultTable Factors={getFactors()} />
           </>
-        }
+        )}
 
-<div className='mt-5'>
-
-<Footer/>
-
-</div>
+        <div className="mt-5">
+          <Footer />
+        </div>
       </Container>
-     
     </>
   );
 }

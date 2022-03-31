@@ -43,7 +43,7 @@ function PsychologicalAspect() {
                                 <ImagesAspect
                                   images={image}
                                   question={pergunta.question}
-                                  name={index}
+                                  name={index+1}
                                 ></ImagesAspect>
                               ))
                             : ""}
@@ -101,7 +101,7 @@ function PsychologicalAspect() {
                       value="SIM"
                       name={question.aspectos}
                     />
-                    <label class="form-check-label" for="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault" name='SIM'>
                       SIM
                     </label>
                   </div>
@@ -109,10 +109,10 @@ function PsychologicalAspect() {
                     <input
                       class="form-check-input"
                       type="radio"
-                      value="NÂO"
+                      value="NÃO"
                       name={question.aspectos}
                     />
-                    <label class="form-check-label" for="flexCheckChecked">
+                    <label class="form-check-label" for="flexCheckChecked" name='NÃO'>
                       NÃO
                     </label>
                   </div>
