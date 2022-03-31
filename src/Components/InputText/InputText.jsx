@@ -1,4 +1,5 @@
 import { React } from "react";
+import ImcInput from "./ImcInput";
 
 function InputText(props) {
   const sliceText = (text) => text.split("_");
@@ -6,21 +7,27 @@ function InputText(props) {
   return (
     <>
       <p className="h5">
-        {props.question} -
-        {sliceText(props.text).map((texto, index) => (
+        {props.value === "imc" ? (
+          <ImcInput text={props.text} question={props.question} />
+        ) : (
           <>
-            {texto}
-            {lastItem !== index ? (
-              <input
-                type="text"
-                style={{ width: "30%", height: "10px" }}
-                name={props.question + "." + (index + 1)}
-              />
-            ) : (
-              ""
-            )}
+            {props.question} -
+            {sliceText(props.text).map((texto, index) => (
+              <>
+                {texto}
+                {lastItem !== index ? (
+                  <input
+                    type="text"
+                    style={{ width: "30%", height: "10px" }}
+                    name={props.question + "." + (index + 1)}
+                  />
+                ) : (
+                  ""
+                )}
+              </>
+            ))}
           </>
-        ))}
+        )}
       </p>
     </>
   );

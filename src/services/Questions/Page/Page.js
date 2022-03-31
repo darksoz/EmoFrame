@@ -294,7 +294,7 @@ export const Questions2 = [
         input: false,
         point: 0,
         title:
-          "Nos ultimos 3 meses,O(A) senhor(a), Diminuiu sua ingesta alimentar sem motivo?",
+          "Nos ultimos 3 meses ,O(A) senhor(a), Diminuiu sua ingesta alimentar sem motivo?",
       },
       {
         question: 30,
@@ -316,10 +316,11 @@ export const Questions2 = [
       },
       {
         question: 32,
-        point: 0,
+        point: true,
+        imc: true,
         input: true,
         title:
-          "Índice de Massa Corporal (peso _ [kg]/ estatura _ [m2]) = _ kg/m2) igual ou menor que 22 kg/m2",
+          "Índice de Massa Corporal (peso _ [kg]/ estatura _ [Cm]) igual ou menor que 22 kg/m2",
         yes: 0,
         no: 1,
       },

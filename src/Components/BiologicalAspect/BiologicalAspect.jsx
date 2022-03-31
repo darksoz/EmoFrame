@@ -27,6 +27,7 @@ function BiologicalAspect() {
                           <InputText
                             text={pergunta.title}
                             question={pergunta.question}
+                            value={pergunta.point === true ? "imc" : ""}
                           />
                         ) : (
                           <p className="h5">
@@ -89,7 +90,13 @@ function BiologicalAspect() {
                       value="SIM"
                       name={question.aspectos}
                     />
-                    <label class="form-check-label" for="flexCheckDefault" name='SIM' >SIM</label>
+                    <label
+                      class="form-check-label"
+                      for="flexCheckDefault"
+                      name="SIM"
+                    >
+                      SIM
+                    </label>
                   </div>
                   <div class="form-check">
                     <input
@@ -98,7 +105,13 @@ function BiologicalAspect() {
                       value="NÃO"
                       name={question.aspectos}
                     />
-                    <label class="form-check-label" for="flexCheckDefault" name='NÃO'>NÃO</label>
+                    <label
+                      class="form-check-label"
+                      for="flexCheckDefault"
+                      name="NÃO"
+                    >
+                      NÃO
+                    </label>
                   </div>
                 </p>
               </Col>
