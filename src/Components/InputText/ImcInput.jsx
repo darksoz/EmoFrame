@@ -24,11 +24,11 @@ function ImcInput(props) {
 
   const sliceText = (text) => text.split("_");
   const lastItem = sliceText(props.text).length - 1;
-  const calcularIMC = (kilos, altura)=> {
+  const calcularIMC = (kilos, altura) => {
     altura = altura / 100;
-    return (kilos / (altura * altura));
-  }
-  
+    return kilos / (altura * altura);
+  };
+
   const calcImc = (peso_, altura_) => {
     let altura = altura_;
     let peso = peso_;
@@ -50,11 +50,12 @@ function ImcInput(props) {
                 name={props.question + "." + (index + 1)}
                 text={index === 2 ? "imc" : ""}
                 onBlur={index !== 2 ? handleBlur : null}
+                key={index}
               />
             ) : (
               <>
-              <br/>
-              IMC: {imc}
+                <br />
+                IMC: {imc}
               </>
             )}
           </>

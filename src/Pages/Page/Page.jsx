@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Breadcrumb } from "react-bootstrap";
 import Container from "react-bootstrap/Container";
 import PsychologicalAspect from "../../Components/PsychologicalAspect/PsychologicalAspect";
@@ -9,7 +9,6 @@ import { MultiStepForm, Step } from "react-multi-form";
 import { Link } from "react-scroll";
 import { getUsername } from "../../services/auth";
 import sortArray from "sort-array";
-import { TextareaAutosize } from "@mui/material";
 import { SavePageTest } from "../../services/api";
 import RegisterPage from "../../Components/RegisterPage/RegisterPage";
 
@@ -21,17 +20,34 @@ function Page() {
   const [show, setShow] = React.useState(false);
   const [success, setSuccess] = React.useState(false);
   const [userFormData, setUserFormData] = React.useState([]);
+  const [totalQuestions, setTotalQuestions] = React.useState(1);
 
   const handleChange = (event) => {
     const id = event.target.name;
     const data = { id, answer: event.target.value };
-    console.log(data);
     if (answers.some((a) => a.id === id)) {
       setAnswers([...answers.filter((b) => b.id !== id), data]);
+      console.log(data);
     } else {
       setAnswers([...answers, data]);
+      console.log(data);
     }
   };
+  const filterQuestionsByNumberInt = (questions) => {
+    let data = [];
+    if (questions) {
+      data = questions.filter((item) => {
+        return parseInt(item.id) == item.id;
+      });
+    }
+    return data.sort((a, b) => a.id - b.id) || null;
+  };
+  useEffect(() => {
+    let data = filterQuestionsByNumberInt(answers);
+    setTotalQuestions(data.length);
+    // console.log("aqui", data.length);
+    // console.log("aqui total: ", totalQuestions);
+  }, [answers]);
 
   const handleChangeForm = (event) => {
     const id = event.target.name;
@@ -68,6 +84,9 @@ function Page() {
       setSuccess(false);
     }
   };
+  const respostas = () => {
+    return answers;
+  };
 
   return (
     <>
@@ -76,27 +95,28 @@ function Page() {
         <Breadcrumb.Item active>PAGE</Breadcrumb.Item>
       </Breadcrumb>
       <Container>
-        <MultiStepForm activeStep={active}>
-          <Step label="Dados de Identificação" onChange={handleChangeForm}>
-            <RegisterPage />
-          </Step>
-          <Step label="Passo 1" onChange={handleChange}>
-            <PsychologicalAspect />
-          </Step>
+        <div id="sample">
+          <MultiStepForm activeStep={active}>
+            <Step label="Dados de Identificação" onChange={handleChangeForm}>
+              <RegisterPage />
+            </Step>
+            <Step label="Passo 1" onChange={handleChange}>
+              <PsychologicalAspect />
+            </Step>
 
-          <Step label="Passo 2" onChange={handleChange}>
-            <BiologicalAspect />
-          </Step>
+            <Step label="Passo 2" onChange={handleChange}>
+              <BiologicalAspect />
+            </Step>
 
-          <Step label="Passo 3" onChange={handleChange}>
-            <SocialAspect />
-          </Step>
+            <Step label="Passo 3" onChange={handleChange}>
+              <SocialAspect />
+            </Step>
 
-          <Step label="Passo 4" onChange={handleChange}>
-            <MultidimensionalAspect />
-          </Step>
-        </MultiStepForm>
-
+            <Step label="Passo 4" onChange={handleChange}>
+              <MultidimensionalAspect />
+            </Step>
+          </MultiStepForm>
+        </div>
         {active === 1 && (
           <Link to="sample">
             <button
@@ -137,12 +157,14 @@ function Page() {
                 Anterior
               </button>
             </Link>
-            <button
-              class="btn whitebutton btn-lg"
-              onClick={() => handleFormData()}
-            >
-              Salvar
-            </button>
+            {totalQuestions >= 101 && (
+              <button
+                class="btn whitebutton btn-lg"
+                onClick={() => handleFormData()}
+              >
+                Salvar
+              </button>
+            )}
           </div>
         )}
       </Container>

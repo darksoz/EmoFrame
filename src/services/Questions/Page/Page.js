@@ -514,10 +514,10 @@ export const Questions2 = [
         question: 51,
         yes: 0,
         no: 1,
-        input: false,
+        input: true,
         point: 0,
         title:
-          "O(A) senhor(a) tem o costume de tomar remédios por conta própria? (Quais?)",
+          "O(A) senhor(a) tem o costume de tomar remédios por conta própria? (Quais?) _ ",
       },
       {
         question: 52,
@@ -864,16 +864,16 @@ export const Questions4 = [
         tooltip:
           "[Se não, pontue também a resposta “não” na próxima questão e vá para a questão 90] [Se não, pule as próximas duas questões]",
         title:
-          "O(A) senhor(a) sofreu alguma queda nos últimos 12 meses? Se sim, quantas?",
+          "O(A) senhor(a) sofreu alguma queda nos últimos 12 meses? Se sim, quantas? _",
       },
       {
         question: 88,
         yes: 0,
         no: 1,
-        input: false,
+        input: true,
         point: 0,
         title:
-          "O(A) senhor(a) sofreu alguma fratura decorrente destas quedas? Se sim, quais?",
+          "O(A) senhor(a) sofreu alguma fratura decorrente destas quedas? Se sim, quais? _",
       },
       {
         question: 89,
@@ -884,7 +884,7 @@ export const Questions4 = [
           "[Investigar atividade realizada, local, horário do dia, tipo de calçado, riscos ambientais etc]",
         point: 0,
         title:
-          " O que o(a) senhor(a) estava fazendo quando sofreu essa(s) queda(s)?",
+          " O que o(a) senhor(a) estava fazendo quando sofreu essa(s) queda(s)? _",
       },
       {
         question: 90,

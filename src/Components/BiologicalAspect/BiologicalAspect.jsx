@@ -4,11 +4,12 @@ import Col from "react-bootstrap/Col";
 import { Questions2 } from "../../services/Questions/Page/Page";
 import InputText from "../InputText/InputText";
 import TableDiagnostico from "./TableDiagnostico";
+import { TextareaAutosize } from "@material-ui/core";
 
 function BiologicalAspect() {
   return (
     <>
-      <div className="border border-dark bg-success text-white">
+      <div id="passo" className="border border-dark bg-success text-white">
         <h3>Relacionados a Aspectos Biológicos</h3>
       </div>
       {Questions2.map((question, index) => (
@@ -34,6 +35,11 @@ function BiologicalAspect() {
                             {pergunta.question} - {pergunta.title}
                           </p>
                         )}
+                        {pergunta.question == "45" && (
+                          <textarea
+                            name={pergunta.question + "." + 1}
+                          ></textarea>
+                        )}
                         <p className="h6">
                           <strong>
                             {pergunta.questions?.map((a, index) => (
@@ -53,25 +59,25 @@ function BiologicalAspect() {
                       <Col className="border">
                         <p className="h5">
                           <div
-                            class="form-check"
+                            className="form-check"
                             style={{ minHeight: "2.0em" }}
                           >
                             <input
-                              class="form-check-input"
+                              className="form-check-input"
                               type="radio"
                               value={pergunta.yes}
                               name={pergunta.question}
                             />
-                            <label class="form-check-label">SIM</label>
+                            <label className="form-check-label">{pergunta.yes} = SIM</label>
                           </div>
-                          <div class="form-check">
+                          <div className="form-check">
                             <input
-                              class="form-check-input"
+                              className="form-check-input"
                               type="radio"
                               value={pergunta.no}
                               name={pergunta.question}
                             />
-                            <label class="form-check-label">NÃO</label>
+                            <label className="form-check-label">{pergunta.no} = NÃO</label>
                           </div>
                         </p>
                       </Col>
@@ -83,30 +89,30 @@ function BiologicalAspect() {
                 <p className="h5">{question.pontucao}</p>
 
                 <p className="h5">
-                  <div class="form-check" style={{ minHeight: "1.5em" }}>
+                  <div className="form-check" style={{ minHeight: "1.5em" }}>
                     <input
-                      class="form-check-input"
+                      className="form-check-input"
                       type="radio"
                       value="SIM"
                       name={question.aspectos}
                     />
                     <label
-                      class="form-check-label"
+                      className="form-check-label"
                       for="flexCheckDefault"
                       name="SIM"
                     >
                       SIM
                     </label>
                   </div>
-                  <div class="form-check">
+                  <div className="form-check">
                     <input
-                      class="form-check-input"
+                      className="form-check-input"
                       type="radio"
                       value="NÃO"
                       name={question.aspectos}
                     />
                     <label
-                      class="form-check-label"
+                      className="form-check-label"
                       for="flexCheckDefault"
                       name="NÃO"
                     >
@@ -128,11 +134,11 @@ function BiologicalAspect() {
       ))}
 
       <Row>
-        <div class="form-group justify-content-center">
+        <div className="form-group justify-content-center">
           <textarea
             style={{ border: "1px solid black" }}
             name="anotacao_aspectos_biologicos"
-            class="form-control"
+            className="form-control"
             placeholder="Anotações:"
             id="exampleFormControlTextarea1"
             rows="3"

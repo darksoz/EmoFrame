@@ -8,7 +8,7 @@ import InputText from "../InputText/InputText";
 function PsychologicalAspect() {
   return (
     <>
-      <div className="border border-dark bg-primary text-white">
+      <div id="passo" className="border border-dark bg-primary text-white">
         <h3>Relacionados a Aspectos Psicológicos</h3>
       </div>
 
@@ -16,7 +16,7 @@ function PsychologicalAspect() {
         <>
           <Container className="border border-dark mb-3">
             <Row>
-              <Col xs={2} className="m-auto">
+              <Col xs={2} className="m-auto" key={index}>
                 <p className="h5"> {question.aspectos}</p>
               </Col>
               <Col xs={8}>
@@ -43,7 +43,8 @@ function PsychologicalAspect() {
                                 <ImagesAspect
                                   images={image}
                                   question={pergunta.question}
-                                  name={index+1}
+                                  name={index + 1}
+                                  key={index}
                                 ></ImagesAspect>
                               ))
                             : ""}
@@ -65,7 +66,7 @@ function PsychologicalAspect() {
                               class="form-check-label"
                               for="flexCheckDefault"
                             >
-                              SIM
+                              {pergunta.yes} = SIM
                             </label>
                           </div>
                           <div class="form-check">
@@ -79,7 +80,7 @@ function PsychologicalAspect() {
                               class="form-check-label"
                               for="flexCheckChecked"
                             >
-                              NÃO
+                                {pergunta.no} = NÃO
                             </label>
                           </div>
                         </p>
@@ -101,7 +102,11 @@ function PsychologicalAspect() {
                       value="SIM"
                       name={question.aspectos}
                     />
-                    <label class="form-check-label" for="flexCheckDefault" name='SIM'>
+                    <label
+                      class="form-check-label"
+                      for="flexCheckDefault"
+                      name="SIM"
+                    >
                       SIM
                     </label>
                   </div>
@@ -112,7 +117,11 @@ function PsychologicalAspect() {
                       value="NÃO"
                       name={question.aspectos}
                     />
-                    <label class="form-check-label" for="flexCheckChecked" name='NÃO'>
+                    <label
+                      class="form-check-label"
+                      for="flexCheckChecked"
+                      name="NÃO"
+                    >
                       NÃO
                     </label>
                   </div>

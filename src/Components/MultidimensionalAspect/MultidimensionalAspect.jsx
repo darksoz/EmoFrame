@@ -15,7 +15,7 @@ function MultidimensionalAspect() {
         <>
           <Container className="border border-dark mb-3">
             <Row>
-              <Col xs={2} className="m-auto">
+              <Col xs={2} className="m-auto" key={index}>
                 <p className="h5"> {question.aspectos}</p>
               </Col>
               <Col xs={8}>
@@ -50,7 +50,7 @@ function MultidimensionalAspect() {
                               class="form-check-label"
                               for="flexCheckDefault"
                             >
-                              SIM
+                              {pergunta.yes} = SIM
                             </label>
                           </div>
                           <div class="form-check">
@@ -64,7 +64,7 @@ function MultidimensionalAspect() {
                               class="form-check-label"
                               for="flexCheckChecked"
                             >
-                              NÃO
+                             {pergunta.no} = NÃO
                             </label>
                           </div>
                         </p>

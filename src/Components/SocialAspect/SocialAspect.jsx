@@ -7,14 +7,14 @@ import InputText from "../InputText/InputText";
 function SocialAspect() {
   return (
     <>
-      <div className="border border-dark bg-warning text-white">
+      <div id="passo" className="border border-dark bg-warning text-white">
         <h3>Relacionados a Aspectos Sociais</h3>
       </div>
       {Questions3.map((question, index) => (
         <>
           <Container className="border border-dark mb-3">
             <Row>
-              <Col xs={2} className="m-auto">
+              <Col xs={2} className="m-auto" key={index}>
                 <p className="h5"> {question.aspectos}</p>
               </Col>
               <Col xs={8}>
@@ -49,7 +49,7 @@ function SocialAspect() {
                               class="form-check-label"
                               for="flexCheckDefault"
                             >
-                              SIM
+                              {pergunta.yes} = SIM
                             </label>
                           </div>
                           <div class="form-check">
@@ -63,7 +63,7 @@ function SocialAspect() {
                               class="form-check-label"
                               for="flexCheckChecked"
                             >
-                              NÃO
+                              {pergunta.no} = NÃO
                             </label>
                           </div>
                         </p>

@@ -64,11 +64,11 @@ function Login() {
           </Button>
         </Modal.Footer>
       </Modal>
-      <div class="flex-fill">
-        <div class="wrapper fadeInDown">
+      <div className="flex-fill">
+        <div className="wrapper fadeInDown">
           <div id="formContent">
-            <div class="fadeIn first m-4">
-              <span class="far fa-user fa-2x" />
+            <div className="fadeIn first m-4">
+              <span className="far fa-user fa-2x" />
             </div>
             <input
               type="text"
