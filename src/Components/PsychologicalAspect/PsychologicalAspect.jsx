@@ -6,6 +6,11 @@ import ImagesAspect from "../BiologicalAspect/ImagesAspect";
 import InputText from "../InputText/InputText";
 
 function PsychologicalAspect() {
+  const checkTextBox = (str) => {
+    let textBox = ["7", "8", "41", "51", "54", "45", "88", "89"];
+    return textBox.includes(String(str));
+  };
+
   return (
     <>
       <div id="passo" className="border border-dark bg-primary text-white">
@@ -33,6 +38,14 @@ function PsychologicalAspect() {
                           <p className="h5">
                             {pergunta.question} - {pergunta.title}
                           </p>
+                        )}
+                        {checkTextBox(pergunta.question) && (
+                          <textarea
+                            class="form-control"
+                            id="exampleFormControlTextarea1"
+                            rows="3"
+                            name={pergunta.question + "." + index}
+                          ></textarea>
                         )}
                         <p className="h6">
                           <strong>{pergunta.text}</strong>

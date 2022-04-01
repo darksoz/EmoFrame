@@ -84,12 +84,12 @@ export const Questions1 = [
         question: 8,
         yes: 0,
         no: 1,
-        input: true,
+        input: false,
         tooltip:
           "[Registrar ao lado se é perceptível uma visão mais negativa da velhice].",
         point: 0,
         title:
-          "Existem pontos positivos e negativos presentes na velhice? Quais? _",
+          "Existem pontos positivos e negativos presentes na velhice? Quais? ",
       },
     ],
   },
@@ -514,10 +514,10 @@ export const Questions2 = [
         question: 51,
         yes: 0,
         no: 1,
-        input: true,
+        input: false,
         point: 0,
         title:
-          "O(A) senhor(a) tem o costume de tomar remédios por conta própria? (Quais?) _ ",
+          "O(A) senhor(a) tem o costume de tomar remédios por conta própria? (Quais?)  ",
       },
       {
         question: 52,
@@ -870,21 +870,21 @@ export const Questions4 = [
         question: 88,
         yes: 0,
         no: 1,
-        input: true,
+        input: false,
         point: 0,
         title:
-          "O(A) senhor(a) sofreu alguma fratura decorrente destas quedas? Se sim, quais? _",
+          "O(A) senhor(a) sofreu alguma fratura decorrente destas quedas? Se sim, quais? ",
       },
       {
         question: 89,
         yes: 0,
         no: 0,
-        input: true,
+        input: false,
         tooltip:
           "[Investigar atividade realizada, local, horário do dia, tipo de calçado, riscos ambientais etc]",
         point: 0,
         title:
-          " O que o(a) senhor(a) estava fazendo quando sofreu essa(s) queda(s)? _",
+          " O que o(a) senhor(a) estava fazendo quando sofreu essa(s) queda(s)? ",
       },
       {
         question: 90,

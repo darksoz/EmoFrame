@@ -5,10 +5,10 @@ function ImagesAspect(props) {
     <>
       <img src={`${process.env.PUBLIC_URL}/` + props.images} alt="" />
       <textarea
+        class="form-control"
+        id="exampleFormControlTextarea1"
         name={props.question + "." + props.name}
-        id={props.question + "." + props.name}
-        rows="2"
-        cols="10"
+        rows="3"
       ></textarea>
     </>
   );

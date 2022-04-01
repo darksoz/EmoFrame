@@ -6,6 +6,10 @@ import { Questions4 } from "../../services/Questions/Page/Page";
 import InputText from "../InputText/InputText";
 
 function MultidimensionalAspect() {
+  const checkTextBox = (str) => {
+    let textBox = ["7", "8", "51", "54", "45", "88", "89"];
+    return textBox.includes(String(str));
+  };
   return (
     <>
       <div className="border border-dark bg-purple text-white">
@@ -32,6 +36,14 @@ function MultidimensionalAspect() {
                           <p className="h5">
                             {pergunta.question} - {pergunta.title}
                           </p>
+                        )}
+                        {checkTextBox(pergunta.question) && (
+                          <textarea
+                            class="form-control"
+                            id="exampleFormControlTextarea1"
+                            rows="3"
+                            name={pergunta.question + "." + index}
+                          ></textarea>
                         )}
                       </Col>
                       <Col className="border">

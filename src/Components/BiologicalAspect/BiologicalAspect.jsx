@@ -7,6 +7,11 @@ import TableDiagnostico from "./TableDiagnostico";
 import { TextareaAutosize } from "@material-ui/core";
 
 function BiologicalAspect() {
+  const checkTextBox = (str) => {
+    let textBox = ["7", "8", "41", "51", "54", "45", "88", "89"];
+    return textBox.includes(String(str));
+  };
+  console.log(checkTextBox("10"));
   return (
     <>
       <div id="passo" className="border border-dark bg-success text-white">
@@ -35,9 +40,12 @@ function BiologicalAspect() {
                             {pergunta.question} - {pergunta.title}
                           </p>
                         )}
-                        {pergunta.question == "45" && (
+                        {checkTextBox(pergunta.question) && (
                           <textarea
-                            name={pergunta.question + "." + 1}
+                            class="form-control"
+                            id="exampleFormControlTextarea1"
+                            rows="3"
+                            name={pergunta.question + "." + index}
                           ></textarea>
                         )}
                         <p className="h6">
@@ -68,7 +76,9 @@ function BiologicalAspect() {
                               value={pergunta.yes}
                               name={pergunta.question}
                             />
-                            <label className="form-check-label">{pergunta.yes} = SIM</label>
+                            <label className="form-check-label">
+                              {pergunta.yes} = SIM
+                            </label>
                           </div>
                           <div className="form-check">
                             <input
@@ -77,7 +87,9 @@ function BiologicalAspect() {
                               value={pergunta.no}
                               name={pergunta.question}
                             />
-                            <label className="form-check-label">{pergunta.no} = NÃO</label>
+                            <label className="form-check-label">
+                              {pergunta.no} = NÃO
+                            </label>
                           </div>
                         </p>
                       </Col>

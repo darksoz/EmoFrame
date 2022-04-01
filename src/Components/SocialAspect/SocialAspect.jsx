@@ -5,6 +5,10 @@ import { Questions3 } from "../../services/Questions/Page/Page";
 import InputText from "../InputText/InputText";
 
 function SocialAspect() {
+  const checkTextBox = (str) => {
+    let textBox = ["7", "8", "41", "51", "54", "45", "88", "89"];
+    return textBox.includes(String(str));
+  };
   return (
     <>
       <div id="passo" className="border border-dark bg-warning text-white">
@@ -31,6 +35,14 @@ function SocialAspect() {
                           <p className="h5">
                             {pergunta.question} - {pergunta.title}
                           </p>
+                        )}
+                        {checkTextBox(pergunta.question) && (
+                          <textarea
+                            class="form-control"
+                            id="exampleFormControlTextarea1"
+                            rows="3"
+                            name={pergunta.question + "." + index}
+                          ></textarea>
                         )}
                       </Col>
                       <Col className="border">
