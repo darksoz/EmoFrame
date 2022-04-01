@@ -1,9 +1,8 @@
 import { React } from "react";
 import { Container } from "react-bootstrap";
 import InputText from "../InputText/InputText";
-import TableDiagnostico from "./TableDiagnostico";
 
-function QuestionsPage(props) {
+function QuestionsSocial(props) {
   const checkTextBox = (str) => {
     let textBox = ["7", "8", "41", "51", "54", "45", "88", "89"];
     return textBox.includes(String(str));
@@ -28,6 +27,7 @@ function QuestionsPage(props) {
                 type="checkbox"
                 value={a}
                 name={props.pergunta.question + "." + (index + 1)}
+                key={index}
               ></input>
               <br></br>
             </>
@@ -40,9 +40,6 @@ function QuestionsPage(props) {
             rows="3"
             name={props.pergunta.question + "." + props.index}
           ></textarea>
-        )}
-        {props.pergunta.question == "53" && (
-          <TableDiagnostico></TableDiagnostico>
         )}
         <p className="h5 mb-3 mt-3 p-1">
           <Container className="ml-5">
@@ -75,4 +72,4 @@ function QuestionsPage(props) {
   );
 }
 
-export default QuestionsPage;
+export default QuestionsSocial;

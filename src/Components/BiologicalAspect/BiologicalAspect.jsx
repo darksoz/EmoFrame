@@ -2,18 +2,9 @@ import { Card, Container } from "react-bootstrap";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { Questions2 } from "../../services/Questions/Page/Page";
-import InputText from "../InputText/InputText";
-import TableDiagnostico from "./TableDiagnostico";
-import { TextareaAutosize } from "@material-ui/core";
 import QuestionsPage from "./QuestionsPage";
 
-
 function BiologicalAspect() {
-  const checkTextBox = (str) => {
-    let textBox = ["7", "8", "41", "51", "54", "45", "88", "89"];
-    return textBox.includes(String(str));
-  };
-  console.log(checkTextBox("10"));
   return (
     <>
       <div id="passo" className="border border-dark bg-success text-white">
@@ -21,7 +12,7 @@ function BiologicalAspect() {
       </div>
       {Questions2.map((question, index) => (
         <>
-          <Container className="p-2">
+          <Container className="p-2" key={index}>
             <Card>
               <Row>
                 <p className="h4"> {question.aspectos}</p> <hr />
@@ -31,11 +22,12 @@ function BiologicalAspect() {
                 <Col md={12}>
                   {question.perguntas.map((pergunta, index) => (
                     <>
-                      <QuestionsPage pergunta={pergunta} index={index}>
-
-                      </QuestionsPage>
+                      <QuestionsPage
+                        pergunta={pergunta}
+                        index={index}
+                        key={index}
+                      ></QuestionsPage>
                     </>
-
                   ))}
                 </Col>
               </Row>

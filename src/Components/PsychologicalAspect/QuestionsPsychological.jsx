@@ -1,9 +1,9 @@
 import { React } from "react";
 import { Container } from "react-bootstrap";
 import InputText from "../InputText/InputText";
-import TableDiagnostico from "./TableDiagnostico";
+import ImagesAspect from "../BiologicalAspect/ImagesAspect";
 
-function QuestionsPage(props) {
+function QuestionsPsychological(props) {
   const checkTextBox = (str) => {
     let textBox = ["7", "8", "41", "51", "54", "45", "88", "89"];
     return textBox.includes(String(str));
@@ -20,9 +20,9 @@ function QuestionsPage(props) {
         ) : (
           props.pergunta.question + "-" + props.pergunta.title
         )}
-        <strong>
-          {props.pergunta.questions?.map((a, index) => (
-            <>
+        {props.pergunta.questions?.map((a, index) => (
+          <>
+            <strong>
               <label> {a}</label>
               <input
                 type="checkbox"
@@ -30,9 +30,18 @@ function QuestionsPage(props) {
                 name={props.pergunta.question + "." + (index + 1)}
               ></input>
               <br></br>
-            </>
-          ))}
-        </strong>
+            </strong>
+          </>
+        ))}
+        {props.pergunta.question == "2" && (
+          <ul style={{ listStyleType: "none" }}>
+            {props.pergunta.text?.map((text, index) => (
+              <li>
+                <strong>{text}</strong>
+              </li>
+            ))}
+          </ul>
+        )}
         {checkTextBox(props.pergunta.question) && (
           <textarea
             class="form-control"
@@ -41,9 +50,16 @@ function QuestionsPage(props) {
             name={props.pergunta.question + "." + props.index}
           ></textarea>
         )}
-        {props.pergunta.question == "53" && (
-          <TableDiagnostico></TableDiagnostico>
-        )}
+        {props.pergunta.images?.length > 0
+          ? props.pergunta.images.map((image, index) => (
+              <ImagesAspect
+                images={image}
+                question={props.pergunta.question}
+                name={index + 1}
+                key={index}
+              ></ImagesAspect>
+            ))
+          : ""}
         <p className="h5 mb-3 mt-3 p-1">
           <Container className="ml-5">
             <div className="form-check" style={{ minHeight: "2.0em" }}>
@@ -75,4 +91,4 @@ function QuestionsPage(props) {
   );
 }
 
-export default QuestionsPage;
+export default QuestionsPsychological;

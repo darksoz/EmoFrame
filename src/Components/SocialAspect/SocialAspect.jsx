@@ -1,8 +1,8 @@
-import { Container } from "react-bootstrap";
+import { Card, Container } from "react-bootstrap";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { Questions3 } from "../../services/Questions/Page/Page";
-import InputText from "../InputText/InputText";
+import QuestionsSocial from "./QuestionsSocial";
 
 function SocialAspect() {
   const checkTextBox = (str) => {
@@ -16,105 +16,66 @@ function SocialAspect() {
       </div>
       {Questions3.map((question, index) => (
         <>
-          <Container className="border border-dark mb-3">
-            <Row>
-              <Col xs={2} className="m-auto" key={index}>
-                <p className="h5"> {question.aspectos}</p>
-              </Col>
-              <Col xs={8}>
-                {question.perguntas.map((pergunta, index) => (
-                  <>
-                    <Row>
-                      <Col className="border">
-                        {pergunta.input ? (
-                          <InputText
-                            text={pergunta.title}
-                            question={pergunta.question}
-                          />
-                        ) : (
-                          <p className="h5">
-                            {pergunta.question} - {pergunta.title}
-                          </p>
-                        )}
-                        {checkTextBox(pergunta.question) && (
-                          <textarea
-                            class="form-control"
-                            id="exampleFormControlTextarea1"
-                            rows="3"
-                            name={pergunta.question + "." + index}
-                          ></textarea>
-                        )}
-                      </Col>
-                      <Col className="border">
-                        <p className="h5">
-                          <div
-                            class="form-check"
-                            style={{ minHeight: "2.0em" }}
-                          >
-                            <input
-                              class="form-check-input"
-                              type="radio"
-                              value={pergunta.yes}
-                              name={pergunta.question}
-                            />
-                            <label
-                              class="form-check-label"
-                              for="flexCheckDefault"
-                            >
-                              {pergunta.yes} = SIM
-                            </label>
-                          </div>
-                          <div class="form-check">
-                            <input
-                              class="form-check-input"
-                              type="radio"
-                              value={pergunta.no}
-                              name={pergunta.question}
-                            />
-                            <label
-                              class="form-check-label"
-                              for="flexCheckChecked"
-                            >
-                              {pergunta.no} = NÃO
-                            </label>
-                          </div>
-                        </p>
-                      </Col>
-                    </Row>
-                  </>
-                ))}
-              </Col>
-              <Col xs={2} className="m-auto">
-                <p className="h5">{question.pontucao}</p>
-
-                <p className="h5"></p>
-
+          <Container className="p-2">
+            <Card>
+              <Row>
+                <p className="h4">{question.aspectos}</p>
+                <hr />
+              </Row>
+              <Row>
+                <Col md={12}>
+                  {question.perguntas.map((pergunta, index) => (
+                    <>
+                      <QuestionsSocial
+                        pergunta={pergunta}
+                        index={index}
+                        key={index}
+                      ></QuestionsSocial>
+                    </>
+                  ))}
+                </Col>
+              </Row>
+              <Row>
+                <hr />
+                <Col md={6} className="m-auto">
+                  <p className="h5">{question.pontucao}</p>
+                </Col>
+                <Col md={6}>
                 <p className="h5">
-                  <div class="form-check" style={{ minHeight: "1.5em" }}>
-                    <input
-                      class="form-check-input"
-                      type="radio"
-                      value="SIM"
-                      name={question.aspectos}
-                    />
-                    <label class="form-check-label" for="flexCheckDefault">
-                      SIM
-                    </label>
-                  </div>
-                  <div class="form-check">
-                    <input
-                      class="form-check-input"
-                      type="radio"
-                      value="NÃO"
-                      name={question.aspectos}
-                    />
-                    <label class="form-check-label" for="flexCheckChecked">
-                      NÃO
-                    </label>
-                  </div>
-                </p>
-              </Col>
-            </Row>
+                    <div className="form-check" style={{ minHeight: "1.5em" }}>
+                      <input
+                        className="form-check-input"
+                        type="radio"
+                        value="SIM"
+                        name={question.aspectos}
+                      />
+                      <label
+                        className="form-check-label"
+                        for="flexCheckDefault"
+                        name="SIM"
+                      >
+                        SIM
+                      </label>
+                    </div>
+                    <div className="form-check">
+                      <input
+                        className="form-check-input"
+                        type="radio"
+                        value="NÃO"
+                        name={question.aspectos}
+                      />
+                      <label
+                        className="form-check-label"
+                        for="flexCheckDefault"
+                        name="NÃO"
+                      >
+                        NÃO
+                      </label>
+                    </div>
+                  </p>
+                </Col>
+              </Row>
+            </Card>
           </Container>
         </>
       ))}

@@ -22,11 +22,7 @@ export const Questions1 = [
         no: 0,
         input: false,
         question: 2,
-        text: `"Renato Moreira"
-              "Rua Bela Vista, 73"
-              "Santarém" e
-              "Pará"
-              `,
+        text: ["Renato Moreira", "Rua Bela Vista, 73", "Santarém", "Pará"],
       },
       {
         title:
