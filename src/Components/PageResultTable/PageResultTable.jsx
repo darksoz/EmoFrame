@@ -1,18 +1,35 @@
 import Table from "react-bootstrap/Table";
-import Container from "react-bootstrap/Container";
-import { Button } from "react-bootstrap";
+import { Card } from "react-bootstrap";
 import "../../Pages/Page/Page.css";
-import { Form } from "react-bootstrap";
 
 function PageResultTable(props) {
   let aspectos = props.aspectos;
-  const sumValue = (a) => {
+  const sumValue = (value) => {
     let sum = 0;
-    a.forEach((element) => {
-      sum += parseInt(element.answer);
-    });
-    return sum;
+    console.log("Valor => ", value);
+    if(value.length > 0){
+      value.forEach((element) => {
+        sum += parseInt(element.answer);
+      });
+      return sum;
+    }
   };
+
+  const GetRisc = value => {
+    
+       // let value = props.Factors[index];
+        if( value <= 39){
+            return "Alto";
+        }
+        else if(value > 39 &&  value <= 69){
+            return "Moderado";
+        }
+        else{
+            return "Baixo";
+        }
+    
+}
+
   return (
     <>
       <Table bordered>
@@ -54,62 +71,33 @@ function PageResultTable(props) {
             <td colSpan={3}>
               CLASSIFICAÇÃO DE RISCO DE VULNERABILIDADE BIOPSICOSSOCIAL
               <br/>
-              <Button
-              style={{
-                backgroundColor: "#00bfa5",
-                borderColor: "#00bfa5",
-                margin: "20px",
-                padding: "10px",
-              }}
-            >
-              <h1>Sus Score = {sumValue(props.questions)}</h1>
-            </Button>
+         
             </td>
             
           </tr>
           <tr className="bg-lgrey">
             <td>
-              <Form>
-                {["checkbox"].map((type) => (
-                  <div key={`default-${type}`} className="mb-3">
-                    <Form.Check
-                      type={type}
-                      id={`default-${type}`}
-                      label="&ge; 70 PONTOS = RISCO BAIXO"
-                    />
-                  </div>
-                ))}
-              </Form>
+              <div className="mb-3">
+                &ge; 70 PONTOS = RISCO BAIXO
+              </div>
             </td>
             <td>
-              <Form>
-                {["checkbox"].map((type) => (
-                  <div key={`default-${type}`} className="mb-3">
-                    <Form.Check
-                      type={type}
-                      id={`default-${type}`}
-                      label="69 A 40 PONTOS = RISCO MODERADO"
-                    />
-                  </div>
-                ))}
-              </Form>
+              <div className="mb-3">
+                69 A 40 PONTOS = RISCO MODERADO
+              </div>
             </td>
             <td>
-              <Form>
-                {["checkbox"].map((type) => (
-                  <div key={`default-${type}`} className="mb-3">
-                    <Form.Check
-                      type={type}
-                      id={`default-${type}`}
-                      label="&le;  39 PONTOS = RISCO ALTO"
-                    />
-                  </div>
-                ))}
-              </Form>
+              <div className="mb-3">
+                &le;  39 PONTOS = RISCO ALTO
+              </div>
             </td>
           </tr>
         </tbody>
       </Table>
+
+      <Card className='bg-lgrey my-5' >
+        <h1 className="text-white">Risco de Vulnerabilidade Biopsicossocial: {GetRisc(sumValue(props.questions))}</h1> 
+      </Card>
     </>
   );
 }

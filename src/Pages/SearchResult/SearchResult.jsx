@@ -135,7 +135,7 @@ function SearchResult() {
                                 <Row style={{ marginLeft: "13px", marginBottom: "10px" }}    >
                                     <label><Checkbox name="panas" value="panas" /> {"Panas"}</label>
                                 </Row>
-                                <Row style={{ marginLeft: "13px", marginBottom: "10px" }}    >
+                                <Row style={{ marginLeft: "6px", marginBottom: "10px" }}    >
                                     <label><Checkbox name="page" value="page" /> {"Page"}</label>
                                 </Row>
                             </div>

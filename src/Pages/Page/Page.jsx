@@ -103,19 +103,19 @@ function Page() {
             <Step label="Dados de Identificação" onChange={handleChangeForm}>
               <RegisterPage />
             </Step>
-            <Step label="Passo 1" onChange={handleChange}>
+            <Step label="Relacionados a Aspectos Psicológicos" onChange={handleChange}>
               <PsychologicalAspect />
             </Step>
 
-            <Step label="Passo 2" onChange={handleChange}>
+            <Step label="Relacionados a Aspectos Biológicos" onChange={handleChange}>
               <BiologicalAspect />
             </Step>
 
-            <Step label="Passo 3" onChange={handleChange}>
+            <Step label="Relacionados a Aspectos Sociais" onChange={handleChange}>
               <SocialAspect />
             </Step>
 
-            <Step label="Passo 4" onChange={handleChange}>
+            <Step label="Domínio Multidimencional" onChange={handleChange}>
               <MultidimensionalAspect />
             </Step>
           </MultiStepForm>

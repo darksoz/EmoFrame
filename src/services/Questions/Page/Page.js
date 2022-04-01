@@ -859,7 +859,7 @@ export const Questions4 = [
         question: 87,
         yes: 0,
         no: 1,
-        input: false,
+        input: true,
         point: 0,
         tooltip:
           "[Se não, pontue também a resposta “não” na próxima questão e vá para a questão 90] [Se não, pule as próximas duas questões]",
