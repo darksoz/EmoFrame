@@ -4,6 +4,7 @@ import Col from "react-bootstrap/Col";
 import { Questions1 } from "../../services/Questions/Page/Page";
 import ImagesAspect from "../BiologicalAspect/ImagesAspect";
 import InputText from "../InputText/InputText";
+import './PsychologicalAspect.css';
 
 function PsychologicalAspect() {
   const checkTextBox = (str) => {
@@ -13,6 +14,7 @@ function PsychologicalAspect() {
 
   return (
     <>
+    <Container>
       <div id="passo" className="border border-dark bg-primary text-white">
         <h3>Relacionados a Aspectos Psicológicos</h3>
       </div>
@@ -20,10 +22,14 @@ function PsychologicalAspect() {
       {Questions1.map((question, index) => (
         <>
           <Container className="border border-dark mb-3">
+
             <Row>
+
               <Col xs={2} className="m-auto" key={index}>
                 <p className="h5"> {question.aspectos}</p>
               </Col>
+
+
               <Col xs={8}>
                 {question.perguntas.map((pergunta, index) => (
                   <>
@@ -63,18 +69,18 @@ function PsychologicalAspect() {
                             : ""}
                         </div>
                       </Col>
+
+
                       <Col className="border">
                         <p className="h5">
                           <div
                             class="form-check"
-                            style={{ minHeight: "2.0em" }}
-                          >
+                            style={{ minHeight: "2.0em" }}>
                             <input
                               class="form-check-input"
                               type="radio"
                               value={pergunta.yes}
-                              name={pergunta.question}
-                            />
+                              name={pergunta.question}/>
                             <label
                               class="form-check-label"
                               for="flexCheckDefault"
@@ -139,6 +145,9 @@ function PsychologicalAspect() {
                     </label>
                   </div>
                 </p>
+
+
+                
               </Col>
             </Row>
           </Container>
@@ -156,6 +165,7 @@ function PsychologicalAspect() {
           ></textarea>
         </div>
       </Row>
+      </Container>
     </>
   );
 }

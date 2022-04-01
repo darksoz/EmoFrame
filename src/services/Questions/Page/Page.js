@@ -2,6 +2,7 @@
 export const Questions1 = [
   {
     aspectos: "DÉFICIT COGNITIVO",
+
     pontucao: "Pontuação (máxima=6): Necessita de invetigação",
     perguntas: [
       {
@@ -154,7 +155,7 @@ export const Questions1 = [
 export const Questions2 = [
   {
     aspectos: "DÉFICIT SENSORIAL",
-    pontucao: "Pontuação (máxima=5): Necessita de invetigação",
+    pontucao: "Pontuação Máxima = 5. Necessita de invetigação?",
     perguntas: [
       {
         question: 15,
@@ -327,7 +328,7 @@ export const Questions2 = [
     ],
   },
   {
-    aspectos: "DOENÇAS CARDIOVASCULARES (DCV)",
+    aspectos: "DOENÇAS CARDIOVASCULA-RES (DCV)",
     pontucao: "Pontuação (máxima=9): Necessita de invetigação",
     perguntas: [
       {
