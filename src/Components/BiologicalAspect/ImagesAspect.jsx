@@ -5,9 +5,9 @@ function ImagesAspect(props) {
     <>
       <ul>
         {" "}
-        <img src={`${process.env.PUBLIC_URL}/` + props.images} alt="" />
+        <img src={`${process.env.PUBLIC_URL}/` + props.images} alt="" className="fig-page"/>
         <textarea
-          class="form-control"
+          class="form-control mt-5"
           id="exampleFormControlTextarea1"
           name={props.question + "." + props.name}
           rows="1"

@@ -33,14 +33,17 @@ function MultidimensionalAspect() {
                 </Col>
               </Row>
 
-              <Row>
+              <Container className="w-75">
+
+
+              <Row className="border bg-purple text-white">
                 <hr />
                 <Col md={6} className="m-auto">
                   <p className="h5">{question.pontucao}</p>
                 </Col>
 
                 <Col md={6}>
-                  <p className="h5">
+                  <p className="h5 mb-4">
                     <div className="form-check" style={{ minHeight: "1.5em" }}>
                       <input
                         className="form-check-input"
@@ -49,7 +52,7 @@ function MultidimensionalAspect() {
                         name={question.aspectos}
                       />
                       <label
-                        className="form-check-label"
+                        className="form-check-label label-page-i"
                         for="flexCheckDefault"
                         name="SIM"
                       >
@@ -58,13 +61,13 @@ function MultidimensionalAspect() {
                     </div>
                     <div className="form-check">
                       <input
-                        className="form-check-input"
+                        className="form-check-input mt-3"
                         type="radio"
                         value="NÃO"
                         name={question.aspectos}
                       />
                       <label
-                        className="form-check-label"
+                        className="form-check-label label-page-i l-no"
                         for="flexCheckDefault"
                         name="NÃO"
                       >
@@ -74,22 +77,25 @@ function MultidimensionalAspect() {
                   </p>
                 </Col>
               </Row>
+
+              </Container>
+              <Row>
+                <div class="form-group justify-content-center mt-5">
+                  <textarea
+                    style={{ border: "1px solid black" }}
+                    name="anotacao_aspectos_multidimensionais"
+                    class="form-control"
+                    placeholder="Anotações:"
+                    id="exampleFormControlTextarea1"
+                    rows="3"
+                  ></textarea>
+                </div>
+              </Row>
             </Card>
           </Container>
         </>
       ))}
-      <Row>
-        <div class="form-group justify-content-center">
-          <textarea
-            style={{ border: "1px solid black" }}
-            name="anotacao_aspectos_multidimensionais"
-            class="form-control"
-            placeholder="Anotações:"
-            id="exampleFormControlTextarea1"
-            rows="3"
-          ></textarea>
-        </div>
-      </Row>
+
     </>
   );
 }

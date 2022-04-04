@@ -11,7 +11,7 @@ function SocialAspect() {
   };
   return (
     <>
-      <div id="passo" className="border border-dark bg-warning text-white">
+      <div id="passo" className="border border-dark bg-lyellow text-white fw-lighter">
         <h3>Relacionados a Aspectos Sociais</h3>
       </div>
       {Questions3.map((question, index) => (
@@ -35,13 +35,16 @@ function SocialAspect() {
                   ))}
                 </Col>
               </Row>
-              <Row>
+
+              <Container className="w-75">
+
+              <Row className="border bg-lyellow text-white fw-lighter">
                 <hr />
                 <Col md={6} className="m-auto">
                   <p className="h5">{question.pontucao}</p>
                 </Col>
                 <Col md={6}>
-                <p className="h5">
+                  <p className="h5 mb-4">
                     <div className="form-check" style={{ minHeight: "1.5em" }}>
                       <input
                         className="form-check-input"
@@ -50,7 +53,7 @@ function SocialAspect() {
                         name={question.aspectos}
                       />
                       <label
-                        className="form-check-label"
+                        className="form-check-label label-page-i"
                         for="flexCheckDefault"
                         name="SIM"
                       >
@@ -59,13 +62,13 @@ function SocialAspect() {
                     </div>
                     <div className="form-check">
                       <input
-                        className="form-check-input"
+                        className="form-check-input mt-3"
                         type="radio"
                         value="NÃO"
                         name={question.aspectos}
                       />
                       <label
-                        className="form-check-label"
+                        className="form-check-label label-page-i l-no"
                         for="flexCheckDefault"
                         name="NÃO"
                       >
@@ -75,22 +78,25 @@ function SocialAspect() {
                   </p>
                 </Col>
               </Row>
+
+              </Container>
+              <Row>
+                <div class="form-group justify-content-center mt-5">
+                  <textarea
+                    style={{ border: "1px solid black" }}
+                    name="anotacao_aspectos_sociais"
+                    class="form-control"
+                    placeholder="Anotações:"
+                    id="exampleFormControlTextarea1"
+                    rows="3"
+                  ></textarea>
+                </div>
+              </Row>
             </Card>
           </Container>
         </>
       ))}
-      <Row>
-        <div class="form-group justify-content-center">
-          <textarea
-            style={{ border: "1px solid black" }}
-            name="anotacao_aspectos_sociais"
-            class="form-control"
-            placeholder="Anotações:"
-            id="exampleFormControlTextarea1"
-            rows="3"
-          ></textarea>
-        </div>
-      </Row>
+
     </>
   );
 }
