@@ -7,7 +7,7 @@ import QuestionsPage from "./QuestionsPage";
 function BiologicalAspect() {
   return (
     <>
-      <div id="passo" className="border border-dark bg-success text-white">
+      <div id="passo" className="border border-dark bg-lgreen text-white">
         <h3>Relacionados a Aspectos Biológicos</h3>
       </div>
       {Questions2.map((question, index) => (
@@ -32,14 +32,16 @@ function BiologicalAspect() {
                 </Col>
               </Row>
 
-              <Row>
+              <Container className="w-75">
+
+              <Row className="border bg-lgreen text-white">
                 <hr />
                 <Col md={6} className="m-auto">
                   <p className="h5">{question.pontucao}</p>
                 </Col>
 
                 <Col md={6}>
-                  <p className="h5">
+                  <p className="h5 mb-4">
                     <div className="form-check" style={{ minHeight: "1.5em" }}>
                       <input
                         className="form-check-input"
@@ -48,7 +50,7 @@ function BiologicalAspect() {
                         name={question.aspectos}
                       />
                       <label
-                        className="form-check-label"
+                        className="form-check-label label-page-i"
                         for="flexCheckDefault"
                         name="SIM"
                       >
@@ -57,13 +59,13 @@ function BiologicalAspect() {
                     </div>
                     <div className="form-check">
                       <input
-                        className="form-check-input"
+                        className="form-check-input mt-3"
                         type="radio"
                         value="NÃO"
                         name={question.aspectos}
                       />
                       <label
-                        className="form-check-label"
+                        className="form-check-label label-page-i l-no"
                         for="flexCheckDefault"
                         name="NÃO"
                       >
@@ -73,23 +75,26 @@ function BiologicalAspect() {
                   </p>
                 </Col>
               </Row>
+
+              </Container>
+              <Row>
+                <div className="form-group justify-content-center mt-5">
+                  <textarea
+                    style={{ border: "1px solid black" }}
+                    name="anotacao_aspectos_biologicos"
+                    className="form-control"
+                    placeholder="Anotações:"
+                    id="exampleFormControlTextarea1"
+                    rows="3"
+                  ></textarea>
+                </div>
+              </Row>
             </Card>
           </Container>
         </>
       ))}
 
-      <Row>
-        <div className="form-group justify-content-center">
-          <textarea
-            style={{ border: "1px solid black" }}
-            name="anotacao_aspectos_biologicos"
-            className="form-control"
-            placeholder="Anotações:"
-            id="exampleFormControlTextarea1"
-            rows="3"
-          ></textarea>
-        </div>
-      </Row>
+
     </>
   );
 }

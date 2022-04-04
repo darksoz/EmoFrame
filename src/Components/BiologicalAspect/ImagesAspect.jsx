@@ -5,10 +5,14 @@ function ImagesAspect(props) {
   return (
     <>
       <div style={{ alignItens: "flex-start" }}>
-        <img src={`${process.env.PUBLIC_URL}/` + props.images} alt="" />
-        {props.question == 3 ? (
+        <img
+          src={`${process.env.PUBLIC_URL}/` + props.images}
+          alt={props.images}
+          className="fig-page"
+        />
+        {props.question === 3 ? (
           <textarea
-            class="form-control"
+            class="form-control mt-5"
             id="exampleFormControlTextarea1"
             name={props.question + "." + props.name}
             rows="1"
@@ -16,7 +20,7 @@ function ImagesAspect(props) {
         ) : (
           <Checkbox
             name={props.question + "." + props.name}
-            value="1"
+            value={1}
           ></Checkbox>
         )}
       </div>
