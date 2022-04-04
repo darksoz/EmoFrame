@@ -4,15 +4,15 @@ import { React } from "react";
 function ImagesAspect(props) {
   return (
     <>
-      <div style={{ alignItens: "flex-start" }}>
-        <img
+      <div className="mt-5" style={{ alignItens: "flex-start" }}>
+        <img 
           src={`${process.env.PUBLIC_URL}/` + props.images}
           alt={props.images}
           className="fig-page"
         />
         {props.question === 3 ? (
           <textarea
-            class="form-control mt-5"
+            class="form-control"
             id="exampleFormControlTextarea1"
             name={props.question + "." + props.name}
             rows="1"
