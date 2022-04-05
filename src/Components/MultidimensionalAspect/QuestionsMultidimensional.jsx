@@ -33,13 +33,13 @@ function QuestionsMultidimensional(props) {
           ))}
         </strong>
         {checkTextBox(props.pergunta.question) && (
-        <textarea
-          class="form-control"
-          id="exampleFormControlTextarea1"
-          rows="3"
-          name={props.pergunta.question + "." + props.index}
-        ></textarea>
-      )}
+          <textarea
+            class="form-control"
+            id="exampleFormControlTextarea1"
+            rows="3"
+            name={props.pergunta.question + "." + "7"}
+          ></textarea>
+        )}
         <p className="h5 mb-3 mt-3 p-1">
           <Container className="ml-5">
             <div className="form-check" style={{ minHeight: "2.0em" }}>
@@ -67,8 +67,6 @@ function QuestionsMultidimensional(props) {
           </Container>
         </p>
       </p>
-    
-      
     </>
   );
 }

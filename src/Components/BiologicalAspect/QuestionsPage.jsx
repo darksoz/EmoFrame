@@ -38,7 +38,7 @@ function QuestionsPage(props) {
             class="form-control"
             id="exampleFormControlTextarea1"
             rows="3"
-            name={props.pergunta.question + "." + props.index}
+            name={props.pergunta.question + "." + "7"}
           ></textarea>
         )}
         {props.pergunta.question == "53" && (

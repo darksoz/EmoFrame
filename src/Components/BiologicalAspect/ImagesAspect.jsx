@@ -4,7 +4,7 @@ import { React } from "react";
 function ImagesAspect(props) {
   return (
     <>
-      <div style={{ alignItens: "flex-start" }}>
+      <div>
         <img
           src={`${process.env.PUBLIC_URL}/` + props.images}
           alt={props.images}

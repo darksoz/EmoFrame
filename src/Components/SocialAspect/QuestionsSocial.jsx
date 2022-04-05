@@ -38,7 +38,7 @@ function QuestionsSocial(props) {
             class="form-control"
             id="exampleFormControlTextarea1"
             rows="3"
-            name={props.pergunta.question + "." + props.index}
+            name={props.pergunta.question + "." + "7"}
           ></textarea>
         )}
         <p className="h5 mb-3 mt-3 p-1">
