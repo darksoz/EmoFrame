@@ -160,7 +160,7 @@ function Page() {
                 Anterior
               </button>
             </Link>
-            {totalQuestions >= 101 && (
+            {totalQuestions >= 102 && (
               <button
                 class="btn whitebutton btn-lg"
                 onClick={() => handleFormData()}
