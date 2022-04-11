@@ -19,6 +19,7 @@ import SearchResult from './Pages/SearchResult/SearchResult';
 import ZanonResult from './Pages/ZanonResult/ZanonResult';
 import Page from './Pages/Page/Page';
 import ContactUs from './Pages/ContactUs/ContactUs';
+import PageB from './Pages/PageB/PageB';
 
 
 function PrivateRoute({ component: Component, ...rest }) {
