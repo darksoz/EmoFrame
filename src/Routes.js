@@ -19,6 +19,7 @@ import Page from './Pages/Page/Page';
 import ContactUs from './Pages/ContactUs/ContactUs';
 import LandingPage from './Pages/LandingPage/LandingPage';
 import RecSys from './Pages/RecSys/RecSys';
+import PageResult from './Pages/PageResult/PageResult';
 
 
 function PrivateRoute({ component: Component, ...rest }) {
@@ -67,6 +68,8 @@ function Routes() {
                 <LimitedAccessRoute path='/samResult/:id' exact component={SamResult}/>
                 <LimitedAccessRoute path='/leapResult' exact component={LeapResult}/>
                 <LimitedAccessRoute path='/leapResult/:id' exact component={LeapResult}/>
+                <LimitedAccessRoute path='/pageResult' exact component={PageResult}/>
+                <LimitedAccessRoute path='/pageResult/:id' exact component={PageResult}/>
                 <LimitedAccessRoute path='/panasResult' exact component={PanasResult}/>
                 <LimitedAccessRoute path='/panasResult/:id' exact component={PanasResult}/>
                 <LimitedAccessRoute path='/susResult/:id' exact component={SusResult}/>
