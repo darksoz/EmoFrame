@@ -3,6 +3,7 @@ import {Button, Container, Modal} from 'react-bootstrap'
 import { Breadcrumb } from "react-bootstrap";
 import { useHistory, useParams } from 'react-router-dom';
 import Footer from '../../Components/Footer/Footer';
+import Header from '../../Components/Header/Header';
 import ZanonBarChart from '../../Components/ZanonBarChart/ZanonBarChart';
 import { GetResultTestById } from '../../services/api';
 import { formateDateTime } from '../../services/utils';
@@ -72,6 +73,7 @@ function ZanonResult (  ) {
 
     return (
         <>
+        <Header/>
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
                     <Modal.Title>{title}</Modal.Title>

@@ -22,8 +22,7 @@ export default function Header() {
     return (
 
         <>
-            {
-                (window.location.pathname !== "/" && window.location.pathname !== "/contactus" && window.location.pathname !== "/login" && window.location.pathname !== "/recommendation") &&
+            
                 <>
                     <Navbar style={{ backgroundColor: "#00bfa5" }}>
                         <Container>
@@ -55,47 +54,10 @@ export default function Header() {
                         </Container>
                     </Navbar>
                 </>
-            }
+            
 
-{
-                (window.location.pathname === "/recommendation" || window.location.pathname === "/contactus" || window.location.pathname === "/login") &&
-                <>
-                    <Navbar style={{ backgroundColor: "#00bfa5" }}>
-                        <Container>
-                            <Navbar.Brand href="/">
-                                <img
-                                    src={`${process.env.PUBLIC_URL}/emoframe.png`}
-                                    width="60"
-                                    className="d-inline-block align-top"
-                                    alt=""
-                                />
-                            </Navbar.Brand>
-                            <Navbar.Toggle aria-controls="navbar-dark-example" />
-                            {
-                                (getToken() !== null) &&
-                                <div>
-                                    <Navbar.Collapse className="justify-content-end"><span class="far fa-user-circle fa-lg"></span>
-                                        <Nav>
-                                            <NavDropdown
-                                                id="nav-dropdown-dark-example"
-                                                title={LoginUserName()}
-                                                menuVariant="light"
-                                            >
-                                                <NavDropdown.Item onClick={handleLogout}>Sair</NavDropdown.Item>
-                                            </NavDropdown>
-                                        </Nav>
-                                    </Navbar.Collapse>
-                                </div>
-                            }
-                        </Container>
-                    </Navbar>
-                </>
-            }
-              
-            {
-                (window.location.pathname === "/") && <>
-                </>
-            }
+
+           
         </>
 
     )

@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react';
 import { useParams, useHistory } from 'react-router-dom';
 import { formateDateTime } from '../../services/utils';
 import Footer from '../../Components/Footer/Footer';
+import Header from '../../Components/Header/Header';
 
 
 let pf1_l = [3, 10, 12, 13, 21, 23, 24, 25, 26, 29, 31, 35, 39, 40];
@@ -126,6 +127,7 @@ function LeapResult() {
 
   return (
     <>
+    <Header/>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>{title}</Modal.Title>

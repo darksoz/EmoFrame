@@ -1,15 +1,16 @@
 import { Card, Col, Container, Row } from 'react-bootstrap';
 import './LandingPage.css';
 import React from 'react';
-
 import Footer from '../../Components/Footer/Footer';
 import { RediretToPage } from '../../services/utils';
 import Link from 'react-scroll/modules/components/Link';
+import { isAuthenticated } from '../../services/auth';
+import { Redirect } from 'react-router-dom';
 
 function LandingPage() {
 
   
-    return (
+    return isAuthenticated() ? <Redirect to='/dashboard'/> :(
         <>
             <section class="masthead d-flex align-items-center" id="page-top">
 

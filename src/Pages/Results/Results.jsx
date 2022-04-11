@@ -5,6 +5,7 @@ import Tabs from '../../Components/Tabs/Tabs';
 import { Breadcrumb } from "react-bootstrap";
 import { GetTestsData } from '../../services/api';
 import FilterTable from '../../Components/FilterTable/FilterTable';
+import Header from '../../Components/Header/Header';
 
 function Results() {
     let [filters, setFilters] = useState({
@@ -60,6 +61,9 @@ function Results() {
     }
 
     return (
+        
+        <>
+        <Header/>
         <div>
             <Breadcrumb>
                 <Breadcrumb.Item href='./dashboard'>Página Inicial</Breadcrumb.Item>
@@ -100,6 +104,7 @@ function Results() {
                 </Row>
             </Container>
         </div>
+        </>
     );
 }
 export default Results;

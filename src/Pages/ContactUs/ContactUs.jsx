@@ -5,11 +5,14 @@ import Card from 'react-bootstrap/Card';
 import Form from 'react-bootstrap/Form';
 import Footer from '../../Components/Footer/Footer';
 import { Breadcrumb } from 'react-bootstrap';
+import Header from '../../Components/Header/Header';
 
 
 function ContactUs() {
     return (
-        <>  <Breadcrumb>
+        <> 
+        <Header/> 
+        <Breadcrumb>
             <Breadcrumb.Item href='/'>Ínicio</Breadcrumb.Item>
             <Breadcrumb.Item active>Recomendação de Instrumento</Breadcrumb.Item>
         </Breadcrumb>

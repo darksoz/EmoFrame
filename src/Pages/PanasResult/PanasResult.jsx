@@ -6,6 +6,7 @@ import PanasBarChart from '../../Components/PanasBarChart/PanasBarChart';
 import { GetResultTestById } from '../../services/api';
 import { formateDateTime } from '../../services/utils';
 import Footer from '../../Components/Footer/Footer';
+import Header from '../../Components/Header/Header';
 
 const positiveScale = [1, 3, 5, 8, 10, 11, 13, 15, 17, 19];
 const negativeScale = [2, 4, 6, 7, 9, 12, 14, 16, 18, 20];
@@ -71,6 +72,7 @@ function PanasResult () {
 
     return (
         <>
+        <Header/>
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
                     <Modal.Title>{title}</Modal.Title>

@@ -14,6 +14,7 @@ import sortArray from 'sort-array';
 import { SaveSusTest } from '../../services/api';
 import { Breadcrumb } from "react-bootstrap";
 import Footer from '../../Components/Footer/Footer';
+import Header from '../../Components/Header/Header';
 
 
 let firstQuestions = arrayShuffle(Questions1);
@@ -69,6 +70,7 @@ function Sus() {
 
     return (
         <>
+        <Header/>
             <Breadcrumb>
                 <Breadcrumb.Item href='./dashboard'>Página Inicial</Breadcrumb.Item>
                 <Breadcrumb.Item active>Sus</Breadcrumb.Item>

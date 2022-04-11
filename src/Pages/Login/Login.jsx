@@ -7,6 +7,7 @@ import { RediretToPage } from '../../services/utils';
 import { Button, Container, Modal } from 'react-bootstrap';
 import Footer from '../../Components/Footer/Footer';
 import { Breadcrumb } from "react-bootstrap";
+import Header from '../../Components/Header/Header';
 
 
 function Login() {
@@ -55,6 +56,7 @@ function Login() {
     return isAuthenticated() ? <Redirect to='/dashboard' /> :
         (
             <>
+            <Header/>
                 <Breadcrumb>
                     <Breadcrumb.Item href='/'>Ínicio</Breadcrumb.Item>
                     <Breadcrumb.Item active>Login</Breadcrumb.Item>
