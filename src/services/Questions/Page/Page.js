@@ -91,7 +91,7 @@ export const Questions1 = [
     ],
   },
   {
-    aspectos: "DEPRESÃO",
+    aspectos: "DEPRESSÃO",
     pontucao: "Pontuação (máxima=6): Necessita de invetigação",
     perguntas: [
       {
