@@ -40,7 +40,7 @@ function Page() {
     let data = [];
     if (questions) {
       data = questions.filter((item) => {
-        return parseInt(item.id) == item.id;
+        return parseInt(item.id) === item.id;
       });
     }
     return data.sort((a, b) => a.id - b.id) || null;
@@ -48,8 +48,6 @@ function Page() {
   useEffect(() => {
     let data = filterQuestionsByNumberInt(answers);
     setTotalQuestions(data.length);
-    // console.log("aqui", data.length);
-    // console.log("aqui total: ", totalQuestions);
   }, [answers]);
 
   const handleChangeForm = (event) => {
@@ -86,9 +84,6 @@ function Page() {
       setBody("Atividade não foi concluída");
       setSuccess(false);
     }
-  };
-  const respostas = () => {
-    return answers;
   };
 
   return (

@@ -9,10 +9,11 @@ import { Breadcrumb } from "react-bootstrap";
 import { useEffect, useState } from "react";
 import { GetResultTestById } from "../../services/api";
 import { useParams, useHistory } from "react-router-dom";
-import sortArray from "sort-array";
 import Header from "../../Components/Header/Header";
 import Footer from "../../Components/Footer/Footer";
 import { formateDateTime } from "../../services/utils";
+import { Modal } from "bootstrap";
+import { Button } from "bootstrap";
 
 function PageResult() {
   const [questions, setQuestions] = useState([]);
@@ -25,6 +26,7 @@ function PageResult() {
 
   const { id } = useParams();
   let history = useHistory();
+
 
   useEffect(() => {
     const getResult = async () => {
@@ -62,26 +64,17 @@ function PageResult() {
     let data = [];
     if (questions) {
       data = questions.filter((item) => {
-        return parseInt(item.id) == item.id;
+        return parseInt(item.id) === item.id;
       });
     }
     return data.sort((a, b) => a.id - b.id);
   };
 
-  const filterQuestionsByNumber = (questions) => {
-    let data = [];
-    if (questions) {
-      data = questions.filter((item) => {
-        return parseFloat(item.id) == item.id;
-      });
-    }
-    return data.map((item) => {
-      return {
-        id: parseInt(item.id),
-        ...item,
-      };
-    });
-  };
+  const handleClose = path => {
+    setShow(false);
+    history.push(path);
+}
+
   const filteredQuestions = filterQuestionsByNumberInt(questions);
   const dominiosList = [
     { aspectos: "Aspectos Psicologicos", min: 0, max: 14 },
@@ -111,22 +104,36 @@ function PageResult() {
 
   return (
     <>
-    <Header/>
+      <Header />
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>{title}</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>{body}</Modal.Body>
+        <Modal.Footer>
+          <Button variant="primary" onClick={() => handleClose("/searchResults")}>
+            Buscar resultado
+          </Button>
+          <Button variant="secondary" onClick={() => handleClose("/")}>
+            Página Inicial
+          </Button>
+        </Modal.Footer>
+      </Modal>
       <Breadcrumb>
         <Breadcrumb.Item href="/dashboard">Página Inicial</Breadcrumb.Item>
         <Breadcrumb.Item href="/searchresults">Resultados</Breadcrumb.Item>
         <Breadcrumb.Item active>Resultado PAGe</Breadcrumb.Item>
       </Breadcrumb>
       <Container>
-            {
-                name && datetime && 
-                <>
-                    <h1>Nome: {name}</h1>
-                    <h1>Data e Hora: {formateDateTime(datetime)}</h1>
-                </>
-            }
+        {
+          name && datetime &&
+          <>
+            <h1>Nome: {name}</h1>
+            <h1>Data e Hora: {formateDateTime(datetime)}</h1>
+          </>
+        }
 
-        <PageResultTable aspectos={aspectos} questions={filteredQuestions}/>
+        <PageResultTable aspectos={aspectos} questions={filteredQuestions} />
 
         <DemandsMap questions={filteredQuestions} />
 
@@ -138,7 +145,7 @@ function PageResult() {
 
         <ActionsControl />
       </Container>
-      <Footer/>
+      <Footer />
     </>
   );
 }

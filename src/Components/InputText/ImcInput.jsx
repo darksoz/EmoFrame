@@ -14,10 +14,10 @@ function ImcInput(props) {
 
   const handleBlur = (e) => {
     const { name, value } = e.target;
-    if (name == "32.1") {
+    if (name === "32.1") {
       setPesoValue(parseFloat(value));
     }
-    if (name == "32.2") {
+    if (name === "32.2") {
       setAlturaValue(parseFloat(value));
     }
   };
@@ -27,14 +27,6 @@ function ImcInput(props) {
   const calcularIMC = (kilos, altura) => {
     altura = altura / 100;
     return kilos / (altura * altura);
-  };
-
-  const calcImc = (peso_, altura_) => {
-    let altura = altura_;
-    let peso = peso_;
-    const imc = (peso / (altura * altura)).toFixed(2);
-    setImc(imc);
-    return imc;
   };
   return (
     <>

@@ -5,10 +5,7 @@ import { Questions3 } from "../../services/Questions/Page/Page";
 import QuestionsSocial from "./QuestionsSocial";
 
 function SocialAspect() {
-  const checkTextBox = (str) => {
-    let textBox = ["7", "8", "41", "51", "54", "45", "88", "89"];
-    return textBox.includes(String(str));
-  };
+  
   return (
     <>
       <div id="passo" className="border border-dark bg-lyellow text-white fw-lighter">

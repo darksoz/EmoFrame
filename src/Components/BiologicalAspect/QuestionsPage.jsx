@@ -38,10 +38,10 @@ function QuestionsPage(props) {
             class="form-control"
             id="exampleFormControlTextarea1"
             rows="3"
-            name={props.pergunta.question + "." + "7"}
+            name={`${props.pergunta.question}.7`}
           ></textarea>
         )}
-        {props.pergunta.question == "53" && (
+        {props.pergunta.question === "53" && (
           <TableDiagnostico></TableDiagnostico>
         )}
         <p className="h5 mb-3 mt-3 p-1">

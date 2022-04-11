@@ -33,7 +33,7 @@ function QuestionsPsychological(props) {
             </strong>
           </>
         ))}
-        {props.pergunta.question == "2" && (
+        {props.pergunta.question === "2" && (
           <ul style={{ listStyleType: "none" }}>
             {props.pergunta.text?.map((text, index) => (
               <li>
@@ -47,7 +47,7 @@ function QuestionsPsychological(props) {
             class="form-control"
             id="exampleFormControlTextarea1"
             rows="3"
-            name={props.pergunta.question + "." + "7"}
+            name={`${props.pergunta.question}.7`}
           ></textarea>
         )}
         {props.pergunta.images?.length > 0
