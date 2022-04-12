@@ -1,4 +1,4 @@
-import { Container } from "react-bootstrap";
+import { Container, Modal, Button } from "react-bootstrap";
 import PageResultTable from "../../Components/PageResultTable/PageResultTable";
 import GerontologistAssessment from "../../Components/GerontologistAssessment/GerontologistAssessment";
 import ActionPlanning from "../../Components/ActionPlanning/ActionPlanning";
@@ -12,8 +12,6 @@ import { useParams, useHistory } from "react-router-dom";
 import Header from "../../Components/Header/Header";
 import Footer from "../../Components/Footer/Footer";
 import { formateDateTime } from "../../services/utils";
-import { Modal } from "bootstrap";
-import { Button } from "bootstrap";
 
 function PageResult() {
   const [questions, setQuestions] = useState([]);
@@ -105,7 +103,20 @@ function PageResult() {
   return (
     <>
       <Header />
-      
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+            <Modal.Title>{title}</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>{body}</Modal.Body>
+        <Modal.Footer>
+            <Button variant="primary" onClick={()=>handleClose("/searchResults")}>
+                Buscar resultado
+            </Button>
+            <Button variant="secondary" onClick={()=>handleClose("/")}>
+                Página Inicial
+            </Button>
+        </Modal.Footer>
+        </Modal>
       <Breadcrumb>
         <Breadcrumb.Item href="/dashboard">Página Inicial</Breadcrumb.Item>
         <Breadcrumb.Item href="/searchresults">Resultados</Breadcrumb.Item>
