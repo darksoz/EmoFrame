@@ -12,8 +12,6 @@ import sortArray from "sort-array";
 import { SavePageTest } from "../../services/api";
 import RegisterPage from "../../Components/RegisterPage/RegisterPage";
 import ModalTest from "../../Components/Modal/ModalTest";
-import Header from "../../Components/Header/Header";
-import Footer from "../../Components/Footer/Footer";
 
 function Page() {
   const [active, setActive] = React.useState(1);
@@ -85,10 +83,10 @@ function Page() {
       setSuccess(false);
     }
   };
+  
 
   return (
     <>
-    <Header/>
       <Breadcrumb>
         <Breadcrumb.Item href="./dashboard">Página Inicial</Breadcrumb.Item>
         <Breadcrumb.Item active>PAGE</Breadcrumb.Item>
@@ -130,7 +128,7 @@ function Page() {
         )}
         {active > 1 && active !== 5 && (
           <div>
-            <Link to="sample" style={{marginRight:"20px"}}>
+            <Link to="sample">
               <button
                 class="btn whitebutton btn-lg"
                 onClick={() => setActive(active - 1)}
@@ -160,7 +158,6 @@ function Page() {
             </Link>
             {totalQuestions >= 102 && (
               <button
-              style={{marginLeft: "20px"}}
                 class="btn whitebutton btn-lg"
                 onClick={() => handleFormData()}
               >
@@ -170,7 +167,6 @@ function Page() {
           </div>
         )}
       </Container>
-      <Footer/>
     </>
   );
 }

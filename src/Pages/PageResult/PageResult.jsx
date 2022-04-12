@@ -105,20 +105,7 @@ function PageResult() {
   return (
     <>
       <Header />
-      <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>{title}</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>{body}</Modal.Body>
-        <Modal.Footer>
-          <Button variant="primary" onClick={() => handleClose("/searchResults")}>
-            Buscar resultado
-          </Button>
-          <Button variant="secondary" onClick={() => handleClose("/")}>
-            Página Inicial
-          </Button>
-        </Modal.Footer>
-      </Modal>
+      
       <Breadcrumb>
         <Breadcrumb.Item href="/dashboard">Página Inicial</Breadcrumb.Item>
         <Breadcrumb.Item href="/searchresults">Resultados</Breadcrumb.Item>
