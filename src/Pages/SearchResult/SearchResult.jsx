@@ -13,7 +13,6 @@ import { Button, Modal } from 'react-bootstrap';
 import Tabs from '../../Components/Tabs/Tabs';
 import { isEmptyString } from '../../services/utils';
 import Footer from '../../Components/Footer/Footer';
-import Header from '../../Components/Header/Header';
 
 
 
@@ -23,7 +22,8 @@ function SearchResult() {
         "sus": false,
         "leap": false,
         "zanon": false,
-        "panas": false
+        "panas": false,
+        "page": false
     })
     const [searchText, setSearchText] = useState("");
     const [testsData, setTestsData] = useState([]);
@@ -94,7 +94,6 @@ function SearchResult() {
 
     return (
         <>
-        <Header/>
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
                     <Modal.Title>{title}</Modal.Title>
@@ -135,6 +134,9 @@ function SearchResult() {
                                 </Row>
                                 <Row style={{ marginLeft: "13px", marginBottom: "10px" }}    >
                                     <label><Checkbox name="panas" value="panas" /> {"Panas"}</label>
+                                </Row>
+                                <Row style={{ marginLeft: "6px", marginBottom: "10px" }}    >
+                                    <label><Checkbox name="page" value="page" /> {"Page"}</label>
                                 </Row>
                             </div>
                         </Col>
