@@ -6,7 +6,7 @@ function PageResultTable(props) {
   let aspectos = props.aspectos;
   const sumValue = (value) => {
     let sum = 0;
-    console.log("Valor => ", value);
+    
     if(value.length > 0){
       value.forEach((element) => {
         sum += parseInt(element.answer);
@@ -16,8 +16,6 @@ function PageResultTable(props) {
   };
 
   const GetRisc = value => {
-    
-       // let value = props.Factors[index];
         if( value <= 39){
             return "Alto";
         }

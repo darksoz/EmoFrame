@@ -1,16 +1,14 @@
-import { Container, Modal, Button } from "react-bootstrap";
+import { Button, Container, Modal } from "react-bootstrap";
 import PageResultTable from "../../Components/PageResultTable/PageResultTable";
 import GerontologistAssessment from "../../Components/GerontologistAssessment/GerontologistAssessment";
 import ActionPlanning from "../../Components/ActionPlanning/ActionPlanning";
-import ActionsImplementation from "../../Components/ActionsImplementation/ActionsImplementation.jsx";
+import ActionsImplementation from "../../Components/ActionsImplementation/ActionsImplementation";
 import ActionsControl from "../../Components/ActionsControl/ActionsControl";
 import DemandsMap from "../../Components/DemandsMap/DemandsMap";
 import { Breadcrumb } from "react-bootstrap";
 import { useEffect, useState } from "react";
 import { GetResultTestById } from "../../services/api";
 import { useParams, useHistory } from "react-router-dom";
-import Header from "../../Components/Header/Header";
-import Footer from "../../Components/Footer/Footer";
 import { formateDateTime } from "../../services/utils";
 
 function PageResult() {
@@ -24,7 +22,6 @@ function PageResult() {
 
   const { id } = useParams();
   let history = useHistory();
-
 
   useEffect(() => {
     const getResult = async () => {
@@ -62,16 +59,11 @@ function PageResult() {
     let data = [];
     if (questions) {
       data = questions.filter((item) => {
-        return parseInt(item.id) === item.id;
+        return parseInt(item.id) == item.id;
       });
     }
     return data.sort((a, b) => a.id - b.id);
   };
-
-  const handleClose = path => {
-    setShow(false);
-    history.push(path);
-}
 
   const filteredQuestions = filterQuestionsByNumberInt(questions);
   const dominiosList = [
@@ -100,9 +92,13 @@ function PageResult() {
     );
   }
 
+  const handleClose = path => {
+    setShow(false);
+    history.push(path);
+}
+
   return (
     <>
-      <Header />
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
             <Modal.Title>{title}</Modal.Title>
@@ -116,22 +112,22 @@ function PageResult() {
                 Página Inicial
             </Button>
         </Modal.Footer>
-        </Modal>
+      </Modal>
       <Breadcrumb>
         <Breadcrumb.Item href="/dashboard">Página Inicial</Breadcrumb.Item>
         <Breadcrumb.Item href="/searchresults">Resultados</Breadcrumb.Item>
         <Breadcrumb.Item active>Resultado PAGe</Breadcrumb.Item>
       </Breadcrumb>
       <Container>
-        {
-          name && datetime &&
-          <>
-            <h1>Nome: {name}</h1>
-            <h1>Data e Hora: {formateDateTime(datetime)}</h1>
-          </>
-        }
+          {
+            name && datetime && 
+            <>
+                <h1>Nome: {name}</h1>
+                <h1>Data e Hora: {formateDateTime(datetime)}</h1>
+            </>
+          }
 
-        <PageResultTable aspectos={aspectos} questions={filteredQuestions} />
+        <PageResultTable aspectos={aspectos} questions={filteredQuestions}/>
 
         <DemandsMap questions={filteredQuestions} />
 
@@ -143,9 +139,7 @@ function PageResult() {
 
         <ActionsControl />
       </Container>
-      <Footer />
     </>
   );
 }
 export default PageResult;
-
