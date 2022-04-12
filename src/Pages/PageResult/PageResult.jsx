@@ -10,6 +10,8 @@ import { useEffect, useState } from "react";
 import { GetResultTestById } from "../../services/api";
 import { useParams, useHistory } from "react-router-dom";
 import { formateDateTime } from "../../services/utils";
+import Header from "../../Components/Header/Header";
+import Footer from "../../Components/Footer/Footer";
 
 function PageResult() {
   const [questions, setQuestions] = useState([]);
@@ -113,6 +115,7 @@ function PageResult() {
             </Button>
         </Modal.Footer>
       </Modal>
+      <Header/>
       <Breadcrumb>
         <Breadcrumb.Item href="/dashboard">Página Inicial</Breadcrumb.Item>
         <Breadcrumb.Item href="/searchresults">Resultados</Breadcrumb.Item>
@@ -139,6 +142,7 @@ function PageResult() {
 
         <ActionsControl />
       </Container>
+      <Footer/>
     </>
   );
 }
