@@ -13,6 +13,8 @@ import sortArray from 'sort-array';
 import { getUsername } from '../../services/auth';
 import { SaveTest } from '../../services/api';
 import ModalTest from '../../Components/Modal/ModalTest';
+import Footer from '../../Components/Footer/Footer';
+import Header from '../../Components/Header/Header';
 
 
 let firstQuestions = arrayShuffle(Questions1);
@@ -46,7 +48,6 @@ function Panas() {
         json = JSON.stringify(json);
         let response = await SaveTest(json, 'panas');
         if (response.status === 201) {
-            console.log("Dados salvos aqui ==> ", response.data);
             setTitle("Teste concluído");
             setBody("Atividade realizada com sucesso");
             setSuccess(true);
@@ -61,6 +62,7 @@ function Panas() {
 
     return (
         <>
+        <Header/>
             <Breadcrumb>
                 <Breadcrumb.Item href='./dashboard'>Página Inicial</Breadcrumb.Item>
                 <Breadcrumb.Item active>Panas</Breadcrumb.Item>
@@ -136,6 +138,11 @@ function Panas() {
                     </div>
                 }
             </Container>
+            <div className='mt-5'>
+
+                <Footer/>
+
+            </div>
         </>
     );
 }

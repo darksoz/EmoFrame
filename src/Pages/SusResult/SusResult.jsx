@@ -6,6 +6,8 @@ import { GetResultTestById} from '../../services/api';
 import { Breadcrumb } from "react-bootstrap";
 import {useParams, useHistory} from 'react-router-dom';
 import { formateDateTime } from '../../services/utils';
+import Footer from '../../Components/Footer/Footer';
+import Header from '../../Components/Header/Header';
 
 const negativeQuestions = [18, 19, 22, 24, 27];
 
@@ -51,11 +53,11 @@ function SusResult(){
 
     useEffect(() => {
         const getResult = async () => {
-            if(id != undefined){
+            if(id !== undefined){
                 let response = await GetResultTestById('sus', id);
                 if(response.status === 200){    
                     let data = response.data;
-                    if(data == ""){
+                    if(data === ""){
                         setTitle("Resultado não encontrado");
                         setBody("Não há nenhum registro encontrado no banco de dados com o identificador repassado");
                         setShow(true);
@@ -79,9 +81,10 @@ function SusResult(){
             }
         }
         getResult();
-      }, []);
+      }, [id]);
     return(
         <>
+        <Header/>
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
                     <Modal.Title>{title}</Modal.Title>
@@ -114,6 +117,11 @@ function SusResult(){
                 <SusScoreReference/>
                 <SusVariationPlot Variation={GetVariationAnswer()}/>
             </Container>
+
+            <div className='mt-5'>
+            <Footer/>
+            </div>
+            
         </>
     )
 }

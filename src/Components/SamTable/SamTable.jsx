@@ -5,7 +5,7 @@ function SamTable(props) {
 
     const GetReult = (ref, value) =>{
         if(props.Data.length > 0){
-            if((ref - props.Data[value].answer) != 0){
+            if((ref - props.Data[value].answer) !== 0){
                 return 0;
             }
             else{

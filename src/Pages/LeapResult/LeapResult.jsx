@@ -4,9 +4,11 @@ import LeapResultTable from '../../Components/LeapResultTable/LeapResultTable';
 import { Breadcrumb, Button, Modal } from "react-bootstrap";
 import { GetResultTestById } from '../../services/api';
 import { useEffect, useState } from 'react';
-import { mockData } from '../../MockData/Leap/LeapMock';
 import { useParams, useHistory } from 'react-router-dom';
 import { formateDateTime } from '../../services/utils';
+import Footer from '../../Components/Footer/Footer';
+import Header from '../../Components/Header/Header';
+
 
 let pf1_l = [3, 10, 12, 13, 21, 23, 24, 25, 26, 29, 31, 35, 39, 40];
 let pf1_w = [-0.32, 0.32, 0.28, 0.66, 0.67, 0.43, 0.53, 0.31, 0.37, 0.27, 0.51, 0.52, 0.59, 0.47];
@@ -37,7 +39,6 @@ function LeapResult() {
   const [questions, setQuestions] = useState([]);
   const [name, setName] = useState('');
   const [datetime, setDatetime] = useState('');
-  const [factors, setFactors] = useState([]);
 
   const [show, setShow] = useState(false);
   const [title, setTitle] = useState("");
@@ -48,7 +49,7 @@ function LeapResult() {
 
   useEffect(() => {
     const getResult = async () => {
-      if (id != undefined) {
+      if (id !== undefined) {
         let response = await GetResultTestById('leap', id);
         if (response.status === 200) {
           let data = response.data;
@@ -76,11 +77,11 @@ function LeapResult() {
       }
     }
     getResult();
-  }, []);
+  }, [id]);
 
   const getFactors = () => {
     let data = [];
-    if (questions && factors.length === 0) {
+    if (questions) {
       data = [...data,
       factorCalculation(pf1_l, pf1_w),
       factorCalculation(pf2_l, pf2_w),
@@ -126,6 +127,7 @@ function LeapResult() {
 
   return (
     <>
+    <Header/>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>{title}</Modal.Title>
@@ -155,8 +157,14 @@ function LeapResult() {
             <LeapResultTable Factors={getFactors()} />
           </>
         }
-      </Container>
 
+<div className='mt-5'>
+
+<Footer/>
+
+</div>
+      </Container>
+     
     </>
   );
 }

@@ -13,6 +13,8 @@ import ModalTest from '../../Components/Modal/ModalTest';
 import { Questions1 } from "../../services/Questions/Zanon/Zanon.js";
 import { Questions2 } from "../../services/Questions/Zanon/Zanon.js";
 import { SaveTest } from '../../services/api';
+import Footer from '../../Components/Footer/Footer';
+import Header from '../../Components/Header/Header';
 
 let firstQuestions = arrayShuffle(Questions1);
 let secondQuestions = arrayShuffle(Questions2);
@@ -44,7 +46,6 @@ function Zanon() {
         json = JSON.stringify(json);
         let response = await SaveTest(json, 'zanon');
         if (response.status === 201) {
-            console.log("Dados salvos aqui ==> ", response.data);
             setTitle("Teste concluído");
             setBody("Atividade realizada com sucesso");
             setSuccess(true);
@@ -60,6 +61,7 @@ function Zanon() {
 
     return (
         <>
+        <Header/>
             <Breadcrumb>
                 <Breadcrumb.Item href='./dashboard'>Página Inicial</Breadcrumb.Item>
                 <Breadcrumb.Item active>Zanon</Breadcrumb.Item>
@@ -130,6 +132,11 @@ function Zanon() {
                     </div>
                 }
             </Container>
+            <div className='mt-5'>
+
+                <Footer />
+
+            </div>
         </>
     );
 }

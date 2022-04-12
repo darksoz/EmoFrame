@@ -16,6 +16,8 @@ import { SaveLeapTest } from '../../services/api';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Footer from '../../Components/Footer/Footer';
+import Header from '../../Components/Header/Header';
 
 
 let firstQuestions = arrayShuffle(Questions1);
@@ -48,12 +50,10 @@ function Leap() {
 
     const handleFormData = async () => {
         let json = { "Datetime": new Date(Date.now()), "Instrument": "leap", "Username": getUsername(), "Questions": sortArray(answers, { by: 'id', }) }
-        console.log("Json", json)
         json = JSON.stringify(json);
 
         let response = await SaveLeapTest(json);
         if (response.status === 201) {
-            console.log("Dados salvos aqui ==> ", response.data);
             setTitle("Teste concluído");
             setBody("Atividade realizada com sucesso");
             setSuccess(true);
@@ -68,6 +68,7 @@ function Leap() {
 
     return (
         <>
+        <Header/>
             <Breadcrumb>
                 <Breadcrumb.Item href='./dashboard'>Página Inicial</Breadcrumb.Item>
                 <Breadcrumb.Item active>Leap</Breadcrumb.Item>
@@ -179,7 +180,14 @@ function Leap() {
                         </div>
                     </Col>
                 </Row>
+                <div className='mt-5'>
+
+                    <Footer/>
+
+                </div>
+              
             </Container>
+            
         </>
 
             );

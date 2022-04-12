@@ -1,6 +1,7 @@
 import React from 'react';
 import {Redirect} from 'react-router-dom';
 import { useHistory } from 'react-router-dom';
+import Footer from '../../Components/Footer/Footer';
 import {isAuthenticated} from '../../services/auth';
 import './Home.css';
 
@@ -19,10 +20,12 @@ function Home() {
                     <p className="EmoFrameText">Framework de Instrumentos de Avaliação de Respostas Emocionais</p> 
                     
                     <button class="btn whitebutton btn-lg btn-block" onClick={()=>goToPage('login')}>Entrar</button>
-                    
+                    <button class="btn whitebutton btn-lg btn-block" onClick={()=>goToPage('recommendation')}>Recomendação</button>
                 </div> 
+                <Footer/>
             </div>
         </div>
+        
     )
 }
 

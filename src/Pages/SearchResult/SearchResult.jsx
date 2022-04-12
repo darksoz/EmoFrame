@@ -11,8 +11,8 @@ import { GetResultsByName } from '../../services/api';
 import FilterTable from '../../Components/FilterTable/FilterTable';
 import { Button, Modal } from 'react-bootstrap';
 import Tabs from '../../Components/Tabs/Tabs';
-import { Breadcrumb } from "react-bootstrap";
 import { isEmptyString } from '../../services/utils';
+import Footer from '../../Components/Footer/Footer';
 
 
 
@@ -22,7 +22,8 @@ function SearchResult() {
         "sus": false,
         "leap": false,
         "zanon": false,
-        "panas": false
+        "panas": false,
+        "page": false
     })
     const [searchText, setSearchText] = useState("");
     const [testsData, setTestsData] = useState([]);
@@ -80,7 +81,6 @@ function SearchResult() {
                             return new Date(b.Datetime) - new Date(a.Datetime);
                           });
                         setTestsData([...array]);
-                        console.log("Array =>", array);
                     }
                 }
                 else {
@@ -107,10 +107,7 @@ function SearchResult() {
             </Modal>
 
 
-            <Breadcrumb>
-                <Breadcrumb.Item href='./dashboard'>Página Inicial</Breadcrumb.Item>
-                <Breadcrumb.Item active>Resultados</Breadcrumb.Item>
-            </Breadcrumb>
+           
             <Tabs active="results"/>
            
             <Container>
@@ -138,6 +135,9 @@ function SearchResult() {
                                 <Row style={{ marginLeft: "13px", marginBottom: "10px" }}    >
                                     <label><Checkbox name="panas" value="panas" /> {"Panas"}</label>
                                 </Row>
+                                <Row style={{ marginLeft: "6px", marginBottom: "10px" }}    >
+                                    <label><Checkbox name="page" value="page" /> {"Page"}</label>
+                                </Row>
                             </div>
                         </Col>
 
@@ -162,6 +162,7 @@ function SearchResult() {
                     </Row>
                 </Card>
             </Container>
+            <Footer/>
         </>
     );
 }

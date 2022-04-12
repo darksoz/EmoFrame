@@ -1,3 +1,64 @@
 .bg-purple {
     background-color: #6f42c1;
+    opacity: .5;
+}
+
+.bg-lblue {
+    background-color: lightcyan;
+}
+
+.bg-lgrey {
+    background-color: darkgrey;
+}
+
+.bg-lblue {
+    background-color: #0d6efd;
+    opacity: .5;
+}
+
+.bg-lgreen {
+    background-color:  #198754;
+    opacity: .5;
+}
+
+.bg-lyellow {
+    background-color: #ffc107;
+    opacity: .5;
+}
+
+.input-page {
+    position: relative;
+    left: 24em;
+
+}
+
+.label-page {
+    position: relative;
+    top: 3px;
+}
+
+.l-yes {
+margin-left: 8px;
+}
+
+
+.label-page-i {
+    position: relative;
+    top: 3px;
+    right: 8em;
+}
+
+.l-no {
+    top: 15px;
+    margin-left: 10px;
+}
+
+.fig-page {
+    position: relative;
+    bottom: 26px;
+}
+
+.q4 {
+    position: relative;
+    top: 20em;
 }

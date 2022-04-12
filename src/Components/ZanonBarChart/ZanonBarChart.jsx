@@ -52,7 +52,6 @@ function ZanonBarChart (props) {
 
     if(props.Data.length > 0){
         dados.series[1].data = [props.Data[0],props.Data[1]]
-        console.log("Barchart => ", props.Data.length);
     }
 
 

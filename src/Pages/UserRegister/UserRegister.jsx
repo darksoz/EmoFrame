@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { Breadcrumb} from "react-bootstrap";
+import Footer from "../../Components/Footer/Footer";
+import Header from "../../Components/Header/Header";
 import RegisterSpecialist from "../../Components/RegisterSpecialist/RegisterSpecialist";
 import RegisterUser from "../../Components/RegisterUser/RegisterUser";
 import Tabs from "../../Components/Tabs/Tabs";
@@ -9,15 +10,12 @@ function UserRegister() {
 
     const [registerType, setRegisterType] = useState("");
     const handleChange = (event) => {
-        console.log(`${event.target.name} : ${event.target.value}`);
         setRegisterType(event.target.value);
     }
     return (
         <>
-            <Breadcrumb>
-                <Breadcrumb.Item href='./dashboard'>Página Inicial</Breadcrumb.Item>
-                <Breadcrumb.Item active>Cadastrar Usuário</Breadcrumb.Item>
-            </Breadcrumb>
+        <Header/>
+            
             <Tabs active="register" />
             <div className="form-group mt-3" onChange={handleChange}>
                 <h3>Cadastro</h3>
@@ -41,8 +39,10 @@ function UserRegister() {
                     </>
                 )
             }
-           
-           
+           <div className="mt-5">
+           <Footer/>
+           </div>
+         
         </>
     );
 }

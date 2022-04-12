@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Breadcrumb } from "react-bootstrap";
 import sortArray from 'sort-array';
+import Footer from '../../Components/Footer/Footer';
+import Header from '../../Components/Header/Header';
 import ModalTest from '../../Components/Modal/ModalTest';
 import { SaveSamTest } from '../../services/api';
 import { getUsername } from '../../services/auth';
@@ -29,7 +31,6 @@ function Sam() {
 
         let response = await SaveSamTest(json);
         if (response.status === 201) {
-            console.log("Dados salvos aqui ==> ", response.data);
             setTitle("Teste concluído");
             setBody("Atividade realizada com sucesso");
             setSuccess(true);
@@ -43,6 +44,8 @@ function Sam() {
     }
 
     return (
+        <>
+        <Header/>
         <div>
             <Breadcrumb>
                 <Breadcrumb.Item href='./dashboard'>Página Inicial</Breadcrumb.Item>
@@ -373,11 +376,18 @@ function Sam() {
                         }
 
                     </div>
+
                 </div>
 
 
             </div>
+            <div className='mt-5'>
+
+                <Footer />
+
+            </div>
         </div>
+        </>
     )
 }
 export default Sam;
