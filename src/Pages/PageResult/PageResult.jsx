@@ -12,6 +12,7 @@ import { useParams, useHistory } from "react-router-dom";
 import { formateDateTime } from "../../services/utils";
 import Header from "../../Components/Header/Header";
 import Footer from "../../Components/Footer/Footer";
+import PageNotesTable from "../../Components/PageNotesTable/PageNotesTable";
 
 function PageResult() {
   const [questions, setQuestions] = useState([]);
@@ -133,6 +134,8 @@ function PageResult() {
         <PageResultTable aspectos={aspectos} questions={filteredQuestions}/>
 
         <DemandsMap questions={filteredQuestions} />
+
+        <PageNotesTable/>
 
         <GerontologistAssessment />
 

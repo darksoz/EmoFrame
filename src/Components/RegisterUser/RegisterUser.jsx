@@ -1,29 +1,18 @@
 import { useState } from "react";
 import { Container } from "react-bootstrap";
-import SelectCountry from "../../Components/SelectCountry/SelectCountry";
 import { Register } from "../../services/api";
 import ModalTest from "../Modal/ModalTest";
 import "./RegisterUser.css";
 
 function RegisterUser(props) {
 
-    const [relVisibility, setRelVisibility] = useState(false);
     const [registerData, setRegisterData] = useState({});
     const [title, setTitle] = useState("");
     const [body, setBody] = useState("");
     const [show, setShow] = useState(false);
     const [success, setSuccess] = useState(false);
 
-    const Religion = () => {
-        var e = document.getElementById("Religião");
-        var strUser = e.value;
-        if (strUser === "Sim") {
-            setRelVisibility(true);
-        }
-        else {
-            setRelVisibility(false);
-        }
-    }
+    
 
     const handleChange = (e) => {
         if(e.target.name !== "ReligionOption"){
@@ -99,7 +88,6 @@ function RegisterUser(props) {
                         <input type="date" className="form-control" placeholder="Data de nascimento" name="Birthdate" required />
                     </div>
 
-                    <SelectCountry />
 
                     <div className="form-group">
                         <label class="col-sm-10 text-start control-label">Endereço</label>
@@ -123,11 +111,6 @@ function RegisterUser(props) {
                     </div>
 
                     <div className="form-group">
-                        <label class="col-sm-10 text-start control-label">Com quem você mora?</label>
-                        <input type="text" className="form-control" placeholder="Com quem você mora?" name="LivesWith" required />
-                    </div>
-
-                    <div className="form-group">
                         <label class="col-sm-10 text-start control-label">Raça autodeclarada</label>
                         <select class="form-select" aria-label="Default select example" name="Race">
                             <option disabled selected>Selecione a raça</option>
@@ -137,26 +120,6 @@ function RegisterUser(props) {
                             <option value="Pardo">Pardo</option>
                             <option value="Preto">Preto</option>
                         </select>
-                    </div>
-
-                    <div className="form-group" >
-                        <label class="col-sm-10 text-start control-label">Possui alguma religião?</label>
-                        <select class="form-select"
-                            name="ReligionOption"
-                            id="Religião"
-                            aria-label="Default select example"
-                            onChange={() => Religion()}>
-                            <option disabled selected> Selecione uma opção</option>
-                            <option value="Sim">Sim</option>
-                            <option value="Não">Não</option>
-                        </select>
-                        {relVisibility === true && (
-                            <div>
-                                <label class="col-sm-10 text-start control-label">Religião</label>
-                                <input type="text" className="form-control" placeholder="Religião" name="Religion" />
-                            </div>
-                        )}
-
                     </div>
 
                     <div className="form-group">
@@ -174,10 +137,7 @@ function RegisterUser(props) {
                         </select>
                     </div>
 
-                    <div className="form-group">
-                        <label class="col-sm-10 control-label text-start">De acordo com sua escolaridade, você estudou, formalmente, durante quantos anos?</label>
-                        <input type="text" class="col-sm-2 form-control" placeholder="Anos de estudo" name="YearsOfStudy" required min="1" max="50" />
-                    </div>
+                 
 
                     <div className="form-group" >
                         <label class="col-sm-10 text-start control-label">Renda Individual Mensal</label>
