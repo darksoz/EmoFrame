@@ -12,6 +12,8 @@ import sortArray from "sort-array";
 import { SavePageTest } from "../../services/api";
 import RegisterPage from "../../Components/RegisterPage/RegisterPage";
 import ModalTest from "../../Components/Modal/ModalTest";
+import Header from "../../Components/Header/Header";
+import Footer from "../../Components/Footer/Footer";
 
 function Page() {
   const [active, setActive] = React.useState(1);
@@ -87,12 +89,13 @@ function Page() {
 
   return (
     <>
+      <Header/>
       <Breadcrumb>
         <Breadcrumb.Item href="./dashboard">Página Inicial</Breadcrumb.Item>
         <Breadcrumb.Item active>PAGE</Breadcrumb.Item>
       </Breadcrumb>
       <ModalTest Success={success} Title={title} Body={body} Reveal={show} Finish={"/dashboard"} Retry={true} />
-
+      
       <Container>
         <div id="sample">
           <MultiStepForm activeStep={active}>
@@ -130,6 +133,7 @@ function Page() {
           <div>
             <Link to="sample">
               <button
+                style={{marginRight:"20px"}}
                 class="btn whitebutton btn-lg"
                 onClick={() => setActive(active - 1)}
               >
@@ -150,6 +154,7 @@ function Page() {
           <div>
             <Link to="sample">
               <button
+                style={{marginRight:"20px"}}
                 class="btn whitebutton btn-lg"
                 onClick={() => setActive(active - 1)}
               >
@@ -167,6 +172,7 @@ function Page() {
           </div>
         )}
       </Container>
+      <Footer/>
     </>
   );
 }
