@@ -3,11 +3,11 @@ export const Questions1 = [
     {
       aspectos: "DÉFICIT COGNITIVO",
   
-      pontucao: "Pontuação (máxima=6): Necessita de invetigação",
+      pontucao: "Pontuação (máxima=6): Necessita de investigação",
       perguntas: [
         {
           title:
-            "O(A) senhor(a) considera que sua memória é tão boa quanto antes?",
+            "O(A) senhor(a) considera que sua memória é tão boa quanto a de outras pessoas da sua idade?",
           point: 1,
           question: 1,
           input: false,
@@ -16,7 +16,7 @@ export const Questions1 = [
         },
         {
           title:
-            " Memória: Eu vou lhe dar um nome e um endereço e eu gostaria que você os repetisse depois de mim. Nós vamos fazer isso três vezes, assim você terá a possibilidade de aprendê-los. Eu vou lhe perguntar mais tarde. Pontuar apenas a terceira tentativa.",
+            " Memória: Vou lhe dizer 3 palavras e o(a) senhor(a) irá repeti-las em seguida. Peço que memorie essas 3 palavras, pois vou lhe perguntar sobre elas mais tarde novamente. [Instruções: Falar as 3 palavras em sequência pausadamente. Caso o(a) idoso(a) não consiga, repita no máximo 3 vezes para aprendizado. Pontuar ao lado se o(a) idoso(a) repetiu corretamente as três palavras na primeira tentativa]",
           point: 1,
           yes: 1,
           no: 0,
@@ -26,7 +26,7 @@ export const Questions1 = [
         },
         {
           title:
-            "Linguagem, função executiva e atenção: “O(a) senhor(a) deve falar todos os nomes de animais de que se lembrar, o mais rápido possível. Quantos mais falar, melhor. Pode começar”. Anote os nomes de animais falados pelo(a) idoso(a) a cada 15 segundos.",
+            "Linguagem, função executiva e atenção: Agora, eu vou marcar um minuto no relógio e durante esse tempo o(a) senhor(a) deve falar o maior número de animais de que se lembrar. Quanto mais animais o senhor fala nesse tempo melhor. [Instruções: Anote os nomes de animais falados pelo(a) idoso(a) a cada 15 segundos, e registrar, mas não contar animais repetidos]. Pode começar. Pontuação de acordo com escolaridade: 1) analfabetos = 9 animais; 2) 1-7 anos = 12 animais e 3) 8 anos ou mais = 13 animais.",
           point: 1,
           question: 3,
           input: false,
@@ -36,12 +36,11 @@ export const Questions1 = [
         },
         {
           title:
-            "Habilidade visuoespacial: Peça ao indivíduo para contar os pontos sem apontá-los",
+            "Memória tardia: O(a) senhor(a) consegue se lembrar das 3 palavras que lhe pedi            que repetisse agora há pouco? [Atenção: o entrevistador não deve dizer as palavras. Pontue se o(a) idoso(a) lembrou e repetiu corretamente as 3 palavras].",
           question: 4,
           input: false,
           yes: 1,
           no: 0,
-          images: ["bolas1.png", "bolas2.png", "bolas3.png", "bolas4.png"],
           point: 1,
         },
         {
@@ -55,52 +54,45 @@ export const Questions1 = [
         },
         {
           title:
-            "Memória: Agora você vai me dizer o que você se lembra daquele nome e endereço que nós repetimos no começo",
+          "Teste do relógio: Aplique apenas se o (a) idoso tiver escolaridade igual ou superior          a 5 anos. Caso não, pontue ao lado de forma negativa. Esteja com uma folha com um desenho de um círculo de 11 cm de diâmetro e dê as instruções para a tarefa]          Senhor(a), nesta folha temos um mostrador de um relógio. Gostaria que o senhor(a)          colocasse os números dentro dele. [Aguardar]. Por favor, agora indique o horário 11h10          (onze horas e 10 minutos) [Pontue ao lado se o(a) idoso(a) atingiu a nota de corte          esperada. Nota de corte: Atribua um ponto para cada posicionamento correto dos          números 1,2,4,5,7,8,10 e 11, mais um ponto para cada ponteiro correto (pontuação          máxima = 10). Ponto de corte = 7]",
           question: 6,
           yes: 1,
           input: false,
           no: 0,
           point: 1,
-          subtitle: ["Renato Moreira", "Rua Bela Vista, 73", "Santarém", "Pará"],
         },
       ],
     },
     {
       aspectos: "ATIVIDADE NEGATIVA EM RELAÇÃO AO ENVELHECIMENTO",
-      pontucao: "Pontuação (máxima=2): Necessita de invetigação",
+      pontucao: "Pontuação (máxima=8): Necessita de investigação",
       perguntas: [
         {
           question: 7,
-          yes: 0,
-          no: 1,
-          input: true,
+          yes: 1,
+          no: 0,
+          input: false,
           point: 0,
-          title: "Que idade o(a) senhor(a) sente ter _ ? Por quê?",
+          title: "De maneira geral, o(a) senhor(a) diria que a sua saúde é boa?",
         },
         {
           question: 8,
           yes: 0,
           no: 1,
-          input: false,
+          input: true,
           tooltip:
             "[Registrar ao lado se é perceptível uma visão mais negativa da velhice].",
           point: 0,
           title:
-            "Existem pontos positivos e negativos presentes na velhice? Quais? ",
+            "Que idade o (a) senhor(a) sente ter            ? Por quê? [Instruções: Com base na            resposta dada, analisar e registrar ao lado se o(a) idoso(a) sente-se mais velho do que realmente é:]",
         },
-      ],
-    },
-    {
-      aspectos: "DEPRESSÃO",
-      pontucao: "Pontuação (máxima=6): Necessita de invetigação",
-      perguntas: [
         {
           question: 9,
-          yes: 1,
-          no: 0,
+          yes: 0,
+          no: 1,
           input: false,
           point: 1,
-          title: "De modo geral o(a) senhor(a) está satisfeito com a vida?",
+          title: "Ao pensar no seu envelhecimento o(a) senhor(a) se sente preocupado(a)?",
         },
         {
           question: 10,
@@ -108,7 +100,7 @@ export const Questions1 = [
           no: 1,
           input: false,
           point: 0,
-          title: "O(A) senhor(a) se sente triste com frequência?",
+          title: "O(a) senhor(a) acha que a velhice, de forma geral, tem mais pontos negativos do que positivos?",
         },
         {
           question: 11,
@@ -117,7 +109,7 @@ export const Questions1 = [
           no: 1,
           point: 0,
           title:
-            "O(A) senhor(a) abandonou muitas das coisas que fazia ou gostava de fazer?",
+            "O(a) senhor(a) acha que é possível ter uma vida sexual saudável na velhice?",
         },
         {
           question: 12,
@@ -125,7 +117,7 @@ export const Questions1 = [
           no: 1,
           input: false,
           point: 0,
-          title: "O(A) senhor(a) tem medo que algum mal vá lhe acontecer?",
+          title: "O(a) senhor(a) acha que há poucas coisas que uma pessoa possa realizar na velhice?",
         },
         {
           question: 13,
@@ -134,7 +126,7 @@ export const Questions1 = [
           input: false,
           no: 1,
           title:
-            "O(A) senhor(a) se sente impaciente e agitado(a) com frequência?",
+            "O(a) senhor(a) acha que a velhice é sinônimo de debilidade física?",
         },
         {
           question: 14,
@@ -142,24 +134,24 @@ export const Questions1 = [
           input: false,
           no: 1,
           point: 0,
-          title: "O(A) senhor(a) tem dificuldade em se concentrar?",
+          title: "O(a) senhor(a) acha que é melhor morrer cedo do que ficar velho(a)?",
         },
+
+
       ],
     },
-  ];
-  
-  export const Questions2 = [
     {
-      aspectos: "DÉFICIT SENSORIAL",
-      pontucao: "Pontuação Máxima = 5. Necessita de invetigação?",
+      aspectos: "DEPRESSÃO",
+      pontucao: "Pontuação (máxima=5): Necessita de investigação",
+      instrucao: "antes de iniciar diga ao idoso: “Vou lhe fazer algumas perguntas para saber como o(a) senhor(a) vem se sentindo na última semana",
       perguntas: [
         {
           question: 15,
-          yes: 0,
-          no: 1,
+          yes: 1,
+          no: 0,
           input: false,
           point: 0,
-          title: "O(A) senhor(a) tem problemas de visão?",
+          title: "De modo geral o(a) senhor(a) está satisfeito com a vida?",
         },
         {
           question: 16,
@@ -168,7 +160,7 @@ export const Questions1 = [
           input: false,
           point: 0,
           title:
-            "O(A) senhor(a) tem dificuldade de ouvir o que as pessoas falam?",
+            "O(a) senhor (a) se sente triste com frequência?",
         },
         {
           question: 17,
@@ -177,7 +169,7 @@ export const Questions1 = [
           input: false,
           point: 0,
           title:
-            "O(A) senhor(a) tem dificuldade para sentir o sabor dos alimentos?",
+            "O(a) senhor(a) abandonou muitas das coisas que fazia ou gostava de fazer?",
         },
         {
           question: 18,
@@ -186,7 +178,7 @@ export const Questions1 = [
           input: false,
           point: 0,
           title:
-            "O(A) senhor(a) considera ruim o funcionamento dos seus sentidos?",
+            "O(a) senhor(a) tem medo de que algo ruim lhe aconteça?",
         },
         {
           question: 19,
@@ -195,13 +187,16 @@ export const Questions1 = [
           input: false,
           point: 0,
           title:
-            " O(A) senhor(a) considera que o funcionamento dos seus sentidos afeta sua capacidade de interagir com outras pessoas?",
+            "O(a) Sr.(a) se sente impaciente e agitado(a) com frequência?",
         },
       ],
     },
+  ];
+  
+  export const Questions2 = [
     {
-      aspectos: "INCAPACIDADE FUNCIONAL",
-      pontucao: "Pontuação (máxima=6): Necessita de invetigação",
+      aspectos: "DÉFICIT SENSORIAL",
+      pontucao: "Pontuação Máxima = 4. Necessita de investigação?",
       perguntas: [
         {
           question: 20,
@@ -209,7 +204,7 @@ export const Questions1 = [
           input: false,
           no: 1,
           point: 0,
-          title: "O(A) senhor(a) necessita de ajuda para Fazer compras?",
+          title: "O(a) senhor(a) tem dificuldades para enxergar? [Observação: Mesmo se já utilizar óculos ou outros métodos corretivos].",
         },
         {
           question: 21,
@@ -218,7 +213,7 @@ export const Questions1 = [
           input: false,
           point: 0,
           title:
-            "O(A) senhor(a) necessita de ajuda para usar meios de transporte?",
+            "O(a) senhor tem dificuldades para ouvir o que as pessoas falam? [Observação: Mesmo se já utilizar aparelho auditivo.]",
         },
         {
           question: 22,
@@ -227,7 +222,7 @@ export const Questions1 = [
           input: false,
           point: 0,
           title:
-            "O(A) senhor(a) necessita de ajuda para preparar a própria comida?",
+            "O(a) senhor(a) tem dificuldade para sentir o sabor dos alimentos?",
         },
         {
           question: 23,
@@ -235,15 +230,22 @@ export const Questions1 = [
           no: 1,
           input: false,
           point: 0,
-          title: "O(A) senhor(a) necessita de ajuda para usar telefone?",
+          title: "Por causa dos seus sentidos (visão, audição, paladar), o senhor(a) tem dificuldade de realizar suas atividades cotidianas?",
         },
+      ],
+    },
+    {
+      aspectos: "INCAPACIDADE FUNCIONAL",
+      pontucao: "Pontuação (máxima=6): Necessita de investigação",
+      perguntas: [
+        
         {
           question: 24,
           yes: 0,
           no: 1,
           input: false,
           point: 0,
-          title: "O(A) senhor(a) necessita de ajuda para vestir-se?",
+          title: "O(A) senhor(a) necessita de ajuda para fazer compras fora de casa?",
         },
         {
           question: 25,
@@ -251,21 +253,15 @@ export const Questions1 = [
           no: 1,
           input: false,
           point: 0,
-          title: "O(A) senhor(a) necessita de ajuda para tomar banho?",
+          title: "O(A) senhor(a) necessita de ajuda para usar meios de transporte coletivo (ônibus, metrô e trem)?",
         },
-      ],
-    },
-    {
-      aspectos: "DESNUTRIÇÃO",
-      pontucao: "Pontuação (máxima=7): Necessita de invetigação",
-      perguntas: [
         {
           question: 26,
           yes: 0,
           no: 1,
           input: false,
           point: 0,
-          title: "O(A) senhor(a) acha ou considera que está desnutrido?",
+          title: "O(A) senhor(a) necessita de ajuda para cozinhar a própria comida?",
         },
         {
           question: 27,
@@ -274,7 +270,7 @@ export const Questions1 = [
           input: false,
           point: 0,
           title:
-            "O(A) senhor(a) tem lesões na região bucal ou algum outro problema que provoque dificuldades de mastigação?",
+            "O(A) senhor(a) necessita de ajuda para usar a telefone?",
         },
         {
           question: 28,
@@ -282,7 +278,7 @@ export const Questions1 = [
           no: 1,
           input: false,
           point: 0,
-          title: "O(A) senhor(a) faz menos de três refeições por dia?",
+          title: "O(A) senhor(a) necessita de ajuda para vestir-se (exceto para colocar as meias e calçados)?",
         },
         {
           question: 29,
@@ -291,16 +287,23 @@ export const Questions1 = [
           input: false,
           point: 0,
           title:
-            "Nos ultimos 3 meses ,O(A) senhor(a), Diminuiu sua ingesta alimentar sem motivo?",
+            "O(A) senhor(a) necessita de ajuda para tomar banho?",
         },
+      ],
+    },
+    {
+      aspectos: "DESNUTRIÇÃO",
+      pontucao: "Pontuação (máxima=6): Necessita de investigação",
+      perguntas: [
+        
         {
           question: 30,
           yes: 0,
           no: 1,
           point: 0,
           title:
-            "Nos ultimos 3 meses,O(A) senhor(a), perdeu peso sem motivo aparente? se sim, quantos quilos?",
-          input: true,
+            "O(a) senhor tem dificuldades para mastigar?",
+          input: false,
         },
         {
           question: 31,
@@ -309,24 +312,16 @@ export const Questions1 = [
           input: false,
           point: 0,
           title:
-            "Nos ultimos 3 meses,O(A) senhor(a), Passou por algum estresse psicologico, doenca aguda ou internações",
+            "O(a) senhor(a) faz menos do que três refeições por dia?",
         },
         {
           question: 32,
           point: true,
-          imc: true,
-          input: true,
           title:
-            "Índice de Massa Corporal (peso _ [kg]/ estatura _ [Cm]) igual ou menor que 22 kg/m2",
+            "Nos últimos 3 meses, o(a) senhor(a) percebeu que passou a comer menos sem motivo?",
           yes: 0,
           no: 1,
         },
-      ],
-    },
-    {
-      aspectos: "DOENÇAS CARDIOVASCULA-RES (DCV)",
-      pontucao: "Pontuação (máxima=9): Necessita de invetigação",
-      perguntas: [
         {
           question: 33,
           yes: 0,
@@ -334,33 +329,41 @@ export const Questions1 = [
           input: false,
           point: 0,
           title:
-            "O(A) senhor(a) tem histórico familiar (1º grau) de DCV (infarto, derrama e/ou angina)?",
+            "Nos últimos 3 meses, o(a) senhor(a) perdeu peso sem motivo aparente? Se sim, quantos quilos?",
         },
         {
           question: 34,
-          yes: 1,
-          no: 0,
+          yes: 0,
+          no: 1,
           input: false,
           point: 1,
-          title: "O(a) senhor(a) tem hipertensão arterial descontrolada?",
+          title: "Nos últimos 3 meses, o(a) senhor(a) passou por algum estresse psicológico?",
         },
         {
           question: 35,
-          yes: 1,
-          no: 0,
-          input: false,
+          yes: 0,
+          no: 1,
+          imc: true,
+          input: true,
           point: 1,
-          title: "O(A) senhor(a) tem diabetes? Se sim, está descontrolada?",
+          title: "Índice de Massa Corporal (peso _ [kg]/ estatura _ [Cm]) igual ou menor que 22 kg/m2",
         },
+      ],
+    },
+    {
+      aspectos: "DOENÇAS CARDIOVASCULA-RES (DCV)",
+      pontucao: "Pontuação (máxima=8): Necessita de investigação",
+      perguntas: [
+        
         {
           question: 36,
-          yes: 1,
-          no: 0,
+          yes: 0,
+          no: 1,
           input: false,
           tooltip:
-            "[Pontuar como sim quando CT e HDL forem verificados em último exame como superior a 200 mg/dL e 60mg/dL, respectivamente, ou caso o(a) idoso(a) não saiba informar]",
+            "Pontuar como sim quando CT e HDL forem verificados em último exame como superior a 200 mg/dL e 60mg/dL, respectivamente, ou caso o(a) idoso(a) não saiba informar]",
           point: 1,
-          title: "O(A) senhor(a) colesterol alterado?",
+          title: "O(a) senhor(a) tem histórico familiar (pais, irmãos ou filhos) de DCV (infarto, derrame, angina)?",
         },
         {
           question: 37,
@@ -368,41 +371,56 @@ export const Questions1 = [
           no: 1,
           input: false,
           point: 0,
-          title: "O(A) senhor(a) fuma ou é ex-fumante?",
+          title: "O(a) senhor(a) tem pressão alta (superior a 140 x 90 mmHg)? [Instruções: Pontuar como sim quando PA autorreferida for superior ao valor indicado, mesmo com o uso de anti-hipertensivos, ou caso o(a) idoso(a) não saiba informar.]",
         },
         {
           question: 38,
-          yes: 1,
-          no: 0,
+          yes: 0,
+          no: 1,
           input: false,
           point: 1,
           title:
-            "O(A) senhor(a) pratica mais de 150 minutos de exercícios físicos por semana?",
+            "O(a) senhor(a) tem glicemia de jejum superior a 100 mg/dL? [Instruções: Pontuar como sim quando a resposta for positiva mesmo com o uso de antidiabéticos ou caso o(a) idoso(a) não saiba informar.]",
         },
         {
           question: 39,
-          yes: 1,
-          no: 0,
+          yes: 0,
+          no: 1,
           input: false,
           point: 1,
-          title: "O(A) senhor(a) considera que sua alimentação é saudável?",
+          title: "O(a) senhor(a) tem colesterol alterado? [Instruções: Pontuar como sim quando 1) verificar no exame valores de CT e HDL superior a 200mg/dL e inferior 60mg/dL, respectivamente, mesmo com uso de hipolipemiantes; 2) autorrelato de colesterol alterado; ou 3) caso o(a) idoso(a) não saiba informar.]",
         },
         {
           question: 40,
           yes: 0,
           no: 1,
-          input: true,
           point: 0,
           title:
-            "Na última semana, o(a) senhor(a) ingeriu bebidas alcoólicas? Se sim, tipo: _ quantidade: _",
+            "O(a) senhor(a) fuma ou deixou de fumar nos últimos seis meses?",
         },
         {
           question: 41,
           yes: 0,
           no: 1,
-          input: false,
+          input: true,
           point: 0,
-          title: "IMC para obesidade: 27 Kg/m2",
+          title: "O(a) senhor(a) tem o hábito de ingerir bebidas alcoólicas? Se sim, qual o tipo da bebida? _ E quantas doses, taças ou latas em uma semana? _. [Instruções: Depois assinale ao lado a resposta equivalente, considerando as seguintes referências:",
+        },
+        {
+          question: 42,
+          yes: 0,
+          no: 1,
+          input: true,
+          title:
+            "O(a) senhor(a) pratica exercícios físicos regulares (caminhada, natação, dança, ginástica, musculação, entre outros)? Se sim, qual a frequência? _ E por quanto tempo? _____________________. [Instruções: Depois assinale ao lado a resposta equivalente (sim ou não) considerando prática regular de exercícios como: frequência igual ou superior a 2 dias/semana com tempo total igual ou superior a 150 minutos/semana].",
+    
+        },
+        {
+          title: "MC para obesidade: ≥27 Kg/m2 [verificar na questão 35]",
+          input: false,
+          question: 43,
+          yes: 0,
+          no: 1,
         },
       ],
     },
@@ -410,14 +428,14 @@ export const Questions1 = [
       aspectos: "USO INADEQUADO DE MEDICAMENTOS",
       pontucao: "Pontuação (máxima=9): Necessita de invetigação",
       perguntas: [
+        
         {
-          question: 42,
+          question: 44,
           yes: 0,
           no: 0,
+          title: "Nos últimos 5 anos, algum médico ou outro profissional de saúde já disse que o(a) senhor(a) tem: [Instruções: registre a quantidade total de diagnósticos:]",
           input: false,
-          title:
-            "Nos últimos 5 anos, algum médico ou outro profissional de saúde já disse que o(a) senhor(a) tem:",
-          questions: [
+          questions:[
             "Doença do coração (angina, infarto ou ataque cardíaco)?",
             "Pressão alta/ hipertensão?",
             "Derrame/AVC/Isquemia?",
@@ -429,32 +447,8 @@ export const Questions1 = [
             "Tendinite?",
             "Problemas de circulação?",
             "Depressão?",
-            "Outra?",
-          ],
-        },
-        {
-          title: " O(A) senhor(a) tem algum dos seguintes problemas de saúde:",
-          input: false,
-          question: 43,
-          yes: 0,
-          no: 0,
-          questions: [
-            "Dor de cabeça?",
-            "Dor nas costas ou em outra parte do corpo?",
-            "Alergia?",
-            "Problema emocional?",
-            "Tontura?",
-            "Dificuldades para dormir?",
-            "Incontinência urinária/perda de urina (por esforço)",
-            "Outro?",
-          ],
-        },
-        {
-          question: 44,
-          yes: 0,
-          no: 0,
-          title: "Quantidade de diagnósticos (doenças): _",
-          input: true,
+            "Outra? _",
+          ]
         },
         {
           question: 45,
@@ -462,21 +456,32 @@ export const Questions1 = [
           no: 0,
           input: true,
           title:
-            "[Solicitar as bulas dos medicamentos utilizados pelo(a) senhor(a) e fazer registro legível dos respectivos nomes e classes terapêuticas]",
+            "O(a) senhor(a) tem algum dos seguintes problemas de saúde:",
+          questions:[
+            "Dor de cabeça?",
+            "Dor nas costas ou em outra parte do corpo?",
+            "Alergia?",
+            "Problema emocional?",
+            "Tontura?",
+            "Dificuldades para dormir?",
+            "Incontinência urinária/perda de urina (por esforço)",
+            "Outro? _",
+          ]
         },
         {
           question: 46,
           yes: 0,
           no: 1,
-          input: false,
+          input: true,
           point: 0,
           title:
-            "Nos últimos 6 meses, a quantidade de medicamentos que o(a) senhor(a) toma aumentou muito?",
+            "Quais os medicamentos utilizados pelo(a) senhor(a)? _",
+          tooltip:"Instruções: Solicitar as bulas dos medicamentos e fazer registro legível dos respectivos nomes e classes terapêuticas.] [Instrução: Para classificar se há presença de polifarmácia,registrar ao lado se o idoso utiliza cinco medicamentos ou mais.]"
         },
         {
           question: 47,
-          yes: 0,
-          no: 1,
+          yes: 1,
+          no: 0,
           input: false,
           point: 0,
           title: "O(A) senhor(a) sabe para que serve todos os seus medicamentos?",
@@ -488,7 +493,7 @@ export const Questions1 = [
           input: false,
           point: 0,
           title:
-            "Os medicamentos que o(a) senhor(a) faz uso foram prescritos por médicos diferentes?",
+            "Nos últimos 6 meses, houve aumento progressivo na quantidade de medicamentos prescritos para o(a) senhor(a)?",
         },
         {
           question: 49,
@@ -497,15 +502,15 @@ export const Questions1 = [
           input: false,
           point: 1,
           title:
-            "O(A) senhor(a) toma os medicamentos de acordo com as orientações médicas?",
+            "Os medicamentos que o(a) senhor(a) faz uso foram prescritos por médicos diferentes?",
         },
         {
           question: 50,
-          yes: 0,
-          no: 1,
+          yes: 1,
+          no: 0,
           input: false,
           point: 0,
-          title: "O(A) senhor(a) alguma vez já deixou de tomar os medicamentos?",
+          title: "O(a) senhor(a) toma os medicamentos de acordo com as orientações médicas?",
         },
         {
           question: 51,
@@ -514,7 +519,7 @@ export const Questions1 = [
           input: false,
           point: 0,
           title:
-            "O(A) senhor(a) tem o costume de tomar remédios por conta própria? (Quais?)  ",
+            "O (a) senhor(a) deixa de tomar seus medicamentos com frequência?",
         },
         {
           question: 52,
@@ -522,8 +527,7 @@ export const Questions1 = [
           no: 1,
           input: false,
           point: 0,
-          title:
-            "Verificar na lista de medicamentos potencialmente inapropriados para idosos brasileiros (anexada ao PAGe) se o(a) idoso(a) toma algum dos medicamentos citados na mesma.",
+          title:"O(a) senhor(a) tem o costume de tomar remédios por conta própria?"
         },
         {
           question: 53,
@@ -531,7 +535,16 @@ export const Questions1 = [
           no: 1,
           input: false,
           point: 0,
-          title: "Cálculo do risco para reações adversas.",
+          title: "Verificar na lista de medicamentos potencialmente inapropriados para idosos brasileiros (anexada ao PAGe) se o(a) idoso(a) toma algum dos medicamentos citados na mesma. [Caso sim, pontue ao lado e os deixe destacados na lista.]",
+        },
+        {
+          question: 54,
+          yes: 0,
+          no: 1,
+          input: false,
+          title:
+            "Cálculo do risco para reações adversas.",
+          tooltip:"[Instruções: Para utilizar esta tabela e saber se o idoso se enquadra em um grupo de risco para reações adversas, verifique na questão 44 o número de diagnósticos e na questão 53 se o idoso faz uso de medicamento inapropriado. Circule estas informações nas respectivas coluna e linha em destaque na tabela e, em seguida, as cruze para saber o número máximo de medicamentos que o idoso poderia tomar. Por último, verifique na questão 46 se (o) idoso(a) utiliza uma quantidade de medicamentos superior ao valor indicado na tabela. Assinale ao lado a respectiva resposta.]"
         },
       ],
     },
@@ -540,22 +553,16 @@ export const Questions1 = [
   export const Questions3 = [
     {
       aspectos: "BAIXO SUPORTE SOCIAL",
-      pontucao: "Pontuação (máxima=8): Necessita de invetigação",
+      pontucao: "Pontuação (máxima=8): Necessita de investigação",
       perguntas: [
-        {
-          question: 54,
-          yes: 0,
-          no: 0,
-          input: true,
-          title:
-            "O(A) senhor(a) tem: cônjuge _ , pais _ , irmãos (nº) _ , filhos (nº) _ e netos (nº) _ [Fazer registro dos familiares vivos]",
-        },
+        
         {
           question: 55,
           yes: 1,
           no: 0,
+          input:true,
           point: 1,
-          title: "O(A) senhor(a) encontra familiares e/ou amigos com frequência?",
+          title: "O(a) senhor(a) tem [fazer registro dos familiares vivos]: cônjuge _, pais _, irmãos (nª) _, filhos(nª) _ , netos(nª) _  e bisnetos (n°) _.",
         },
         {
           question: 56,
@@ -564,7 +571,7 @@ export const Questions1 = [
           input: false,
           point: 1,
           title:
-            " O(A) senhor(a) participa de decisões importantes da sua família?",
+            "O(a) senhor(a) encontra pessoas que gosta com frequência?",
         },
         {
           question: 57,
@@ -573,7 +580,7 @@ export const Questions1 = [
           input: false,
           point: 1,
           title:
-            "O(A) senhor(a) se sente satisfeito(a) com o relacionamento afetivo que tem com os seus familiares?",
+            "O(a) senhor(a) participa de decisões tomadas pela sua família?",
         },
         {
           question: 58,
@@ -581,7 +588,7 @@ export const Questions1 = [
           no: 0,
           input: false,
           point: 1,
-          title: "O(A) senhor(a) tem ajuda de alguém se precisar de dinheiro?",
+          title: "O(a) senhor(a) se sente satisfeito(a) com os seus relacionamentos afetivos?",
         },
         {
           question: 59,
@@ -590,7 +597,7 @@ export const Questions1 = [
           input: false,
           point: 1,
           title:
-            "O(A) senhor(a) pode contar com alguém para ajuda-lo(a) a resolver problemas?",
+            "O(a) senhor(a) pode contar com alguém se precisar de dinheiro?",
         },
         {
           question: 60,
@@ -599,7 +606,7 @@ export const Questions1 = [
           input: false,
           point: 1,
           title:
-            "O(A) senhor(a) tem pessoas com quem possa se divertir e relaxar?",
+            "O(a) senhor(a) pode contar com alguém para ajudá-lo(a) a resolver problemas?",
         },
         {
           question: 61,
@@ -608,7 +615,7 @@ export const Questions1 = [
           input: false,
           point: 1,
           title:
-            "O(A) senhor(a) participa de eventos sócio-culturais, tais como: peças de teatro, cinema, universidade aberta a terceira idade, centro de convivência, festas, ligados à religião, etc).",
+          "O(a) senhor(a) tem pessoas com quem possa se divertir e relaxar?"
         },
         {
           question: 62,
@@ -617,22 +624,23 @@ export const Questions1 = [
           input: false,
           point: 1,
           title:
-            "O(A) senhor(a) é acompanhado regularmente por serviços de saúde?",
+            "O (a) senhor(a) participa de eventos socioculturais, tais como: peças de teatro, cinema, universidade aberta a terceira idade, centro de convivência, festas, ligado à religião etc.).",
         },
-      ],
-    },
-    {
-      aspectos: "PROBLEMAS AMBIENTAIS",
-      pontucao: "Pontuação (máxima=16): Necessita de invetigação",
-      perguntas: [
         {
           question: 63,
           yes: 1,
           no: 0,
           input: false,
           point: 1,
-          title: "Na casa do(a) senhor(a), Os móveis são estáveis",
+          title: "O(a) senhor(a) é atendido regularmente por serviços de saúde?",
         },
+      ],
+    },
+    {
+      aspectos: "Violência",
+      pontucao: "Pontuação (máxima=8): Necessita de investigação",
+      perguntas: [
+        
         {
           question: 64,
           yes: 0,
@@ -640,7 +648,7 @@ export const Questions1 = [
           input: false,
           point: 0,
           title:
-            "Na casa do(a) senhor(a), Há objetos e/ou tapetes soltos nas áreas de circulação?",
+            "O(a) senhor(a) tem medo de alguém do seu convívio?",
         },
         {
           question: 65,
@@ -649,43 +657,43 @@ export const Questions1 = [
           input: false,
           point: 0,
           title:
-            "Na casa do(a) senhor(a), O piso é escorregadio (ex. encerado, molhado)?",
+            "O(a) senhor se sente abandonado?",
         },
         {
           question: 66,
-          yes: 1,
-          no: 0,
+          yes: 0,
+          no: 1,
           input: false,
           point: 1,
           title:
-            "Na casa do(a) senhor(a), Há escadas? As escadas possuem corrimão em ambos os lados?",
+            "Alguém tem falado com o(a) senhor(a) de forma que se sinta mal consigo mesmo(a)?",
         },
         {
           question: 67,
-          yes: 1,
-          no: 0,
+          yes: 0,
+          no: 1,
           input: false,
           point: 1,
           title:
-            "Na casa do(a) senhor(a), As escadas/ degraus são iluminados adequadamente",
+            "Alguém tem agredido o(a) senhor(a) fisicamente?",
         },
         {
           question: 68,
-          yes: 1,
-          no: 0,
+          yes: 0,
+          no: 1,
           input: false,
           point: 1,
           title:
-            "Na casa do(a) senhor(a), Os degraus são adequados (tamanho, rebordos, largura e padronagem, etc)? ",
+            "O(a) senhor tem passado necessidades (de roupas, alimentação, medicamentos ou outras)?",
         },
         {
           question: 69,
-          yes: 1,
-          no: 0,
+          yes: 0,
+          no: 1,
           input: false,
           point: 1,
           title:
-            "Na casa do(a) senhor(a),Há tapetes antiderrapantes (fora e dentro box)?",
+            "Alguém tem usado o dinheiro do(a) senhor(a) sem a sua autorização?",
         },
         {
           question: 70,
@@ -694,7 +702,7 @@ export const Questions1 = [
           input: false,
           point: 0,
           title:
-            "O(A) senhor(a) costuma, Subir em banquetas ou cadeiras para alcançar objetos altos?",
+            "Alguém do seu convívio já tocou o corpo do(a) senhor(a) sem o seu consentimento?",
         },
         {
           question: 71,
@@ -703,8 +711,14 @@ export const Questions1 = [
           input: false,
           point: 0,
           title:
-            "O(A) senhor(a) costuma, Deixa as luzes apagadas quando se levanta à noite?",
+            "O(a) senhor está deixando de cuidar de si próprio?",
         },
+      ],
+    },
+    {
+      aspectos: "Problemas Ambientais",
+      pontucao: "Pontuação (máxima=16): Necessita de investigação",
+      perguntas: [
         {
           question: 72,
           yes: 1,
@@ -712,25 +726,25 @@ export const Questions1 = [
           input: false,
           point: 1,
           title:
-            "O(A) senhor(a) costuma, Utiliza calçados seguros e adequados (solado antiderrapante, bem ajustados e firmes no pé, sem saltos, etc)?",
+            "Os móveis próximos as áreas de circulação são estáveis (firmes)?",
         },
         {
           question: 73,
-          yes: 1,
-          no: 0,
+          yes: 0,
+          no: 1,
           input: false,
           point: 1,
           title:
-            "O(A) senhor(a) está satisfeito com as calçadas do seu bairro são bem cuidadas (pavimentadas, lisas e sem buracos)?",
+            "Há objetos (chinelos, brinquedos, tapetes, etc) soltos nas áreas de circulação?",
         },
         {
           question: 74,
-          yes: 1,
-          no: 0,
+          yes: 0,
+          no: 1,
           input: false,
           point: 1,
           title:
-            "O(A) senhor(a) está satisfeito com o acesso ao transporte publico no seu bairro?",
+            "O piso é escorregadio (ex. encerado, molhado)?",
         },
         {
           question: 75,
@@ -739,16 +753,16 @@ export const Questions1 = [
           input: false,
           point: 1,
           title:
-            "O(A) senhor(a) está satisfeito com o acesso ao comercio no seu bairro?",
+            "Há tapetes antiderrapantes (fora e dentro do box)?",
         },
         {
           question: 76,
-          yes: 1,
-          no: 0,
+          yes: 0,
+          no: 1,
           input: false,
           point: 1,
           title:
-            "O(A) senhor(a) está satisfeito com a facilidade e prazer em andar (a pé com cadeira de rodas/bengala/andador) no seu bairro?",
+            "Há escadas? [Instruções: item sem pontuação. Se não houver escadas, pular as próximas duas questões e pontuá-las positivamente]",
         },
         {
           question: 77,
@@ -757,7 +771,7 @@ export const Questions1 = [
           input: false,
           point: 1,
           title:
-            "O(A) senhor(a) está satisfeito com o acesso à diversão no seu bairro (restaurantes, cinema, clubes,etc.)?",
+            "As escadas são iluminadas?",
         },
         {
           question: 78,
@@ -766,82 +780,85 @@ export const Questions1 = [
           input: false,
           point: 1,
           title:
-            "O(A) senhor(a) está satisfeito com a segurança quanto à ameaça da criminalidade no seu bairro?",
+            "As escadas possuem corrimãos em ambos os lados?",
         },
-      ],
-    },
-    {
-      aspectos: "VIOLÊNCIA",
-      pontucao: "Pontuação (máxima=8): Necessita de invetigação",
-      perguntas: [
         {
           question: 79,
           yes: 0,
           no: 1,
           input: false,
           point: 0,
-          title: "O(A) senhor(a) tem medo de alguém próximo/do seu convívio?",
+          title: "Subir em banquetas ou cadeiras para alcançar objetos altos?",
         },
         {
           question: 80,
-          yes: 0,
-          no: 1,
+          yes: 1,
+          no: 0,
           input: false,
           point: 0,
-          title: "O(A) senhor(a) se sente só ou abandonado?",
+          title: "Acender as luzes ao levantar-se à noite?",
         },
         {
           question: 81,
-          yes: 0,
-          no: 1,
+          yes: 1,
+          no: 0,
           input: false,
           point: 0,
           title:
-            "Alguém tem falado com o(a) senhor(a) de forma que se sinta constrangido(a) ou desrespeitado(a)?",
+            "Utilizar calçados seguros e adequados (solado antiderrapante, bem ajustados e firmes no pé, sem saltos etc)?",
         },
         {
           question: 82,
-          yes: 0,
-          no: 1,
+          yes: 1,
+          no: 0,
           input: false,
           point: 0,
-          title: "Alguém tem agredido o(a) senhor(a) fisicamente?",
+          title: "As calçadas próximas à sua residência são bem cuidadas (pavimentadas, lisas e sem buracos)?",
         },
         {
           question: 83,
-          yes: 0,
-          no: 1,
+          yes: 1,
+          no: 0,
           input: false,
           point: 0,
           title:
-            "O(A) senhor(a) tem passado necessidade de roupas, alimentação, medicamentos ou outras?",
+            "No seu bairro, o transporte público é acessível?",
         },
         {
           question: 84,
-          yes: 0,
-          no: 1,
+          yes: 1,
+          no: 0,
           input: false,
           point: 0,
           title:
-            "Alguém tem usado o dinheiro do(a) senhor(a) sem a sua autorização?",
+            "No seu bairro, o comércio é acessível?",
         },
         {
           question: 85,
-          yes: 0,
-          no: 1,
+          yes: 1,
+          no: 0,
           input: false,
           point: 0,
           title:
-            "Alguém do seu convívio já tocou o corpo do(a) senhor(a) sem o seu consentimento?",
+            "No seu bairro, há facilidade e prazer em andar (a pé/com cadeiras de rodas/bengala/ andador)?",
         },
         {
           question: 86,
-          yes: 0,
-          no: 1,
+          yes: 1,
+          no: 0,
           input: false,
           point: 0,
           title:
-            "O(A) senhor(a) está deixando de cuidar da sua própria saúde e/ou segurança?",
+            "No seu bairro, a diversão (restaurantes, cinema, clubes, etc) é acessível?",
+        },
+        {
+          question: 87,
+          yes: 1,
+          no: 0,
+          input: false,
+          point: 0,
+          title:
+            "O seu bairro é seguro?",
         },
       ],
     },
@@ -850,38 +867,27 @@ export const Questions1 = [
   export const Questions4 = [
     {
       aspectos: "QUEDAS",
-      pontucao: "Pontuação (máxima=16): Necessita de invetigação",
+      pontucao: "Pontuação (máxima=17): Necessita de invetigação",
       perguntas: [
-        {
-          question: 87,
-          yes: 0,
-          no: 1,
-          input: true,
-          point: 0,
-          tooltip:
-            "[Se não, pontue também a resposta “não” na próxima questão e vá para a questão 90] [Se não, pule as próximas duas questões]",
-          title:
-            "O(A) senhor(a) sofreu alguma queda nos últimos 12 meses? Se sim, quantas? _",
-        },
         {
           question: 88,
           yes: 0,
           no: 1,
-          input: false,
+          input: true,
           point: 0,
           title:
-            "O(A) senhor(a) sofreu alguma fratura decorrente destas quedas? Se sim, quais? ",
+            "O(a) senhor(a) sofreu alguma queda nos últimos 12 meses? Se sim, quantas? _",
         },
         {
           question: 89,
           yes: 0,
           no: 0,
-          input: false,
+          input: true,
           tooltip:
             "[Investigar atividade realizada, local, horário do dia, tipo de calçado, riscos ambientais etc]",
           point: 0,
           title:
-            " O que o(a) senhor(a) estava fazendo quando sofreu essa(s) queda(s)? ",
+            "O(a) senhor(a) sofreu alguma fratura decorrente destas quedas ? Se sim, quais _ ?",
         },
         {
           question: 90,
@@ -889,8 +895,7 @@ export const Questions1 = [
           no: 0,
           input: false,
           point: 1,
-          title:
-            "[Avaliação de força de MMII] – Peça ao(a) idoso(a) para levantar-se de uma cadeira sem ajuda. Assinale ao lado se o(a) idoso(a) conseguiu realizar a tarefa.",
+          title:"O que o (a) senhor(a) estava fazendo quando sofreu essa(s) queda(s)?"
         },
         {
           question: 91,
@@ -898,17 +903,16 @@ export const Questions1 = [
           no: 0,
           input: false,
           point: 1,
-          title:
-            "[Avaliação de equilíbrio] Peça ao(a) idoso(a) para permanecer em pé em uma única perna, sem apoio dos membros superiores, durante 5 segundos. Assinale ao lado se o(a) idoso(a) consegue realizar a tarefa",
+          title:"Instruções: Utilizando uma cadeira de assento e encosto firmes, sem braços, peça ao(a) idoso(a) para levantar-se de uma cadeira sem ajuda. Assinale ao lado se o(a) idoso(a) conseguiu realizar a tarefa.]"
         },
         {
           question: 92,
-          yes: 0,
-          no: 1,
+          yes: 1,
+          no: 0,
           input: false,
           tooltip: "[ver em dados de indetificação]",
           point: 0,
-          title: "Idade >75 anos",
+          title: "[Instruções: Peça ao(a) idoso(a) para permanecer em pé em uma única perna, sem apoio dos membros superiores, durante 5 segundos. Oriente retornar o pé no chão em caso de perda de equilíbrio. Assinale ao lado se o(a) idoso(a) conseguiu realizar a tarefa.]",
         },
         {
           question: 93,
@@ -917,7 +921,7 @@ export const Questions1 = [
           input: false,
           tooltip: "[ver em dados de indetificação]",
           point: 0,
-          title: "Gênero feminino",
+          title: "O(a) senhor(a) faz uso de dispositivo de auxílio à marcha (bengala, andador) sem orientação profissional?",
         },
         {
           question: 94,
@@ -927,7 +931,7 @@ export const Questions1 = [
           tooltip:
             " [Pontuação negativa em Fluência Verbal em Funções Cognitivas]",
           point: 0,
-          title: "Alterações cognitivas",
+          title: "Idade > 75 anos",
         },
         {
           question: 95,
@@ -936,7 +940,7 @@ export const Questions1 = [
           input: false,
           tooltip: "[Pontuação > 4 em Capacidade Funcional]",
           point: 0,
-          title: "Comprometimento AVDs",
+          title: "Gênero feminino",
         },
         {
           question: 96,
@@ -945,16 +949,16 @@ export const Questions1 = [
           input: false,
           tooltip: "[ver questão 15]",
           point: 0,
-          title: "Déficit Visual",
+          title: "Alterações cognitivas",
         },
         {
           question: 97,
-          yes: 0,
-          no: 1,
+          yes: 1,
+          no: 0,
           input: false,
           tooltip: "[ver questões 63 a 69]",
           point: 0,
-          title: "Riscos domésticos",
+          title: "Comprometimento AVDs",
         },
         {
           question: 98,
@@ -963,7 +967,7 @@ export const Questions1 = [
           input: false,
           tooltip: "[ver questões 70 a 72]",
           point: 0,
-          title: "Riscos comportamentais",
+          title: "Déficit visual",
         },
         {
           question: 99,
@@ -972,7 +976,7 @@ export const Questions1 = [
           input: false,
           tooltip: "[ver questão 38]",
           point: 0,
-          title: "Inatividade",
+          title: "Riscos domésticos",
         },
         {
           question: 100,
@@ -981,7 +985,7 @@ export const Questions1 = [
           input: false,
           tooltip: "[ver questão 42]",
           point: 0,
-          title: "Acidente Vascular Encefálico prévio",
+          title: "Riscos comportamentais",
         },
         {
           question: 101,
@@ -991,7 +995,7 @@ export const Questions1 = [
           tooltip: "[ver questão 45]",
           point: 0,
           title:
-            "Faz uso de medicações psicotrópicas, em especial benzodiazepínicos, OU uso contínuo de 5 ou mais medicações (polifarmácia)",
+            "Inatividade",
         },
         {
           question: 102,
@@ -1000,8 +1004,25 @@ export const Questions1 = [
           input: false,
           point: 0,
           tooltip: "[ver questões 42 e 43]",
-          title:
-            "Apresenta alguma das doenças a seguir: hipertensão, tontura/ vertigem, Parkinson, amputação de membros inferiores, convulsões, artrite, osteoporose, incontinência, diabetes, neuropatia, hipotensão postural",
+          title:"Acidente Vascular Encefálico prévio"
+        },
+        {
+          question: 103,
+          yes: 0,
+          no: 1,
+          input: false,
+          point: 0,
+          tooltip: "[ver questões 42 e 43]",
+          title:"Faz uso de medicações psicotrópicas, em especial benzodiazepínicos, ou uso continuo de 5 ou mais medicações (polifarmacia)"
+        },
+        {
+          question: 104,
+          yes: 0,
+          no: 1,
+          input: false,
+          point: 0,
+          tooltip: "[ver questões 42 e 43]",
+          title:"Apresenta alguma das doenças a seguir: hipertensão, tontura/ vertigem, Parkinson, amputação de membros inferiores, convulsões, artrite, osteoporose,      incontinência, diabetes, neuropatia, hipotensão postural"
         },
       ],
     },
