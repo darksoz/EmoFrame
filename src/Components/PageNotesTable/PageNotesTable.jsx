@@ -24,29 +24,24 @@ function PageNotesTable(props) {
             <tr>
               <th>Bloco</th>
               <th>Anotações</th>
-              <th>Demandas Para Investigar</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td>Psicológico</td>
               <td>{oBAspects.anotacao_aspectos_psicologicos}</td>
-              <td>Lista de demandas para investigar</td>
             </tr>
             <tr>
               <td>Biológico</td>
               <td>{oBAspects.anotacao_aspectos_biologicos}</td>
-              <td>Lista de demandas para investigar</td>
             </tr>
             <tr>
               <td>Social</td>
               <td>{oBAspects.anotacao_aspectos_sociais}</td>
-              <td>Lista de demandas para investigar</td>
             </tr>
             <tr>
               <td>Quedas</td>
               <td>{oBAspects.anotacao_aspectos_multidimensionais}</td>
-              <td>Lista de demandas para investigar</td>
             </tr>
           </tbody>
         </Table>

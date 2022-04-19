@@ -13,6 +13,7 @@ import { formateDateTime } from "../../services/utils";
 import Header from "../../Components/Header/Header";
 import Footer from "../../Components/Footer/Footer";
 import PageNotesTable from "../../Components/PageNotesTable/PageNotesTable";
+import PageInvestigationTable from "../../Components/PageInvestigationTable/PageInvestigationTable";
 
 function PageResult() {
   const [questions, setQuestions] = useState([]);
@@ -146,6 +147,8 @@ function PageResult() {
         <DemandsMap questions={filteredQuestions} />
 
         <PageNotesTable aspects={filteredAspects}/>
+
+        <PageInvestigationTable/>
 
         <GerontologistAssessment />
 
