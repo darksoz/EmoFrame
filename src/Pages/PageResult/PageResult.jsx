@@ -67,24 +67,34 @@ function PageResult() {
     }
     return data.sort((a, b) => a.id - b.id);
   };
-
+  const filterQuestionsByString = (questions) => {
+    let data = [];
+    if (questions) {
+      data = questions.filter((item) => {
+        return (+item.id) != item.id;
+      });
+    }
+    return data.sort((a, b) => a.id - b.id);
+  };
+  const filteredAspects = filterQuestionsByString(questions);
   const filteredQuestions = filterQuestionsByNumberInt(questions);
+
   const dominiosList = [
-    { aspectos: "Aspectos Psicologicos", min: 0, max: 14 },
+    { aspectos: "Aspectos Psicologicos", min: 0, max: 19 },
     {
       aspectos: "Aspectos Biologicos",
-      min: 14,
-      max: 53,
+      min: 19,
+      max: 54,
     },
     {
       aspectos: "Aspectos Sociais",
-      min: 53,
-      max: 86,
+      min: 54,
+      max: 87,
     },
     {
       aspectos: "Aspectos Multidimensionais",
-      min: 86,
-      max: 102,
+      min: 87,
+      max: 104,
     },
   ];
   const aspectos = {};
@@ -135,7 +145,7 @@ function PageResult() {
 
         <DemandsMap questions={filteredQuestions} />
 
-        <PageNotesTable/>
+        <PageNotesTable aspects={filteredAspects}/>
 
         <GerontologistAssessment />
 

@@ -16,18 +16,20 @@ export const Questions1 = [
         },
         {
           title:
-            " Memória: Vou lhe dizer 3 palavras e o(a) senhor(a) irá repeti-las em seguida. Peço que memorie essas 3 palavras, pois vou lhe perguntar sobre elas mais tarde novamente. [Instruções: Falar as 3 palavras em sequência pausadamente. Caso o(a) idoso(a) não consiga, repita no máximo 3 vezes para aprendizado. Pontuar ao lado se o(a) idoso(a) repetiu corretamente as três palavras na primeira tentativa]",
+            "Memória: Vou lhe dizer 3 palavras e o(a) senhor(a) irá repeti-las em seguida. Peço que memorie essas 3 palavras, pois vou lhe perguntar sobre elas mais tarde novamente. ",
           point: 1,
+          tooltip: "[Instruções: Falar as 3 palavras em sequência pausadamente. Caso o(a) idoso(a) não consiga, repita no máximo 3 vezes para aprendizado. Pontuar ao lado se o(a) idoso(a) repetiu corretamente as três palavras na primeira tentativa]",
           yes: 1,
           no: 0,
           input: false,
           question: 2,
-          text: ["Renato Moreira", "Rua Bela Vista, 73", "Santarém", "Pará"],
+          text: ["Carro", "Vaso", "Tijolo"],
         },
         {
           title:
-            "Linguagem, função executiva e atenção: Agora, eu vou marcar um minuto no relógio e durante esse tempo o(a) senhor(a) deve falar o maior número de animais de que se lembrar. Quanto mais animais o senhor fala nesse tempo melhor. [Instruções: Anote os nomes de animais falados pelo(a) idoso(a) a cada 15 segundos, e registrar, mas não contar animais repetidos]. Pode começar. Pontuação de acordo com escolaridade: 1) analfabetos = 9 animais; 2) 1-7 anos = 12 animais e 3) 8 anos ou mais = 13 animais.",
+            "Linguagem, função executiva e atenção: Agora, eu vou marcar um minuto no relógio e durante esse tempo o(a) senhor(a) deve falar o maior número de animais de que se lembrar. Quanto mais animais o senhor fala nesse tempo melhor. ",
           point: 1,
+          tooltip:"[Instruções: Anote os nomes de animais falados pelo(a) idoso(a) a cada 15 segundos, e registrar, mas não contar animais repetidos]. Pode começar. Pontuação de acordo com escolaridade: 1) analfabetos = 9 animais; 2) 1-7 anos = 12 animais e 3) 8 anos ou mais = 13 animais.",
           question: 3,
           input: false,
           yes: 1,
@@ -54,8 +56,9 @@ export const Questions1 = [
         },
         {
           title:
-          "Teste do relógio: Aplique apenas se o (a) idoso tiver escolaridade igual ou superior          a 5 anos. Caso não, pontue ao lado de forma negativa. Esteja com uma folha com um desenho de um círculo de 11 cm de diâmetro e dê as instruções para a tarefa]          Senhor(a), nesta folha temos um mostrador de um relógio. Gostaria que o senhor(a)          colocasse os números dentro dele. [Aguardar]. Por favor, agora indique o horário 11h10          (onze horas e 10 minutos) [Pontue ao lado se o(a) idoso(a) atingiu a nota de corte          esperada. Nota de corte: Atribua um ponto para cada posicionamento correto dos          números 1,2,4,5,7,8,10 e 11, mais um ponto para cada ponteiro correto (pontuação          máxima = 10). Ponto de corte = 7]",
+          "Teste do relógio: Aplique apenas se o (a) idoso tiver escolaridade igual ou superior a 5 anos. Caso não, pontue ao lado de forma negativa. Esteja com uma folha com um desenho de um círculo de 11 cm de diâmetro e dê as instruções para a tarefa] Senhor(a), nesta folha temos um mostrador de um relógio. Gostaria que o senhor(a) colocasse os números dentro dele. [Aguardar]. Por favor, agora indique o horário 11h10 (onze horas e 10 minutos) ",
           question: 6,
+          tooltip:"[Pontue ao lado se o(a) idoso(a) atingiu a nota de corte esperada. Nota de corte: Atribua um ponto para cada posicionamento correto dos  números 1,2,4,5,7,8,10 e 11, mais um ponto para cada ponteiro correto (pontuação máxima = 10). Ponto de corte = 7]",
           yes: 1,
           input: false,
           no: 0,
@@ -80,11 +83,10 @@ export const Questions1 = [
           yes: 0,
           no: 1,
           input: true,
-          tooltip:
-            "[Registrar ao lado se é perceptível uma visão mais negativa da velhice].",
           point: 0,
           title:
-            "Que idade o (a) senhor(a) sente ter            ? Por quê? [Instruções: Com base na            resposta dada, analisar e registrar ao lado se o(a) idoso(a) sente-se mais velho do que realmente é:]",
+            "Que idade o (a) senhor(a) sente ter _? Por quê? ",
+          tooltip:"[Instruções: Com base na resposta dada, analisar e registrar ao lado se o(a) idoso(a) sente-se mais velho do que realmente é:]"
         },
         {
           question: 9,
@@ -143,7 +145,7 @@ export const Questions1 = [
     {
       aspectos: "DEPRESSÃO",
       pontucao: "Pontuação (máxima=5): Necessita de investigação",
-      instrucao: "antes de iniciar diga ao idoso: “Vou lhe fazer algumas perguntas para saber como o(a) senhor(a) vem se sentindo na última semana",
+      instrucao: "Antes de iniciar diga ao idoso: “Vou lhe fazer algumas perguntas para saber como o(a) senhor(a) vem se sentindo na última semana.",
       perguntas: [
         {
           question: 15,
@@ -345,7 +347,7 @@ export const Questions1 = [
           no: 1,
           imc: true,
           input: true,
-          point: 1,
+          point: true,
           title: "Índice de Massa Corporal (peso _ [kg]/ estatura _ [Cm]) igual ou menor que 22 kg/m2",
         },
       ],
@@ -371,7 +373,8 @@ export const Questions1 = [
           no: 1,
           input: false,
           point: 0,
-          title: "O(a) senhor(a) tem pressão alta (superior a 140 x 90 mmHg)? [Instruções: Pontuar como sim quando PA autorreferida for superior ao valor indicado, mesmo com o uso de anti-hipertensivos, ou caso o(a) idoso(a) não saiba informar.]",
+          title: "O(a) senhor(a) tem pressão alta (superior a 140 x 90 mmHg)? ",
+          tooltip:"[Instruções: Pontuar como sim quando PA autorreferida for superior ao valor indicado, mesmo com o uso de anti-hipertensivos, ou caso o(a) idoso(a) não saiba informar.]",
         },
         {
           question: 38,
@@ -380,8 +383,9 @@ export const Questions1 = [
           input: false,
           point: 1,
           title:
-            "O(a) senhor(a) tem glicemia de jejum superior a 100 mg/dL? [Instruções: Pontuar como sim quando a resposta for positiva mesmo com o uso de antidiabéticos ou caso o(a) idoso(a) não saiba informar.]",
-        },
+            "O(a) senhor(a) tem glicemia de jejum superior a 100 mg/dL? ",
+          tooltip:"[Instruções: Pontuar como sim quando a resposta for positiva mesmo com o uso de antidiabéticos ou caso o(a) idoso(a) não saiba informar.]",
+          },
         {
           question: 39,
           yes: 0,
@@ -404,7 +408,8 @@ export const Questions1 = [
           no: 1,
           input: true,
           point: 0,
-          title: "O(a) senhor(a) tem o hábito de ingerir bebidas alcoólicas? Se sim, qual o tipo da bebida? _ E quantas doses, taças ou latas em uma semana? _. [Instruções: Depois assinale ao lado a resposta equivalente, considerando as seguintes referências:",
+          title: "O(a) senhor(a) tem o hábito de ingerir bebidas alcoólicas? Se sim, qual o tipo da bebida? _ E quantas doses, taças ou latas em uma semana? _ .",
+          tooltip:"[Instruções: Depois assinale ao lado a resposta equivalente, considerando as seguintes referências:",
         },
         {
           question: 42,
@@ -412,11 +417,12 @@ export const Questions1 = [
           no: 1,
           input: true,
           title:
-            "O(a) senhor(a) pratica exercícios físicos regulares (caminhada, natação, dança, ginástica, musculação, entre outros)? Se sim, qual a frequência? _ E por quanto tempo? _____________________. [Instruções: Depois assinale ao lado a resposta equivalente (sim ou não) considerando prática regular de exercícios como: frequência igual ou superior a 2 dias/semana com tempo total igual ou superior a 150 minutos/semana].",
-    
+            "O(a) senhor(a) pratica exercícios físicos regulares (caminhada, natação, dança, ginástica, musculação, entre outros)? Se sim, qual a frequência? _ E por quanto tempo? _ . ",
+          tooltip:"[Instruções: Depois assinale ao lado a resposta equivalente (sim ou não) considerando prática regular de exercícios como: frequência igual ou superior a 2 dias/semana com tempo total igual ou superior a 150 minutos/semana]."
         },
         {
-          title: "MC para obesidade: ≥27 Kg/m2 [verificar na questão 35]",
+          title: "IMC para obesidade: ≥27 Kg/m2",
+          tooltip:"[verificar na questão 35]",
           input: false,
           question: 43,
           yes: 0,
@@ -426,14 +432,14 @@ export const Questions1 = [
     },
     {
       aspectos: "USO INADEQUADO DE MEDICAMENTOS",
-      pontucao: "Pontuação (máxima=9): Necessita de invetigação",
-      perguntas: [
-        
+      pontucao: "Pontuação (máxima=9): Necessita de investigação",
+      perguntas: [ 
         {
           question: 44,
           yes: 0,
           no: 0,
-          title: "Nos últimos 5 anos, algum médico ou outro profissional de saúde já disse que o(a) senhor(a) tem: [Instruções: registre a quantidade total de diagnósticos:]",
+          title: "Nos últimos 5 anos, algum médico ou outro profissional de saúde já disse que o(a) senhor(a) tem:",
+          tooltip:"[Instruções: registre a quantidade total de diagnósticos:]",
           input: false,
           questions:[
             "Doença do coração (angina, infarto ou ataque cardíaco)?",
@@ -447,7 +453,7 @@ export const Questions1 = [
             "Tendinite?",
             "Problemas de circulação?",
             "Depressão?",
-            "Outra? _",
+            "Outra? ",
           ]
         },
         {
@@ -465,7 +471,7 @@ export const Questions1 = [
             "Tontura?",
             "Dificuldades para dormir?",
             "Incontinência urinária/perda de urina (por esforço)",
-            "Outro? _",
+            "Outro? ",
           ]
         },
         {
@@ -718,6 +724,7 @@ export const Questions1 = [
     {
       aspectos: "Problemas Ambientais",
       pontucao: "Pontuação (máxima=16): Necessita de investigação",
+      instrucao:"Ambiente interno – Na casa do(a) senhor(a):",
       perguntas: [
         {
           question: 72,

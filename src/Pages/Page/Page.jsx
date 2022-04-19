@@ -15,6 +15,7 @@ import ModalTest from "../../Components/Modal/ModalTest";
 import Header from "../../Components/Header/Header";
 import Footer from "../../Components/Footer/Footer";
 
+
 function Page() {
   const [active, setActive] = React.useState(1);
   const [answers, setAnswers] = React.useState([]);
@@ -40,15 +41,18 @@ function Page() {
     let data = [];
     if (questions) {
       data = questions.filter((item) => {
-        return parseInt(item.id) === item.id;
+        return parseInt(item.id) == item.id;
       });
     }
     return data.sort((a, b) => a.id - b.id) || null;
   };
   useEffect(() => {
     let data = filterQuestionsByNumberInt(answers);
+    console.log(data.length)
     setTotalQuestions(data.length);
   }, [answers]);
+  
+  
 
   const handleChangeForm = (event) => {
     const id = event.target.name;
@@ -85,7 +89,8 @@ function Page() {
       setSuccess(false);
     }
   };
-  
+  console.log('active',active)
+  console.log('totalQuestions',totalQuestions)
 
   return (
     <>
@@ -119,7 +124,38 @@ function Page() {
             </Step>
           </MultiStepForm>
         </div>
+        
         {active === 1 && (
+          <Link to="sample">
+            <button
+              class="btn whitebutton btn-lg"
+              onClick={() => setActive(active + 1)}
+            >
+              Próximo
+            </button>
+          </Link>
+        )}
+        {active === 2 && totalQuestions === 19 && (
+          <Link to="sample">
+            <button
+              class="btn whitebutton btn-lg"
+              onClick={() => setActive(active + 1)}
+            >
+              Próximo
+            </button>
+          </Link>
+        )}
+        {active === 3 && totalQuestions === 52 && (
+          <Link to="sample">
+            <button
+              class="btn whitebutton btn-lg"
+              onClick={() => setActive(active + 1)}
+            >
+              Próximo
+            </button>
+          </Link>
+        )}
+        {active === 4 && totalQuestions === 85 && (
           <Link to="sample">
             <button
               class="btn whitebutton btn-lg"
@@ -140,14 +176,7 @@ function Page() {
                 Anterior
               </button>
             </Link>
-            <Link to="sample">
-              <button
-                class="btn whitebutton btn-lg"
-                onClick={() => setActive(active + 1)}
-              >
-                Próximo
-              </button>
-            </Link>
+            
           </div>
         )}
         {active === 5 && (

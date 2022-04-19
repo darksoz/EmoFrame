@@ -5,7 +5,7 @@ import TableDiagnostico from "./TableDiagnostico";
 
 function QuestionsPage(props) {
   const checkTextBox = (str) => {
-    let textBox = ["7", "8", "41", "51", "54", "45", "88", "89"];
+    let textBox = ["46"];
     return textBox.includes(String(str));
   };
   return (
@@ -20,19 +20,32 @@ function QuestionsPage(props) {
         ) : (
           props.pergunta.question + "-" + props.pergunta.title
         )}
-        <strong>
+
+        <br></br>
+        <ul style={{ listStyleType: "none", justifyContent: "space-between" }}>
           {props.pergunta.questions?.map((a, index) => (
             <>
-              <label> {a}</label>
-              <input
-                type="checkbox"
-                value={a}
-                name={props.pergunta.question + "." + (index + 1)}
-              ></input>
-              <br></br>
+              <li>
+                <label> {a}</label>
+                {index === props.pergunta.questions.length - 1 ? (
+                  <input
+                    type="text"
+                    style={{ width: "15%" }}
+                    name={props.pergunta.question + "." + (index + 1)}
+                  ></input>
+                ) : (
+                  <input
+                    style={{ marginLeft: "0.5em" }}
+                    type="checkbox"
+                    value={a}
+                    name={props.pergunta.question + "." + (index + 1)}
+                  ></input>
+                )}
+              </li>
             </>
           ))}
-        </strong>
+        </ul>
+
         {checkTextBox(props.pergunta.question) && (
           <textarea
             class="form-control"
@@ -41,10 +54,13 @@ function QuestionsPage(props) {
             name={`${props.pergunta.question}.7`}
           ></textarea>
         )}
-        {props.pergunta.question === "53" && (
+        {props.pergunta.question === 54 && (
           <TableDiagnostico></TableDiagnostico>
         )}
-        <p className="h5 mb-3 mt-3 p-1">
+        {props.pergunta.question === 44 || props.pergunta.question === 45  ? (
+          ""
+        ):(
+          <p className="h5 mb-3 mt-3 p-1">
           <Container className="ml-5">
             <div className="form-check" style={{ minHeight: "2.0em" }}>
               <input
@@ -69,7 +85,8 @@ function QuestionsPage(props) {
               </label>
             </div>
           </Container>
-        </p>
+        </p>)
+        }
       </p>
     </>
   );

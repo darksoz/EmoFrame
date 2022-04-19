@@ -14,10 +14,11 @@ function ImcInput(props) {
 
   const handleBlur = (e) => {
     const { name, value } = e.target;
-    if (name === "32.1") {
+    console.log(name, value);
+    if (name === "35.1") {
       setPesoValue(parseFloat(value));
     }
-    if (name === "32.2") {
+    if (name === "35.2") {
       setAlturaValue(parseFloat(value));
     }
   };

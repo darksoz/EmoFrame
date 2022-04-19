@@ -18,6 +18,7 @@ function SocialAspect() {
               <Row>
                 <p className="h4">{question.aspectos}</p>
                 <hr />
+                
               </Row>
               <Row>
                 <Col md={12}>
@@ -77,6 +78,7 @@ function SocialAspect() {
               </Row>
 
               </Container>
+              { index === Questions3.length - 1 && (
               <Row>
                 <div class="form-group justify-content-center mt-5">
                   <textarea
@@ -89,6 +91,7 @@ function SocialAspect() {
                   ></textarea>
                 </div>
               </Row>
+              )}
             </Card>
           </Container>
         </>

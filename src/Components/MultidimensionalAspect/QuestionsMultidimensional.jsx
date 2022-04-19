@@ -4,7 +4,7 @@ import InputText from "../InputText/InputText";
 
 function QuestionsMultidimensional(props) {
   const checkTextBox = (str) => {
-    let textBox = ["7", "8", "41", "51", "54", "45", "88", "89"];
+    let textBox = ["90"];
     return textBox.includes(String(str));
   };
   return (

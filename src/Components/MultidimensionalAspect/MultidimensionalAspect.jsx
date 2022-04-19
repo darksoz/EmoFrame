@@ -79,6 +79,7 @@ function MultidimensionalAspect() {
               </Row>
 
               </Container>
+              {index === Questions4.length - 1 && (
               <Row>
                 <div class="form-group justify-content-center mt-5">
                   <textarea
@@ -91,6 +92,7 @@ function MultidimensionalAspect() {
                   ></textarea>
                 </div>
               </Row>
+              )}
             </Card>
           </Container>
         </>
