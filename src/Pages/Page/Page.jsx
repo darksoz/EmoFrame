@@ -135,7 +135,7 @@ function Page() {
             </button>
           </Link>
         )}
-        {active === 2 && totalQuestions === 19 && (
+        {active === 2 && totalQuestions >= 19 && (
           <Link to="sample">
             <button
               class="btn whitebutton btn-lg"
@@ -145,7 +145,7 @@ function Page() {
             </button>
           </Link>
         )}
-        {active === 3 && totalQuestions === 52 && (
+        {active === 3 && totalQuestions  >= 52 && (
           <Link to="sample">
             <button
               class="btn whitebutton btn-lg"
@@ -155,7 +155,7 @@ function Page() {
             </button>
           </Link>
         )}
-        {active === 4 && totalQuestions === 85 && (
+        {active === 4 && totalQuestions  >= 85 && (
           <Link to="sample">
             <button
               class="btn whitebutton btn-lg"
@@ -166,10 +166,10 @@ function Page() {
           </Link>
         )}
         {active > 1 && active !== 5 && (
-          <div>
+          <span>
             <Link to="sample">
               <button
-                style={{marginRight:"20px"}}
+               style={{marginLeft:"20px"}}
                 class="btn whitebutton btn-lg"
                 onClick={() => setActive(active - 1)}
               >
@@ -177,7 +177,7 @@ function Page() {
               </button>
             </Link>
             
-          </div>
+          </span>
         )}
         {active === 5 && (
           <div>

@@ -67,7 +67,7 @@ export const Questions1 = [
       ],
     },
     {
-      aspectos: "ATIVIDADE NEGATIVA EM RELAÇÃO AO ENVELHECIMENTO",
+      aspectos: "ATITUDE NEGATIVA EM RELAÇÃO AO ENVELHECIMENTO",
       pontucao: "Pontuação (máxima=8): Necessita de investigação",
       perguntas: [
         {
@@ -145,7 +145,7 @@ export const Questions1 = [
     {
       aspectos: "DEPRESSÃO",
       pontucao: "Pontuação (máxima=5): Necessita de investigação",
-      instrucao: "Antes de iniciar diga ao idoso: “Vou lhe fazer algumas perguntas para saber como o(a) senhor(a) vem se sentindo na última semana.",
+      instrucao: "Antes de iniciar diga ao idoso: 'Vou lhe fazer algumas perguntas para saber como o(a) senhor(a) vem se sentindo na última semana.'",
       perguntas: [
         {
           question: 15,
