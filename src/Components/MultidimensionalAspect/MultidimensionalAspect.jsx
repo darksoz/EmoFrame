@@ -50,6 +50,7 @@ function MultidimensionalAspect() {
                         type="radio"
                         value="SIM"
                         name={question.aspectos}
+                        id='Multidimensional'
                       />
                       <label
                         className="form-check-label label-page-i"
@@ -65,6 +66,7 @@ function MultidimensionalAspect() {
                         type="radio"
                         value="NÃO"
                         name={question.aspectos}
+                        id='Multidimensional'
                       />
                       <label
                         className="form-check-label label-page-i l-no"

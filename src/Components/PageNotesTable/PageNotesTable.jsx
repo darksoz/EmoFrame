@@ -7,10 +7,11 @@ function PageNotesTable(props) {
   /// anotacao_aspectos_psicológicos
   console.log("aspects",props.aspects)
   const oBAspects = props.aspects.reduce(
-    (obj, item) => Object.assign(obj, { [item.id]: item.answer }),
+    (obj, item) => Object.assign(obj, { [item.id]: item.answer}),
     {}
   );
   console.log(oBAspects);
+  console.log(props.aspects);
   return (
     <>
       <div className="border border-dark bg-lgrey text-white">

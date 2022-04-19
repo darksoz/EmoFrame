@@ -49,6 +49,7 @@ function SocialAspect() {
                         type="radio"
                         value="SIM"
                         name={question.aspectos}
+                        id='Social'
                       />
                       <label
                         className="form-check-label label-page-i"
@@ -64,6 +65,7 @@ function SocialAspect() {
                         type="radio"
                         value="NÃO"
                         name={question.aspectos}
+                        id='Social'
                       />
                       <label
                         className="form-check-label label-page-i l-no"

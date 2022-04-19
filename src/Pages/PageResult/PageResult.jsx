@@ -104,7 +104,7 @@ function PageResult() {
       element.max
     );
   }
-
+  console.log('teste',questions)
   const handleClose = path => {
     setShow(false);
     history.push(path);

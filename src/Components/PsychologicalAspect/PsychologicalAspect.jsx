@@ -58,6 +58,7 @@ function PsychologicalAspect() {
                             type="radio"
                             value="SIM"
                             name={question.aspectos}
+                            id='Psicológico'
                           />
                           <label
                             className="form-check-label label-page-i"
@@ -73,6 +74,7 @@ function PsychologicalAspect() {
                             type="radio"
                             value="NÃO"
                             name={question.aspectos}
+                            id='Psicológico'
                           />
                           <label
                             className="form-check-label label-page-i l-no"

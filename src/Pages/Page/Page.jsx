@@ -29,9 +29,15 @@ function Page() {
   const handleChange = (event) => {
     const id = event.target.name;
     const data = { id, answer: event.target.value };
+    if ( event.target.id ) {
+      data.aspect = event.target.id;
+    }
+
+    const aspect = event.target.id;
+    console.log('DATA', aspect)
     if (answers.some((a) => a.id === id)) {
       setAnswers([...answers.filter((b) => b.id !== id), data]);
-      console.log(data);
+      console.log("data", data);
     } else {
       setAnswers([...answers, data]);
       console.log(data);
@@ -48,7 +54,6 @@ function Page() {
   };
   useEffect(() => {
     let data = filterQuestionsByNumberInt(answers);
-    console.log(data.length)
     setTotalQuestions(data.length);
   }, [answers]);
   
@@ -57,7 +62,6 @@ function Page() {
   const handleChangeForm = (event) => {
     const id = event.target.name;
     const data = { id, answer: event.target.value };
-    console.log("data", data);
     if (userFormData.some((a) => a.id === id)) {
       setUserFormData([...userFormData.filter((b) => b.id !== id), data]);
     } else {
@@ -89,6 +93,7 @@ function Page() {
       setSuccess(false);
     }
   };
+  console.log("Answers", answers);
   console.log('active',active)
   console.log('totalQuestions',totalQuestions)
 

@@ -53,6 +53,7 @@ function BiologicalAspect() {
                           type="radio"
                           value="SIM"
                           name={question.aspectos}
+                          id='Biológico'
                         />
                         <label
                           className="form-check-label label-page-i"
@@ -68,6 +69,7 @@ function BiologicalAspect() {
                           type="radio"
                           value="NÃO"
                           name={question.aspectos}
+                          id='Biológico'
                         />
                         <label
                           className="form-check-label label-page-i l-no"
