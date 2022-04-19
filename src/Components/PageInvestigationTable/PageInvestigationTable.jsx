@@ -1,6 +1,6 @@
 import { Table } from "react-bootstrap";
 
-function PageInvestigationTable() {
+function PageInvestigationTable(props) {
     return (
         <>
             <div className="border border-dark bg-lgrey text-white">
