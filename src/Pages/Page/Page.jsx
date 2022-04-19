@@ -33,8 +33,6 @@ function Page() {
       data.aspect = event.target.id;
     }
 
-    const aspect = event.target.id;
-    console.log('DATA', aspect)
     if (answers.some((a) => a.id === id)) {
       setAnswers([...answers.filter((b) => b.id !== id), data]);
       console.log("data", data);
@@ -69,6 +67,7 @@ function Page() {
     }
   };
   const handleFormData = async () => {
+    console.log('userFormData', answers);
     let json = {
       Datetime: new Date(Date.now()),
       Instrument: "page",
