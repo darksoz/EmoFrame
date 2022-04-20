@@ -14,6 +14,7 @@ import Header from "../../Components/Header/Header";
 import Footer from "../../Components/Footer/Footer";
 import PageNotesTable from "../../Components/PageNotesTable/PageNotesTable";
 import PageInvestigationTable from "../../Components/PageInvestigationTable/PageInvestigationTable";
+import sortArray from "sort-array";
 
 function PageResult() {
   const [questions, setQuestions] = useState([]);
@@ -79,6 +80,14 @@ function PageResult() {
   };
   const filteredAspects = filterQuestionsByString(questions);
   const filteredQuestions = filterQuestionsByNumberInt(questions);
+  const aspectsSort = filteredAspects.sort((a, b) => a.aspect > b.aspect ? 1 : -1)
+
+  const oBAspects = filteredAspects.reduce(
+    (obj, item) => Object.assign(obj, { [item.id]: item.answer}),
+    {}
+  );
+  console.log('OB:', oBAspects);
+  console.log('filteredQuestions:', filteredAspects);
 
   const dominiosList = [
     { aspectos: "Aspectos Psicologicos", min: 0, max: 19 },
@@ -105,7 +114,7 @@ function PageResult() {
       element.max
     );
   }
-  console.log('teste',questions)
+ 
   const handleClose = path => {
     setShow(false);
     history.push(path);
@@ -148,7 +157,7 @@ function PageResult() {
 
         <PageNotesTable aspects={filteredAspects}/>
 
-        <PageInvestigationTable/>
+        <PageInvestigationTable aspects={aspectsSort}/>
 
         <GerontologistAssessment />
 

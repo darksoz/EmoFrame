@@ -18,88 +18,15 @@ function PageInvestigationTable(props) {
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Déficit Cognitivo</td>
-                        <td>Psicológico</td>
-                        <td>x</td>
+                    {props.aspects.map((item, index) => (
 
-                    </tr>
-                    <tr>
-                        <td>Atitude Negativa em Relação ao Processo de Envelhecimento</td>
-                        <td>Psicológico</td>
-                        <td>x</td>
-
-                    </tr>
-
-                    <tr>
-                        <td>Depressão</td>
-                        <td>Psicológico</td>
-                        <td>x</td>
-
-                    </tr>
-
-                    <tr>
-                        <td>Déficite Sensorial</td>
-                        <td>Biológico</td>
-                        <td>x</td>
-
-                    </tr>
-
-                    <tr>
-                        <td>Incapacidade Funcional</td>
-                        <td>Biológico</td>
-                        <td>x</td>
-
-                    </tr>
-
-                    <tr>
-                        <td>Desnutrição</td>
-                        <td>Biológico</td>
-                        <td>x</td>
-
-                    </tr>
-
-                    <tr>
-                        <td>Doenças Cardiovasculates</td>
-                        <td>Biológico</td>
-                        <td>x</td>
-
-                    </tr>
-
-                    <tr>
-                        <td>Uso Inadequado de Medicamentos</td>
-                        <td>Biológico</td>
-                        <td>x</td>
-
-                    </tr>
-
-                    <tr>
-                        <td>Baixo Suporte Social</td>
-                        <td>Social</td>
-                        <td>x</td>
-
-                    </tr>
-
-                    <tr>
-                        <td>Violência</td>
-                        <td>Social</td>
-                        <td>x</td>
-
-                    </tr>
-
-                    <tr>
-                        <td>Problemas Ambientais</td>
-                        <td>Social</td>
-                        <td>x</td>
-
-                    </tr>
-
-                    <tr>
-                        <td>Quedas</td>
-                        <td>Multidimensional</td>
-                        <td>x</td>
-
-                    </tr>
+                        <tr key={index}>
+                            <td>{item.id}</td>
+                            <td>{item.aspect}</td>
+                            <td>{item.answer}</td>
+                        </tr>
+                    ))}
+                    
 
                 </tbody>
             </Table>
