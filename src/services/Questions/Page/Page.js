@@ -871,10 +871,19 @@ export const Questions1 = [
     },
   ];
   
+   export  const Demandas = 
+    {
+      biologicos:['DÉFICIT SENSORIAL','INCAPACIDADE FUNCIONAL','DESNUTRIÇÃO','DOENÇAS CARDIOVASCULA-RES (DCV)','USO INADEQUADO DE MEDICAMENTOS'],
+      sociais:['BAIXO SUPORTE SOCIAL','VIOLÊNCIA', 'PROBLEMAS AMBIENTAIS'],
+      psicologicos:['DÉFICIT COGNITIVO','ATITUDE NEGATIVA EM RELAÇÃO AO ENVELHECIMENTO','DEPRESSÃO'],
+      multidimensionais:['QUEDAS'],
+    }
+  
+
   export const Questions4 = [
     {
       aspectos: "QUEDAS",
-      pontucao: "Pontuação (máxima=17): Necessita de invetigação",
+      pontucao: "Pontuação (máxima=17): Necessita de investigação",
       perguntas: [
         {
           question: 88,
