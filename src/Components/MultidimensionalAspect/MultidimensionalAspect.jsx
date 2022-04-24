@@ -89,7 +89,6 @@ function MultidimensionalAspect() {
                     name="anotacao_aspectos_multidimensionais"
                     class="form-control"
                     placeholder="Anotações:"
-                    id="exampleFormControlTextarea1"
                     rows="3"
                   ></textarea>
                 </div>

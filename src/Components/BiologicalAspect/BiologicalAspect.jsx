@@ -91,7 +91,6 @@ function BiologicalAspect() {
                       name="anotacao_aspectos_biologicos"
                       class="form-control"
                       placeholder="Anotações:"
-                      id="exampleFormControlTextarea1"
                       rows="3"
                     ></textarea>
                   </div>

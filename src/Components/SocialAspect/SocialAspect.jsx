@@ -88,7 +88,6 @@ function SocialAspect() {
                     name="anotacao_aspectos_sociais"
                     class="form-control"
                     placeholder="Anotações:"
-                    id="exampleFormControlTextarea1"
                     rows="3"
                   ></textarea>
                 </div>
