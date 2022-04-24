@@ -643,7 +643,7 @@ export const Questions1 = [
       ],
     },
     {
-      aspectos: "Violência",
+      aspectos: "VIOLÊNCIA",
       pontucao: "Pontuação (máxima=8): Necessita de investigação",
       perguntas: [
         
@@ -722,7 +722,7 @@ export const Questions1 = [
       ],
     },
     {
-      aspectos: "Problemas Ambientais",
+      aspectos: "PROBLEMAS AMBIENTAIS",
       pontucao: "Pontuação (máxima=16): Necessita de investigação",
       instrucao:"Ambiente interno – Na casa do(a) senhor(a):",
       perguntas: [
