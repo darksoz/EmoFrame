@@ -44,16 +44,27 @@ function Page() {
 
   const verifyDemandas = (demanda, arr2) => {
     console.log("Entrou", Demandas);
-    console.log('arr2', arr2);
-    if (arr2.length !== 0){
+    console.log("arr2", arr2);
+    if (arr2.length !== 0) {
       let difference = Demandas[demanda].filter((x) => !arr2.includes(x));
-      console.log('difference', Demandas[demanda]);
-      console.log('de',difference);
+      console.log("difference", Demandas[demanda]);
+      console.log("de", difference);
       if (difference.length !== 0) {
-        console.log("Você não respondeu todas as perguntas da demanda " + difference);
+        console.log(
+          "Você não respondeu todas as perguntas da demanda " + difference
+        );
         alert("Você não respondeu todas as perguntas da demanda " + difference);
         setInvestigation([]);
-    }}
+      }
+    } else {
+      console.log(
+        "Você não respondeu nenhuma pergunta da demanda " + Demandas[demanda]
+      );
+      alert(
+        "Você não respondeu nenhuma pergunta da demanda " + Demandas[demanda]
+      );
+      setInvestigation([]);
+    }
   };
   const filterQuestionsByNumberInt = (questions) => {
     let data = [];
@@ -80,7 +91,6 @@ function Page() {
     setInvestigation(dataI);
     setTotalQuestions(data.length);
   }, [answers]);
- 
 
   const handleChangeForm = (event) => {
     const id = event.target.name;
@@ -191,7 +201,7 @@ function Page() {
             <button
               class="btn whitebutton btn-lg"
               onClick={() => setActive(active + 1)}
-              onMouseOver={()=>verifyDemandas('psicologicos', investigation)}
+              onMouseOver={() => verifyDemandas("psicologicos", investigation)}
             >
               Próximo
             </button>
@@ -202,7 +212,7 @@ function Page() {
             <button
               class="btn whitebutton btn-lg"
               onClick={() => setActive(active + 1)}
-              onMouseOver={()=>verifyDemandas('biologicos', investigation)}
+              onMouseOver={() => verifyDemandas("biologicos", investigation)}
             >
               Próximo
             </button>
@@ -213,13 +223,13 @@ function Page() {
             <button
               class="btn whitebutton btn-lg"
               onClick={() => setActive(active + 1)}
-              onMouseOver={()=>verifyDemandas('sociais', investigation)}
+              onMouseOver={() => verifyDemandas("sociais", investigation)}
             >
               Próximo
             </button>
           </Link>
         )}
-        
+
         {active === 5 && (
           <div>
             <Link to="sample">
@@ -235,7 +245,9 @@ function Page() {
               <button
                 class="btn whitebutton btn-lg"
                 onClick={() => handleFormData()}
-                onMouseOver={()=>verifyDemandas('multidimensionais', investigation)}
+                onMouseOver={() =>
+                  verifyDemandas("multidimensionais", investigation)
+                }
               >
                 Salvar
               </button>
