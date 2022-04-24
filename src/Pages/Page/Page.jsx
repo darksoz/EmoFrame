@@ -163,7 +163,19 @@ function Page() {
             </Step>
           </MultiStepForm>
         </div>
-
+        {active > 1 && active !== 5 && (
+          <span>
+            <Link to="sample">
+              <button
+                style={{ marginLeft: "0px" }}
+                class="btn whitebutton btn-lg"
+                onClick={() => setActive(active - 1)}
+              >
+                Anterior
+              </button>
+            </Link>
+          </span>
+        )}
         {active === 1 && (
           <Link to="sample">
             <button
@@ -207,19 +219,7 @@ function Page() {
             </button>
           </Link>
         )}
-        {active > 1 && active !== 5 && (
-          <span>
-            <Link to="sample">
-              <button
-                style={{ marginLeft: "20px" }}
-                class="btn whitebutton btn-lg"
-                onClick={() => setActive(active - 1)}
-              >
-                Anterior
-              </button>
-            </Link>
-          </span>
-        )}
+        
         {active === 5 && (
           <div>
             <Link to="sample">

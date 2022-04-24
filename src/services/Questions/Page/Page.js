@@ -897,7 +897,7 @@ export const Questions1 = [
         {
           question: 89,
           yes: 0,
-          no: 0,
+          no: 1,
           input: true,
           tooltip:
             "[Investigar atividade realizada, local, horário do dia, tipo de calçado, riscos ambientais etc]",
