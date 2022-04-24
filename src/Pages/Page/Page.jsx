@@ -167,7 +167,7 @@ function Page() {
           <span>
             <Link to="sample">
               <button
-                style={{ marginLeft: "0px" }}
+                style={{ marginRight: "10px" }}
                 class="btn whitebutton btn-lg"
                 onClick={() => setActive(active - 1)}
               >
