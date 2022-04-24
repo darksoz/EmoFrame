@@ -96,7 +96,6 @@ function PsychologicalAspect() {
                       name="anotacao_aspectos_psicologicos"
                       class="form-control"
                       placeholder="Anotações:"
-                      id="exampleFormControlTextarea1"
                       rows="3"
                     ></textarea>
                   </div>
