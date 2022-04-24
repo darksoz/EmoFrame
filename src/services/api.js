@@ -106,6 +106,27 @@ export const SavePageTest = async (json) => {
   });
 };
 
+export const SavePageResult = async (json,id) => {
+  var config = {
+    method: "put",
+    url: `${baseURL}/page/${id}`,
+    headers: {
+      Authorization: `Bearer ${getToken()}`,
+      "Content-Type": "application/json",
+    },
+    data: json,
+  };
+  return new Promise((resolve, reject) => {
+    axios(config)
+      .then(function (response) {
+        resolve(response);
+      })
+      .catch(function (error) {
+        reject(error);
+      });
+  });
+};
+
 
 export const SaveSamTest = async (json) => {
   

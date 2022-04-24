@@ -2,7 +2,6 @@ import Container from 'react-bootstrap/Container';
 import ReactApexChart from "react-apexcharts";
 
 function PageDemands (props) {
-    console.log('PageDemands', props.subAspectos);
     const categories = props.subAspectos.map(subAspecto => subAspecto.subAspectos);
     const data = props.subAspectos.map(a=>a.total)
     

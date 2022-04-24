@@ -2,7 +2,7 @@ import { Form } from 'react-bootstrap';
 import { Container, Row, Col } from "react-bootstrap";
 
 
-function ActionsImplementation () {
+function ActionsImplementation (props) {
     return (
         <>
         <div className='border border-dark bg-lgrey text-white'>
@@ -20,19 +20,19 @@ function ActionsImplementation () {
                                 <Col md={3}>
                                     <Form.Group className="mb-3" controlId="formBasicPassword">
                                         <Form.Label>Data</Form.Label>
-                                        <Form.Control type="date" />
+                                        <Form.Control type="date"  name='coordenacaoData1' value={props.evaluation.coordenacaoData1}/>
                                     </Form.Group>
                                 </Col>
                                 <Col md={4}>
                                     <Form.Group className="mb-3" controlId="formBasicEmail">
                                         <Form.Label>Ação</Form.Label>
-                                        <Form.Control type="text" placeholder="Ação" />
+                                        <Form.Control type="text" placeholder="Ação"  name='coordenacaoAcao1' value={props.evaluation.coordenacaoAcao1}/>
                                     </Form.Group>
                                 </Col>
                                 <Col md={5}>
                                 <Form.Group className="mb-3" controlId="formBasicEmail">
                                         <Form.Label>Serviços</Form.Label>
-                                        <Form.Control type="text" placeholder="Profissionais/Serviços" />
+                                        <Form.Control type="text" placeholder="Profissionais/Serviços" name='coordenacaoServico1'value={props.evaluation.coordenacaoServico1}/>
                                     </Form.Group>
                                 </Col>
                             </Row>
@@ -41,19 +41,19 @@ function ActionsImplementation () {
                                 <Col md={3}>
                                     <Form.Group className="mb-3" controlId="formBasicPassword">
                                         <Form.Label>Data</Form.Label>
-                                        <Form.Control type="date" />
+                                        <Form.Control type="date" name='cordenacaoData2' value={props.evaluation.coordenacaoData2} />
                                     </Form.Group>
                                 </Col>
                                 <Col md={4}>
                                     <Form.Group className="mb-3" controlId="formBasicEmail">
                                         <Form.Label>Ação</Form.Label>
-                                        <Form.Control type="text" placeholder="Ação" />
+                                        <Form.Control type="text" placeholder="Ação" name='coordenacaoAcao2' value={props.evaluation.coordenacaoAcao2}/>
                                     </Form.Group>
                                 </Col>
                                 <Col md={5}>
                                 <Form.Group className="mb-3" controlId="formBasicEmail">
                                         <Form.Label>Serviços</Form.Label>
-                                        <Form.Control type="text" placeholder="Profissionais/Serviços" />
+                                        <Form.Control type="text" placeholder="Profissionais/Serviços" name='coordenacaoServico2' value={props.evaluation.coordenacaoServico2}/>
                                     </Form.Group>
                                 </Col>
                             </Row>
@@ -61,19 +61,19 @@ function ActionsImplementation () {
                                 <Col md={3}>
                                     <Form.Group className="mb-3" controlId="formBasicPassword">
                                         <Form.Label>Data</Form.Label>
-                                        <Form.Control type="date" />
+                                        <Form.Control type="date" name='coordenacaoData3'value={props.evaluation.coordenacaoData3}/>
                                     </Form.Group>
                                 </Col>
                                 <Col md={4}>
                                     <Form.Group className="mb-3" controlId="formBasicEmail">
                                         <Form.Label>Ação</Form.Label>
-                                        <Form.Control type="text" placeholder="Ação" />
+                                        <Form.Control type="text" placeholder="Ação" name='coordenacaoAcao3' value={props.evaluation.coordenacaoAcao3} />
                                     </Form.Group>
                                 </Col>
                                 <Col md={5}>
                                 <Form.Group className="mb-3" controlId="formBasicEmail">
                                         <Form.Label>Serviços</Form.Label>
-                                        <Form.Control type="text" placeholder="Profissionais/Serviços" />
+                                        <Form.Control type="text" placeholder="Profissionais/Serviços" name='coordenacaoServico3' value={props.evaluation.coordenacaoServico3}/>
                                     </Form.Group>
                                 </Col>
                             </Row>
@@ -81,19 +81,19 @@ function ActionsImplementation () {
                                 <Col md={3}>
                                     <Form.Group className="mb-3" controlId="formBasicPassword">
                                         <Form.Label>Data</Form.Label>
-                                        <Form.Control type="date" />
+                                        <Form.Control type="date" name='coordenacaoData4' value={props.evaluation.coordenacaoData4}/>
                                     </Form.Group>
                                 </Col>
                                 <Col md={4}>
                                     <Form.Group className="mb-3" controlId="formBasicEmail">
                                         <Form.Label>Ação</Form.Label>
-                                        <Form.Control type="text" placeholder="Ação" />
+                                        <Form.Control type="text" placeholder="Ação" name='coordenacaoAcao4' value={props.evaluation.coordenacaoAcao4}/>
                                     </Form.Group>
                                 </Col>
                                 <Col md={5}>
                                 <Form.Group className="mb-3" controlId="formBasicEmail">
                                         <Form.Label>Serviços</Form.Label>
-                                        <Form.Control type="text" placeholder="Profissionais/Serviços" />
+                                        <Form.Control type="text" placeholder="Profissionais/Serviços" name='coordenacaoServico4' value={props.evaluation.coordenacaoServico4}/>
                                     </Form.Group>
                                 </Col>
                             </Row>
@@ -101,19 +101,19 @@ function ActionsImplementation () {
                                 <Col md={3}>
                                     <Form.Group className="mb-3" controlId="formBasicPassword">
                                         <Form.Label>Data</Form.Label>
-                                        <Form.Control type="date" />
+                                        <Form.Control type="date"name='coordenacaoData5' value={props.evaluation.coordenacaoData5}/>
                                     </Form.Group>
                                 </Col>
                                 <Col md={4}>
                                     <Form.Group className="mb-3" controlId="formBasicEmail">
                                         <Form.Label>Ação</Form.Label>
-                                        <Form.Control type="text" placeholder="Ação" />
+                                        <Form.Control type="text" placeholder="Ação" name='coordenacaoAcao5' value={props.evaluation.coordenacaoAcao5}/>
                                     </Form.Group>
                                 </Col>
                                 <Col md={5}>
                                 <Form.Group className="mb-3" controlId="formBasicEmail">
                                         <Form.Label>Serviços</Form.Label>
-                                        <Form.Control type="text" placeholder="Profissionais/Serviços" />
+                                        <Form.Control type="text" placeholder="Profissionais/Serviços" name='coordenacaoServico5' value={props.evaluation.coordenacaoServico5}/>
                                     </Form.Group>
                                 </Col>
                             </Row>
@@ -121,19 +121,19 @@ function ActionsImplementation () {
                                 <Col md={3}>
                                     <Form.Group className="mb-3" controlId="formBasicPassword">
                                         <Form.Label>Data</Form.Label>
-                                        <Form.Control type="date" />
+                                        <Form.Control type="date" name='coordenacaoData6' value={props.evaluation.coordenacaoData6}/>
                                     </Form.Group>
                                 </Col>
                                 <Col md={4}>
                                     <Form.Group className="mb-3" controlId="formBasicEmail">
                                         <Form.Label>Ação</Form.Label>
-                                        <Form.Control type="text" placeholder="Ação" />
+                                        <Form.Control type="text" placeholder="Ação" name='coordenacaoAcao6' value={props.evaluation.coordenacaoAcao6}/>
                                     </Form.Group>
                                 </Col>
                                 <Col md={5}>
                                 <Form.Group className="mb-3" controlId="formBasicEmail">
                                         <Form.Label>Serviços</Form.Label>
-                                        <Form.Control type="text" placeholder="Profissionais/Serviços" />
+                                        <Form.Control type="text" placeholder="Profissionais/Serviços" name='coordenacaoServico6' value={props.evaluation.coordenacaoServico6} />
                                     </Form.Group>
                                 </Col>
                             </Row>

@@ -3,7 +3,6 @@ import ReactApexChart from "react-apexcharts";
 import { Form } from "react-bootstrap";
 
 function PageDimension(props) {
-  console.log("PageDimension", props.dominios);
   let psicologico = ["Deficit Cognitivo", "Atitudes Negativas", "Depressao"];
   let biologicos = [
     "Doenças Cardiovasculares",
@@ -28,7 +27,6 @@ function PageDimension(props) {
   let totalBiologicos = somaPhase(props.dominios, biologicos);
   let totalPsicologico = somaPhase(props.dominios, psicologico);
   let totalQuedas = somaPhase(props.dominios, quedas);
-  console.log("totalSociais", [totalPsicologico, totalBiologicos, totalSociais, totalQuedas]);
   let dados = {
     series: [
       {
@@ -66,7 +64,7 @@ function PageDimension(props) {
               O(a) idoso(a) apresenta outras demandas não contempladas no mapa?
               Se sim, especificar:
             </Form.Label>
-            <Form.Control as="textarea" rows={3} />
+            <Form.Control as="textarea" rows={3} name='demandas' value={props.evaluation.demandas}/>
           </Form.Group>
         </Form>
       </Container>

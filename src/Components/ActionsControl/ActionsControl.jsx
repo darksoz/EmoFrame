@@ -1,7 +1,7 @@
 import { Form } from 'react-bootstrap';
 import { Container, Row, Col } from "react-bootstrap";
 
-function ActionsControl () {
+function ActionsControl (props) {
     return (
         <>
         <div className='border border-dark bg-lgrey text-white'>
@@ -16,40 +16,19 @@ function ActionsControl () {
                                 <Col md={2}>
                                     <Form.Group className="mb-3" controlId="formBasicPassword">
                                         <Form.Label>Data</Form.Label>
-                                        <Form.Control type="date" />
+                                        <Form.Control type="date" name='controleData1'  value={props.evaluation.controleData1}/>
                                     </Form.Group>
                                 </Col>
                                 <Col md={4}>
                                     <Form.Group className="mb-3" controlId="formBasicEmail">
                                         <Form.Label>Ação/Resultado</Form.Label>
-                                        <Form.Control type="text" placeholder="Ação" />
+                                        <Form.Control type="text" placeholder="Ação"name='controleAcao1' value={props.evaluation.controleAcao1} />
                                     </Form.Group>
                                 </Col>
                                 <Col md={5}>
                                 <Form.Group className="mb-3" controlId="formBasicEmail">
                                         <Form.Label>Adequação/Metas/Ações</Form.Label>
-                                        <Form.Control type="text" placeholder="Profissionais/Serviços" />
-                                    </Form.Group>
-                                </Col>
-                            </Row>
-
-                            <Row>
-                                <Col md={2}>
-                                    <Form.Group className="mb-3" controlId="formBasicPassword">
-                                        <Form.Label>Data</Form.Label>
-                                        <Form.Control type="date" />
-                                    </Form.Group>
-                                </Col>
-                                <Col md={4}>
-                                    <Form.Group className="mb-3" controlId="formBasicEmail">
-                                        <Form.Label>Ação/Resultado</Form.Label>
-                                        <Form.Control type="text" placeholder="Ação" />
-                                    </Form.Group>
-                                </Col>
-                                <Col md={5}>
-                                <Form.Group className="mb-3" controlId="formBasicEmail">
-                                        <Form.Label>Adequação/Metas/Ações</Form.Label>
-                                        <Form.Control type="text" placeholder="Profissionais/Serviços" />
+                                        <Form.Control type="text" placeholder="Profissionais/Serviços" name='controleServico1' value={props.controlServico1}/>
                                     </Form.Group>
                                 </Col>
                             </Row>
@@ -57,19 +36,19 @@ function ActionsControl () {
                                 <Col md={2}>
                                     <Form.Group className="mb-3" controlId="formBasicPassword">
                                         <Form.Label>Data</Form.Label>
-                                        <Form.Control type="date" />
+                                        <Form.Control type="date" name='controleData1'  value={props.evaluation.controleData2}/>
                                     </Form.Group>
                                 </Col>
                                 <Col md={4}>
                                     <Form.Group className="mb-3" controlId="formBasicEmail">
                                         <Form.Label>Ação/Resultado</Form.Label>
-                                        <Form.Control type="text" placeholder="Ação" />
+                                        <Form.Control type="text" placeholder="Ação"name='controleAcao1' value={props.evaluation.controleAcao2} />
                                     </Form.Group>
                                 </Col>
                                 <Col md={5}>
                                 <Form.Group className="mb-3" controlId="formBasicEmail">
                                         <Form.Label>Adequação/Metas/Ações</Form.Label>
-                                        <Form.Control type="text" placeholder="Profissionais/Serviços" />
+                                        <Form.Control type="text" placeholder="Profissionais/Serviços" name='controleServico1' value={props.controlServico2}/>
                                     </Form.Group>
                                 </Col>
                             </Row>
@@ -77,19 +56,19 @@ function ActionsControl () {
                                 <Col md={2}>
                                     <Form.Group className="mb-3" controlId="formBasicPassword">
                                         <Form.Label>Data</Form.Label>
-                                        <Form.Control type="date" />
+                                        <Form.Control type="date" name='controleData1'  value={props.evaluation.controleData3}/>
                                     </Form.Group>
                                 </Col>
                                 <Col md={4}>
                                     <Form.Group className="mb-3" controlId="formBasicEmail">
                                         <Form.Label>Ação/Resultado</Form.Label>
-                                        <Form.Control type="text" placeholder="Ação" />
+                                        <Form.Control type="text" placeholder="Ação"name='controleAcao1' value={props.evaluation.controleAcao3} />
                                     </Form.Group>
                                 </Col>
                                 <Col md={5}>
                                 <Form.Group className="mb-3" controlId="formBasicEmail">
                                         <Form.Label>Adequação/Metas/Ações</Form.Label>
-                                        <Form.Control type="text" placeholder="Profissionais/Serviços" />
+                                        <Form.Control type="text" placeholder="Profissionais/Serviços" name='controleServico1' value={props.controlServico3}/>
                                     </Form.Group>
                                 </Col>
                             </Row>
@@ -97,24 +76,62 @@ function ActionsControl () {
                                 <Col md={2}>
                                     <Form.Group className="mb-3" controlId="formBasicPassword">
                                         <Form.Label>Data</Form.Label>
-                                        <Form.Control type="date" />
+                                        <Form.Control type="date" name='controleData1'  value={props.evaluation.controleData4}/>
                                     </Form.Group>
                                 </Col>
                                 <Col md={4}>
                                     <Form.Group className="mb-3" controlId="formBasicEmail">
                                         <Form.Label>Ação/Resultado</Form.Label>
-                                        <Form.Control type="text" placeholder="Ação" />
+                                        <Form.Control type="text" placeholder="Ação"name='controleAcao1' value={props.evaluation.controleAcao4} />
                                     </Form.Group>
                                 </Col>
                                 <Col md={5}>
                                 <Form.Group className="mb-3" controlId="formBasicEmail">
                                         <Form.Label>Adequação/Metas/Ações</Form.Label>
-                                        <Form.Control type="text" placeholder="Profissionais/Serviços" />
+                                        <Form.Control type="text" placeholder="Profissionais/Serviços" name='controleServico1' value={props.controlServico4}/>
                                     </Form.Group>
                                 </Col>
                             </Row>
-
-                           
+                            <Row>
+                                <Col md={2}>
+                                    <Form.Group className="mb-3" controlId="formBasicPassword">
+                                        <Form.Label>Data</Form.Label>
+                                        <Form.Control type="date" name='controleData1'  value={props.evaluation.controleData5}/>
+                                    </Form.Group>
+                                </Col>
+                                <Col md={4}>
+                                    <Form.Group className="mb-3" controlId="formBasicEmail">
+                                        <Form.Label>Ação/Resultado</Form.Label>
+                                        <Form.Control type="text" placeholder="Ação"name='controleAcao1' value={props.evaluation.controleAcao5} />
+                                    </Form.Group>
+                                </Col>
+                                <Col md={5}>
+                                <Form.Group className="mb-3" controlId="formBasicEmail">
+                                        <Form.Label>Adequação/Metas/Ações</Form.Label>
+                                        <Form.Control type="text" placeholder="Profissionais/Serviços" name='controleServico1' value={props.controlServico5}/>
+                                    </Form.Group>
+                                </Col>
+                            </Row>
+                            <Row>
+                                <Col md={2}>
+                                    <Form.Group className="mb-3" controlId="formBasicPassword">
+                                        <Form.Label>Data</Form.Label>
+                                        <Form.Control type="date" name='controleData1'  value={props.evaluation.controleData6}/>
+                                    </Form.Group>
+                                </Col>
+                                <Col md={4}>
+                                    <Form.Group className="mb-3" controlId="formBasicEmail">
+                                        <Form.Label>Ação/Resultado</Form.Label>
+                                        <Form.Control type="text" placeholder="Ação"name='controleAcao1' value={props.evaluation.controleAcao6} />
+                                    </Form.Group>
+                                </Col>
+                                <Col md={5}>
+                                <Form.Group className="mb-3" controlId="formBasicEmail">
+                                        <Form.Label>Adequação/Metas/Ações</Form.Label>
+                                        <Form.Control type="text" placeholder="Profissionais/Serviços" name='controleServico1' value={props.controlServico6}/>
+                                    </Form.Group>
+                                </Col>
+                            </Row>
                         </Form>
                     </Container>
                 </div>
