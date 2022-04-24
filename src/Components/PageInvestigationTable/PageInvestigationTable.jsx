@@ -1,6 +1,7 @@
 import { Table } from "react-bootstrap";
 
 function PageInvestigationTable(props) {
+  console.log("props", props.aspects);
   return (
     <>
       <div className="border border-dark bg-lgrey text-white">

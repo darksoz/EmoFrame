@@ -195,7 +195,7 @@ function PageResult() {
         Title={title}
         Body={body}
         Reveal={show}
-        Finish={"/dashboard"}
+        Finish={"/pageResult/" + id}
         Retry={true}
       />
       <Container onChange={handleChangeForm}>
