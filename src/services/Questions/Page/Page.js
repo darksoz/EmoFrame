@@ -56,7 +56,7 @@ export const Questions1 = [
         },
         {
           title:
-          "Teste do relógio: Aplique apenas se o (a) idoso tiver escolaridade igual ou superior a 5 anos. Caso não, pontue ao lado de forma negativa. Esteja com uma folha com um desenho de um círculo de 11 cm de diâmetro e dê as instruções para a tarefa] Senhor(a), nesta folha temos um mostrador de um relógio. Gostaria que o senhor(a) colocasse os números dentro dele. [Aguardar]. Por favor, agora indique o horário 11h10 (onze horas e 10 minutos) ",
+          "Teste do relógio: Aplique apenas se o (a) idoso tiver escolaridade igual ou superior a 5 anos. Caso não, pontue ao lado de forma negativa. Esteja com uma folha com um desenho de um círculo de 11 cm de diâmetro e dê as instruções para a tarefa] Senhor(a), nesta folha temos um mostrador de um relógio. Gostaria que o senhor(a) colocasse os números dentro dele. [Aguardar]. Por favor, agora indique o horário 11h10 (onze horas e 10 minutos) [Pontue ao lado se o(a) idoso(a) atingiu a nota de corte esperada. Nota de corte: Atribua um ponto para cada posicionamento correto dos  números 1,2,4,5,7,8,10 e 11, mais um ponto para cada ponteiro correto (pontuação máxima = 10). Ponto de corte = 7]",
           question: 6,
           tooltip:"[Pontue ao lado se o(a) idoso(a) atingiu a nota de corte esperada. Nota de corte: Atribua um ponto para cada posicionamento correto dos  números 1,2,4,5,7,8,10 e 11, mais um ponto para cada ponteiro correto (pontuação máxima = 10). Ponto de corte = 7]",
           yes: 1,
@@ -363,9 +363,9 @@ export const Questions1 = [
           no: 1,
           input: false,
           tooltip:
-            "Pontuar como sim quando CT e HDL forem verificados em último exame como superior a 200 mg/dL e 60mg/dL, respectivamente, ou caso o(a) idoso(a) não saiba informar]",
+            "[Pontuar como sim quando CT e HDL forem verificados em último exame como superior a 200 mg/dL e 60mg/dL, respectivamente, ou caso o(a) idoso(a) não saiba informar]",
           point: 1,
-          title: "O(a) senhor(a) tem histórico familiar (pais, irmãos ou filhos) de DCV (infarto, derrame, angina)?",
+          title: "O(a) senhor(a) tem histórico familiar (pais, irmãos ou filhos) de DCV (infarto, derrame, angina)? [Pontuar como sim quando CT e HDL forem verificados em último exame como superior a 200 mg/dL e 60mg/dL, respectivamente, ou caso o(a) idoso(a) não saiba informar]",
         },
         {
           question: 37,
@@ -373,7 +373,7 @@ export const Questions1 = [
           no: 1,
           input: false,
           point: 0,
-          title: "O(a) senhor(a) tem pressão alta (superior a 140 x 90 mmHg)? ",
+          title: "O(a) senhor(a) tem pressão alta (superior a 140 x 90 mmHg)? [Instruções: Pontuar como sim quando PA autorreferida for superior ao valor indicado, mesmo com o uso de anti-hipertensivos, ou caso o(a) idoso(a) não saiba informar.]",
           tooltip:"[Instruções: Pontuar como sim quando PA autorreferida for superior ao valor indicado, mesmo com o uso de anti-hipertensivos, ou caso o(a) idoso(a) não saiba informar.]",
         },
         {
@@ -383,7 +383,7 @@ export const Questions1 = [
           input: false,
           point: 1,
           title:
-            "O(a) senhor(a) tem glicemia de jejum superior a 100 mg/dL? ",
+            "O(a) senhor(a) tem glicemia de jejum superior a 100 mg/dL? [Instruções: Pontuar como sim quando a resposta for positiva mesmo com o uso de antidiabéticos ou caso o(a) idoso(a) não saiba informar.]",
           tooltip:"[Instruções: Pontuar como sim quando a resposta for positiva mesmo com o uso de antidiabéticos ou caso o(a) idoso(a) não saiba informar.]",
           },
         {
@@ -408,7 +408,7 @@ export const Questions1 = [
           no: 1,
           input: true,
           point: 0,
-          title: "O(a) senhor(a) tem o hábito de ingerir bebidas alcoólicas? Se sim, qual o tipo da bebida? _ E quantas doses, taças ou latas em uma semana? _ .",
+          title: "O(a) senhor(a) tem o hábito de ingerir bebidas alcoólicas? Se sim, qual o tipo da bebida? _ E quantas doses, taças ou latas em uma semana? _ .[Instruções: Depois assinale ao lado a resposta equivalente, considerando as seguintes referências:",
           tooltip:"[Instruções: Depois assinale ao lado a resposta equivalente, considerando as seguintes referências:",
         },
         {
@@ -417,7 +417,7 @@ export const Questions1 = [
           no: 1,
           input: true,
           title:
-            "O(a) senhor(a) pratica exercícios físicos regulares (caminhada, natação, dança, ginástica, musculação, entre outros)? Se sim, qual a frequência? _ E por quanto tempo? _ . ",
+            "O(a) senhor(a) pratica exercícios físicos regulares (caminhada, natação, dança, ginástica, musculação, entre outros)? Se sim, qual a frequência? _ E por quanto tempo? _ . [Instruções: Depois assinale ao lado a resposta equivalente (sim ou não) considerando prática regular de exercícios como: frequência igual ou superior a 2 dias/semana com tempo total igual ou superior a 150 minutos/semana].",
           tooltip:"[Instruções: Depois assinale ao lado a resposta equivalente (sim ou não) considerando prática regular de exercícios como: frequência igual ou superior a 2 dias/semana com tempo total igual ou superior a 150 minutos/semana]."
         },
         {
@@ -438,7 +438,7 @@ export const Questions1 = [
           question: 44,
           yes: 0,
           no: 0,
-          title: "Nos últimos 5 anos, algum médico ou outro profissional de saúde já disse que o(a) senhor(a) tem:",
+          title: "Nos últimos 5 anos, algum médico ou outro profissional de saúde já disse que o(a) senhor(a) tem: [Instruções: registre a quantidade total de diagnósticos:]",
           tooltip:"[Instruções: registre a quantidade total de diagnósticos:]",
           input: false,
           questions:[
@@ -481,8 +481,8 @@ export const Questions1 = [
           input: true,
           point: 0,
           title:
-            "Quais os medicamentos utilizados pelo(a) senhor(a)? _",
-          tooltip:"Instruções: Solicitar as bulas dos medicamentos e fazer registro legível dos respectivos nomes e classes terapêuticas.] [Instrução: Para classificar se há presença de polifarmácia,registrar ao lado se o idoso utiliza cinco medicamentos ou mais.]"
+            "Quais os medicamentos utilizados pelo(a) senhor(a)? _ [Instruções: Solicitar as bulas dos medicamentos e fazer registro legível dos respectivos nomes e classes terapêuticas.] [Instrução: Para classificar se há presença de polifarmácia,registrar ao lado se o idoso utiliza cinco medicamentos ou mais.]",
+          tooltip:"[Instruções: Solicitar as bulas dos medicamentos e fazer registro legível dos respectivos nomes e classes terapêuticas.] [Instrução: Para classificar se há presença de polifarmácia,registrar ao lado se o idoso utiliza cinco medicamentos ou mais.]"
         },
         {
           question: 47,
@@ -549,7 +549,7 @@ export const Questions1 = [
           no: 1,
           input: false,
           title:
-            "Cálculo do risco para reações adversas.",
+            "Cálculo do risco para reações adversas. [Instruções: Para utilizar esta tabela e saber se o idoso se enquadra em um grupo de risco para reações adversas, verifique na questão 44 o número de diagnósticos e na questão 53 se o idoso faz uso de medicamento inapropriado. Circule estas informações nas respectivas coluna e linha em destaque na tabela e, em seguida, as cruze para saber o número máximo de medicamentos que o idoso poderia tomar. Por último, verifique na questão 46 se (o) idoso(a) utiliza uma quantidade de medicamentos superior ao valor indicado na tabela. Assinale ao lado a respectiva resposta.]",
           tooltip:"[Instruções: Para utilizar esta tabela e saber se o idoso se enquadra em um grupo de risco para reações adversas, verifique na questão 44 o número de diagnósticos e na questão 53 se o idoso faz uso de medicamento inapropriado. Circule estas informações nas respectivas coluna e linha em destaque na tabela e, em seguida, as cruze para saber o número máximo de medicamentos que o idoso poderia tomar. Por último, verifique na questão 46 se (o) idoso(a) utiliza uma quantidade de medicamentos superior ao valor indicado na tabela. Assinale ao lado a respectiva resposta.]"
         },
       ],
@@ -903,7 +903,7 @@ export const Questions1 = [
             "[Investigar atividade realizada, local, horário do dia, tipo de calçado, riscos ambientais etc]",
           point: 0,
           title:
-            "O(a) senhor(a) sofreu alguma fratura decorrente destas quedas ? Se sim, quais _ ?",
+            "O(a) senhor(a) sofreu alguma fratura decorrente destas quedas ? Se sim, quais _ ? [Investigar atividade realizada, local, horário do dia, tipo de calçado, riscos ambientais etc]",
         },
         {
           question: 90,
@@ -956,7 +956,7 @@ export const Questions1 = [
           input: false,
           tooltip: "[Pontuação > 4 em Capacidade Funcional]",
           point: 0,
-          title: "Gênero feminino",
+          title: "Gênero feminino [Pontuação > 4 em Capacidade Funcional]",
         },
         {
           question: 96,
@@ -965,7 +965,7 @@ export const Questions1 = [
           input: false,
           tooltip: "[ver questão 15]",
           point: 0,
-          title: "Alterações cognitivas",
+          title: "Alterações cognitivas [ver questão 15]",
         },
         {
           question: 97,
@@ -974,7 +974,7 @@ export const Questions1 = [
           input: false,
           tooltip: "[ver questões 63 a 69]",
           point: 0,
-          title: "Comprometimento AVDs",
+          title: "Comprometimento AVDs [ver questões 63 a 69]",
         },
         {
           question: 98,
@@ -983,7 +983,7 @@ export const Questions1 = [
           input: false,
           tooltip: "[ver questões 70 a 72]",
           point: 0,
-          title: "Déficit visual",
+          title: "Déficit visual [ver questões 70 a 72]",
         },
         {
           question: 99,
@@ -992,7 +992,7 @@ export const Questions1 = [
           input: false,
           tooltip: "[ver questão 38]",
           point: 0,
-          title: "Riscos domésticos",
+          title: "Riscos domésticos [ver questão 38]",
         },
         {
           question: 100,
@@ -1001,7 +1001,7 @@ export const Questions1 = [
           input: false,
           tooltip: "[ver questão 42]",
           point: 0,
-          title: "Riscos comportamentais",
+          title: "Riscos comportamentais [ver questão 42]",
         },
         {
           question: 101,
@@ -1011,7 +1011,7 @@ export const Questions1 = [
           tooltip: "[ver questão 45]",
           point: 0,
           title:
-            "Inatividade",
+            "Inatividade [ver questão 45]",
         },
         {
           question: 102,
@@ -1020,7 +1020,7 @@ export const Questions1 = [
           input: false,
           point: 0,
           tooltip: "[ver questões 42 e 43]",
-          title:"Acidente Vascular Encefálico prévio"
+          title:"Acidente Vascular Encefálico prévio [ver questões 42 e 43]"
         },
         {
           question: 103,
@@ -1029,7 +1029,7 @@ export const Questions1 = [
           input: false,
           point: 0,
           tooltip: "[ver questões 42 e 43]",
-          title:"Faz uso de medicações psicotrópicas, em especial benzodiazepínicos, ou uso continuo de 5 ou mais medicações (polifarmacia)"
+          title:"Faz uso de medicações psicotrópicas, em especial benzodiazepínicos, ou uso continuo de 5 ou mais medicações (polifarmacia) [ver questões 42 e 43]"
         },
         {
           question: 104,
@@ -1038,7 +1038,7 @@ export const Questions1 = [
           input: false,
           point: 0,
           tooltip: "[ver questões 42 e 43]",
-          title:"Apresenta alguma das doenças a seguir: hipertensão, tontura/ vertigem, Parkinson, amputação de membros inferiores, convulsões, artrite, osteoporose,      incontinência, diabetes, neuropatia, hipotensão postural"
+          title:"Apresenta alguma das doenças a seguir: hipertensão, tontura/ vertigem, Parkinson, amputação de membros inferiores, convulsões, artrite, osteoporose, incontinência, diabetes, neuropatia, hipotensão postural [ver questões 42 e 43]"
         },
       ],
     },

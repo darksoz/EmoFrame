@@ -18,8 +18,6 @@ import ModalTest from "../../Components/Modal/ModalTest";
 import sortArray from "sort-array";
 import { SavePageResult } from "../../services/api";
 
-
-
 function PageResult() {
   const [questions, setQuestions] = useState([]);
   const [name, setName] = useState("");
@@ -30,6 +28,7 @@ function PageResult() {
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
   const [dataUser, setDataUser] = useState({});
+  const [namePage, setNamePage] = useState("");
   const { id } = useParams();
   let history = useHistory();
 
@@ -43,6 +42,7 @@ function PageResult() {
       setEvaluation([...evaluation, data]);
     }
   };
+ 
 
   useEffect(() => {
     const getResult = async () => {
@@ -62,6 +62,8 @@ function PageResult() {
             setQuestions(data.Questions);
             setName(data.Username);
             setDatetime(data.Datetime);
+            let answer = data.UserDataForm.filter(a => a.id == 'nomepage')
+            setNamePage(answer[0].answer);
           }
         } else {
           setTitle("Erro ao carregar a resposta");
@@ -76,8 +78,6 @@ function PageResult() {
     };
     getResult();
   }, [id]);
-  
-  console.log('dataUser',dataUser);
 
   const handleFormData = async () => {
     let json = {
@@ -89,7 +89,7 @@ function PageResult() {
       UserDataForm: dataUser.UserDataForm,
     };
     json = JSON.stringify(json);
-    console.log('json', json);
+    console.log("json", json);
     let response = await SavePageResult(json, id);
     if (response.status === 200) {
       console.log("Dados salvos aqui ==> ", response.data);
@@ -98,7 +98,6 @@ function PageResult() {
       setSuccess(true);
       setShow(true);
     } else {
-      console.log(response)
       setTitle("Erro na conclusão");
       setBody("Atividade não foi concluída");
       setSuccess(false);
@@ -133,7 +132,7 @@ function PageResult() {
     (obj, item) => Object.assign(obj, { [item.id]: item.answer }),
     {}
   );
-  console.log('oBAspects',evaluationOb);
+
   const dominiosList = [
     { aspectos: "Aspectos Psicologicos", min: 0, max: 19 },
     {
@@ -202,7 +201,9 @@ function PageResult() {
         {name && datetime && (
           <>
             <h1>Nome: {name}</h1>
+            <h1>Entrevistado: { namePage}</h1>
             <h1>Data e Hora: {formateDateTime(datetime)}</h1>
+            
           </>
         )}
 
@@ -214,19 +215,16 @@ function PageResult() {
 
         <PageInvestigationTable aspects={aspectsSort} />
 
-        <GerontologistAssessment evaluation={evaluationOb}/>
+        <GerontologistAssessment evaluation={evaluationOb} />
 
         <ActionPlanning evaluation={evaluationOb} />
 
         <ActionsImplementation evaluation={evaluationOb} />
 
-        <ActionsControl evaluation={evaluationOb}/>
-        <button
-                class="btn whitebutton btn-lg"
-                onClick={() => handleFormData()}
-              >
-                Salvar
-              </button>
+        <ActionsControl evaluation={evaluationOb} />
+        <button class="btn whitebutton btn-lg" onClick={() => handleFormData()}>
+          Salvar
+        </button>
       </Container>
       <Footer />
     </>
