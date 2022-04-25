@@ -1,27 +1,29 @@
-## Comando obrigatório
-## Baixa a imagem do node com versão alpine (versão mais simplificada e leve)
-FROM node:alpine
+FROM node:13-alpine as build
 
-## Define o local onde o app vai ficar no disco do container
-## Pode ser o diretório que você quiser
-WORKDIR /usr/app
+WORKDIR /app
 
-## Copia tudo que começa com package e termina com .json para dentro da pasta /usr/app
-COPY package*.json ./
+ENV PATH /app/node_modules/.bin:$PATH
 
-## Executa npm install para adicionar as dependências e criar a pasta node_modules
-RUN npm install --legacy-peer-deps
+COPY package.json /app/package.json
 
-RUN npm install 
+RUN npm install
 
-## Copia tudo que está no diretório onde o arquivo Dockerfile está 
-## para dentro da pasta /usr/app do container
-## Vamos ignorar a node_modules por isso criaremos um .dockerignore
-COPY . .
+RUN npm install react-scripts@3.0.1 -g
 
-## Container ficará ouvindo os acessos na porta 3000
-EXPOSE 3000
+COPY . /app
 
-## Não se repete no Dockerfile
-## Executa o comando npm start para iniciar o script que que está no package.json
-CMD ["npm", "start"]
+RUN npm run build
+
+# production environment
+
+FROM nginx:1.16.0-alpine
+
+COPY --from=build /app/build /usr/share/nginx/html
+
+RUN rm /etc/nginx/conf.d/default.conf
+
+COPY nginx/nginx.conf /etc/nginx/conf.d
+
+EXPOSE 1300
+
+CMD ["nginx", "-g", "daemon off;"]
