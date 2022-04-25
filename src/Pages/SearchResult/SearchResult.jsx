@@ -13,7 +13,7 @@ import { Button, Modal } from 'react-bootstrap';
 import Tabs from '../../Components/Tabs/Tabs';
 import { isEmptyString } from '../../services/utils';
 import Footer from '../../Components/Footer/Footer';
-
+import Header from '../../Components/Header/Header';
 
 
 function SearchResult() {
@@ -94,6 +94,7 @@ function SearchResult() {
 
     return (
         <>
+        <Header/>
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
                     <Modal.Title>{title}</Modal.Title>

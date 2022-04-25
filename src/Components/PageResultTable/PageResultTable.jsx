@@ -41,11 +41,11 @@ function PageResultTable(props) {
             <td colSpan={2}>PONTUAÇÃO POR DIMENSÃO</td>
             <td className="custom">
               <div>
-                ASPECTOS PSICOLÓGICOS (MÁXIMA = 14 PONTOS):{" "}
+                ASPECTOS PSICOLÓGICOS (MÁXIMA = 19 PONTOS):{" "}
                 {sumValue(aspectos["Aspectos Psicologicos"])}
               </div>
               <div>
-                ASPECTOS BIOLÓGICOS (MÁXIMA = 36 PONTOS):{" "}
+                ASPECTOS BIOLÓGICOS (MÁXIMA = 33 PONTOS):{" "}
                 {sumValue(aspectos["Aspectos Biologicos"])}
               </div>
 
@@ -55,14 +55,14 @@ function PageResultTable(props) {
               </div>
 
               <div>
-                QUEDAS (MÁXIMA = 16 PONTOS):{" "}
+                QUEDAS (MÁXIMA = 17 PONTOS):{" "}
                 {sumValue(aspectos["Aspectos Multidimensionais"])}
               </div>
             </td>
           </tr>
           <tr className="bg-lgrey">
             <td colSpan={3}>
-              PONTUAÇÃO TOTAL (MÁXIMA = 98 PONTOS): {sumValue(props.questions)}
+              PONTUAÇÃO TOTAL (MÁXIMA = 101 PONTOS): {sumValue(props.questions)}
             </td>
           </tr>
           <tr>
@@ -76,17 +76,17 @@ function PageResultTable(props) {
           <tr className="bg-lgrey">
             <td>
               <div className="mb-3">
-                &ge; 70 PONTOS = RISCO BAIXO
+                &ge; 75 PONTOS = RISCO BAIXO
               </div>
             </td>
             <td>
               <div className="mb-3">
-                69 A 40 PONTOS = RISCO MODERADO
+                74 A 45 PONTOS = RISCO MODERADO
               </div>
             </td>
             <td>
               <div className="mb-3">
-                &le;  39 PONTOS = RISCO ALTO
+                &le;  44 PONTOS = RISCO ALTO
               </div>
             </td>
           </tr>

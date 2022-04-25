@@ -2,10 +2,11 @@ import { React } from "react";
 import { Container } from "react-bootstrap";
 import InputText from "../InputText/InputText";
 import ImagesAspect from "../BiologicalAspect/ImagesAspect";
+import { Checkbox } from "@mui/material";
 
 function QuestionsPsychological(props) {
   const checkTextBox = (str) => {
-    let textBox = ["7", "8", "41", "51", "54", "45", "88", "89"];
+    let textBox = [ "3", "8", "46"];
     return textBox.includes(String(str));
   };
   return (
@@ -33,23 +34,18 @@ function QuestionsPsychological(props) {
             </strong>
           </>
         ))}
-        {props.pergunta.question === "2" && (
+        {props.pergunta.question === 2 && (
           <ul style={{ listStyleType: "none" }}>
             {props.pergunta.text?.map((text, index) => (
-              <li>
+              <li key={text} name='text'>
+                
                 <strong>{text}</strong>
+                <Checkbox name={text}></Checkbox>
               </li>
             ))}
           </ul>
         )}
-        {checkTextBox(props.pergunta.question) && (
-          <textarea
-            class="form-control"
-            id="exampleFormControlTextarea1"
-            rows="3"
-            name={`${props.pergunta.question}.7`}
-          ></textarea>
-        )}
+        
         {props.pergunta.images?.length > 0
           ? props.pergunta.images.map((image, index) => (
               <ImagesAspect
@@ -60,6 +56,14 @@ function QuestionsPsychological(props) {
               ></ImagesAspect>
             ))
           : ""}
+          {checkTextBox(props.pergunta.question) && (
+          <textarea
+            class="form-control"
+            id="exampleFormControlTextarea1"
+            rows="3"
+            name={`${props.pergunta.question}.7`}
+          ></textarea>
+        )}
         <p className="h5 mb-3 mt-3 p-1">
           <Container className="ml-5">
             <div className="form-check" style={{ minHeight: "2.0em" }}>

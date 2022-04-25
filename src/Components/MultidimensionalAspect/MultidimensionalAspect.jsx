@@ -50,6 +50,7 @@ function MultidimensionalAspect() {
                         type="radio"
                         value="SIM"
                         name={question.aspectos}
+                        id='Multidimensional'
                       />
                       <label
                         className="form-check-label label-page-i"
@@ -65,6 +66,7 @@ function MultidimensionalAspect() {
                         type="radio"
                         value="NÃO"
                         name={question.aspectos}
+                        id='Multidimensional'
                       />
                       <label
                         className="form-check-label label-page-i l-no"
@@ -79,6 +81,7 @@ function MultidimensionalAspect() {
               </Row>
 
               </Container>
+              {index === Questions4.length - 1 && (
               <Row>
                 <div class="form-group justify-content-center mt-5">
                   <textarea
@@ -86,11 +89,11 @@ function MultidimensionalAspect() {
                     name="anotacao_aspectos_multidimensionais"
                     class="form-control"
                     placeholder="Anotações:"
-                    id="exampleFormControlTextarea1"
                     rows="3"
                   ></textarea>
                 </div>
               </Row>
+              )}
             </Card>
           </Container>
         </>

@@ -18,6 +18,7 @@ function SocialAspect() {
               <Row>
                 <p className="h4">{question.aspectos}</p>
                 <hr />
+                
               </Row>
               <Row>
                 <Col md={12}>
@@ -48,6 +49,7 @@ function SocialAspect() {
                         type="radio"
                         value="SIM"
                         name={question.aspectos}
+                        id='Social'
                       />
                       <label
                         className="form-check-label label-page-i"
@@ -63,6 +65,7 @@ function SocialAspect() {
                         type="radio"
                         value="NÃO"
                         name={question.aspectos}
+                        id='Social'
                       />
                       <label
                         className="form-check-label label-page-i l-no"
@@ -77,6 +80,7 @@ function SocialAspect() {
               </Row>
 
               </Container>
+              { index === Questions3.length - 1 && (
               <Row>
                 <div class="form-group justify-content-center mt-5">
                   <textarea
@@ -84,11 +88,11 @@ function SocialAspect() {
                     name="anotacao_aspectos_sociais"
                     class="form-control"
                     placeholder="Anotações:"
-                    id="exampleFormControlTextarea1"
                     rows="3"
                   ></textarea>
                 </div>
               </Row>
+              )}
             </Card>
           </Container>
         </>
