@@ -42,7 +42,14 @@ function PageResult() {
       setEvaluation([...evaluation, data]);
     }
   };
- 
+  const returnName = (data) => {
+    console.log("entrou", data);
+    if (data.length != 0) {
+      return  data.filter((a) => a.id == "nomepage")[0].answer;
+    }else{
+      return ""; 
+    }
+  };
 
   useEffect(() => {
     const getResult = async () => {
@@ -62,8 +69,9 @@ function PageResult() {
             setQuestions(data.Questions);
             setName(data.Username);
             setDatetime(data.Datetime);
-            let answer = data.UserDataForm.filter(a => a.id == 'nomepage')
-            setNamePage(answer[0].answer);
+            let teste = returnName(data.UserDataForm,'nomepage' );
+            console.log('aeeee',teste);
+            setNamePage(teste);
           }
         } else {
           setTitle("Erro ao carregar a resposta");
