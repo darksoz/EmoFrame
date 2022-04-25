@@ -84,7 +84,7 @@ function DemandsMap(props) {
       </div>
       <div className="border mb-3">
         <PageDemands subAspectos={subAspectos}/>
-        <PageDimension dominios={subAspectos} />
+        <PageDimension dominios={subAspectos} evaluation={props.evaluation}/>
       </div>
     </>
   );

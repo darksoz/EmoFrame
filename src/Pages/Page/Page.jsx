@@ -14,10 +14,12 @@ import RegisterPage from "../../Components/RegisterPage/RegisterPage";
 import ModalTest from "../../Components/Modal/ModalTest";
 import Header from "../../Components/Header/Header";
 import Footer from "../../Components/Footer/Footer";
+import { Demandas } from "../../services/Questions/Page/Page";
 
 function Page() {
   const [active, setActive] = React.useState(1);
   const [answers, setAnswers] = React.useState([]);
+  const [investigation, setInvestigation] = React.useState([]);
   const [title, setTitle] = React.useState("");
   const [body, setBody] = React.useState("");
   const [show, setShow] = React.useState(false);
@@ -28,32 +30,71 @@ function Page() {
   const handleChange = (event) => {
     const id = event.target.name;
     const data = { id, answer: event.target.value };
+    if (event.target.id) {
+      data.aspect = event.target.id;
+    }
+
     if (answers.some((a) => a.id === id)) {
       setAnswers([...answers.filter((b) => b.id !== id), data]);
-      console.log(data);
+      console.log("data", data);
     } else {
       setAnswers([...answers, data]);
-      console.log(data);
+    }
+  };
+
+  const verifyDemandas = (demanda, arr2) => {
+    console.log("Entrou", Demandas);
+    console.log("arr2", arr2);
+    if (arr2.length !== 0) {
+      let difference = Demandas[demanda].filter((x) => !arr2.includes(x));
+      console.log("difference", Demandas[demanda]);
+      console.log("de", difference);
+      if (difference.length !== 0) {
+        console.log(
+          "Você não respondeu todas as perguntas da demanda " + difference
+        );
+        alert("Você não respondeu todas as perguntas da demanda " + difference);
+        setInvestigation([]);
+      }
+    } else {
+      console.log(
+        "Você não respondeu nenhuma pergunta da demanda " + Demandas[demanda]
+      );
+      alert(
+        "Você não respondeu nenhuma pergunta da demanda " + Demandas[demanda]
+      );
+      setInvestigation([]);
     }
   };
   const filterQuestionsByNumberInt = (questions) => {
     let data = [];
     if (questions) {
       data = questions.filter((item) => {
-        return parseInt(item.id) === item.id;
+        return parseInt(item.id) == item.id;
       });
     }
     return data.sort((a, b) => a.id - b.id) || null;
   };
+  const filterQuestionsByString = (questions) => {
+    let data = [];
+
+    if (questions) {
+      data = questions.filter((item) => {
+        return +item.id != item.id;
+      });
+    }
+    return data.sort((a, b) => a.id - b.id).map((item) => item.id);
+  };
   useEffect(() => {
     let data = filterQuestionsByNumberInt(answers);
+    let dataI = filterQuestionsByString(answers);
+    setInvestigation(dataI);
     setTotalQuestions(data.length);
   }, [answers]);
 
   const handleChangeForm = (event) => {
     const id = event.target.name;
     const data = { id, answer: event.target.value };
-    console.log("data", data);
     if (userFormData.some((a) => a.id === id)) {
       setUserFormData([...userFormData.filter((b) => b.id !== id), data]);
     } else {
@@ -69,8 +110,6 @@ function Page() {
       Evaluation: [],
       UserDataForm: userFormData,
     };
-    console.log("Json", json);
-    console.log("userFormData", userFormData);
     json = JSON.stringify(json);
     let response = await SavePageTest(json);
     if (response.status === 201) {
@@ -85,32 +124,47 @@ function Page() {
       setSuccess(false);
     }
   };
-  
 
   return (
     <>
-      <Header/>
+      <Header />
       <Breadcrumb>
         <Breadcrumb.Item href="./dashboard">Página Inicial</Breadcrumb.Item>
         <Breadcrumb.Item active>PAGE</Breadcrumb.Item>
       </Breadcrumb>
-      <ModalTest Success={success} Title={title} Body={body} Reveal={show} Finish={"/dashboard"} Retry={true} />
-      
+      <ModalTest
+        Success={success}
+        Title={title}
+        Body={body}
+        Reveal={show}
+        Finish={"/dashboard"}
+        Retry={true}
+      />
+
       <Container>
         <div id="sample">
           <MultiStepForm activeStep={active}>
             <Step label="Dados de Identificação" onChange={handleChangeForm}>
               <RegisterPage />
             </Step>
-            <Step label="Relacionados a Aspectos Psicológicos" onChange={handleChange}>
+            <Step
+              label="Relacionados a Aspectos Psicológicos"
+              onChange={handleChange}
+            >
               <PsychologicalAspect />
             </Step>
 
-            <Step label="Relacionados a Aspectos Biológicos" onChange={handleChange}>
+            <Step
+              label="Relacionados a Aspectos Biológicos"
+              onChange={handleChange}
+            >
               <BiologicalAspect />
             </Step>
 
-            <Step label="Relacionados a Aspectos Sociais" onChange={handleChange}>
+            <Step
+              label="Relacionados a Aspectos Sociais"
+              onChange={handleChange}
+            >
               <SocialAspect />
             </Step>
 
@@ -119,6 +173,19 @@ function Page() {
             </Step>
           </MultiStepForm>
         </div>
+        {active > 1 && active !== 5 && (
+          <span>
+            <Link to="sample">
+              <button
+                style={{ marginRight: "10px" }}
+                class="btn whitebutton btn-lg"
+                onClick={() => setActive(active - 1)}
+              >
+                Anterior
+              </button>
+            </Link>
+          </span>
+        )}
         {active === 1 && (
           <Link to="sample">
             <button
@@ -129,32 +196,45 @@ function Page() {
             </button>
           </Link>
         )}
-        {active > 1 && active !== 5 && (
-          <div>
-            <Link to="sample">
-              <button
-                style={{marginRight:"20px"}}
-                class="btn whitebutton btn-lg"
-                onClick={() => setActive(active - 1)}
-              >
-                Anterior
-              </button>
-            </Link>
-            <Link to="sample">
-              <button
-                class="btn whitebutton btn-lg"
-                onClick={() => setActive(active + 1)}
-              >
-                Próximo
-              </button>
-            </Link>
-          </div>
+        {active === 2 && totalQuestions >= 19 && (
+          <Link to="sample">
+            <button
+              class="btn whitebutton btn-lg"
+              onClick={() => setActive(active + 1)}
+              onMouseOver={() => verifyDemandas("psicologicos", investigation)}
+            >
+              Próximo
+            </button>
+          </Link>
         )}
+        {active === 3 && totalQuestions >= 52 && (
+          <Link to="sample">
+            <button
+              class="btn whitebutton btn-lg"
+              onClick={() => setActive(active + 1)}
+              onMouseOver={() => verifyDemandas("biologicos", investigation)}
+            >
+              Próximo
+            </button>
+          </Link>
+        )}
+        {active === 4 && totalQuestions >= 85 && (
+          <Link to="sample">
+            <button
+              class="btn whitebutton btn-lg"
+              onClick={() => setActive(active + 1)}
+              onMouseOver={() => verifyDemandas("sociais", investigation)}
+            >
+              Próximo
+            </button>
+          </Link>
+        )}
+
         {active === 5 && (
           <div>
             <Link to="sample">
               <button
-                style={{marginRight:"20px"}}
+                style={{ marginRight: "20px" }}
                 class="btn whitebutton btn-lg"
                 onClick={() => setActive(active - 1)}
               >
@@ -165,6 +245,9 @@ function Page() {
               <button
                 class="btn whitebutton btn-lg"
                 onClick={() => handleFormData()}
+                onMouseOver={() =>
+                  verifyDemandas("multidimensionais", investigation)
+                }
               >
                 Salvar
               </button>
@@ -172,7 +255,7 @@ function Page() {
           </div>
         )}
       </Container>
-      <Footer/>
+      <Footer />
     </>
   );
 }
