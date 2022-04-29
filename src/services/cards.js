@@ -30,6 +30,11 @@ export const cards =
             "image": "card",
             "title": "PAGE",
             "page": "page"
+        },
+        {
+            "image": "card",
+            "title": "POMS",
+            "page": "poms"
         }
     ]
 }
