@@ -14,6 +14,7 @@ import Link from 'react-scroll/modules/components/Link';
 import sortArray from 'sort-array';
 import { getUsername } from '../../services/auth';
 import ModalTest from '../../Components/Modal/ModalTest';
+import { SaveTest } from '../../services/api';
 
 
 
@@ -35,12 +36,30 @@ function Poms() {
     const handleChange = (event) => {
         const id = parseInt(event.target.name);
         const data = { id, answer: event.target.value };
-
+        console.log(data)
         if (answers.some(a => a.id === id)) {
             setAnswers([...answers.filter(b => b.id !== id), data]);
         }
         else {
             setAnswers([...answers, data]);
+        }
+    }
+
+    const handleFormData = async () => {
+        let json = { "Datetime": new Date(Date.now()), "Instrument": "poms", "Username": getUsername(), "Questions": sortArray(answers, { by: 'id', }) }
+        json = JSON.stringify(json);
+
+        let response = await SaveTest(json,"poms");
+        if (response.status === 201) {
+            setTitle("Teste concluído");
+            setBody("Atividade realizada com sucesso");
+            setSuccess(true);
+            setShow(true);
+        }
+        else {
+            setTitle("Erro na conclusão");
+            setBody("Atividade não foi concluída");
+            setSuccess(false);
         }
     }
 
@@ -57,71 +76,73 @@ function Poms() {
 
             <Container>
                 <PomsExample />
-                <MultiStepForm activeStep={active} >
-                    <Step label="Passo 1">
-                        {
-                            firstQuestions.map((content, index) => (
-                                <>
-                                    <div style={{
-                                        marginBottom: "20px",
-                                    }}>
-                                        <PomsForm Title={content.Title}
-                                            Name={content.Name} />
-                                        <hr></hr>
-                                    </div>
-                                </>
-                            ))
-                        }
-                    </Step>
-                    <Step label="Passo 2">
-                        {
+                <div onChange={handleChange}>
+                    <MultiStepForm activeStep={active} >
+                        <Step label="Passo 1">
+                            {
+                                firstQuestions.map((content, index) => (
+                                    <>
+                                        <div style={{
+                                            marginBottom: "20px",
+                                        }}>
+                                            <PomsForm Title={content.Title}
+                                                Name={content.Name} />
+                                            <hr></hr>
+                                        </div>
+                                    </>
+                                ))
+                            }
+                        </Step>
+                        <Step label="Passo 2">
+                            {
 
-                            secondQuestions.map((content, index) => (
-                                <>
-                                    <div style={{
-                                        marginBottom: "20px",
-                                    }}>
-                                        <PomsForm Title={content.Title}
-                                            Name={content.Name} />
-                                        <hr></hr>
-                                    </div>
-                                </>
-                            ))
-                        }
-                    </Step>
-                    <Step label="Passo 3">
-                        {
+                                secondQuestions.map((content, index) => (
+                                    <>
+                                        <div style={{
+                                            marginBottom: "20px",
+                                        }}>
+                                            <PomsForm Title={content.Title}
+                                                Name={content.Name} />
+                                            <hr></hr>
+                                        </div>
+                                    </>
+                                ))
+                            }
+                        </Step>
+                        <Step label="Passo 3">
+                            {
 
-                            thirdQuestions.map((content, index) => (
-                                <>
-                                    <div style={{
-                                        marginBottom: "20px",
-                                    }}>
-                                        <PomsForm Title={content.Title}
-                                            Name={content.Name} />
-                                        <hr></hr>
-                                    </div>
-                                </>
-                            ))
-                        }
-                    </Step>
-                    <Step label="Passo 4">
-                        {
+                                thirdQuestions.map((content, index) => (
+                                    <>
+                                        <div style={{
+                                            marginBottom: "20px",
+                                        }}>
+                                            <PomsForm Title={content.Title}
+                                                Name={content.Name} />
+                                            <hr></hr>
+                                        </div>
+                                    </>
+                                ))
+                            }
+                        </Step>
+                        <Step label="Passo 4">
+                            {
 
-                            fourthQuestions.map((content, index) => (
-                                <>
-                                    <div style={{
-                                        marginBottom: "20px",
-                                    }}>
-                                        <PomsForm Title={content.Title}
-                                            Name={content.Name} />
-                                        <hr></hr>
-                                    </div>
-                                </>
-                            ))
-                        }
-                    </Step>
-                </MultiStepForm>
+                                fourthQuestions.map((content, index) => (
+                                    <>
+                                        <div style={{
+                                            marginBottom: "20px",
+                                        }}>
+                                            <PomsForm Title={content.Title}
+                                                Name={content.Name} />
+                                            <hr></hr>
+                                        </div>
+                                    </>
+                                ))
+                            }
+                        </Step>
+                    </MultiStepForm>
+                </div>
                 {(active === 1 && <Link to="sample"><button class="btn whitebutton btn-lg" onClick={() => setActive(active + 1)}>Próximo</button></Link>)}
                 {(active > 1 && active !== 4 &&
                     <div>
@@ -138,7 +159,7 @@ function Poms() {
                         <Link to="sample">
                             <button class="btn whitebutton btn-lg" onClick={() => setActive(active - 1)}>Anterior</button>
                         </Link>
-                        <button class="btn whitebutton btn-lg" >Salvar</button>
+                        <button class="btn whitebutton btn-lg" onClick={handleFormData}>Salvar</button>
                     </div>
                 }
                 {(active === 4 && answers.length !== amountOfQuestions) &&
