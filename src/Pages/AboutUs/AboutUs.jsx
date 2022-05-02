@@ -80,7 +80,7 @@ function AboutUs() {
 
                     <Col>
                         <Card style={{ width: '18rem'}}>
-                            <Card.Img variant="top" src={`${process.env.PUBLIC_URL}/Rafael.png`} />
+                            <Card.Img variant="top" src={`${process.env.PUBLIC_URL}/Rafael.jpg`} />
                             <Card.Body>
                                 <h4> Desenvolvedor Colaborador - Rafael do Monte </h4>
                                 <Card.Text style={{padding:'10px'}}>
