@@ -37,7 +37,7 @@ function Footer() {
                                             <a href="/contactus" class="link-dark">Contato &nbsp;</a>
                                         </span>
                                         <span>
-                                            <a href="/contactus" class="link-dark"> &nbsp;Sobre Nós</a>
+                                            <a href="/aboutus" class="link-dark"> &nbsp;Sobre Nós</a>
                                         </span>
 
                                     </Col>
