@@ -75,11 +75,10 @@ function PomsResult() {
             scaleQuestions.forEach(question => {
 
                 if (Reverse.includes(question)) {
-
-                    sum += answers[question - 1].answer;
+                    sum += 4 - answers[question - 1].answer;
                 }
                 else {
-                    sum += 4 - answers[question - 1].answer;
+                    sum += answers[question - 1].answer;
                 }
             });
             return sum;
