@@ -151,7 +151,7 @@ function Sus() {
                             {(active > 1 && active !== 3) && (
                                 <div>
                                     <Link to="topscreen">
-                                        <button class="btn whitebutton btn-lg" onClick={() => setActive(active - 1)} >Anterior</button>
+                                        <button class="btn whitebutton btn-lg" style={{marginRight:'20px'}} onClick={() => setActive(active - 1)} >Anterior</button>
                                     </Link>
                                     <Link to="topscreen">
                                         <button class="btn whitebutton btn-lg" onClick={() => setActive(active + 1)}>Próximo</button>
@@ -163,7 +163,7 @@ function Sus() {
                                     <Link to="topscreen">
                                         <button class="btn whitebutton btn-lg" onClick={() => setActive(active - 1)}>Anterior</button>
                                     </Link>
-                                    <button class="btn whitebutton btn-lg" onClick={() => handleFormData()}>Salvar</button>
+                                    <button class="btn whitebutton btn-lg" style={{marginLeft:'20px'}} onClick={() => handleFormData()}>Salvar</button>
                                 </div>
                             }
                             {(active === 3  &&  answers.length !== amountOfQuestions && solution.trim() === "") &&

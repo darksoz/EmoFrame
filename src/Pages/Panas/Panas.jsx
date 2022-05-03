@@ -127,7 +127,7 @@ function Panas() {
                         <Link to="sample">
                             <button class="btn whitebutton btn-lg" onClick={() => setActive(active - 1)}>Anterior</button>
                         </Link>
-                        <button class="btn whitebutton btn-lg" onClick={() => handleFormData()}>Salvar</button>
+                        <button class="btn whitebutton btn-lg" style={{marginLeft:'20px'}} onClick={() => handleFormData()}>Salvar</button>
                     </div>
                 }
                 {(active === 2 && answers.length !== amountOfQuestions) &&

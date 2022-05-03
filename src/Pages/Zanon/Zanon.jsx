@@ -64,7 +64,7 @@ function Zanon() {
         <Header/>
             <Breadcrumb>
                 <Breadcrumb.Item href='./dashboard'>Página Inicial</Breadcrumb.Item>
-                <Breadcrumb.Item active>Zanon</Breadcrumb.Item>
+                <Breadcrumb.Item active>EAZ</Breadcrumb.Item>
             </Breadcrumb>
 
             <ModalTest Success={success} Title={title} Body={body} Reveal={show} Finish={"/dashboard"} Retry={true} />
@@ -121,7 +121,7 @@ function Zanon() {
                         <Link to="sample">
                             <button class="btn whitebutton btn-lg" onClick={() => setActive(active - 1)}>Anterior</button>
                         </Link>
-                        <button class="btn whitebutton btn-lg" onClick={() => handleFormData()}>Salvar</button>
+                        <button class="btn whitebutton btn-lg" style={{marginLeft:'20px'}} onClick={() => handleFormData()}>Salvar</button>
                     </div>
                 }
                 {(active === 2 && answers.length !== amountOfQuestions) &&
