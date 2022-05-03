@@ -1,12 +1,13 @@
 import ReactApexChart from "react-apexcharts";
 
-function LineChartPoms () {  
-    let dados = {
-        series: [{
-          name: "Desktops",
-          data: [10, 41, 35, 51, 49, 62, 69, 91, 148]
-      }],
-        chart: {
+function LineChartPoms (props) {  
+  let dados = {
+    series: [{
+        name: "Desktops",
+        data: props.ScaleResults
+    }],
+    options: {
+      chart: {
         height: 350,
         type: 'line',
         zoom: {
@@ -20,7 +21,7 @@ function LineChartPoms () {
         curve: 'straight'
       },
       title: {
-        text: 'Product Trends by Month',
+        text: '',
         align: 'left'
       },
       grid: {
@@ -30,15 +31,17 @@ function LineChartPoms () {
         },
       },
       xaxis: {
-        categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'],
+        categories: ['Tensão', 'Depressão', 'Hostilidade', 'Fadiga', 'Vigor', 'Confusão'],
       }
-      };
+    },
+  };
+
     return (
         <>
-        <ReactApexChart options={dados.options} 
+          <ReactApexChart   options={dados.options} 
                             series={dados.series} 
                             type="line" 
-                            height={350} />
+                            height={350}/>
         </>
     )
 }
