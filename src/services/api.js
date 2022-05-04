@@ -304,3 +304,21 @@ export const GetTestResult = async (instrument, json) => {
     });
   });
 }
+
+export const GetPageAmountOfResult = (id) => {
+  var config = {
+    method: 'get',
+    url: `${baseURL}/page/userid/${id}`,
+    headers: {
+      'Authorization': `Bearer ${getToken()}`
+    },
+  };
+  return new Promise((resolve, reject) => {
+    axios(config)
+    .then(function (response) {
+      resolve(response);
+    }).catch(function (error) {
+      resolve(error);
+    });
+  });
+}
