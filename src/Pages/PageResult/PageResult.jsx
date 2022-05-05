@@ -37,7 +37,6 @@ function PageResult() {
     const id = event.target.name;
     const data = { id, answer: event.target.value };
     if (evaluation.some((a) => a.id === id)) {
-      console.log(data);
       setEvaluation([...evaluation.filter((b) => b.id !== id), data]);
     } else {
       setEvaluation([...evaluation, data]);
@@ -110,10 +109,8 @@ function PageResult() {
       UserDataForm: dataUser.UserDataForm,
     };
     json = JSON.stringify(json);
-    console.log("json", json);
     let response = await SavePageResult(json, id);
     if (response.status === 200) {
-      console.log("Dados salvos aqui ==> ", response.data);
       setTitle("Teste concluído");
       setBody("Atividade realizada com sucesso");
       setSuccess(true);
@@ -180,7 +177,6 @@ function PageResult() {
       element.max
     );
   }
-  console.log("EVA:", evaluation);
   const handleClose = (path) => {
     setShow(false);
     history.push(path);
