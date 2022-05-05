@@ -17,7 +17,6 @@ const useStyles = makeStyles({
 });
 
 const returnName = (data) => {
-  console.log("entrou", data);
   if (data.length != 0) {
     return "- " + data.filter((a) => a.id == "nomepage")[0].answer;
   }
@@ -38,7 +37,6 @@ function FilterTable(props) {
 
   const emptyRows =
     rowsPerPage - Math.min(rowsPerPage, props.Data.length - page * rowsPerPage);
-  console.log(props.Data);
   if (props.Data.length === 0) {
     return <></>;
   } else {

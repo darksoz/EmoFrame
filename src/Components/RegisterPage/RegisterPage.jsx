@@ -87,7 +87,9 @@ function RegisterPage() {
                                     <Form.Select aria-label="Default select example" name='entrevistado'>
                                         <option>Quem está sendo entrevistado</option>
                                         <option value="Idoso">Idoso</option>
-                                        <option value="Outro">Outro</option>
+                                        <option value="Cuidador">Cuidador</option>
+                                        <option value="Familiar">Familiar</option>
+
                                     </Form.Select>
 
                                 </Col>
