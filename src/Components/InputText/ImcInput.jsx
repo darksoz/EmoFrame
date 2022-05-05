@@ -14,7 +14,6 @@ function ImcInput(props) {
 
   const handleBlur = (e) => {
     const { name, value } = e.target;
-    console.log(name, value);
     if (name === "35.1") {
       setPesoValue(parseFloat(value));
     }

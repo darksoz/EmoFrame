@@ -409,7 +409,6 @@ export const Questions1 = [
           input: true,
           point: 0,
           title: "O(a) senhor(a) tem o hábito de ingerir bebidas alcoólicas? Se sim, qual o tipo da bebida? _ E quantas doses, taças ou latas em uma semana? _ .[Instruções: Depois assinale ao lado a resposta equivalente, considerando as seguintes referências:",
-          tooltip:"[Instruções: Depois assinale ao lado a resposta equivalente, considerando as seguintes referências:",
         },
         {
           question: 42,
