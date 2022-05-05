@@ -6,7 +6,6 @@ import { RediretToPage } from '../../services/utils';
 import { getToken, getUsername, logout } from '../../services/auth';
 
 export default function Header() {
-    console.log("route => ", window.location.pathname)
     const LoginUserName = () => {
         let username = getUsername().split(' ');
         let firstName = username[0];

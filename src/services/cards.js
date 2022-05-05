@@ -33,7 +33,7 @@ export const cards =
         },
         {
             "image": "card",
-            "title": "POMS",
+            "title": "BRUMS",
             "page": "poms"
         }
     ]
