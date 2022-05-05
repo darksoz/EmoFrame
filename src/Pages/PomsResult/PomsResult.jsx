@@ -8,13 +8,12 @@ import PomsTable from "../../Components/PomsTable/PomsTable";
 import { GetResultTestById } from "../../services/api";
 import { formateDateTime } from "../../services/utils";
 
-let T_scale = [1, 10, 14, 18, 26, 18];
-let D_scale = [6, 13, 15, 19, 27, 33];
-let H_scale = [2, 8, 12, 22, 25, 32];
-let F_scale = [3, 11, 17, 20, 30, 36];
-let V_scale = [4, 7, 9, 24, 29, 34];
-let C_scale = [5, 16, 21, 23, 31, 35];
-let Reverse = [23, 26, 31];
+let T_scale = [1, 13, 14, 18];
+let D_scale = [5, 6, 12, 16];
+let R_scale = [7, 11, 19, 22];
+let F_scale = [4, 8, 10, 21];
+let V_scale = [2, 15, 20, 23];
+let C_scale = [3, 9, 17, 24];
 
 function PomsResult() {
     const [questions, setQuestions] = useState([]);
@@ -45,7 +44,7 @@ function PomsResult() {
                         setScaleResults(prev => [...prev,
                         getScalesSum(data.Questions, T_scale),
                         getScalesSum(data.Questions, D_scale),
-                        getScalesSum(data.Questions, H_scale),
+                        getScalesSum(data.Questions, R_scale),
                         getScalesSum(data.Questions, F_scale),
                         getScalesSum(data.Questions, V_scale),
                         getScalesSum(data.Questions, C_scale),
@@ -74,12 +73,8 @@ function PomsResult() {
             let sum = 0
             scaleQuestions.forEach(question => {
 
-                if (Reverse.includes(question)) {
-                    sum += 4 - answers[question - 1].answer;
-                }
-                else {
-                    sum += answers[question - 1].answer;
-                }
+                sum += answers[question - 1].answer;
+
             });
             return sum;
         }
@@ -124,29 +119,10 @@ function PomsResult() {
                     <>
                         <h1>Nome: {name}</h1>
                         <h1>Data e Hora: {formateDateTime(datetime)}</h1>
-                        <Row class="mt-5">
-                            <Col>
-                                <PomsTable ScaleResults={scaleResults} />
-                            </Col>
-                        </Row>
+                     
                     </>
                 }
-                <Row>
-                    <h5>Fórmula de Perturbação Total de Humor (PTH)</h5>
-                    <Col>
-                        <div class="text-center border border-dark p-4">
-
-                            <h3>PTH = [(tensão + depressão + hostilidade + fadiga + confusão)- vigor]+ 100</h3>
-                            {
-                                scaleResults.length > 0 ?
-                                    <h3> PTH = [({scaleResults[0]} + {scaleResults[1]} + {scaleResults[2]} + {scaleResults[3]} + {scaleResults[5]})- {scaleResults[4]}] + 100 = {getPTH()}</h3> :
-                                    <></>
-                            }
-
-                        </div>
-                        <p>Quanto maior o valor de PTH, maior é a piora do humor.</p>
-                    </Col>
-                </Row>
+                
                 <Row>
                     <LineChartPoms ScaleResults={scaleResults} />
                 </Row>

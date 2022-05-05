@@ -2,11 +2,11 @@ function PomsExample() {
     return (
         <>
 
-            <h1 class="likert-leap-header mt-2">POMS</h1>
-            <p class="lead ml-5 p-3"> São apresentadas abaixo uma série de palavras que descrevem sensações
-                que as pessoas sentem no dia a dia. Leia primeiro cada palavra com cuidado.
-                Depois selecione a palavra que melhor corresponda a forma que você tem se sentido ao longo
-                dos últimos sete dias, incluindo o dia de hoje. Clique no botão abaixo para ver exemplos de preenchimento:
+            <h1 class="likert-leap-header mt-2">BRUMS</h1>
+            <p class="lead ml-5 p-3"> Abaixo está uma lista de palavras que descrevem sentimentos. Por
+                favor, leia tudo atenciosamente. Em seguida assinale, em cada linha, o
+                quadrado que melhor descreve COMO VOCÊ SE SENTE AGORA. Tenha
+                certeza de sua resposta para cada questão, antes de assinalar. Clique no botão abaixo para ver exemplos de preenchimento:
             </p>
             <div class="d-flex flex-column-reverse" id="sample">
                 <button class="btn whitebutton btn-lg" type="button" data-bs-toggle="collapse"
@@ -36,7 +36,7 @@ function PomsExample() {
                                 </li>
                                 <li>
                                     <input class="form-check-input" type="radio" name="likert-pomsex1" value="four" />
-                                    <label>Muitíssimo</label>
+                                    <label>Extremamente</label>
                                 </li>
 
                                 <blockquote class="lead">Nesse caso, a pessoa considerou que não se sentiu nada confiante durante
@@ -63,11 +63,11 @@ function PomsExample() {
                                 </li>
                                 <li>
                                     <input class="form-check-input" type="radio" name="likert-pomsex2" value="four" />
-                                    <label>Muitíssimo</label>
+                                    <label>Extremamente</label>
                                 </li>
 
                                 <blockquote class="lead">Neste segundo exemplo, a pessoa apresentou uma resposta neutra sobre o
-                                    quão confiante tem se sentido durante a última semana, pois selecionou uma opção igualmente distante de “Nada” ou “Muitíssimo”.</blockquote>
+                                    quão confiante tem se sentido durante a última semana, pois selecionou uma opção igualmente distante de “Nada” ou “Extremamente”.</blockquote>
 
                             </ul>
 
@@ -91,11 +91,11 @@ function PomsExample() {
                                 </li>
                                 <li>
                                     <input class="form-check-input" type="radio" name="likert-pomsex3" value="four" checked />
-                                    <label>Muitíssimo</label>
+                                    <label>Extremamente</label>
                                 </li>
 
-                                <blockquote class="lead">Já nesse caso, a pessoa considerou que se sentiu muitíssimo confiante,
-                                    uma vez que marcou a opção "Muitíssimo" em relação a palavra confiante.</blockquote>
+                                <blockquote class="lead">Já nesse caso, a pessoa considerou que se sentiu Extremamente confiante,
+                                    uma vez que marcou a opção "Extremamente" em relação a palavra confiante.</blockquote>
 
                             </ul>
                         </form>
@@ -103,11 +103,6 @@ function PomsExample() {
                 </div>
             </div>
             <hr />
-            <blockquote class="blockquote">
-                <p class="lead ml-5 p-3"> Baseado nesse modelo de respostas selecione a palavra que melhor
-                    corresponda a forma que você tem se sentido ao longo dos últimos sete dias, para cada um
-                    dos adjetivos abaixo.</p>
-            </blockquote>
         </>
     );
 }
