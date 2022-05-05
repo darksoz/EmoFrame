@@ -20,6 +20,8 @@ import ContactUs from './Pages/ContactUs/ContactUs';
 import LandingPage from './Pages/LandingPage/LandingPage';
 import RecSys from './Pages/RecSys/RecSys';
 import PageResult from './Pages/PageResult/PageResult';
+import Poms from './Pages/Poms/Poms';
+import PomsResult from './Pages/PomsResult/PomsResult';
 
 
 function PrivateRoute({ component: Component, ...rest }) {
@@ -62,6 +64,7 @@ function Routes() {
                 <PrivateRoute path='/sus' exact component={Sus}/>
                 <PrivateRoute path='/panas' exact component={Panas}/>
                 <PrivateRoute path='/page' exact component={Page}/>
+                <PrivateRoute path='/poms' exact component={Poms}/>
                 <Route path='/contactus' exact component={ContactUs}/>
                 <Route path='/recommendation' exact component={RecSys}/>
                 <LimitedAccessRoute path='/samResult' exact component={SamResult}/>
@@ -76,6 +79,8 @@ function Routes() {
                 <LimitedAccessRoute path='/susResult' exact component={SusResult}/>
                 <LimitedAccessRoute path='/zanonResult' exact component={ZanonResult}/> 
                 <LimitedAccessRoute path='/zanonResult/:id' exact component={ZanonResult}/>
+                <LimitedAccessRoute path='/pomsresult' exact component={PomsResult}/>
+                <LimitedAccessRoute path='/pomsresult/:id' exact component={PomsResult}/>
             </Switch>
         </BrowserRouter>
     )

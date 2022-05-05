@@ -14,7 +14,7 @@ function ContactUs() {
         <Header/> 
         <Breadcrumb>
             <Breadcrumb.Item href='/'>Ínicio</Breadcrumb.Item>
-            <Breadcrumb.Item active>Recomendação de Instrumento</Breadcrumb.Item>
+            <Breadcrumb.Item active>Contato</Breadcrumb.Item>
         </Breadcrumb>
             <Container>
                 <Card className='mt-4'>
