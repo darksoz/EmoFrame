@@ -22,7 +22,7 @@ function PomsForm(props) {
                     </li>
                     <li>
                     <input class="form-check-input" type="radio" name={props.Name}value="4" />
-                        <label>Muitíssimo</label>
+                        <label>Extremamente</label>
                     </li>
 
                 </ul>

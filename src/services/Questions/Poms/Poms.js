@@ -1,156 +1,107 @@
 export const Questions1 = [
     {
       "Name": "1",
-      "Title": "Tenso"
+      "Title": "Apavorado"
     },
   {
       "Name": "2",
-      "Title": "Irritado"
-    },
-  {
-      "Name": "3",
-      "Title": "Esgotado"
-    },
-  {
-      "Name": "4",
       "Title": "Animado"
     },
   {
-      "Name": "5",
+      "Name": "3",
       "Title": "Confuso"
     },
   {
+      "Name": "4",
+      "Title": "Esgotado"
+    },
+  {
+      "Name": "5",
+      "Title": "Deprimido"
+    },
+  {
       "Name": "6",
-      "Title": "Triste"
+      "Title": "Desanimado"
     },
   {
       "Name": "7",
-      "Title": "Ativo"
+      "Title": "Irritado"
     },
   {
       "Name": "8",
-      "Title": "Mal humorado"
-    },
-  {
-      "Name": "9",
-      "Title": "Enérgico"
-    },
-  {
-      "Name": "10",
-      "Title": "Inquieto"
+      "Title": "Exausto"
     }
   ];
   
   export const Questions2 = [
     {
+      "Name": "9",
+      "Title": "Inseguro"
+    },
+  {
+      "Name": "10",
+      "Title": "Sonolento"
+    },
+    {
       "Name": "11",
-      "Title": "Fatigado"
+      "Title": "Zangado"
     },
     {
       "Name": "12",
-      "Title": "Aborrecido"
+      "Title": "Triste"
     },
     {
       "Name": "13",
-      "Title": "Desencorajado"
-    },
-    {
-      "Name": "14",
-      "Title": "Nervoso"
-    },
-    {
-      "Name": "15",
-      "Title": "Só"
-    },
-    {
-      "Name": "16",
-      "Title": "Baralhado (desorganizado)"
-    },
-    {
-      "Name": "17",
-      "Title": "Exausto"
-    },
-    {
-      "Name": "18",
       "Title": "Ansioso"
     },
     {
-      "Name": "19",
-      "Title": "Deprimido"
+      "Name": "14",
+      "Title": "Preocupado"
     },
     {
-      "Name": "20",
-      "Title": "Sem energia"
+      "Name": "15",
+      "Title": "Com disposição"
+    },
+    {
+      "Name": "16",
+      "Title": "Infeliz"
     }
+    
   ];
   
   export const Questions3 = [
     {
+      "Name": "17",
+      "Title": "Desorientado"
+    },
+    {
+      "Name": "18",
+      "Title": "Tenso"
+    },
+    {
+      "Name": "19",
+      "Title": "Com raiva"
+    },
+    {
+      "Name": "20",
+      "Title": "Com energia"
+    },
+    {
       "Name": "21",
-      "Title": "Desnorteado"
+      "Title": "Cansado"
     },
     {
       "Name": "22",
-      "Title": "Furioso"
+      "Title": "Mal-humorado"
     },
     {
       "Name": "23",
-      "Title": "Eficaz"
+      "Title": "Alerta"
     },
     {
       "Name": "24",
-      "Title": "Cheio de Vida"
-    },
-    {
-      "Name": "25",
-      "Title": "Com Mau Feitio (mal-humorado, temperamental)"
-    },
-    {
-      "Name": "26",
-      "Title": "Tranquilo"
-    },
-    {
-      "Name": "27",
-      "Title": "Desanimado"
-    },
-    {
-      "Name": "28",
-      "Title": "Impaciente"
-    },
-    {
-      "Name": "29",
-      "Title": "Cheio de boa disposição"
-    },
-    {
-      "Name": "30",
-      "Title": "Estourado"
+      "Title": "Indeciso"
     }
   ];
     
-  export const Questions4 = [
-    {
-      "Name": "31",
-      "Title": "Competente"
-    },
-    {
-      "Name": "32",
-      "Title": "Enervado (irritado, sem paciência)"
-    },
-    {
-      "Name": "33",
-      "Title": "Infeliz"
-    },
-    {
-      "Name": "34",
-      "Title": "Alegre"
-    },
-    {
-      "Name": "35",
-      "Title": "Inseguro"
-    },
-    {
-      "Name": "36",
-      "Title": "Cansado"
-    },
-    
-  ];
+  

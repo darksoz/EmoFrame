@@ -20,6 +20,11 @@ function LineChartPoms (props) {
       stroke: {
         curve: 'straight'
       },
+      markers: {
+        size: 6,
+    },
+    
+    
       title: {
         text: '',
         align: 'left'
@@ -31,7 +36,7 @@ function LineChartPoms (props) {
         },
       },
       xaxis: {
-        categories: ['Tensão', 'Depressão', 'Hostilidade', 'Fadiga', 'Vigor', 'Confusão'],
+        categories: ['Tensão', 'Depressão', 'Raiva', 'Fadiga', 'Vigor', 'Confusão'],
       }
     },
   };

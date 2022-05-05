@@ -6,7 +6,6 @@ import PomsExample from "../../Components/PomsExample/PomsExample";
 import { Questions1 } from "../../services/Questions/Poms/Poms.js";
 import { Questions2 } from "../../services/Questions/Poms/Poms.js";
 import { Questions3 } from "../../services/Questions/Poms/Poms.js";
-import { Questions4 } from "../../services/Questions/Poms/Poms.js";
 import arrayShuffle from 'array-shuffle';
 import PomsForm from '../../Components/PomsForm/PomsForm';
 import { MultiStepForm, Step } from "react-multi-form";
@@ -21,8 +20,7 @@ import { SaveTest } from '../../services/api';
 let firstQuestions = arrayShuffle(Questions1);
 let secondQuestions = arrayShuffle(Questions2);
 let thirdQuestions = arrayShuffle(Questions3);
-let fourthQuestions = arrayShuffle(Questions4);
-let amountOfQuestions = (firstQuestions.length + secondQuestions.length + thirdQuestions.length + fourthQuestions.length);
+let amountOfQuestions = (firstQuestions.length + secondQuestions.length + thirdQuestions.length);
 
 function Poms() {
 
@@ -68,7 +66,7 @@ function Poms() {
             <Header />
             <Breadcrumb>
                 <Breadcrumb.Item href='./dashboard'>Página Inicial</Breadcrumb.Item>
-                <Breadcrumb.Item active>Poms</Breadcrumb.Item>
+                <Breadcrumb.Item active>BRUMS</Breadcrumb.Item>
             </Breadcrumb>
 
             <ModalTest Success={success} Title={title} Body={body} Reveal={show} Finish={"/dashboard"} Retry={true} />
@@ -125,26 +123,10 @@ function Poms() {
                                 ))
                             }
                         </Step>
-                        <Step label="Passo 4">
-                            {
-
-                                fourthQuestions.map((content, index) => (
-                                    <>
-                                        <div style={{
-                                            marginBottom: "20px",
-                                        }}>
-                                            <PomsForm Title={content.Title}
-                                                Name={content.Name} />
-                                            <hr></hr>
-                                        </div>
-                                    </>
-                                ))
-                            }
-                        </Step>
                     </MultiStepForm>
                 </div>
                 {(active === 1 && <Link to="sample"><button class="btn whitebutton btn-lg" onClick={() => setActive(active + 1)}>Próximo</button></Link>)}
-                {(active > 1 && active !== 4 &&
+                {(active > 1 && active !== 3 &&
                     <div>
                         <Link to="sample">
                             <button class="btn whitebutton btn-lg" style={{marginRight:'20px'}} onClick={() => setActive(active - 1)} >Anterior</button>
@@ -154,7 +136,7 @@ function Poms() {
                         </Link>
                     </div>)
                 }
-                {(active === 4 && answers.length === amountOfQuestions) &&
+                {(active === 3 && answers.length === amountOfQuestions) &&
                     <div>
                         <Link to="sample">
                             <button class="btn whitebutton btn-lg" onClick={() => setActive(active - 1)}>Anterior</button>
@@ -162,7 +144,7 @@ function Poms() {
                         <button class="btn whitebutton btn-lg" style={{marginLeft:'20px'}} onClick={handleFormData}>Salvar</button>
                     </div>
                 }
-                {(active === 4 && answers.length !== amountOfQuestions) &&
+                {(active === 3 && answers.length !== amountOfQuestions) &&
                     <div>
                         <Link to="sample">
                             <button class="btn whitebutton btn-lg" onClick={() => setActive(active - 1)}>Anterior</button>
