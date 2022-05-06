@@ -21,6 +21,7 @@ import LandingPage from './Pages/LandingPage/LandingPage';
 import RecSys from './Pages/RecSys/RecSys';
 import PageResult from './Pages/PageResult/PageResult';
 import AboutUs from './Pages/AboutUs/AboutUs';
+import MoreInfo from './Pages/MoreInfo/MoreInfo';
 
 
 function PrivateRoute({ component: Component, ...rest }) {
@@ -65,6 +66,7 @@ function Routes() {
                 <PrivateRoute path='/page' exact component={Page}/>
                 <Route path='/contactus' exact component={ContactUs}/>
                 <Route path='/aboutus' exact component={AboutUs}/>
+                <Route path='/moreinfo' exact component={MoreInfo}/>
                 <Route path='/recommendation' exact component={RecSys}/>
                 <LimitedAccessRoute path='/samResult' exact component={SamResult}/>
                 <LimitedAccessRoute path='/samResult/:id' exact component={SamResult}/>

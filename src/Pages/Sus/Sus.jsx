@@ -72,7 +72,7 @@ function Sus() {
         <>
         <Header/>
             <Breadcrumb>
-                <Breadcrumb.Item href='./dashboard'>Página Inicial</Breadcrumb.Item>
+                <Breadcrumb.Item href='./dashboard' style={{marginLeft:'12px'}}>Página Inicial</Breadcrumb.Item>
                 <Breadcrumb.Item active>Sus</Breadcrumb.Item>
             </Breadcrumb>
             <ModalTest Success={success} Title={title} Body={body} Reveal={show} Finish={"/dashboard"} Retry={true} />

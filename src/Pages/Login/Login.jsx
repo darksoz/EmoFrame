@@ -58,7 +58,7 @@ function Login() {
             <>
             <Header/>
                 <Breadcrumb>
-                    <Breadcrumb.Item href='/'>Ínicio</Breadcrumb.Item>
+                    <Breadcrumb.Item href='/' style={{marginLeft:'12px'}}>Ínicio</Breadcrumb.Item>
                     <Breadcrumb.Item active>Login</Breadcrumb.Item>
                 </Breadcrumb>
                 <Container>
