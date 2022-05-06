@@ -218,7 +218,6 @@ function PageResult() {
       <Container onChange={handleChangeForm}>
         {name && datetime && (
           <>
-            <h1>Nome: {name}</h1>
             <h1>Entrevistado: {namePage}</h1>
             <h1>Data e Hora: {formateDateTime(datetime)}</h1>
             <h1>Teste realizado: {testOrder}</h1>
