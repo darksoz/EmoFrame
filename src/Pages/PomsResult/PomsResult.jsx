@@ -4,7 +4,6 @@ import { useParams, useHistory } from "react-router-dom";
 import Footer from "../../Components/Footer/Footer";
 import Header from "../../Components/Header/Header";
 import LineChartPoms from "../../Components/LineChartPoms/LineChartPoms";
-import PomsTable from "../../Components/PomsTable/PomsTable";
 import { GetResultTestById } from "../../services/api";
 import { formateDateTime } from "../../services/utils";
 
@@ -109,9 +108,9 @@ function PomsResult() {
                 </Modal.Footer>
             </Modal>
             <Breadcrumb>
-                <Breadcrumb.Item href='/dashboard'>Página Inicial</Breadcrumb.Item>
+                <Breadcrumb.Item href='/dashboard' style={{marginLeft:'12px'}}>Página Inicial</Breadcrumb.Item>
                 <Breadcrumb.Item href='/searchResults'>Resultados</Breadcrumb.Item>
-                <Breadcrumb.Item active>Resultado POMS</Breadcrumb.Item>
+                <Breadcrumb.Item active>Resultado BRUMS</Breadcrumb.Item>
             </Breadcrumb>
             <Container>
                 {

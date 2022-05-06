@@ -20,6 +20,8 @@ import ContactUs from './Pages/ContactUs/ContactUs';
 import LandingPage from './Pages/LandingPage/LandingPage';
 import RecSys from './Pages/RecSys/RecSys';
 import PageResult from './Pages/PageResult/PageResult';
+import AboutUs from './Pages/AboutUs/AboutUs';
+import MoreInfo from './Pages/MoreInfo/MoreInfo';
 import Poms from './Pages/Poms/Poms';
 import PomsResult from './Pages/PomsResult/PomsResult';
 
@@ -66,6 +68,8 @@ function Routes() {
                 <PrivateRoute path='/page' exact component={Page}/>
                 <PrivateRoute path='/poms' exact component={Poms}/>
                 <Route path='/contactus' exact component={ContactUs}/>
+                <Route path='/aboutus' exact component={AboutUs}/>
+                <Route path='/moreinfo' exact component={MoreInfo}/>
                 <Route path='/recommendation' exact component={RecSys}/>
                 <LimitedAccessRoute path='/samResult' exact component={SamResult}/>
                 <LimitedAccessRoute path='/samResult/:id' exact component={SamResult}/>

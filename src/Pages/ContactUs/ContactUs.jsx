@@ -13,7 +13,7 @@ function ContactUs() {
         <> 
         <Header/> 
         <Breadcrumb>
-            <Breadcrumb.Item href='/'>Ínicio</Breadcrumb.Item>
+            <Breadcrumb.Item href='/' style={{marginLeft:'12px'}}>Ínicio</Breadcrumb.Item>
             <Breadcrumb.Item active>Contato</Breadcrumb.Item>
         </Breadcrumb>
             <Container>

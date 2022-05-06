@@ -6,7 +6,7 @@ function AboutUs() {
         <>
             <Header />
             <Breadcrumb>
-                <Breadcrumb.Item href='/'>Ínicio</Breadcrumb.Item>
+                <Breadcrumb.Item href='/' style={{marginLeft:'12px'}}>Ínicio</Breadcrumb.Item>
                 <Breadcrumb.Item active>Sobre nós</Breadcrumb.Item>
             </Breadcrumb>
 
@@ -41,7 +41,7 @@ function AboutUs() {
                     <Col />
                 </Row>
 
-                <Row>
+                <Row className='p-5'>
                     
                     <Col>
                     <Card style={{ width: '18rem' }}>
