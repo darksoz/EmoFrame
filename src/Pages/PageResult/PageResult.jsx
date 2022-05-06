@@ -7,7 +7,7 @@ import ActionsControl from "../../Components/ActionsControl/ActionsControl";
 import DemandsMap from "../../Components/DemandsMap/DemandsMap";
 import { Breadcrumb } from "react-bootstrap";
 import { useEffect, useState } from "react";
-import { GetResultTestById } from "../../services/api";
+import { GetPageAmountOfResult, GetResultTestById } from "../../services/api";
 import { useParams, useHistory } from "react-router-dom";
 import { formateDateTime } from "../../services/utils";
 import Header from "../../Components/Header/Header";
@@ -20,6 +20,7 @@ import { SavePageResult } from "../../services/api";
 
 function PageResult() {
   const [questions, setQuestions] = useState([]);
+  const [testOrder, setTestOrder] = useState("");
   const [name, setName] = useState("");
   const [datetime, setDatetime] = useState("");
   const [evaluation, setEvaluation] = useState([]);
@@ -36,14 +37,12 @@ function PageResult() {
     const id = event.target.name;
     const data = { id, answer: event.target.value };
     if (evaluation.some((a) => a.id === id)) {
-      console.log(data);
       setEvaluation([...evaluation.filter((b) => b.id !== id), data]);
     } else {
       setEvaluation([...evaluation, data]);
     }
   };
   const returnName = (data) => {
-    console.log("entrou", data);
     if (data.length != 0) {
       return  data.filter((a) => a.id == "nomepage")[0].answer;
     }else{
@@ -70,8 +69,21 @@ function PageResult() {
             setName(data.Username);
             setDatetime(data.Datetime);
             let teste = returnName(data.UserDataForm,'nomepage' );
-            console.log('aeeee',teste);
             setNamePage(teste);
+            let userId = data.UserDataForm.filter(a => a.id === "Id")[0].answer;
+            if(userId){
+              let response = await GetPageAmountOfResult(userId);
+
+              let arrayId = 
+              response.data.sort(function(a, b) {
+                  var c = new Date(a.Datetime);
+                  var d = new Date(b.Datetime);
+                  return c-d;
+              });
+              let amount = arrayId.length;
+              let currentTest = arrayId.findIndex(a => a._id === data._id) + 1;
+              setTestOrder(`${currentTest} de ${amount}`);
+            }
           }
         } else {
           setTitle("Erro ao carregar a resposta");
@@ -97,10 +109,8 @@ function PageResult() {
       UserDataForm: dataUser.UserDataForm,
     };
     json = JSON.stringify(json);
-    console.log("json", json);
     let response = await SavePageResult(json, id);
     if (response.status === 200) {
-      console.log("Dados salvos aqui ==> ", response.data);
       setTitle("Teste concluído");
       setBody("Atividade realizada com sucesso");
       setSuccess(true);
@@ -111,6 +121,7 @@ function PageResult() {
       setSuccess(false);
     }
   };
+
 
   const filterQuestionsByNumberInt = (questions) => {
     let data = [];
@@ -166,7 +177,6 @@ function PageResult() {
       element.max
     );
   }
-  console.log("EVA:", evaluation);
   const handleClose = (path) => {
     setShow(false);
     history.push(path);
@@ -209,9 +219,9 @@ function PageResult() {
         {name && datetime && (
           <>
             <h1>Nome: {name}</h1>
-            <h1>Entrevistado: { namePage}</h1>
+            <h1>Entrevistado: {namePage}</h1>
             <h1>Data e Hora: {formateDateTime(datetime)}</h1>
-            
+            <h1>Teste realizado: {testOrder}</h1>
           </>
         )}
 

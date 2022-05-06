@@ -1,7 +1,6 @@
 import { Form } from 'react-bootstrap';
 
 function GerontologistAssessment (props) {
-    console.log('gere',props.evaluation)
     return (
         <>
         <div className='border border-dark bg-lgrey text-white'>

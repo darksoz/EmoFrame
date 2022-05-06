@@ -36,30 +36,19 @@ function Page() {
 
     if (answers.some((a) => a.id === id)) {
       setAnswers([...answers.filter((b) => b.id !== id), data]);
-      console.log("data", data);
     } else {
       setAnswers([...answers, data]);
     }
   };
 
   const verifyDemandas = (demanda, arr2) => {
-    console.log("Entrou", Demandas);
-    console.log("arr2", arr2);
     if (arr2.length !== 0) {
       let difference = Demandas[demanda].filter((x) => !arr2.includes(x));
-      console.log("difference", Demandas[demanda]);
-      console.log("de", difference);
       if (difference.length !== 0) {
-        console.log(
-          "Você não respondeu todas as perguntas da demanda " + difference
-        );
         alert("Você não respondeu todas as perguntas da demanda " + difference);
         setInvestigation([]);
       }
     } else {
-      console.log(
-        "Você não respondeu nenhuma pergunta da demanda " + Demandas[demanda]
-      );
       alert(
         "Você não respondeu nenhuma pergunta da demanda " + Demandas[demanda]
       );
@@ -113,7 +102,6 @@ function Page() {
     json = JSON.stringify(json);
     let response = await SavePageTest(json);
     if (response.status === 201) {
-      console.log("Dados salvos aqui ==> ", response.data);
       setTitle("Teste concluído");
       setBody("Atividade realizada com sucesso");
       setSuccess(true);

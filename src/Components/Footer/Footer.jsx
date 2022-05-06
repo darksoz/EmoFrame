@@ -26,11 +26,11 @@ function Footer() {
                                         </div>
                                     </Col>
                                     <Col lg={3} className='text-end'>
-                                        <span>
-                                            <a href="/contactus" class="link-dark">Contato &nbsp;</a>
+                                        <span style={{marginRight:'20px'}}>
+                                            <a href="/contactus" class="link-dark">Contato</a>
                                         </span>
-                                        <span>
-                                            <a href="/aboutus" class="link-dark"> &nbsp;Sobre Nós</a>
+                                        <span style={{marginRight:'8px'}}>
+                                            <a href="/aboutus" class="link-dark"> Sobre Nós</a>
                                         </span>
                                     </Col>
                                 </Row>

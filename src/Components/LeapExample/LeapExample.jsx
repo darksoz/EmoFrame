@@ -45,7 +45,7 @@ function LeapExample() {
                                 
                                 
 
-                                <blockquote class="lead">Nesse caso, a pessoa considerou que a intensidade de confiança que sentiu durante o preenchimento da lista foi muito fraca, pois marcou a opção "1" em relaçao a frase "Estou confiante".</blockquote>
+                                <blockquote class="lead mt-1">Nesse caso, a pessoa considerou que a intensidade de confiança que sentiu durante o preenchimento da lista foi muito fraca, pois marcou a opção "1" em relaçao a frase "Estou confiante".</blockquote>
                             </ul>
 
 
@@ -73,7 +73,7 @@ function LeapExample() {
                                 </li>
                                
 
-                                <blockquote class="lead">Neste segundo exemplo, a pessoa apresentou uma resposta neutra (mais ou menos) sobre a intensidade de confiança que sentiu dutante o período estipulado, pois selecionou uma opção igualmente distante de “Muito fraco” ou “Muito forte”.</blockquote>
+                                <blockquote class="lead mt-1">Neste segundo exemplo, a pessoa apresentou uma resposta neutra (mais ou menos) sobre a intensidade de confiança que sentiu dutante o período estipulado, pois selecionou uma opção igualmente distante de “Muito fraco” ou “Muito forte”.</blockquote>
 
                             </ul>
 
@@ -103,7 +103,7 @@ function LeapExample() {
                                 </li>
                                 
 
-                                <blockquote class="lead">Já nesse caso, a pessoa considerou que a intensidade de confiança que sentiu durante o preenchimento da lista foi muito forte, uma vez que marcou a opção "5" em relação ao item "Estou confiante".</blockquote>
+                                <blockquote class="lead mt-1">Já nesse caso, a pessoa considerou que a intensidade de confiança que sentiu durante o preenchimento da lista foi muito forte, uma vez que marcou a opção "5" em relação ao item "Estou confiante".</blockquote>
                             </ul>
                         </form>
                     </div>

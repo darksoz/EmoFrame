@@ -153,7 +153,7 @@ function Leap() {
                                     {(active > 1 && active !== 4 &&
                                         <div>
                                             <Link to="sample">
-                                                <button class="btn whitebutton btn-lg" onClick={() => setActive(active - 1)} >Anterior</button>
+                                                <button class="btn whitebutton btn-lg" style={{marginRight:'20px'}} onClick={() => setActive(active - 1)} >Anterior</button>
                                             </Link>
                                             <Link to="sample">
                                                 <button class="btn whitebutton btn-lg" onClick={() => setActive(active + 1)}>Próximo</button>
@@ -165,7 +165,7 @@ function Leap() {
                                             <Link to="sample">
                                                 <button class="btn whitebutton btn-lg" onClick={() => setActive(active - 1)}>Anterior</button>
                                             </Link>
-                                            <button class="btn whitebutton btn-lg" onClick={() => handleFormData()}>Salvar</button>
+                                            <button class="btn whitebutton btn-lg" style={{marginLeft:'20px'}} onClick={() => handleFormData()}>Salvar</button>
                                         </div>
                                     }
                                     {(active === 4 && answers.length !== amoundOfQuestions) &&

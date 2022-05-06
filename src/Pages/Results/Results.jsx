@@ -40,7 +40,6 @@ function Results() {
     const handleSearch = async () => {
         let isFiltered = Object.values(filters).includes(true);
         let keys = isFiltered ? getKeysByValue(filters) : Object.keys(filters);
-        console.log("filters", keys);
         let array = []
         setTestsData([]);
         keys.forEach(async (key) =>{
@@ -51,7 +50,6 @@ function Results() {
                 if(response.status === 201){    
                     setTestsData([...array, ...response.data]);
                     array = [...array, ...response.data]
-                    console.log("Dados salvos aqui ==> ", array);
                 }
                 else{
                     console.log("Error data response");
