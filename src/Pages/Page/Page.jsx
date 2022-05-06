@@ -27,6 +27,8 @@ function Page() {
   const [userFormData, setUserFormData] = React.useState([]);
   const [totalQuestions, setTotalQuestions] = React.useState(1);
 
+  const userForm = ['entrevistador ','entrevistado','Entrada','dataAvaliação', 'Instituição','Id']
+
   const handleChange = (event) => {
     const id = event.target.name;
     const data = { id, answer: event.target.value };
@@ -55,6 +57,22 @@ function Page() {
       setInvestigation([]);
     }
   };
+  const verifyForm = (userForm, arr) =>{
+    console.log(arr)
+    if (arr.length !== 0) {
+      let difference = userForm.filter((x) => !arr.includes(x));
+      if (difference.length !== 0) {
+        alert("Você não respondeu todas as perguntas do formulário" + difference);
+        setInvestigation([]);
+      }
+    } else {
+      alert(
+        "Você não respondeu nenhuma pergunta da demanda " + userForm
+      );
+      setInvestigation([]);
+    }
+  }
+
   const filterQuestionsByNumberInt = (questions) => {
     let data = [];
     if (questions) {
@@ -77,9 +95,11 @@ function Page() {
   useEffect(() => {
     let data = filterQuestionsByNumberInt(answers);
     let dataI = filterQuestionsByString(answers);
+    console.log('adasdas', filterQuestionsByString(userFormData));
     setInvestigation(dataI);
     setTotalQuestions(data.length);
-  }, [answers]);
+  }, [answers, userFormData]);
+
 
   const handleChangeForm = (event) => {
     const id = event.target.name;
@@ -179,6 +199,7 @@ function Page() {
             <button
               class="btn whitebutton btn-lg"
               onClick={() => setActive(active + 1)}
+             onMouseOver={() => verifyForm(userForm, filterQuestionsByString(userFormData))}
             >
               Próximo
             </button>
