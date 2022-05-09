@@ -89,18 +89,18 @@ function PsychologicalAspect() {
                   </Row>
                 </Container>
                 {index === Questions1.length - 1 && (
-                <Row>
-                  <div class="form-group justify-content-center mt-5">
-                    <textarea
-                      style={{ border: "1px solid black" }}
-                      name="anotacao_aspectos_psicologicos"
-                      class="form-control"
-                      placeholder="Anotações:"
-                      rows="3"
-                    ></textarea>
-                  </div>
-                </Row>)
-    }
+                  <Row>
+                    <div class="form-group justify-content-center mt-5">
+                      <textarea
+                        style={{ border: "1px solid black" }}
+                        name="anotacao_aspectos_psicologicos"
+                        class="form-control"
+                        placeholder="Anotações:"
+                        rows="3"
+                      ></textarea>
+                    </div>
+                  </Row>)
+                }
               </Card>
             </Container>
           </>

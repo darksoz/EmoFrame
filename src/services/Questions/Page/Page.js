@@ -9,6 +9,7 @@ export const Questions1 = [
           title:
             "O(A) senhor(a) considera que sua memória é tão boa quanto a de outras pessoas da sua idade?",
           point: 1,
+          tooltip: null,
           question: 1,
           input: false,
           yes: 1,
@@ -16,7 +17,7 @@ export const Questions1 = [
         },
         {
           title:
-            "Memória: Vou lhe dizer 3 palavras e o(a) senhor(a) irá repeti-las em seguida. Peço que memorie essas 3 palavras, pois vou lhe perguntar sobre elas mais tarde novamente. ",
+            "Memória: Vou lhe dizer 3 palavras e o(a) senhor(a) irá repeti-las em seguida. Peço que memorize essas 3 palavras, pois vou lhe perguntar sobre elas mais tarde novamente. ",
           point: 1,
           tooltip: "[Instruções: Falar as 3 palavras em sequência pausadamente. Caso o(a) idoso(a) não consiga, repita no máximo 3 vezes para aprendizado. Pontuar ao lado se o(a) idoso(a) repetiu corretamente as três palavras na primeira tentativa]",
           yes: 1,
@@ -27,9 +28,9 @@ export const Questions1 = [
         },
         {
           title:
-            "Linguagem, função executiva e atenção: Agora, eu vou marcar um minuto no relógio e durante esse tempo o(a) senhor(a) deve falar o maior número de animais de que se lembrar. Quanto mais animais o senhor fala nesse tempo melhor. ",
+            "Linguagem, função executiva e atenção: Agora, eu vou marcar um minuto no relógio e durante esse tempo o(a) senhor(a) deve falar o maior número de animais de que se lembrar. Quanto mais animais o senhor fala nesse tempo melhor. [Anote os nomes de animais falados pelo(a) idoso(a) a cada 15 segundos. Registrar, mas não contar animais repetidos] Pode começar. ",
           point: 1,
-          tooltip:"[Instruções: Anote os nomes de animais falados pelo(a) idoso(a) a cada 15 segundos, e registrar, mas não contar animais repetidos]. Pode começar. Pontuação de acordo com escolaridade: 1) analfabetos = 9 animais; 2) 1-7 anos = 12 animais e 3) 8 anos ou mais = 13 animais.",
+          tooltip:"[Instruções: Anote os nomes de animais falados pelo(a) idoso(a) a cada 15 segundos, e registrar, mas não contar animais repetidos]. Pode começar. Pontuação de acordo com escolaridade: 1) analfabetos = 9 animais; 2) 1-7 anos = 12 animais e 3) 8 anos ou mais = 13 animais.]",
           question: 3,
           input: false,
           yes: 1,
@@ -38,17 +39,19 @@ export const Questions1 = [
         },
         {
           title:
-            "Memória tardia: O(a) senhor(a) consegue se lembrar das 3 palavras que lhe pedi            que repetisse agora há pouco? [Atenção: o entrevistador não deve dizer as palavras. Pontue se o(a) idoso(a) lembrou e repetiu corretamente as 3 palavras].",
+            "Memória tardia: O(a) senhor(a) consegue se lembrar das 3 palavras que lhe pedi que repetisse agora há pouco?",
           question: 4,
           input: false,
           yes: 1,
           no: 0,
           point: 1,
+          tooltip:  "[Instruções: o entrevistador não deve dizer as palavras. Pontue se o(a) idoso(a) lembrou e repetiu corretamente as 3 palavras].",
         },
         {
           title:
-            "Praxia: (Esteja com uma folha em mãos) “Pegue este papel com a mão direita. Dobre-o ao meio e coloque-o sobre a mesa” (Falar todos os comandos de uma só vez)",
+            "Praxia: Esteja com uma folha em mãos e fale todos os comandos de uma vez só: “Pegue este papel com a mão direita. Dobre-o ao meio e coloque-o sobre a mesa”.",
           point: 1,
+          tooltip: " [Instruções: Pontue se o(a) idoso(a) realizou os 3 comandos corretamente]",
           input: false,
           question: 5,
           yes: 1,
@@ -56,9 +59,9 @@ export const Questions1 = [
         },
         {
           title:
-          "Teste do relógio: Aplique apenas se o (a) idoso tiver escolaridade igual ou superior a 5 anos. Caso não, pontue ao lado de forma negativa. Esteja com uma folha com um desenho de um círculo de 11 cm de diâmetro e dê as instruções para a tarefa] Senhor(a), nesta folha temos um mostrador de um relógio. Gostaria que o senhor(a) colocasse os números dentro dele. [Aguardar]. Por favor, agora indique o horário 11h10 (onze horas e 10 minutos) [Pontue ao lado se o(a) idoso(a) atingiu a nota de corte esperada. Nota de corte: Atribua um ponto para cada posicionamento correto dos  números 1,2,4,5,7,8,10 e 11, mais um ponto para cada ponteiro correto (pontuação máxima = 10). Ponto de corte = 7]",
+          "Teste do relógio: Aplique apenas se o (a) idoso tiver escolaridade igual ou superior a 5 anos. Caso não, pontue ao lado de forma negativa. Esteja com uma folha com um desenho de um círculo de 11 cm de diâmetro e dê as instruções para a tarefa: “Senhor(a), nesta folha temos um mostrador de um relógio. Gostaria que o senhor(a) colocasse os números dentro dele. [Aguardar]. Por favor, agora indique o horário 11h10 (onze horas e 10 minutos).”",
           question: 6,
-          tooltip:"[Pontue ao lado se o(a) idoso(a) atingiu a nota de corte esperada. Nota de corte: Atribua um ponto para cada posicionamento correto dos  números 1,2,4,5,7,8,10 e 11, mais um ponto para cada ponteiro correto (pontuação máxima = 10). Ponto de corte = 7]",
+          tooltip:"[Instruções: Analise o desenho e pontue ao lado se o(a) idoso(a) atingiu a nota de corte esperada. Nota de corte: Atribua um ponto para cada posicionamento correto dos números 1, 2, 4, 5, 7, 8, 10 e 11, mais um ponto para cada ponteiro correto (pontuação máxima = 10). Nota de corte = 7].",
           yes: 1,
           input: false,
           no: 0,
@@ -77,6 +80,7 @@ export const Questions1 = [
           input: false,
           point: 0,
           title: "De maneira geral, o(a) senhor(a) diria que a sua saúde é boa?",
+          tooltip: null,
         },
         {
           question: 8,
@@ -86,7 +90,7 @@ export const Questions1 = [
           point: 0,
           title:
             "Que idade o (a) senhor(a) sente ter _? Por quê? ",
-          tooltip:"[Instruções: Com base na resposta dada, analisar e registrar ao lado se o(a) idoso(a) sente-se mais velho do que realmente é:]"
+          tooltip:"[Instruções: Com base na resposta dada, analisar e registrar ao lado se o(a) idoso(a) sente-se mais velho do que realmente é.]"
         },
         {
           question: 9,
@@ -95,6 +99,7 @@ export const Questions1 = [
           input: false,
           point: 1,
           title: "Ao pensar no seu envelhecimento o(a) senhor(a) se sente preocupado(a)?",
+          tooltip: null,
         },
         {
           question: 10,
@@ -103,6 +108,7 @@ export const Questions1 = [
           input: false,
           point: 0,
           title: "O(a) senhor(a) acha que a velhice, de forma geral, tem mais pontos negativos do que positivos?",
+          tooltip: null,
         },
         {
           question: 11,
@@ -112,6 +118,7 @@ export const Questions1 = [
           point: 0,
           title:
             "O(a) senhor(a) acha que é possível ter uma vida sexual saudável na velhice?",
+          tooltip: null,
         },
         {
           question: 12,
@@ -120,6 +127,7 @@ export const Questions1 = [
           input: false,
           point: 0,
           title: "O(a) senhor(a) acha que há poucas coisas que uma pessoa possa realizar na velhice?",
+          tooltip: null,
         },
         {
           question: 13,
@@ -129,6 +137,7 @@ export const Questions1 = [
           no: 1,
           title:
             "O(a) senhor(a) acha que a velhice é sinônimo de debilidade física?",
+          tooltip: null,
         },
         {
           question: 14,
@@ -137,6 +146,7 @@ export const Questions1 = [
           no: 1,
           point: 0,
           title: "O(a) senhor(a) acha que é melhor morrer cedo do que ficar velho(a)?",
+          tooltip: null,
         },
 
 
@@ -154,6 +164,7 @@ export const Questions1 = [
           input: false,
           point: 0,
           title: "De modo geral o(a) senhor(a) está satisfeito com a vida?",
+          tooltip: null,
         },
         {
           question: 16,
@@ -163,6 +174,7 @@ export const Questions1 = [
           point: 0,
           title:
             "O(a) senhor (a) se sente triste com frequência?",
+          tooltip: null,
         },
         {
           question: 17,
@@ -172,6 +184,7 @@ export const Questions1 = [
           point: 0,
           title:
             "O(a) senhor(a) abandonou muitas das coisas que fazia ou gostava de fazer?",
+          tooltip: null,
         },
         {
           question: 18,
@@ -181,6 +194,7 @@ export const Questions1 = [
           point: 0,
           title:
             "O(a) senhor(a) tem medo de que algo ruim lhe aconteça?",
+          tooltip: null,
         },
         {
           question: 19,
@@ -190,6 +204,7 @@ export const Questions1 = [
           point: 0,
           title:
             "O(a) Sr.(a) se sente impaciente e agitado(a) com frequência?",
+          tooltip: null,
         },
       ],
     },
@@ -206,7 +221,8 @@ export const Questions1 = [
           input: false,
           no: 1,
           point: 0,
-          title: "O(a) senhor(a) tem dificuldades para enxergar? [Observação: Mesmo se já utilizar óculos ou outros métodos corretivos].",
+          title: "O(a) senhor(a) tem dificuldades para enxergar?",
+          tooltip: "[Observação: Mesmo se já utilizar óculos ou outros métodos corretivos.]",
         },
         {
           question: 21,
@@ -215,7 +231,8 @@ export const Questions1 = [
           input: false,
           point: 0,
           title:
-            "O(a) senhor tem dificuldades para ouvir o que as pessoas falam? [Observação: Mesmo se já utilizar aparelho auditivo.]",
+            "O(a) senhor tem dificuldades para ouvir o que as pessoas falam?",
+          tooltip:"[Observação: Mesmo se já utilizar aparelho auditivo]",
         },
         {
           question: 22,
@@ -223,6 +240,7 @@ export const Questions1 = [
           no: 1,
           input: false,
           point: 0,
+          tooltip: null,
           title:
             "O(a) senhor(a) tem dificuldade para sentir o sabor dos alimentos?",
         },
@@ -232,6 +250,7 @@ export const Questions1 = [
           no: 1,
           input: false,
           point: 0,
+          tooltip: null,
           title: "Por causa dos seus sentidos (visão, audição, paladar), o senhor(a) tem dificuldade de realizar suas atividades cotidianas?",
         },
       ],
@@ -247,6 +266,7 @@ export const Questions1 = [
           no: 1,
           input: false,
           point: 0,
+          tooltip: null,
           title: "O(A) senhor(a) necessita de ajuda para fazer compras fora de casa?",
         },
         {
@@ -255,6 +275,7 @@ export const Questions1 = [
           no: 1,
           input: false,
           point: 0,
+          tooltip: null,
           title: "O(A) senhor(a) necessita de ajuda para usar meios de transporte coletivo (ônibus, metrô e trem)?",
         },
         {
@@ -263,6 +284,7 @@ export const Questions1 = [
           no: 1,
           input: false,
           point: 0,
+          tooltip: null,
           title: "O(A) senhor(a) necessita de ajuda para cozinhar a própria comida?",
         },
         {
@@ -271,6 +293,7 @@ export const Questions1 = [
           no: 1,
           input: false,
           point: 0,
+          tooltip: null,
           title:
             "O(A) senhor(a) necessita de ajuda para usar a telefone?",
         },
@@ -280,6 +303,7 @@ export const Questions1 = [
           no: 1,
           input: false,
           point: 0,
+          tooltip: null,
           title: "O(A) senhor(a) necessita de ajuda para vestir-se (exceto para colocar as meias e calçados)?",
         },
         {
@@ -288,6 +312,7 @@ export const Questions1 = [
           no: 1,
           input: false,
           point: 0,
+          tooltip: null,
           title:
             "O(A) senhor(a) necessita de ajuda para tomar banho?",
         },
@@ -303,6 +328,7 @@ export const Questions1 = [
           yes: 0,
           no: 1,
           point: 0,
+          tooltip: null,
           title:
             "O(a) senhor tem dificuldades para mastigar?",
           input: false,
@@ -313,12 +339,14 @@ export const Questions1 = [
           no: 1,
           input: false,
           point: 0,
+          tooltip: null,
           title:
             "O(a) senhor(a) faz menos do que três refeições por dia?",
         },
         {
           question: 32,
           point: true,
+          tooltip: null,
           title:
             "Nos últimos 3 meses, o(a) senhor(a) percebeu que passou a comer menos sem motivo?",
           yes: 0,
@@ -330,6 +358,7 @@ export const Questions1 = [
           no: 1,
           input: false,
           point: 0,
+          tooltip: null,
           title:
             "Nos últimos 3 meses, o(a) senhor(a) perdeu peso sem motivo aparente? Se sim, quantos quilos?",
         },
@@ -340,6 +369,7 @@ export const Questions1 = [
           input: false,
           point: 1,
           title: "Nos últimos 3 meses, o(a) senhor(a) passou por algum estresse psicológico?",
+          tooltip: null,
         },
         {
           question: 35,
@@ -348,7 +378,8 @@ export const Questions1 = [
           imc: true,
           input: true,
           point: true,
-          title: "Índice de Massa Corporal (peso _ [kg]/ estatura _ [Cm]) igual ou menor que 22 kg/m2",
+          title: "Índice de Massa Corporal: (Qual o seu peso _ [kg]?/ Qual a sua estatura _ [Cm]?). O IMC é igual ou menor que 22 kg/m2",
+          tooltip:"[Instruções: Medir o peso e a altura do(a) idoso(a). Caso não seja possível, seguir com os dados que forem autorreferidos pelo(a) idoso(a)]."
         },
       ],
     },
@@ -365,7 +396,7 @@ export const Questions1 = [
           tooltip:
             "[Pontuar como sim quando CT e HDL forem verificados em último exame como superior a 200 mg/dL e 60mg/dL, respectivamente, ou caso o(a) idoso(a) não saiba informar]",
           point: 1,
-          title: "O(a) senhor(a) tem histórico familiar (pais, irmãos ou filhos) de DCV (infarto, derrame, angina)? [Pontuar como sim quando CT e HDL forem verificados em último exame como superior a 200 mg/dL e 60mg/dL, respectivamente, ou caso o(a) idoso(a) não saiba informar]",
+          title: "O(a) senhor(a) tem histórico familiar (pais, irmãos ou filhos) de DCV (infarto, derrame, angina)?",
         },
         {
           question: 37,
@@ -373,8 +404,8 @@ export const Questions1 = [
           no: 1,
           input: false,
           point: 0,
-          title: "O(a) senhor(a) tem pressão alta (superior a 140 x 90 mmHg)? [Instruções: Pontuar como sim quando PA autorreferida for superior ao valor indicado, mesmo com o uso de anti-hipertensivos, ou caso o(a) idoso(a) não saiba informar.]",
-          tooltip:"[Instruções: Pontuar como sim quando PA autorreferida for superior ao valor indicado, mesmo com o uso de anti-hipertensivos, ou caso o(a) idoso(a) não saiba informar.]",
+          title: "O(a) senhor(a) tem pressão alta (superior a 140 x 90 mmHg)?",
+          tooltip:"[Instruções: Pontuar como sim quando PA autorreferida for superior ao valor indicado, mesmo com o uso de anti-hipertensivos, ou caso o(a) idoso(a) não saiba informar. Solicitar exames laboratoriais recentes (últimos 6 meses). Caso não tenha, prosseguir com as perguntas 38 e 39, considerando apenas os auto relatos.]",
         },
         {
           question: 38,
@@ -383,7 +414,7 @@ export const Questions1 = [
           input: false,
           point: 1,
           title:
-            "O(a) senhor(a) tem glicemia de jejum superior a 100 mg/dL? [Instruções: Pontuar como sim quando a resposta for positiva mesmo com o uso de antidiabéticos ou caso o(a) idoso(a) não saiba informar.]",
+            "O(a) senhor(a) tem glicemia de jejum superior a 100 mg/dL?",
           tooltip:"[Instruções: Pontuar como sim quando a resposta for positiva mesmo com o uso de antidiabéticos ou caso o(a) idoso(a) não saiba informar.]",
           },
         {
@@ -392,7 +423,8 @@ export const Questions1 = [
           no: 1,
           input: false,
           point: 1,
-          title: "O(a) senhor(a) tem colesterol alterado? [Instruções: Pontuar como sim quando 1) verificar no exame valores de CT e HDL superior a 200mg/dL e inferior 60mg/dL, respectivamente, mesmo com uso de hipolipemiantes; 2) autorrelato de colesterol alterado; ou 3) caso o(a) idoso(a) não saiba informar.]",
+          title: "O(a) senhor(a) tem colesterol alterado?",
+          tooltip: " [Instruções: Pontuar como sim quando 1) verificar no exame valores de CT e HDL superior a 200mg/dL e inferior 60mg/dL, respectivamente, mesmo com uso de hipolipemiantes; 2) autorrelato de colesterol alterado; ou 3) caso o(a) idoso(a) não saiba informar.]",
         },
         {
           question: 40,
@@ -401,6 +433,7 @@ export const Questions1 = [
           point: 0,
           title:
             "O(a) senhor(a) fuma ou deixou de fumar nos últimos seis meses?",
+          tooltip: null,
         },
         {
           question: 41,
@@ -408,7 +441,8 @@ export const Questions1 = [
           no: 1,
           input: true,
           point: 0,
-          title: "O(a) senhor(a) tem o hábito de ingerir bebidas alcoólicas? Se sim, qual o tipo da bebida? _ E quantas doses, taças ou latas em uma semana? _ .[Instruções: Depois assinale ao lado a resposta equivalente, considerando as seguintes referências:",
+          title: "O(a) senhor(a) tem o hábito de ingerir bebidas alcoólicas? Se sim, qual o tipo da bebida? _ E quantas doses, taças ou latas em uma semana? _ .",
+          tooltip: "[Instruções: Assinale abaixo a resposta equivalente, considerando as seguintes referências: Homens: Mais do que 14 doses de destilado (350 ml), 7 taças de vinho (2 litros) ou 14 latas de cerveja (5 litros). Mulheres: Mais do que 7 doses de destilado (175 ml), 3 taças e meia de vinho (1 litro) ou 7 latas de cerveja (2,5 litros)].",
         },
         {
           question: 42,
@@ -416,12 +450,12 @@ export const Questions1 = [
           no: 1,
           input: true,
           title:
-            "O(a) senhor(a) pratica exercícios físicos regulares (caminhada, natação, dança, ginástica, musculação, entre outros)? Se sim, qual a frequência? _ E por quanto tempo? _ . [Instruções: Depois assinale ao lado a resposta equivalente (sim ou não) considerando prática regular de exercícios como: frequência igual ou superior a 2 dias/semana com tempo total igual ou superior a 150 minutos/semana].",
+            "O(a) senhor(a) pratica exercícios físicos regulares (caminhada, natação, dança, ginástica, musculação, entre outros)? Se sim, qual a frequência? _ E por quanto tempo? _ .",
           tooltip:"[Instruções: Depois assinale ao lado a resposta equivalente (sim ou não) considerando prática regular de exercícios como: frequência igual ou superior a 2 dias/semana com tempo total igual ou superior a 150 minutos/semana]."
         },
         {
           title: "IMC para obesidade: ≥27 Kg/m2",
-          tooltip:"[verificar na questão 35]",
+          tooltip:"[Instruções: verificar na questão 35]",
           input: false,
           question: 43,
           yes: 0,
@@ -437,7 +471,7 @@ export const Questions1 = [
           question: 44,
           yes: 0,
           no: 0,
-          title: "Nos últimos 5 anos, algum médico ou outro profissional de saúde já disse que o(a) senhor(a) tem: [Instruções: registre a quantidade total de diagnósticos:]",
+          title: "Nos últimos 5 anos, algum médico ou outro profissional de saúde já disse que o(a) senhor(a) tem: ]",
           tooltip:"[Instruções: registre a quantidade total de diagnósticos:]",
           input: false,
           questions:[
@@ -460,6 +494,7 @@ export const Questions1 = [
           yes: 0,
           no: 0,
           input: true,
+          tooltip: null,
           title:
             "O(a) senhor(a) tem algum dos seguintes problemas de saúde:",
           questions:[
@@ -480,7 +515,7 @@ export const Questions1 = [
           input: true,
           point: 0,
           title:
-            "Quais os medicamentos utilizados pelo(a) senhor(a)? _ [Instruções: Solicitar as bulas dos medicamentos e fazer registro legível dos respectivos nomes e classes terapêuticas.] [Instrução: Para classificar se há presença de polifarmácia,registrar ao lado se o idoso utiliza cinco medicamentos ou mais.]",
+            "Quais os medicamentos utilizados pelo(a) senhor(a)? _ .",
           tooltip:"[Instruções: Solicitar as bulas dos medicamentos e fazer registro legível dos respectivos nomes e classes terapêuticas.] [Instrução: Para classificar se há presença de polifarmácia,registrar ao lado se o idoso utiliza cinco medicamentos ou mais.]"
         },
         {
@@ -490,6 +525,7 @@ export const Questions1 = [
           input: false,
           point: 0,
           title: "O(A) senhor(a) sabe para que serve todos os seus medicamentos?",
+          tooltip: null,
         },
         {
           question: 48,
@@ -497,6 +533,7 @@ export const Questions1 = [
           no: 1,
           input: false,
           point: 0,
+          tooltip: null,
           title:
             "Nos últimos 6 meses, houve aumento progressivo na quantidade de medicamentos prescritos para o(a) senhor(a)?",
         },
@@ -506,6 +543,7 @@ export const Questions1 = [
           no: 0,
           input: false,
           point: 1,
+          tooltip: null,
           title:
             "Os medicamentos que o(a) senhor(a) faz uso foram prescritos por médicos diferentes?",
         },
@@ -515,6 +553,7 @@ export const Questions1 = [
           no: 0,
           input: false,
           point: 0,
+          tooltip: null,
           title: "O(a) senhor(a) toma os medicamentos de acordo com as orientações médicas?",
         },
         {
@@ -523,6 +562,7 @@ export const Questions1 = [
           no: 1,
           input: false,
           point: 0,
+          tooltip: null,
           title:
             "O (a) senhor(a) deixa de tomar seus medicamentos com frequência?",
         },
@@ -532,6 +572,7 @@ export const Questions1 = [
           no: 1,
           input: false,
           point: 0,
+          tooltip: null,
           title:"O(a) senhor(a) tem o costume de tomar remédios por conta própria?"
         },
         {
@@ -540,6 +581,7 @@ export const Questions1 = [
           no: 1,
           input: false,
           point: 0,
+          tooltip: null,
           title: "Verificar na lista de medicamentos potencialmente inapropriados para idosos brasileiros (anexada ao PAGe) se o(a) idoso(a) toma algum dos medicamentos citados na mesma. [Caso sim, pontue ao lado e os deixe destacados na lista.]",
         },
         {
@@ -548,7 +590,7 @@ export const Questions1 = [
           no: 1,
           input: false,
           title:
-            "Cálculo do risco para reações adversas. [Instruções: Para utilizar esta tabela e saber se o idoso se enquadra em um grupo de risco para reações adversas, verifique na questão 44 o número de diagnósticos e na questão 53 se o idoso faz uso de medicamento inapropriado. Circule estas informações nas respectivas coluna e linha em destaque na tabela e, em seguida, as cruze para saber o número máximo de medicamentos que o idoso poderia tomar. Por último, verifique na questão 46 se (o) idoso(a) utiliza uma quantidade de medicamentos superior ao valor indicado na tabela. Assinale ao lado a respectiva resposta.]",
+            "Cálculo do risco para reações adversas. ",
           tooltip:"[Instruções: Para utilizar esta tabela e saber se o idoso se enquadra em um grupo de risco para reações adversas, verifique na questão 44 o número de diagnósticos e na questão 53 se o idoso faz uso de medicamento inapropriado. Circule estas informações nas respectivas coluna e linha em destaque na tabela e, em seguida, as cruze para saber o número máximo de medicamentos que o idoso poderia tomar. Por último, verifique na questão 46 se (o) idoso(a) utiliza uma quantidade de medicamentos superior ao valor indicado na tabela. Assinale ao lado a respectiva resposta.]"
         },
       ],
@@ -567,7 +609,8 @@ export const Questions1 = [
           no: 0,
           input:true,
           point: 1,
-          title: "O(a) senhor(a) tem [fazer registro dos familiares vivos]: cônjuge _, pais _, irmãos (nª) _, filhos(nª) _ , netos(nª) _  e bisnetos (n°) _.",
+          title: "O(a) senhor(a) tem: cônjuge _, pais _, irmãos (nª) _, filhos(nª) _ , netos(nª) _  e bisnetos (n°) _.",
+          tooltip: "[Instruções: Fazer registro dos familiares vivos].",
         },
         {
           question: 56,
@@ -575,6 +618,7 @@ export const Questions1 = [
           no: 0,
           input: false,
           point: 1,
+          tooltip: null,
           title:
             "O(a) senhor(a) encontra pessoas que gosta com frequência?",
         },
@@ -584,6 +628,7 @@ export const Questions1 = [
           no: 0,
           input: false,
           point: 1,
+          tooltip: null,
           title:
             "O(a) senhor(a) participa de decisões tomadas pela sua família?",
         },
@@ -593,6 +638,7 @@ export const Questions1 = [
           no: 0,
           input: false,
           point: 1,
+          tooltip: null,
           title: "O(a) senhor(a) se sente satisfeito(a) com os seus relacionamentos afetivos?",
         },
         {
@@ -601,6 +647,7 @@ export const Questions1 = [
           no: 0,
           input: false,
           point: 1,
+          tooltip: null,
           title:
             "O(a) senhor(a) pode contar com alguém se precisar de dinheiro?",
         },
@@ -610,6 +657,7 @@ export const Questions1 = [
           no: 0,
           input: false,
           point: 1,
+          tooltip: null,
           title:
             "O(a) senhor(a) pode contar com alguém para ajudá-lo(a) a resolver problemas?",
         },
@@ -619,6 +667,7 @@ export const Questions1 = [
           no: 0,
           input: false,
           point: 1,
+          tooltip: null,
           title:
           "O(a) senhor(a) tem pessoas com quem possa se divertir e relaxar?"
         },
@@ -628,6 +677,7 @@ export const Questions1 = [
           no: 0,
           input: false,
           point: 1,
+          tooltip: null,
           title:
             "O (a) senhor(a) participa de eventos socioculturais, tais como: peças de teatro, cinema, universidade aberta a terceira idade, centro de convivência, festas, ligado à religião etc.).",
         },
@@ -637,6 +687,7 @@ export const Questions1 = [
           no: 0,
           input: false,
           point: 1,
+          tooltip: null,
           title: "O(a) senhor(a) é atendido regularmente por serviços de saúde?",
         },
       ],
@@ -652,6 +703,7 @@ export const Questions1 = [
           no: 1,
           input: false,
           point: 0,
+          tooltip: null,
           title:
             "O(a) senhor(a) tem medo de alguém do seu convívio?",
         },
@@ -661,6 +713,7 @@ export const Questions1 = [
           no: 1,
           input: false,
           point: 0,
+          tooltip: null,
           title:
             "O(a) senhor se sente abandonado?",
         },
@@ -670,6 +723,7 @@ export const Questions1 = [
           no: 1,
           input: false,
           point: 1,
+          tooltip: null,
           title:
             "Alguém tem falado com o(a) senhor(a) de forma que se sinta mal consigo mesmo(a)?",
         },
@@ -679,6 +733,7 @@ export const Questions1 = [
           no: 1,
           input: false,
           point: 1,
+          tooltip: null,
           title:
             "Alguém tem agredido o(a) senhor(a) fisicamente?",
         },
@@ -688,6 +743,7 @@ export const Questions1 = [
           no: 1,
           input: false,
           point: 1,
+          tooltip: null,
           title:
             "O(a) senhor tem passado necessidades (de roupas, alimentação, medicamentos ou outras)?",
         },
@@ -697,6 +753,7 @@ export const Questions1 = [
           no: 1,
           input: false,
           point: 1,
+          tooltip: null,
           title:
             "Alguém tem usado o dinheiro do(a) senhor(a) sem a sua autorização?",
         },
@@ -706,6 +763,7 @@ export const Questions1 = [
           no: 1,
           input: false,
           point: 0,
+          tooltip: null,
           title:
             "Alguém do seu convívio já tocou o corpo do(a) senhor(a) sem o seu consentimento?",
         },
@@ -715,6 +773,7 @@ export const Questions1 = [
           no: 1,
           input: false,
           point: 0,
+          tooltip: null,
           title:
             "O(a) senhor está deixando de cuidar de si próprio?",
         },
@@ -731,6 +790,7 @@ export const Questions1 = [
           no: 0,
           input: false,
           point: 1,
+          tooltip: null,
           title:
             "Os móveis próximos as áreas de circulação são estáveis (firmes)?",
         },
@@ -740,6 +800,7 @@ export const Questions1 = [
           no: 1,
           input: false,
           point: 1,
+          tooltip: null,
           title:
             "Há objetos (chinelos, brinquedos, tapetes, etc) soltos nas áreas de circulação?",
         },
@@ -749,6 +810,7 @@ export const Questions1 = [
           no: 1,
           input: false,
           point: 1,
+          tooltip: null,
           title:
             "O piso é escorregadio (ex. encerado, molhado)?",
         },
@@ -758,6 +820,7 @@ export const Questions1 = [
           no: 0,
           input: false,
           point: 1,
+          tooltip: null,
           title:
             "Há tapetes antiderrapantes (fora e dentro do box)?",
         },
@@ -767,6 +830,7 @@ export const Questions1 = [
           no: 1,
           input: false,
           point: 1,
+          tooltip: "[Instruções: item sem pontuação. Se não houver escadas, pular as próximas duas questões e pontuá-las positivamente.]",
           title:
             "Há escadas? [Instruções: item sem pontuação. Se não houver escadas, pular as próximas duas questões e pontuá-las positivamente]",
         },
@@ -776,6 +840,7 @@ export const Questions1 = [
           no: 0,
           input: false,
           point: 1,
+          tooltip: null,
           title:
             "As escadas são iluminadas?",
         },
@@ -785,6 +850,7 @@ export const Questions1 = [
           no: 0,
           input: false,
           point: 1,
+          tooltip: null,
           title:
             "As escadas possuem corrimãos em ambos os lados?",
         },
@@ -794,6 +860,7 @@ export const Questions1 = [
           no: 1,
           input: false,
           point: 0,
+          tooltip: null,
           title: "Subir em banquetas ou cadeiras para alcançar objetos altos?",
         },
         {
@@ -802,6 +869,7 @@ export const Questions1 = [
           no: 0,
           input: false,
           point: 0,
+          tooltip: null,
           title: "Acender as luzes ao levantar-se à noite?",
         },
         {
@@ -810,6 +878,7 @@ export const Questions1 = [
           no: 0,
           input: false,
           point: 0,
+          tooltip: null,
           title:
             "Utilizar calçados seguros e adequados (solado antiderrapante, bem ajustados e firmes no pé, sem saltos etc)?",
         },
@@ -819,6 +888,7 @@ export const Questions1 = [
           no: 0,
           input: false,
           point: 0,
+          tooltip: null,
           title: "As calçadas próximas à sua residência são bem cuidadas (pavimentadas, lisas e sem buracos)?",
         },
         {
@@ -827,6 +897,7 @@ export const Questions1 = [
           no: 0,
           input: false,
           point: 0,
+          tooltip: null,
           title:
             "No seu bairro, o transporte público é acessível?",
         },
@@ -836,6 +907,7 @@ export const Questions1 = [
           no: 0,
           input: false,
           point: 0,
+          tooltip: null,
           title:
             "No seu bairro, o comércio é acessível?",
         },
@@ -845,6 +917,7 @@ export const Questions1 = [
           no: 0,
           input: false,
           point: 0,
+          tooltip: null,
           title:
             "No seu bairro, há facilidade e prazer em andar (a pé/com cadeiras de rodas/bengala/ andador)?",
         },
@@ -854,6 +927,7 @@ export const Questions1 = [
           no: 0,
           input: false,
           point: 0,
+          tooltip: null,
           title:
             "No seu bairro, a diversão (restaurantes, cinema, clubes, etc) é acessível?",
         },
@@ -863,6 +937,7 @@ export const Questions1 = [
           no: 0,
           input: false,
           point: 0,
+          tooltip: null,
           title:
             "O seu bairro é seguro?",
         },
@@ -892,6 +967,7 @@ export const Questions1 = [
           point: 0,
           title:
             "O(a) senhor(a) sofreu alguma queda nos últimos 12 meses? Se sim, quantas? _",
+          tooltip: "[Instruções: Se não, pontue também a resposta “não” na próxima questão e vá para a questão 91.]",
         },
         {
           question: 89,
@@ -902,7 +978,7 @@ export const Questions1 = [
             "[Investigar atividade realizada, local, horário do dia, tipo de calçado, riscos ambientais etc]",
           point: 0,
           title:
-            "O(a) senhor(a) sofreu alguma fratura decorrente destas quedas ? Se sim, quais _ ? [Investigar atividade realizada, local, horário do dia, tipo de calçado, riscos ambientais etc]",
+            "O(a) senhor(a) sofreu alguma fratura decorrente destas quedas ? Se sim, quais _ ?",
         },
         {
           question: 90,
@@ -918,23 +994,24 @@ export const Questions1 = [
           no: 0,
           input: false,
           point: 1,
-          title:"Instruções: Utilizando uma cadeira de assento e encosto firmes, sem braços, peça ao(a) idoso(a) para levantar-se de uma cadeira sem ajuda. Assinale ao lado se o(a) idoso(a) conseguiu realizar a tarefa.]"
+          tooltip:"[Instruções: Utilizando uma cadeira de assento e encosto firmes, sem braços, peça ao(a) idoso(a) para levantar-se de uma cadeira sem ajuda. Assinale ao lado se o(a) idoso(a) conseguiu realizar a tarefa.]",
+          title:"Avaliação de força de MMII."
         },
         {
           question: 92,
           yes: 1,
           no: 0,
           input: false,
-          tooltip: "[ver em dados de indetificação]",
+          tooltip: "[Instruções: Peça ao(a) idoso(a) para permanecer em pé em uma única perna, sem apoio dos membros superiores, durante 5 segundos. Oriente retornar o pé no chão em caso de perda de equilíbrio. Assinale ao lado se o(a) idoso(a) conseguiu realizar a tarefa.]",
           point: 0,
-          title: "[Instruções: Peça ao(a) idoso(a) para permanecer em pé em uma única perna, sem apoio dos membros superiores, durante 5 segundos. Oriente retornar o pé no chão em caso de perda de equilíbrio. Assinale ao lado se o(a) idoso(a) conseguiu realizar a tarefa.]",
+          title: "Avaliação de equilíbrio.",
         },
         {
           question: 93,
           yes: 0,
           no: 1,
           input: false,
-          tooltip: "[ver em dados de indetificação]",
+          tooltip: null,
           point: 0,
           title: "O(a) senhor(a) faz uso de dispositivo de auxílio à marcha (bengala, andador) sem orientação profissional?",
         },
@@ -944,7 +1021,7 @@ export const Questions1 = [
           no: 1,
           input: false,
           tooltip:
-            " [Pontuação negativa em Fluência Verbal em Funções Cognitivas]",
+            "[Instruções: Ver em dados de identificação]",
           point: 0,
           title: "Idade > 75 anos",
         },
@@ -953,64 +1030,64 @@ export const Questions1 = [
           yes: 0,
           no: 1,
           input: false,
-          tooltip: "[Pontuação > 4 em Capacidade Funcional]",
+          tooltip: "[Instruções: Ver em dados de identificação]",
           point: 0,
-          title: "Gênero feminino [Pontuação > 4 em Capacidade Funcional]",
+          title: "Gênero feminino",
         },
         {
           question: 96,
           yes: 0,
           no: 1,
           input: false,
-          tooltip: "[ver questão 15]",
+          tooltip: "[Instruções: Pontuação negativa Teste do Relógio (questão 6)]",
           point: 0,
-          title: "Alterações cognitivas [ver questão 15]",
+          title: "Alterações cognitivas",
         },
         {
           question: 97,
           yes: 1,
           no: 0,
           input: false,
-          tooltip: "[ver questões 63 a 69]",
+          tooltip: "[Instruções: Pontuação < 4 em Incapacidade Funcional]",
           point: 0,
-          title: "Comprometimento AVDs [ver questões 63 a 69]",
+          title: "Comprometimento AVDs",
         },
         {
           question: 98,
           yes: 0,
           no: 1,
           input: false,
-          tooltip: "[ver questões 70 a 72]",
+          tooltip: "[Instruções: ver questão 20]",
           point: 0,
-          title: "Déficit visual [ver questões 70 a 72]",
+          title: "Déficit visual",
         },
         {
           question: 99,
           yes: 0,
           no: 1,
           input: false,
-          tooltip: "[ver questão 38]",
+          tooltip: "[Instruções: ver questões 72 a 78]",
           point: 0,
-          title: "Riscos domésticos [ver questão 38]",
+          title: "Riscos domésticos",
         },
         {
           question: 100,
           yes: 0,
           no: 1,
           input: false,
-          tooltip: "[ver questão 42]",
+          tooltip: "[Instruções: ver questões 79 a 81]",
           point: 0,
-          title: "Riscos comportamentais [ver questão 42]",
+          title: "Riscos comportamentais",
         },
         {
           question: 101,
           yes: 0,
           no: 1,
           input: false,
-          tooltip: "[ver questão 45]",
+          tooltip: "[Instruções: ver questão 42]",
           point: 0,
           title:
-            "Inatividade [ver questão 45]",
+            "Inatividade",
         },
         {
           question: 102,
@@ -1018,8 +1095,8 @@ export const Questions1 = [
           no: 1,
           input: false,
           point: 0,
-          tooltip: "[ver questões 42 e 43]",
-          title:"Acidente Vascular Encefálico prévio [ver questões 42 e 43]"
+          tooltip: "[Instruções: ver questão 44]",
+          title:"Acidente Vascular Encefálico prévio"
         },
         {
           question: 103,
@@ -1027,8 +1104,8 @@ export const Questions1 = [
           no: 1,
           input: false,
           point: 0,
-          tooltip: "[ver questões 42 e 43]",
-          title:"Faz uso de medicações psicotrópicas, em especial benzodiazepínicos, ou uso continuo de 5 ou mais medicações (polifarmacia) [ver questões 42 e 43]"
+          tooltip: "[Instruções: ver questão 46]",
+          title:"Faz uso de medicações psicotrópicas, em especial benzodiazepínicos, ou uso continuo de 5 ou mais medicações (polifarmacia)"
         },
         {
           question: 104,
@@ -1036,8 +1113,8 @@ export const Questions1 = [
           no: 1,
           input: false,
           point: 0,
-          tooltip: "[ver questões 42 e 43]",
-          title:"Apresenta alguma das doenças a seguir: hipertensão, tontura/ vertigem, Parkinson, amputação de membros inferiores, convulsões, artrite, osteoporose, incontinência, diabetes, neuropatia, hipotensão postural [ver questões 42 e 43]"
+          tooltip: "[Instruções: ver questões 44 e 45]",
+          title:"Apresenta alguma das doenças a seguir: hipertensão, tontura/ vertigem, Parkinson, amputação de membros inferiores, convulsões, artrite, osteoporose, incontinência, diabetes, neuropatia, hipotensão postural"
         },
       ],
     },
