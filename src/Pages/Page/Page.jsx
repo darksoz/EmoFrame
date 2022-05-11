@@ -26,6 +26,7 @@ function Page() {
   const [success, setSuccess] = React.useState(false);
   const [userFormData, setUserFormData] = React.useState([]);
   const [totalQuestions, setTotalQuestions] = React.useState(1);
+  const [data, setData] = React.useState([]);
 
   const userForm = ['entrevistador ','entrevistado','Entrada','dataAvaliação', 'Instituição','Id']
 
@@ -95,7 +96,7 @@ function Page() {
   useEffect(() => {
     let data = filterQuestionsByNumberInt(answers);
     let dataI = filterQuestionsByString(answers);
-    console.log('adasdas', filterQuestionsByString(userFormData));
+    setData(data);
     setInvestigation(dataI);
     setTotalQuestions(data.length);
   }, [answers, userFormData]);
@@ -159,25 +160,25 @@ function Page() {
               label="Relacionados a Aspectos Psicológicos"
               onChange={handleChange}
             >
-              <PsychologicalAspect />
+              <PsychologicalAspect dados={data}/>
             </Step>
 
             <Step
               label="Relacionados a Aspectos Biológicos"
               onChange={handleChange}
             >
-              <BiologicalAspect />
+              <BiologicalAspect dados={data} />
             </Step>
 
             <Step
               label="Relacionados a Aspectos Sociais"
               onChange={handleChange}
             >
-              <SocialAspect />
+              <SocialAspect dados={data} />
             </Step>
 
             <Step label="Domínio Multidimencional" onChange={handleChange}>
-              <MultidimensionalAspect />
+              <MultidimensionalAspect dados={data} />
             </Step>
           </MultiStepForm>
         </div>

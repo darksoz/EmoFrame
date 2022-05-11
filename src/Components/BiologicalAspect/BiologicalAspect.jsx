@@ -4,7 +4,52 @@ import Col from "react-bootstrap/Col";
 import { Questions2 } from "../../services/Questions/Page/Page";
 import QuestionsPage from "./QuestionsPage";
 
-function BiologicalAspect() {
+function BiologicalAspect(props) {
+  let dominio = [
+    {
+      subAspectos: "DÉFICIT SENSORIAL",
+      min: 19,
+      max: 23,
+    },
+    {
+      subAspectos: "INCAPACIDADE FUNCIONAL",
+      min: 23,
+      max: 29,
+    },
+    {
+      subAspectos: "DESNUTRIÇÃO",
+      min: 29,
+      max: 35,
+    },
+    {
+      subAspectos: "DOENÇAS CARDIOVASCULA-RES (DCV)",
+      min: 35,
+      max: 43,
+    },
+    {
+      subAspectos: "USO INADEQUADO DE MEDICAMENTOS",
+      min: 43,
+      max: 52,
+    },
+  ];
+
+  const sumAnswers = (arr, min, max) => {
+    let value = arr.slice(min, max);
+    console.log("value", value);
+    let sum = 0;
+
+    if (value.length > 0) {
+      value.forEach((element) => {
+        sum += parseInt(element.answer);
+      });
+      return sum;
+    }
+  };
+  const pontuacaoDominios = (dominio, answers, dominios) => {
+    let teste = dominios.find(item=> item.subAspectos == dominio )
+    console.log("teste", sumAnswers(answers, teste.min, teste.max))
+    return sumAnswers(answers, teste.min, teste.max);
+  };
   return (
     <>
       <div id="passo" className="border border-dark bg-lgreen text-white">
@@ -39,7 +84,14 @@ function BiologicalAspect() {
                 <Row className="border bg-lgreen text-white">
                   <hr />
                   <Col md={6} className="m-auto">
-                    <p className="h5">{question.pontucao}</p>
+                    <p className="h5">
+                      {question.pontucao} -{" "}
+                      {pontuacaoDominios(
+                        question.aspectos,
+                        props.dados,
+                        dominio
+                      )}
+                    </p>
                   </Col>
 
                   <Col md={6}>
@@ -53,7 +105,7 @@ function BiologicalAspect() {
                           type="radio"
                           value="SIM"
                           name={question.aspectos}
-                          id='Biológico'
+                          id="Biológico"
                         />
                         <label
                           className="form-check-label label-page-i"
@@ -69,7 +121,7 @@ function BiologicalAspect() {
                           type="radio"
                           value="NÃO"
                           name={question.aspectos}
-                          id='Biológico'
+                          id="Biológico"
                         />
                         <label
                           className="form-check-label label-page-i l-no"
@@ -94,10 +146,9 @@ function BiologicalAspect() {
                       rows="3"
                     ></textarea>
                   </div>
-                </Row>)
-    }
+                </Row>
+              )}
             </Card>
-            
           </Container>
         </>
       ))}

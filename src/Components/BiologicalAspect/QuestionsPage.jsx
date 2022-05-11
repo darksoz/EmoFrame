@@ -20,7 +20,14 @@ function QuestionsPage(props) {
         ) : (
           props.pergunta.question + "-" + props.pergunta.title
         )}
+         {props.pergunta.tooltip != null ? (
+          <strong>
+            {props.pergunta.tooltip}
+            <br />
+          </strong>
+        ):''
 
+        }
         <br></br>
         <ul style={{ listStyleType: "none", justifyContent: "space-between" }}>
           {props.pergunta.questions?.map((a, index) => (

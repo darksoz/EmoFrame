@@ -19,6 +19,14 @@ function QuestionsSocial(props) {
         ) : (
           props.pergunta.question + "-" + props.pergunta.title
         )}
+         {props.pergunta.tooltip != null ? (
+          <strong>
+            {props.pergunta.tooltip}
+            <br />
+          </strong>
+        ):''
+
+        }
         <strong>
           {props.pergunta.questions?.map((a, index) => (
             <>

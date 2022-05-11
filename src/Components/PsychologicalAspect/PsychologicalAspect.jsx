@@ -4,7 +4,44 @@ import Col from "react-bootstrap/Col";
 import { Questions1 } from "../../services/Questions/Page/Page";
 import QuestionsPsychological from "./QuestionsPsychological";
 
-function PsychologicalAspect() {
+function PsychologicalAspect(props) {
+  let dominio = [
+    {
+      subAspectos: "DÉFICIT COGNITIVO",
+      min: 0,
+      max: 6,
+    },
+    {
+      subAspectos: "ATITUDE NEGATIVA EM RELAÇÃO AO ENVELHECIMENTO",
+      min: 6,
+      max: 14,
+    },
+    {
+      subAspectos: "DEPRESSÃO",
+      min: 14,
+      max: 19,
+    },
+  ];
+
+  const sumAnswers = (arr, min, max) => {
+    let value = arr.slice(min, max);
+    console.log("value", value);
+    let sum = 0;
+
+    if (value.length > 0) {
+      value.forEach((element) => {
+        sum += parseInt(element.answer);
+      });
+      return sum;
+    }
+  };
+
+  const pontuacaoDominios = (dominio, answers, dominios) => {
+    let teste = dominios.find(item=> item.subAspectos == dominio )
+    console.log("teste", sumAnswers(answers, teste.min, teste.max))
+    return sumAnswers(answers, teste.min, teste.max);
+  };
+
   return (
     <>
       <Container>
@@ -44,7 +81,14 @@ function PsychologicalAspect() {
                     <hr />
 
                     <Col md={6} className="m-auto">
-                      <p className="h5">{question.pontucao}</p>
+                      <p className="h5">
+                        {question.pontucao} = 
+                        {pontuacaoDominios(
+                          question.aspectos,
+                          props.dados,
+                          dominio
+                        )}
+                      </p>
                     </Col>
 
                     <Col md={6}>
@@ -58,7 +102,7 @@ function PsychologicalAspect() {
                             type="radio"
                             value="SIM"
                             name={question.aspectos}
-                            id='Psicológico'
+                            id="Psicológico"
                           />
                           <label
                             className="form-check-label label-page-i"
@@ -74,7 +118,7 @@ function PsychologicalAspect() {
                             type="radio"
                             value="NÃO"
                             name={question.aspectos}
-                            id='Psicológico'
+                            id="Psicológico"
                           />
                           <label
                             className="form-check-label label-page-i l-no"
@@ -99,8 +143,8 @@ function PsychologicalAspect() {
                         rows="3"
                       ></textarea>
                     </div>
-                  </Row>)
-                }
+                  </Row>
+                )}
               </Card>
             </Container>
           </>
