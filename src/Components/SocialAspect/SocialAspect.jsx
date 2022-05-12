@@ -75,13 +75,13 @@ function SocialAspect(props) {
                   <hr />
                   <Col md={6} className="m-auto">
                     <p className="h5">
-                      {question.pontucao} =
-                      {pontuacaoDominios(
-                        question.aspectos,
-                        props.dados,
-                        dominio
-                      )}
-                      Pontos
+                    Pontuação (máxima = {question.pontucao}):{" "}
+                        {pontuacaoDominios(
+                          question.aspectos,
+                          props.dados,
+                          dominio
+                        )}{" "}
+                        Necessita de investigação?
                     </p>
                   </Col>
                   <Col md={6}>

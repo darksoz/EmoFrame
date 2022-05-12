@@ -32,8 +32,7 @@ function BiologicalAspect(props) {
       max: 52,
     },
   ];
- 
- 
+
   const sumAnswers = (arr, min, max) => {
     let value = arr.slice(min, max);
     let sum = 0;
@@ -46,7 +45,7 @@ function BiologicalAspect(props) {
     }
   };
   const pontuacaoDominios = (dominio, answers, dominios) => {
-    let teste = dominios.find(item=> item.subAspectos == dominio )
+    let teste = dominios.find((item) => item.subAspectos == dominio);
     return sumAnswers(answers, teste.min, teste.max);
   };
   return (
@@ -86,12 +85,13 @@ function BiologicalAspect(props) {
                   <hr />
                   <Col md={6} className="m-auto">
                     <p className="h5">
-                      {question.pontucao} -{" "}
+                      Pontuação (máxima = {question.pontucao}):{" "}
                       {pontuacaoDominios(
                         question.aspectos,
                         props.dados,
                         dominio
-                      )}
+                      )}{" "}
+                      Necessita de investigação?
                     </p>
                   </Col>
 

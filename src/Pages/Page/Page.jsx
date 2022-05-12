@@ -178,8 +178,8 @@ function Page() {
               <SocialAspect dados={data} />
             </Step>
 
-            <Step label="Domínio Transversal" onChange={handleChange}>
-              <MultidimensionalAspect dados={data} userForm={userFormData} />
+            <Step label="Domínio Multidimencional" onChange={handleChange}>
+              <MultidimensionalAspect dados={data} userForm={userFormData} answers={answers}/>
             </Step>
           </MultiStepForm>
         </div>
