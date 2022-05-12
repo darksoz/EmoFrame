@@ -605,7 +605,7 @@ export const Questions1 = [
         
         {
           question: 55,
-          yes: 1,
+          yes: 0,
           no: 0,
           input:true,
           point: 1,
@@ -781,7 +781,7 @@ export const Questions1 = [
     },
     {
       aspectos: "PROBLEMAS AMBIENTAIS",
-      pontucao: "16",
+      pontucao: "15",
       instrucao:"Ambiente interno – Na casa do(a) senhor(a):",
       perguntas: [
         {
@@ -957,7 +957,7 @@ export const Questions1 = [
   export const Questions4 = [
     {
       aspectos: "QUEDAS",
-      pontucao: "17",
+      pontucao: "16",
       perguntas: [
         {
           question: 88,
