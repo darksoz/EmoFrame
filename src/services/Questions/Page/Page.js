@@ -471,9 +471,9 @@ export const Questions1 = [
           question: 44,
           yes: 0,
           no: 0,
-          title: "Nos últimos 5 anos, algum médico ou outro profissional de saúde já disse que o(a) senhor(a) tem: ]",
+          title: "Nos últimos 5 anos, algum médico ou outro profissional de saúde já disse que o(a) senhor(a) tem:  _ ",
           tooltip:"[Instruções: registre a quantidade total de diagnósticos:]",
-          input: false,
+          input: true,
           questions:[
             "Doença do coração (angina, infarto ou ataque cardíaco)?",
             "Pressão alta/ hipertensão?",
@@ -1040,6 +1040,7 @@ export const Questions1 = [
           no: 1,
           input: false,
           tooltip: "[Instruções: Pontuação negativa Teste do Relógio (questão 6)]",
+          dependente: '6',
           point: 0,
           title: "Alterações cognitivas",
         },
@@ -1058,6 +1059,7 @@ export const Questions1 = [
           no: 1,
           input: false,
           tooltip: "[Instruções: ver questão 20]",
+          dependente: '20',
           point: 0,
           title: "Déficit visual",
         },
@@ -1085,6 +1087,7 @@ export const Questions1 = [
           no: 1,
           input: false,
           tooltip: "[Instruções: ver questão 42]",
+          dependente: '42',
           point: 0,
           title:
             "Inatividade",
@@ -1096,6 +1099,7 @@ export const Questions1 = [
           input: false,
           point: 0,
           tooltip: "[Instruções: ver questão 44]",
+          dependente: '44',
           title:"Acidente Vascular Encefálico prévio"
         },
         {
@@ -1105,6 +1109,7 @@ export const Questions1 = [
           input: false,
           point: 0,
           tooltip: "[Instruções: ver questão 46]",
+          dependente: '46',
           title:"Faz uso de medicações psicotrópicas, em especial benzodiazepínicos, ou uso continuo de 5 ou mais medicações (polifarmacia)"
         },
         {

@@ -120,6 +120,7 @@ function Page() {
       Evaluation: [],
       UserDataForm: userFormData,
     };
+
     json = JSON.stringify(json);
     let response = await SavePageTest(json);
     if (response.status === 201) {
@@ -167,7 +168,7 @@ function Page() {
               label="Relacionados a Aspectos Biológicos"
               onChange={handleChange}
             >
-              <BiologicalAspect dados={data} />
+              <BiologicalAspect dados={data} data={answers}/>
             </Step>
 
             <Step
@@ -178,7 +179,7 @@ function Page() {
             </Step>
 
             <Step label="Domínio Multidimencional" onChange={handleChange}>
-              <MultidimensionalAspect dados={data} />
+              <MultidimensionalAspect dados={data} userForm={userFormData} />
             </Step>
           </MultiStepForm>
         </div>
