@@ -28,7 +28,7 @@ export const Questions1 = [
         },
         {
           title:
-            "Linguagem, função executiva e atenção: Agora, eu vou marcar um minuto no relógio e durante esse tempo o(a) senhor(a) deve falar o maior número de animais de que se lembrar. Quanto mais animais o senhor fala nesse tempo melhor. [Anote os nomes de animais falados pelo(a) idoso(a) a cada 15 segundos. Registrar, mas não contar animais repetidos] Pode começar. ",
+            "Linguagem, função executiva e atenção: Agora, eu vou marcar um minuto no relógio e durante esse tempo o(a) senhor(a) deve falar o maior número de animais de que se lembrar. Quanto mais animais o senhor fala nesse tempo melhor.",
           point: 1,
           tooltip:"[Instruções: Anote os nomes de animais falados pelo(a) idoso(a) a cada 15 segundos, e registrar, mas não contar animais repetidos]. Pode começar. Pontuação de acordo com escolaridade: 1) analfabetos = 9 animais; 2) 1-7 anos = 12 animais e 3) 8 anos ou mais = 13 animais.]",
           question: 3,
@@ -827,7 +827,7 @@ export const Questions1 = [
         {
           question: 76,
           yes: 0,
-          no: 1,
+          no: 0,
           input: false,
           point: 1,
           tooltip: "[Instruções: item sem pontuação. Se não houver escadas, pular as próximas duas questões e pontuá-las positivamente.]",
@@ -982,7 +982,7 @@ export const Questions1 = [
         },
         {
           question: 90,
-          yes: 1,
+          yes: 0,
           no: 0,
           input: false,
           point: 1,
