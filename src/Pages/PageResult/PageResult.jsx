@@ -15,7 +15,6 @@ import Footer from "../../Components/Footer/Footer";
 import PageNotesTable from "../../Components/PageNotesTable/PageNotesTable";
 import PageInvestigationTable from "../../Components/PageInvestigationTable/PageInvestigationTable";
 import ModalTest from "../../Components/Modal/ModalTest";
-import sortArray from "sort-array";
 import { SavePageResult } from "../../services/api";
 
 function PageResult() {
@@ -218,7 +217,6 @@ function PageResult() {
       <Container onChange={handleChangeForm}>
         {name && datetime && (
           <>
-            <h1>Nome: {name}</h1>
             <h1>Entrevistado: {namePage}</h1>
             <h1>Data e Hora: {formateDateTime(datetime)}</h1>
             <h1>Teste realizado: {testOrder}</h1>

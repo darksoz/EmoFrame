@@ -38,7 +38,7 @@ function MultidimensionalAspect(props) {
   return (
     <>
       <div className="border border-dark bg-purple text-white">
-        <h3>Domínio Multidimensional</h3>
+        <h3>Domínio Transversal</h3>
       </div>
       {Questions4.map((question, index) => (
         <>
@@ -63,7 +63,7 @@ function MultidimensionalAspect(props) {
               </Row>
 
               <Container className="w-75">
-                <Row className="border bg-purple text-white">
+                <Row className="border bg-secondary text-light fw-lighter">
                   <hr />
                   <Col md={6} className="m-auto">
                     <p className="h5">

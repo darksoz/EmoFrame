@@ -157,27 +157,27 @@ function Page() {
               <RegisterPage />
             </Step>
             <Step
-              label="Relacionados a Aspectos Psicológicos"
+              label="Aspectos Psicológicos"
               onChange={handleChange}
             >
               <PsychologicalAspect dados={data}/>
             </Step>
 
             <Step
-              label="Relacionados a Aspectos Biológicos"
+              label="Aspectos Biológicos"
               onChange={handleChange}
             >
               <BiologicalAspect dados={data} />
             </Step>
 
             <Step
-              label="Relacionados a Aspectos Sociais"
+              label="Aspectos Socioambientais"
               onChange={handleChange}
             >
               <SocialAspect dados={data} />
             </Step>
 
-            <Step label="Domínio Multidimencional" onChange={handleChange}>
+            <Step label="Domínio Transversal" onChange={handleChange}>
               <MultidimensionalAspect dados={data} />
             </Step>
           </MultiStepForm>
