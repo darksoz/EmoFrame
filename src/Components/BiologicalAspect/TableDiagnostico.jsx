@@ -2,16 +2,35 @@ import { React } from "react";
 import "./Table.css";
 
 function TableDiagnostico(props) {
+  let diagnostico;
+  let nmDiagnosticos = 0;
+  let nmRemedios = 0;
+  const retornaDiagnostico = (dados, questao) => {
+    if (dados.length > +questao) {
+      let diagnostico = dados.find((item) => item.id == questao);
+      if (diagnostico != undefined) {
+        diagnostico = diagnostico.answer;
+        return diagnostico;
+      }
+    }
+  };
+
+  if (props.remedios.length >= 43) {
+    diagnostico = props.diagnosticoItem;
+    nmDiagnosticos = retornaDiagnostico(diagnostico, "44.1");
+    nmRemedios = retornaDiagnostico(diagnostico, "46.1");
+  }
+
   return (
     <>
       <table class="tg">
         <thead>
           <tr>
             <th class="tg-0lax" rowspan="2">
-              <strong>Nº de diagnósticos</strong>
+              <strong>Nº de diagnósticos: {nmDiagnosticos}</strong>
             </th>
             <th class="tg-0lax" colspan="2">
-              <strong>Uso de medicamento inapropriado</strong>
+              <strong>Uso de medicamento inapropriado: {nmRemedios}</strong>
             </th>
           </tr>
           <tr>

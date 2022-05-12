@@ -32,10 +32,10 @@ function BiologicalAspect(props) {
       max: 52,
     },
   ];
-
+ 
+ 
   const sumAnswers = (arr, min, max) => {
     let value = arr.slice(min, max);
-    console.log("value", value);
     let sum = 0;
 
     if (value.length > 0) {
@@ -47,7 +47,6 @@ function BiologicalAspect(props) {
   };
   const pontuacaoDominios = (dominio, answers, dominios) => {
     let teste = dominios.find(item=> item.subAspectos == dominio )
-    console.log("teste", sumAnswers(answers, teste.min, teste.max))
     return sumAnswers(answers, teste.min, teste.max);
   };
   return (
@@ -74,6 +73,8 @@ function BiologicalAspect(props) {
                         pergunta={pergunta}
                         index={index}
                         key={index}
+                        dadosQuestoes={props.dados}
+                        respostas={props.data}
                       ></QuestionsPage>
                     </>
                   ))}

@@ -7,6 +7,16 @@ function QuestionsMultidimensional(props) {
     let textBox = ["90"];
     return textBox.includes(String(str));
   };
+  const dependencia = (arr, str) => {
+    let tam = Object.keys(arr).length;
+    if (tam > parseInt(str)) {
+      let value = arr.find((item) => item.id == str);
+      if (value != undefined) {
+        return value.answer == "1" ? 'Pontuou' : 'Não Pontuou';
+      }
+    }
+  };
+ 
   return (
     <>
       <p className="h5 mb-3 mt-3 border p-4">
@@ -23,8 +33,21 @@ function QuestionsMultidimensional(props) {
           <strong>
             {props.pergunta.tooltip}
             <br />
+            {props.pergunta.dependente != null
+              ? dependencia(props.dados, props.pergunta.dependente)
+              : ""}
           </strong>
-        ):''
+        ) : (
+          ""
+        )}
+        {props.pergunta.question == "94" && (
+          <strong>
+            {props.idade}
+          </strong>
+        )}
+        {props.pergunta.question == '95' && (<strong>
+          {props.genero}
+        </strong>)
 
         }
         <strong>
@@ -78,5 +101,4 @@ function QuestionsMultidimensional(props) {
     </>
   );
 }
-
 export default QuestionsMultidimensional;

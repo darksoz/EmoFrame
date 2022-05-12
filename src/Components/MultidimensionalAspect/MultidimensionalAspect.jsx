@@ -6,8 +6,8 @@ import { Questions4 } from "../../services/Questions/Page/Page";
 import QuestionsMultidimensional from "./QuestionsMultidimensional";
 
 function MultidimensionalAspect(props) {
+  let idade, genero;
   let dominio = [
-    
     {
       subAspectos: "QUEDAS",
       min: 83,
@@ -17,8 +17,8 @@ function MultidimensionalAspect(props) {
 
   const sumAnswers = (arr, min, max) => {
     let value = arr.slice(min, max);
-    console.log("value", value);
     let sum = 0;
+    
 
     if (value.length > 0) {
       value.forEach((element) => {
@@ -27,13 +27,28 @@ function MultidimensionalAspect(props) {
       return sum;
     }
   };
-
+  console.log("props firm", props.userForm);
   const pontuacaoDominios = (dominio, answers, dominios) => {
-    console.log("dominio", dominio, answers, dominios);
     let teste = dominios.find((item) => item.subAspectos == dominio);
-    console.log("teste", sumAnswers(answers, teste.min, teste.max));
     return sumAnswers(answers, teste.min, teste.max);
   };
+
+  const retornaDados = (dados, idQuestao) => {
+    console.log("entriy");
+
+    console.log("entrify", dados.length);
+    let diagnostico = dados.find((item) => item.id == idQuestao);
+    if (diagnostico != undefined) {
+      diagnostico = diagnostico.answer;
+      console.log("diagnostico", diagnostico);
+      return diagnostico;
+    }
+  };
+
+  if (props.userForm.length > 10) {
+    idade = retornaDados(props.userForm, "idade");
+    genero = retornaDados(props.userForm, "genero");
+  }
 
   return (
     <>
@@ -56,6 +71,9 @@ function MultidimensionalAspect(props) {
                         pergunta={pergunta}
                         index={index}
                         key={index}
+                        dados={props.dados}
+                        idade={idade}
+                        genero={genero}
                       ></QuestionsMultidimensional>
                     </>
                   ))}
@@ -67,7 +85,7 @@ function MultidimensionalAspect(props) {
                   <hr />
                   <Col md={6} className="m-auto">
                     <p className="h5">
-                      {question.pontucao} = 
+                      {question.pontucao} =
                       {pontuacaoDominios(
                         question.aspectos,
                         props.dados,

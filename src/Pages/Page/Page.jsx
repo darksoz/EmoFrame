@@ -120,6 +120,7 @@ function Page() {
       Evaluation: [],
       UserDataForm: userFormData,
     };
+
     json = JSON.stringify(json);
     let response = await SavePageTest(json);
     if (response.status === 201) {
@@ -167,7 +168,7 @@ function Page() {
               label="Aspectos Biológicos"
               onChange={handleChange}
             >
-              <BiologicalAspect dados={data} />
+              <BiologicalAspect dados={data} data={answers}/>
             </Step>
 
             <Step
