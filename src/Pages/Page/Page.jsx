@@ -179,7 +179,7 @@ function Page() {
             </Step>
 
             <Step label="Domínio Multidimencional" onChange={handleChange}>
-              <MultidimensionalAspect dados={data} userForm={userFormData} />
+              <MultidimensionalAspect dados={data} userForm={userFormData} answers={answers}/>
             </Step>
           </MultiStepForm>
         </div>

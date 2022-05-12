@@ -47,7 +47,7 @@ function QuestionsPage(props) {
                     style={{ marginLeft: "0.5em" }}
                     type="checkbox"
                     value={a}
-                    name={props.pergunta.question + "." + (index + 1)}
+                    name={props.pergunta.question + ".1" + (index + 1)}
                   ></input>
                 )}
               </li>

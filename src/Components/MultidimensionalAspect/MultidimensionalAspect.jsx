@@ -6,7 +6,7 @@ import { Questions4 } from "../../services/Questions/Page/Page";
 import QuestionsMultidimensional from "./QuestionsMultidimensional";
 
 function MultidimensionalAspect(props) {
-  let idade, genero;
+  let idade, genero, totalIncapacidade, totalComportamental, avc;
   let dominio = [
     {
       subAspectos: "QUEDAS",
@@ -18,7 +18,6 @@ function MultidimensionalAspect(props) {
   const sumAnswers = (arr, min, max) => {
     let value = arr.slice(min, max);
     let sum = 0;
-    
 
     if (value.length > 0) {
       value.forEach((element) => {
@@ -49,7 +48,16 @@ function MultidimensionalAspect(props) {
     idade = retornaDados(props.userForm, "idade");
     genero = retornaDados(props.userForm, "genero");
   }
+  console.log("answers", props.answers);
+  console.log('dados', props.dados);
 
+  if (props.answers.length > 100) {
+    console.log("entrei no if");
+    console.log("incapacidade", sumAnswers(props.dados, 23, 29));
+    totalIncapacidade = sumAnswers(props.dados, 23, 29);
+    totalComportamental = sumAnswers(props.dados, 72, 78);
+    avc = retornaDados(props.answers, "44.3");
+  }
   return (
     <>
       <div className="border border-dark bg-purple text-white">
@@ -74,6 +82,9 @@ function MultidimensionalAspect(props) {
                         dados={props.dados}
                         idade={idade}
                         genero={genero}
+                        incapacidade={totalIncapacidade}
+                        comportamental={totalComportamental}
+                        avc={avc}
                       ></QuestionsMultidimensional>
                     </>
                   ))}
@@ -85,13 +96,13 @@ function MultidimensionalAspect(props) {
                   <hr />
                   <Col md={6} className="m-auto">
                     <p className="h5">
-                      {question.pontucao} =
+                      Pontuação (máxima = {question.pontucao}):{" "}
                       {pontuacaoDominios(
                         question.aspectos,
                         props.dados,
                         dominio
-                      )}
-                      Pontos
+                      )}{" "}
+                      Necessita de investigação?
                     </p>
                   </Col>
 

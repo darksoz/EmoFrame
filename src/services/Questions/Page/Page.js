@@ -3,7 +3,7 @@ export const Questions1 = [
     {
       aspectos: "DÉFICIT COGNITIVO",
   
-      pontucao: "Pontuação (máxima=6): Necessita de investigação",
+      pontucao: "6",
       perguntas: [
         {
           title:
@@ -71,7 +71,7 @@ export const Questions1 = [
     },
     {
       aspectos: "ATITUDE NEGATIVA EM RELAÇÃO AO ENVELHECIMENTO",
-      pontucao: "Pontuação (máxima=8): Necessita de investigação",
+      pontucao: "8",
       perguntas: [
         {
           question: 7,
@@ -154,7 +154,7 @@ export const Questions1 = [
     },
     {
       aspectos: "DEPRESSÃO",
-      pontucao: "Pontuação (máxima=5): Necessita de investigação",
+      pontucao: "5",
       instrucao: "Antes de iniciar diga ao idoso: 'Vou lhe fazer algumas perguntas para saber como o(a) senhor(a) vem se sentindo na última semana.'",
       perguntas: [
         {
@@ -213,7 +213,7 @@ export const Questions1 = [
   export const Questions2 = [
     {
       aspectos: "DÉFICIT SENSORIAL",
-      pontucao: "Pontuação Máxima = 4. Necessita de investigação?",
+      pontucao: "4",
       perguntas: [
         {
           question: 20,
@@ -257,7 +257,7 @@ export const Questions1 = [
     },
     {
       aspectos: "INCAPACIDADE FUNCIONAL",
-      pontucao: "Pontuação (máxima=6): Necessita de investigação",
+      pontucao: "6",
       perguntas: [
         
         {
@@ -320,7 +320,7 @@ export const Questions1 = [
     },
     {
       aspectos: "DESNUTRIÇÃO",
-      pontucao: "Pontuação (máxima=6): Necessita de investigação",
+      pontucao: "6",
       perguntas: [
         
         {
@@ -385,7 +385,7 @@ export const Questions1 = [
     },
     {
       aspectos: "DOENÇAS CARDIOVASCULA-RES (DCV)",
-      pontucao: "Pontuação (máxima=8): Necessita de investigação",
+      pontucao: "8",
       perguntas: [
         
         {
@@ -465,7 +465,7 @@ export const Questions1 = [
     },
     {
       aspectos: "USO INADEQUADO DE MEDICAMENTOS",
-      pontucao: "Pontuação (máxima=9): Necessita de investigação",
+      pontucao: "9",
       perguntas: [ 
         {
           question: 44,
@@ -600,7 +600,7 @@ export const Questions1 = [
   export const Questions3 = [
     {
       aspectos: "BAIXO SUPORTE SOCIAL",
-      pontucao: "Pontuação (máxima=8): Necessita de investigação",
+      pontucao: "8",
       perguntas: [
         
         {
@@ -694,7 +694,7 @@ export const Questions1 = [
     },
     {
       aspectos: "VIOLÊNCIA",
-      pontucao: "Pontuação (máxima=8): Necessita de investigação",
+      pontucao: "8",
       perguntas: [
         
         {
@@ -781,7 +781,7 @@ export const Questions1 = [
     },
     {
       aspectos: "PROBLEMAS AMBIENTAIS",
-      pontucao: "Pontuação (máxima=16): Necessita de investigação",
+      pontucao: "16",
       instrucao:"Ambiente interno – Na casa do(a) senhor(a):",
       perguntas: [
         {
@@ -957,7 +957,7 @@ export const Questions1 = [
   export const Questions4 = [
     {
       aspectos: "QUEDAS",
-      pontucao: "Pontuação (máxima=17): Necessita de investigação",
+      pontucao: "17",
       perguntas: [
         {
           question: 88,
