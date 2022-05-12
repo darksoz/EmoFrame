@@ -3,7 +3,7 @@ export const Questions1 = [
     {
       aspectos: "DÉFICIT COGNITIVO",
   
-      pontucao: "Pontuação (máxima=6): Necessita de investigação",
+      pontucao: "Pontuação (máxima=6): Necessita de investigação ",
       perguntas: [
         {
           title:
@@ -28,7 +28,7 @@ export const Questions1 = [
         },
         {
           title:
-            "Linguagem, função executiva e atenção: Agora, eu vou marcar um minuto no relógio e durante esse tempo o(a) senhor(a) deve falar o maior número de animais de que se lembrar. Quanto mais animais o senhor fala nesse tempo melhor.",
+            "Linguagem, função executiva e atenção: Agora, eu vou marcar um minuto no relógio e durante esse tempo o(a) senhor(a) deve falar o maior número de animais de que se lembrar. Quanto mais animais o senhor fala nesse tempo melhor. ",
           point: 1,
           tooltip:"[Instruções: Anote os nomes de animais falados pelo(a) idoso(a) a cada 15 segundos, e registrar, mas não contar animais repetidos]. Pode começar. Pontuação de acordo com escolaridade: 1) analfabetos = 9 animais; 2) 1-7 anos = 12 animais e 3) 8 anos ou mais = 13 animais.]",
           question: 3,

@@ -43,7 +43,7 @@ function PageDimension(props) {
         text: "",
       },
       xaxis: {
-        categories: ["Psicológica", "Biológica", "Social", "Quedas"],
+        categories: ["Psicológica", "Biológica", "Socioambiental", "Tranversal"],
       },
     },
   };

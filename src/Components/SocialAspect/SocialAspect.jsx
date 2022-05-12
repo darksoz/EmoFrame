@@ -46,7 +46,7 @@ function SocialAspect(props) {
         id="passo"
         className="border border-dark bg-lyellow text-white fw-lighter"
       >
-        <h3>Relacionados a Aspectos Sociais</h3>
+        <h3>Relacionados a Aspectos Socioambientais</h3>
       </div>
       {Questions3.map((question, index) => (
         <>
@@ -71,7 +71,7 @@ function SocialAspect(props) {
               </Row>
 
               <Container className="w-75">
-                <Row className="border bg-lyellow text-white fw-lighter">
+                <Row className="border bg-lgrey text-dark">
                   <hr />
                   <Col md={6} className="m-auto">
                     <p className="h5">

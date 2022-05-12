@@ -75,7 +75,7 @@ function PsychologicalAspect(props) {
                 </Row>
 
                 <Container className="w-75">
-                  <Row className="border bg-lblue text-white">
+                  <Row className="border bg-secondary text-light fw-lighter">
                     <hr />
 
                     <Col md={6} className="m-auto">
