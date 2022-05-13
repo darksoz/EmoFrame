@@ -5,7 +5,6 @@ import { Questions1 } from "../../services/Questions/Page/Page";
 import QuestionsPsychological from "./QuestionsPsychological";
 
 function PsychologicalAspect(props) {
-  const teste = {};
   let dominio = [
     {
       subAspectos: "DÉFICIT COGNITIVO",
@@ -52,13 +51,8 @@ function PsychologicalAspect(props) {
   const pontuacaoDominios = (dominio, answers, dominios) => {
     let teste = dominios.find((item) => item.subAspectos == dominio);
     let testearr = answers.filter((item) => {
-      console.log("item.aspect", item.id);
       return teste.aspectos.includes(item.id);
     });
-    console.log("=>", answers);
-    console.log("testearr", testearr);
-    console.log("testes arary", teste.aspectos);
-    console.log("soma", sumDominio(testearr));
     return sumAnswers(answers, teste.min, teste.max);
   };
   const pontuacaoDom = (dominio, answers, dominios) => {
@@ -111,13 +105,9 @@ function PsychologicalAspect(props) {
                     <Col md={6} className="m-auto">
                       <p className="h5">
                         Pontuação (máxima = {question.pontucao}):{" "}
-                        {pontuacaoDominios(
-                          question.aspectos,
-                          props.dados,
-                          dominio
-                        )}{" "}
+                        {pontuacaoDom(question.aspectos, props.dados, dominio)}{" "}
                         Necessita de investigação?
-                        {pontuacaoDom(question.aspectos, props.dados, dominio)}
+                       
                       </p>
                     </Col>
 

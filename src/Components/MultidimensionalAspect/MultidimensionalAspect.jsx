@@ -6,13 +6,41 @@ import { Questions4 } from "../../services/Questions/Page/Page";
 import QuestionsMultidimensional from "./QuestionsMultidimensional";
 
 function MultidimensionalAspect(props) {
-  let idade, genero, totalIncapacidade, totalComportamental, avc;
+  let idade,
+    genero,
+    totalIncapacidade,
+    totalComportamental,
+    avc,
+    teste,
+    doencas;
   let dominio = [
     {
       subAspectos: "QUEDAS",
-      aspectos:['88','89','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104'],
+      aspectos: [
+        "88",
+        "89",
+        "90",
+        "91",
+        "92",
+        "93",
+        "94",
+        "95",
+        "96",
+        "97",
+        "98",
+        "99",
+        "100",
+        "101",
+        "102",
+        "103",
+        "104",
+      ],
       min: 83,
       max: 99,
+    },
+    {
+      subAspectos: "INCAPACIDADE FUNCIONAL",
+      aspectos: ["24", "25", "26", "27", "28", "29"],
     },
   ];
 
@@ -41,16 +69,12 @@ function MultidimensionalAspect(props) {
   const pontuacaoDominios = (dominio, answers, dominios) => {
     let teste = dominios.find((item) => item.subAspectos == dominio);
     let testearr = answers.filter((item) => {
-      console.log("item.aspect", item.id);
       return teste.aspectos.includes(item.id);
     });
-    console.log("=>", answers);
-    console.log("testearr", testearr);
-    console.log("testes arary", teste.aspectos);
-    console.log("soma", sumDominio(testearr));
     return sumAnswers(answers, teste.min, teste.max);
   };
   const pontuacaoDom = (dominio, answers, dominios) => {
+    console.log("=>", dominio, answers, dominios);
     let teste = dominios.find((item) => item.subAspectos == dominio);
     let testearr = answers.filter((item) => {
       return teste.aspectos.includes(item.id);
@@ -60,7 +84,6 @@ function MultidimensionalAspect(props) {
   };
 
   const retornaDados = (dados, idQuestao) => {
-
     let diagnostico = dados.find((item) => item.id == idQuestao);
     if (diagnostico != undefined) {
       diagnostico = diagnostico.answer;
@@ -68,19 +91,42 @@ function MultidimensionalAspect(props) {
     }
   };
 
-  if (props.userForm.length > 10) {
+  if (props.userForm.length > 6) {
     idade = retornaDados(props.userForm, "idade");
     genero = retornaDados(props.userForm, "genero");
   }
-  console.log("answers", props.answers);
-  console.log('dados', props.dados);
 
   if (props.answers.length > 100) {
-    console.log("entrei no if");
-    console.log("incapacidade", sumAnswers(props.dados, 23, 29));
-    totalIncapacidade = sumAnswers(props.dados, 23, 29);
-    totalComportamental = sumAnswers(props.dados, 72, 78);
-    avc = retornaDados(props.answers, "44.3");
+    totalIncapacidade = sumDominio(
+      props.dados.filter((item) =>
+        ["24", "25", "26", "27", "28", "29"].includes(item.id)
+      )
+    );
+    totalComportamental = sumDominio(
+      props.dados.filter((item) =>
+        ["72", "73", "74", "75", "76", "77", "78", "79"].includes(item.id)
+      )
+    );
+    teste = sumDominio(
+      props.dados.filter((item) =>
+        ["72", "73", "74", "75", "76", "77", "78"].includes(item.id)
+      )
+    );
+    doencas = props.answers.filter((item) =>
+      [
+        "44.11",
+        "44.12",
+        "44.13",
+        "44.14",
+        "44.15",
+        "44.16",
+        "44.17",
+        "44.18",
+        "44.19",
+        "44.110",
+      ].includes(item.id)
+    ).length;
+    avc = retornaDados(props.answers, "44.13");
   }
   return (
     <>
@@ -109,6 +155,8 @@ function MultidimensionalAspect(props) {
                         incapacidade={totalIncapacidade}
                         comportamental={totalComportamental}
                         avc={avc}
+                        teste={teste}
+                        doencas={doencas}
                       ></QuestionsMultidimensional>
                     </>
                   ))}
@@ -121,14 +169,9 @@ function MultidimensionalAspect(props) {
                   <Col md={6} className="m-auto">
                     <p className="h5">
                       Pontuação (máxima = {question.pontucao}):{" "}
-                      {pontuacaoDominios(
-                        question.aspectos,
-                        props.dados,
-                        dominio
-                      )}{" "}
-                      Necessita de investigação?
                       {pontuacaoDom(question.aspectos, props.dados, dominio)}
-
+                      {" "}
+                      Necessita de investigação?
                     </p>
                   </Col>
 
