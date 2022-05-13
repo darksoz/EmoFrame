@@ -446,8 +446,8 @@ export const Questions1 = [
         },
         {
           question: 42,
-          yes: 0,
-          no: 1,
+          yes: 1,
+          no: 0,
           input: true,
           title:
             "O(a) senhor(a) pratica exercícios físicos regulares (caminhada, natação, dança, ginástica, musculação, entre outros)? Se sim, qual a frequência? _ E por quanto tempo? _ .",
