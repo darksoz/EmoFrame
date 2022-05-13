@@ -171,26 +171,28 @@ function PageResult() {
     {
       aspectos: "Aspectos Biologicos",
       min: 19,
-      max: 54,
+      max: 52,
     },
     {
       aspectos: "Aspectos Sociais",
-      min: 54,
-      max: 87,
+      min: 52,
+      max: 85,
     },
     {
       aspectos: "Aspectos Multidimensionais",
-      min: 87,
-      max: 104,
+      min: 85,
+      max: 102,
     },
   ];
   const aspectos = {};
+  
   for (const element of dominiosList) {
     aspectos[element.aspectos] = filteredQuestions.slice(
       element.min,
       element.max
     );
   }
+  console.log('aspectos',aspectos);
   const handleClose = (path) => {
     setShow(false);
     history.push(path);

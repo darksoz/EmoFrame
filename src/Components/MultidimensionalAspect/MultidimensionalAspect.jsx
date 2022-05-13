@@ -112,20 +112,32 @@ function MultidimensionalAspect(props) {
         ["72", "73", "74", "75", "76", "77", "78"].includes(item.id)
       )
     );
-    doencas = props.answers.filter((item) =>
-      [
-        "44.11",
-        "44.12",
-        "44.13",
-        "44.14",
-        "44.15",
-        "44.16",
-        "44.17",
-        "44.18",
-        "44.19",
-        "44.110",
-      ].includes(item.id)
-    ).lengt;
+    doencas = props.answers
+      .filter((item) =>
+        [
+          "44.11",
+          "44.12",
+          "44.13",
+          "44.14",
+          "44.15",
+          "44.16",
+          "44.17",
+          "44.18",
+          "44.19",
+          "44.110",
+          "44.111",
+          "44.12",
+          "45.11",
+          "45.12",
+          "45.13",
+          "45.14",
+          "45.15",
+          "45.16",
+          "45.17",
+          "45.8",
+        ].includes(item.id)
+      )
+      .map((item) => item.answer);
     avc = retornaDados(props.answers, "44.13");
   }
   return (
@@ -169,8 +181,7 @@ function MultidimensionalAspect(props) {
                   <Col md={6} className="m-auto">
                     <p className="h5">
                       Pontuação (máxima = {question.pontucao}):{" "}
-                      {pontuacaoDom(question.aspectos, props.dados, dominio)}
-                      {" "}
+                      {pontuacaoDom(question.aspectos, props.dados, dominio)}{" "}
                       Necessita de investigação?
                     </p>
                   </Col>

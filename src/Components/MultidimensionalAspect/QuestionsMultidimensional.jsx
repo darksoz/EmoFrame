@@ -57,7 +57,9 @@ function QuestionsMultidimensional(props) {
           <strong>{props.comportamental}</strong>
         )}
         {props.pergunta.question == "104" && (
-          <strong>{props.doencas == 0 ? 'Não apresenta nenhuma doença': 'Apresenta algumas dessas doenças'}</strong>
+          <>
+            <strong>{props.doencas}</strong>
+          </>
         )}
         {props.pergunta.question == "95" && (
           <strong>Genero = {props.genero}</strong>
@@ -84,7 +86,7 @@ function QuestionsMultidimensional(props) {
           ></textarea>
         )}
         {props.pergunta.question === 90 ? (
-          ''
+          ""
         ) : (
           <p className="h5 mb-3 mt-3 p-1">
             <Container className="ml-5">
