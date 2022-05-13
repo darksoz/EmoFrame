@@ -28,7 +28,7 @@ function Page() {
   const [totalQuestions, setTotalQuestions] = React.useState(1);
   const [data, setData] = React.useState([]);
 
-  const userForm = ['entrevistador ','entrevistado','Entrada','dataAvaliação', 'Instituição','Id']
+  const userForm = ['entrevistador ','entrevistado','Entrada','dataAvaliação', 'Instituição','Id', 'genero', 'idade']
 
   const handleChange = (event) => {
     const id = event.target.name;

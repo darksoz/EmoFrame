@@ -471,8 +471,8 @@ export const Questions1 = [
           question: 44,
           yes: 0,
           no: 0,
-          title: "Nos últimos 5 anos, algum médico ou outro profissional de saúde já disse que o(a) senhor(a) tem:  _ ",
-          tooltip:"[Instruções: registre a quantidade total de diagnósticos:]",
+          title: "Nos últimos 5 anos, algum médico ou outro profissional de saúde já disse que o(a) senhor(a) tem? Registre a quantidade (em números) total de diagnósticos:  _ ",
+          tooltip: null,
           input: true,
           questions:[
             "Doença do coração (angina, infarto ou ataque cardíaco) ",
@@ -515,8 +515,8 @@ export const Questions1 = [
           input: true,
           point: 0,
           title:
-            "Quais os medicamentos utilizados pelo(a) senhor(a)? _ .",
-          tooltip:"[Instruções: Solicitar as bulas dos medicamentos e fazer registro legível dos respectivos nomes e classes terapêuticas.] [Instrução: Para classificar se há presença de polifarmácia,registrar ao lado se o idoso utiliza cinco medicamentos ou mais.]"
+            "Quais os medicamentos utilizados pelo(a) senhor(a)? Registre a quantidade (em números) de medicamentos inapropriados utilizados: _ .",
+          tooltip:"[Instruções: Solicitar as bulas dos medicamentos e fazer registro legível dos respectivos nomes e classes terapêuticas. Para classificar se há presença de polifarmácia,registrar ao lado se o idoso utiliza cinco medicamentos ou mais.]"
         },
         {
           question: 47,

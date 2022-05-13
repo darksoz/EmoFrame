@@ -111,7 +111,7 @@ function SocialAspect(props) {
               </Row>
 
               <Container className="w-75">
-                <Row className="border bg-lgrey text-dark">
+                <Row className="border bg-secondary text-white fw-lighter">
                   <hr />
                   <Col md={6} className="m-auto">
                     <p className="h5">

@@ -54,7 +54,7 @@ function QuestionsMultidimensional(props) {
           <strong>Pontuação = {props.avc != undefined ? "sim" : "não"}</strong>
         )}
         {props.pergunta.question == "100" && (
-          <strong>{props.comportamental}</strong>
+          <strong>Pontuação = {props.comportamental}</strong>
         )}
         {props.pergunta.question == "104" && (
           <>
