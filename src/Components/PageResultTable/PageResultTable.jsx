@@ -92,10 +92,24 @@ function PageResultTable(props) {
           </tr>
         </tbody>
       </Table>
-
-      <Card className='bg-lgrey my-5' >
-        <h1 className="text-white">Risco de Vulnerabilidade Biopsicossocial: {GetRisc(sumValue(props.questions))}</h1> 
-      </Card>
+      {
+        GetRisc(sumValue(props.questions)) === "Alto" &&
+        <Card className='my-5 bg-danger'>
+          <h1 className="text-dark">Risco de Vulnerabilidade Biopsicossocial: {GetRisc(sumValue(props.questions))}</h1> 
+        </Card>
+      }
+      {
+        GetRisc(sumValue(props.questions)) === "Moderado" &&
+        <Card className='my-5 bg-warning'>
+          <h1 className="text-dark">Risco de Vulnerabilidade Biopsicossocial: {GetRisc(sumValue(props.questions))}</h1> 
+        </Card>
+      }
+      {
+        GetRisc(sumValue(props.questions)) === "Baixo" &&
+        <Card className='my-5 bg-success' >
+          <h1 className="text-dark">Risco de Vulnerabilidade Biopsicossocial: {GetRisc(sumValue(props.questions))}</h1> 
+        </Card>
+      }
     </>
   );
 }
