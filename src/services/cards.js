@@ -13,7 +13,7 @@ export const cards =
         },
         {
             "image": "card",
-            "title": "ZANON",
+            "title": "EAZ",
             "page": "zanon"
         },
         {
@@ -30,6 +30,11 @@ export const cards =
             "image": "card",
             "title": "PAGE",
             "page": "page"
+        },
+        {
+            "image": "card",
+            "title": "BRUMS",
+            "page": "poms"
         }
     ]
 }

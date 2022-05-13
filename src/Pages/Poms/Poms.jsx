@@ -1,28 +1,28 @@
 import React from 'react';
-import './Panas.css';
-import Container from 'react-bootstrap/Container';
-import { Breadcrumb } from "react-bootstrap";
-import PanasExample from '../../Components/PanasExample/PanasExample';
-import PanasForm from '../../Components/PanasForm/PanasForm';
+import { Breadcrumb, Container } from "react-bootstrap";
+import Footer from "../../Components/Footer/Footer";
+import Header from "../../Components/Header/Header";
+import PomsExample from "../../Components/PomsExample/PomsExample";
+import { Questions1 } from "../../services/Questions/Poms/Poms.js";
+import { Questions2 } from "../../services/Questions/Poms/Poms.js";
+import { Questions3 } from "../../services/Questions/Poms/Poms.js";
 import arrayShuffle from 'array-shuffle';
-import { Questions1 } from "../../services/Questions/Panas/Panas.js";
-import { Questions2 } from "../../services/Questions/Panas/Panas.js";
-import { MultiStepForm, Step } from 'react-multi-form';
-import { Link } from 'react-scroll';
+import PomsForm from '../../Components/PomsForm/PomsForm';
+import { MultiStepForm, Step } from "react-multi-form";
+import Link from 'react-scroll/modules/components/Link';
 import sortArray from 'sort-array';
 import { getUsername } from '../../services/auth';
-import { SaveTest } from '../../services/api';
 import ModalTest from '../../Components/Modal/ModalTest';
-import Footer from '../../Components/Footer/Footer';
-import Header from '../../Components/Header/Header';
+import { SaveTest } from '../../services/api';
+
 
 
 let firstQuestions = arrayShuffle(Questions1);
 let secondQuestions = arrayShuffle(Questions2);
-let amountOfQuestions = (firstQuestions.length + secondQuestions.length);
+let thirdQuestions = arrayShuffle(Questions3);
+let amountOfQuestions = (firstQuestions.length + secondQuestions.length + thirdQuestions.length);
 
-
-function Panas() {
+function Poms() {
 
     const [active, setActive] = React.useState(1);
     const [answers, setAnswers] = React.useState([]);
@@ -34,7 +34,7 @@ function Panas() {
     const handleChange = (event) => {
         const id = parseInt(event.target.name);
         const data = { id, answer: event.target.value };
-
+        console.log(data)
         if (answers.some(a => a.id === id)) {
             setAnswers([...answers.filter(b => b.id !== id), data]);
         }
@@ -44,9 +44,10 @@ function Panas() {
     }
 
     const handleFormData = async () => {
-        let json = { "Datetime": new Date(Date.now()), "Instrument": "panas", "Username": getUsername(), "Questions": sortArray(answers, { by: 'id', }) }
+        let json = { "Datetime": new Date(Date.now()), "Instrument": "poms", "Username": getUsername(), "Questions": sortArray(answers, { by: 'id', }) }
         json = JSON.stringify(json);
-        let response = await SaveTest(json, 'panas');
+
+        let response = await SaveTest(json,"poms");
         if (response.status === 201) {
             setTitle("Teste concluído");
             setBody("Atividade realizada com sucesso");
@@ -62,18 +63,19 @@ function Panas() {
 
     return (
         <>
-        <Header/>
+            <Header />
             <Breadcrumb>
                 <Breadcrumb.Item href='./dashboard' style={{marginLeft:'12px'}}>Página Inicial</Breadcrumb.Item>
-                <Breadcrumb.Item active>Panas</Breadcrumb.Item>
+                <Breadcrumb.Item active>BRUMS</Breadcrumb.Item>
             </Breadcrumb>
+
+            <ModalTest Success={success} Title={title} Body={body} Reveal={show} Finish={"/dashboard"} Retry={true} />
+
+
             <Container>
-                <ModalTest Success={success} Title={title} Body={body} Reveal={show} Finish={"/dashboard"} Retry={true} />
-                <PanasExample />
-
-                <div id="sample" onChange={handleChange}>
-                    <MultiStepForm activeStep={active}>
-
+                <PomsExample />
+                <div onChange={handleChange}>
+                    <MultiStepForm activeStep={active} >
                         <Step label="Passo 1">
                             {
                                 firstQuestions.map((content, index) => (
@@ -81,7 +83,7 @@ function Panas() {
                                         <div style={{
                                             marginBottom: "20px",
                                         }}>
-                                            <PanasForm Title={content.Title}
+                                            <PomsForm Title={content.Title}
                                                 Name={content.Name} />
                                             <hr></hr>
                                         </div>
@@ -89,7 +91,6 @@ function Panas() {
                                 ))
                             }
                         </Step>
-
                         <Step label="Passo 2">
                             {
 
@@ -98,39 +99,52 @@ function Panas() {
                                         <div style={{
                                             marginBottom: "20px",
                                         }}>
-                                            <PanasForm Title={content.Title}
+                                            <PomsForm Title={content.Title}
                                                 Name={content.Name} />
                                             <hr></hr>
                                         </div>
                                     </>
                                 ))
                             }
-
                         </Step>
+                        <Step label="Passo 3">
+                            {
 
+                                thirdQuestions.map((content, index) => (
+                                    <>
+                                        <div style={{
+                                            marginBottom: "20px",
+                                        }}>
+                                            <PomsForm Title={content.Title}
+                                                Name={content.Name} />
+                                            <hr></hr>
+                                        </div>
+                                    </>
+                                ))
+                            }
+                        </Step>
                     </MultiStepForm>
                 </div>
-
                 {(active === 1 && <Link to="sample"><button class="btn whitebutton btn-lg" onClick={() => setActive(active + 1)}>Próximo</button></Link>)}
-                {(active > 1 && active !== 2 &&
+                {(active > 1 && active !== 3 &&
                     <div>
                         <Link to="sample">
-                            <button class="btn whitebutton btn-lg" onClick={() => setActive(active - 1)} >Anterior</button>
+                            <button class="btn whitebutton btn-lg" style={{marginRight:'20px'}} onClick={() => setActive(active - 1)} >Anterior</button>
                         </Link>
                         <Link to="sample">
                             <button class="btn whitebutton btn-lg" onClick={() => setActive(active + 1)}>Próximo</button>
                         </Link>
                     </div>)
                 }
-                {(active === 2 && answers.length === amountOfQuestions) &&
+                {(active === 3 && answers.length === amountOfQuestions) &&
                     <div>
                         <Link to="sample">
                             <button class="btn whitebutton btn-lg" onClick={() => setActive(active - 1)}>Anterior</button>
                         </Link>
-                        <button class="btn whitebutton btn-lg" style={{marginLeft:'20px'}} onClick={() => handleFormData()}>Salvar</button>
+                        <button class="btn whitebutton btn-lg" style={{marginLeft:'20px'}} onClick={handleFormData}>Salvar</button>
                     </div>
                 }
-                {(active === 2 && answers.length !== amountOfQuestions) &&
+                {(active === 3 && answers.length !== amountOfQuestions) &&
                     <div>
                         <Link to="sample">
                             <button class="btn whitebutton btn-lg" onClick={() => setActive(active - 1)}>Anterior</button>
@@ -138,13 +152,10 @@ function Panas() {
                     </div>
                 }
             </Container>
-            <div className='mt-5'>
 
-                <Footer/>
-
-            </div>
+            <Footer />
         </>
+
     );
 }
-
-export default Panas;
+export default Poms;

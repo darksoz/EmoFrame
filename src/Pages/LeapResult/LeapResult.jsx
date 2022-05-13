@@ -143,7 +143,7 @@ function LeapResult() {
         </Modal.Footer>
       </Modal>
       <Breadcrumb>
-        <Breadcrumb.Item href='/dashboard'>Página Inicial</Breadcrumb.Item>
+        <Breadcrumb.Item href='/dashboard' style={{marginLeft:'12px'}}>Página Inicial</Breadcrumb.Item>
         <Breadcrumb.Item href='/searchResults'>Resultados</Breadcrumb.Item>
         <Breadcrumb.Item active>Resultado SAM</Breadcrumb.Item>
       </Breadcrumb>
