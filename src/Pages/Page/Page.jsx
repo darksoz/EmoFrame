@@ -7,7 +7,6 @@ import SocialAspect from "../../Components/SocialAspect/SocialAspect";
 import MultidimensionalAspect from "../../Components/MultidimensionalAspect/MultidimensionalAspect";
 import { MultiStepForm, Step } from "react-multi-form";
 import { Link } from "react-scroll";
-import { getUsername } from "../../services/auth";
 import sortArray from "sort-array";
 import { SavePageTest } from "../../services/api";
 import RegisterPage from "../../Components/RegisterPage/RegisterPage";
@@ -59,7 +58,6 @@ function Page() {
     }
   };
   const verifyForm = (userForm, arr) =>{
-    console.log(arr)
     if (arr.length !== 0) {
       let difference = userForm.filter((x) => !arr.includes(x));
       if (difference.length !== 0) {
@@ -113,7 +111,6 @@ function Page() {
   };
   const handleFormData = async () => {
     let name = userFormData.filter(a=> a.id==="nomepage")[0];
-    console.log("Name aqui => ", name);
     let json = {
       Datetime: new Date(Date.now()),
       Instrument: "page",

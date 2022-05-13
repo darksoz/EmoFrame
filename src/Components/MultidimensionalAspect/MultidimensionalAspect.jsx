@@ -74,7 +74,6 @@ function MultidimensionalAspect(props) {
     return sumAnswers(answers, teste.min, teste.max);
   };
   const pontuacaoDom = (dominio, answers, dominios) => {
-    console.log("=>", dominio, answers, dominios);
     let teste = dominios.find((item) => item.subAspectos == dominio);
     let testearr = answers.filter((item) => {
       return teste.aspectos.includes(item.id);

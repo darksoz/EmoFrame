@@ -16,7 +16,6 @@ function QuestionsMultidimensional(props) {
       }
     }
   };
-  console.log("avc", props.avc);
 
   return (
     <>
