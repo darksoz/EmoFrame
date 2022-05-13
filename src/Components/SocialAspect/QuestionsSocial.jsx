@@ -49,6 +49,9 @@ function QuestionsSocial(props) {
             name={`${props.pergunta.question}.7`}
           ></textarea>
         )}
+        {props.pergunta.question === 55 || props.pergunta.question === 76 ? (
+          ''
+        ) : (
           <p className="h5 mb-3 mt-3 p-1">
             <Container className="ml-5">
               <div className="form-check" style={{ minHeight: "2.0em" }}>
@@ -75,6 +78,7 @@ function QuestionsSocial(props) {
               </div>
             </Container>
           </p>
+        )}
         </p>
     </>
   );

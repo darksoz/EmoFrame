@@ -8,31 +8,43 @@ function BiologicalAspect(props) {
   let dominio = [
     {
       subAspectos: "DÉFICIT SENSORIAL",
-      aspectos:['20','21','22','23'],
+      aspectos: ["20", "21", "22", "23"],
       min: 19,
       max: 23,
     },
     {
       subAspectos: "INCAPACIDADE FUNCIONAL",
-      aspectos:['24','25','26','27','28','29'],
+      aspectos: ["24", "25", "26", "27", "28", "29"],
       min: 23,
       max: 29,
     },
     {
       subAspectos: "DESNUTRIÇÃO",
-      aspectos:['30','31','32','33','34','35'],
+      aspectos: ["30", "31", "32", "33", "34", "35"],
       min: 29,
       max: 35,
     },
     {
       subAspectos: "DOENÇAS CARDIOVASCULA-RES (DCV)",
-      aspectos:['36','37','38','39','40','41','42','43'],
+      aspectos: ["36", "37", "38", "39", "40", "41", "42", "43"],
       min: 35,
       max: 43,
     },
     {
       subAspectos: "USO INADEQUADO DE MEDICAMENTOS",
-      aspectos:['44','45','46','47','48','49','50','51','52','53','54'],
+      aspectos: [
+        "44",
+        "45",
+        "46",
+        "47",
+        "48",
+        "49",
+        "50",
+        "51",
+        "52",
+        "53",
+        "54",
+      ],
       min: 43,
       max: 52,
     },
@@ -63,13 +75,8 @@ function BiologicalAspect(props) {
   const pontuacaoDominios = (dominio, answers, dominios) => {
     let teste = dominios.find((item) => item.subAspectos == dominio);
     let testearr = answers.filter((item) => {
-      console.log("item.aspect", item.id);
       return teste.aspectos.includes(item.id);
     });
-    console.log("=>", answers);
-    console.log("testearr", testearr);
-    console.log("testes arary", teste.aspectos);
-    console.log("soma", sumDominio(testearr));
     return sumAnswers(answers, teste.min, teste.max);
   };
   const pontuacaoDom = (dominio, answers, dominios) => {
@@ -119,13 +126,8 @@ function BiologicalAspect(props) {
                   <Col md={6} className="m-auto">
                     <p className="h5">
                       Pontuação (máxima = {question.pontucao}):{" "}
-                      {pontuacaoDominios(
-                        question.aspectos,
-                        props.dados,
-                        dominio
-                      )}{" "}
+                      {pontuacaoDom(question.aspectos, props.dados, dominio)}{" "}
                       Necessita de investigação?
-                      {pontuacaoDom(question.aspectos, props.dados, dominio)}
                     </p>
                   </Col>
 

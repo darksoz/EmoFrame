@@ -8,22 +8,39 @@ function SocialAspect(props) {
   let dominio = [
     {
       subAspectos: "BAIXO SUPORTE SOCIAL",
-      aspectos:['55', '56', '57','58','59','60','61','62','63'],
+      aspectos: ["55", "56", "57", "58", "59", "60", "61", "62", "63"],
       min: 52,
       max: 60,
     },
     {
       subAspectos: "VIOLÊNCIA",
-      aspectos:['64','65', '66', '67', '68', '69', '70', '71'],
+      aspectos: ["64", "65", "66", "67", "68", "69", "70", "71"],
       min: 60,
       max: 68,
     },
     {
       subAspectos: "PROBLEMAS AMBIENTAIS",
-      aspectos:['72', '73', '74', '75', '76', '77', '78', '79','80','81','82','83','84','85','86','87'],
+      aspectos: [
+        "72",
+        "73",
+        "74",
+        "75",
+        "76",
+        "77",
+        "78",
+        "79",
+        "80",
+        "81",
+        "82",
+        "83",
+        "84",
+        "85",
+        "86",
+        "87",
+      ],
       min: 68,
       max: 83,
-    }
+    },
   ];
 
   const sumAnswers = (arr, min, max) => {
@@ -51,13 +68,8 @@ function SocialAspect(props) {
   const pontuacaoDominios = (dominio, answers, dominios) => {
     let teste = dominios.find((item) => item.subAspectos == dominio);
     let testearr = answers.filter((item) => {
-      console.log("item.aspect", item.id);
       return teste.aspectos.includes(item.id);
     });
-    console.log("=>", answers);
-    console.log("testearr", testearr);
-    console.log("testes arary", teste.aspectos);
-    console.log("soma", sumDominio(testearr));
     return sumAnswers(answers, teste.min, teste.max);
   };
   const pontuacaoDom = (dominio, answers, dominios) => {
@@ -103,15 +115,9 @@ function SocialAspect(props) {
                   <hr />
                   <Col md={6} className="m-auto">
                     <p className="h5">
-                    Pontuação (máxima = {question.pontucao}):{" "}
-                        {pontuacaoDominios(
-                          question.aspectos,
-                          props.dados,
-                          dominio
-                        )}{" "}
-                        Necessita de investigação?
-                        {pontuacaoDom(question.aspectos, props.dados, dominio)}
-
+                      Pontuação (máxima = {question.pontucao}):{" "}
+                      {pontuacaoDom(question.aspectos, props.dados, dominio)}{" "}
+                      Necessita de investigação?
                     </p>
                   </Col>
                   <Col md={6}>

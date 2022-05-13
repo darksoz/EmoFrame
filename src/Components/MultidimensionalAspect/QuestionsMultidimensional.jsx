@@ -12,22 +12,11 @@ function QuestionsMultidimensional(props) {
     if (tam > parseInt(str)) {
       let value = arr.find((item) => item.id == str);
       if (value != undefined) {
-        return value.answer == "1" ? "Pontuou"  : "Não Pontuou";
+        return value.answer == "1" ? "Pontuou" : "Não Pontuou";
       }
     }
   };
-
-  const sumAnswers = (arr, min, max) => {
-    let value = arr.slice(min, max);
-    let sum = 0;
-
-    if (value.length > 0) {
-      value.forEach((element) => {
-        sum += parseInt(element.answer);
-      });
-      return sum;
-    }
-  };
+  console.log("avc", props.avc);
 
   return (
     <>
@@ -52,21 +41,27 @@ function QuestionsMultidimensional(props) {
         ) : (
           ""
         )}
-        {props.pergunta.question == "94" && <strong>Idade = {props.idade}</strong>}
+        {props.pergunta.question == "94" && (
+          <strong>Idade = {props.idade}</strong>
+        )}
         {props.pergunta.question == "97" && (
           <strong>{props.incapacidade}</strong>
         )}
         {props.pergunta.question == "99" && (
-          <strong>{props.incapacidade}</strong>
+          <strong>{props.teste}</strong>
         )}
-        {props.pergunta.question == "102" && <strong>{props.avc}</strong>}
+        {props.pergunta.question == "102" && (
+          <strong>{props.avc != undefined ? "sim" : "não"}</strong>
+        )}
         {props.pergunta.question == "100" && (
           <strong>{props.comportamental}</strong>
         )}
         {props.pergunta.question == "104" && (
-          <strong>{props.incapacidade}</strong>
+          <strong>{props.doencas == 0 ? 'Não apresenta nenhuma doença': 'Apresenta algumas dessas doenças'}</strong>
         )}
-        {props.pergunta.question == "95" && <strong>Genero = {props.genero}</strong>}
+        {props.pergunta.question == "95" && (
+          <strong>Genero = {props.genero}</strong>
+        )}
         <strong>
           {props.pergunta.questions?.map((a, index) => (
             <>
@@ -88,32 +83,36 @@ function QuestionsMultidimensional(props) {
             name={`${props.pergunta.question}.7`}
           ></textarea>
         )}
-        <p className="h5 mb-3 mt-3 p-1">
-          <Container className="ml-5">
-            <div className="form-check" style={{ minHeight: "2.0em" }}>
-              <input
-                className="form-check-input input-page"
-                type="radio"
-                value={props.pergunta.yes}
-                name={props.pergunta.question}
-              />
-              <label className="form-check-label label-page">
-                {props.pergunta.yes} = SIM
-              </label>
-            </div>
-            <div className="form-check">
-              <input
-                className="form-check-input input-page"
-                type="radio"
-                value={props.pergunta.no}
-                name={props.pergunta.question}
-              />
-              <label className="form-check-label label-page l-yes">
-                {props.pergunta.no} = NÃO
-              </label>
-            </div>
-          </Container>
-        </p>
+        {props.pergunta.question === 90 ? (
+          ''
+        ) : (
+          <p className="h5 mb-3 mt-3 p-1">
+            <Container className="ml-5">
+              <div className="form-check" style={{ minHeight: "2.0em" }}>
+                <input
+                  className="form-check-input input-page"
+                  type="radio"
+                  value={props.pergunta.yes}
+                  name={props.pergunta.question}
+                />
+                <label className="form-check-label label-page">
+                  {props.pergunta.yes} = SIM
+                </label>
+              </div>
+              <div className="form-check">
+                <input
+                  className="form-check-input input-page"
+                  type="radio"
+                  value={props.pergunta.no}
+                  name={props.pergunta.question}
+                />
+                <label className="form-check-label label-page l-yes">
+                  {props.pergunta.no} = NÃO
+                </label>
+              </div>
+            </Container>
+          </p>
+        )}
       </p>
     </>
   );

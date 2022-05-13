@@ -231,7 +231,7 @@ function Page() {
             </button>
           </Link>
         )}
-        {active === 4 && totalQuestions >= 85 && (
+        {active === 4 && totalQuestions >= 83 && (
           <Link to="sample">
             <button
               class="btn whitebutton btn-lg"
