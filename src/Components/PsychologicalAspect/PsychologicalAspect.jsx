@@ -36,7 +36,7 @@ function PsychologicalAspect(props) {
   };
 
   const pontuacaoDominios = (dominio, answers, dominios) => {
-    let teste = dominios.find(item=> item.subAspectos == dominio )
+    let teste = dominios.find((item) => item.subAspectos == dominio);
     return sumAnswers(answers, teste.min, teste.max);
   };
 
@@ -80,12 +80,13 @@ function PsychologicalAspect(props) {
 
                     <Col md={6} className="m-auto">
                       <p className="h5">
-                        {question.pontucao} = 
+                        Pontuação (máxima = {question.pontucao}):{" "}
                         {pontuacaoDominios(
                           question.aspectos,
                           props.dados,
                           dominio
-                        )}
+                        )}{" "}
+                        Necessita de investigação?
                       </p>
                     </Col>
 

@@ -12,11 +12,23 @@ function QuestionsMultidimensional(props) {
     if (tam > parseInt(str)) {
       let value = arr.find((item) => item.id == str);
       if (value != undefined) {
-        return value.answer == "1" ? 'Pontuou' : 'Não Pontuou';
+        return value.answer == "1" ? "Pontuou"  : "Não Pontuou";
       }
     }
   };
- 
+
+  const sumAnswers = (arr, min, max) => {
+    let value = arr.slice(min, max);
+    let sum = 0;
+
+    if (value.length > 0) {
+      value.forEach((element) => {
+        sum += parseInt(element.answer);
+      });
+      return sum;
+    }
+  };
+
   return (
     <>
       <p className="h5 mb-3 mt-3 border p-4">
@@ -40,16 +52,21 @@ function QuestionsMultidimensional(props) {
         ) : (
           ""
         )}
-        {props.pergunta.question == "94" && (
-          <strong>
-            {props.idade}
-          </strong>
+        {props.pergunta.question == "94" && <strong>Idade = {props.idade}</strong>}
+        {props.pergunta.question == "97" && (
+          <strong>{props.incapacidade}</strong>
         )}
-        {props.pergunta.question == '95' && (<strong>
-          {props.genero}
-        </strong>)
-
-        }
+        {props.pergunta.question == "99" && (
+          <strong>{props.incapacidade}</strong>
+        )}
+        {props.pergunta.question == "102" && <strong>{props.avc}</strong>}
+        {props.pergunta.question == "100" && (
+          <strong>{props.comportamental}</strong>
+        )}
+        {props.pergunta.question == "104" && (
+          <strong>{props.incapacidade}</strong>
+        )}
+        {props.pergunta.question == "95" && <strong>Genero = {props.genero}</strong>}
         <strong>
           {props.pergunta.questions?.map((a, index) => (
             <>

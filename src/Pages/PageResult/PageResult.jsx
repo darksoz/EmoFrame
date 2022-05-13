@@ -16,6 +16,21 @@ import PageNotesTable from "../../Components/PageNotesTable/PageNotesTable";
 import PageInvestigationTable from "../../Components/PageInvestigationTable/PageInvestigationTable";
 import ModalTest from "../../Components/Modal/ModalTest";
 import { SavePageResult } from "../../services/api";
+import './PageResult.css';
+import jsPDF from 'jspdf';
+import html2canvas from 'html2canvas';
+
+
+
+  html2canvas(document.querySelector("#capture")).then(canvas => {
+     document.body.appendChild(canvas);  // if you want see your screenshot in body.
+     const imgData = canvas.toDataURL('image/png');
+     const pdf = new jsPDF();
+     pdf.addImage(imgData, 'PNG', 0, 0);
+     pdf.save("download.pdf"); 
+ });
+
+
 
 function PageResult() {
   const [questions, setQuestions] = useState([]);
@@ -215,6 +230,8 @@ function PageResult() {
         Retry={true}
       />
       <Container onChange={handleChangeForm}>
+
+        <div id="capture">
         {name && datetime && (
           <>
             <h1>Entrevistado: {namePage}</h1>
@@ -232,6 +249,8 @@ function PageResult() {
         <PageInvestigationTable aspects={aspectsSort} />
 
         <GerontologistAssessment evaluation={evaluationOb} />
+
+        </div>
 
         <ActionPlanning evaluation={evaluationOb} />
 
