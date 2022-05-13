@@ -165,7 +165,7 @@ function PageResult() {
     (obj, item) => Object.assign(obj, { [item.id]: item.answer }),
     {}
   );
-
+  console.log('questions', questions);
   const dominiosList = [
     { aspectos: "Aspectos Psicologicos", min: 0, max: 19 },
     {
@@ -176,11 +176,11 @@ function PageResult() {
     {
       aspectos: "Aspectos Sociais",
       min: 52,
-      max: 85,
+      max: 83,
     },
     {
       aspectos: "Aspectos Multidimensionais",
-      min: 85,
+      min: 83,
       max: 102,
     },
   ];
