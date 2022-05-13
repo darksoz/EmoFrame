@@ -112,10 +112,12 @@ function Page() {
     }
   };
   const handleFormData = async () => {
+    let name = userFormData.filter(a=> a.id==="nomepage")[0];
+    console.log("Name aqui => ", name);
     let json = {
       Datetime: new Date(Date.now()),
       Instrument: "page",
-      Username: getUsername(),
+      Username: `${name.answer}`,
       Questions: sortArray(answers, { by: "id" }),
       Evaluation: [],
       UserDataForm: userFormData,

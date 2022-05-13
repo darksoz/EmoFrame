@@ -27,20 +27,17 @@ function MultidimensionalAspect(props) {
       return sum;
     }
   };
-  console.log("props firm", props.userForm);
+
   const pontuacaoDominios = (dominio, answers, dominios) => {
     let teste = dominios.find((item) => item.subAspectos == dominio);
     return sumAnswers(answers, teste.min, teste.max);
   };
 
   const retornaDados = (dados, idQuestao) => {
-    console.log("entriy");
 
-    console.log("entrify", dados.length);
     let diagnostico = dados.find((item) => item.id == idQuestao);
     if (diagnostico != undefined) {
       diagnostico = diagnostico.answer;
-      console.log("diagnostico", diagnostico);
       return diagnostico;
     }
   };

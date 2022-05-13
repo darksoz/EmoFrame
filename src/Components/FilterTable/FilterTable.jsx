@@ -58,10 +58,7 @@ function FilterTable(props) {
             ).map((row, index) => (
               <TableRow key={index}>
                 <TableCell component="th" scope="row">
-                  {row.Username}{" "}
-                  {row.UserDataForm != undefined
-                    ? returnName(row.UserDataForm)
-                    : ""}
+                  {row.Username}
                 </TableCell>
                 <TableCell align="right">
                   <a href={`/${row.Instrument}Result/${row._id}`}>
