@@ -45,13 +45,13 @@ function QuestionsMultidimensional(props) {
           <strong>Idade = {props.idade}</strong>
         )}
         {props.pergunta.question == "97" && (
-          <strong>{props.incapacidade}</strong>
+          <strong>Pontuação = {props.incapacidade}</strong>
         )}
         {props.pergunta.question == "99" && (
-          <strong>{props.teste}</strong>
+          <strong>Pontuação = {props.teste}</strong>
         )}
         {props.pergunta.question == "102" && (
-          <strong>{props.avc != undefined ? "sim" : "não"}</strong>
+          <strong>Pontuação = {props.avc != undefined ? "sim" : "não"}</strong>
         )}
         {props.pergunta.question == "100" && (
           <strong>{props.comportamental}</strong>

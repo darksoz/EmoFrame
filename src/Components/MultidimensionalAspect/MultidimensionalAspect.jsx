@@ -125,7 +125,7 @@ function MultidimensionalAspect(props) {
         "44.19",
         "44.110",
       ].includes(item.id)
-    ).length;
+    ).lengt;
     avc = retornaDados(props.answers, "44.13");
   }
   return (
