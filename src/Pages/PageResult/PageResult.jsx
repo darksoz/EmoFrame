@@ -15,8 +15,22 @@ import Footer from "../../Components/Footer/Footer";
 import PageNotesTable from "../../Components/PageNotesTable/PageNotesTable";
 import PageInvestigationTable from "../../Components/PageInvestigationTable/PageInvestigationTable";
 import ModalTest from "../../Components/Modal/ModalTest";
-import sortArray from "sort-array";
 import { SavePageResult } from "../../services/api";
+import './PageResult.css';
+import jsPDF from 'jspdf';
+import html2canvas from 'html2canvas';
+
+
+
+html2canvas(document.querySelector("#capture")).then(canvas => {
+  document.body.appendChild(canvas);  // if you want see your screenshot in body.
+  const imgData = canvas.toDataURL('image/png');
+  const pdf = new jsPDF();
+  pdf.addImage(imgData, 'PNG', 0, 0);
+  pdf.save("download.pdf");
+});
+
+
 
 function PageResult() {
   const [questions, setQuestions] = useState([]);
@@ -44,9 +58,9 @@ function PageResult() {
   };
   const returnName = (data) => {
     if (data.length != 0) {
-      return  data.filter((a) => a.id == "nomepage")[0].answer;
-    }else{
-      return ""; 
+      return data.filter((a) => a.id == "nomepage")[0].answer;
+    } else {
+      return "";
     }
   };
 
@@ -68,18 +82,18 @@ function PageResult() {
             setQuestions(data.Questions);
             setName(data.Username);
             setDatetime(data.Datetime);
-            let teste = returnName(data.UserDataForm,'nomepage' );
+            let teste = returnName(data.UserDataForm, 'nomepage');
             setNamePage(teste);
             let userId = data.UserDataForm.filter(a => a.id === "Id")[0].answer;
-            if(userId){
+            if (userId) {
               let response = await GetPageAmountOfResult(userId);
 
-              let arrayId = 
-              response.data.sort(function(a, b) {
+              let arrayId =
+                response.data.sort(function (a, b) {
                   var c = new Date(a.Datetime);
                   var d = new Date(b.Datetime);
-                  return c-d;
-              });
+                  return c - d;
+                });
               let amount = arrayId.length;
               let currentTest = arrayId.findIndex(a => a._id === data._id) + 1;
               setTestOrder(`${currentTest} de ${amount}`);
@@ -151,26 +165,26 @@ function PageResult() {
     (obj, item) => Object.assign(obj, { [item.id]: item.answer }),
     {}
   );
-
   const dominiosList = [
     { aspectos: "Aspectos Psicologicos", min: 0, max: 19 },
     {
       aspectos: "Aspectos Biologicos",
       min: 19,
-      max: 54,
+      max: 52,
     },
     {
       aspectos: "Aspectos Sociais",
-      min: 54,
-      max: 87,
+      min: 52,
+      max: 83,
     },
     {
       aspectos: "Aspectos Multidimensionais",
-      min: 87,
-      max: 104,
+      min: 83,
+      max: 102,
     },
   ];
   const aspectos = {};
+  
   for (const element of dominiosList) {
     aspectos[element.aspectos] = filteredQuestions.slice(
       element.min,
@@ -215,7 +229,10 @@ function PageResult() {
         Finish={"/pageResult/" + id}
         Retry={true}
       />
+
       <Container onChange={handleChangeForm}>
+
+
         {name && datetime && (
           <>
             <h1>Entrevistado: {namePage}</h1>
@@ -228,12 +245,16 @@ function PageResult() {
 
         <DemandsMap questions={filteredQuestions} evaluation={evaluationOb} />
 
+        <div className="no-print">
         <PageNotesTable aspects={filteredAspects} />
 
         <PageInvestigationTable aspects={aspectsSort} />
 
+        </div>
+
         <GerontologistAssessment evaluation={evaluationOb} />
 
+        <div className="no-print">
         <ActionPlanning evaluation={evaluationOb} />
 
         <ActionsImplementation evaluation={evaluationOb} />
@@ -242,6 +263,10 @@ function PageResult() {
         <button class="btn whitebutton btn-lg" onClick={() => handleFormData()}>
           Salvar
         </button>
+        <button style={{marginLeft:'20px'}}  class="btn whitebutton btn-lg" onClick={() => window.print()}>
+          Imprimir
+        </button>
+        </div>
       </Container>
       <Footer />
     </>

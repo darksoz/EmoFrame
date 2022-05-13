@@ -4,7 +4,90 @@ import Col from "react-bootstrap/Col";
 import { Questions2 } from "../../services/Questions/Page/Page";
 import QuestionsPage from "./QuestionsPage";
 
-function BiologicalAspect() {
+function BiologicalAspect(props) {
+  let dominio = [
+    {
+      subAspectos: "DÉFICIT SENSORIAL",
+      aspectos: ["20", "21", "22", "23"],
+      min: 19,
+      max: 23,
+    },
+    {
+      subAspectos: "INCAPACIDADE FUNCIONAL",
+      aspectos: ["24", "25", "26", "27", "28", "29"],
+      min: 23,
+      max: 29,
+    },
+    {
+      subAspectos: "DESNUTRIÇÃO",
+      aspectos: ["30", "31", "32", "33", "34", "35"],
+      min: 29,
+      max: 35,
+    },
+    {
+      subAspectos: "DOENÇAS CARDIOVASCULA-RES (DCV)",
+      aspectos: ["36", "37", "38", "39", "40", "41", "42", "43"],
+      min: 35,
+      max: 43,
+    },
+    {
+      subAspectos: "USO INADEQUADO DE MEDICAMENTOS",
+      aspectos: [
+        "44",
+        "45",
+        "46",
+        "47",
+        "48",
+        "49",
+        "50",
+        "51",
+        "52",
+        "53",
+        "54",
+      ],
+      min: 43,
+      max: 52,
+    },
+  ];
+
+  const sumAnswers = (arr, min, max) => {
+    let value = arr.slice(min, max);
+    let sum = 0;
+
+    if (value.length > 0) {
+      value.forEach((element) => {
+        sum += parseInt(element.answer);
+      });
+      return sum;
+    }
+  };
+
+  const sumDominio = (arr) => {
+    let sum = 0;
+    if (arr.length > 0) {
+      arr.forEach((element) => {
+        sum += parseInt(element.answer);
+      });
+      return sum;
+    }
+  };
+
+  const pontuacaoDominios = (dominio, answers, dominios) => {
+    let teste = dominios.find((item) => item.subAspectos == dominio);
+    let testearr = answers.filter((item) => {
+      return teste.aspectos.includes(item.id);
+    });
+    return sumAnswers(answers, teste.min, teste.max);
+  };
+  const pontuacaoDom = (dominio, answers, dominios) => {
+    let teste = dominios.find((item) => item.subAspectos == dominio);
+    let testearr = answers.filter((item) => {
+      return teste.aspectos.includes(item.id);
+    });
+
+    return sumDominio(testearr);
+  };
+
   return (
     <>
       <div id="passo" className="border border-dark bg-lgreen text-white">
@@ -29,6 +112,8 @@ function BiologicalAspect() {
                         pergunta={pergunta}
                         index={index}
                         key={index}
+                        dadosQuestoes={props.dados}
+                        respostas={props.data}
                       ></QuestionsPage>
                     </>
                   ))}
@@ -36,10 +121,14 @@ function BiologicalAspect() {
               </Row>
 
               <Container className="w-75">
-                <Row className="border bg-lgreen text-white">
+                <Row className="border bg-secondary text-light fw-lighter">
                   <hr />
                   <Col md={6} className="m-auto">
-                    <p className="h5">{question.pontucao}</p>
+                    <p className="h5">
+                      Pontuação (máxima = {question.pontucao}):{" "}
+                      {pontuacaoDom(question.aspectos, props.dados, dominio)}{" "}
+                      Necessita de investigação?
+                    </p>
                   </Col>
 
                   <Col md={6}>
@@ -53,7 +142,7 @@ function BiologicalAspect() {
                           type="radio"
                           value="SIM"
                           name={question.aspectos}
-                          id='Biológico'
+                          id="Biológico"
                         />
                         <label
                           className="form-check-label label-page-i"
@@ -69,7 +158,7 @@ function BiologicalAspect() {
                           type="radio"
                           value="NÃO"
                           name={question.aspectos}
-                          id='Biológico'
+                          id="Biológico"
                         />
                         <label
                           className="form-check-label label-page-i l-no"
@@ -94,10 +183,9 @@ function BiologicalAspect() {
                       rows="3"
                     ></textarea>
                   </div>
-                </Row>)
-    }
+                </Row>
+              )}
             </Card>
-            
           </Container>
         </>
       ))}

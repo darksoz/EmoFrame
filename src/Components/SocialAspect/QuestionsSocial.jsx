@@ -19,6 +19,14 @@ function QuestionsSocial(props) {
         ) : (
           props.pergunta.question + "-" + props.pergunta.title
         )}
+         {props.pergunta.tooltip != null ? (
+          <strong>
+            {props.pergunta.tooltip}
+            <br />
+          </strong>
+        ):''
+
+        }
         <strong>
           {props.pergunta.questions?.map((a, index) => (
             <>
@@ -41,33 +49,37 @@ function QuestionsSocial(props) {
             name={`${props.pergunta.question}.7`}
           ></textarea>
         )}
-        <p className="h5 mb-3 mt-3 p-1">
-          <Container className="ml-5">
-            <div className="form-check" style={{ minHeight: "2.0em" }}>
-              <input
-                className="form-check-input input-page"
-                type="radio"
-                value={props.pergunta.yes}
-                name={props.pergunta.question}
-              />
-              <label className="form-check-label label-page">
-                {props.pergunta.yes} = SIM
-              </label>
-            </div>
-            <div className="form-check">
-              <input
-                className="form-check-input input-page"
-                type="radio"
-                value={props.pergunta.no}
-                name={props.pergunta.question}
-              />
-              <label className="form-check-label label-page l-yes">
-                {props.pergunta.no} = NÃO
-              </label>
-            </div>
-          </Container>
+        {props.pergunta.question === 55 || props.pergunta.question === 76 ? (
+          ''
+        ) : (
+          <p className="h5 mb-3 mt-3 p-1">
+            <Container className="ml-5">
+              <div className="form-check" style={{ minHeight: "2.0em" }}>
+                <input
+                  className="form-check-input input-page"
+                  type="radio"
+                  value={props.pergunta.yes}
+                  name={props.pergunta.question}
+                />
+                <label className="form-check-label label-page">
+                  {props.pergunta.yes} = SIM
+                </label>
+              </div>
+              <div className="form-check">
+                <input
+                  className="form-check-input input-page"
+                  type="radio"
+                  value={props.pergunta.no}
+                  name={props.pergunta.question}
+                />
+                <label className="form-check-label label-page l-yes">
+                  {props.pergunta.no} = NÃO
+                </label>
+              </div>
+            </Container>
+          </p>
+        )}
         </p>
-      </p>
     </>
   );
 }

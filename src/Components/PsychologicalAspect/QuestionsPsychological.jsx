@@ -21,6 +21,14 @@ function QuestionsPsychological(props) {
         ) : (
           props.pergunta.question + "-" + props.pergunta.title
         )}
+        {props.pergunta.tooltip != null ? (
+          <strong>
+            {props.pergunta.tooltip}
+            <br />
+          </strong>
+        ):''
+
+        }
         {props.pergunta.questions?.map((a, index) => (
           <>
             <strong>
@@ -56,6 +64,7 @@ function QuestionsPsychological(props) {
               ></ImagesAspect>
             ))
           : ""}
+
           {checkTextBox(props.pergunta.question) && (
           <textarea
             class="form-control"
@@ -64,6 +73,7 @@ function QuestionsPsychological(props) {
             name={`${props.pergunta.question}.7`}
           ></textarea>
         )}
+
         <p className="h5 mb-3 mt-3 p-1">
           <Container className="ml-5">
             <div className="form-check" style={{ minHeight: "2.0em" }}>
