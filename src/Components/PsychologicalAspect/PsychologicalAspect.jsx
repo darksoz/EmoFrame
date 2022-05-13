@@ -4,7 +4,66 @@ import Col from "react-bootstrap/Col";
 import { Questions1 } from "../../services/Questions/Page/Page";
 import QuestionsPsychological from "./QuestionsPsychological";
 
-function PsychologicalAspect() {
+function PsychologicalAspect(props) {
+  let dominio = [
+    {
+      subAspectos: "DÉFICIT COGNITIVO",
+      aspectos: ["1", "2", "3", "4", "5", "6"],
+      min: 0,
+      max: 6,
+    },
+    {
+      subAspectos: "ATITUDE NEGATIVA EM RELAÇÃO AO ENVELHECIMENTO",
+      aspectos: ["7", "8", "9", "10", "11", "12", "13", "14"],
+      min: 6,
+      max: 14,
+    },
+    {
+      subAspectos: "DEPRESSÃO",
+      aspectos: ["14", "15", "16", "18", "19"],
+      min: 14,
+      max: 19,
+    },
+  ];
+
+  const sumAnswers = (arr, min, max) => {
+    let value = arr.slice(min, max);
+    let sum = 0;
+
+    if (value.length > 0) {
+      value.forEach((element) => {
+        sum += parseInt(element.answer);
+      });
+      return sum;
+    }
+  };
+
+  const sumDominio = (arr) => {
+    let sum = 0;
+    if (arr.length > 0) {
+      arr.forEach((element) => {
+        sum += parseInt(element.answer);
+      });
+      return sum;
+    }
+  };
+
+  const pontuacaoDominios = (dominio, answers, dominios) => {
+    let teste = dominios.find((item) => item.subAspectos == dominio);
+    let testearr = answers.filter((item) => {
+      return teste.aspectos.includes(item.id);
+    });
+    return sumAnswers(answers, teste.min, teste.max);
+  };
+  const pontuacaoDom = (dominio, answers, dominios) => {
+    let teste = dominios.find((item) => item.subAspectos == dominio);
+    let testearr = answers.filter((item) => {
+      return teste.aspectos.includes(item.id);
+    });
+
+    return sumDominio(testearr);
+  };
+
   return (
     <>
       <Container>
@@ -40,11 +99,16 @@ function PsychologicalAspect() {
                 </Row>
 
                 <Container className="w-75">
-                  <Row className="border bg-lblue text-white">
+                  <Row className="border bg-secondary text-light fw-lighter">
                     <hr />
 
                     <Col md={6} className="m-auto">
-                      <p className="h5">{question.pontucao}</p>
+                      <p className="h5">
+                        Pontuação (máxima = {question.pontucao}):{" "}
+                        {pontuacaoDom(question.aspectos, props.dados, dominio)}{" "}
+                        Necessita de investigação?
+                       
+                      </p>
                     </Col>
 
                     <Col md={6}>
@@ -58,7 +122,7 @@ function PsychologicalAspect() {
                             type="radio"
                             value="SIM"
                             name={question.aspectos}
-                            id='Psicológico'
+                            id="Psicológico"
                           />
                           <label
                             className="form-check-label label-page-i"
@@ -74,7 +138,7 @@ function PsychologicalAspect() {
                             type="radio"
                             value="NÃO"
                             name={question.aspectos}
-                            id='Psicológico'
+                            id="Psicológico"
                           />
                           <label
                             className="form-check-label label-page-i l-no"
@@ -89,18 +153,18 @@ function PsychologicalAspect() {
                   </Row>
                 </Container>
                 {index === Questions1.length - 1 && (
-                <Row>
-                  <div class="form-group justify-content-center mt-5">
-                    <textarea
-                      style={{ border: "1px solid black" }}
-                      name="anotacao_aspectos_psicologicos"
-                      class="form-control"
-                      placeholder="Anotações:"
-                      rows="3"
-                    ></textarea>
-                  </div>
-                </Row>)
-    }
+                  <Row>
+                    <div class="form-group justify-content-center mt-5">
+                      <textarea
+                        style={{ border: "1px solid black" }}
+                        name="anotacao_aspectos_psicologicos"
+                        class="form-control"
+                        placeholder="Anotações:"
+                        rows="3"
+                      ></textarea>
+                    </div>
+                  </Row>
+                )}
               </Card>
             </Container>
           </>

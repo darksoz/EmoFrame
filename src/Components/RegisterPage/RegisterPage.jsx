@@ -12,6 +12,9 @@ function RegisterPage() {
 
     const [relVisibility, setRelVisibility] = useState(false);
 
+    const [liveVisibility, setLiveVisibility] = useState(false);
+
+
 
 
     const Retirement = () => {
@@ -48,6 +51,17 @@ function RegisterPage() {
         }
         else {
             setRelVisibility(false);
+        }
+    }
+
+    const Living = () => {
+        var e = document.getElementById("Moradia");
+        var strUser = e.value;
+        if (strUser === "Outros") {
+            setLiveVisibility(true);
+        }
+        else {
+            setLiveVisibility(false);
         }
     }
 
@@ -110,7 +124,7 @@ function RegisterPage() {
                                 <Col md={6}>
                                     <Form.Group className="mb-3" controlId="">
                                         <Form.Label>Data da Aplicação</Form.Label>
-                                        <Form.Control type="date" name="DataAvaliação" />
+                                        <Form.Control type="date" name="dataAvaliação" />
                                     </Form.Group>
                                 </Col>
                             </Row>
@@ -210,8 +224,8 @@ function RegisterPage() {
                     <Row>
 
                         <Col md={6} >
-                            <Form.Select aria-label="Default select example" name='renda'>
-                                <option disabled selected>Renda Mensal (Individual e Familiar) </option>
+                            <Form.Select aria-label="Default select example" name='rendain'>
+                                <option disabled selected>Renda Mensal Indivídual </option>
                                 <option value="BPC">BPC</option>
                                 <option value="Até um salário mínimo">Até um salário mínimo</option>
                                 <option value="Entre 1 e 2 salários mínimos">Entre 1 e 2 salários mínimos</option>
@@ -225,8 +239,26 @@ function RegisterPage() {
                         </Col>
 
                         <Col md={6} >
-                            <Form.Select aria-label="Default select example" name='SituaçãoMoradia'>
-                                <option disabled selected>Com Quem Você Mora: </option>
+                        <Form.Select aria-label="Default select example" name='rendafam'>
+                                <option disabled selected>Renda Mensal Familiar </option>
+                                <option value="BPC">BPC</option>
+                                <option value="Até um salário mínimo">Até um salário mínimo</option>
+                                <option value="Entre 1 e 2 salários mínimos">Entre 1 e 2 salários mínimos</option>
+                                <option value="Entre 2 e 3 salários mínimos">Entre 2 e 3 salários mínimos</option>
+                                <option value="Entre 3 e 4 salários mínimos">Entre 3 e 4 salários mínimos</option>
+                                <option value="Entre 4 e 5 salários mínimos">Entre 4 e 5 salários mínimos</option>
+                                <option value="Entre 5 e 10 salários mínimos">Entre 5 e 10 salários mínimos</option>
+                                <option value="Mais de 10 salários mínimos">Mais de 10 salários mínimos</option>
+                                <option value="Prefere não informar">Prefere não informar</option>
+                            </Form.Select>
+                          
+                        </Col>
+                    </Row>
+
+                    <Row className="mt-2">
+                        <Col md={12}>
+                        <Form.Select  id="Moradia" aria-label="Default select example" name='SituaçãoMoradia' onChange={() => Living()}>
+                                <option disabled selected>Com quem você mora? </option>
                                 <option value="Sozinho">Sozinho (a)</option>
                                 <option value="Somente com o cônjuge">Somente com o cônjuge</option>
                                 <option value="Cônjuge e filhos">Com o cônjuge e o(s) filho(s)</option>
@@ -237,7 +269,17 @@ function RegisterPage() {
                                 <option value="Netos">Com neto(s)</option>
                                 <option value="Outros">Outros</option>
                             </Form.Select>
+                            {
+                                liveVisibility === true &&
+                                <>
+                                    <Form.Group className="mb-3 mt-2" controlId="">
+                                        <Form.Label>Com quem você mora atualmente?</Form.Label>
+                                        <Form.Control type="text" placeholder="Com quem você mora" name="moradia" />
+                                    </Form.Group>
+                                </>
+                            }
                         </Col>
+
                     </Row>
 
                     <Row className="mt-2">

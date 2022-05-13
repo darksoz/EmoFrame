@@ -50,19 +50,19 @@ function PageResultTable(props) {
               </div>
 
               <div>
-                ASPECTOS SOCIAIS (MÁXIMA = 32 PONTOS):{" "}
+                ASPECTOS SOCIOAMBIENTAIS (MÁXIMA = 31 PONTOS):{" "}
                 {sumValue(aspectos["Aspectos Sociais"])}
               </div>
 
               <div>
-                QUEDAS (MÁXIMA = 17 PONTOS):{" "}
+                DOMÍNIO TRANSVERSAL (MÁXIMA = 16 PONTOS):{" "}
                 {sumValue(aspectos["Aspectos Multidimensionais"])}
               </div>
             </td>
           </tr>
           <tr className="bg-lgrey">
             <td colSpan={3}>
-              PONTUAÇÃO TOTAL (MÁXIMA = 101 PONTOS): {sumValue(props.questions)}
+              PONTUAÇÃO TOTAL (MÁXIMA = 99 PONTOS): {sumValue(props.questions)}
             </td>
           </tr>
           <tr>
@@ -92,10 +92,24 @@ function PageResultTable(props) {
           </tr>
         </tbody>
       </Table>
-
-      <Card className='bg-lgrey my-5' >
-        <h1 className="text-white">Risco de Vulnerabilidade Biopsicossocial: {GetRisc(sumValue(props.questions))}</h1> 
-      </Card>
+      {
+        GetRisc(sumValue(props.questions)) === "Alto" &&
+        <Card className='my-5 bg-danger'>
+          <h1 className="text-dark">Risco de Vulnerabilidade Biopsicossocial: {GetRisc(sumValue(props.questions))}</h1> 
+        </Card>
+      }
+      {
+        GetRisc(sumValue(props.questions)) === "Moderado" &&
+        <Card className='my-5 bg-warning'>
+          <h1 className="text-dark">Risco de Vulnerabilidade Biopsicossocial: {GetRisc(sumValue(props.questions))}</h1> 
+        </Card>
+      }
+      {
+        GetRisc(sumValue(props.questions)) === "Baixo" &&
+        <Card className='my-5 bg-success' >
+          <h1 className="text-dark">Risco de Vulnerabilidade Biopsicossocial: {GetRisc(sumValue(props.questions))}</h1> 
+        </Card>
+      }
     </>
   );
 }

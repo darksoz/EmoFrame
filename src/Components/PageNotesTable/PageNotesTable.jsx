@@ -30,11 +30,11 @@ function PageNotesTable(props) {
               <td>{oBAspects.anotacao_aspectos_biologicos}</td>
             </tr>
             <tr>
-              <td>Social</td>
+              <td>Socioambiental</td>
               <td>{oBAspects.anotacao_aspectos_sociais}</td>
             </tr>
             <tr>
-              <td>Quedas</td>
+              <td>Trnsversal</td>
               <td>{oBAspects.anotacao_aspectos_multidimensionais}</td>
             </tr>
           </tbody>

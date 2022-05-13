@@ -7,7 +7,6 @@ import SocialAspect from "../../Components/SocialAspect/SocialAspect";
 import MultidimensionalAspect from "../../Components/MultidimensionalAspect/MultidimensionalAspect";
 import { MultiStepForm, Step } from "react-multi-form";
 import { Link } from "react-scroll";
-import { getUsername } from "../../services/auth";
 import sortArray from "sort-array";
 import { SavePageTest } from "../../services/api";
 import RegisterPage from "../../Components/RegisterPage/RegisterPage";
@@ -26,6 +25,9 @@ function Page() {
   const [success, setSuccess] = React.useState(false);
   const [userFormData, setUserFormData] = React.useState([]);
   const [totalQuestions, setTotalQuestions] = React.useState(1);
+  const [data, setData] = React.useState([]);
+
+  const userForm = ['entrevistador ','entrevistado','Entrada','dataAvaliação', 'Instituição','Id', 'genero', 'idade']
 
   const handleChange = (event) => {
     const id = event.target.name;
@@ -55,6 +57,21 @@ function Page() {
       setInvestigation([]);
     }
   };
+  const verifyForm = (userForm, arr) =>{
+    if (arr.length !== 0) {
+      let difference = userForm.filter((x) => !arr.includes(x));
+      if (difference.length !== 0) {
+        alert("Você não respondeu todas as perguntas do formulário" + difference);
+        setInvestigation([]);
+      }
+    } else {
+      alert(
+        "Você não respondeu nenhuma pergunta da demanda " + userForm
+      );
+      setInvestigation([]);
+    }
+  }
+
   const filterQuestionsByNumberInt = (questions) => {
     let data = [];
     if (questions) {
@@ -77,9 +94,11 @@ function Page() {
   useEffect(() => {
     let data = filterQuestionsByNumberInt(answers);
     let dataI = filterQuestionsByString(answers);
+    setData(data);
     setInvestigation(dataI);
     setTotalQuestions(data.length);
-  }, [answers]);
+  }, [answers, userFormData]);
+
 
   const handleChangeForm = (event) => {
     const id = event.target.name;
@@ -91,14 +110,16 @@ function Page() {
     }
   };
   const handleFormData = async () => {
+    let name = userFormData.filter(a=> a.id==="nomepage")[0];
     let json = {
       Datetime: new Date(Date.now()),
       Instrument: "page",
-      Username: getUsername(),
+      Username: `${name.answer}`,
       Questions: sortArray(answers, { by: "id" }),
       Evaluation: [],
       UserDataForm: userFormData,
     };
+
     json = JSON.stringify(json);
     let response = await SavePageTest(json);
     if (response.status === 201) {
@@ -136,28 +157,28 @@ function Page() {
               <RegisterPage />
             </Step>
             <Step
-              label="Relacionados a Aspectos Psicológicos"
+              label="Aspectos Psicológicos"
               onChange={handleChange}
             >
-              <PsychologicalAspect />
+              <PsychologicalAspect dados={data}/>
             </Step>
 
             <Step
-              label="Relacionados a Aspectos Biológicos"
+              label="Aspectos Biológicos"
               onChange={handleChange}
             >
-              <BiologicalAspect />
+              <BiologicalAspect dados={data} data={answers}/>
             </Step>
 
             <Step
-              label="Relacionados a Aspectos Sociais"
+              label="Aspectos Socioambientais"
               onChange={handleChange}
             >
-              <SocialAspect />
+              <SocialAspect dados={data} />
             </Step>
 
             <Step label="Domínio Multidimencional" onChange={handleChange}>
-              <MultidimensionalAspect />
+              <MultidimensionalAspect dados={data} userForm={userFormData} answers={answers}/>
             </Step>
           </MultiStepForm>
         </div>
@@ -179,6 +200,7 @@ function Page() {
             <button
               class="btn whitebutton btn-lg"
               onClick={() => setActive(active + 1)}
+             onMouseOver={() => verifyForm(userForm, filterQuestionsByString(userFormData))}
             >
               Próximo
             </button>
@@ -206,7 +228,7 @@ function Page() {
             </button>
           </Link>
         )}
-        {active === 4 && totalQuestions >= 85 && (
+        {active === 4 && totalQuestions >= 83 && (
           <Link to="sample">
             <button
               class="btn whitebutton btn-lg"
@@ -229,7 +251,7 @@ function Page() {
                 Anterior
               </button>
             </Link>
-            {totalQuestions >= 102 && (
+            {totalQuestions >= 99 && (
               <button
                 class="btn whitebutton btn-lg"
                 onClick={() => handleFormData()}
