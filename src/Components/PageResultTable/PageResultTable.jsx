@@ -41,21 +41,21 @@ function PageResultTable(props) {
             <td colSpan={2}>PONTUAÇÃO POR DIMENSÃO</td>
             <td className="custom">
               <div>
-                ASPECTOS PSICOLÓGICOS (MÁXIMA = {aspectos["Aspectos Psicologicos"].length} PONTOS):{" "}
+                ASPECTOS PSICOLÓGICOS (MÁXIMA = 19 PONTOS):{" "}
                 {sumValue(aspectos["Aspectos Psicologicos"])}
               </div>
               <div>
-                ASPECTOS BIOLÓGICOS (MÁXIMA = {aspectos["Aspectos Biologicos"].length} PONTOS):{" "}
+                ASPECTOS BIOLÓGICOS (MÁXIMA = 33 PONTOS):{" "}
                 {sumValue(aspectos["Aspectos Biologicos"])}
               </div>
 
               <div>
-                ASPECTOS SOCIOAMBIENTAIS (MÁXIMA = {aspectos["Aspectos Sociais"].length} PONTOS):{" "}
+                ASPECTOS SOCIOAMBIENTAIS (MÁXIMA = 31 PONTOS):{" "}
                 {sumValue(aspectos["Aspectos Sociais"])}
               </div>
 
               <div>
-                DOMÍNIO TRANSVERSAL (MÁXIMA = {aspectos["Aspectos Multidimensionais"].length} PONTOS):{" "}
+                DOMÍNIO TRANSVERSAL (MÁXIMA = 16 PONTOS):{" "}
                 {sumValue(aspectos["Aspectos Multidimensionais"])}
               </div>
             </td>
