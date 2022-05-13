@@ -5,19 +5,23 @@ import { Questions1 } from "../../services/Questions/Page/Page";
 import QuestionsPsychological from "./QuestionsPsychological";
 
 function PsychologicalAspect(props) {
+  const teste = {};
   let dominio = [
     {
       subAspectos: "DÉFICIT COGNITIVO",
+      aspectos: ["1", "2", "3", "4", "5", "6"],
       min: 0,
       max: 6,
     },
     {
       subAspectos: "ATITUDE NEGATIVA EM RELAÇÃO AO ENVELHECIMENTO",
+      aspectos: ["7", "8", "9", "10", "11", "12", "13", "14"],
       min: 6,
       max: 14,
     },
     {
       subAspectos: "DEPRESSÃO",
+      aspectos: ["14", "15", "16", "18", "19"],
       min: 14,
       max: 19,
     },
@@ -35,9 +39,35 @@ function PsychologicalAspect(props) {
     }
   };
 
+  const sumDominio = (arr) => {
+    let sum = 0;
+    if (arr.length > 0) {
+      arr.forEach((element) => {
+        sum += parseInt(element.answer);
+      });
+      return sum;
+    }
+  };
+
   const pontuacaoDominios = (dominio, answers, dominios) => {
     let teste = dominios.find((item) => item.subAspectos == dominio);
+    let testearr = answers.filter((item) => {
+      console.log("item.aspect", item.id);
+      return teste.aspectos.includes(item.id);
+    });
+    console.log("=>", answers);
+    console.log("testearr", testearr);
+    console.log("testes arary", teste.aspectos);
+    console.log("soma", sumDominio(testearr));
     return sumAnswers(answers, teste.min, teste.max);
+  };
+  const pontuacaoDom = (dominio, answers, dominios) => {
+    let teste = dominios.find((item) => item.subAspectos == dominio);
+    let testearr = answers.filter((item) => {
+      return teste.aspectos.includes(item.id);
+    });
+
+    return sumDominio(testearr);
   };
 
   return (
@@ -87,6 +117,7 @@ function PsychologicalAspect(props) {
                           dominio
                         )}{" "}
                         Necessita de investigação?
+                        {pontuacaoDom(question.aspectos, props.dados, dominio)}
                       </p>
                     </Col>
 

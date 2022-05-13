@@ -944,16 +944,6 @@ export const Questions1 = [
       ],
     },
   ];
-  
-   export  const Demandas = 
-    {
-      biologicos:['DÉFICIT SENSORIAL','INCAPACIDADE FUNCIONAL','DESNUTRIÇÃO','DOENÇAS CARDIOVASCULA-RES (DCV)','USO INADEQUADO DE MEDICAMENTOS'],
-      sociais:['BAIXO SUPORTE SOCIAL','VIOLÊNCIA', 'PROBLEMAS AMBIENTAIS'],
-      psicologicos:['DÉFICIT COGNITIVO','ATITUDE NEGATIVA EM RELAÇÃO AO ENVELHECIMENTO','DEPRESSÃO'],
-      multidimensionais:['QUEDAS'],
-    }
-  
-
   export const Questions4 = [
     {
       aspectos: "QUEDAS",
@@ -1124,3 +1114,16 @@ export const Questions1 = [
       ],
     },
   ];
+
+
+  export  const Demandas = 
+  {
+    biologicos:['DÉFICIT SENSORIAL','INCAPACIDADE FUNCIONAL','DESNUTRIÇÃO','DOENÇAS CARDIOVASCULA-RES (DCV)','USO INADEQUADO DE MEDICAMENTOS'],
+    sociais:['BAIXO SUPORTE SOCIAL','VIOLÊNCIA', 'PROBLEMAS AMBIENTAIS'],
+    psicologicos:['DÉFICIT COGNITIVO','ATITUDE NEGATIVA EM RELAÇÃO AO ENVELHECIMENTO','DEPRESSÃO'],
+    multidimensionais:['QUEDAS'],
+  }
+
+  export const Dominios = {
+    
+  }

@@ -8,16 +8,19 @@ function SocialAspect(props) {
   let dominio = [
     {
       subAspectos: "BAIXO SUPORTE SOCIAL",
+      aspectos:['55', '56', '57','58','59','60','61','62','63'],
       min: 52,
       max: 60,
     },
     {
       subAspectos: "VIOLÊNCIA",
+      aspectos:['64','65', '66', '67', '68', '69', '70', '71'],
       min: 60,
       max: 68,
     },
     {
       subAspectos: "PROBLEMAS AMBIENTAIS",
+      aspectos:['72', '73', '74', '75', '76', '77', '78', '79','80','81','82','83','84','85','86','87'],
       min: 68,
       max: 83,
     }
@@ -35,11 +38,36 @@ function SocialAspect(props) {
     }
   };
 
-  const pontuacaoDominios = (dominio, answers, dominios) => {
-    let teste = dominios.find((item) => item.subAspectos == dominio);
-    return sumAnswers(answers, teste.min, teste.max);
+  const sumDominio = (arr) => {
+    let sum = 0;
+    if (arr.length > 0) {
+      arr.forEach((element) => {
+        sum += parseInt(element.answer);
+      });
+      return sum;
+    }
   };
 
+  const pontuacaoDominios = (dominio, answers, dominios) => {
+    let teste = dominios.find((item) => item.subAspectos == dominio);
+    let testearr = answers.filter((item) => {
+      console.log("item.aspect", item.id);
+      return teste.aspectos.includes(item.id);
+    });
+    console.log("=>", answers);
+    console.log("testearr", testearr);
+    console.log("testes arary", teste.aspectos);
+    console.log("soma", sumDominio(testearr));
+    return sumAnswers(answers, teste.min, teste.max);
+  };
+  const pontuacaoDom = (dominio, answers, dominios) => {
+    let teste = dominios.find((item) => item.subAspectos == dominio);
+    let testearr = answers.filter((item) => {
+      return teste.aspectos.includes(item.id);
+    });
+
+    return sumDominio(testearr);
+  };
   return (
     <>
       <div
@@ -82,6 +110,8 @@ function SocialAspect(props) {
                           dominio
                         )}{" "}
                         Necessita de investigação?
+                        {pontuacaoDom(question.aspectos, props.dados, dominio)}
+
                     </p>
                   </Col>
                   <Col md={6}>

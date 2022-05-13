@@ -10,6 +10,7 @@ function MultidimensionalAspect(props) {
   let dominio = [
     {
       subAspectos: "QUEDAS",
+      aspectos:['88','89','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104'],
       min: 83,
       max: 99,
     },
@@ -27,9 +28,35 @@ function MultidimensionalAspect(props) {
     }
   };
 
+  const sumDominio = (arr) => {
+    let sum = 0;
+    if (arr.length > 0) {
+      arr.forEach((element) => {
+        sum += parseInt(element.answer);
+      });
+      return sum;
+    }
+  };
+
   const pontuacaoDominios = (dominio, answers, dominios) => {
     let teste = dominios.find((item) => item.subAspectos == dominio);
+    let testearr = answers.filter((item) => {
+      console.log("item.aspect", item.id);
+      return teste.aspectos.includes(item.id);
+    });
+    console.log("=>", answers);
+    console.log("testearr", testearr);
+    console.log("testes arary", teste.aspectos);
+    console.log("soma", sumDominio(testearr));
     return sumAnswers(answers, teste.min, teste.max);
+  };
+  const pontuacaoDom = (dominio, answers, dominios) => {
+    let teste = dominios.find((item) => item.subAspectos == dominio);
+    let testearr = answers.filter((item) => {
+      return teste.aspectos.includes(item.id);
+    });
+
+    return sumDominio(testearr);
   };
 
   const retornaDados = (dados, idQuestao) => {
@@ -100,6 +127,8 @@ function MultidimensionalAspect(props) {
                         dominio
                       )}{" "}
                       Necessita de investigação?
+                      {pontuacaoDom(question.aspectos, props.dados, dominio)}
+
                     </p>
                   </Col>
 
