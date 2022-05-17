@@ -28,7 +28,6 @@ function Page() {
   const [data, setData] = React.useState([]);
 
   const userForm = ['entrevistador ','entrevistado','Entrada','dataAvaliação', 'Instituição','Id', 'genero', 'idade']
-
   const handleChange = (event) => {
     const id = event.target.name;
     const data = { id, answer: event.target.value };

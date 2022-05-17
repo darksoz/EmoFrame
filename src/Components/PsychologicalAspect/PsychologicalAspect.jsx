@@ -102,7 +102,7 @@ function PsychologicalAspect(props) {
                   <Row className="border bg-secondary text-light fw-lighter">
                     <hr />
 
-                    <Col md={6} className="m-auto">
+                    <Col md={9} className="m-auto">
                       <p className="h5">
                         Pontuação (máxima = {question.pontucao}):{" "}
                         {pontuacaoDom(question.aspectos, props.dados, dominio)}{" "}
@@ -111,7 +111,7 @@ function PsychologicalAspect(props) {
                       </p>
                     </Col>
 
-                    <Col md={6}>
+                    <Col sm={3}>
                       <p className="h5 mb-4">
                         <div
                           className="form-check"
@@ -125,7 +125,7 @@ function PsychologicalAspect(props) {
                             id="Psicológico"
                           />
                           <label
-                            className="form-check-label label-page-i"
+                            className="form-check-label labelal"
                             for="flexCheckDefault"
                             name="SIM"
                           >
@@ -141,7 +141,7 @@ function PsychologicalAspect(props) {
                             id="Psicológico"
                           />
                           <label
-                            className="form-check-label label-page-i l-no"
+                            className="form-check-label labelal mt-3"
                             for="flexCheckDefault"
                             name="NÃO"
                           >
