@@ -16,7 +16,6 @@ function QuestionsMultidimensional(props) {
       }
     }
   };
-
   return (
     <>
       <p className="h5 mb-3 mt-3 border p-4">

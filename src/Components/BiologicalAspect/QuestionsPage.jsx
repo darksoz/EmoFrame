@@ -1,13 +1,39 @@
 /* eslint-disable no-undef */
-import React from "react";
+import React, { useEffect } from "react";
 import { Container } from "react-bootstrap";
 import InputText from "../InputText/InputText";
 import TableDiagnostico from "./TableDiagnostico";
+import { useState } from "react";
 
 function QuestionsPage(props) {
+  let teste
+  const [data, setData] = useState("");
+  const [imc, setIMC] = useState(0);
+  const [peso, setPeso] = useState(0);
+  const [altura, setAltura] = useState(0);
+  const calcularIMC = (kilos, altura) => {
+    altura = altura / 100;
+    let imc = kilos / (altura * altura);
+    return imc;
+  };
+ 
+  useEffect(() => {
+    if (props.respostas.length > 30) {
+      setPeso(props.respostas.find(item => item.id == '35.1').answer);
+      setAltura(props.respostas.find(item => item.id == '35.2').answer)
+
+      setIMC(calcularIMC(+peso, +altura).toFixed(2));
+      console.log('imc',imc)
+      teste = data;
+    }
+  }, [data, imc]);
   const checkTextBox = (str) => {
     let textBox = ["46"];
     return textBox.includes(String(str));
+  };
+
+  const imcFunc = (data) => {
+    setData(data);
   };
 
   return (
@@ -18,10 +44,14 @@ function QuestionsPage(props) {
             text={props.pergunta.title}
             question={props.pergunta.question}
             value={props.pergunta.point === true ? "imc" : ""}
+            imcFunc={imcFunc}
+            setIMC={setIMC}
+            imc={imc}
           />
         ) : (
-          props.pergunta.question + "-" + props.pergunta.title
+          props.pergunta.question + "-" + props.pergunta.title 
         )}
+      
         {props.pergunta.tooltip != null ? (
           <strong>
             {props.pergunta.tooltip}
@@ -68,6 +98,12 @@ function QuestionsPage(props) {
             remedios={props.dadosQuestoes}
             diagnosticoItem={props.respostas}
           ></TableDiagnostico>
+        )}
+        {props.pergunta.question === 43 && (
+          <strong>
+            {" "}
+            IMC = {imc}
+          </strong>
         )}
         {props.pergunta.question === 44 || props.pergunta.question === 45 ? (
           ""

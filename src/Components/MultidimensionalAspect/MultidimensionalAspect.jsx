@@ -103,7 +103,7 @@ function MultidimensionalAspect(props) {
     );
     totalComportamental = sumDominio(
       props.dados.filter((item) =>
-        ["72", "73", "74", "75", "76", "77", "78", "79"].includes(item.id)
+        ["79","80","81"].includes(item.id)
       )
     );
     teste = sumDominio(

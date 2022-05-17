@@ -4,6 +4,7 @@ import ImcInput from "./ImcInput";
 function InputText(props) {
   const sliceText = (text) => text.split("_");
   const lastItem = sliceText(props.text).length - 1;
+
   return (
     <>
       <p className="h5">
