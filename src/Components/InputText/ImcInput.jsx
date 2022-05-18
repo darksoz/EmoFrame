@@ -48,7 +48,7 @@ function ImcInput(props) {
             ) : (
               <>
                 <br />
-                <strong> {imc}</strong>
+                <strong> IMC = {imc}</strong>
               </>
             )}
           </>

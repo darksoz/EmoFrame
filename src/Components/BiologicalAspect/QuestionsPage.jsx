@@ -6,7 +6,7 @@ import TableDiagnostico from "./TableDiagnostico";
 import { useState } from "react";
 
 function QuestionsPage(props) {
-  let teste
+  let teste;
   const [data, setData] = useState("");
   const [imc, setIMC] = useState(0);
   const [peso, setPeso] = useState(0);
@@ -16,17 +16,25 @@ function QuestionsPage(props) {
     let imc = kilos / (altura * altura);
     return imc;
   };
- 
-  useEffect(() => {
-    if (props.respostas.length > 30) {
-      setPeso(props.respostas.find(item => item.id == '35.1').answer);
-      setAltura(props.respostas.find(item => item.id == '35.2').answer)
 
-      setIMC(calcularIMC(+peso, +altura).toFixed(2));
-      console.log('imc',imc)
+  useEffect(() => {
+    if (props.respostas.length > 41) {
+      let pesoResposta = props.respostas.find(
+        (item) => item.id == "35.1"
+      )?.answer;
+      let alturaResposta = props.respostas.find(
+        (item) => item.id == "35.2"
+      )?.answer;
+      if (peso != undefined && altura != undefined) {
+
+        setPeso(pesoResposta);
+        setAltura(alturaResposta);
+        setIMC(calcularIMC(+peso, +altura).toFixed(2));
+      }
+
       teste = data;
     }
-  }, [data, imc]);
+  }, [props.respostas]);
   const checkTextBox = (str) => {
     let textBox = ["46"];
     return textBox.includes(String(str));
@@ -49,9 +57,9 @@ function QuestionsPage(props) {
             imc={imc}
           />
         ) : (
-          props.pergunta.question + "-" + props.pergunta.title 
+          props.pergunta.question + "-" + props.pergunta.title
         )}
-      
+
         {props.pergunta.tooltip != null ? (
           <strong>
             {props.pergunta.tooltip}
@@ -99,40 +107,37 @@ function QuestionsPage(props) {
             diagnosticoItem={props.respostas}
           ></TableDiagnostico>
         )}
-        {props.pergunta.question === 43 && (
-          <strong>
-            {" "}
-            IMC = {imc}
-          </strong>
-        )}
+        {props.pergunta.question === 43 && <strong> IMC = {imc}</strong>}
         {props.pergunta.question === 44 || props.pergunta.question === 45 ? (
           ""
         ) : (
-            <Container className="w-25 mt-4">
-              <div className="form-check" style={{ minHeight: "2.0em" }}>
-                <input
-                  className="form-check-input"
-                  type="radio"
-                  value={props.pergunta.yes}
-                  name={props.pergunta.question}
-                />
-                <label className="form-check-label labelal ml-1">
-                  {props.pergunta.yes} = SIM
-                </label>
-              </div>
-              <div className="form-check">
-                <input
-                  className="form-check-input"
-                  type="radio"
-                  value={props.pergunta.no}
-                  name={props.pergunta.question}
-                />
-                <label className="form-check-label labelal mt-1" style={{marginLeft:'5px'}}>
-                  {props.pergunta.no} = NÃO
-                </label>
-              </div>
-            </Container>
-          
+          <Container className="w-25 mt-4">
+            <div className="form-check" style={{ minHeight: "2.0em" }}>
+              <input
+                className="form-check-input"
+                type="radio"
+                value={props.pergunta.yes}
+                name={props.pergunta.question}
+              />
+              <label className="form-check-label labelal ml-1">
+                {props.pergunta.yes} = SIM
+              </label>
+            </div>
+            <div className="form-check">
+              <input
+                className="form-check-input"
+                type="radio"
+                value={props.pergunta.no}
+                name={props.pergunta.question}
+              />
+              <label
+                className="form-check-label labelal mt-1"
+                style={{ marginLeft: "5px" }}
+              >
+                {props.pergunta.no} = NÃO
+              </label>
+            </div>
+          </Container>
         )}
       </p>
     </>
