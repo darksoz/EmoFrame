@@ -28,7 +28,6 @@ function Page() {
   const [data, setData] = React.useState([]);
 
   const userForm = ['entrevistador ','entrevistado','Entrada','dataAvaliação', 'Instituição','Id', 'genero', 'idade']
-
   const handleChange = (event) => {
     const id = event.target.name;
     const data = { id, answer: event.target.value };
@@ -61,7 +60,7 @@ function Page() {
     if (arr.length !== 0) {
       let difference = userForm.filter((x) => !arr.includes(x));
       if (difference.length !== 0) {
-        alert("Você não respondeu todas as perguntas do formulário" + difference);
+        alert("Você não respondeu todas as perguntas do formulário: " + difference);
         setInvestigation([]);
       }
     } else {
@@ -111,6 +110,7 @@ function Page() {
   };
   const handleFormData = async () => {
     let name = userFormData.filter(a=> a.id==="nomepage")[0];
+    console.log('name', name);
     let json = {
       Datetime: new Date(Date.now()),
       Instrument: "page",
@@ -121,7 +121,9 @@ function Page() {
     };
 
     json = JSON.stringify(json);
+    console.log('json', json);
     let response = await SavePageTest(json);
+    console.log('response', response);
     if (response.status === 201) {
       setTitle("Teste concluído");
       setBody("Atividade realizada com sucesso");

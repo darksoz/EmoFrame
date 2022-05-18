@@ -1,13 +1,47 @@
 /* eslint-disable no-undef */
-import React from "react";
+import React, { useEffect } from "react";
 import { Container } from "react-bootstrap";
 import InputText from "../InputText/InputText";
 import TableDiagnostico from "./TableDiagnostico";
+import { useState } from "react";
 
 function QuestionsPage(props) {
+  let teste;
+  const [data, setData] = useState("");
+  const [imc, setIMC] = useState(0);
+  const [peso, setPeso] = useState(0);
+  const [altura, setAltura] = useState(0);
+  const calcularIMC = (kilos, altura) => {
+    altura = altura / 100;
+    let imc = kilos / (altura * altura);
+    return imc;
+  };
+
+  useEffect(() => {
+    if (props.respostas.length > 41) {
+      let pesoResposta = props.respostas.find(
+        (item) => item.id == "35.1"
+      )?.answer;
+      let alturaResposta = props.respostas.find(
+        (item) => item.id == "35.2"
+      )?.answer;
+      if (peso != undefined && altura != undefined) {
+
+        setPeso(pesoResposta);
+        setAltura(alturaResposta);
+        setIMC(calcularIMC(+peso, +altura).toFixed(2));
+      }
+
+      teste = data;
+    }
+  }, [props.respostas]);
   const checkTextBox = (str) => {
     let textBox = ["46"];
     return textBox.includes(String(str));
+  };
+
+  const imcFunc = (data) => {
+    setData(data);
   };
 
   return (
@@ -18,10 +52,14 @@ function QuestionsPage(props) {
             text={props.pergunta.title}
             question={props.pergunta.question}
             value={props.pergunta.point === true ? "imc" : ""}
+            imcFunc={imcFunc}
+            setIMC={setIMC}
+            imc={imc}
           />
         ) : (
           props.pergunta.question + "-" + props.pergunta.title
         )}
+
         {props.pergunta.tooltip != null ? (
           <strong>
             {props.pergunta.tooltip}
@@ -69,35 +107,37 @@ function QuestionsPage(props) {
             diagnosticoItem={props.respostas}
           ></TableDiagnostico>
         )}
+        {props.pergunta.question === 43 && <strong> IMC = {imc}</strong>}
         {props.pergunta.question === 44 || props.pergunta.question === 45 ? (
           ""
         ) : (
-          <p className="h5 mb-3 mt-3 p-1">
-            <Container className="ml-5">
-              <div className="form-check" style={{ minHeight: "2.0em" }}>
-                <input
-                  className="form-check-input input-page"
-                  type="radio"
-                  value={props.pergunta.yes}
-                  name={props.pergunta.question}
-                />
-                <label className="form-check-label label-page">
-                  {props.pergunta.yes} = SIM
-                </label>
-              </div>
-              <div className="form-check">
-                <input
-                  className="form-check-input input-page"
-                  type="radio"
-                  value={props.pergunta.no}
-                  name={props.pergunta.question}
-                />
-                <label className="form-check-label label-page l-yes">
-                  {props.pergunta.no} = NÃO
-                </label>
-              </div>
-            </Container>
-          </p>
+          <Container className="w-25 mt-4">
+            <div className="form-check" style={{ minHeight: "2.0em" }}>
+              <input
+                className="form-check-input"
+                type="radio"
+                value={props.pergunta.yes}
+                name={props.pergunta.question}
+              />
+              <label className="form-check-label labelal ml-1">
+                {props.pergunta.yes} = SIM
+              </label>
+            </div>
+            <div className="form-check">
+              <input
+                className="form-check-input"
+                type="radio"
+                value={props.pergunta.no}
+                name={props.pergunta.question}
+              />
+              <label
+                className="form-check-label labelal mt-1"
+                style={{ marginLeft: "5px" }}
+              >
+                {props.pergunta.no} = NÃO
+              </label>
+            </div>
+          </Container>
         )}
       </p>
     </>
