@@ -37,16 +37,14 @@ export const Questions1 = [
           no: 0,
           images: ["time1.png", "time2.png", "time3.png", "time4.png"],
         },
-        {
-          title:
-            "Memória tardia: O(a) senhor(a) consegue se lembrar das 3 palavras que lhe pedi que repetisse agora há pouco?",
+        {title:
+          "Teste do relógio: Aplique apenas se o (a) idoso tiver escolaridade igual ou superior a 5 anos. Caso não, pontue ao lado de forma negativa. Esteja com uma folha com um desenho de um círculo de 11 cm de diâmetro e dê as instruções para a tarefa: “Senhor(a), nesta folha temos um mostrador de um relógio. Gostaria que o senhor(a) colocasse os números dentro dele. [Aguardar]. Por favor, agora indique o horário 11h10 (onze horas e 10 minutos).”",
           question: 4,
-          input: false,
+          tooltip:"[Instruções: Analise o desenho e pontue ao lado se o(a) idoso(a) atingiu a nota de corte esperada. Nota de corte: Atribua um ponto para cada posicionamento correto dos números 1, 2, 4, 5, 7, 8, 10 e 11, mais um ponto para cada ponteiro correto (pontuação máxima = 10). Nota de corte = 7].",
           yes: 1,
+          input: false,
           no: 0,
-          point: 1,
-          tooltip:  "[Instruções: o entrevistador não deve dizer as palavras. Pontue se o(a) idoso(a) lembrou e repetiu corretamente as 3 palavras].",
-        },
+          point: 1,},
         {
           title:
             "Praxia: Esteja com uma folha em mãos e fale todos os comandos de uma vez só: “Pegue este papel com a mão direita. Dobre-o ao meio e coloque-o sobre a mesa”.",
@@ -59,13 +57,15 @@ export const Questions1 = [
         },
         {
           title:
-          "Teste do relógio: Aplique apenas se o (a) idoso tiver escolaridade igual ou superior a 5 anos. Caso não, pontue ao lado de forma negativa. Esteja com uma folha com um desenho de um círculo de 11 cm de diâmetro e dê as instruções para a tarefa: “Senhor(a), nesta folha temos um mostrador de um relógio. Gostaria que o senhor(a) colocasse os números dentro dele. [Aguardar]. Por favor, agora indique o horário 11h10 (onze horas e 10 minutos).”",
+            "Memória tardia: O(a) senhor(a) consegue se lembrar das 3 palavras que lhe pedi que repetisse agora há pouco?",
           question: 6,
-          tooltip:"[Instruções: Analise o desenho e pontue ao lado se o(a) idoso(a) atingiu a nota de corte esperada. Nota de corte: Atribua um ponto para cada posicionamento correto dos números 1, 2, 4, 5, 7, 8, 10 e 11, mais um ponto para cada ponteiro correto (pontuação máxima = 10). Nota de corte = 7].",
-          yes: 1,
           input: false,
+          yes: 1,
           no: 0,
           point: 1,
+          tooltip:  "[Instruções: o entrevistador não deve dizer as palavras. Pontue se o(a) idoso(a) lembrou e repetiu corretamente as 3 palavras].",
+        
+          
         },
       ],
     },
@@ -1036,8 +1036,8 @@ export const Questions1 = [
         },
         {
           question: 97,
-          yes: 1,
-          no: 0,
+          yes: 0,
+          no: 1,
           input: false,
           tooltip: "[Instruções: Pontuação < 4 em Incapacidade Funcional]",
           point: 0,

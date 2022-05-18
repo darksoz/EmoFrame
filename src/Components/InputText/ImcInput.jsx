@@ -26,7 +26,8 @@ function ImcInput(props) {
   const lastItem = sliceText(props.text).length - 1;
   const calcularIMC = (kilos, altura) => {
     altura = altura / 100;
-    return kilos / (altura * altura);
+    let imc = kilos / (altura * altura);
+    return imc;
   };
   return (
     <>
@@ -47,7 +48,7 @@ function ImcInput(props) {
             ) : (
               <>
                 <br />
-                IMC: {imc}
+                <strong> IMC = {imc}</strong>
               </>
             )}
           </>

@@ -148,17 +148,53 @@ function RegisterPage() {
                     <Row>
                         <Col md={12}>
                             <Form.Group className="mb-3 mt-2" controlId="">
-                                <Form.Label>Endereço</Form.Label>
-                                <Form.Control type="text" name="enredecopage" placeholder="Endereço" />
+                                <Form.Label>Telefones</Form.Label>
+                                <Form.Control type="tel" name="telefonepage" placeholder="Número de telefone" />
                             </Form.Group>
                         </Col>
                     </Row>
                     <Row>
                         <Col md={12}>
                             <Form.Group className="mb-3 mt-2" controlId="">
-                                <Form.Label>Telefones</Form.Label>
-                                <Form.Control type="tel" name="telefonepage" placeholder="Número de telefone" />
+                                <Form.Label>Endereço</Form.Label>
+                                <Form.Control type="text" name="enredecopage" placeholder="Endereço" />
                             </Form.Group>
+                        </Col>
+                    </Row>
+                  
+                   
+                    <Row>
+                        <Col md={6}>
+                        <Form.Group className="mb-3 mt-2" controlId="">
+                                <Form.Label>Cidade</Form.Label>
+                                <Form.Control type="text" name="cidade" placeholder="Cidade" />
+                            </Form.Group>
+                        </Col>
+                        <Col md={6}>
+                        <Form.Group className="mb-3 mt-2" controlId="">
+                                <Form.Label>Estado</Form.Label>
+                                <Form.Control type="text" name="estado" placeholder="Estado" />
+                            </Form.Group>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col md={6}>
+                            <Form.Select aria-label="Default select example" name='sexo'>
+                                <option disabled selected>Sexo</option>
+                                <option value="Feminino">Feminino</option>
+                                <option value="Masculino">Masculino</option>
+                            </Form.Select>
+                        </Col>
+
+                        <Col md={6}>
+                            <Form.Select aria-label="Default select example" name='raça'>
+                                <option disabled selected>Raça</option>
+                                <option value="Amarelo">Amarelo(a)</option>
+                                <option value="Branco">Branco(a)</option>
+                                <option value="Indígena">Indígena</option>
+                                <option value="Pardo">Pardo(a)</option>
+                                <option value="Preto">Preto(a)</option>
+                            </Form.Select>
                         </Col>
                     </Row>
                     <Row>
