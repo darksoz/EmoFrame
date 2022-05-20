@@ -116,7 +116,7 @@ function LeapResult() {
       presence = sumPresence / locution.length;
       max = sumMax / locution.length;
       min = sumMin / locution.length;
-      return (presence - min) / (max - min);
+      return ((presence - min) / (max - min)).toFixed(2);
     }
   }
 
