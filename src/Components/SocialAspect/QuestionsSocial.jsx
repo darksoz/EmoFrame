@@ -49,7 +49,7 @@ function QuestionsSocial(props) {
             name={`${props.pergunta.question}.7`}
           ></textarea>
         )}
-        {props.pergunta.question === 55 || props.pergunta.question === 76 ? (
+        {props.pergunta.question === 55 ? (
           ''
         ) : (
             <Container className="w-25 mt-4">

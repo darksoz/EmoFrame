@@ -44,6 +44,7 @@ export const Questions1 = [
           yes: 1,
           input: false,
           no: 0,
+          text: ["1", "2", "4", "5", "7", "8", "10", "11"],
           point: 1,},
         {
           title:
@@ -64,7 +65,7 @@ export const Questions1 = [
           no: 0,
           point: 1,
           tooltip:  "[Instruções: o entrevistador não deve dizer as palavras. Pontue se o(a) idoso(a) lembrou e repetiu corretamente as 3 palavras].",
-        
+          text: ["Carro", "Vaso", "Tijolo"],
           
         },
       ],
@@ -112,9 +113,9 @@ export const Questions1 = [
         },
         {
           question: 11,
-          yes: 0,
+          yes: 1,
           input: false,
-          no: 1,
+          no: 0,
           point: 0,
           title:
             "O(a) senhor(a) acha que é possível ter uma vida sexual saudável na velhice?",
@@ -356,11 +357,11 @@ export const Questions1 = [
           question: 33,
           yes: 0,
           no: 1,
-          input: false,
+          input: true,
           point: 0,
           tooltip: null,
           title:
-            "Nos últimos 3 meses, o(a) senhor(a) perdeu peso sem motivo aparente? Se sim, quantos quilos?",
+            "Nos últimos 3 meses, o(a) senhor(a) perdeu peso sem motivo aparente? Se sim, quantos quilos? _",
         },
         {
           question: 34,
@@ -539,8 +540,8 @@ export const Questions1 = [
         },
         {
           question: 49,
-          yes: 1,
-          no: 0,
+          yes: 0,
+          no: 1,
           input: false,
           point: 1,
           tooltip: null,
