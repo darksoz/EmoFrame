@@ -7,7 +7,7 @@ function PageDemands(props) {
   );
   const dataI = props.subAspectos.map((a) => a.total);
   const data = props.subAspectos.map((a) =>
-    ((a.total *100)/  a.maxima))
+    ((a.total *100)/  a.maxima).toFixed(2))
 
   let dados = {
     series: [
@@ -21,12 +21,23 @@ function PageDemands(props) {
         height: 800,
         type: "radar",
       },
+      dataLabels: {
+        enabled: true,
+        background: {
+          enabled: true,
+          borderRadius:2,
+        }
+      },
       title: {
         text: "",
       },
       xaxis: {
         categories: categories,
       },
+      yaxis:{
+        min:0,
+        max:100
+      }
     },
   };
 
