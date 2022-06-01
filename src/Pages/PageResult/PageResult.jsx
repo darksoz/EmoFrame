@@ -160,7 +160,6 @@ function PageResult() {
   const aspectsSort = filteredAspects.sort((a, b) =>
     a.aspect > b.aspect ? 1 : -1
   );
-
   const evaluationOb = evaluation.reduce(
     (obj, item) => Object.assign(obj, { [item.id]: item.answer }),
     {}
@@ -175,11 +174,11 @@ function PageResult() {
     {
       aspectos: "Aspectos Sociais",
       min: 52,
-      max: 83,
+      max: 84,
     },
     {
       aspectos: "Aspectos Multidimensionais",
-      min: 83,
+      min: 84,
       max: 102,
     },
   ];

@@ -23,10 +23,10 @@ function PageDimension(props) {
     return soma;
   };
 
-  let totalSociais = somaPhase(props.dominios, sociais);
-  let totalBiologicos = somaPhase(props.dominios, biologicos);
-  let totalPsicologico = somaPhase(props.dominios, psicologico);
-  let totalQuedas = somaPhase(props.dominios, quedas);
+  let totalSociais = (somaPhase(props.dominios, sociais) * 100) / 31;
+  let totalBiologicos = (somaPhase(props.dominios, biologicos) * 100) / 33;
+  let totalPsicologico = (somaPhase(props.dominios, psicologico)*100) / 19;
+  let totalQuedas = (somaPhase(props.dominios, quedas) * 100) / 16;
   let dados = {
     series: [
       {

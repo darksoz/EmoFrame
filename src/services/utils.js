@@ -11,3 +11,14 @@ export  const isEmptyString = value => {
 export const formateDateTime = (date) => {
     return dateFormatting(new Date(`${date}`), 'dd-MM-yyyy H:mm');
 };
+
+export const sumValue = (value) => {
+    let sum = 0;
+    
+    if(value.length > 0){
+      value.forEach((element) => {
+        sum += parseInt(element.answer);
+      });
+      return sum;
+    }
+  };
