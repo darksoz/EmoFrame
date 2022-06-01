@@ -93,6 +93,7 @@ function PsychologicalAspect(props) {
                           index={index}
                           key={index}
                         ></QuestionsPsychological>
+                        
                       </>
                     ))}
                   </Col>

@@ -52,6 +52,17 @@ function QuestionsPsychological(props) {
             ))}
           </ul>
         )}
+        
+        {props.pergunta.question === 6 && (
+          <ul style={{ listStyleType: "none" }}>
+            {props.pergunta.text?.map((text, index) => (
+              <li key={text} name="text">
+                <strong>{text}</strong>
+                <Checkbox name={text}></Checkbox>
+              </li>
+            ))}
+          </ul>
+        )}
         {props.pergunta.question === 4 && (
           <>
             <p>Posição Correta dos numeros:</p>
@@ -107,7 +118,9 @@ function QuestionsPsychological(props) {
               ></ImagesAspect>
             ))
           : ""}
-
+        {props.pergunta.question === 3 && (
+          <p>Pontuação Total <input type="text" name="3.7" /></p>
+        )}
         {checkTextBox(props.pergunta.question) && (
           <textarea
             class="form-control"

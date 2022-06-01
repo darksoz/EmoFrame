@@ -23,7 +23,7 @@ function ImagesAspect(props) {
             value={1}
           ></Checkbox>
         )}
-        <p>Pontuação Total <input type="text" name="3.7" /></p>
+        
         
       </div>
     </>
