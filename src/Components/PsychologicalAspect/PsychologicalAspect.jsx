@@ -20,7 +20,7 @@ function PsychologicalAspect(props) {
     },
     {
       subAspectos: "DEPRESSÃO",
-      aspectos: ["14", "15", "16", "18", "19"],
+      aspectos: ["15", "16","17", "18", "19"],
       min: 14,
       max: 19,
     },
@@ -93,6 +93,7 @@ function PsychologicalAspect(props) {
                           index={index}
                           key={index}
                         ></QuestionsPsychological>
+                        
                       </>
                     ))}
                   </Col>
