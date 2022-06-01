@@ -3,8 +3,10 @@ import ReactApexChart from "react-apexcharts";
 
 function PageDemands (props) {
     const categories = props.subAspectos.map(subAspecto => subAspecto.subAspectos);
-    const data = props.subAspectos.map(a=>a.total)
-    
+    const data = props.subAspectos.map(a=> ((a.total/ props.questions) * 100).toFixed(2)) 
+    console.log('data',data)
+    console.log('categories',categories)
+    console.log('props.subAspectos',props.questions)
     let dados = {
           
         series: [{

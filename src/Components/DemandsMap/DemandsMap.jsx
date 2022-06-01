@@ -83,7 +83,7 @@ function DemandsMap(props) {
         <h3>Mapa de Demandas</h3>
       </div>
       <div className="border mb-3">
-        <PageDemands subAspectos={subAspectos}/>
+        <PageDemands subAspectos={subAspectos} questions={sumValue(props.questions)}/>
         <PageDimension dominios={subAspectos} evaluation={props.evaluation}/>
       </div>
     </>
