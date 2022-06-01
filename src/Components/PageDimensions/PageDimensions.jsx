@@ -23,10 +23,10 @@ function PageDimension(props) {
     return soma;
   };
 
-  let totalSociais = (somaPhase(props.dominios, sociais) * 100) / 31;
-  let totalBiologicos = (somaPhase(props.dominios, biologicos) * 100) / 33;
-  let totalPsicologico = (somaPhase(props.dominios, psicologico)*100) / 19;
-  let totalQuedas = (somaPhase(props.dominios, quedas) * 100) / 16;
+  let totalSociais = ((somaPhase(props.dominios, sociais) * 100) / 31).toFixed(2);
+  let totalBiologicos = ((somaPhase(props.dominios, biologicos) * 100) / 33).toFixed(2);
+  let totalPsicologico = ((somaPhase(props.dominios, psicologico)*100) / 19).toFixed(2);
+  let totalQuedas = ((somaPhase(props.dominios, quedas) * 100) / 16).toFixed(2);
   let dados = {
     series: [
       {
@@ -39,11 +39,18 @@ function PageDimension(props) {
         height: 600,
         type: "radar",
       },
+      dataLabels: {
+        enabled: true,
+        background: {
+          enabled: true,
+          borderRadius:2,
+        }
+      },
       title: {
         text: "",
       },
       xaxis: {
-        categories: ["Psicológica", "Biológica", "Socioambiental", "Tranversal"],
+        categories: ["Psicológico", "Biológico", "Socioambiental", "Tranversal"],
       },
     },
   };
