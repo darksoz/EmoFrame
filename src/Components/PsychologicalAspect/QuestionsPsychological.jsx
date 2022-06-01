@@ -78,28 +78,17 @@ function QuestionsPsychological(props) {
         )}
         {props.pergunta.question === 4 && (
           <>
-            <p>Ponteiro correto na hora :</p>
-            <ul style={{ listStyleType: "none" }}>
-              {props.pergunta.text?.map((text, index) => (
-                <li key={text} name="text">
-                  <strong>{text}</strong>
-                  <Checkbox name={text}></Checkbox>
-                </li>
-              ))}
-            </ul>
+            <p>Ponteiro correto na hora <Checkbox name={"4.2"}></Checkbox></p>
+
+                  
+             
           </>
         )}
         {props.pergunta.question === 4 && (
           <>
-            <p>Ponteiro correto nos minutos :</p>
-            <ul style={{ listStyleType: "none" }}>
-              {props.pergunta.text?.map((text, index) => (
-                <li key={text} name="text">
-                  <strong>{text}</strong>
-                  <Checkbox name={text}></Checkbox>
-                </li>
-              ))}
-            </ul>
+            <p>Ponteiro correto nos minutos <Checkbox name={"4.3"}></Checkbox></p>
+                  
+          
           </>
         )}
 
