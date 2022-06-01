@@ -175,11 +175,11 @@ function PageResult() {
     {
       aspectos: "Aspectos Sociais",
       min: 52,
-      max: 83,
+      max: 84,
     },
     {
       aspectos: "Aspectos Multidimensionais",
-      min: 83,
+      min: 84,
       max: 102,
     },
   ];
