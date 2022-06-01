@@ -160,7 +160,7 @@ function PageResult() {
   const aspectsSort = filteredAspects.sort((a, b) =>
     a.aspect > b.aspect ? 1 : -1
   );
-
+  console.log("filtrado",filteredQuestions)
   const evaluationOb = evaluation.reduce(
     (obj, item) => Object.assign(obj, { [item.id]: item.answer }),
     {}

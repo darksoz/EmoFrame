@@ -10,7 +10,7 @@ export  const isEmptyString = value => {
 
 export const formateDateTime = (date) => {
     return dateFormatting(new Date(`${date}`), 'dd-MM-yyyy H:mm');
-};pensei outra coisa
+};
 
 export const sumValue = (value) => {
     let sum = 0;
