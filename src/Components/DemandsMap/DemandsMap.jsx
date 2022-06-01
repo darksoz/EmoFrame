@@ -155,7 +155,7 @@ function DemandsMap(props) {
     {
       subAspectos: "Violencia",
       min: 60,
-      max: 67,
+      max: 68,
       maxima: 8,
       aspectos: ["64", "65", "66", "67", "68", "69", "70", "71"],
     },
