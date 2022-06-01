@@ -8,11 +8,7 @@ function PageDemands(props) {
   const dataI = props.subAspectos.map((a) => a.total);
   const data = props.subAspectos.map((a) =>
     ((a.total *100)/  a.maxima))
-  
-  //console.log("data", data);
-  //console.log("categories", categories);
-  //console.log(dataI);
-  //console.log([16,0,4,2,8,9,8,2,3,0,1,2])
+
   let dados = {
     series: [
       {

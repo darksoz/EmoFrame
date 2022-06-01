@@ -165,10 +165,8 @@ function DemandsMap(props) {
       let test = props.questions.slice(element.min, element.max);
       element["total"] = sumValue(test);
     }
-    console.log("=>", props.questions);
   }
 
-  //console.log(pontuacaoDom('Quedas', props.questions, subAspectos[0].aspectos))
   return (
     <>
       <div className="border border-dark bg-lgrey text-white">

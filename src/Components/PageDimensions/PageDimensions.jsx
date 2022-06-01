@@ -27,7 +27,6 @@ function PageDimension(props) {
   let totalBiologicos = (somaPhase(props.dominios, biologicos) * 100) / 33;
   let totalPsicologico = (somaPhase(props.dominios, psicologico)*100) / 19;
   let totalQuedas = (somaPhase(props.dominios, quedas) * 100) / 16;
-  console.log([totalPsicologico, totalBiologicos, totalSociais, totalQuedas])
   let dados = {
     series: [
       {

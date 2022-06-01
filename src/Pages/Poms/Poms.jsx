@@ -34,7 +34,6 @@ function Poms() {
     const handleChange = (event) => {
         const id = parseInt(event.target.name);
         const data = { id, answer: event.target.value };
-        console.log(data)
         if (answers.some(a => a.id === id)) {
             setAnswers([...answers.filter(b => b.id !== id), data]);
         }

@@ -110,7 +110,6 @@ function Page() {
   };
   const handleFormData = async () => {
     let name = userFormData.filter(a=> a.id==="nomepage")[0];
-    console.log('name', name);
     let json = {
       Datetime: new Date(Date.now()),
       Instrument: "page",
@@ -121,9 +120,7 @@ function Page() {
     };
 
     json = JSON.stringify(json);
-    console.log('json', json);
     let response = await SavePageTest(json);
-    console.log('response', response);
     if (response.status === 201) {
       setTitle("Teste concluído");
       setBody("Atividade realizada com sucesso");
