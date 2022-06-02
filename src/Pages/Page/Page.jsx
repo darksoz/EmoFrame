@@ -31,6 +31,7 @@ function Page() {
   const handleChange = (event) => {
     const id = event.target.name;
     const data = { id, answer: event.target.value };
+    console.log('data', data)
     if (event.target.id) {
       data.aspect = event.target.id;
     }
@@ -132,7 +133,7 @@ function Page() {
       setSuccess(false);
     }
   };
-
+  
   return (
     <>
       <Header />

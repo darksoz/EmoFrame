@@ -166,7 +166,7 @@ function DemandsMap(props) {
       element["total"] = sumValue(test);
     }
   }
-
+  console.log('=>', props.questions);
   return (
     <>
       <div className="border border-dark bg-lgrey text-white">
