@@ -296,7 +296,7 @@ export const Questions1 = [
           point: 0,
           tooltip: null,
           title:
-            "O(A) senhor(a) necessita de ajuda para usar a telefone?",
+            "O(A) senhor(a) necessita de ajuda para usar o telefone?",
         },
         {
           question: 28,
@@ -793,7 +793,7 @@ export const Questions1 = [
           point: 1,
           tooltip: null,
           title:
-            "Os móveis próximos as áreas de circulação são estáveis (firmes)?",
+            "Na casa do(a) senhor(a), os móveis próximos as áreas de circulação são estáveis (firmes)?",
         },
         {
           question: 73,
@@ -803,7 +803,7 @@ export const Questions1 = [
           point: 1,
           tooltip: null,
           title:
-            "Há objetos (chinelos, brinquedos, tapetes, etc) soltos nas áreas de circulação?",
+            "Na casa do(a) senhor(a), há objetos (chinelos, brinquedos, tapetes, etc) soltos nas áreas de circulação?",
         },
         {
           question: 74,
@@ -813,7 +813,7 @@ export const Questions1 = [
           point: 1,
           tooltip: null,
           title:
-            "O piso é escorregadio (ex. encerado, molhado)?",
+            "Na casa do(a) senhor(a), o piso é escorregadio (ex. encerado, molhado)?",
         },
         {
           question: 75,
@@ -823,7 +823,7 @@ export const Questions1 = [
           point: 1,
           tooltip: null,
           title:
-            "Há tapetes antiderrapantes (fora e dentro do box)?",
+            "Na casa do(a) senhor(a), há tapetes antiderrapantes (fora e dentro do box)?",
         },
         {
           question: 76,
@@ -833,7 +833,7 @@ export const Questions1 = [
           point: 1,
           tooltip: "[Instruções: item sem pontuação. Se não houver escadas, pular as próximas duas questões e pontuá-las positivamente.]",
           title:
-            "Há escadas? [Instruções: item sem pontuação. Se não houver escadas, pular as próximas duas questões e pontuá-las positivamente]",
+            "Na casa do(a) senhor(a), há escadas?",
         },
         {
           question: 77,
@@ -843,7 +843,7 @@ export const Questions1 = [
           point: 1,
           tooltip: null,
           title:
-            "As escadas são iluminadas?",
+            "Na casa do(a) senhor(a), as escadas são iluminadas?",
         },
         {
           question: 78,
@@ -853,7 +853,7 @@ export const Questions1 = [
           point: 1,
           tooltip: null,
           title:
-            "As escadas possuem corrimãos em ambos os lados?",
+            "Na casa do(a) senhor(a), as escadas possuem corrimãos em ambos os lados?",
         },
         {
           question: 79,
@@ -862,7 +862,7 @@ export const Questions1 = [
           input: false,
           point: 0,
           tooltip: null,
-          title: "Subir em banquetas ou cadeiras para alcançar objetos altos?",
+          title: "O(a) senhor(a) costuma subir em banquetas ou cadeiras para alcançar objetos altos?",
         },
         {
           question: 80,
@@ -871,7 +871,7 @@ export const Questions1 = [
           input: false,
           point: 0,
           tooltip: null,
-          title: "Acender as luzes ao levantar-se à noite?",
+          title: "O(a) senhor(a) costuma acender as luzes ao levantar-se à noite?",
         },
         {
           question: 81,
@@ -881,7 +881,7 @@ export const Questions1 = [
           point: 0,
           tooltip: null,
           title:
-            "Utilizar calçados seguros e adequados (solado antiderrapante, bem ajustados e firmes no pé, sem saltos etc)?",
+            "O(a) senhor(a) costuma utilizar calçados seguros e adequados (solado antiderrapante, bem ajustados e firmes no pé, sem saltos etc)?",
         },
         {
           question: 82,
