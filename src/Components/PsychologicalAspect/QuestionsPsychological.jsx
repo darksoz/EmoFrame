@@ -70,7 +70,7 @@ function QuestionsPsychological(props) {
               {props.pergunta.text?.map((text, index) => (
                 <li key={text} name="text">
                   <strong>{text}</strong>
-                  <Checkbox name={text}></Checkbox>
+                  <Checkbox name={"4"+".1"+text}></Checkbox>
                 </li>
               ))}
             </ul>

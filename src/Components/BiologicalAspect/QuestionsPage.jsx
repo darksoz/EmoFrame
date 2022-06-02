@@ -25,16 +25,20 @@ function QuestionsPage(props) {
       let alturaResposta = props.respostas.find(
         (item) => item.id == "35.2"
       )?.answer;
-      if (peso != undefined && altura != undefined) {
-
-        setPeso(pesoResposta);
-        setAltura(alturaResposta);
-        setIMC(calcularIMC(+peso, +altura).toFixed(2));
-      }
+      
+      setPeso(pesoResposta);
+      setAltura(alturaResposta);
 
       teste = data;
     }
   }, [props.respostas]);
+
+  useEffect(() => {
+    if (peso != undefined && altura != undefined) {
+      setIMC(calcularIMC(+peso, +altura).toFixed(2));
+    }
+  },[peso,altura])
+
   const checkTextBox = (str) => {
     let textBox = ["46"];
     return textBox.includes(String(str));
