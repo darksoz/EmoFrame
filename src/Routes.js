@@ -24,6 +24,7 @@ import AboutUs from './Pages/AboutUs/AboutUs';
 import MoreInfo from './Pages/MoreInfo/MoreInfo';
 import Poms from './Pages/Poms/Poms';
 import PomsResult from './Pages/PomsResult/PomsResult';
+import PageSearch from './Pages/PageSearch/PageSearch';
 
 
 function PrivateRoute({ component: Component, ...rest }) {
@@ -67,6 +68,7 @@ function Routes() {
                 <PrivateRoute path='/panas' exact component={Panas}/>
                 <PrivateRoute path='/page' exact component={Page}/>
                 <PrivateRoute path='/poms' exact component={Poms}/>
+                <PrivateRoute path='/pagesearch' exact component={PageSearch}/>
                 <Route path='/contactus' exact component={ContactUs}/>
                 <Route path='/aboutus' exact component={AboutUs}/>
                 <Route path='/moreinfo' exact component={MoreInfo}/>
