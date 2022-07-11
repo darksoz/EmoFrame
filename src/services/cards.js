@@ -29,7 +29,7 @@ export const cards =
         {
             "image": "card",
             "title": "PAGE",
-            "page": "page"
+            "page": "pagesearch"
         },
         {
             "image": "card",

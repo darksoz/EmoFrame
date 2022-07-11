@@ -139,7 +139,8 @@ function Page() {
       <Header />
       <Breadcrumb>
         <Breadcrumb.Item href="./dashboard" style={{marginLeft:'12px'}}>Página Inicial</Breadcrumb.Item>
-        <Breadcrumb.Item active>PAGE</Breadcrumb.Item>
+        <Breadcrumb.Item href="./pagesearch">Iniciar PAGe</Breadcrumb.Item>
+        <Breadcrumb.Item active>PAGe</Breadcrumb.Item>
       </Breadcrumb>
       <ModalTest
         Success={success}
