@@ -23,9 +23,17 @@ function PageDimension(props) {
     return soma;
   };
 
-  let totalSociais = ((somaPhase(props.dominios, sociais) * 100) / 31).toFixed(2);
-  let totalBiologicos = ((somaPhase(props.dominios, biologicos) * 100) / 33).toFixed(2);
-  let totalPsicologico = ((somaPhase(props.dominios, psicologico)*100) / 19).toFixed(2);
+  let totalSociais = ((somaPhase(props.dominios, sociais) * 100) / 31).toFixed(
+    2
+  );
+  let totalBiologicos = (
+    (somaPhase(props.dominios, biologicos) * 100) /
+    33
+  ).toFixed(2);
+  let totalPsicologico = (
+    (somaPhase(props.dominios, psicologico) * 100) /
+    19
+  ).toFixed(2);
   let totalQuedas = ((somaPhase(props.dominios, quedas) * 100) / 16).toFixed(2);
   let dados = {
     series: [
@@ -43,14 +51,26 @@ function PageDimension(props) {
         enabled: true,
         background: {
           enabled: true,
-          borderRadius:2,
-        }
+          borderRadius: 2,
+        },
       },
       title: {
         text: "",
       },
       xaxis: {
-        categories: ["Psicológico", "Biológico", "Socioambiental", "Tranversal"],
+        categories: [
+          "Psicológico",
+          "Biológico",
+          "Socioambiental",
+          "Tranversal",
+        ],
+        labels: {
+          style: {
+            colors: ["#000000", "#000000", "#000000", "#000000"],
+            fontSize: "16px",
+            fontWeight: "bold",
+          },
+        },
       },
     },
   };
@@ -71,7 +91,12 @@ function PageDimension(props) {
               O(a) idoso(a) apresenta outras demandas não contempladas no mapa?
               Se sim, especificar:
             </Form.Label>
-            <Form.Control as="textarea" rows={3} name='demandas' value={props.evaluation.demandas}/>
+            <Form.Control
+              as="textarea"
+              rows={3}
+              name="demandas"
+              value={props.evaluation.demandas}
+            />
           </Form.Group>
         </Form>
       </Container>

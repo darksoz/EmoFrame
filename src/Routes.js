@@ -24,6 +24,8 @@ import AboutUs from './Pages/AboutUs/AboutUs';
 import MoreInfo from './Pages/MoreInfo/MoreInfo';
 import Poms from './Pages/Poms/Poms';
 import PomsResult from './Pages/PomsResult/PomsResult';
+import PageSearch from './Pages/PageSearch/PageSearch';
+import PageResultQuestions from './Pages/PageResult/PageResultQuestions';
 
 
 function PrivateRoute({ component: Component, ...rest }) {
@@ -67,6 +69,7 @@ function Routes() {
                 <PrivateRoute path='/panas' exact component={Panas}/>
                 <PrivateRoute path='/page' exact component={Page}/>
                 <PrivateRoute path='/poms' exact component={Poms}/>
+                <PrivateRoute path='/pagesearch' exact component={PageSearch}/>
                 <Route path='/contactus' exact component={ContactUs}/>
                 <Route path='/aboutus' exact component={AboutUs}/>
                 <Route path='/moreinfo' exact component={MoreInfo}/>
@@ -77,6 +80,7 @@ function Routes() {
                 <LimitedAccessRoute path='/leapResult/:id' exact component={LeapResult}/>
                 <LimitedAccessRoute path='/pageResult' exact component={PageResult}/>
                 <LimitedAccessRoute path='/pageResult/:id' exact component={PageResult}/>
+                <LimitedAccessRoute path='/pageResultQuestions/:id' exact component={PageResultQuestions}/>
                 <LimitedAccessRoute path='/panasResult' exact component={PanasResult}/>
                 <LimitedAccessRoute path='/panasResult/:id' exact component={PanasResult}/>
                 <LimitedAccessRoute path='/susResult/:id' exact component={SusResult}/>
