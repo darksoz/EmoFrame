@@ -8,6 +8,8 @@ function PageDemands(props) {
   const dataI = props.subAspectos.map((a) => a.total);
   const data = props.subAspectos.map((a) =>
     ((a.total *100)/  a.maxima).toFixed(2))
+    let test = [...categories]
+  console.log(test)
   let dados = {
     series: [
       {
@@ -31,7 +33,15 @@ function PageDemands(props) {
         text: "",
       },
       xaxis: {
-        categories: categories,
+        categories: ['Quedas', 'Deficit Sensorial', 'Incapacidade Funcional', 'Desnutricao', 'Doenças Cardiovasculares', 'Uso Inadequado de Medicamentos', 'Atitudes Negativas', 'Depressao', 'Deficit Cognitivo', 'Baixo Suporte Social', 'Problemas Ambientais', 'Violencia'],
+        labels:{
+          style: {
+            colors: ["#000000","#000000","#000000","#000000","#000000","#000000","#000000","#000000","#000000","#000000","#000000","#000000"],
+            fontSize: "16px",
+            fontWeight: "bold",
+            
+          }
+        }
       },
       yaxis:{
         min:0,

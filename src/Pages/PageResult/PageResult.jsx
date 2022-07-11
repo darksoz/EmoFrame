@@ -194,7 +194,6 @@ function PageResult() {
     setShow(false);
     history.push(path);
   };
-
   return (
     <>
       <Modal show={show} onHide={handleClose}>
@@ -265,6 +264,14 @@ function PageResult() {
         <button style={{marginLeft:'20px'}}  class="btn whitebutton btn-lg" onClick={() => window.print()}>
           Imprimir
         </button>
+        <a href={"/pageResultQuestions/" + id}>
+        <button 
+          style={{marginLeft:'20px'}}
+          class="btn whitebutton btn-lg"
+          onClick={()=>console.log("OK")}>
+          Questionario
+        </button>
+        </a>
         </div>
       </Container>
       <Footer />
