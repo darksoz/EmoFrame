@@ -8,8 +8,7 @@ function PageDemands(props) {
   const dataI = props.subAspectos.map((a) => a.total);
   const data = props.subAspectos.map((a) =>
     ((a.total *100)/  a.maxima).toFixed(2))
-    let test = [...categories]
-  console.log(test)
+
   let dados = {
     series: [
       {
