@@ -48,6 +48,24 @@ function QuestionsPage(props) {
     setData(data);
   };
 
+  const returnAnswer = (id) => {
+    if (props.respostas.length != 0 && props.respostas !== undefined) {
+      console.log('res',props.respostas)
+      let answer = props.respostas.find((item) => item.id == id);
+      console.log('asas',answer)
+      if (answer !== undefined && answer !== null) {
+        if (answer.answer !== null && answer.answer !== undefined) {
+          console.log('   =>', answer.answer)
+          return answer.answer;
+        } else {
+          return "false";
+        }
+      }
+    } else {
+      return "false";
+    }
+  };
+
   return (
     <>
       <p className="h5 mb-3 mt-3 border p-4">
@@ -122,6 +140,7 @@ function QuestionsPage(props) {
                 type="radio"
                 value={props.pergunta.yes}
                 name={props.pergunta.question}
+                checked={returnAnswer(props.pergunta.question) == props.pergunta.yes ? true : false}
               />
               <label className="form-check-label labelal ml-1">
                 {props.pergunta.yes} = SIM
@@ -133,6 +152,7 @@ function QuestionsPage(props) {
                 type="radio"
                 value={props.pergunta.no}
                 name={props.pergunta.question}
+                checked={returnAnswer(props.pergunta.question) == props.pergunta.no ? true : false}
               />
               <label
                 className="form-check-label labelal mt-1"

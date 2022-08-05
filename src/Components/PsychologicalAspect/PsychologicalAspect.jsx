@@ -63,7 +63,6 @@ function PsychologicalAspect(props) {
 
     return sumDominio(testearr);
   };
-
   return (
     <>
       <Container>
@@ -92,6 +91,7 @@ function PsychologicalAspect(props) {
                           pergunta={pergunta}
                           index={index}
                           key={index}
+                          answers={props.answers}
                         ></QuestionsPsychological>
                         
                       </>

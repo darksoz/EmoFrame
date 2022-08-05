@@ -22,3 +22,5 @@ export const sumValue = (value) => {
       return sum;
     }
   };
+
+  

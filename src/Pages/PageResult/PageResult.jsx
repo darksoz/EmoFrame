@@ -113,6 +113,7 @@ function PageResult() {
     getResult();
   }, [id]);
 
+  console.log('dataUser', dataUser);
   const handleFormData = async () => {
     let json = {
       Datetime: dataUser.Datetime,
@@ -270,6 +271,14 @@ function PageResult() {
           class="btn whitebutton btn-lg"
           onClick={()=>console.log("OK")}>
           Questionario
+        </button>
+        </a>
+        <a href={"/page/" + id}>
+        <button 
+          style={{marginLeft:'20px'}}
+          class="btn whitebutton btn-lg"
+          onClick={()=>console.log("OK")}>
+          Continuar Page
         </button>
         </a>
         </div>

@@ -13,9 +13,7 @@ function PageSearch() {
     }
 
     const handleSearch = () => {
-        //Usa esse idTest para buscar o teste
-        //Se não for encontrado um teste incompleto com esse id, mostra um alerta informando que não foi possível encontrar 
-        //Se for encontrado, redireciona para a página com o teste em andamento
+        
     }
 
     const handleContinue = () => {
@@ -26,6 +24,9 @@ function PageSearch() {
         let textValue = event.target.value;
         setIdTest(textValue);
     }
+
+
+
 
     return (
         <>

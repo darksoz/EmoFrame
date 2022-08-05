@@ -8,12 +8,14 @@ import MultidimensionalAspect from "../../Components/MultidimensionalAspect/Mult
 import { MultiStepForm, Step } from "react-multi-form";
 import { Link } from "react-scroll";
 import sortArray from "sort-array";
-import { SavePageTest } from "../../services/api";
+import { SavePageTest, SavePageResult } from "../../services/api";
 import RegisterPage from "../../Components/RegisterPage/RegisterPage";
 import ModalTest from "../../Components/Modal/ModalTest";
 import Header from "../../Components/Header/Header";
 import Footer from "../../Components/Footer/Footer";
 import { Demandas } from "../../services/Questions/Page/Page";
+import { GetPageAmountOfResult, GetResultTestById } from "../../services/api";
+import { useParams } from "react-router-dom";
 
 function Page() {
   const [active, setActive] = React.useState(1);
@@ -26,23 +28,38 @@ function Page() {
   const [userFormData, setUserFormData] = React.useState([]);
   const [totalQuestions, setTotalQuestions] = React.useState(1);
   const [data, setData] = React.useState([]);
+  const { id } = useParams();
 
-  const userForm = ['entrevistador ','entrevistado','Entrada','dataAvaliação', 'Instituição','Id', 'genero', 'idade']
+  const userForm = [
+    "entrevistador ",
+    "entrevistado",
+    "Entrada",
+    "dataAvaliação",
+    "Instituição",
+    "Id",
+    "genero",
+    "idade",
+  ];
+
   const handleChange = (event) => {
     const id = event.target.name;
     const data = { id, answer: event.target.value };
-    console.log('data', data)
     if (event.target.id) {
       data.aspect = event.target.id;
     }
-
-    if (answers.some((a) => a.id === id)) {
+    console.log("answer", answers);
+    if (
+      answers.some((a) => {
+        return a.id === id;
+      })
+    ) {
       setAnswers([...answers.filter((b) => b.id !== id), data]);
     } else {
       setAnswers([...answers, data]);
     }
+    console.log("answer", answers);
   };
-
+  console.log("id", id);
   const verifyDemandas = (demanda, arr2) => {
     if (arr2.length !== 0) {
       let difference = Demandas[demanda].filter((x) => !arr2.includes(x));
@@ -57,20 +74,20 @@ function Page() {
       setInvestigation([]);
     }
   };
-  const verifyForm = (userForm, arr) =>{
+  const verifyForm = (userForm, arr) => {
     if (arr.length !== 0) {
       let difference = userForm.filter((x) => !arr.includes(x));
       if (difference.length !== 0) {
-        alert("Você não respondeu todas as perguntas do formulário: " + difference);
+        alert(
+          "Você não respondeu todas as perguntas do formulário: " + difference
+        );
         setInvestigation([]);
       }
     } else {
-      alert(
-        "Você não respondeu nenhuma pergunta da demanda " + userForm
-      );
+      alert("Você não respondeu nenhuma pergunta da demanda " + userForm);
       setInvestigation([]);
     }
-  }
+  };
 
   const filterQuestionsByNumberInt = (questions) => {
     let data = [];
@@ -99,7 +116,6 @@ function Page() {
     setTotalQuestions(data.length);
   }, [answers, userFormData]);
 
-
   const handleChangeForm = (event) => {
     const id = event.target.name;
     const data = { id, answer: event.target.value };
@@ -109,8 +125,54 @@ function Page() {
       setUserFormData([...userFormData, data]);
     }
   };
+
+  useEffect(() => {
+    const getResult = async () => {
+      if (id !== undefined) {
+        let response = await GetResultTestById("page", id);
+        console.log("response", response);
+        if (response.status === 200) {
+          let data = response.data;
+          if (data === "") {
+            setTitle("Resultado não encontrado");
+            setBody(
+              "Não há nenhum registro encontrado no banco de dados com o identificador repassado"
+            );
+            setShow(true);
+          } else {
+            console.log("data", data.Questions);
+            setUserFormData(data.UserDataForm);
+            setAnswers(data.Questions);
+            console.log("datas", data.Questions);
+          
+            let userId = data.UserDataForm.filter((a) => a.id === "Id")[0]
+              .answer;
+            if (userId) {
+              let response = await GetPageAmountOfResult(userId);
+
+              let arrayId = response.data.sort(function (a, b) {
+                var c = new Date(a.Datetime);
+                var d = new Date(b.Datetime);
+                return c - d;
+              });
+              let amount = arrayId.length;
+              let currentTest =
+                arrayId.findIndex((a) => a._id === data._id) + 1;
+            }
+          }
+        } else {
+          setTitle("Erro ao carregar a resposta");
+          setBody("Não foi possível carregar a resposta do banco de dados");
+          setShow(true);
+        }
+      } else {
+      }
+    };
+    getResult();
+  }, [id]);
+
   const handleFormData = async () => {
-    let name = userFormData.filter(a=> a.id==="nomepage")[0];
+    let name = userFormData.filter((a) => a.id === "nomepage")[0];
     let json = {
       Datetime: new Date(Date.now()),
       Instrument: "page",
@@ -133,12 +195,33 @@ function Page() {
       setSuccess(false);
     }
   };
-  
+
+  const handleFormDataPut = async () => {
+    let json = {
+      Questions: sortArray(answers, { by: "id" }),
+      UserDataForm: userFormData,
+    };
+    json = JSON.stringify(json);
+    let response = await SavePageResult(json, id);
+    if (response.status === 200) {
+      setTitle("Teste concluído");
+      setBody("Atividade realizada com sucesso");
+      setSuccess(true);
+      setShow(true);
+    } else {
+      setTitle("Erro na conclusão");
+      setBody("Atividade não foi concluída");
+      setSuccess(false);
+    }
+  };
+
   return (
     <>
       <Header />
       <Breadcrumb>
-        <Breadcrumb.Item href="./dashboard" style={{marginLeft:'12px'}}>Página Inicial</Breadcrumb.Item>
+        <Breadcrumb.Item href="./dashboard" style={{ marginLeft: "12px" }}>
+          Página Inicial
+        </Breadcrumb.Item>
         <Breadcrumb.Item href="./pagesearch">Iniciar PAGe</Breadcrumb.Item>
         <Breadcrumb.Item active>PAGe</Breadcrumb.Item>
       </Breadcrumb>
@@ -155,31 +238,26 @@ function Page() {
         <div id="sample">
           <MultiStepForm activeStep={active}>
             <Step label="Dados de Identificação" onChange={handleChangeForm}>
-              <RegisterPage />
+              <RegisterPage userData={userFormData} />
             </Step>
-            <Step
-              label="Aspectos Psicológicos"
-              onChange={handleChange}
-            >
-              <PsychologicalAspect dados={data}/>
+            <Step label="Aspectos Psicológicos" onChange={handleChange}>
+              <PsychologicalAspect dados={data} answers={answers} />
             </Step>
 
-            <Step
-              label="Aspectos Biológicos"
-              onChange={handleChange}
-            >
-              <BiologicalAspect dados={data} data={answers}/>
+            <Step label="Aspectos Biológicos" onChange={handleChange}>
+              <BiologicalAspect dados={data} data={answers} />
             </Step>
 
-            <Step
-              label="Aspectos Socioambientais"
-              onChange={handleChange}
-            >
-              <SocialAspect dados={data} />
+            <Step label="Aspectos Socioambientais" onChange={handleChange}>
+              <SocialAspect dados={data} answers={answers} />
             </Step>
 
             <Step label="Domínio Multidimencional" onChange={handleChange}>
-              <MultidimensionalAspect dados={data} userForm={userFormData} answers={answers}/>
+              <MultidimensionalAspect
+                dados={data}
+                userForm={userFormData}
+                answers={answers}
+              />
             </Step>
           </MultiStepForm>
         </div>
@@ -201,7 +279,9 @@ function Page() {
             <button
               class="btn whitebutton btn-lg"
               onClick={() => setActive(active + 1)}
-             onMouseOver={() => verifyForm(userForm, filterQuestionsByString(userFormData))}
+              onMouseOver={() =>
+                verifyForm(userForm, filterQuestionsByString(userFormData))
+              }
             >
               Próximo
             </button>
@@ -263,7 +343,37 @@ function Page() {
                 Salvar
               </button>
             )}
+            {totalQuestions >= 99 && (
+              <button
+                class="btn whitebutton btn-lg"
+                onClick={() => handleFormDataPut()}
+                onMouseOver={() =>
+                  verifyDemandas("multidimensionais", investigation)
+                }
+              >
+                Salvar
+              </button>
+            )}
           </div>
+        )}
+        <br/>
+        {id !== undefined && (
+          <button
+            style={{ marginRight: "20px" }}
+            class="btn whitebutton btn-lg"
+            onClick={() => handleFormDataPut()}
+            
+          >
+            Salvar Novamente
+          </button>
+        )}
+        {id === undefined && (
+          <button
+            class="btn whitebutton btn-lg"
+            onClick={() => handleFormData()}
+          >
+            Finalizar depois
+          </button>
         )}
       </Container>
       <Footer />

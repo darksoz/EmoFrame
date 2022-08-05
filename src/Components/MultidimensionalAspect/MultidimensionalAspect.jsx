@@ -168,6 +168,7 @@ function MultidimensionalAspect(props) {
                         avc={avc}
                         teste={teste}
                         doencas={doencas}
+                        answers={props.answers}	
                       ></QuestionsMultidimensional>
                     </>
                   ))}
