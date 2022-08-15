@@ -22,18 +22,18 @@ function RegisterPage({ userData }) {
   }, [userData]);
 
 
-  const returnAnswer = (id) => {
+  const returnAnswer = (id, placeholder) => {
     if (userData.length != 0 && userData !== undefined) {
       let answer = userData.find((item) => item.id == id);
       if (answer !== undefined && answer !== null) {
         if (answer.answer !== null && answer.answer !== undefined) {
           return answer.answer;
         } else {
-          return "Não Definido";
+          return placeholder;
         }
       }
     } else {
-      return "Não Definido";
+      return placeholder;
     }
   };
 
@@ -99,7 +99,7 @@ function RegisterPage({ userData }) {
                     <Form.Label>Serviço/Instituição</Form.Label>
                     <Form.Control
                       type="text"
-                      value={returnAnswer("Instituição")}
+                      value={returnAnswer("Instituição", "Serviço/Instituição")}
                       name="Instituição"
                       placeholder="Serviço/Instituição"
                     />
@@ -112,7 +112,7 @@ function RegisterPage({ userData }) {
                       type="text"
                       name="entrevistador"
                       placeholder="Entrevistador"
-                      value={returnAnswer("entrevistador ")}
+                      value={returnAnswer("entrevistador", "Entrevistador")}
                     />
                   </Form.Group>
                 </Col>
@@ -145,7 +145,7 @@ function RegisterPage({ userData }) {
                       type="text"
                       name="Id"
                       placeholder="Id"
-                      value={returnAnswer("Id")}
+                      value={returnAnswer("Id" ,"Id")}
                     />
                   </Form.Group>
                 </Col>
@@ -155,7 +155,7 @@ function RegisterPage({ userData }) {
                     <Form.Control
                       type="date"
                       name="dataAvaliação"
-                      value={returnAnswer("dataAvaliação")}
+                      value={returnAnswer("dataAvaliação", "Data da Aplicação")}
                     />
                   </Form.Group>
                 </Col>
@@ -177,7 +177,7 @@ function RegisterPage({ userData }) {
                   type="text"
                   name="nomepage"
                   placeholder="Nome"
-                  value={returnAnswer("nomepage")}
+                  value={returnAnswer("nomepage", "Nome")}
                 />
               </Form.Group>
             </Col>
@@ -190,7 +190,7 @@ function RegisterPage({ userData }) {
                   type="tel"
                   name="telefonepage"
                   placeholder="Número de telefone"
-                  value={returnAnswer("telefonepage")}
+                  value={returnAnswer("telefonepage", "Número de telefone" )}
                 />
               </Form.Group>
             </Col>
@@ -203,7 +203,7 @@ function RegisterPage({ userData }) {
                   type="text"
                   name="enredecopage"
                   placeholder="Endereço"
-                  value={returnAnswer("enredecopage")}
+                  value={returnAnswer("enredecopage", "Endereço")}
                 />
               </Form.Group>
             </Col>
@@ -217,7 +217,7 @@ function RegisterPage({ userData }) {
                   type="text"
                   name="cidade"
                   placeholder="Cidade"
-                  value={returnAnswer("cidade")}
+                  value={returnAnswer("cidade", "Cidade")}
                 />
               </Form.Group>
             </Col>
@@ -228,7 +228,7 @@ function RegisterPage({ userData }) {
                   type="text"
                   name="estado"
                   placeholder="Estado"
-                  value={returnAnswer("estado")}
+                  value={returnAnswer("estado", "Estado")}
                 />
               </Form.Group>
             </Col>
@@ -293,7 +293,7 @@ function RegisterPage({ userData }) {
                   type="text"
                   placeholder="Idade"
                   name="idade"
-                  value={returnAnswer("idade")}
+                  value={returnAnswer("idade", "Idade")}
                 />
               </Form.Group>
             </Col>
@@ -303,7 +303,7 @@ function RegisterPage({ userData }) {
                 <Form.Control
                   type="date"
                   name="DataNascimento"
-                  value={returnAnswer("DataNascimento")}
+                  value={returnAnswer("DataNascimento", "Data de Nascimento")}
                 />
               </Form.Group>
             </Col>
@@ -351,7 +351,7 @@ function RegisterPage({ userData }) {
                   type="text"
                   name="YearsOfStudy"
                   placeholder="Anos de Estudo"
-                  value={returnAnswer("YearsOfStudy")}
+                  value={returnAnswer("YearsOfStudy", "Anos de Estudo")}
                 />
               </Form.Group>
             </Col>
@@ -460,7 +460,7 @@ function RegisterPage({ userData }) {
                       type="text"
                       placeholder="Com quem você mora"
                       name="moradia"
-                      value={returnAnswer("moradia")}
+                      value={returnAnswer("moradia", "Com quem você mora")}
                     />
                   </Form.Group>
                 </>
@@ -492,7 +492,7 @@ function RegisterPage({ userData }) {
                       type="text"
                       placeholder="Profissão exercida por mais tempo"
                       name="profissao"
-                      value={returnAnswer("profissao")}
+                      value={returnAnswer("profissao", "Profissão exercida por mais tempo")}
                     />
                   </Form.Group>
                 </>
@@ -505,7 +505,7 @@ function RegisterPage({ userData }) {
                       type="text"
                       placeholder="Profissão atual"
                       mane="profissaoAtual"
-                      value={returnAnswer("profissaoAtual")}
+                      value={returnAnswer("profissaoAtual", "Profissão atual")}
                     />
                   </Form.Group>
                 </>
@@ -535,7 +535,7 @@ function RegisterPage({ userData }) {
                       type="text"
                       placeholder="Trabalho remunerado"
                       name="trabalhoremunerado"
-                      value={returnAnswer("trabalhoremunerado")}
+                      value={returnAnswer("trabalhoremunerado", "Trabalho remunerado")}
                     />
                   </Form.Group>
                 </>
@@ -564,7 +564,7 @@ function RegisterPage({ userData }) {
                     type="text"
                     placeholder="Religião"
                     name="religião"
-                    value={returnAnswer("religião")}
+                    value={returnAnswer("religião", "Religião")}
                   />
                 </Form.Group>
               )}

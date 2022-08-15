@@ -263,14 +263,14 @@ function PageResult() {
           Salvar
         </button>
         <button style={{marginLeft:'20px'}}  class="btn whitebutton btn-lg" onClick={() => window.print()}>
-          Imprimir
+          Gerar devolutiva
         </button>
         <a href={"/pageResultQuestions/" + id}>
         <button 
           style={{marginLeft:'20px'}}
           class="btn whitebutton btn-lg"
           onClick={()=>console.log("OK")}>
-          Questionario
+          Ver Respostas
         </button>
         </a>
         <a href={"/page/" + id}>
@@ -278,7 +278,7 @@ function PageResult() {
           style={{marginLeft:'20px'}}
           class="btn whitebutton btn-lg"
           onClick={()=>console.log("OK")}>
-          Continuar Page
+          Editar Page
         </button>
         </a>
         </div>
