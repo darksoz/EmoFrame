@@ -359,7 +359,7 @@ function Page() {
         <br/>
         {id !== undefined && (
           <button
-            style={{ marginRight: "20px" }}
+            style={{ marginTop: "10px" }}
             class="btn whitebutton btn-lg"
             onClick={() => handleFormDataPut()}
             
@@ -369,6 +369,7 @@ function Page() {
         )}
         {id === undefined && (
           <button
+            style={{ marginTop: "10px" }}
             class="btn whitebutton btn-lg"
             onClick={() => handleFormData()}
           >
