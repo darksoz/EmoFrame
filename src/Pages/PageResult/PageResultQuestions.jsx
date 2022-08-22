@@ -98,13 +98,19 @@ function PageResult() {
   }, [id]);
 
   useEffect(() => {
-    if (questions.length >= 154) {
+    console.log('questions', questions)
+    if (questions.length >= 104) {
       console.log("entrou ");
       console.log(convertArrayToObject(questions, "id"));
       let teste = convertArrayToObject(questions, "id");
       setQuestionsObj(teste);
+    }else {
+      // setTitle("Erro ao carregar a resposta");
+      // setBody("É necessário realizar uma busca com um identificador válido");
+      // setShow(true);
     }
   }, [questions]);
+
   const convertArrayToObject = (array, key) => {
     const initialValue = {};
     return array.reduce((obj, item) => {
