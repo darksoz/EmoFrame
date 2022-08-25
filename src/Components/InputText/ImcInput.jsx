@@ -24,11 +24,13 @@ function ImcInput(props) {
 
   const sliceText = (text) => text.split("_");
   const lastItem = sliceText(props.text).length - 1;
+
   const calcularIMC = (kilos, altura) => {
     altura = altura / 100;
     let imc = kilos / (altura * altura);
     return imc;
   };
+  
   return (
     <>
       <p className="h5">

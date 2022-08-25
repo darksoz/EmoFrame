@@ -1,19 +1,37 @@
-import { React } from "react";
+import { React, useEffect } from "react";
 import ImcInput from "./ImcInput";
 
-function InputText(props) {
+function InputText({ text, question, answers, imc }) {
   const sliceText = (text) => text.split("_");
-  const lastItem = sliceText(props.text).length - 1;
-
+  const lastItem = sliceText(text).length - 1;
+  
+  const returnAnswer = (id) => {
+    if (answers != undefined){
+      if (answers.length != 0) {
+        let answer = answers.find((item) => item.id == id);
+        if (answer !== undefined && answer !== null) {
+          if (answer.answer !== null && answer.answer !== undefined) {
+            return answer.answer;
+          } else {
+            return "?";
+          }
+        }else{
+          return "?";
+        }
+      
+      }else{
+        return "?";
+      }}
+  };
   return (
     <>
       <p className="h5">
-        {props.value === "imc" ? (
-          <ImcInput text={props.text} question={props.question} />
+        {imc === "imc" ? (
+          <ImcInput text={text} question={question} answers={answers}/>
         ) : (
           <>
-            {props.question} -
-            {sliceText(props.text).map((texto, index) => (
+            {question} -
+            {sliceText(text).map((texto, index) => (
               <>
                 {texto}
                 {lastItem !== index ? (
@@ -21,8 +39,10 @@ function InputText(props) {
                     type="text"
                     key={index}
                     style={{ width: "30%", height: "10px" }}
-                    name={props.question + "." + (index + 1)}
+                    name={question + "." + (index + 1)}
+                    placeholder={returnAnswer(question + "." + (index + 1))}
                   />
+                  
                 ) : (
                   ""
                 )}

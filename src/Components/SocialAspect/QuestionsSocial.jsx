@@ -11,10 +11,8 @@ function QuestionsSocial(props) {
   const returnAnswer = (id) => {
     if (props.answers.length != 0 && props.answers !== undefined) {
       let answer = props.answers.find((item) => item.id == id);
-      console.log('asas',answer)
       if (answer !== undefined && answer !== null) {
         if (answer.answer !== null && answer.answer !== undefined) {
-          console.log('   =>', answer.answer)
           return answer.answer;
         } else {
           return "false";
@@ -32,6 +30,7 @@ function QuestionsSocial(props) {
           <InputText
             text={props.pergunta.title}
             question={props.pergunta.question}
+            answers={props.answers}
             value={props.pergunta.point === true ? "imc" : ""}
           />
         ) : (

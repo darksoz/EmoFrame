@@ -159,6 +159,7 @@ function PsychologicalAspect(props) {
                       <textarea
                         style={{ border: "1px solid black" }}
                         name="anotacao_aspectos_psicologicos"
+                        
                         class="form-control"
                         placeholder="Anotações:"
                         rows="3"

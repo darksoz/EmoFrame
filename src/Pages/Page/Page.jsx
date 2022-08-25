@@ -31,7 +31,7 @@ function Page() {
   const { id } = useParams();
 
   const userForm = [
-    "entrevistador",
+    "entrevistador ",
     "entrevistado",
     "Entrada",
     "dataAvaliação",
@@ -47,7 +47,6 @@ function Page() {
     if (event.target.id) {
       data.aspect = event.target.id;
     }
-    console.log("answer", answers);
     if (
       answers.some((a) => {
         return a.id === id;
@@ -57,9 +56,8 @@ function Page() {
     } else {
       setAnswers([...answers, data]);
     }
-    console.log("answer", answers);
   };
-  console.log("id", id);
+
   const verifyDemandas = (demanda, arr2) => {
     if (arr2.length !== 0) {
       let difference = Demandas[demanda].filter((x) => !arr2.includes(x));
@@ -140,10 +138,8 @@ function Page() {
             );
             setShow(true);
           } else {
-            console.log("data", data.Questions);
             setUserFormData(data.UserDataForm);
             setAnswers(data.Questions);
-            console.log("datas", data.Questions);
           
             let userId = data.UserDataForm.filter((a) => a.id === "Id")[0]
               .answer;
@@ -155,9 +151,7 @@ function Page() {
                 var d = new Date(b.Datetime);
                 return c - d;
               });
-              let amount = arrayId.length;
-              let currentTest =
-                arrayId.findIndex((a) => a._id === data._id) + 1;
+              
             }
           }
         } else {
@@ -222,7 +216,6 @@ function Page() {
         <Breadcrumb.Item href="./dashboard" style={{ marginLeft: "12px" }}>
           Página Inicial
         </Breadcrumb.Item>
-        <Breadcrumb.Item href="./pagesearch">Iniciar PAGe</Breadcrumb.Item>
         <Breadcrumb.Item active>PAGe</Breadcrumb.Item>
       </Breadcrumb>
       <ModalTest
@@ -332,28 +325,24 @@ function Page() {
                 Anterior
               </button>
             </Link>
-            {totalQuestions >= 99 && (
-              <button
-                class="btn whitebutton btn-lg"
-                onClick={() => handleFormData()}
-                onMouseOver={() =>
-                  verifyDemandas("multidimensionais", investigation)
-                }
-              >
-                Salvar
-              </button>
+            {id === undefined && (
+               <>
+              {totalQuestions >= 99 && (
+               
+                  <button
+                    class="btn whitebutton btn-lg"
+                    onClick={() => handleFormData()}
+                    onMouseOver={() =>
+                      verifyDemandas("multidimensionais", investigation)
+                   }
+                  >
+                  Salvar
+                </button>
+                
+                )}
+                </>
             )}
-            {totalQuestions >= 99 && (
-              <button
-                class="btn whitebutton btn-lg"
-                onClick={() => handleFormDataPut()}
-                onMouseOver={() =>
-                  verifyDemandas("multidimensionais", investigation)
-                }
-              >
-                Salvar
-              </button>
-            )}
+            
           </div>
         )}
         <br/>

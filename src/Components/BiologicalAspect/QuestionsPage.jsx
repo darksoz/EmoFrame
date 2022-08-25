@@ -50,19 +50,19 @@ function QuestionsPage(props) {
 
   const returnAnswer = (id) => {
     if (props.respostas.length != 0 && props.respostas !== undefined) {
-      console.log('res',props.respostas)
-      let answer = props.respostas.find((item) => item.id == id);
-      console.log('asas',answer)
+      let answer = props.respostas.find((item) => item.id == id);     
       if (answer !== undefined && answer !== null) {
         if (answer.answer !== null && answer.answer !== undefined) {
-          console.log('   =>', answer.answer)
           return answer.answer;
         } else {
-          return "false";
+          console.log('false');
+          return "?";
         }
+      }else{
+        return "?";
       }
     } else {
-      return "false";
+      return "?";
     }
   };
 
@@ -74,6 +74,7 @@ function QuestionsPage(props) {
             text={props.pergunta.title}
             question={props.pergunta.question}
             value={props.pergunta.point === true ? "imc" : ""}
+            answers={props.respostas}
             imcFunc={imcFunc}
             setIMC={setIMC}
             imc={imc}
@@ -101,6 +102,7 @@ function QuestionsPage(props) {
                     type="text"
                     style={{ width: "15%" }}
                     name={props.pergunta.question + "." + (index + 1)}
+                    placeholder={returnAnswer(props.pergunta.question + "." + (index + 1))}
                   ></input>
                 ) : (
                   <input
@@ -108,6 +110,7 @@ function QuestionsPage(props) {
                     type="checkbox"
                     value={a}
                     name={props.pergunta.question + ".1" + (index + 1)}
+                    checked={returnAnswer(props.pergunta.question + ".1" + (index + 1)) != '?' && true}
                   ></input>
                 )}
               </li>
@@ -121,6 +124,7 @@ function QuestionsPage(props) {
             id="exampleFormControlTextarea1"
             rows="3"
             name={`${props.pergunta.question}.7`}
+            placeholder={returnAnswer(`${props.pergunta.question}.7`)}
           ></textarea>
         )}
         {props.pergunta.question === 54 && (

@@ -2,6 +2,20 @@ import { Checkbox } from "@material-ui/core";
 import { React } from "react";
 
 function ImagesAspect(props) {
+  const returnAnswer = (id) => {
+    if (props.answers.length != 0 && props.answers !== undefined) {
+      let answer = props.answers.find((item) => item.id == id);
+      if (answer !== undefined && answer !== null) {
+        if (answer.answer !== null && answer.answer !== undefined) {
+          return answer.answer;
+        } else {
+          return "false";
+        }
+      }
+    } else {
+      return "false";
+    }
+  };
   return (
     <>
       <div className="mt-5" style={{ alignItens: "flex-start" }}>
@@ -16,6 +30,7 @@ function ImagesAspect(props) {
             id="exampleFormControlTextarea1"
             name={props.question + "." + props.name}
             rows="1"
+            value={returnAnswer(props.question + "." + props.name)}
           ></textarea>
         ) : (
           <Checkbox
