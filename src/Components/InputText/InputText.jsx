@@ -13,14 +13,14 @@ function InputText({ text, question, answers, imc }) {
           if (answer.answer !== null && answer.answer !== undefined) {
             return answer.answer;
           } else {
-            return "?";
+            return "";
           }
         }else{
-          return "?";
+          return "";
         }
       
       }else{
-        return "?";
+        return "";
       }}
   };
   return (

@@ -9,11 +9,11 @@ function ImagesAspect(props) {
         if (answer.answer !== null && answer.answer !== undefined) {
           return answer.answer;
         } else {
-          return "false";
+          return "";
         }
       }
     } else {
-      return "false";
+      return "";
     }
   };
   return (

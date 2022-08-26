@@ -56,13 +56,13 @@ function QuestionsPage(props) {
           return answer.answer;
         } else {
           console.log('false');
-          return "?";
+          return "";
         }
       }else{
-        return "?";
+        return "";
       }
     } else {
-      return "?";
+      return "";
     }
   };
 
