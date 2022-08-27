@@ -76,7 +76,7 @@ function QuestionsSocial(props) {
                   type="radio"
                   value={props.pergunta.yes}
                   name={props.pergunta.question}
-                  checked={returnAnswer(props.pergunta.question) == props.pergunta.yes ? true : false}
+                  checked={returnAnswer(props.pergunta.question) === props.pergunta.yes ? true : false}
                 />
                 <label className="form-check-label labelal ml-1">
                   {props.pergunta.yes} = SIM
@@ -88,7 +88,7 @@ function QuestionsSocial(props) {
                   type="radio"
                   value={props.pergunta.no}
                   name={props.pergunta.question}
-                  checked={returnAnswer(props.pergunta.question) == props.pergunta.no ? true : false}
+                  checked={returnAnswer(props.pergunta.question) === props.pergunta.no ? true : false}
                 />
                 <label className="form-check-label labelal mt-1" style={{marginLeft:'5px'}}>
                   {props.pergunta.no} = NÃO

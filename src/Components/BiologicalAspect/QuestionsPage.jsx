@@ -25,7 +25,7 @@ function QuestionsPage(props) {
       let alturaResposta = props.respostas.find(
         (item) => item.id == "35.2"
       )?.answer;
-      
+
       setPeso(pesoResposta);
       setAltura(alturaResposta);
 
@@ -37,7 +37,7 @@ function QuestionsPage(props) {
     if (peso != undefined && altura != undefined) {
       setIMC(calcularIMC(+peso, +altura).toFixed(2));
     }
-  },[peso,altura])
+  }, [peso, altura]);
 
   const checkTextBox = (str) => {
     let textBox = ["46"];
@@ -48,17 +48,16 @@ function QuestionsPage(props) {
     setData(data);
   };
 
-  const returnAnswer = (id) => {
+  const returnAnswer = (id, teste) => {
     if (props.respostas.length != 0 && props.respostas !== undefined) {
-      let answer = props.respostas.find((item) => item.id == id);     
+      let answer = props.respostas.find((item) => item.id == id);
       if (answer !== undefined && answer !== null) {
         if (answer.answer !== null && answer.answer !== undefined) {
           return answer.answer;
         } else {
-          console.log('false');
           return "";
         }
-      }else{
+      } else {
         return "";
       }
     } else {
@@ -102,7 +101,9 @@ function QuestionsPage(props) {
                     type="text"
                     style={{ width: "15%" }}
                     name={props.pergunta.question + "." + (index + 1)}
-                    placeholder={returnAnswer(props.pergunta.question + "." + (index + 1))}
+                    placeholder={returnAnswer(
+                      props.pergunta.question + "." + (index + 1)
+                    )}
                   ></input>
                 ) : (
                   <input
@@ -110,7 +111,11 @@ function QuestionsPage(props) {
                     type="checkbox"
                     value={a}
                     name={props.pergunta.question + ".1" + (index + 1)}
-                    checked={returnAnswer(props.pergunta.question + ".1" + (index + 1)) != '?' && true}
+                    checked={
+                      returnAnswer(
+                        props.pergunta.question + ".1" + (index + 1)
+                      ) != "" && true
+                    }
                   ></input>
                 )}
               </li>
@@ -144,7 +149,12 @@ function QuestionsPage(props) {
                 type="radio"
                 value={props.pergunta.yes}
                 name={props.pergunta.question}
-                checked={returnAnswer(props.pergunta.question) == props.pergunta.yes ? true : false}
+                checked={
+                  returnAnswer(props.pergunta.question) ===
+                  props.pergunta.yes
+                    ? true
+                    : false
+                }
               />
               <label className="form-check-label labelal ml-1">
                 {props.pergunta.yes} = SIM
@@ -156,7 +166,12 @@ function QuestionsPage(props) {
                 type="radio"
                 value={props.pergunta.no}
                 name={props.pergunta.question}
-                checked={returnAnswer(props.pergunta.question) == props.pergunta.no ? true : false}
+                checked={
+                  returnAnswer(props.pergunta.question) ===
+                  props.pergunta.no
+                    ? true
+                    : false
+                }
               />
               <label
                 className="form-check-label labelal mt-1"

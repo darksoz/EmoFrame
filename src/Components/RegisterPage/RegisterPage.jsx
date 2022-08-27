@@ -26,7 +26,6 @@ function RegisterPage({ userData }) {
       let answer = userData.find((item) => item.id == id);
       if (answer !== undefined && answer !== null) {
         if (answer.answer !== null && answer.answer !== undefined) {
-          console.log('answer', answer.answer)
           return answer.answer;
         } else {
           return placeholder;

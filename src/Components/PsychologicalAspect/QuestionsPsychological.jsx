@@ -148,7 +148,7 @@ function QuestionsPsychological(props) {
               value={props.pergunta.yes}
               name={props.pergunta.question}
               checked={
-                returnAnswer(props.pergunta.question) == props.pergunta.yes
+                returnAnswer(props.pergunta.question) === props.pergunta.yes
                   ? true
                   : false
               }
@@ -164,7 +164,7 @@ function QuestionsPsychological(props) {
               value={props.pergunta.no}
               name={props.pergunta.question}
               checked={
-                returnAnswer(props.pergunta.question) == props.pergunta.no
+                returnAnswer(props.pergunta.question) === props.pergunta.no
                   ? true
                   : false
               }

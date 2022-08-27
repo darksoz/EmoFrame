@@ -31,7 +31,7 @@ function Page() {
   const { id } = useParams();
 
   const userForm = [
-    "entrevistador ",
+    "entrevistador",
     "entrevistado",
     "Entrada",
     "dataAvaliação",
