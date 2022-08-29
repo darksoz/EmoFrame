@@ -11,12 +11,12 @@ function QuestionsPsychological(props) {
     let textBox = ["8", "46"];
     return textBox.includes(String(str));
   };
-  const returnAnswer = (id) => {
+  const returnAnswer = (id,log) => {
     if (props.answers.length != 0 && props.answers !== undefined) {
       let answer = props.answers.find((item) => item.id == id);
       if (answer !== undefined && answer !== null) {
         if (answer.answer !== null && answer.answer !== undefined) {
-          return answer.answer;
+          return String(answer.answer);
         } else {
           return "";
         }
@@ -148,7 +148,7 @@ function QuestionsPsychological(props) {
               value={props.pergunta.yes}
               name={props.pergunta.question}
               checked={
-                returnAnswer(props.pergunta.question) === props.pergunta.yes
+                returnAnswer(props.pergunta.question, props.pergunta.yes) === String(props.pergunta.yes)
                   ? true
                   : false
               }
@@ -164,7 +164,7 @@ function QuestionsPsychological(props) {
               value={props.pergunta.no}
               name={props.pergunta.question}
               checked={
-                returnAnswer(props.pergunta.question) === props.pergunta.no
+                returnAnswer(props.pergunta.question, props.pergunta.no) === String( props.pergunta.no)
                   ? true
                   : false
               }
