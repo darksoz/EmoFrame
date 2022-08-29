@@ -151,7 +151,7 @@ function QuestionsPage(props) {
                 name={props.pergunta.question}
                 checked={
                   returnAnswer(props.pergunta.question) ===
-                  props.pergunta.yes
+                  String(props.pergunta.yes)
                     ? true
                     : false
                 }
@@ -168,7 +168,7 @@ function QuestionsPage(props) {
                 name={props.pergunta.question}
                 checked={
                   returnAnswer(props.pergunta.question) ===
-                  props.pergunta.no
+                  String(props.pergunta.no)
                     ? true
                     : false
                 }
