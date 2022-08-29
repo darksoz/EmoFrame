@@ -125,7 +125,7 @@ function QuestionsMultidimensional(props) {
                   name={props.pergunta.question}
                   checked={returnAnswer(props.pergunta.question) === String(props.pergunta.no) ? true : false}
                 />
-                <label className="form-check-label labelal mt-1" style={{marginLeft:'5px'}}>
+                <label className="form-check-label labelal mt-1" style={{marginLeft:'5px'}}></label>
                   {props.pergunta.no} = NÃO
                 </label>
               </div>
