@@ -32,7 +32,6 @@ function Page() {
 
   const userForm = [
     "entrevistador",
-    "entrevistador",
     "entrevistado",
     "Entrada",
     "dataAvaliação",

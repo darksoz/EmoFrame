@@ -3,6 +3,7 @@ import { Container } from "react-bootstrap";
 import InputText from "../InputText/InputText";
 import ImagesAspect from "../BiologicalAspect/ImagesAspect";
 import { Checkbox } from "@mui/material";
+import CheckBoxPsychological from "./CheckBoxPsychological";
 
 function QuestionsPsychological(props) {
   const [checked, setChecked] = useState(false);
@@ -11,7 +12,7 @@ function QuestionsPsychological(props) {
     let textBox = ["8", "46"];
     return textBox.includes(String(str));
   };
-  const returnAnswer = (id,log) => {
+  const returnAnswer = (id, log) => {
     if (props.answers.length != 0 && props.answers !== undefined) {
       let answer = props.answers.find((item) => item.id == id);
       if (answer !== undefined && answer !== null) {
@@ -54,7 +55,6 @@ function QuestionsPsychological(props) {
                 type="checkbox"
                 value={a}
                 name={props.pergunta.question + "." + (index + 1)}
-                
               ></input>
               <br></br>
             </strong>
@@ -65,7 +65,10 @@ function QuestionsPsychological(props) {
             {props.pergunta.text?.map((text, index) => (
               <li key={text} name="text">
                 <strong>{text}</strong>
-                <Checkbox name={text} checked={returnAnswer(text) === 'on' && true}></Checkbox>
+                <CheckBoxPsychological
+                  name={text}
+                  isChecked={returnAnswer(text) === "true" ? true : false}
+                ></CheckBoxPsychological>
               </li>
             ))}
           </ul>
@@ -76,7 +79,10 @@ function QuestionsPsychological(props) {
             {props.pergunta.text?.map((text, index) => (
               <li key={text} name="text">
                 <strong>{text}</strong>
-                <Checkbox name={text} checked={returnAnswer(text)=== 'on' && true}></Checkbox>
+                <CheckBoxPsychological
+                  name={text}
+                  isChecked={returnAnswer(text) === "true" ? true : false}
+                ></CheckBoxPsychological>
               </li>
             ))}
           </ul>
@@ -88,7 +94,12 @@ function QuestionsPsychological(props) {
               {props.pergunta.text?.map((text, index) => (
                 <li key={text} name="text">
                   <strong>{text}</strong>
-                  <Checkbox name={"4" + ".1" + text} checked={returnAnswer("4.1"+text) === 'on' && true}></Checkbox>
+                  <CheckBoxPsychological
+                    name={"4" + ".1" + text}
+                    isChecked={
+                      returnAnswer("4.1" + text) === "true" ? true : false
+                    }
+                  ></CheckBoxPsychological>
                 </li>
               ))}
             </ul>
@@ -97,21 +108,30 @@ function QuestionsPsychological(props) {
         {props.pergunta.question === 4 && (
           <>
             <p>
-              Ponteiro correto na hora <Checkbox name={"4.2"} checked={returnAnswer('4.2') ==='on' && true }></Checkbox>
+              Ponteiro correto na hora{" "}
+              <CheckBoxPsychological
+                name={"4.2"}
+                isChecked={returnAnswer("4.2") === "true" ? true : false}
+              ></CheckBoxPsychological>
             </p>
           </>
         )}
         {props.pergunta.question === 4 && (
           <>
             <p>
-              Ponteiro correto nos minutos <Checkbox name={"4.3"} checked={returnAnswer('4.3') ==='on' && true }></Checkbox>
+              Ponteiro correto nos minutos{" "}
+              <CheckBoxPsychological
+                name={"4.3"}
+                isChecked={returnAnswer("4.3") === "true" ? true : false}
+              ></CheckBoxPsychological>
             </p>
           </>
         )}
 
         {props.pergunta.question === 4 && (
           <p>
-            Pontuação Total <input name="4.7" value={returnAnswer('4.7')}></input>
+            Pontuação Total{" "}
+            <input name="4.7" value={returnAnswer("4.7")}></input>
           </p>
         )}
         {props.pergunta.images?.length > 0
@@ -127,7 +147,8 @@ function QuestionsPsychological(props) {
           : ""}
         {props.pergunta.question === 3 && (
           <p>
-            Pontuação Total <input type="text" name="3.7" value={returnAnswer('3.7')}/>
+            Pontuação Total{" "}
+            <input type="text" name="3.7" value={returnAnswer("3.7")} />
           </p>
         )}
         {checkTextBox(props.pergunta.question) && (
@@ -148,7 +169,8 @@ function QuestionsPsychological(props) {
               value={props.pergunta.yes}
               name={props.pergunta.question}
               checked={
-                returnAnswer(props.pergunta.question, props.pergunta.yes) === String(props.pergunta.yes)
+                returnAnswer(props.pergunta.question, props.pergunta.yes) ===
+                String(props.pergunta.yes)
                   ? true
                   : false
               }
@@ -164,7 +186,8 @@ function QuestionsPsychological(props) {
               value={props.pergunta.no}
               name={props.pergunta.question}
               checked={
-                returnAnswer(props.pergunta.question, props.pergunta.no) === String( props.pergunta.no)
+                returnAnswer(props.pergunta.question, props.pergunta.no) ===
+                String(props.pergunta.no)
                   ? true
                   : false
               }
