@@ -28,14 +28,15 @@ function QuestionsPage(props) {
 
       setPeso(pesoResposta);
       setAltura(alturaResposta);
-
       teste = data;
     }
   }, [props.respostas]);
 
   useEffect(() => {
     if (peso != undefined && altura != undefined) {
+      if (peso != isNaN && altura != isNaN) {
       setIMC(calcularIMC(+peso, +altura).toFixed(2));
+      }
     }
   }, [peso, altura]);
 

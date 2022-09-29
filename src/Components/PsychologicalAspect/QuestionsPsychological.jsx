@@ -66,7 +66,7 @@ function QuestionsPsychological(props) {
               <li key={text} name="text">
                 <strong>{text}</strong>
                 <CheckBoxPsychological
-                  name={text}
+                  name={text+"a"}
                   isChecked={returnAnswer(text) === "true" ? true : false}
                 ></CheckBoxPsychological>
               </li>
@@ -80,7 +80,7 @@ function QuestionsPsychological(props) {
               <li key={text} name="text">
                 <strong>{text}</strong>
                 <CheckBoxPsychological
-                  name={text}
+                  name={text+"b"}
                   isChecked={returnAnswer(text) === "true" ? true : false}
                 ></CheckBoxPsychological>
               </li>

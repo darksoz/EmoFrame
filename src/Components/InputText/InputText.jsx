@@ -4,7 +4,7 @@ import ImcInput from "./ImcInput";
 function InputText({ text, question, answers, imc }) {
   const sliceText = (text) => text.split("_");
   const lastItem = sliceText(text).length - 1;
-  
+  console.log('imc', question, imc)
   const returnAnswer = (id) => {
     if (answers != undefined){
       if (answers.length != 0) {
@@ -50,6 +50,17 @@ function InputText({ text, question, answers, imc }) {
             ))}
           </>
         )}
+        {question == "35" && (
+          <>
+          <br/>
+            <strong>
+             IMC = {imc}
+            </strong>
+          </>
+        )
+
+        }
+       
       </p>
     </>
   );
