@@ -113,6 +113,7 @@ function PageResult() {
     getResult();
   }, [id]);
 
+  console.log('dataUser', dataUser);
   const handleFormData = async () => {
     let json = {
       Datetime: dataUser.Datetime,
@@ -262,14 +263,22 @@ function PageResult() {
           Salvar
         </button>
         <button style={{marginLeft:'20px'}}  class="btn whitebutton btn-lg" onClick={() => window.print()}>
-          Imprimir
+          Gerar devolutiva
         </button>
         <a href={"/pageResultQuestions/" + id}>
         <button 
           style={{marginLeft:'20px'}}
           class="btn whitebutton btn-lg"
           onClick={()=>console.log("OK")}>
-          Questionario
+          Ver Respostas
+        </button>
+        </a>
+        <a href={"/page/" + id}>
+        <button 
+          style={{marginLeft:'20px'}}
+          class="btn whitebutton btn-lg"
+          onClick={()=>console.log("OK")}>
+          Editar Page
         </button>
         </a>
         </div>

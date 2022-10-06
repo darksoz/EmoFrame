@@ -4,10 +4,12 @@ function ImcInput(props) {
   const [imc, setImc] = useState(0);
   const [pesoValue, setPesoValue] = useState(0);
   const [alturaValue, setAlturaValue] = useState(0);
-
+  console.log('poRRRRRRRRRRRA')
+  console.log('props', props.text, props.question, props.answers);
   useEffect(() => {
     if (pesoValue !== 0 && alturaValue !== 0) {
       let imcTeste = calcularIMC(pesoValue, alturaValue).toFixed(2);
+      console.log('imcteste', imcTeste)
       setImc(imcTeste);
     }
   }, [alturaValue, pesoValue]);
@@ -24,11 +26,15 @@ function ImcInput(props) {
 
   const sliceText = (text) => text.split("_");
   const lastItem = sliceText(props.text).length - 1;
+
   const calcularIMC = (kilos, altura) => {
     altura = altura / 100;
     let imc = kilos / (altura * altura);
     return imc;
   };
+  
+  console.log(imc, lastItem)
+  
   return (
     <>
       <p className="h5">
