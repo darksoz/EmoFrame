@@ -104,6 +104,7 @@ function SocialAspect(props) {
                         pergunta={pergunta}
                         index={index}
                         key={index}
+                        answers={props.answers}
                       ></QuestionsSocial>
                     </>
                   ))}

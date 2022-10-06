@@ -98,13 +98,19 @@ function PageResult() {
   }, [id]);
 
   useEffect(() => {
-    if (questions.length >= 154) {
+    console.log('questions', questions)
+    if (questions.length >= 104) {
       console.log("entrou ");
       console.log(convertArrayToObject(questions, "id"));
       let teste = convertArrayToObject(questions, "id");
       setQuestionsObj(teste);
+    }else {
+      // setTitle("Erro ao carregar a resposta");
+      // setBody("É necessário realizar uma busca com um identificador válido");
+      // setShow(true);
     }
   }, [questions]);
+
   const convertArrayToObject = (array, key) => {
     const initialValue = {};
     return array.reduce((obj, item) => {
@@ -123,16 +129,20 @@ function PageResult() {
   const returnAnswer = (id) => {
     if (questions.length != 0) {
       let answer = questions.find((item) => item.id == id);
-      console.log("asnwr", answer);
       if (answer.answer !== null && answer.answer !== undefined) {
-        console.log("---", answer.answer);
         return answer.id;
       }
     } else {
       return "Não Definido";
     }
   };
-
+  const returnAnswerText = (text) => {
+    if ( text === undefined) {
+      return "";
+    } else {
+      return <>{text}<br/></>;
+    }
+  }
   return (
     <>
       <Modal show={show} onHide={handleClose}>
@@ -173,7 +183,7 @@ function PageResult() {
           <Row>
             <p className="h4"> Questionario</p> <hr />
             {TotalQuestions.Questions.map((item) => (
-              <p>
+              <p style={{ fontSize: '25px',  alignContent: 'left'}}>
                 <strong>
                   {item.question}-{item.title}
                 </strong>
@@ -182,70 +192,70 @@ function PageResult() {
                 <br />
                 {item.question == 3 && (
                   <>
-                    {questionsObj["3.1"]?.answer}<br/>
-                    {questionsObj["3.2"]?.answer}<br/>
-                    {questionsObj["3.3"]?.answer}<br/>
-                    {questionsObj["3.4"]?.answer}<br/>
+                    {returnAnswerText(  questionsObj["3.1"]?.answer)} 
+                    { returnAnswerText( questionsObj["3.2"]?.answer)}
+                    {returnAnswerText( questionsObj["3.3"]?.answer)}
+                    {returnAnswerText( questionsObj["3.4"]?.answer)}
                   </>
                 )}
                 {item.question == 8 && (
                   <>
-                    {questionsObj["8.1"]?.answer}<br/>
-                    {questionsObj["8.7"]?.answer}<br/>
+                    {returnAnswerText( questionsObj["8.1"]?.answer)}
+                    {returnAnswerText( questionsObj["8.7"]?.answer)}
                   </>
                 )}
                 {item.question == 35 && (
                   <>
-                    {questionsObj["35.1"]?.answer}<br/>
-                    {questionsObj["35.2"]?.answer}<br/>
+                    {returnAnswerText( questionsObj["35.1"]?.answer)}
+                    {returnAnswerText( questionsObj["35.2"]?.answer)}
                   </>
                 )}
                 {item.question == 42 && (
                   <>
-                    {questionsObj["42.1"]?.answer}<br/>
-                    {questionsObj["42.3"]?.answer}<br/>
+                    {returnAnswerText( questionsObj["42.1"]?.answer)}
+                    {returnAnswerText(questionsObj["42.3"]?.answer)}
                   </>
                 )}
                 {item.question == 44 && (
                   <>
-                  {questionsObj["44.11"]?.answer}<br/>
-                    {questionsObj["44.12"]?.answer}
-                    {questionsObj["44.13"]?.answer}
-                    {questionsObj["44.14"]?.answer}
-                    {questionsObj["44.15"]?.answer}
-                    {questionsObj["44.16"]?.answer}
-                    {questionsObj["44.17"]?.answer}
-                    {questionsObj["44.18"]?.answer}
-                    {questionsObj["44.19"]?.answer}
+                  {returnAnswerText( questionsObj["44.11"]?.answer) }
+                    { returnAnswerText( questionsObj["44.12"]?.answer)}
+                    {returnAnswerText( questionsObj["44.13"]?.answer)}
+                    { returnAnswerText( questionsObj["44.14"]?.answer)}
+                    {returnAnswerText( questionsObj["44.15"]?.answer)}
+                    {returnAnswerText( questionsObj["44.16"]?.answer)}
+                    {returnAnswerText( questionsObj["44.17"]?.answer)}
+                    {returnAnswerText( questionsObj["44.18"]?.answer)}
+                    {returnAnswerText( questionsObj["44.19"]?.answer)}
                   </>
                 )}
                 {item.question == 45 && (
                   <>
-                  {questionsObj["45.11"]?.answer} <br/>
-                    {questionsObj["45.12"]?.answer}
-                    {questionsObj["45.13"]?.answer}
-                    {questionsObj["45.14"]?.answer}
-                    {questionsObj["45.15"]?.answer}
-                    {questionsObj["45.16"]?.answer}
-                    {questionsObj["45.17"]?.answer}
-                    {questionsObj["45.18"]?.answer}
-                    {questionsObj["45.19"]?.answer}
+                  { returnAnswerText(questionsObj["45.11"]?.answer)} 
+                    {returnAnswerText( questionsObj["45.12"]?.answer)}
+                    {returnAnswerText( questionsObj["45.13"]?.answer)}
+                    {returnAnswerText(questionsObj["45.14"]?.answer)}
+                    {returnAnswerText(questionsObj["45.15"]?.answer)}
+                    { returnAnswerText(questionsObj["45.16"]?.answer)}
+                    {returnAnswerText( questionsObj["45.17"]?.answer)}
+                    {returnAnswerText( questionsObj["45.18"]?.answer)}
+                    {returnAnswerText( questionsObj["45.19"]?.answer)}
                   </>
                 )}
                 {item.question == 46 && (
                   <>
-                    {questionsObj["46.1"]?.answer}<br/>
-                    {questionsObj["46.7"]?.answer}<br/>
+                    {returnAnswerText(  questionsObj["46.1"]?.answer)}
+                    {returnAnswerText( questionsObj["46.7"]?.answer)}
                   </>
                 )}
                 {item.question == 55 && (
                   <>
-                  {questionsObj["55.1"]?.answer}
-                    {questionsObj["55.2"]?.answer}
-                    {questionsObj["55.3"]?.answer}
-                    {questionsObj["55.4"]?.answer}
-                    {questionsObj["55.5"]?.answer}
-                    {questionsObj["55.6"]?.answer}
+                  { returnAnswerText( questionsObj["55.1"]?.answer)}
+                    {returnAnswerText( questionsObj["55.2"]?.answer)}
+                    {returnAnswerText( questionsObj["55.3"]?.answer)}
+                    {returnAnswerText( questionsObj["55.4"]?.answer)}
+                    {returnAnswerText( questionsObj["55.5"]?.answer)}
+                    {returnAnswerText( questionsObj["55.6"]?.answer)}
                   
                   </>
                 )}

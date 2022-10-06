@@ -63,7 +63,6 @@ function PsychologicalAspect(props) {
 
     return sumDominio(testearr);
   };
-
   return (
     <>
       <Container>
@@ -92,6 +91,7 @@ function PsychologicalAspect(props) {
                           pergunta={pergunta}
                           index={index}
                           key={index}
+                          answers={props.answers}
                         ></QuestionsPsychological>
                         
                       </>
@@ -159,6 +159,7 @@ function PsychologicalAspect(props) {
                       <textarea
                         style={{ border: "1px solid black" }}
                         name="anotacao_aspectos_psicologicos"
+                        
                         class="form-control"
                         placeholder="Anotações:"
                         rows="3"

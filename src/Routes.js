@@ -68,6 +68,7 @@ function Routes() {
                 <PrivateRoute path='/sus' exact component={Sus}/>
                 <PrivateRoute path='/panas' exact component={Panas}/>
                 <PrivateRoute path='/page' exact component={Page}/>
+                <PrivateRoute path='/page/:id' exact component={Page}/>
                 <PrivateRoute path='/poms' exact component={Poms}/>
                 <PrivateRoute path='/pagesearch' exact component={PageSearch}/>
                 <Route path='/contactus' exact component={ContactUs}/>

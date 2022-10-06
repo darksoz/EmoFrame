@@ -114,6 +114,7 @@ function BiologicalAspect(props) {
                         key={index}
                         dadosQuestoes={props.dados}
                         respostas={props.data}
+                        
                       ></QuestionsPage>
                     </>
                   ))}
