@@ -1,0 +1,40 @@
+
+        .statement {
+          display:block;
+          font-weight: bold;
+          padding: 30px 0 0 4.25%;
+          margin-bottom:10px;
+          font-size: 1.5em;
+
+        }
+  
+        .gdsdiv {
+  
+          padding: 1rem;
+          list-style:none;
+          width:100%;
+          margin:0;
+          display:block;
+          margin-top: 3rem;
+          margin-bottom: 3rem;
+          
+        }
+
+        input[type=radio]{
+            transform:scale(1.8);
+            display:block;
+            position:relative;
+            top:4px;
+            left:-20%;
+
+          }
+
+        .form-check-label {
+            font-size: 1.4em;     
+            width: 100%;
+           }
+           
+        .form-check-inline {
+            margin-right: 55px;
+        }
+   

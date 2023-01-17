@@ -10,6 +10,7 @@ import SamResult from './Pages/SamResult/SamResult';
 import Zanon from './Pages/Zanon/Zanon';
 import Sus from './Pages/Sus/Sus';
 import Panas from './Pages/Panas/Panas';
+import Gds from './Pages/Gds/Gds';
 import SusResult from './Pages/SusResult/SusResult';
 import LeapResult from './Pages/LeapResult/LeapResult';
 import PanasResult from './Pages/PanasResult/PanasResult';
@@ -69,6 +70,7 @@ function Routes() {
                 <PrivateRoute path='/panas' exact component={Panas}/>
                 <PrivateRoute path='/page' exact component={Page}/>
                 <PrivateRoute path='/poms' exact component={Poms}/>
+                <PrivateRoute path='/gds' exact component={Gds}/>
                 <PrivateRoute path='/pagesearch' exact component={PageSearch}/>
                 <Route path='/contactus' exact component={ContactUs}/>
                 <Route path='/aboutus' exact component={AboutUs}/>
