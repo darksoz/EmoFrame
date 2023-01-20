@@ -23,6 +23,7 @@ import PageResult from './Pages/PageResult/PageResult';
 import AboutUs from './Pages/AboutUs/AboutUs';
 import MoreInfo from './Pages/MoreInfo/MoreInfo';
 import Poms from './Pages/Poms/Poms';
+import Whoqol from './Pages/Whoqol/Whoqol';
 import PomsResult from './Pages/PomsResult/PomsResult';
 import PageSearch from './Pages/PageSearch/PageSearch';
 import PageResultQuestions from './Pages/PageResult/PageResultQuestions';
@@ -69,6 +70,7 @@ function Routes() {
                 <PrivateRoute path='/panas' exact component={Panas}/>
                 <PrivateRoute path='/page' exact component={Page}/>
                 <PrivateRoute path='/poms' exact component={Poms}/>
+                <PrivateRoute path='/whoqol' exact component={Whoqol}/>
                 <PrivateRoute path='/pagesearch' exact component={PageSearch}/>
                 <Route path='/contactus' exact component={ContactUs}/>
                 <Route path='/aboutus' exact component={AboutUs}/>
