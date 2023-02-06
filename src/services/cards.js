@@ -35,6 +35,11 @@ export const cards =
             "image": "card",
             "title": "BRUMS",
             "page": "poms"
+        },
+        {
+            "image": "card",
+            "title": "UES-BR",
+            "page": "ues"
         }
     ]
 }
