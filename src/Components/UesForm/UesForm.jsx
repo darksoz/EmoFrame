@@ -1,4 +1,4 @@
-function UesForm () {
+function UesForm (props) {
     return (
         <>
          <div class="form">
@@ -6,23 +6,23 @@ function UesForm () {
             <ul class="likert-sus">
                 <li>
                     <input class="form-check-input" type="radio" name={props.Name} value="5" required />
-                    <p>(5)<br/>Concordo Fortemente</p>
+                    <p>Concordo Fortemente</p>
                 </li>
                 <li>
                     <input class="form-check-input" type="radio" name={props.Name} value="4" />
-                    <p>(4)<br/>Concordo Parcialmente</p>
+                    <p>Concordo Parcialmente</p>
                 </li>
                 <li>
                     <input class="form-check-input" type="radio" name={props.Name} value="3" />
-                    <p>(3)<br/>Não concordo nem discordo</p>
+                    <p>Não concordo nem discordo</p>
                 </li>
                 <li>
                     <input class="form-check-input" type="radio" name={props.Name} value="2" />
-                    <p>(2)<br/>Discordo Parcialmente</p>
+                    <p>Discordo Parcialmente</p>
                 </li>
                 <li>
                     <input class="form-check-input" type="radio" name={props.Name} value="1" />
-                    <p>(1)<br/>Discordo Fortemente</p>
+                    <p>Discordo Fortemente</p>
                 </li>
             </ul>
         </div>

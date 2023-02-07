@@ -15,6 +15,7 @@ function UesApp() {
                                         <Form.Label>Qual é a aplicação que você quer avaliar?</Form.Label>
                                         <Form.Control type="text" placeholder="Nome da Aplicação" />
                                     </Form.Group>
+                                    <button class="btn whitebutton btn-lg">Enviar</button>
                                 </div>
                             </Col>
                             </Row>
