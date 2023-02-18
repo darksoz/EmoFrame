@@ -14,6 +14,7 @@ import UesForm from '../../Components/UesForm/UesForm';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import arrayShuffle from 'array-shuffle';
+import UesExample from '../../Components/UesExample/UesExample';
 
 
 
@@ -24,6 +25,7 @@ let amoundOfQuestions = (firstQuestions.length + secondQuestions.length + thirdQ
 
 function Ues() {
 
+    const [appName, setAppName] = React.useState("");
     const [active, setActive] = React.useState(1);
     const [answers, setAnswers] = React.useState([]);
     const [title, setTitle] = React.useState("");
@@ -32,15 +34,29 @@ function Ues() {
     const [success, setSuccess] = React.useState(false);
 
     const handleChange = (event) => {
-        const id = parseInt(event.target.name);
-        const data = { id, answer: event.target.value };
+        let name = event.target.name;
+        if(name === "formname") {
+            console.log(name); 
+            setAppName(event.target.value);
+        }
+        else {
+            const id = parseInt(event.target.name);
+            const data = { id, answer: event.target.value };
+            handleAnswers(id,data);
+        }  
+    }
 
+    const handleAnswers = (id,data) => {
         if (answers.some(a => a.id === id)) {
             setAnswers([...answers.filter(b => b.id !== id), data]);
         }
         else {
             setAnswers([...answers, data]);
-        }
+        } 
+    }
+
+    const parseTitle = (title) => {
+        return title.replace("{0}", appName); 
     }
 
 
@@ -55,71 +71,95 @@ function Ues() {
                 <Row>
                     <Col>
                     <div id="sample" onChange={handleChange}>
+
                         <MultiStepForm activeStep={active}>
                             <Step label="Passo 1">
-                                <>
-                                <div style={{
+                                <div  style={{
                                                 marginBottom: "70px", paddingBottom: "20px"
                                             }}>
                                                 <UesApp/>
                                             </div>
-
-                                </>
-
                             </Step>
+                                <Step label="Passo 2">
+                                <UesExample/>
+                                    {
+                                        firstQuestions.map((content, index) => (
+                                            <>
+                                                <div style={{
+                                                    marginBottom: "20px",
+                                                }}>
+                                                    
+                                                    <UesForm Title={parseTitle(content.Title)}
+                                                        Name={content.Name} />
+                                                    <hr></hr>
+                                                </div>
+                                            </>
+                                        ))
+                                    }
+                                </Step>
 
-                            <Step label="Passo 2">
-                                {
-                                    firstQuestions.map((content, index) => (
-                                        <>
-                                            <div style={{
-                                                marginBottom: "20px",
-                                            }}>
-                                                <UesForm Title={content.Title}
-                                                    Name={content.Name} />
-                                                <hr></hr>
-                                            </div>
-                                        </>
-                                    ))
-                                }
-                            </Step>
+                                <Step label="Passo 3">
+                                    {
 
-                            <Step label="Passo 3">
-                                {
+                                        secondQuestions.map((content, index) => (
+                                            <>
+                                                <div style={{
+                                                    marginBottom: "20px",
+                                                }}>
+                                                    <UesForm Title={parseTitle(content.Title)}
+                                                        Name={content.Name} />
+                                                    <hr></hr>
+                                                </div>
+                                            </>
+                                        ))
+                                    }
 
-                                    secondQuestions.map((content, index) => (
-                                        <>
-                                            <div style={{
-                                                marginBottom: "20px",
-                                            }}>
-                                                <UesForm Title={content.Title}
-                                                    Name={content.Name} />
-                                                <hr></hr>
-                                            </div>
-                                        </>
-                                    ))
-                                }
+                                </Step>
+                                <Step label="Passo 4">
+                                    {
 
-                            </Step>
-                            <Step label="Passo 4">
-                                {
+                                        thirdQuestions.map((content, index) => (
+                                            <>
+                                                <div style={{
+                                                    marginBottom: "20px",
+                                                }}>
+                                                    <UesForm Title={parseTitle(content.Title)}
+                                                        Name={content.Name} />
+                                                    <hr></hr>
+                                                </div>
+                                            </>
+                                        ))
+                                    }
 
-                                    thirdQuestions.map((content, index) => (
-                                        <>
-                                            <div style={{
-                                                marginBottom: "20px",
-                                            }}>
-                                                <UesForm Title={content.Title}
-                                                    Name={content.Name} />
-                                                <hr></hr>
-                                            </div>
-                                        </>
-                                    ))
-                                }
-
-                            </Step>
+                                </Step>
 
                         </MultiStepForm>
+                        {(active === 1 && <Link to="sample"><button class="btn whitebutton btn-lg" onClick={() => setActive(active + 1)}>Próximo</button></Link>)}
+                                    {(active > 1 && active !== 4 &&
+                                        <div>
+                                            <Link to="sample">
+                                                <button class="btn whitebutton btn-lg" style={{marginRight:'20px'}} onClick={() => setActive(active - 1)} >Anterior</button>
+                                            </Link>
+                                            <Link to="sample">
+                                                <button class="btn whitebutton btn-lg" onClick={() => setActive(active + 1)}>Próximo</button>
+                                            </Link>
+                                        </div>)
+                                    }
+                                    {(active === 4 && answers.length === amoundOfQuestions) &&
+                                        <div>
+                                            <Link to="sample">
+                                                <button class="btn whitebutton btn-lg" onClick={() => setActive(active - 1)}>Anterior</button>
+                                            </Link>
+                                            <button class="btn whitebutton btn-lg" style={{marginLeft:'20px'}} >Salvar</button>
+                                        </div>
+                                    }
+                                    {(active === 4 && answers.length !== amoundOfQuestions) &&
+                                        <div>
+                                            <Link to="sample">
+                                                <button class="btn whitebutton btn-lg" onClick={() => setActive(active - 1)}>Anterior</button>
+                                            </Link>
+                                        </div>
+                                    }
                         </div>
                     </Col>
                 </Row>

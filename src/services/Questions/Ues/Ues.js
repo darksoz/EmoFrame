@@ -9,15 +9,15 @@ export const Questions1 = [
     },
   {
       "Name": "3",
-      "Title": "Esqueci das coisas ao meu redor quando estava usando a Aplicação X."
+      "Title": "Esqueci das coisas ao meu redor quando estava usando a aplicação {0}."
     },
   {
       "Name": "4",
-      "Title": "Quando eu estava usando a Aplicação X, eu perdi a noção do mundo ao meu redor."
+      "Title": "Quando eu estava usando a aplicação {0}, eu perdi a noção do mundo ao meu redor."
     },
   {
       "Name": "5",
-      "Title": "O tempo que passei usando a Aplicação X simplesmente voou."
+      "Title": "O tempo que passei usando a aplicação {0} simplesmente voou."
     },
   {
       "Name": "6",
@@ -29,26 +29,26 @@ export const Questions1 = [
     },
   {
       "Name": "8",
-      "Title": "Fiquei frustrado ao usar a Aplicação X."
+      "Title": "Fiquei frustrado ao usar a aplicação {0}."
     },
   {
       "Name": "9",
-      "Title": "Achei a Aplicação X confusa de usar."
+      "Title": "Achei a aplicação {0} confusa de usar."
     },
   {
       "Name": "10",
-      "Title": "Fiquei irritado ao usar a Aplicação X."
+      "Title": "Fiquei irritado ao usar a aplicação {0}."
     }
   ];
   
   export const Questions2 = [
     {
       "Name": "11",
-      "Title": "Fiquei desanimado ao usar a Aplicação X"
+      "Title": "Fiquei desanimado ao usar a aplicação {0}"
     },
     {
       "Name": "12",
-      "Title": "Foi muito cansativo usar a Aplicação X."
+      "Title": "Foi muito cansativo usar a aplicação {0}."
     },
     {
       "Name": "13",
@@ -56,38 +56,38 @@ export const Questions1 = [
     },
     {
       "Name": "14",
-      "Title": "Eu me senti no controle ao usar a Aplicação X."
+      "Title": "Eu me senti no controle ao usar a aplicação {0}."
     },
     {
       "Name": "15",
-      "Title": "Não consegui fazer algumas das coisas que eu precisava fazer enquanto estava usando a Aplicação X."
+      "Title": "Não consegui fazer algumas das coisas que eu precisava fazer enquanto estava usando a aplicação {0}."
     },
     {
       "Name": "16",
-      "Title": "A Aplicação X é atraente."
+      "Title": "A aplicação {0} é atraente."
     },
     {
       "Name": "17",
-      "Title": "A Aplicação X é esteticamente agradável."
+      "Title": "A aplicação {0} é esteticamente agradável."
     },
     {
       "Name": "18",
-      "Title": "Gostei dos elementos gráficos e das imagens da Aplicação X"
+      "Title": "Gostei dos elementos gráficos e das imagens da aplicação {0}"
     },
     {
       "Name": "19",
-      "Title": "A Aplicação X chamou minha atenção visualmente."
+      "Title": "A aplicação {0} chamou minha atenção visualmente."
     },
     {
       "Name": "20",
-      "Title": "A distribuição dos elementos na tela da Aplicação X é visualmente agradável."
+      "Title": "A distribuição dos elementos na tela da aplicação {0} é visualmente agradável."
     }
   ];
 
   export const Questions3 = [
     {
       "Name": "21",
-      "Title": "Valeu a pena usar a Aplicação X."
+      "Title": "Valeu a pena usar a aplicação {0}."
     },
     {
       "Name": "22",
@@ -103,15 +103,15 @@ export const Questions1 = [
     },
     {
       "Name": "25",
-      "Title": "Eu recomendaria a Aplicação X para familiares e amigos"
+      "Title": "Eu recomendaria a aplicação {0} para familiares e amigos"
     },
     {
       "Name": "26",
-      "Title": "Continuei usando a Aplicação X por curiosidade."
+      "Title": "Continuei usando a aplicação {0} por curiosidade."
     },
     {
       "Name": "27",
-      "Title": "O conteúdo da Aplicação X despertou minha curiosidade."
+      "Title": "O conteúdo da aplicação {0} despertou minha curiosidade."
     },
     {
       "Name": "28",
